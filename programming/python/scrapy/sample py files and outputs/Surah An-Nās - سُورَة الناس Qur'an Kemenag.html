@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="Surah%20An-N%C4%81s%20-%20%D8%B3%D9%8F%D9%88%D8%B1%D9%8E%D8%A9%20%D8%A7%D9%84%D9%86%D8%A7%D8%B3%20Qur'an%20Kemenag_files/app.css">
+    <link rel="stylesheet" href="Surah%20An-N%C4%81s%20-%20%D8%B3%D9%8F%D9%88%D8%B1%D9%8E%D8%A9%20%D8%A7%D9%84%D9%86%D8%A7%D8%B3%20Qur'an%20Kemenag_files/custom.css">
+    <link rel="stylesheet" href="Surah%20An-N%C4%81s%20-%20%D8%B3%D9%8F%D9%88%D8%B1%D9%8E%D8%A9%20%D8%A7%D9%84%D9%86%D8%A7%D8%B3%20Qur'an%20Kemenag_files/bootstrap.min.css">
+    <link rel="stylesheet" href="Surah%20An-N%C4%81s%20-%20%D8%B3%D9%8F%D9%88%D8%B1%D9%8E%D8%A9%20%D8%A7%D9%84%D9%86%D8%A7%D8%B3%20Qur'an%20Kemenag_files/jquery-ui.min.css">
+    <link rel="stylesheet" href="Surah%20An-N%C4%81s%20-%20%D8%B3%D9%8F%D9%88%D8%B1%D9%8E%D8%A9%20%D8%A7%D9%84%D9%86%D8%A7%D8%B3%20Qur'an%20Kemenag_files/jquery-ui.theme.min.css">
+    <link rel="stylesheet" href="Surah%20An-N%C4%81s%20-%20%D8%B3%D9%8F%D9%88%D8%B1%D9%8E%D8%A9%20%D8%A7%D9%84%D9%86%D8%A7%D8%B3%20Qur'an%20Kemenag_files/simple-line-icons.css">
+    <link rel="stylesheet" href="Surah%20An-N%C4%81s%20-%20%D8%B3%D9%8F%D9%88%D8%B1%D9%8E%D8%A9%20%D8%A7%D9%84%D9%86%D8%A7%D8%B3%20Qur'an%20Kemenag_files/all.min.css">
+    <link rel="stylesheet" href="Surah%20An-N%C4%81s%20-%20%D8%B3%D9%8F%D9%88%D8%B1%D9%8E%D8%A9%20%D8%A7%D9%84%D9%86%D8%A7%D8%B3%20Qur'an%20Kemenag_files/toastr.min.css">
+    <link rel="icon" href="https://quran.kemenag.go.id/images/favicon.png">
+    <!-- custom css -->
+    <link rel="stylesheet" href="Surah%20An-N%C4%81s%20-%20%D8%B3%D9%8F%D9%88%D8%B1%D9%8E%D8%A9%20%D8%A7%D9%84%D9%86%D8%A7%D8%B3%20Qur'an%20Kemenag_files/main.css">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="Surah%20An-N%C4%81s%20-%20%D8%B3%D9%8F%D9%88%D8%B1%D9%8E%D8%A9%20%D8%A7%D9%84%D9%86%D8%A7%D8%B3%20Qur'an%20Kemenag_files/google-analytics_analytics.js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2GST9SG98Y');
+</script>
+
+    <title>Surah An-Nās - سُورَة الناس | Qur'an Kemenag</title>
+</head>
+
+<body id="main-container" class="default">
+    <!-- progress scroll bar -->
+    <div id="top-scrollbar">
+        <div id="top-scrollbar-bg">
+        </div>
+    </div>
+    <!-- end -->
+
+    <div class="row">
+        <div class="animationload" style="display: none;">
+            <div class="osahanloading"></div>
+        </div>
+    </div>
+
+    <!-- END: Pre Loader-->
+    <div id="header-fix" class="header fixed-top">
+        <div class="site-width">
+            <nav class="navbar navbar-expand-lg p-0">
+                <div class="navbar-header  h-100 h4 mb-0 align-self-center logo-bar text-left">
+    <a href="https://quran.kemenag.go.id/" class="horizontal-logo text-left">
+        <img src="Surah%20An-N%C4%81s%20-%20%D8%B3%D9%8F%D9%88%D8%B1%D9%8E%D8%A9%20%D8%A7%D9%84%D9%86%D8%A7%D8%B3%20Qur'an%20Kemenag_files/logo-m.png" style="height:95%">
+        <span class="h4 font-weight-bold align-self-center mb-0 ml-auto">Quran Kemenag</span>
+    </a>
+</div>                
+
+                <div class="navbar-right ml-auto h-100">
+                    <ul class="ml-auto p-0 m-0 list-unstyled d-flex top-icon h-100">
+                        <li class="dropdown-menu-right align-self-center d-inline-block">
+                            <select onchange="changesura(this)" class="form-control text-primary" style="width:100%" id="sura_select_head"><option value="1">1. Al-Fātiḥah (7)</option><option value="2">2. Al-Baqarah (286)</option><option value="3">3. Āli 'Imrān (200)</option><option value="4">4. An-Nisā' (176)</option><option value="5">5. Al-Mā'idah (120)</option><option value="6">6. Al-An'ām (165)</option><option value="7">7. Al-A'rāf (206)</option><option value="8">8. Al-Anfāl (75)</option><option value="9">9. At-Taubah (129)</option><option value="10">10. Yūnus (109)</option><option value="11">11. Hūd (123)</option><option value="12">12. Yūsuf (111)</option><option value="13">13. Ar-Ra'd (43)</option><option value="14">14. Ibrāhīm (52)</option><option value="15">15. Al-Ḥijr (99)</option><option value="16">16. An-Naḥl (128)</option><option value="17">17. Al-Isrā' (111)</option><option value="18">18. Al-Kahf (110)</option><option value="19">19. Maryam (98)</option><option value="20">20. Ṭāhā (135)</option><option value="21">21. Al-Anbiyā' (112)</option><option value="22">22. Al-Ḥajj (78)</option><option value="23">23. Al-Mu'minūn (118)</option><option value="24">24. An-Nūr (64)</option><option value="25">25. Al-Furqān (77)</option><option value="26">26. Asy-Syu'arā' (227)</option><option value="27">27. An-Naml (93)</option><option value="28">28. Al-Qaṣaṣ (88)</option><option value="29">29. Al-'Ankabūt (69)</option><option value="30">30. Ar-Rūm (60)</option><option value="31">31. Luqmān (34)</option><option value="32">32. As-Sajdah (30)</option><option value="33">33. Al-Aḥzāb (73)</option><option value="34">34. Saba' (54)</option><option value="35">35. Fāṭir (45)</option><option value="36">36. Yāsīn (83)</option><option value="37">37. Aṣ-Ṣāffāt (182)</option><option value="38">38. Ṣād (88)</option><option value="39">39. Az-Zumar (75)</option><option value="40">40. Gāfir (85)</option><option value="41">41. Fuṣṣilat (54)</option><option value="42">42. Asy-Syūrā (53)</option><option value="43">43. Az-Zukhruf (89)</option><option value="44">44. Ad-Dukhān (59)</option><option value="45">45. Al-Jāṡiyah (37)</option><option value="46">46. Al-Aḥqāf (35)</option><option value="47">47. Muḥammad (38)</option><option value="48">48. Al-Fatḥ (29)</option><option value="49">49. Al-Ḥujurāt (18)</option><option value="50">50. Qāf (45)</option><option value="51">51. Aż-Żāriyāt (60)</option><option value="52">52. At-Ṭūr (49)</option><option value="53">53. An-Najm (62)</option><option value="54">54. Al-Qamar (55)</option><option value="55">55. Ar-Raḥmān (78)</option><option value="56">56. Al-Wāqi'ah (96)</option><option value="57">57. Al-Ḥadīd (29)</option><option value="58">58. Al-Mujādalah (22)</option><option value="59">59. Al-Ḥasyr (24)</option><option value="60">60. Al-Mumtaḥanah (13)</option><option value="61">61. Aṣ-Ṣaff (14)</option><option value="62">62. Al-Jumu'ah (11)</option><option value="63">63. Al-Munāfiqūn (11)</option><option value="64">64. At-Tagābun (18)</option><option value="65">65. At-Talāq (12)</option><option value="66">66. At-Taḥrīm (12)</option><option value="67">67. Al-Mulk (30)</option><option value="68">68. Al-Qalam (52)</option><option value="69">69. Al-Ḥāqqah (52)</option><option value="70">70. Al-Ma'ārij (44)</option><option value="71">71. Nūḥ (28)</option><option value="72">72. Al-Jinn (28)</option><option value="73">73. Al-Muzzammil (20)</option><option value="74">74. Al-Muddaṡṡir (56)</option><option value="75">75. Al-Qiyāmah (40)</option><option value="76">76. Al-Insān (31)</option><option value="77">77. Al-Mursalāt (50)</option><option value="78">78. An-Naba' (40)</option><option value="79">79. An-Nāzi'āt (46)</option><option value="80">80. 'Abasa (42)</option><option value="81">81. At-Takwīr (29)</option><option value="82">82. Al-Infiṭār (19)</option><option value="83">83. Al-Muṭaffifīn (36)</option><option value="84">84. Al-Insyiqāq (25)</option><option value="85">85. Al-Burūj (22)</option><option value="86">86. At-Ṭāriq (17)</option><option value="87">87. Al-A'lā (19)</option><option value="88">88. Al-Gāsyiyah (26)</option><option value="89">89. Al-Fajr (30)</option><option value="90">90. Al-Balad (20)</option><option value="91">91. Asy-Syams (15)</option><option value="92">92. Al-Lail (21)</option><option value="93">93. Ad-Duḥā (11)</option><option value="94">94. Asy-Syarḥ (8)</option><option value="95">95. At-Tīn (8)</option><option value="96">96. Al-'Alaq (19)</option><option value="97">97. Al-Qadr (5)</option><option value="98">98. Al-Bayyinah (8)</option><option value="99">99. Az-Zalzalah (8)</option><option value="100">100. Al-'Adiyāt (11)</option><option value="101">101. Al-Qāri'ah (11)</option><option value="102">102. At-Takāṡur (8)</option><option value="103">103. Al-'Aṣr (3)</option><option value="104">104. Al-Humazah (9)</option><option value="105">105. Al-Fīl (5)</option><option value="106">106. Quraisy (4)</option><option value="107">107. Al-Mā'ūn (7)</option><option value="108">108. Al-Kauṡar (3)</option><option value="109">109. Al-Kāfirūn (6)</option><option value="110">110. An-Naṣr (3)</option><option value="111">111. Al-Lahab (5)</option><option value="112">112. Al-Ikhlāṣ (4)</option><option value="113">113. Al-Falaq (5)</option><option selected="selected" value="114">114. An-Nās (6)</option></select>
+                        </li>
+                        <li class="navbar"> 
+                            <select onchange="changeaya(this)" class="form-control text-primary" name="" id="aya_select_head"><option value="1" selected="selected">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option></select>
+                        </li>
+                    </ul>
+                </div>
+
+            </nav>
+        </div>
+    </div>
+
+    <main>
+        <main>
+  <div style="line-height: 100px; font-size: 30px;" class="h5 g-color-black g-font-weight-400 arab bismillah text-center color-primary" dir="rtl" lang="ar">
+    بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ
+  </div>
+  <div class="" style="height:100%;min-height:800px;">
+    <!-- Tampilkan ayat -->
+    <div id="list-aya"><section id="section-1" class="container g-brd-bottom g-brd-gray-light-v3 g-pt-20 g-pb-20"><div class="row border-bottom p-2"><div class="col-md-1"><button type="button" data-id="6231" class="btn btn-outline-secondary dropdown-toggle mb-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">114:1</button><div class="dropdown-menu p-0"><button class="dropdown-item copyteks" onclick="copytext('قُلْ اَعُوْذُ بِرَبِّ النَّاسِۙ','Katakanlah (Nabi Muhammad), “Aku berlindung kepada Tuhan manusia,', 1)"><i class="fa fa-copy"></i> Copy</button><button class="dropdown-item animated zoomIn btntafsir" data-toggle="modal" data-target="#tafsirModal" data-aya="6231" data-ayanumber="1" data-suraid="114" data-ayatext="قُلْ اَعُوْذُ بِرَبِّ النَّاسِۙ"><i class="fa fa-book"></i> Tafsir</button><a href="https://quran.kemenag.go.id//pagesura/114" class="dropdown-item animated zoomIn"><i class="fa fa-columns"></i> Page</a><div class="dropdown-divider"> Share</div><div class="" style="width:75px;margin-top:2px;"><a href="http://www.facebook.com/sharer.php?u=https://quran.kemenag.go.id/sura/114/1" target="_blank" class="dropdown-item animated zoomIn"><i class="fab fa-facebook-f"></i> Facebook</a><a href="https://twitter.com/share?url=https://quran.kemenag.go.id/sura/114/1&amp;text=Qur%27an%20Kemenag%20Q.S%20114:1&amp;hashtags=qurankemenag" target="_blank" class="dropdown-item animated zoomIn"><i class="fab fa-twitter"></i> Twitter</a></div><div class="" style="width:75px;margin-top:2px;"><a href="https://api.whatsapp.com/send?text=Qur%27an%20Kemenag%20Q.S%20undefined:1%20-%20%D9%82%D9%8F%D9%84%D9%92%20%D8%A7%D9%8E%D8%B9%D9%8F%D9%88%D9%92%D8%B0%D9%8F%20%D8%A8%D9%90%D8%B1%D9%8E%D8%A8%D9%91%D9%90%20%D8%A7%D9%84%D9%86%D9%91%D9%8E%D8%A7%D8%B3%D9%90%DB%99%20-%20Katakanlah%20(Nabi%20Muhammad),%20%E2%80%9CAku%20berlindung%20kepada%20Tuhan%20manusia,%20-%20https://quran.kemenag.go.id/sura/114/1" target="_blank" class="dropdown-item animated zoomIn"><i class="fab fa-whatsapp"></i> Whatsapp</a></div></div><button id="player" class="btn btn-outline play-button ml-2 color-primary" onclick="playsound(1)"><i class="fa fa-play"></i></button><audio id="sound-id-1"><source type="audio/mpeg"></audio></div><div class="col-md-11 color-primary"><div id="alert-1"></div><p class="g-color-black text-right arab"><span>قُلْ اَعُوْذُ بِرَبِّ النَّاسِۙ ١</span></p><p class="h6 g-color-grey terjemahan">Katakanlah (Nabi Muhammad), “Aku berlindung kepada Tuhan manusia,</p><p class="smaller g-color-light terjemahan"></p></div></div></section><section id="section-2" class="container g-brd-bottom g-brd-gray-light-v3 g-pt-20 g-pb-20"><div class="row border-bottom p-2"><div class="col-md-1"><button type="button" data-id="6232" class="btn btn-outline-secondary dropdown-toggle mb-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">114:2</button><div class="dropdown-menu p-0"><button class="dropdown-item copyteks" onclick="copytext('مَلِكِ النَّاسِۙ','raja manusia,', 2)"><i class="fa fa-copy"></i> Copy</button><button class="dropdown-item animated zoomIn btntafsir" data-toggle="modal" data-target="#tafsirModal" data-aya="6232" data-ayanumber="2" data-suraid="114" data-ayatext="مَلِكِ النَّاسِۙ"><i class="fa fa-book"></i> Tafsir</button><a href="https://quran.kemenag.go.id//pagesura/114" class="dropdown-item animated zoomIn"><i class="fa fa-columns"></i> Page</a><div class="dropdown-divider"> Share</div><div class="" style="width:75px;margin-top:2px;"><a href="http://www.facebook.com/sharer.php?u=https://quran.kemenag.go.id/sura/114/2" target="_blank" class="dropdown-item animated zoomIn"><i class="fab fa-facebook-f"></i> Facebook</a><a href="https://twitter.com/share?url=https://quran.kemenag.go.id/sura/114/2&amp;text=Qur%27an%20Kemenag%20Q.S%20114:2&amp;hashtags=qurankemenag" target="_blank" class="dropdown-item animated zoomIn"><i class="fab fa-twitter"></i> Twitter</a></div><div class="" style="width:75px;margin-top:2px;"><a href="https://api.whatsapp.com/send?text=Qur%27an%20Kemenag%20Q.S%20undefined:2%20-%20%D9%85%D9%8E%D9%84%D9%90%D9%83%D9%90%20%D8%A7%D9%84%D9%86%D9%91%D9%8E%D8%A7%D8%B3%D9%90%DB%99%20-%20raja%20manusia,%20-%20https://quran.kemenag.go.id/sura/114/2" target="_blank" class="dropdown-item animated zoomIn"><i class="fab fa-whatsapp"></i> Whatsapp</a></div></div><button id="player" class="btn btn-outline play-button ml-2 color-primary" onclick="playsound(2)"><i class="fa fa-play"></i></button><audio id="sound-id-2"><source type="audio/mpeg"></audio></div><div class="col-md-11 color-primary"><div id="alert-2"></div><p class="g-color-black text-right arab"><span>مَلِكِ النَّاسِۙ ٢</span></p><p class="h6 g-color-grey terjemahan">raja manusia,</p><p class="smaller g-color-light terjemahan"></p></div></div></section><section id="section-3" class="container g-brd-bottom g-brd-gray-light-v3 g-pt-20 g-pb-20"><div class="row border-bottom p-2"><div class="col-md-1"><button type="button" data-id="6233" class="btn btn-outline-secondary dropdown-toggle mb-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">114:3</button><div class="dropdown-menu p-0"><button class="dropdown-item copyteks" onclick="copytext('اِلٰهِ النَّاسِۙ','sembahan manusia', 3)"><i class="fa fa-copy"></i> Copy</button><button class="dropdown-item animated zoomIn btntafsir" data-toggle="modal" data-target="#tafsirModal" data-aya="6233" data-ayanumber="3" data-suraid="114" data-ayatext="اِلٰهِ النَّاسِۙ"><i class="fa fa-book"></i> Tafsir</button><a href="https://quran.kemenag.go.id//pagesura/114" class="dropdown-item animated zoomIn"><i class="fa fa-columns"></i> Page</a><div class="dropdown-divider"> Share</div><div class="" style="width:75px;margin-top:2px;"><a href="http://www.facebook.com/sharer.php?u=https://quran.kemenag.go.id/sura/114/3" target="_blank" class="dropdown-item animated zoomIn"><i class="fab fa-facebook-f"></i> Facebook</a><a href="https://twitter.com/share?url=https://quran.kemenag.go.id/sura/114/3&amp;text=Qur%27an%20Kemenag%20Q.S%20114:3&amp;hashtags=qurankemenag" target="_blank" class="dropdown-item animated zoomIn"><i class="fab fa-twitter"></i> Twitter</a></div><div class="" style="width:75px;margin-top:2px;"><a href="https://api.whatsapp.com/send?text=Qur%27an%20Kemenag%20Q.S%20undefined:3%20-%20%D8%A7%D9%90%D9%84%D9%B0%D9%87%D9%90%20%D8%A7%D9%84%D9%86%D9%91%D9%8E%D8%A7%D8%B3%D9%90%DB%99%20-%20sembahan%20manusia%20-%20https://quran.kemenag.go.id/sura/114/3" target="_blank" class="dropdown-item animated zoomIn"><i class="fab fa-whatsapp"></i> Whatsapp</a></div></div><button id="player" class="btn btn-outline play-button ml-2 color-primary" onclick="playsound(3)"><i class="fa fa-play"></i></button><audio id="sound-id-3"><source type="audio/mpeg"></audio></div><div class="col-md-11 color-primary"><div id="alert-3"></div><p class="g-color-black text-right arab"><span>اِلٰهِ النَّاسِۙ ٣</span></p><p class="h6 g-color-grey terjemahan">sembahan manusia</p><p class="smaller g-color-light terjemahan"></p></div></div></section><section id="section-4" class="container g-brd-bottom g-brd-gray-light-v3 g-pt-20 g-pb-20"><div class="row border-bottom p-2"><div class="col-md-1"><button type="button" data-id="6234" class="btn btn-outline-secondary dropdown-toggle mb-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">114:4</button><div class="dropdown-menu p-0"><button class="dropdown-item copyteks" onclick="copytext('مِنْ شَرِّ الْوَسْوَاسِ ەۙ الْخَنَّاسِۖ','dari kejahatan (setan) pembisik yang bersembunyi', 4)"><i class="fa fa-copy"></i> Copy</button><button class="dropdown-item animated zoomIn btntafsir" data-toggle="modal" data-target="#tafsirModal" data-aya="6234" data-ayanumber="4" data-suraid="114" data-ayatext="مِنْ شَرِّ الْوَسْوَاسِ ەۙ الْخَنَّاسِۖ"><i class="fa fa-book"></i> Tafsir</button><a href="https://quran.kemenag.go.id//pagesura/114" class="dropdown-item animated zoomIn"><i class="fa fa-columns"></i> Page</a><div class="dropdown-divider"> Share</div><div class="" style="width:75px;margin-top:2px;"><a href="http://www.facebook.com/sharer.php?u=https://quran.kemenag.go.id/sura/114/4" target="_blank" class="dropdown-item animated zoomIn"><i class="fab fa-facebook-f"></i> Facebook</a><a href="https://twitter.com/share?url=https://quran.kemenag.go.id/sura/114/4&amp;text=Qur%27an%20Kemenag%20Q.S%20114:4&amp;hashtags=qurankemenag" target="_blank" class="dropdown-item animated zoomIn"><i class="fab fa-twitter"></i> Twitter</a></div><div class="" style="width:75px;margin-top:2px;"><a href="https://api.whatsapp.com/send?text=Qur%27an%20Kemenag%20Q.S%20undefined:4%20-%20%D9%85%D9%90%D9%86%D9%92%20%D8%B4%D9%8E%D8%B1%D9%91%D9%90%20%D8%A7%D9%84%D9%92%D9%88%D9%8E%D8%B3%D9%92%D9%88%D9%8E%D8%A7%D8%B3%D9%90%20%DB%95%DB%99%20%D8%A7%D9%84%D9%92%D8%AE%D9%8E%D9%86%D9%91%D9%8E%D8%A7%D8%B3%D9%90%DB%96%20-%20dari%20kejahatan%20(setan)%20pembisik%20yang%20bersembunyi%20-%20https://quran.kemenag.go.id/sura/114/4" target="_blank" class="dropdown-item animated zoomIn"><i class="fab fa-whatsapp"></i> Whatsapp</a></div></div><button id="player" class="btn btn-outline play-button ml-2 color-primary" onclick="playsound(4)"><i class="fa fa-play"></i></button><audio id="sound-id-4"><source type="audio/mpeg"></audio></div><div class="col-md-11 color-primary"><div id="alert-4"></div><p class="g-color-black text-right arab"><span>مِنْ شَرِّ الْوَسْوَاسِ ەۙ الْخَنَّاسِۖ ٤</span></p><p class="h6 g-color-grey terjemahan">dari kejahatan (setan) pembisik yang bersembunyi</p><p class="smaller g-color-light terjemahan"></p></div></div></section><section id="section-5" class="container g-brd-bottom g-brd-gray-light-v3 g-pt-20 g-pb-20"><div class="row border-bottom p-2"><div class="col-md-1"><button type="button" data-id="6235" class="btn btn-outline-secondary dropdown-toggle mb-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">114:5</button><div class="dropdown-menu p-0"><button class="dropdown-item copyteks" onclick="copytext('الَّذِيْ يُوَسْوِسُ فِيْ صُدُوْرِ النَّاسِۙ','yang membisikkan (kejahatan) ke dalam dada manusia,', 5)"><i class="fa fa-copy"></i> Copy</button><button class="dropdown-item animated zoomIn btntafsir" data-toggle="modal" data-target="#tafsirModal" data-aya="6235" data-ayanumber="5" data-suraid="114" data-ayatext="الَّذِيْ يُوَسْوِسُ فِيْ صُدُوْرِ النَّاسِۙ"><i class="fa fa-book"></i> Tafsir</button><a href="https://quran.kemenag.go.id//pagesura/114" class="dropdown-item animated zoomIn"><i class="fa fa-columns"></i> Page</a><div class="dropdown-divider"> Share</div><div class="" style="width:75px;margin-top:2px;"><a href="http://www.facebook.com/sharer.php?u=https://quran.kemenag.go.id/sura/114/5" target="_blank" class="dropdown-item animated zoomIn"><i class="fab fa-facebook-f"></i> Facebook</a><a href="https://twitter.com/share?url=https://quran.kemenag.go.id/sura/114/5&amp;text=Qur%27an%20Kemenag%20Q.S%20114:5&amp;hashtags=qurankemenag" target="_blank" class="dropdown-item animated zoomIn"><i class="fab fa-twitter"></i> Twitter</a></div><div class="" style="width:75px;margin-top:2px;"><a href="https://api.whatsapp.com/send?text=Qur%27an%20Kemenag%20Q.S%20undefined:5%20-%20%D8%A7%D9%84%D9%91%D9%8E%D8%B0%D9%90%D9%8A%D9%92%20%D9%8A%D9%8F%D9%88%D9%8E%D8%B3%D9%92%D9%88%D9%90%D8%B3%D9%8F%20%D9%81%D9%90%D9%8A%D9%92%20%D8%B5%D9%8F%D8%AF%D9%8F%D9%88%D9%92%D8%B1%D9%90%20%D8%A7%D9%84%D9%86%D9%91%D9%8E%D8%A7%D8%B3%D9%90%DB%99%20-%20yang%20membisikkan%20(kejahatan)%20ke%20dalam%20dada%20manusia,%20-%20https://quran.kemenag.go.id/sura/114/5" target="_blank" class="dropdown-item animated zoomIn"><i class="fab fa-whatsapp"></i> Whatsapp</a></div></div><button id="player" class="btn btn-outline play-button ml-2 color-primary" onclick="playsound(5)"><i class="fa fa-play"></i></button><audio id="sound-id-5"><source type="audio/mpeg"></audio></div><div class="col-md-11 color-primary"><div id="alert-5"></div><p class="g-color-black text-right arab"><span>الَّذِيْ يُوَسْوِسُ فِيْ صُدُوْرِ النَّاسِۙ ٥</span></p><p class="h6 g-color-grey terjemahan">yang membisikkan (kejahatan) ke dalam dada manusia,</p><p class="smaller g-color-light terjemahan"></p></div></div></section><section id="section-6" class="container g-brd-bottom g-brd-gray-light-v3 g-pt-20 g-pb-20"><div class="row border-bottom p-2"><div class="col-md-1"><button type="button" data-id="6236" class="btn btn-outline-secondary dropdown-toggle mb-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">114:6</button><div class="dropdown-menu p-0"><button class="dropdown-item copyteks" onclick="copytext('مِنَ الْجِنَّةِ وَالنَّاسِ ࣖ ','dari (golongan) jin dan manusia.”', 6)"><i class="fa fa-copy"></i> Copy</button><button class="dropdown-item animated zoomIn btntafsir" data-toggle="modal" data-target="#tafsirModal" data-aya="6236" data-ayanumber="6" data-suraid="114" data-ayatext="مِنَ الْجِنَّةِ وَالنَّاسِ ࣖ "><i class="fa fa-book"></i> Tafsir</button><a href="https://quran.kemenag.go.id//pagesura/114" class="dropdown-item animated zoomIn"><i class="fa fa-columns"></i> Page</a><div class="dropdown-divider"> Share</div><div class="" style="width:75px;margin-top:2px;"><a href="http://www.facebook.com/sharer.php?u=https://quran.kemenag.go.id/sura/114/6" target="_blank" class="dropdown-item animated zoomIn"><i class="fab fa-facebook-f"></i> Facebook</a><a href="https://twitter.com/share?url=https://quran.kemenag.go.id/sura/114/6&amp;text=Qur%27an%20Kemenag%20Q.S%20114:6&amp;hashtags=qurankemenag" target="_blank" class="dropdown-item animated zoomIn"><i class="fab fa-twitter"></i> Twitter</a></div><div class="" style="width:75px;margin-top:2px;"><a href="https://api.whatsapp.com/send?text=Qur%27an%20Kemenag%20Q.S%20undefined:6%20-%20%D9%85%D9%90%D9%86%D9%8E%20%D8%A7%D9%84%D9%92%D8%AC%D9%90%D9%86%D9%91%D9%8E%D8%A9%D9%90%20%D9%88%D9%8E%D8%A7%D9%84%D9%86%D9%91%D9%8E%D8%A7%D8%B3%D9%90%20%E0%A3%96%20%20-%20dari%20(golongan)%20jin%20dan%20manusia.%E2%80%9D%20-%20https://quran.kemenag.go.id/sura/114/6" target="_blank" class="dropdown-item animated zoomIn"><i class="fab fa-whatsapp"></i> Whatsapp</a></div></div><button id="player" class="btn btn-outline play-button ml-2 color-primary" onclick="playsound(6)"><i class="fa fa-play"></i></button><audio id="sound-id-6"><source type="audio/mpeg"></audio></div><div class="col-md-11 color-primary"><div id="alert-6"></div><p class="g-color-black text-right arab"><span>مِنَ الْجِنَّةِ وَالنَّاسِ ࣖ  ٦</span></p><p class="h6 g-color-grey terjemahan">dari (golongan) jin dan manusia.”</p><p class="smaller g-color-light terjemahan"></p></div></div></section></div>
+  </div>
+</main>
+<div class="modal fade" id="tafsirModal" tabindex="-1" role="dialog" aria-labelledby="tafsirModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="tafsirModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="" id="tafsirModalAyat"></div>
+        <div class="" id="tafsirModalTafsir"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="u-outer-spaces-helper"></div>
+    </main>
+    <footer class="site-footer">
+        ©
+2022 - All Rights Reserved - Lajnah Pentashihan Mushaf Al-Qur'an
+    </footer>
+    <a class="scrollup text-center" href="#" style="display: inline;">
+        <i class="icon-arrow-up"></i>
+    </a>
+    <!-- START: Template JS-->
+    <script src="Surah%20An-N%C4%81s%20-%20%D8%B3%D9%8F%D9%88%D8%B1%D9%8E%D8%A9%20%D8%A7%D9%84%D9%86%D8%A7%D8%B3%20Qur'an%20Kemenag_files/jquery-3.6.0.min.js"></script>
+    <script src="Surah%20An-N%C4%81s%20-%20%D8%B3%D9%8F%D9%88%D8%B1%D9%8E%D8%A9%20%D8%A7%D9%84%D9%86%D8%A7%D8%B3%20Qur'an%20Kemenag_files/jquery-ui.min.js"></script>
+    <script src="Surah%20An-N%C4%81s%20-%20%D8%B3%D9%8F%D9%88%D8%B1%D9%8E%D8%A9%20%D8%A7%D9%84%D9%86%D8%A7%D8%B3%20Qur'an%20Kemenag_files/jquery-migrate.min.js"></script>
+    <script src="Surah%20An-N%C4%81s%20-%20%D8%B3%D9%8F%D9%88%D8%B1%D9%8E%D8%A9%20%D8%A7%D9%84%D9%86%D8%A7%D8%B3%20Qur'an%20Kemenag_files/moment.js"></script>
+    <script src="Surah%20An-N%C4%81s%20-%20%D8%B3%D9%8F%D9%88%D8%B1%D9%8E%D8%A9%20%D8%A7%D9%84%D9%86%D8%A7%D8%B3%20Qur'an%20Kemenag_files/bootstrap.bundle.min.js"></script>
+    <script src="Surah%20An-N%C4%81s%20-%20%D8%B3%D9%8F%D9%88%D8%B1%D9%8E%D8%A9%20%D8%A7%D9%84%D9%86%D8%A7%D8%B3%20Qur'an%20Kemenag_files/jquery.slimscroll.min.js"></script>
+    <script src="Surah%20An-N%C4%81s%20-%20%D8%B3%D9%8F%D9%88%D8%B1%D9%8E%D8%A9%20%D8%A7%D9%84%D9%86%D8%A7%D8%B3%20Qur'an%20Kemenag_files/bootstrap4-toggle.min.js"></script>
+    <script src="Surah%20An-N%C4%81s%20-%20%D8%B3%D9%8F%D9%88%D8%B1%D9%8E%D8%A9%20%D8%A7%D9%84%D9%86%D8%A7%D8%B3%20Qur'an%20Kemenag_files/toastr.min.js"></script>
+    <!-- END: Template JS-->
+    <!-- START: APP JS-->
+    <script src="Surah%20An-N%C4%81s%20-%20%D8%B3%D9%8F%D9%88%D8%B1%D9%8E%D8%A9%20%D8%A7%D9%84%D9%86%D8%A7%D8%B3%20Qur'an%20Kemenag_files/app.js"></script><div id="settings" class="">
+            <a href="#" id="settingbutton" class="setting"> 
+                <h5 class="mb-0"><i class="icon-settings"></i></h5>
+            </a>
+            <div class="sidbarchat p-3">
+                <h5 class="mb-0">Pengaturan</h5>
+                <hr>
+                <h6>Pengaturan Terjemah</h6>
+                    <input tabindex="5" type="checkbox" name="terjemah" value="1" id="checkterjemah" checked="checked">
+                    <label for="checkterjemah">Tampilkan</label>        
+                <hr class="float-left w-100">
+                <h6>Pengaturan Warna</h6>
+                <ul class="list-inline float-left claerfix">
+                    <li class="color-box m-2 list-inline-item float-left color1" data-color="#1e3d73"></li>
+                    <li class="color-box m-2 list-inline-item float-left color2" data-color="#0bb2d4"></li>                    
+                    <li class="color-box m-2 list-inline-item float-left color3" data-color="#17b3a3"></li>
+                    <li class="color-box m-2 list-inline-item float-left color5" data-color="#76c335"></li>
+                    <li class="color-box m-2 list-inline-item float-left color6" data-color="#3e8ef7"></li>
+                    <li class="float-left list-inline-item"><input type="color" class="cursor-pointer color m-2" value="#1e3d73"></li>
+                </ul>
+                <hr class="float-left w-100">
+               
+                <h6>Pengaturan Tema</h6>                              
+                <label class="chkbox">Light 
+                    <input name="style" value="light" class="style" type="radio">
+                    <span class="checkmark"></span>
+                </label> <br>
+                <label class="chkbox mt-2">Dark 
+                    <input name="style" value="dark" class="style" type="radio">
+                    <span class="checkmark"></span>
+                </label> <br>
+                <label class="chkbox mt-2">Semi Dark 
+                    <input name="style" value="semi-dark" class="style" type="radio">
+                    <span class="checkmark"></span>
+                </label> <br>
+                <br>
+                <div class="gradient-img float-left">
+                <h6>Gradient Image</h6>
+                <ul class="list-inline float-left claerfix p-0">                    
+                <li class="gradient-img-block m-2 list-inline-item float-left color2" data-primary="#396e94" data-img="gradient-bg.jpg">
+                <img src="Surah%20An-N%C4%81s%20-%20%D8%B3%D9%8F%D9%88%D8%B1%D9%8E%D8%A9%20%D8%A7%D9%84%D9%86%D8%A7%D8%B3%20Qur'an%20Kemenag_files/g.jpg" alt="gradient" width="100">
+                </li> 
+      <li class="gradient-img-block m-2 list-inline-item float-left color2" data-primary="#49424a" data-img="gradient-bg4.jpg">
+                <img src="Surah%20An-N%C4%81s%20-%20%D8%B3%D9%8F%D9%88%D8%B1%D9%8E%D8%A9%20%D8%A7%D9%84%D9%86%D8%A7%D8%B3%20Qur'an%20Kemenag_files/g4.jpg" alt="gradient" width="100">
+                </li>
+    <li class="gradient-img-block m-2 list-inline-item float-left color2" data-primary="#eb6709" data-img="gradient-bg7.jpg">
+                <img src="Surah%20An-N%C4%81s%20-%20%D8%B3%D9%8F%D9%88%D8%B1%D9%8E%D8%A9%20%D8%A7%D9%84%D9%86%D8%A7%D8%B3%20Qur'an%20Kemenag_files/g7.jpg" alt="gradient" width="100">
+                </li>
+                <li class="gradient-img-block m-2 list-inline-item float-left color2" data-primary="#bb416b" data-img="gradient-bg1.jpg">
+                <img src="Surah%20An-N%C4%81s%20-%20%D8%B3%D9%8F%D9%88%D8%B1%D9%8E%D8%A9%20%D8%A7%D9%84%D9%86%D8%A7%D8%B3%20Qur'an%20Kemenag_files/g1.jpg" alt="gradient" width="100">
+                </li>
+                <li class="gradient-img-block m-2 list-inline-item float-left color2" data-primary="#17b3a3" data-img="gradient-bg2.jpg">
+                <img src="Surah%20An-N%C4%81s%20-%20%D8%B3%D9%8F%D9%88%D8%B1%D9%8E%D8%A9%20%D8%A7%D9%84%D9%86%D8%A7%D8%B3%20Qur'an%20Kemenag_files/g2.jpg" alt="gradient" width="100">
+                </li>
+                <li class="gradient-img-block m-2 list-inline-item float-left color2" data-primary="#4e7184" data-img="gradient-bg3.jpg">
+                <img src="Surah%20An-N%C4%81s%20-%20%D8%B3%D9%8F%D9%88%D8%B1%D9%8E%D8%A9%20%D8%A7%D9%84%D9%86%D8%A7%D8%B3%20Qur'an%20Kemenag_files/g3.jpg" alt="gradient" width="100">
+                </li>
+              
+                <li class="gradient-img-block m-2 list-inline-item float-left color2" data-primary="#11d2d7" data-img="gradient-bg5.jpg">
+                <img src="Surah%20An-N%C4%81s%20-%20%D8%B3%D9%8F%D9%88%D8%B1%D9%8E%D8%A9%20%D8%A7%D9%84%D9%86%D8%A7%D8%B3%20Qur'an%20Kemenag_files/g5.jpg" alt="gradient" width="100">
+                </li>
+                <li class="gradient-img-block m-2 list-inline-item float-left color2" data-primary="#da88d1" data-img="gradient-bg6.jpg">
+                <img src="Surah%20An-N%C4%81s%20-%20%D8%B3%D9%8F%D9%88%D8%B1%D9%8E%D8%A9%20%D8%A7%D9%84%D9%86%D8%A7%D8%B3%20Qur'an%20Kemenag_files/g6.jpg" alt="gradient" width="100">
+                </li>
+                
+                </ul>
+                </div>
+                <hr class="float-left w-100">
+            </div>
+        </div>
+
+    <script>
+        $(document).ready(function() {
+      $('.btn-font').click(function() {
+				$('.bs-font').modal('show');
+	     });
+    });
+    var sura_id = 114;
+    var aya_number = 0;
+    var ayat = 6;
+    var aya_start = 1;
+    var aya_end = 0;
+    console.log('Jumlah ayat ',ayat);
+    // var mp3_url = 'https://quran.kemenag.go.id/storage/aya-murottals/November2018/';
+    var mp3_url = 'https://quran.kemenag.go.id/cmsq/source/s01/';
+    var site_url = 'https://quran.kemenag.go.id/';
+    var api_url = 'https://quran.kemenag.go.id/api/v1/';
+    var share_url = 'https://quran.kemenag.go.id';
+    </script>
+    <script src="Surah%20An-N%C4%81s%20-%20%D8%B3%D9%8F%D9%88%D8%B1%D9%8E%D8%A9%20%D8%A7%D9%84%D9%86%D8%A7%D8%B3%20Qur'an%20Kemenag_files/quran.js"></script>
+    <!-- END: APP JS-->
+    <!-- scroll bar -->
+    <script src="Surah%20An-N%C4%81s%20-%20%D8%B3%D9%8F%D9%88%D8%B1%D9%8E%D8%A9%20%D8%A7%D9%84%D9%86%D8%A7%D8%B3%20Qur'an%20Kemenag_files/progress-bar.js"></script>
+
+
+</body></html>
