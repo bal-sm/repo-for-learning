@@ -1,3 +1,4 @@
+quran = [
         "https://quran.kemenag.go.id/surah/1",
         "https://quran.kemenag.go.id/surah/2",
         "https://quran.kemenag.go.id/surah/3",
@@ -112,3 +113,4 @@
         "https://quran.kemenag.go.id/surah/112",
         "https://quran.kemenag.go.id/surah/113",
         "https://quran.kemenag.go.id/surah/114",
+]
