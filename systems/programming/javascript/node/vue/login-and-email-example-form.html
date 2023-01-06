@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Vue.js Login and Email Example Form</title>
+    </head>
+    <script src="https://unpkg.com/vue@next">
+        let app = Vue.createApp(
+            {
+                data: function() {
+                    return {
+                        email: '',
+                        password: ''
+                    }
+                },
+                methods: {
+                    login: function() {
+                        console.log('Login')
+                    },
+                    register: function() {
+                        console.log('Register')
+                    }
+                }
+                computed: {
+                    emailIsValid: function() {
+                        return this.email.includes('@')
+                    }
+                }
+            }
+        )
+
+    </script>
+</html>
