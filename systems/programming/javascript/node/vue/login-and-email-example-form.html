@@ -8,8 +8,8 @@
                 data: function() {
                     return {
                         email: '',
-                        password: ''
-                    }
+                        password: '',
+                    },
                 },
                 methods: {
                     login: function() {
@@ -17,12 +17,12 @@
                     },
                     register: function() {
                         console.log('Register')
-                    }
-                }
+                    },
+                },
                 computed: {
                     emailIsValid: function() {
                         return this.email.includes('@')
-                    }
+                    },
                 }
             }
         )
