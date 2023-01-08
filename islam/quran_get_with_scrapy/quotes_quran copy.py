@@ -10,8 +10,8 @@ class QuotesSpider(scrapy.Spider):
     def parse(self, response):
         for quote in response.css("div.quote"):
             yield {
-                "author": quote.xpath("span/small/text()").get(),
-                "text": quote.css("span.text::text").get(),
+                "surat": quote.xpath("span/small/text()").get(),
+                "ayat": quote.css("span.text::text").get(),
             }
 
         next_page = response.css('li.next a::attr("href")').get()
