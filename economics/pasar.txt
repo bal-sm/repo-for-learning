@@ -1,0 +1,8 @@
+Persamaan Demand:
+bY=aX+c
+
+Persamaan Supply:
+bY=-aX+c
+
+Point break:
+Eliminasi Persaman Demand and Supply
