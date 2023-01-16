@@ -1,8 +1,11 @@
 Persamaan Demand:
-bY=aX+c
+bY=-aX+c  => bP=-aQ+c
 
 Persamaan Supply:
-bY=-aX+c
+bY=aX+c => bP=aQ+c
 
-Point break:
+Titik temu:
 Eliminasi Persaman Demand and Supply
+
+P = Price
+Q = Quantity
