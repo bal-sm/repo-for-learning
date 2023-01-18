@@ -12,3 +12,13 @@ I am using Vuetify, so this could be either a VueJS, Vuetify or even HTML questi
 ```
 Take the :key for example, what does the colon (:) before the word key mean? And where can I find what values I can use ?
 
+Example:
+```html
+<vue-select 
+  class="vue-select1" 
+  name="select1"
+  :options="options1" 
+  :model.sync="result1"
+></vue-select>
+```
+What is the meaning the colon in front of :options and :model.sync here? I've searched all over the internet and can't find an answer anywhere.
