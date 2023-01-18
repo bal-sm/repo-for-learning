@@ -14,4 +14,7 @@ Time (Day/Night/Continuous)
 
 Rangkuman:
 Contoh:
-INT. BEDROOM - BED - CONTINUOUS
+```
+Int./Ext.    Setting         Time
+   INT.   BEDROOM - BED - CONTINUOUS
+```
