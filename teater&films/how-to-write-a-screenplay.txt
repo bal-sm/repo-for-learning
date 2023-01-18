@@ -6,5 +6,12 @@ Slugline / Scene header
 O.C. (Off camera)
 O.S. (Off screen)
 (parenthetical)
+Int. (Interior)
+Ext. (Exterior)
+Setting (Coffee House/Bedroom)
+Time (Day/Night/Continuous)
+
 
 Rangkuman:
+Contoh:
+INT. BEDROOM - BED - CONTINUOUS
