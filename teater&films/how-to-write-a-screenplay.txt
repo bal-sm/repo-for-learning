@@ -18,3 +18,4 @@ Contoh:
 Int./Ext.    Setting         Time
    INT.   BEDROOM - BED - CONTINUOUS
 ```
+
