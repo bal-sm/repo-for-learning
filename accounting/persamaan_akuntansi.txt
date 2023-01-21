@@ -1,0 +1,8 @@
+Kan ada 5:
+Aset (+)
+Kewajiban (-)
+Ekuitas (-)
+Biaya (+)
+Pendapatan (-)
+
+Aset + Biaya = Ekuitas + Kewajiban + Pendapatan
