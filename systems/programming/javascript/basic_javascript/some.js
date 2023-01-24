@@ -75,6 +75,14 @@ catch(err) {
 }
 console.log(' ')
 //0:14:05 Basic Math
+console.log('Basic Math')
+console.log('__________')
+var a = 5
+console.log('a = ' + a)
+a += 5
+console.log('a = a + 5 atau a += 5')
+console.log('a = ' + a)
+console.log(' ')
 //0:15:30 Increment and Decrement
 //0:16:22 Decimal Numbers
 //0:16:48 Multiply Two Decimals
