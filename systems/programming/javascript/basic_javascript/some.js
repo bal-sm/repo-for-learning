@@ -2,13 +2,21 @@
 //0:00:00 Introduction
 //Hello World
 //0:01:24 Running JavaScript
+console.log('Running JavaScript')
+console.log('__________________')
 console.log('Is it running?')
+console.log(' ')
 //0:04:23 Comment Your Code
 //no comment
 //0:05:56 Declare Variables
+console.log('Declare Variables')
+console.log('_________________')
 var myName = "Iqbal Syifa Mahmuda";
 console.log(myName);
+console.log(' ')
 //Changing Variables
+console.log('Changing Variables')
+console.log('__________________')
 myName = "Mahdi"
 console.log(myName);
 //with let
@@ -17,15 +25,25 @@ console.log(myHusband)
 //var with no assignment operator
 var nothing
 console.log(nothing)
+console.log(' ')
 //undefined
 //0:06:15 Storing Values with the Assignment Operator
+console.log('Storing Values with the Assignment Operator')
+console.log('___________________________________________')
 var alreadyDoneThat;
 alreadyDoneThat = 'Nope, you haven\'t'
 console.log(alreadyDoneThat);
+console.log(' ')
 //0:11:31 Initializing Variables with the Assignment Operator
+console.log('Initializing Variables with the Assignment Operator')
+console.log('___________________________________________________')
 var alreadyDoneThat2 = "Already Done That 2";
 console.log(alreadyDoneThat2);
+console.log(' ')
 //0:11:58 Uninitialized Variables
+console.log('Uninitialized Variables')
+console.log('_______________________')
+
 var a = 5
 var b = 12
 var c = "I'm "
@@ -43,6 +61,7 @@ console.log("After")
 console.log(a)
 console.log(b)
 console.log(c)
+console.log(' ')
 //0:12:40 Case Sensitivity in Variables
 //0:14:05 Basic Math
 //0:15:30 Increment and Decrement
