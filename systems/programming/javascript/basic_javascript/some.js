@@ -11,6 +11,9 @@ console.log(myName);
 //Changing Variables
 myName = "Mahdi"
 console.log(myName);
+//with let
+let myHusband = "Muhammad saw."
+console.log(myHusband)
 //0:06:15 Storing Values with the Assignment Operator
 var alreadyDoneThat = "Already Done That";
 console.log(alreadyDoneThat);
