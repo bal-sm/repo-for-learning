@@ -26,6 +26,17 @@ console.log(alreadyDoneThat);
 var alreadyDoneThat2 = "Already Done That 2";
 console.log(alreadyDoneThat2);
 //0:11:58 Uninitialized Variables
+var a = 5
+var b = 12
+var c = "I'm "
+
+a = a + 5
+b = b + 7
+c = c + "Mahamuda"
+
+console.log(a)
+console.log(b)
+console.log(c)
 //0:12:40 Case Sensitivity in Variables
 //0:14:05 Basic Math
 //0:15:30 Increment and Decrement
