@@ -30,6 +30,10 @@ var a = 5
 var b = 12
 var c = "I'm "
 
+console.log(a)
+console.log(b)
+console.log(c)
+
 a = a + 5
 b = b + 7
 c = c + "Mahamuda"
