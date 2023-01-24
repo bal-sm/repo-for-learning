@@ -63,6 +63,17 @@ console.log(b)
 console.log(c)
 console.log(' ')
 //0:12:40 Case Sensitivity in Variables
+console.log('Case Sensitivity in Variables')
+console.log('_____________________________')
+
+var TaKbIsABeRsAma
+try {
+    console.log(takbisabersama)
+}
+catch(err) {
+    console.log('pasti bisa sayang, selamanya, don\'t worry')
+}
+console.log(' ')
 //0:14:05 Basic Math
 //0:15:30 Increment and Decrement
 //0:16:22 Decimal Numbers
