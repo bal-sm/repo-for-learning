@@ -1,6 +1,8 @@
 //Source: https://www.youtube.com/watch?v=PkZNo7MFNFg
 //0:00:00 Introduction
+//Hello World
 //0:01:24 Running JavaScript
+console.log('Is it running?')
 //0:04:23 Comment Your Code
 //0:05:56 Declare Variables
 //0:06:15 Storing Values with the Assignment Operator
