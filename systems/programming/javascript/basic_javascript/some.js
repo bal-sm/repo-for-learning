@@ -19,7 +19,8 @@ var nothing
 console.log(nothing)
 //undefined
 //0:06:15 Storing Values with the Assignment Operator
-var alreadyDoneThat = "Already Done That";
+var alreadyDoneThat;
+alreadyDoneThat = 'Nope, you haven\'t'
 console.log(alreadyDoneThat);
 //0:11:31 Initializing Variables with the Assignment Operator
 var alreadyDoneThat2 = "Already Done That 2";
