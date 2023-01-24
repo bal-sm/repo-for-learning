@@ -84,6 +84,14 @@ console.log('a = a + 5 atau a += 5')
 console.log('a = ' + a)
 console.log(' ')
 //0:15:30 Increment and Decrement
+console.log('Increment and Decrement')
+console.log('_______________________')
+console.log('~already done incremental operation~')
+var b = 10
+console.log('b = ' + b)
+b -= 3
+console.log('b = b - 3 atau b -= 3')
+console.log('b = ' + b)
 //0:16:22 Decimal Numbers
 //0:16:48 Multiply Two Decimals
 //0:17:18 Divide Decimals
