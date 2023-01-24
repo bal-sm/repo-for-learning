@@ -9,6 +9,8 @@ console.log('Is it running?')
 var myName = "Iqbal Syifa Mahmuda";
 console.log(myName);
 //0:06:15 Storing Values with the Assignment Operator
+var alreadyDoneThat = "Already Done That";
+console.log(alreadyDoneThat);
 //0:11:31 Initializing Variables with the Assignment Operator
 //0:11:58 Uninitialized Variables
 //0:12:40 Case Sensitivity in Variables
