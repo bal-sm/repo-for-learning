@@ -7,6 +7,9 @@ console.log('Is it running?')
 //no comment
 //0:05:56 Declare Variables
 var myName = "Iqbal Syifa Mahmuda";
+//Changing Variables
+console.log(myName);
+myName = "Mahdi"
 console.log(myName);
 //0:06:15 Storing Values with the Assignment Operator
 var alreadyDoneThat = "Already Done That";
