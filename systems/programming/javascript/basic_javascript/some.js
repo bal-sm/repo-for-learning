@@ -18,6 +18,8 @@ console.log(myHusband)
 var alreadyDoneThat = "Already Done That";
 console.log(alreadyDoneThat);
 //0:11:31 Initializing Variables with the Assignment Operator
+var alreadyDoneThat2 = "Already Done That 2";
+console.log(alreadyDoneThat2);
 //0:11:58 Uninitialized Variables
 //0:12:40 Case Sensitivity in Variables
 //0:14:05 Basic Math
