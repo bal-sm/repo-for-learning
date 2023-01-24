@@ -92,6 +92,7 @@ console.log('b = ' + b)
 b -= 3
 console.log('b = b - 3 atau b -= 3')
 console.log('b = ' + b)
+console.log(' ')
 //0:16:22 Decimal Numbers
 //0:16:48 Multiply Two Decimals
 //0:17:18 Divide Decimals
