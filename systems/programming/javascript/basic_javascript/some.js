@@ -94,6 +94,18 @@ console.log('b = b - 3 atau b -= 3')
 console.log('b = ' + b)
 console.log(' ')
 //0:16:22 Decimal Numbers
+console.log('Decimal Numbers')
+console.log('_______________')
+var aDecimal = 2.7
+console.log(aDecimal)
+var tiga_terus = 1/3
+console.log(tiga_terus)
+//round the numbers
+aDecimal = Math.round(aDecimal)
+console.log(aDecimal)
+tiga_terus = Math.round(tiga_terus)
+console.log(tiga_terus)
+console.log(' ')
 //0:16:48 Multiply Two Decimals
 //0:17:18 Divide Decimals
 //0:17:33 Finding a Remainder
