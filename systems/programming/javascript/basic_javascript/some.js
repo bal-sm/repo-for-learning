@@ -6,6 +6,8 @@ console.log('Is it running?')
 //0:04:23 Comment Your Code
 //no comment
 //0:05:56 Declare Variables
+var myName = "Iqbal Syifa Mahmuda";
+console.log(myName);
 //0:06:15 Storing Values with the Assignment Operator
 //0:11:31 Initializing Variables with the Assignment Operator
 //0:11:58 Uninitialized Variables
