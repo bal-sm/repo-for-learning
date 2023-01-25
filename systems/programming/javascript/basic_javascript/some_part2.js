@@ -13,6 +13,12 @@ var underStr = "Gello World"
 console.log(underStr)
 console.log(' ')
 //0:34:23 Find the Nth Character
+console.log('Find the Nth Character')
+console.log('______________________')
+var secondLetterOfFirstName = "";
+secondLetterOfFirstName = firstName[1]
+console.log(secondLetterOfFirstName)
+console.log(' ')
 //0:36:28 Word Blanks
 //0:40:44 Arrays
 //0:41:43 Nest Arrays
