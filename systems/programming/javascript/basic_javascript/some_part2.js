@@ -11,6 +11,12 @@ console.log('Understand String Immutability')
 console.log('______________________________')
 var underStr = "Gello World"
 console.log(underStr)
+try {
+    underStr[0] = "H"
+}
+catch(err) {
+    console.log('can\'t but not catched, idky')
+}
 console.log(' ')
 //0:34:23 Find the Nth Character
 console.log('Find the Nth Character')
