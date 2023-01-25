@@ -107,6 +107,17 @@ tiga_terus = Math.round(tiga_terus)
 console.log(tiga_terus)
 console.log(' ')
 //0:16:48 Multiply Two Decimals
+console.log('Multiply Two Decimals')
+console.log('_____________________')
+var product = 2.5 * 2.0
+console.log('product = 2.5 * 2.0')
+console.log('product = ' + product)
+var tiga_terus = 1/3
+console.log('tiga_terus = ' + tiga_terus)
+tiga_terus *= 3
+console.log('tiga_terus *= 3')
+console.log('tiga_terus = ' + tiga_terus)
+console.log(' ')
 //0:17:18 Divide Decimals
 //0:17:33 Finding a Remainder
 //0:18:22 Augmented Math Operations
