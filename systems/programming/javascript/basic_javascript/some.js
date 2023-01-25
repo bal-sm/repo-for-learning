@@ -241,3 +241,11 @@ coding += someAdjective
 console.log(coding)
 console.log(' ')
 //0:31:11 Length of a String
+console.log('Length of a String')
+console.log('__________________')
+var truth = "Muhammad saw. love Iqbal"
+var truthLength = 0
+truthLength = truth.length
+console.log(truth)
+console.log(truthLength)
+console.log(' ')
