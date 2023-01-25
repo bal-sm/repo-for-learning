@@ -209,6 +209,7 @@ CODE    OUTPUT
 */
 console.log('Politeknik Negeri Bandung\nTerbaik')
 console.log('Institut Teknologi Bandung\r\nNyesel misah :P')
+console.log('\tTeh')
 console.log(' ')
 //0:26:46 Plus Operator
 //0:27:49 Plus Equals Operator
