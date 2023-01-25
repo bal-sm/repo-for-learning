@@ -128,6 +128,13 @@ console.log('tiga_terus /= 3')
 console.log('tiga_terus = ' + tiga_terus)
 console.log(' ')
 //0:17:33 Finding a Remainder
+console.log('Finding a Remainder')
+console.log('___________________')
+var remainder
+remainder = 11 % 3
+console.log('remainder = 11 % 3')
+console.log('remainder = ' + remainder)
+console.log(' ')
 //0:18:22 Augmented Math Operations
 //0:21:19 Declare String Variables
 //0:22:01 Escaping Literal Quotes
