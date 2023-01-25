@@ -136,6 +136,45 @@ console.log('remainder = 11 % 3')
 console.log('remainder = ' + remainder)
 console.log(' ')
 //0:18:22 Augmented Math Operations
+console.log('Augmented Math Operations')
+console.log('_________________________')
+
+console.log(' ')
+
+var a = 1
+var b = 1
+var c = 1
+var d = 1
+
+console.log(' ')
+
+console.log('a = 1')
+console.log('b = 1')
+console.log('c = 1')
+console.log('d = 1')
+
+console.log(' ')
+
+a += 5
+b -= 3
+c /= 3
+d *= 3
+
+console.log(' ')
+
+console.log('a += 5')
+console.log('b -= 3')
+console.log('c /= 3')
+console.log('d *= 3')
+
+console.log(' ')
+
+console.log('a = ' + a)
+console.log('b = ' + b)
+console.log('c = ' + c)
+console.log('d = ' + d)
+
+console.log(' ')
 //0:21:19 Declare String Variables
 //0:22:01 Escaping Literal Quotes
 //0:23:44 Quoting Strings with Single Quotes
