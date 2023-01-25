@@ -7,6 +7,11 @@ firstLetterOfFirstName = firstName[0]
 console.log(firstLetterOfFirstName)
 console.log(' ')
 //0:33:27 Understand String Immutability
+console.log('Understand String Immutability')
+console.log('______________________________')
+var underStr = "Gello World"
+console.log(underStr)
+console.log(' ')
 //0:34:23 Find the Nth Character
 //0:36:28 Word Blanks
 //0:40:44 Arrays
