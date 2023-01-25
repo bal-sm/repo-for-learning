@@ -229,7 +229,7 @@ console.log(' ')
 console.log('Constructing Strings with Variables')
 console.log('___________________________________')
 var im = "3"
-var what = "IM" + im + "asa jadi lebih mahal. engga beb. oh iya atuh :*"
+var what = "IM" + im + " asa jadi lebih mahal. engga beb. oh iya atuh :*"
 console.log(what)
 console.log(' ')
 //0:30:14 Appending Variables to Strings
