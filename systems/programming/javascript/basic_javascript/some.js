@@ -176,6 +176,11 @@ console.log('d = ' + d)
 
 console.log(' ')
 //0:21:19 Declare String Variables
+console.log('Declare String Variables')
+console.log('________________________')
+var myStr = "I'm gonna save the world and people of the akhirat"
+console.log(myStr)
+console.log(' ')
 //0:22:01 Escaping Literal Quotes
 //0:23:44 Quoting Strings with Single Quotes
 //0:25:18 Escape Sequences
