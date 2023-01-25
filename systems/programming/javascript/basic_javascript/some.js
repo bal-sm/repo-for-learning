@@ -233,4 +233,11 @@ var what = "IM" + im + " asa jadi lebih mahal. engga beb. oh iya atuh :*"
 console.log(what)
 console.log(' ')
 //0:30:14 Appending Variables to Strings
+console.log('Appending Variables to Strings')
+console.log('______________________________')
+var someAdjective = "worthwhile"
+var coding = "Learn to code is "
+coding += someAdjective
+console.log(coding)
+console.log(' ')
 //0:31:11 Length of a String
