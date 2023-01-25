@@ -212,6 +212,12 @@ console.log('Institut Teknologi Bandung\r\nNyesel misah :P')
 console.log('\tTeh')
 console.log(' ')
 //0:26:46 Plus Operator
+console.log('Plus Operator')
+console.log('_____________')
+var first = "The first. "
+var last = "The last."
+console.log(first + last)
+console.log(' ')
 //0:27:49 Plus Equals Operator
 //0:29:01 Constructing Strings with Variables
 //0:30:14 Appending Variables to Strings
