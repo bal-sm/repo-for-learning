@@ -194,6 +194,22 @@ console.log('__________________________________')
 console.log('Assalamu\'alaikum Warrahmatullaahi Wabarakaatuh')
 console.log(' ')
 //0:25:18 Escape Sequences
+console.log('Escape Sequences')
+console.log('________________')
+/*
+CODE    OUTPUT
+ \'  single quote
+ \"  double quote
+ \\  backslash
+ \n  newline
+ \r  carriage return
+ \t  tab
+ \b  backspace
+ \f  form feed
+*/
+console.log('Politeknik Negeri Bandung\nTerbaik')
+console.log('Institut Teknologi Bandung\r\nNyesel misah :P')
+console.log(' ')
 //0:26:46 Plus Operator
 //0:27:49 Plus Equals Operator
 //0:29:01 Constructing Strings with Variables
