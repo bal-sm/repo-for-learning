@@ -243,7 +243,7 @@ console.log(' ')
 //0:31:11 Length of a String
 console.log('Length of a String')
 console.log('__________________')
-var truth = "Muhammad saw. love Iqbal"
+var truth = "Muhammad saw. love Iqbal Syifa Mahmuda"
 var truthLength = 0
 truthLength = truth.length
 console.log(truth)
