@@ -1,0 +1,70 @@
+listnumb1 = [1, 2, 3, 4, 5]
+listbuah1 = ['kelapa', 'muda', 'buah', 'batu']
+listbebas1 = ['whatever']
+
+listbebas1.extend(listnumb1)
+print ('listbebas1.extend(listnumb1)')
+print (listbebas1)
+
+listbebas2 = ['bebas']
+listbebas2.append(listnumb1)
+print ('listbebas2.append(listnumb1)')
+print (listbebas2)
+print ('hah')
+
+listbebas3 = listbuah1.copy()
+print('listbebas3 = listbuah1.copy()')
+print (listbebas3)
+print('print (len(listbebas3))')
+print (len(listbebas3))
+print ('print (len(listbebas3[-1]))')
+print (len(listbebas3[-1]))
+listbebas3.append('cherry')
+print ('print (listbebas3)')
+print (listbebas3)
+print ('print (len(listbebas3))')
+print (len(listbebas3))
+print ('print (len(listbebas3[-1]))')
+print (len(listbebas3[-1]))
+
+listbebas3.insert(1, 'mango')
+print("listbebas3.insert(1, 'mango')")
+print(listbebas3)
+
+listbebas3.remove('mango')
+print("listbebas3.remove('mango')")
+print(listbebas3)
+
+listbebascopy3 = listbebas3.copy()
+print('listbebascopy3 = listbebas3.copy()')
+print(listbebascopy3)
+
+listbebas3.clear()
+print('listbebas3.clear')
+print(listbebas3)
+listbebas3 = listbebascopy3.copy()
+print("listbebas3 = listbebascopy3.copy()")
+print(listbebas3)
+listbebas3.sort()
+print('listbebas3.sort()')
+print(listbebas3)
+listbebas3.reverse()
+print('listbebas3.reverse()')
+print(listbebas3)
+listbebas3.pop()
+print('listbebas3.pop()')
+print(listbebas3)
+listbebas3.pop()
+print('listbebas3.pop(2)')
+print(listbebas3)
+listbebas3.append('muda')
+print("listbebas3.append('muda')")
+print(listbebas3)
+listbebas3.remove('muda')
+print("listbebas3.remove('muda')")
+print(listbebas3)
+
+del listbebas3
+print ('del listbebas3')
+print ('jadinya gak ada sama sekali listbebas3 makanya eror pas print (listbebas3)')
+print (listbebas3)

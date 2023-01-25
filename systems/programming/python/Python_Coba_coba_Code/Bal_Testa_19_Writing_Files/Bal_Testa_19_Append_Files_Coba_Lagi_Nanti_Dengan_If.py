@@ -1,0 +1,2 @@
+coun_file = open("C:/Users/balsemanget/Documents/Bal_Insync/OneDrive_Polban/Polban (Pindah Dari Google Drive)/Semester 8/Belajar Python/Python_Coba_coba_Code/Bal_Testa_19_Writing_Files/countries.txt", 'a')
+coun_file.write('\nIni country baru')

@@ -1,0 +1,7 @@
+contoh_tuple = ('coba', 'coba2')
+print (contoh_tuple)
+jadi_list = list(contoh_tuple)
+print (jadi_list)
+jadi_list.insert(1, 'coba lagi')
+print (jadi_list)
+print (contoh_tuple)
