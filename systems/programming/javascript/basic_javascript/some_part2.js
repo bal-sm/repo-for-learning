@@ -1,4 +1,11 @@
 //0:32:01 Bracket Notation
+console.log('Bracket Notation')
+console.log('________________')
+var firstName = "Aja";
+var firstLetterOfFirstName = "";
+firstLetterOfFirstName = firstName[0]
+console.log(firstLetterOfFirstName)
+console.log(' ')
 //0:33:27 Understand String Immutability
 //0:34:23 Find the Nth Character
 //0:36:28 Word Blanks
