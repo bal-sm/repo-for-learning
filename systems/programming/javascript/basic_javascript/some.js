@@ -182,6 +182,12 @@ var myStr = "I'm gonna save the world and people of the akhirat"
 console.log(myStr)
 console.log(' ')
 //0:22:01 Escaping Literal Quotes
+console.log('Escaping Literal Quotes')
+console.log('_______________________')
+var penggalan
+penggalan = "\"people\""
+console.log(penggalan)
+console.log(' ')
 //0:23:44 Quoting Strings with Single Quotes
 //0:25:18 Escape Sequences
 //0:26:46 Plus Operator
