@@ -219,6 +219,12 @@ var last = "The last."
 console.log(first + last)
 console.log(' ')
 //0:27:49 Plus Equals Operator
+console.log('Plus Equals Operator')
+console.log('____________________')
+var someString = "Hello "
+someString += "G."
+console.log(someString)
+console.log(' ')
 //0:29:01 Constructing Strings with Variables
 //0:30:14 Appending Variables to Strings
 //0:31:11 Length of a String
