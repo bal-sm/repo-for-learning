@@ -119,6 +119,14 @@ console.log('tiga_terus *= 3')
 console.log('tiga_terus = ' + tiga_terus)
 console.log(' ')
 //0:17:18 Divide Decimals
+console.log('Divide Decimals')
+console.log('_______________')
+var tiga_terus = 1
+console.log('tiga_terus = 1')
+tiga_terus /= 3
+console.log('tiga_terus /= 3')
+console.log('tiga_terus = ' + tiga_terus)
+console.log(' ')
 //0:17:33 Finding a Remainder
 //0:18:22 Augmented Math Operations
 //0:21:19 Declare String Variables
