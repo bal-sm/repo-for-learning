@@ -189,6 +189,10 @@ penggalan = "\"people\""
 console.log(penggalan)
 console.log(' ')
 //0:23:44 Quoting Strings with Single Quotes
+console.log('Quoting Strings with Single Quotes')
+console.log('__________________________________')
+console.log('Assalamu\'alaikum Warrahmatullaahi Wabarakaatuh')
+console.log(' ')
 //0:25:18 Escape Sequences
 //0:26:46 Plus Operator
 //0:27:49 Plus Equals Operator
