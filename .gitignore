@@ -1,2 +1,5 @@
 # Visual Studio Code #
 *.code-workspace
+
+# LibreOffice #
+.~lock.*
