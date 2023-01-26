@@ -48,7 +48,25 @@ var aNestedArray = [1, [1, 2], [1, 2, 3]]
 console.log(aNestedArray)
 console.log(' ')
 //0:42:33 Access Array Data
+console.log('Access Array Data')
+console.log('_________________')
+console.log(anArray[0])
+console.log(anArray[1])
+console.log(anArray[2])
+console.log(' ')
 //0:43:34 Modify Array Data
+console.log('Modify Array Data')
+console.log('_________________')
+console.log('Before')
+console.log(anArray)
+anArray[1] = 5
+console.log(' ')
+console.log('anArray[1] = 5')
+console.log(' ')
+console.log('After')
+console.log(anArray[1])
+console.log(anArray)
+console.log(' ')
 //0:44:48 Access Multi-Dimensional Arrays
 //0:46:30 push()
 //0:47:29 pop()
