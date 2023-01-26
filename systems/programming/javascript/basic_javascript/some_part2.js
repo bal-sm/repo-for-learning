@@ -26,6 +26,14 @@ secondLetterOfFirstName = firstName[1]
 console.log(secondLetterOfFirstName)
 console.log(' ')
 //0:36:28 Word Blanks
+console.log('Word Blanks')
+console.log('___________')
+function wordBlanks(noun, verb, adjective, what, adverb){
+    var sentence = "A" + " " + adjective + " " + noun + " " + verb + " " + what + " " + adverb
+    return sentence
+}
+
+console.log(wordBlanks("cat", "goes", "cute", "to the mall", "meowly"))
 //0:40:44 Arrays
 //0:41:43 Nest Arrays
 //0:42:33 Access Array Data
