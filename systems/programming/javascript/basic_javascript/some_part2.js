@@ -42,6 +42,11 @@ var anArray = [1, 2, 3]
 console.log(anArray)
 console.log(' ')
 //0:41:43 Nest Arrays
+console.log('Nest Arrays')
+console.log('___________')
+var aNestedArray = [1, [1, 2], [1, 2, 3]]
+console.log(aNestedArray)
+console.log(' ')
 //0:42:33 Access Array Data
 //0:43:34 Modify Array Data
 //0:44:48 Access Multi-Dimensional Arrays
