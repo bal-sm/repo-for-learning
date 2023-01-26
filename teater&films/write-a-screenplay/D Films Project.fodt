@@ -1088,7 +1088,7 @@
 </text:text-input></text:p>
    <text:p text:style-name="Company_20_Information"><text:text-input text:description="">Beverly Hills, Los Angeles, CA 12345&#x0d;</text:text-input></text:p>
    <text:p text:style-name="Company_20_Information"><text:text-input text:description="">(123) 456-7890&#x0d;</text:text-input></text:p>
-   <text:p text:style-name="Company_20_Information"><text:text-input text:description="">books@example.com&#x0d;</text:text-input></text:p>
+   <text:p text:style-name="Company_20_Information"><text:text-input text:description="">____@____.com&#x0d;</text:text-input></text:p>
    <text:p text:style-name="Company_20_Information"/>
    <text:p text:style-name="P22"><text:span text:style-name="Strong"><text:span text:style-name="T3"/></text:span></text:p>
    <text:p text:style-name="Tip_20_Text"/>
