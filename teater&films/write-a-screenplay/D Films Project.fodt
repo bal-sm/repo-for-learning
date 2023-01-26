@@ -1084,7 +1084,7 @@
    <text:p text:style-name="Subtitle"><loext:content-control loext:showing-place-holder="true">By</loext:content-control></text:p>
    <text:p text:style-name="Author"><text:span text:style-name="T12"><text:text-input text:description="">Iqbal Syifa Mahmuda</text:text-input></text:span></text:p>
    <text:p text:style-name="P3"/>
-   <text:p text:style-name="P23"><text:text-input text:description="">_______ &amp; _______ Publishers
+   <text:p text:style-name="P23"><text:text-input text:description="">_______ 
 </text:text-input></text:p>
    <text:p text:style-name="Company_20_Information"><text:text-input text:description="">Beverly Hills, Los Angeles, CA 12345&#x0d;</text:text-input></text:p>
    <text:p text:style-name="Company_20_Information"><text:text-input text:description="">(123) 456-7890&#x0d;</text:text-input></text:p>
