@@ -1,4 +1,5 @@
 //0:50:36 Shopping List
+//skip
 //0:51:41 Write Reusable with Functions
 //0:53:41 Arguments
 //0:55:43 Global Scope
