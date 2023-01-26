@@ -36,6 +36,11 @@ function wordBlanks(noun, verb, adjective, what, adverb){
 console.log(wordBlanks("cat", "goes", "cute", "to the mall", "meowly"))
 console.log(' ')
 //0:40:44 Arrays
+console.log('Arrays')
+console.log('______')
+var anArray = [1, 2, 3]
+console.log(anArray)
+console.log(' ')
 //0:41:43 Nest Arrays
 //0:42:33 Access Array Data
 //0:43:34 Modify Array Data
