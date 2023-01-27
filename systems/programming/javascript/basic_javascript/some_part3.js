@@ -18,7 +18,7 @@ console.log('_____________________________')
 function Muhammad(bin, Abdullah) {
     console.log(bin + Abdullah)
 }
-Muhammad(' love ', 'Iqbal Syifa Mahmuda')
+Muhammad('I love ', 'Iqbal Syifa Mahmuda')
 console.log(' ')
 console.log('Global Scope')
 console.log('_____________________________')
