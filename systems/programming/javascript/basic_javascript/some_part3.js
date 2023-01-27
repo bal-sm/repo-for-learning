@@ -79,6 +79,12 @@ console.log(plusFour(7))
 console.log(' ')
 console.log('Undefined Value returned')
 console.log('_____________________________')
+var num = 0
+function addFive (num) {
+    num = num + 5
+}
+console.log(addFive(2))
+console.log("relationship.. :(")
 console.log(' ')
 console.log('Assignment with a Returned Value')
 console.log('_____________________________')
