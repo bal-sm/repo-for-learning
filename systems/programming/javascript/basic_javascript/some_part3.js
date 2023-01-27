@@ -135,7 +135,8 @@ function isIt13(num) {
 }
 console.log(isIt13(134589))
 console.log(' ')
-//Strict Equality Operators
+console.log('Strict Equality Operators')
+console.log('_____________________________')
 function isIt3(num) {
     if(num === 3){
         return "Yes, it's Ana, Lo, Gue"
@@ -144,7 +145,9 @@ function isIt3(num) {
 }
 console.log(isIt3("3"))
 console.log("hooree")
-//Inequality Operator with randomness hehe
+console.log(' ')
+console.log('Inequality Operator with randomness hehe')
+console.log('_____________________________')
 var num = Math.floor(Math.random() * 10) + 2;
 function isItNot1(num) {
     if(num != 1) {
@@ -153,7 +156,9 @@ function isItNot1(num) {
     return "NO, it's " + num
 }
 console.log(isItNot1(num))
-//Strict Inequality Operator
+console.log(' ')
+console.log('Strict Inequality Operator')
+console.log('_____________________________')
 function isItNot13(num) {
     if(num !== 13) {
         return "Yes, it's " + num
@@ -162,6 +167,7 @@ function isItNot13(num) {
 }
 var num = Math.floor(Math.random() * 10) + 4;
 console.log(isItNot13(num))
+console.log(' ')
 console.log('And / Or Operators')
 console.log('_____________________________')
 console.log(' ')
