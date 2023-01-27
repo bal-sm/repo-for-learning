@@ -180,6 +180,15 @@ function testLogicalAnd(val){
 console.log(testLogicalAnd(27))
 console.log('Comparison with the logical \"Or\" operator')
 console.log('_____________________________')
+function testLogicalOr(val){
+    if(val < 25 || val > 50){
+        return val + "is outside" + "25<=" + "x" + "<=50"
+    }
+    return val + "is inside" + "25<=" + "x" + "<=50"
+}
+console.log(testLogicalOr(27))
+console.log(testLogicalOr(3))
+console.log(testLogicalOr(60))
 console.log(' ')
 console.log('_____________________________')
 console.log(' ')
