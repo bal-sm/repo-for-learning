@@ -22,6 +22,29 @@ Muhammad('I love ', 'Iqbal Syifa Mahmuda')
 console.log(' ')
 console.log('Global Scope')
 console.log('_____________________________')
+var myGlobal = 5
+function fun1() {
+    ourGlobal = 10
+}
+function fun13() {
+    var oopsGlobal = 13
+}
+function fun2() {
+    var output = ""
+    if (typeof myGlobal != undefined) {
+        output += "myGlobal = " + myGlobal + ","
+    }
+    if (typeof ourGlobal != undefined) {
+        output += "ourGlobal = " + ourGlobal + ","
+    }
+//    if (typeof oopsGlobal != undefined) {
+//        output += "oopsGlobal = " + oopsGlobal + ","
+//    }
+    console.log(output)
+}
+fun1()
+fun13()
+fun2()
 console.log(' ')
 console.log('Local Scope')
 console.log('_____________________________')
