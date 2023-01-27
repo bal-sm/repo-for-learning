@@ -145,7 +145,7 @@ function isIt3(num) {
 console.log(isIt3("3"))
 console.log("hooree")
 //Inequality Operator with randomness hehe
-var num = Math.floor(Math.random() * 10) + 1;
+var num = Math.floor(Math.random() * 10) + 2;
 function isItNot1(num) {
     if(num != 1) {
         return "Yes, it's " + num
