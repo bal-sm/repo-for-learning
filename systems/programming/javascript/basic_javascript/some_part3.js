@@ -26,9 +26,6 @@ var myGlobal = 5
 function fun1() {
     ourGlobal = 10
 }
-function fun13() {
-    var oopsGlobal = 13
-}
 function fun2() {
     var output = ""
     if (typeof myGlobal != undefined) {
@@ -43,11 +40,21 @@ function fun2() {
     console.log(output)
 }
 fun1()
-fun13()
 fun2()
 console.log(' ')
 console.log('Local Scope')
 console.log('_____________________________')
+function fun13() {
+    var oopsGlobal = 13
+    console.log(oopsGlobal)
+}
+fun13()
+try {
+    console.log(oopsGlobal)
+}
+catch(err) {
+    console.log("can't access var oopsGlobal")
+}
 console.log(' ')
 console.log('Global vs Local Scope in Functions')
 console.log('_____________________________')
