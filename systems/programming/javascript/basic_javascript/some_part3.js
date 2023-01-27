@@ -68,6 +68,14 @@ console.log(outerWear)
 console.log(' ')
 console.log('Return a Value from a Function')
 console.log('_____________________________')
+function timesSix (num) {
+    return num * 6
+}
+console.log(timesSix(3))
+function plusFour (num) {
+    return num + 4
+}
+console.log(plusFour(7))
 console.log(' ')
 console.log('Undefined Value returned')
 console.log('_____________________________')
