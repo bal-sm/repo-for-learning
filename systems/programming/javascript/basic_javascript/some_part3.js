@@ -135,6 +135,15 @@ function isIt13(num) {
 }
 console.log(isIt13(134589))
 console.log(' ')
+//Strict Equality Operators
+function isIt3(num) {
+    if(num === 3){
+        return "Yes, it's Ana, Lo, Gue"
+    }
+    return "No :("
+}
+console.log(isIt3("3"))
+console.log("hooree")
 console.log('And / Or Operators')
 console.log('_____________________________')
 console.log(' ')
