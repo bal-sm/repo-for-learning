@@ -170,6 +170,15 @@ console.log(isItNot13(num))
 console.log(' ')
 console.log('And / Or Operators')
 console.log('_____________________________')
+console.log('Comparison with the logical \"And\" operator')
+function testLogicalAnd(val){
+    if(val >= 25 && val <= 50){
+        console.log("25<="+num+"<=50")
+    }
+}
+console.log('')
+console.log(' ')
+console.log('_____________________________')
 console.log(' ')
 console.log('Else Statements')
 console.log('_____________________________')
