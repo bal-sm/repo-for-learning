@@ -104,7 +104,7 @@ function nextInLine(arr, item) {
     return arr.shift()
 }
 console.log("Before:\n" + JSON.stringify(theArray))
-nextInLine(theArray, 6)
+console.log(nextInLine(theArray, 6))
 console.log("After:\n" + JSON.stringify(theArray))
 console.log(' ')
 console.log('Boolean Values')
