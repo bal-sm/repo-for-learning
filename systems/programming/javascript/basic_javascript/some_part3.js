@@ -192,6 +192,19 @@ console.log(testLogicalOr(60))
 console.log(' ')
 console.log('Else Statements')
 console.log('_____________________________')
+function testElse (val) {
+    var result = ""
+
+    if (val > 5) {
+        result = "Bigger than 5"
+    } else {
+        result = "5 or smaller"
+    }
+
+    return result
+}
+
+console.log(testElse(6))
 console.log(' ')
 console.log('Else If Statements')
 console.log('_____________________________')
