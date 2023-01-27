@@ -173,10 +173,10 @@ console.log('_____________________________')
 console.log('Comparison with the logical \"And\" operator')
 function testLogicalAnd(val){
     if(val >= 25 && val <= 50){
-        console.log("25<="+num+"<=50")
+        return "25<=" + val + "<=50"
     }
 }
-console.log('')
+console.log(testLogicalAnd(27))
 console.log(' ')
 console.log('_____________________________')
 console.log(' ')
