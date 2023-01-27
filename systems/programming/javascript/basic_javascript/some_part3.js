@@ -214,6 +214,20 @@ console.log('_____________________________')
 console.log(' ')
 console.log('Chaining If Else Statements')
 console.log('_____________________________')
+function testSize(num) {
+    if (num < 5) {
+        return "tiny"
+    } else if (num < 10) {
+        return "small"
+    } else if (num < 15) {
+        return "medium"
+    } else if (num < 20) {
+        return "large"
+    } else {
+        return "very large"
+    }
+}
+console.log(testSize(23))
 console.log(' ')
 console.log('Golf Code')
 console.log('_____________________________')
