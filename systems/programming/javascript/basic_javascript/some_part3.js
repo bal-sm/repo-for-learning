@@ -109,6 +109,10 @@ console.log("After:\n" + JSON.stringify(theArray))
 console.log(' ')
 console.log('Boolean Values')
 console.log('_____________________________')
+function welcomeToBoolean() {
+    return true //with lowercased "t", and "f" if false
+}
+console.log(welcomeToBoolean())
 console.log(' ')
 console.log('If Statements')
 console.log('_____________________________')
