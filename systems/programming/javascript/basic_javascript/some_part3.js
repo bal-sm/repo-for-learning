@@ -127,6 +127,13 @@ console.log(trueOrFalse(isItTrueOrFalse))
 console.log(' ')
 console.log('Equality Operators')
 console.log('_____________________________')
+function isIt13(num) {
+    if(num == 13){
+        return "Yes, it's 13"
+    }
+    return "No, it's just a number"
+}
+console.log(isIt13(134589))
 console.log(' ')
 console.log('And / Or Operators')
 console.log('_____________________________')
