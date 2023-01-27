@@ -116,6 +116,14 @@ console.log(welcomeToBoolean())
 console.log(' ')
 console.log('If Statements')
 console.log('_____________________________')
+isItTrueOrFalse = true //TRUE
+function trueOrFalse(isItTrueOrFalse) {
+    if (isItTrueOrFalse) {
+        return "Canon babe"
+    }
+    return "Impossible"
+}
+console.log(trueOrFalse(isItTrueOrFalse))
 console.log(' ')
 console.log('Equality Operators')
 console.log('_____________________________')
