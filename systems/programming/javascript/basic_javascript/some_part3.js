@@ -88,9 +88,24 @@ console.log("relationship.. :(")
 console.log(' ')
 console.log('Assignment with a Returned Value')
 console.log('_____________________________')
+var changed = 3
+function change(num) {
+    return num = (num / 3) * 5
+}
+changed = change(changed)
+console.log(changed)
 console.log(' ')
 console.log('Stand in Line')
 console.log('_____________________________')
+//Essential for Bless app
+theArray = [1,2,3,4,5]
+function nextInLine(arr, item) {
+    arr.push(item)
+    return arr.shift()
+}
+console.log("Before:\n" + JSON.stringify(theArray))
+nextInLine(theArray, 6)
+console.log("After:\n" + JSON.stringify(theArray))
 console.log(' ')
 console.log('Boolean Values')
 console.log('_____________________________')
