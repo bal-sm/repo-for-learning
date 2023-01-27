@@ -178,6 +178,8 @@ function testLogicalAnd(val){
     }
 }
 console.log(testLogicalAnd(27))
+console.log('Comparison with the logical \"Or\" operator')
+console.log('_____________________________')
 console.log(' ')
 console.log('_____________________________')
 console.log(' ')
