@@ -58,6 +58,13 @@ catch(err) {
 console.log(' ')
 console.log('Global vs Local Scope in Functions')
 console.log('_____________________________')
+var outerWear = 'Jeans Jacket'
+function wearables() {
+    var outerWear = "Kaos Oblong"
+    console.log(outerWear)
+}
+wearables()
+console.log(outerWear)
 console.log(' ')
 console.log('Return a Value from a Function')
 console.log('_____________________________')
