@@ -144,6 +144,15 @@ function isIt3(num) {
 }
 console.log(isIt3("3"))
 console.log("hooree")
+//Inequality Operator with randomness hehe
+var num = Math.floor(Math.random() * 10) + 1;
+function isItNot1(num) {
+    if(num != 1) {
+        return "Yes, it's " + num
+    }
+    return "NO, it's " + num
+}
+console.log(isItNot1(num))
 console.log('And / Or Operators')
 console.log('_____________________________')
 console.log(' ')
