@@ -53,7 +53,7 @@ try {
     console.log(oopsGlobal)
 }
 catch(err) {
-    console.log("can't access var oopsGlobal")
+    console.log("can't access var oopsGlobal, because defined with var in a function")
 }
 console.log(' ')
 console.log('Global vs Local Scope in Functions')
