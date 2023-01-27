@@ -153,6 +153,15 @@ function isItNot1(num) {
     return "NO, it's " + num
 }
 console.log(isItNot1(num))
+//Strict Inequality Operator
+function isItNot13(num) {
+    if(num !== 13) {
+        return "Yes, it's " + num
+    }
+    return "No, it's " + num
+}
+var num = Math.floor(Math.random() * 10) + 4;
+console.log(isItNot13(num))
 console.log('And / Or Operators')
 console.log('_____________________________')
 console.log(' ')
