@@ -87,6 +87,10 @@ var dear = Mahdi["kesayangan/suami"]
 console.log(dear)
 console.log("1:52:47 Variables")
 console.log("____________________")
+//Accessing Object Properties with Variables
+var soHot = "cewenya"
+var cewecewe = Mahdi[soHot]
+console.log(cewecewe)
 console.log("1:53:34 Updating Object Properties")
 console.log("____________________")
 console.log("1:54:30 Add New Properties to Object")
