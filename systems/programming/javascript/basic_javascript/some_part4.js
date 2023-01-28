@@ -60,7 +60,7 @@ console.log("_____________")
 var Mahdi
 var Muhammad = {
     "name": "Prophet Muhammad saw.",
-    "sayang": Mahdi,
+    "sayang/suami": Mahdi,
     "jenis kelamin": "Male",
     "temannya": ["banyak!"],
     "cewenya": ["banyak!"],
