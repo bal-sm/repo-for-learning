@@ -51,6 +51,7 @@ function isItTheSame(valA, valB) {
 }
 console.log(isItTheSame("bacot","bacot"))
 //1:42:20 Return Early Pattern for Functions
+//skip,
 //1:43:38 Counting Cards
 //1:49:11 Build Objects
 //1:50:46 Dot Notation
