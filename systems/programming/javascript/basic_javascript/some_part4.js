@@ -19,6 +19,30 @@ function caseInSwitch(val){
 }
 valisi = (Math.floor(Math.random() * 4) + 1)
 console.log(caseInSwitch(valisi))
+//Sequential Sizes
+function caseInSwitch(val){
+    var answer = "";
+    switch(val) {
+        case 1:
+        case 2:
+        case 3:
+            answer = "Low"
+            break
+        case 4:
+        case 5:
+        case 6:
+            answer = "Mid"
+            break
+        case 7:
+        case 8:
+        case 9:
+            answer = "High"
+            break
+    }
+    return answer
+}
+
+console.log(caseInSwitch(8))
 //1:41:11 Returning Boolean Values from Functions
 //1:42:20 Return Early Pattern for Functions
 //1:43:38 Counting Cards
