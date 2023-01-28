@@ -55,6 +55,22 @@ console.log(isItTheSame("bacot","bacot"))
 //1:43:38 Counting Cards
 //skip,
 //1:49:11 Build Objects
+console.log("Build Objects")
+console.log("_____________")
+var Mahdi
+var Muhammad = {
+    "name": "Prophet Muhammad saw.",
+    "sayang": Mahdi,
+    "jenis kelamin": "Male",
+    "temannya": ["banyak!"],
+}
+var Mahdi = {
+    "name": "Iqbal Syifa Mahmuda",
+    "kesayangan": Muhammad,
+    "jenis kelamin": "Male",
+    "sexuality": "Straight as f",
+    "babunya": ["banyak!"],
+}
 //1:50:46 Dot Notation
 //1:51:33 Bracket Notation
 //1:52:47 Variables
