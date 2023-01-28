@@ -97,6 +97,8 @@ Mahdi.cewenya = ["yang cantik", "gadis", "_____", "sholehah", "etc"]
 console.log(Mahdi)
 console.log("1:54:30 Add New Properties to Object")
 console.log("____________________")
+Muhammad.peliharaan = ["Mueezza",]
+Mahdi.peliharaan = ["Miky", "Kenzo", "Temon", "dan lain-lain"]
 console.log("1:55:19 Delete Properties from Object")
 console.log("____________________")
 console.log("1:55:54 Objects for Lookups")
