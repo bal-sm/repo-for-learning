@@ -93,6 +93,8 @@ var cewecewe = Mahdi[soHot]
 console.log(cewecewe)
 console.log("1:53:34 Updating Object Properties")
 console.log("____________________")
+Mahdi.cewenya = ["yang cantik", "gadis", "_____", "etc"]
+console.log(Mahdi)
 console.log("1:54:30 Add New Properties to Object")
 console.log("____________________")
 console.log("1:55:19 Delete Properties from Object")
