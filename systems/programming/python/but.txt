@@ -1,0 +1,3 @@
+Python (cpython) has centralized repository, and compiler (source code). It's a nice "addition" for front-end web development, so its behaviour shall be the same across multiple devices, and browsers. :)
+
+Thanks Guido Van Rossum, for creating Python, and making it available for free. :)
