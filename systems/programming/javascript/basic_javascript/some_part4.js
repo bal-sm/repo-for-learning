@@ -72,6 +72,8 @@ Mahdi = {
     "babunya": ["banyak!"],
 }
 console.log(Mahdi)
+var dear = Mahdi.kesayangan
+console.log(dear)
 //1:50:46 Dot Notation
 //1:51:33 Bracket Notation
 //1:52:47 Variables
