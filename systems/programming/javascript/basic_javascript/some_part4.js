@@ -1,4 +1,24 @@
 //1:32:15 Switch Statements
+function caseInSwitch(val){
+    var answer = "";
+    switch(val) {
+        case 1:
+            answer = "alpha"
+            break
+        case 2:
+            answer = "beta"
+            break
+        case 3:
+            answer = "delta"
+            break
+        case 4:
+            answer = "gamma"
+            break
+    }
+    return answer
+}
+valisi = (Math.floor(Math.random() * 4) + 1)
+console.log(caseInSwitch(valisi))
 //1:41:11 Returning Boolean Values from Functions
 //1:42:20 Return Early Pattern for Functions
 //1:43:38 Counting Cards
