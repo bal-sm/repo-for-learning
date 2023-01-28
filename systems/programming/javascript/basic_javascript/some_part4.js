@@ -103,6 +103,10 @@ console.log(Muhammad)
 console.log(Mahdi)
 console.log("1:55:19 Delete Properties from Object")
 console.log("____________________")
+Mahdi.bebas = "bebas"
+console.log(Mahdi)
+delete Mahdi.bebas
+console.log(Mahdi)
 console.log("1:55:54 Objects for Lookups")
 console.log("____________________")
 console.log("1:57:43 Testing Objects for Properties")
