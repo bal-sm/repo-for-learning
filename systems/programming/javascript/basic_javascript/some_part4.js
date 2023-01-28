@@ -79,42 +79,81 @@ console.log(Mahdi)
 var dear = Mahdi.kesayangan/suami
 console.log(dear)
 console.log(" ")
-//1:50:46 Dot Notation
-//1:51:33 Bracket Notation
-//1:52:47 Variables
-//1:53:34 Updating Object Properties
-//1:54:30 Add New Properties to Object
-//1:55:19 Delete Properties from Object
-//1:55:54 Objects for Lookups
-//1:57:43 Testing Objects for Properties
-//1:59:15 Manipulating Complex Objects
-//2:01:00 Nested Objects
-//2:01:53 Nested Arrays
-//2:03:06 Record Collection
-//2:10:15 While Loops
-//2:11:35 For Loops
-//2:13:56 Odd Numbers With a For Loop
-//2:15:28 Count Backwards With a For Loop
-//2:17:08 Iterate Through an Array with a For Loop
-//2:19:43 Nesting For Loops
-//2:22:45 Do...While Loops
-//2:24:12 Profile Lookup
-//2:28:18 Random Fractions and Whole Numbers
-//2:31:46 parseInt Function
-//2:33:29 Ternary Operator
-//2:34:57 Multiple Ternary Operators
-//2:36:57 var vs let
-//2:41:32 const Keyword
-//2:43:40 Mutate an Array Declared with const
-//2:44:52 Prevent Object Mutation
-//2:47:17 Arrow Functions
-//2:53:04 Default Parameters
-//2:54:00 Rest Operator
-//2:55:31 Spread Operator
-//2:57:18 Destructuring Assignment
-//3:06:39 Template Literals
-//3:10:43 Simple Fields
-//3:12:24 Declarative Functions
-//3:12:56 class Syntax
-//3:15:11 getters and setters
-//3:20:25 import and export
+console.log("1:50:46 Dot Notation")
+console.log("____________________")
+console.log("1:51:33 Bracket Notation")
+console.log("________________________")
+console.log("1:52:47 Variables")
+console.log("____________________")
+console.log("1:53:34 Updating Object Properties")
+console.log("____________________")
+console.log("1:54:30 Add New Properties to Object")
+console.log("____________________")
+console.log("1:55:19 Delete Properties from Object")
+console.log("____________________")
+console.log("1:55:54 Objects for Lookups")
+console.log("____________________")
+console.log("1:57:43 Testing Objects for Properties")
+console.log("____________________")
+console.log("1:59:15 Manipulating Complex Objects")
+console.log("____________________")
+console.log("2:01:00 Nested Objects")
+console.log("____________________")
+console.log("2:01:53 Nested Arrays")
+console.log("____________________")
+console.log("2:03:06 Record Collection")
+console.log("____________________")
+console.log("2:10:15 While Loops")
+console.log("____________________")
+console.log("2:11:35 For Loops")
+console.log("____________________")
+console.log("2:13:56 Odd Numbers With a For Loop")
+console.log("____________________")
+console.log("2:15:28 Count Backwards With a For Loop")
+console.log("____________________")
+console.log("2:17:08 Iterate Through an Array with a For Loop")
+console.log("____________________")
+console.log("2:19:43 Nesting For Loops")
+console.log("____________________")
+console.log("2:22:45 Do...While Loops")
+console.log("____________________")
+console.log("2:24:12 Profile Lookup")
+console.log("____________________")
+console.log("2:28:18 Random Fractions and Whole Numbers")
+console.log("____________________")
+console.log("2:31:46 parseInt Function")
+console.log("____________________")
+console.log("2:33:29 Ternary Operator")
+console.log("____________________")
+console.log("2:34:57 Multiple Ternary Operators")
+console.log("____________________")
+console.log("2:36:57 var vs let")
+console.log("____________________")
+console.log("2:41:32 const Keyword")
+console.log("____________________")
+console.log("2:43:40 Mutate an Array Declared with const")
+console.log("____________________")
+console.log("2:44:52 Prevent Object Mutation")
+console.log("____________________")
+console.log("2:47:17 Arrow Functions")
+console.log("____________________")
+console.log("2:53:04 Default Parameters")
+console.log("____________________")
+console.log("2:54:00 Rest Operator")
+console.log("____________________")
+console.log("2:55:31 Spread Operator")
+console.log("____________________")
+console.log("2:57:18 Destructuring Assignment")
+console.log("____________________")
+console.log("3:06:39 Template Literals")
+console.log("____________________")
+console.log("3:10:43 Simple Fields")
+console.log("____________________")
+console.log("3:12:24 Declarative Functions")
+console.log("____________________")
+console.log("3:12:56 class Syntax")
+console.log("____________________")
+console.log("3:15:11 getters and setters")
+console.log("____________________")
+console.log("3:20:25 import and export")
+console.log("____________________")
