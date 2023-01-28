@@ -64,6 +64,7 @@ var Muhammad = {
     "jenis kelamin": "Male",
     "temannya": ["banyak!"],
     "cewenya": ["banyak!"],
+    " ": []
 }
 Mahdi = {
     "name": "Iqbal Syifa Mahmuda",
@@ -72,6 +73,7 @@ Mahdi = {
     "sexuality": "Straight path",
     "babunya": ["banyak!"],
     "cewenya": ["banyak!"],
+    " ": []
 }
 console.log(Mahdi)
 var dear = Mahdi.kesayangan
