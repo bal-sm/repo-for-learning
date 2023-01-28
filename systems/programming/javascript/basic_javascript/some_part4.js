@@ -66,7 +66,7 @@ var Muhammad = {
 }
 Mahdi = {
     "name": "Iqbal Syifa Mahmuda",
-    "kesayangan": Muhammad,
+    "kesayangan/suami": Muhammad,
     "jenis kelamin": "Male",
     "sexuality": "Straight as f",
     "babunya": ["banyak!"],
