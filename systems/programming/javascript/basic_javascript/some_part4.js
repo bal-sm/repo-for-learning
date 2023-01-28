@@ -76,8 +76,6 @@ Mahdi = {
     " ": []
 }
 console.log(Mahdi)
-// var dear = Mahdi.kesayangan/suami
-// console.log(dear)
 console.log(" ")
 console.log("1:50:46 Dot Notation")
 console.log("____________________")
@@ -85,6 +83,8 @@ var namasaya = Mahdi.name
 console.log(namasaya)
 console.log("1:51:33 Bracket Notation")
 console.log("________________________")
+var dear = Mahdi["kesayangan/suami"]
+console.log(dear)
 console.log("1:52:47 Variables")
 console.log("____________________")
 console.log("1:53:34 Updating Object Properties")
