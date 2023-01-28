@@ -68,7 +68,7 @@ Mahdi = {
     "name": "Iqbal Syifa Mahmuda",
     "kesayangan/suami": Muhammad,
     "jenis kelamin": "Male",
-    "sexuality": "Straight as f",
+    "sexuality": "Straight path",
     "babunya": ["banyak!"],
 }
 console.log(Mahdi)
