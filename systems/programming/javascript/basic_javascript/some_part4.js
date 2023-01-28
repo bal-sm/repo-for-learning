@@ -77,7 +77,7 @@ Mahdi = {
 }
 console.log(Mahdi)
 // var dear = Mahdi.kesayangan/suami
-console.log(dear)
+// console.log(dear)
 console.log(" ")
 console.log("1:50:46 Dot Notation")
 console.log("____________________")
