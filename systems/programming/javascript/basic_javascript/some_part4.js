@@ -81,6 +81,8 @@ console.log(Mahdi)
 console.log(" ")
 console.log("1:50:46 Dot Notation")
 console.log("____________________")
+var namasaya = Mahdi.name
+console.log(namasaya)
 console.log("1:51:33 Bracket Notation")
 console.log("________________________")
 console.log("1:52:47 Variables")
