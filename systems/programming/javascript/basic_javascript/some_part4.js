@@ -44,6 +44,12 @@ function caseInSwitch(val){
 
 console.log(caseInSwitch(8))
 //1:41:11 Returning Boolean Values from Functions
+function isItTheSame(valA, valB) {
+    if (valA, valB){
+        return valA == valB
+    }
+}
+console.log(isItTheSame("bacot","bacot"))
 //1:42:20 Return Early Pattern for Functions
 //1:43:38 Counting Cards
 //1:49:11 Build Objects
