@@ -64,7 +64,7 @@ var Muhammad = {
     "jenis kelamin": "Male",
     "temannya": ["banyak!"],
 }
-var Mahdi = {
+Mahdi = {
     "name": "Iqbal Syifa Mahmuda",
     "kesayangan": Muhammad,
     "jenis kelamin": "Male",
