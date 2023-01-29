@@ -214,6 +214,16 @@ for (var i = 0; i < 101; i++){
 console.log(loops)
 console.log("2:13:56 Odd Numbers With a For Loop")
 console.log("____________________")
+
+var loopsGanjil = []
+
+for (var i = 0; i < 101; i++){
+    if (i%2 == 1) {
+        loopsGanjil.push(i)
+    }
+}
+
+console.log(loopsGanjil)
 console.log("2:15:28 Count Backwards With a For Loop")
 console.log("____________________")
 console.log("2:17:08 Iterate Through an Array with a For Loop")
