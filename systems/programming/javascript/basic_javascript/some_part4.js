@@ -155,6 +155,16 @@ console.log("____________________")
 //skip
 console.log("2:01:00 Nested Objects")
 console.log("____________________")
+var dompet = {
+    "dompetA": {
+        "dompetB": {
+            "dompetC": "sebuah coklat"
+        }
+    }
+}
+
+var isiDalamSebuahDompet = dompet.dompetA.dompetB["dompetC"];
+console.log(isiDalamSebuahDompet)
 console.log("2:01:53 Nested Arrays")
 console.log("____________________")
 console.log("2:03:06 Record Collection")
