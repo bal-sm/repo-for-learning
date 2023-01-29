@@ -111,7 +111,7 @@ console.log("1:55:54 Objects for Lookups")
 console.log("____________________")
 function friendsLookup(val) {
     var result = "";
-    var lookup {
+    var lookup = {
         "daris": "a friend",
         "aul": "aulia",
         "ah": "siapa ya lupa :(",
@@ -132,7 +132,8 @@ function friendsLookup(val) {
         "polban": "asik",
         "sama friends beda jurusan": "tenang ;)",
     };
-    result = lookup[]
+    result = lookup[val];
+    return result
 }
 console.log("1:57:43 Testing Objects for Properties")
 console.log("____________________")
