@@ -167,6 +167,24 @@ var isiDalamSebuahDompet = dompet.dompetA.dompetB["dompetC"];
 console.log(isiDalamSebuahDompet)
 console.log("2:01:53 Nested Arrays")
 console.log("____________________")
+var collection = {
+    "69VF": {
+        "album": "Firehouse",
+        "artist": "Firehouse",
+        "tracks": [
+            "Love of a Lifetime",
+        ]
+    }
+}
+
+var collection = JSON.parse(JSON.stringify(collection));
+
+function updateRecords(id, prop, value){
+    if (value === "")
+    return collection
+}
+
+updateRecords(69VF, "artist", "69VF")
 console.log("2:03:06 Record Collection")
 console.log("____________________")
 console.log("2:10:15 While Loops")
