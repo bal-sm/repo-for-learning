@@ -152,6 +152,7 @@ function checkObj(checkProp) {
 console.log(checkObj("Dream"))
 console.log("1:59:15 Manipulating Complex Objects")
 console.log("____________________")
+//skip
 console.log("2:01:00 Nested Objects")
 console.log("____________________")
 console.log("2:01:53 Nested Arrays")
