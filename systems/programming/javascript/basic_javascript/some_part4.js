@@ -190,6 +190,7 @@ function updateRecords(id, prop, value){
 }
 
 updateRecords(69VF, "artist", "69VF")
+//skip
 console.log("2:10:15 While Loops")
 console.log("____________________")
 console.log("2:11:35 For Loops")
