@@ -139,7 +139,7 @@ function LoverAndFriendsLookup(val) {
 console.log(LoverAndFriendsLookup("muhammad"))
 console.log("1:57:43 Testing Objects for Properties")
 console.log("____________________")
-//who works at sunday babe
+//who works at sunday babe, cause I want you.
 console.log("1:59:15 Manipulating Complex Objects")
 console.log("____________________")
 console.log("2:01:00 Nested Objects")
