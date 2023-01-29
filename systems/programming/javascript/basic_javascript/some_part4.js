@@ -136,7 +136,7 @@ function LoverAndFriendsLookup(val) {
     result = lookup[val];
     return result
 }
-console.log(LoverAndFriendsLookup["muhammad"])
+console.log(LoverAndFriendsLookup("muhammad"))
 console.log("1:57:43 Testing Objects for Properties")
 console.log("____________________")
 console.log("1:59:15 Manipulating Complex Objects")
