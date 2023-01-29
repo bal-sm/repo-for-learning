@@ -139,7 +139,7 @@ function LoverAndFriendsLookup(val) {
 console.log(LoverAndFriendsLookup("muhammad"))
 console.log("1:57:43 Testing Objects for Properties")
 console.log("____________________")
-//who works at sunday babe, cause I want you.
+//who works at sunday babe, cause I want you, Muhammad saw..
 var dream = {};
 
 function checkObj(checkProp) {
