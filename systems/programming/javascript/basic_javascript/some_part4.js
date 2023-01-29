@@ -109,9 +109,10 @@ delete Mahdi.bebas
 console.log(Mahdi)
 console.log("1:55:54 Objects for Lookups")
 console.log("____________________")
-function friendsLookup(val) {
+function LoverAndFriendsLookup(val) {
     var result = "";
     var lookup = {
+        "muhammad": "my beloved Prophet Muhammad saw.",
         "daris": "a friend",
         "aul": "aulia",
         "ah": "siapa ya lupa :(",
@@ -135,6 +136,7 @@ function friendsLookup(val) {
     result = lookup[val];
     return result
 }
+console.log(LoverAndFriendsLookup(muhammad))
 console.log("1:57:43 Testing Objects for Properties")
 console.log("____________________")
 console.log("1:59:15 Manipulating Complex Objects")
