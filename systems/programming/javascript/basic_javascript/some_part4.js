@@ -109,6 +109,31 @@ delete Mahdi.bebas
 console.log(Mahdi)
 console.log("1:55:54 Objects for Lookups")
 console.log("____________________")
+function friendsLookup(val) {
+    var result = "";
+    var lookup {
+        "daris": "a friend",
+        "aul": "aulia",
+        "ah": "siapa ya lupa :(",
+        "chyntia": "cans",
+        "silviaa": "cans",
+        "silviac": "cans",
+        "fika": "cans",
+        "luvita": "cans",
+        "ade": "bacot",
+        "aulia2": "dini latifah",
+        "linda": "andriani",
+        "denda": "a friend 2",
+        "iamad": "ahmadi",
+        "fahrur": "hmm sut ;), heueuh bae :)",
+        "ampa": "cape :( maap",
+        "ampb2018": "yessss",
+        "kabayan": "asik",
+        "polban": "asik",
+        "sama friends beda jurusan": "tenang ;)",
+    };
+    result = lookup[]
+}
 console.log("1:57:43 Testing Objects for Properties")
 console.log("____________________")
 console.log("1:59:15 Manipulating Complex Objects")
