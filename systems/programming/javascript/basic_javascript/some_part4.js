@@ -193,8 +193,25 @@ function updateRecords(id, prop, value){
 //skip
 console.log("2:10:15 While Loops")
 console.log("____________________")
+var myArray = []
+
+var i = 0
+while(i < 5) {
+    myArray.push(i);
+    i++;
+}
+
+console.log(myArray);
 console.log("2:11:35 For Loops")
 console.log("____________________")
+
+var loops = []
+
+for (var i = 0; i < 101; i++){
+    loops.push(i)
+}
+
+console.log(loops)
 console.log("2:13:56 Odd Numbers With a For Loop")
 console.log("____________________")
 console.log("2:15:28 Count Backwards With a For Loop")
