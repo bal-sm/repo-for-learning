@@ -234,6 +234,13 @@ for (var i = 1; i < 101; i += 2){
 console.log(loopsGanjilDua)
 console.log("2:15:28 Count Backwards With a For Loop")
 console.log("____________________")
+var loopsGanjilMinus = []
+
+for (var i = 0; i > -99; i--){
+    loopsGanjilMinus.push(i)
+}
+
+console.log(loopsGanjilMinus)
 console.log("2:17:08 Iterate Through an Array with a For Loop")
 console.log("____________________")
 console.log("2:19:43 Nesting For Loops")
