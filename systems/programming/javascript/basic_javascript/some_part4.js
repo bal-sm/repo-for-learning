@@ -72,7 +72,7 @@ Mahdi = {
     "jenis kelamin": "Male",
     "sexuality": "Straight path",
     "babunya": ["banyak!"],
-    "cewenya": ["banyak!", "indonesian womans", "american beautifal women"],
+    "cewenya": ["banyak!", "indonesian womans", "american beautifal women", 'all women'],
     " ": []
 }
 console.log(Mahdi)
