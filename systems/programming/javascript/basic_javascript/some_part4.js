@@ -189,7 +189,7 @@ function updateRecords(id, prop, value){
     return collection
 }
 
-updateRecords(69VF, "artist", "69VF")
+//updateRecords(69VF, "artist", "69VF")
 //skip
 console.log("2:10:15 While Loops")
 console.log("____________________")
