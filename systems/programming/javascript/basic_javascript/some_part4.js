@@ -251,6 +251,7 @@ for (var i = 0; i < ourArr.length; i++){
 
 ourTotal = ourTotal * 10
 
+console.log(ourTotal)
 console.log("ultimate question of life, the universe, and everything. don't smoke weed. 69 (with you). udah?")
 console.log("2:19:43 Nesting For Loops")
 console.log("____________________")
