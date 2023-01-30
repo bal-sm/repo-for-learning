@@ -243,6 +243,15 @@ for (var i = 0; i > -99; i--){
 console.log(loopsGanjilMinus)
 console.log("2:17:08 Iterate Through an Array with a For Loop")
 console.log("____________________")
+var ourArr = [9, 10, 11, 12, -42];
+var ourTotal = 0;
+for (var i = 0; i < ourArr.length; i++){
+    ourTotal += ourArr[i]
+}
+
+ourTotal = ourTotal * 10
+
+console.log("ultimate question of life, the universe, and everything. don't smoke weed. 69 (with you). udah?")
 console.log("2:19:43 Nesting For Loops")
 console.log("____________________")
 console.log("2:22:45 Do...While Loops")
