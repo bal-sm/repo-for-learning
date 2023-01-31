@@ -300,12 +300,26 @@ var contacts = [
         "likes": ["Pizza", "Coding", "Learning"]
     },
     {
-        "firstName": "Daris",
-        "lastName": "Azhar",
+        "firstName": "Muhammad Denda",
+        "lastName": "Julianda",
         "number": 2,
         "likes": ["coli", "zina setelah nikah"]
     },
+    {
+        "firstName": "Daris",
+        "lastName": "Azhar",
+        "number": 3,
+        "likes": []
+    },
 ]
+
+function lookUpProfile(name, prop){
+    for (var i = 0; i < contacts.length; i++){
+        if (contacts[i].firstName === name) {
+            return contacts[i][prop] || "No such property"
+        }
+    }
+}
 console.log("2:28:18 Random Fractions and Whole Numbers")
 console.log("____________________")
 console.log("2:31:46 parseInt Function")
