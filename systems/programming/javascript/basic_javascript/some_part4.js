@@ -324,12 +324,12 @@ function lookUpProfile(name, prop){
 
 console.log(lookUpProfile("Iqbal", "likes"))
 console.log("2:28:18 Random Fractions and Whole Numbers")
+console.log("____________________")
 //Generate Random Fractions
 function randomFractions() {
     return Math.random()
 }
 console.log(randomFractions())
-console.log("____________________")
 console.log("2:31:46 parseInt Function")
 console.log("____________________")
 console.log("2:33:29 Ternary Operator")
