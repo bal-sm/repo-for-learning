@@ -274,13 +274,22 @@ console.log(nestingForLoops)
 console.log("2:22:45 Do...While Loops")
 console.log("____________________")
 var myArrayy = [];
-var i = 10;
+var iAr = 10;
 
-while (i < 10){
+while (iAr < 10){
     myArrayy.push(i);
-    i++;
+    iAr++;
 }
-console.log(i, myArrayy)
+console.log(iAr, myArrayy)
+//Do...While Loops
+var myArrayy2 = [];
+var iH = 10;
+
+do {
+    myArrayy2.push(i);
+    iH++;
+} while (iH < 10)
+console.log(myArrayy2)
 console.log("2:24:12 Profile Lookup")
 console.log("____________________")
 console.log("2:28:18 Random Fractions and Whole Numbers")
