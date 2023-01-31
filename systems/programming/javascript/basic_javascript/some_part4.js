@@ -255,8 +255,32 @@ console.log(ourTotal)
 console.log("ultimate question of life, the universe, and everything. don't smoke weed. 69 (with you). udah?")
 console.log("2:19:43 Nesting For Loops")
 console.log("____________________")
+function multiplyAll(arr) {
+    var product = 1;
+
+    for (var i=0; i < arr.length; i++) {
+        for (var j=0; j < arr[i].length; j++) {
+            product *= arr[i][j];
+        }
+    }
+
+    return product;
+
+}
+
+var nestingForLoops = multiplyAll([[1,2],[2,3],[3,4,5]])
+
+console.log(nestingForLoops)
 console.log("2:22:45 Do...While Loops")
 console.log("____________________")
+var myArrayy = [];
+var i = 10;
+
+while (i < 10){
+    myArrayy.push(i);
+    i++;
+}
+console.log(i, myArrayy)
 console.log("2:24:12 Profile Lookup")
 console.log("____________________")
 console.log("2:28:18 Random Fractions and Whole Numbers")
