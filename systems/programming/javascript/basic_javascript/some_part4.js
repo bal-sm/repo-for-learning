@@ -297,7 +297,7 @@ var contacts = [
         "firstName": "Iqbal",
         "lastName": "Syifa Mahmuda",
         "number": 1,
-        "likes": ["Pizza", "Coding", "Learning"]
+        "likes": ["Pizza", "Coding", "Learning", "Have Sex"]
     },
     {
         "firstName": "Muhammad Denda",
@@ -319,7 +319,10 @@ function lookUpProfile(name, prop){
             return contacts[i][prop] || "No such property"
         }
     }
+    return "No such contact"
 }
+
+console.log(lookUpProfile("Iqbal", "likes"))
 console.log("2:28:18 Random Fractions and Whole Numbers")
 console.log("____________________")
 console.log("2:31:46 parseInt Function")
