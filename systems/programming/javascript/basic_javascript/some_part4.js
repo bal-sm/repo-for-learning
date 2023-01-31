@@ -292,6 +292,20 @@ do {
 console.log(myArrayy2)
 console.log("2:24:12 Profile Lookup")
 console.log("____________________")
+var contacts = [
+    {
+        "firstName": "Iqbal",
+        "lastName": "Syifa Mahmuda",
+        "number": 1,
+        "likes": ["Pizza", "Coding", "Learning"]
+    },
+    {
+        "firstName": "Daris",
+        "lastName": "Azhar",
+        "number": 2,
+        "likes": ["coli", "zina"]
+    },
+]
 console.log("2:28:18 Random Fractions and Whole Numbers")
 console.log("____________________")
 console.log("2:31:46 parseInt Function")
