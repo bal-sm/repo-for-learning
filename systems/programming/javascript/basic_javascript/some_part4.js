@@ -303,7 +303,7 @@ var contacts = [
         "firstName": "Daris",
         "lastName": "Azhar",
         "number": 2,
-        "likes": ["coli", "zina"]
+        "likes": ["coli", "zina setelah nikah"]
     },
 ]
 console.log("2:28:18 Random Fractions and Whole Numbers")
