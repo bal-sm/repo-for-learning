@@ -330,6 +330,12 @@ function randomFractions() {
     return Math.random()
 }
 console.log(randomFractions())
+//Generate Whole Numbers
+function generateWholeNumber() {
+    return Math.floor(Math.random() * 10)
+}
+
+console.log(generateWholeNumber())
 console.log("2:31:46 parseInt Function")
 console.log("____________________")
 console.log("2:33:29 Ternary Operator")
