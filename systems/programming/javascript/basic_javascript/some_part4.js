@@ -336,6 +336,12 @@ function generateWholeNumber() {
 }
 
 console.log(generateWholeNumber())
+//Generate Random Whole Numbers within a Range
+function ourRandomRange(ourMin, ourMax) {
+    return Math.floor(Math.random() * (ourMax - ourMin + 1)) + ourMin
+}
+
+console.log(ourRandomRange(3, 19))
 console.log("2:31:46 parseInt Function")
 console.log("____________________")
 console.log("2:33:29 Ternary Operator")
