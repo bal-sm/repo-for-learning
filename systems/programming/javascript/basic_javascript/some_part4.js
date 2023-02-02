@@ -344,6 +344,11 @@ function ourRandomRange(ourMin, ourMax) {
 console.log(ourRandomRange(3, 19))
 console.log("2:31:46 parseInt Function")
 console.log("____________________")
+function convertToInt(num) {
+    return parseInt(num)
+}
+
+console.log(convertToInt("69"))
 console.log("2:33:29 Ternary Operator")
 console.log("____________________")
 console.log("2:34:57 Multiple Ternary Operators")
