@@ -330,10 +330,51 @@ function randomFractions() {
     return Math.random()
 }
 console.log(randomFractions())
+//Generate Whole Numbers
+function generateWholeNumber() {
+    return Math.floor(Math.random() * 10)
+}
+
+console.log(generateWholeNumber())
+//Generate Random Whole Numbers within a Range
+function ourRandomRange(ourMin, ourMax) {
+    return Math.floor(Math.random() * (ourMax - ourMin + 1)) + ourMin
+}
+
+console.log(ourRandomRange(3, 19))
 console.log("2:31:46 parseInt Function")
 console.log("____________________")
+function convertToInt(num) {
+    return parseInt(num)
+}
+
+console.log(convertToInt("69"))
+//Use the parseInt Function with a Radix
+function convertToBinary(num) {
+    return parseInt(num, 2)
+}
+
+console.log(convertToBinary("111"))
 console.log("2:33:29 Ternary Operator")
 console.log("____________________")
+//Use the conditional ternary operator
+function checkEqualA(a, b){
+    if(a === b){
+        return true
+    }
+    else{
+        return false
+    }
+}
+console.log(checkEqualA(13,13))
+function checkEqualB(a, b){
+    return a === b ? true : false
+}
+console.log(checkEqualB(13,13))
+function checkEqualC(a, b){
+    return a === b
+}
+console.log(checkEqualC(13,13))
 console.log("2:34:57 Multiple Ternary Operators")
 console.log("____________________")
 console.log("2:36:57 var vs let")
