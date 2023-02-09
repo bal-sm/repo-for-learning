@@ -1,8 +1,8 @@
 # Source(s)
-https://www.youtube.com/watch?v=Z1N9JzNax2k
-https://www.udemy.com/course/qt-for-python-pyside6-gui-for-beginners/
-and ofc,
-https://doc.qt.io/qtforpython/
+
+[Qt for Python](https://doc.qt.io/qtforpython/)
+
+[Learn Python GUI Development for Desktop – PySide6 and Qt Tutorial](https://www.youtube.com/watch?v=Z1N9JzNax2k)
 
 # Rangkuman
 
