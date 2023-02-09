@@ -110,3 +110,41 @@ You can check the Nuitka project to learn more.
 
 > for what though?
 
+## Why Qt for Python?
+
+### Lowering the Qt Barrier
+
+_Veteran C++ developers will have no problem with setting up a Qt application from scratch, or even manage to understand a different code base written with Qt. In addition, many teams are multidisciplinary, and other project/company developers might not be fluent in C++._
+
+_Python has been luring people into programming, and for the same reason it’s not uncommon that even people with a different background are able to write code, meaning that different teams are enabled to speak “the same language”._
+
+Creating Qt applications in Python requires only a few lines of code, 
+
+and not much configuration is required to execute it. 
+
+Some Python code example of a simple hello world application:
+
+```python
+import sys
+from pyside6.QtWidgets import (QApplication, QMainWindow,
+                               QPushButton)
+
+class MainWindow(QMainWindow):
+    def __init__(self, parent=None):
+        QMainWindow.__init__(self, parent)
+        self.button = QPushButton("My Button", self)
+        self.button.clicked.connect(self.handleButton)
+
+    def handleButton(self):
+        self.button.setText("Ready")
+
+if __name__ == "__main__":
+    app = QApplication([])
+    mainWindow = MainWindow()
+    mainWindow.show()
+    sys.exit(app.exec())
+```
+
+It’s fair to say that most of the boilerplate code is provided by many good IDEs, like QtCreator, but using external tools certainly requires some practice to use them and get familiarized.
+
+> That is informative.
