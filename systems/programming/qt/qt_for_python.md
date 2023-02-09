@@ -99,3 +99,14 @@ A common approach is to only provide a `requirements.txt` file,
 ### Freezing Your Application
 
 This is the most common approach to distribute their applications and even though the code is still available for the end user, it is a bit more difficult to retrieve it.
+
+### Compiling Python
+
+Even though Python does not natively support to be compiled, 
+
+there are complementary tools that let you to achieve this. 
+
+You can check the Nuitka project to learn more.
+
+> for what though?
+
