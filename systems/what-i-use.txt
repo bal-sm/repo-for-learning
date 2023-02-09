@@ -11,3 +11,5 @@ Must-have Extensions:
 Must-have Apps:
 - Visual Studio Code
 - KeePassXC
+High-level Programming Language: Python
+Low-level Programming Language: (Maybe) Rust ('Cause I hate pointers)
