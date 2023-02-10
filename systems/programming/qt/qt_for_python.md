@@ -215,7 +215,7 @@ label = QLabel("&lt;font color=red size=40&gt;Hello World!&lt;/font&gt;")
 ```
 
 Note: 
-> After creating the label, we call show() on it.
+> After creating the label, we call `show()` on it.
 
 Finally, we call `app.exec()` to enter the Qt main loop and start to execute the Qt code. 
 
