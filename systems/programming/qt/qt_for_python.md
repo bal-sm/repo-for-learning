@@ -148,3 +148,31 @@ if __name__ == "__main__":
 It’s fair to say that most of the boilerplate code is provided by many good IDEs, like QtCreator, but using external tools certainly requires some practice to use them and get familiarized.
 
 > That is informative.
+
+### Shiboken
+
+Together with the bindings, Qt for Python provides our binding generator, Shiboken
+
+_Generating bindings between two languages it nothing new, but it has always been a *non-trivial* task, mainly for being as-compatible-as-possible when using external modules/libraries in your project._
+
+Shiboken’s main use case is to extend Qt/C++ project’s functionality, making them scriptable.
+
+What does it mean for an application to be scriptable?
+
+- enables a interpreted language to interact directly with the Qt/C++ application,
+
+- provide the option to modify and create components/elements of the application from Python,
+
+- possibility to create a plugins/add-ons system for the application.
+
+- complement a process with external Python functionality.
+
+Shiboken excels at Qt-dependent binding generation, meaning that any Qt/C++ project can be easily exposed to Python.
+
+_In addition, Shiboken has proven its support for C++ projects (without Qt), as shown on event talks and blog posts._
+
+_Adding Python support to well known solutions/projects is a pattern we keep seeing in the industry, on a broad range of devices. This is why we are working every day to improve the Qt for Python offering._
+
+We believe both Qt and Python will benefit from this interaction.
+
+> Wow, my power
