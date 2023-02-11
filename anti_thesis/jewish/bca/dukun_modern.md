@@ -1,3 +1,0 @@
-SEJARAH BANK CENTRAL ASIA:
-
-Kan Indonesia pernah tuh krisis moneter, tapi jadi bank yang bertahan di Indonesia tuh, aneh kan, di latar belakang nya ada Yahudi tuh (Bank Indonesia). Yahudi sempet berpecah-belah kan, nah jadinya ada sekte dengan kekuatan magis (zionist), terus ada yang reform cenah. Nah Bank Indonesia tobat (meureun ya, idk), cuman BANK CENTRAL ASIA pake dukun zionist tea, aing tau, goblog pisan, maneh cuman bisa ngebenjolin aing, aing bisa bunuh maneh semua literally, sumpah demi Allah swt..
