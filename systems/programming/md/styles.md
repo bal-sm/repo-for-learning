@@ -18,3 +18,12 @@ _italic_
 
 - [ ] task 1
 - [x] task 2
+
+| Left |
+|------|
+
+| Right |
+|------:|
+
+| Center |
+|:------:|
