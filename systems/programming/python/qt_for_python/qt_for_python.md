@@ -257,6 +257,42 @@ How to handle Signals and Slots
     app.exec()
     ```
 
+## Signals and Slots (comprehensive)
+
+- Qt thing, `QObject`s (_`QApplication, QMainWindow, QPushButton,` etc_) require a way to communicate
+  - That’s the reason for this mechanism to be a central feature of Qt.
+
+- Signal and Slots is similar with lights interaction:
+  - _Move_ the light switch (_signal_).
+  - The result: light bulbs are switched _on/off_ (_slot_).
+
+Note:
+> If you have experience with other frameworks or toolkits, it’s likely that you read a concept called ‘callback’. Leaving the implementation details aside, _a callback will be related to a notification function, passing a pointer to a function in case it’s required due to the events that happen in your program._ This approach might sound similar, but there are essential differences that make it an _unintuitive approach_, like _ensuring the type correctness of callback arguments, and some others_.
+
+- All classes that inherit from `QObject` or _one of its subclasses_, like `QWidget` can contain _signals and slots_.
+  - **Signals** are emitted by objects, when _they change their state_ in a way _that may be interesting to other objects._
+  - This is all the object does to communicate. 
+
+  - **Slots** can be used for receiving signals.
+  - A slot does not know if it has any signals connected to it.
+
+  - You can connect _as many signals as you want to a single slot_, and _a signal can be connected to as many slots_ as you need.
+  
+  - Qt’s widgets have many predefined signals and slots, e.g.: 
+    - `QAbstractButton` (_base class of buttons in Qt_) has a `clicked()` signal 
+    - `QLineEdit` (_single line input field_) has a slot named `clear()`. 
+
+So, a text input field with a button to clear the text could be implemented by:
+Placing a `QToolButton` to the right of the `QLineEdit` and connecting its `clicked()` signal to the slot `clear()`. This is done using the `connect()` method of the signal:
+
+```python
+button = QToolButton()
+line_edit = QLineEdit()
+button.clicked.connect(line_edit.clear)
+```
+
+`connect()` returns a `QMetaObject.Connection` object, which can be used with the `disconnect()` method to sever the connection.
+
 ## Source(s)
 
 [Qt for Python](https://doc.qt.io/qtforpython/)
