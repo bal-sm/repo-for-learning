@@ -57,6 +57,6 @@ _italic_
 |--------|------:|-------:|
 | Simpanan Kiosk  |       | 50     |
 
-> Nah :+1: [^1]
+> Wow [^1]
 
 [^1]: Allah swt.'s quote
