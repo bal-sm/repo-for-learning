@@ -24,6 +24,8 @@ you can do this:
 
 <sub>téks leutik dihandap</sub>
 
+<sup>téks leutik diluhur</sup>
+
 
 - [ ] task 1
 - [x] task 2
