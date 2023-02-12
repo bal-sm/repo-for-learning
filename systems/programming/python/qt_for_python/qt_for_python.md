@@ -1,9 +1,3 @@
-# Source(s)
-
-[Qt for Python](https://doc.qt.io/qtforpython/)
-
-[Learn Python GUI Development for Desktop – PySide6 and Qt Tutorial](https://www.youtube.com/watch?v=Z1N9JzNax2k)
-
 # Rangkuman
 
 ## QT/QML
@@ -260,3 +254,9 @@ In reality, it is only here where the label is shown, but this can be ignored fo
     # Run the main Qt loop
     app.exec()
     ```
+
+# Source(s)
+
+[Qt for Python](https://doc.qt.io/qtforpython/)
+
+[Learn Python GUI Development for Desktop – PySide6 and Qt Tutorial](https://www.youtube.com/watch?v=Z1N9JzNax2k)
