@@ -1,4 +1,4 @@
-# Rangkuman
+# Qt for Python
 
 ## QT/QML
 
