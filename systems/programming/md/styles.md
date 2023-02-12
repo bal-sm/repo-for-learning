@@ -12,9 +12,9 @@ _italic_
 
 **bold**
 
-you can do this:
+- you can do this:
 
-**_bold & italic_**
+  - **_bold & italic_**
 
 <!-- ***alternate bold & italic*** -->
 
