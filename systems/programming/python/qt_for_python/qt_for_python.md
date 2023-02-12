@@ -255,7 +255,7 @@ In reality, it is only here where the label is shown, but this can be ignored fo
     app.exec()
     ```
 
-# Source(s)
+## Source(s)
 
 [Qt for Python](https://doc.qt.io/qtforpython/)
 
