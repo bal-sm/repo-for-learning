@@ -19,9 +19,9 @@ A QML document describes a hierarchical object tree.
 
 QML modules shipped with Qt include primitive graphical building blocks (e.g., Rectangle, Image), modeling components (e.g., FolderListModel, XmlListModel), behavioral components (e.g., TapHandler, DragHandler, State, Transition, Animation), and more complex controls (e.g., Button, Slider, Drawer, Menu).
 
-These elements can be combined to build components ranging in complexity from simple buttons and sliders, to complete internet-enabled programs. 
+These elements can be combined to build components ranging in complexity from simple buttons and sliders, to complete internet-enabled programs.
 
-QML elements can be augmented by standard JavaScript both inline and via included .js files. Elements can also be seamlessly integrated and extended by C++ components using the Qt framework. 
+QML elements can be augmented by standard JavaScript both inline and via included .js files. Elements can also be seamlessly integrated and extended by C++ components using the Qt framework.
 
 > Why python hasn't been developed for mobile apps? I will do it then
 
@@ -96,9 +96,9 @@ This is the most common approach to distribute their applications and even thoug
 
 ### Compiling Python
 
-Even though Python does not natively support to be compiled, 
+Even though Python does not natively support to be compiled,
 
-there are complementary tools that let you to achieve this. 
+there are complementary tools that let you to achieve this.
 
 You can check the Nuitka project to learn more.
 
@@ -112,9 +112,9 @@ _Veteran C++ developers will have no problem with setting up a Qt application fr
 
 _Python has been luring people into programming, and for the same reason it’s not uncommon that even people with a different background are able to write code, meaning that different teams are enabled to speak “the same language”._
 
-Creating Qt applications in Python requires only a few lines of code, 
+Creating Qt applications in Python requires only a few lines of code,
 
-and not much configuration is required to execute it. 
+and not much configuration is required to execute it.
 
 Some Python code example of a simple hello world application:
 
@@ -187,11 +187,11 @@ app.exec()
 
 For a widget application using PySide6, you must start by importing _the appropriate_ class from the `PySide6.QtWidgets` module.
 
-After the imports, you create a `QApplication` instance. 
+After the imports, you create a `QApplication` instance.
 
 _As Qt can receive arguments from command line, you may pass any argument to the QApplication object._
 
-_Usually, you don’t need to pass any arguments so you can leave it as is,_ 
+_Usually, you don’t need to pass any arguments so you can leave it as is,_
 
 or use the following approach:
 
@@ -199,7 +199,7 @@ or use the following approach:
 app = QApplication([])
 ```
 
-After the creation of the application object, we have created a `QLabel` object. 
+After the creation of the application object, we have created a `QLabel` object.
 
 A `QLabel` is a widget that can present text (simple or rich, like html), and images:
 
@@ -208,10 +208,10 @@ A `QLabel` is a widget that can present text (simple or rich, like html), and im
 label = QLabel("&lt;font color=red size=40&gt;Hello World!&lt;/font&gt;")
 ```
 
-Note: 
+Note:
 > After creating the label, we call `show()` on it.
 
-Finally, we call `app.exec()` to enter the Qt main loop and start to execute the Qt code. 
+Finally, we call `app.exec()` to enter the Qt main loop and start to execute the Qt code.
 
 In reality, it is only here where the label is shown, but this can be ignored for now.
 
@@ -226,7 +226,7 @@ How to handle Signals and Slots
 - Button that logs, when clicked:
   
     > Button clicked, Hello!_
-    
+
     The code:
 
     ```python
@@ -271,16 +271,16 @@ Note:
 
 - All classes that inherit from `QObject` or _one of its subclasses_, like `QWidget` can contain _signals and slots_.
   - **Signals** are emitted by objects, when _they change their state_ in a way _that may be interesting to other objects._
-  - This is all the object does to communicate. 
+  - This is all the object does to communicate.
 
   - **Slots** can be used for receiving signals.
   - A slot does not know if it has any signals connected to it.
 
   - You can connect _as many signals as you want to a single slot_, and _a signal can be connected to as many slots_ as you need.
   
-  - Qt’s widgets have many predefined signals and slots, e.g.: 
-    - `QAbstractButton` (_base class of buttons in Qt_) has a `clicked()` signal 
-    - `QLineEdit` (_single line input field_) has a slot named `clear()`. 
+  - Qt’s widgets have many predefined signals and slots, e.g.:
+    - `QAbstractButton` (_base class of buttons in Qt_) has a `clicked()` signal
+    - `QLineEdit` (_single line input field_) has a slot named `clear()`.
 
 So, a text input field with a button to clear the text could be implemented by:
 Placing a `QToolButton` to the right of the `QLineEdit` and connecting its `clicked()` signal to the slot `clear()`. This is done using the `connect()` method of the signal:
