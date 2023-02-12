@@ -284,9 +284,24 @@ So, a text input field with a button to clear the text could be implemented by:
 Placing a `QToolButton` to the right of the `QLineEdit` and connecting its `clicked()` signal to the slot `clear()`. This is done using the `connect()` method of the signal:
 
 ```python
+# signals_and_slots_part2.py
+# Importing necessary PySide6 classes and python sys module
+import sys
+from PySide6.QtWidgets import QApplication, QToolButton, QLineEdit
+from PySide6.QtCore import Slot
+
+# Create the Qt Application
+app = QApplication(sys.argv)
+
 button = QToolButton()
 line_edit = QLineEdit()
+line_edit.show()
 button.clicked.connect(line_edit.clear)
+
+# Show the button
+button.show()
+# Run the main Qt loop
+app.exec()
 ```
 
 `connect()` returns a `QMetaObject.Connection` object, which can be used with the `disconnect()` method to sever the connection.
