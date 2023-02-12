@@ -64,8 +64,6 @@ pyside6-rcc tool generates Python code from these .qrc files. compiler, so qrc f
 
 ### .qml
 
-#### From doc
-
 Qt Modeling Language File
 
 Graphical QML applications  (=/=) are not related to  Qt Widgets applications
