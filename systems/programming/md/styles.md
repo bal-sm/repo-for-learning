@@ -20,6 +20,9 @@ you can do this:
 
 <!-- comment gaib -->
 
+~~strikethrough~~
+
+
 - [ ] task 1
 - [x] task 2
 
