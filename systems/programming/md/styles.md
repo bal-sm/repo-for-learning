@@ -16,6 +16,8 @@ you can do this:
 
 **_bold & italic_**
 
+<!-- ***alternate bold & italic*** -->
+
 [link example](https://example.com/)
 
 `monospace`
