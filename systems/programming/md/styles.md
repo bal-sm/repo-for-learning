@@ -8,6 +8,8 @@
 
 _italic_
 
+<!-- *alternate italic* -->
+
 **bold**
 
 you can do this:
