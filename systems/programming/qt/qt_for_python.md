@@ -220,3 +220,43 @@ Note:
 Finally, we call `app.exec()` to enter the Qt main loop and start to execute the Qt code. 
 
 In reality, it is only here where the label is shown, but this can be ignored for now.
+
+## How to handle Signals and Slots / Using a Simple Button 
+
+- Signals and slots is a Qt feature:
+  - lets your graphical widgets communicate with:
+    - other graphical widgets
+    - your python code.
+- Button that logs, when clicked:
+  
+    > Button clicked, Hello!_
+    
+    The code:
+
+    ```python
+    # Importing necessary PySide6 classes and python sys module
+    import sys
+    from PySide6.QtWidgets import QApplication, QPushButton
+    from PySide6.QtCore import Slot
+    
+    # Logs the message 
+    @Slot()
+    def say_hello():
+        print("Button clicked, hello!")
+    # > The @Slot() is a decorator that identifies a function as a slot. It is not important to understand why for now, but use it always to avoid unexpected behavior.
+
+    # Create the Qt Application
+    app = QApplication(sys.argv)
+
+    # Create a button
+    button = QPushButton("Click me")
+
+    # Before we show the button, we must connect it to the say_hello() function that we defined earlier.
+    # New style, more pythonic.
+    button.clicked.connect(say_hello)
+
+    # Show the button
+    button.show()
+    # Run the main Qt loop
+    app.exec()
+    ```
