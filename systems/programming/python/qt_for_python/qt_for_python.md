@@ -147,7 +147,7 @@ It’s fair to say that most of the boilerplate code is provided by many good ID
 
 Together with the bindings, Qt for Python provides our binding generator, Shiboken
 
-_Generating bindings between two languages it nothing new, but it has always been a *non-trivial* task, mainly for being as-compatible-as-possible when using external modules/libraries in your project._
+_Generating bindings between two languages it nothing new, but it has always been a non-trivial task, mainly for being as-compatible-as-possible when using external modules/libraries in your project._
 
 Shiboken’s main use case is to extend Qt/C++ project’s functionality, making them scriptable.
 
