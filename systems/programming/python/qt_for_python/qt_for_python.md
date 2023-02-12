@@ -308,6 +308,8 @@ app.exec()
 
 Signals can also be connected to free functions, refer to previous section.
 
+Connections can be spelled out in code or, for _widget forms_, designed in the _Signal-Slot Editor_ of _Qt Designer_.
+
 ## Source(s)
 
 [Qt for Python](https://doc.qt.io/qtforpython/)
