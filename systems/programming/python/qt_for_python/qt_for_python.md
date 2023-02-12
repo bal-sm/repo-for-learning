@@ -217,6 +217,8 @@ In reality, it is only here where the label is shown, but this can be ignored fo
 
 ## Signals and Slots (handling) / Using a Simple Button
 
+How to handle Signals and Slots
+
 - Signals and slots is a Qt feature:
   - lets your graphical widgets communicate with:
     - other graphical widgets
