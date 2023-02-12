@@ -57,6 +57,6 @@ you can do this:
 |--------|------:|-------:|
 | Simpanan Kiosk  |       | 50     |
 
-> Good enough :+1: [^1]
+> Nah :+1: [^1]
 
 [^1]: Allah swt.'s quote
