@@ -215,7 +215,7 @@ Finally, we call `app.exec()` to enter the Qt main loop and start to execute the
 
 In reality, it is only here where the label is shown, but this can be ignored for now.
 
-## How to handle Signals and Slots / Using a Simple Button 
+## Signals and Slots (handling) / Using a Simple Button
 
 - Signals and slots is a Qt feature:
   - lets your graphical widgets communicate with:
