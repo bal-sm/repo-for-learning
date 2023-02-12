@@ -22,6 +22,8 @@ you can do this:
 
 ~~strikethrough~~
 
+<sub>téks leutik dihandap</sub>
+
 
 - [ ] task 1
 - [x] task 2
