@@ -22,13 +22,13 @@ you can do this:
 
 `monospace`
 
-<!-- comment gaib -->
-
 ~~strikethrough~~
 
 <sub>téks leutik dihandap</sub>
 
 <sup>téks leutik diluhur</sup>
+
+<!-- ghaib -->
 
 > Astagfirullah aya jurig
 
