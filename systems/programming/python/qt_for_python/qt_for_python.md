@@ -306,6 +306,8 @@ app.exec()
 
 `connect()` returns a `QMetaObject.Connection` object, which can be used with the `disconnect()` method to sever the connection.
 
+Signals can also be connected to free functions, refer to previous section.
+
 ## Source(s)
 
 [Qt for Python](https://doc.qt.io/qtforpython/)
