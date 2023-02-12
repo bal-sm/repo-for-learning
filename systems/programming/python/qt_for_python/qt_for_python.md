@@ -19,9 +19,9 @@ A QML document describes a hierarchical object tree.
 
 QML modules shipped with Qt include primitive graphical building blocks (e.g., Rectangle, Image), modeling components (e.g., FolderListModel, XmlListModel), behavioral components (e.g., TapHandler, DragHandler, State, Transition, Animation), and more complex controls (e.g., Button, Slider, Drawer, Menu).
 
-These elements can be combined to build components ranging in complexity from simple buttons and sliders, to complete internet-enabled programs. 
+These elements can be combined to build components ranging in complexity from simple buttons and sliders, to complete internet-enabled programs.
 
-QML elements can be augmented by standard JavaScript both inline and via included .js files. Elements can also be seamlessly integrated and extended by C++ components using the Qt framework. 
+QML elements can be augmented by standard JavaScript both inline and via included .js files. Elements can also be seamlessly integrated and extended by C++ components using the Qt framework.
 
 > Why python hasn't been developed for mobile apps? I will do it then
 
@@ -64,8 +64,6 @@ pyside6-rcc tool generates Python code from these .qrc files. compiler, so qrc f
 
 ### .qml
 
-#### From doc
-
 Qt Modeling Language File
 
 Graphical QML applications  (=/=) are not related to  Qt Widgets applications
@@ -96,9 +94,9 @@ This is the most common approach to distribute their applications and even thoug
 
 ### Compiling Python
 
-Even though Python does not natively support to be compiled, 
+Even though Python does not natively support to be compiled,
 
-there are complementary tools that let you to achieve this. 
+there are complementary tools that let you to achieve this.
 
 You can check the Nuitka project to learn more.
 
@@ -112,9 +110,9 @@ _Veteran C++ developers will have no problem with setting up a Qt application fr
 
 _Python has been luring people into programming, and for the same reason it’s not uncommon that even people with a different background are able to write code, meaning that different teams are enabled to speak “the same language”._
 
-Creating Qt applications in Python requires only a few lines of code, 
+Creating Qt applications in Python requires only a few lines of code,
 
-and not much configuration is required to execute it. 
+and not much configuration is required to execute it.
 
 Some Python code example of a simple hello world application:
 
@@ -147,7 +145,7 @@ It’s fair to say that most of the boilerplate code is provided by many good ID
 
 Together with the bindings, Qt for Python provides our binding generator, Shiboken
 
-_Generating bindings between two languages it nothing new, but it has always been a *non-trivial* task, mainly for being as-compatible-as-possible when using external modules/libraries in your project._
+_Generating bindings between two languages it nothing new, but it has always been a non-trivial task, mainly for being as-compatible-as-possible when using external modules/libraries in your project._
 
 Shiboken’s main use case is to extend Qt/C++ project’s functionality, making them scriptable.
 
@@ -187,11 +185,11 @@ app.exec()
 
 For a widget application using PySide6, you must start by importing _the appropriate_ class from the `PySide6.QtWidgets` module.
 
-After the imports, you create a `QApplication` instance. 
+After the imports, you create a `QApplication` instance.
 
 _As Qt can receive arguments from command line, you may pass any argument to the QApplication object._
 
-_Usually, you don’t need to pass any arguments so you can leave it as is,_ 
+_Usually, you don’t need to pass any arguments so you can leave it as is,_
 
 or use the following approach:
 
@@ -199,7 +197,7 @@ or use the following approach:
 app = QApplication([])
 ```
 
-After the creation of the application object, we have created a `QLabel` object. 
+After the creation of the application object, we have created a `QLabel` object.
 
 A `QLabel` is a widget that can present text (simple or rich, like html), and images:
 
@@ -208,14 +206,16 @@ A `QLabel` is a widget that can present text (simple or rich, like html), and im
 label = QLabel("&lt;font color=red size=40&gt;Hello World!&lt;/font&gt;")
 ```
 
-Note: 
+Note:
 > After creating the label, we call `show()` on it.
 
-Finally, we call `app.exec()` to enter the Qt main loop and start to execute the Qt code. 
+Finally, we call `app.exec()` to enter the Qt main loop and start to execute the Qt code.
 
 In reality, it is only here where the label is shown, but this can be ignored for now.
 
-## How to handle Signals and Slots / Using a Simple Button 
+## Signals and Slots (handling) / Using a Simple Button
+
+How to handle Signals and Slots
 
 - Signals and slots is a Qt feature:
   - lets your graphical widgets communicate with:
@@ -224,7 +224,7 @@ In reality, it is only here where the label is shown, but this can be ignored fo
 - Button that logs, when clicked:
   
     > Button clicked, Hello!_
-    
+
     The code:
 
     ```python
@@ -254,6 +254,61 @@ In reality, it is only here where the label is shown, but this can be ignored fo
     # Run the main Qt loop
     app.exec()
     ```
+
+## Signals and Slots (comprehensive)
+
+- Qt thing, `QObject`s (_`QApplication, QMainWindow, QPushButton,` etc_) require a way to communicate
+  - That’s the reason for this mechanism to be a central feature of Qt.
+
+- Signal and Slots is similar with lights interaction:
+  - _Move_ the light switch (_signal_).
+  - The result: light bulbs are switched _on/off_ (_slot_).
+
+Note:
+> If you have experience with other frameworks or toolkits, it’s likely that you read a concept called ‘callback’. Leaving the implementation details aside, _a callback will be related to a notification function, passing a pointer to a function in case it’s required due to the events that happen in your program._ This approach might sound similar, but there are essential differences that make it an _unintuitive approach_, like _ensuring the type correctness of callback arguments, and some others_.
+
+- All classes that inherit from `QObject` or _one of its subclasses_, like `QWidget` can contain _signals and slots_.
+  - **Signals** are emitted by objects, when _they change their state_ in a way _that may be interesting to other objects._
+  - This is all the object does to communicate.
+
+  - **Slots** can be used for receiving signals.
+  - A slot does not know if it has any signals connected to it.
+
+  - You can connect _as many signals as you want to a single slot_, and _a signal can be connected to as many slots_ as you need.
+  
+  - Qt’s widgets have many predefined signals and slots, e.g.:
+    - `QAbstractButton` (_base class of buttons in Qt_) has a `clicked()` signal
+    - `QLineEdit` (_single line input field_) has a slot named `clear()`.
+
+So, a text input field with a button to clear the text could be implemented by:
+Placing a `QToolButton` to the right of the `QLineEdit` and connecting its `clicked()` signal to the slot `clear()`. This is done using the `connect()` method of the signal:
+
+```python
+# signals_and_slots_part2.py
+# Importing necessary PySide6 classes and python sys module
+import sys
+from PySide6.QtWidgets import QApplication, QToolButton, QLineEdit
+from PySide6.QtCore import Slot
+
+# Create the Qt Application
+app = QApplication(sys.argv)
+
+button = QToolButton()
+line_edit = QLineEdit()
+line_edit.show()
+button.clicked.connect(line_edit.clear)
+
+# Show the button
+button.show()
+# Run the main Qt loop
+app.exec()
+```
+
+`connect()` returns a `QMetaObject.Connection` object, which can be used with the `disconnect()` method to sever the connection.
+
+Signals can also be connected to free functions, refer to previous section.
+
+Connections can be spelled out in code or, for _widget forms_, designed in the _Signal-Slot Editor_ of _Qt Designer_.
 
 ## Source(s)
 
