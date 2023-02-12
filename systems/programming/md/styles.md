@@ -10,6 +10,10 @@ _italic_
 
 **bold**
 
+you can do this:
+
+**_bold & italic_**
+
 [link example](https://example.com/)
 
 `monospace`
