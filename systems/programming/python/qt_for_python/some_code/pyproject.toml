@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "qt-for-python-code"
+version = "0.1.0"
+description = ""
+authors = ["Iqbal Syifa Mahmuda <bal.mahmuda@gmail.com>"]
+readme = "README.md"
+packages = [{include = "qt_for_python_code"}]
+
+[tool.poetry.dependencies]
+python = "~3.11"
+PySide6 = "^6.4.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
