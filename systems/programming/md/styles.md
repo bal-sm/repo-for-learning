@@ -56,3 +56,7 @@ you can do this:
 | Modal  |       | 100    |
 |--------|------:|-------:|
 | Kios2  |       | 50     |
+
+> Good enough :+1: [^1]
+
+[^1]: Allah swt.'s quote
