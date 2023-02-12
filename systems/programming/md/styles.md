@@ -49,13 +49,13 @@ you can do this:
 | Dirham | 50    |        |
 |--------|------:|-------:|
 | Dinar  | 50    |        |
-| Kios   | 50    |        |
+| Token  | 50    |        |
 
 | Akun   | Debit | Kredit |
 |:------:|:-----:|-------:|
 | Modal  |       | 100    |
 |--------|------:|-------:|
-| Kios2  |       | 50     |
+| Simpanan Kiosk  |       | 50     |
 
 > Good enough :+1: [^1]
 
