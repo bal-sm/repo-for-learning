@@ -333,12 +333,25 @@ Connections can be spelled out in code or, for _widget forms_, designed in the _
 
     ```python
     from PySide6.QtCore import Signal, QUrl, QDate
-    
+
     signal1 = Signal(int)  # Python types
     signal2 = Signal(QUrl)  # Qt Types
     signal3 = Signal(int, str, int)  # more than one type
     signal4 = Signal((float,), (QDate,))  # optional types
     ```
+
+    - `Signal` can receive also _a named argument name_ that _defines the signal name_. _If nothing is passed_, the new signal will _have the same name as the variable_ that _it is being assigned to_.
+
+    ```python
+    signal5 = Signal(int, name='rangeChanged')
+    # SOMETHING
+    rangeChanged.emit(...)
+
+    signal6 = Signal(int)
+    " Some Thing "
+    signal6.emit(...)
+    ```
+
 
 ## Source(s)
 
