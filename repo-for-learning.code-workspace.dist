@@ -18,5 +18,8 @@
 		"python.terminal.activateEnvironment": true,
 		"prettier.printWidth": 80,
 		"prettier.tabWidth": 2,
+		"markdownlint.config": {
+			"no-trailing-spaces": false,
+		},
 	}
 }
