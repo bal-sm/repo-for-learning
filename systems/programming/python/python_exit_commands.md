@@ -48,6 +48,40 @@ Output:
 Use quit() or Ctrl-D (i.e. EOF) to exit
 ```
 
+## `exit()`
+
+- `exit()` is defined in `site.py`
+  - it works only if the site module is imported so it should be used in the interpreter only.
+  - like synonym for `quit()`
+
+Example:
+
+```python
+# Python program to demonstrate
+# exit()
+for i in range(10):
+    # If the value of i becomes
+    # 5 then the program is forced
+    # to exit
+    if i == 5:
+ 
+        # prints the exit message
+        print(exit)
+        exit()
+    print(i)
+```
+
+Output:
+
+```sh
+0
+1
+2
+3
+4
+Use exit() or Ctrl-D (i.e. EOF) to exit
+```
+
 ## Source
 
 [Python exit commands: quit(), exit(), sys.exit() and os._exit() by Geeks for Geeks](https://www.geeksforgeeks.org/python-exit-commands-quit-exit-sys-exit-and-os-_exit/)
