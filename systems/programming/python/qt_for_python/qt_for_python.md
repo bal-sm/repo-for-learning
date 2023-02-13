@@ -452,6 +452,39 @@ wizard.registerField("text", line_edit, "text",
                    SIGNAL("textChanged(QString)"))
 ```
 
+## Creating a Dialog Application
+
+- This tutorial shows _how to build a simple dialog with_ some basic widgets. The idea:
+  - to let users provide their name in a `QLineEdit`
+  - the dialog greets them on click of a `QPushButton`.
+
+Start with a simple stub that creates and shows a dialog. 
+
+Cenah:
+> This stub is updated during the course of this tutorial, but you can use this stub as is if you need to:
+
+```python
+# Creating a Dialog Application
+import sys
+from PySide6.QtWidgets import QApplication, QDialog, QLineEdit, QPushButton
+
+class Form(QDialog):
+
+    def __init__(self, parent=None):
+        super(Form, self).__init__(parent)
+        self.setWindowTitle("My Form")
+
+
+if __name__ == '__main__':
+    # Create the Qt Application
+    app = QApplication(sys.argv)
+    # Create and show the form
+    form = Form()
+    form.show()
+    # Run the main Qt loop
+    sys.exit(app.exec())
+```
+
 ## Source(s)
 
 [Qt for Python](https://doc.qt.io/qtforpython/)
