@@ -310,6 +310,25 @@ Signals can also be connected to free functions, refer to previous section.
 
 Connections can be spelled out in code or, for _widget forms_, designed in the _Signal-Slot Editor_ of _Qt Designer_.
 
+### Signal Class
+
+- Signals are declared as (Python) class level variables of the class `QtCore.Signal()`.
+    - A QWidget-based button that emits a `clicked()` signal could look as follows:
+
+    ```python
+    from PySide6.QtCore import Qt, Signal
+    from PySide6.QtWidgets import QWidget
+
+    class Button(QWidget):
+    
+        clicked = Signal(Qt.MouseButton)
+
+        "something"
+
+        def mousePressEvent(self, event):
+            self.clicked.emit(event.button())
+    ```
+
 ## Source(s)
 
 [Qt for Python](https://doc.qt.io/qtforpython/)
