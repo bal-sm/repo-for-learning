@@ -485,6 +485,19 @@ if __name__ == '__main__':
     sys.exit(app.exec())
 ```
 
+Cenah:
+> _The imports aren’t new to you, the same for the creation of the `QApplication` and the execution of the Qt main loop._ _The only **novelty** here_ is the **class definition**.
+
+You can create any class that subclasses `PySide6` widgets. 
+
+- In this case, 
+  - We are subclassing `QDialog` to _define a custom dialog_, 
+    - which we name as `Form`. 
+  - We have also implemented the `init()` method 
+    - that calls the `QDialog`’s _init method with the parent widget_, if any. 
+  - Also, the new `setWindowTitle()` method _just sets the title of the dialog window_. 
+  - In `main()`, you can see that we are creating a `Form` object and show it.
+
 ## Source(s)
 
 [Qt for Python](https://doc.qt.io/qtforpython/)
