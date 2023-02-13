@@ -433,6 +433,25 @@ if __name__ == "__main__":
     someone.speak[str].emit("Hello everybody!")
 ```
 
+### Specifying Signals and Slots by Method Signature Strings
+
+Signals and slots _can also be specified_ as C++ method _signature_ strings _passed through_ the `SIGNAL()` and/or `SLOT()` functions:
+
+```python
+from PySide6.QtCore import SIGNAL, SLOT
+
+button.connect(SIGNAL("clicked(Qt::MouseButton)"),
+              action_handler, SLOT("action1(Qt::MouseButton)"))
+```
+
+Cenah:
+> This is **not recommended** for _connecting_ signals, it is _mostly used to specify signals for methods_ like `QWizardPage::registerField()`:
+
+```python
+wizard.registerField("text", line_edit, "text",
+                   SIGNAL("textChanged(QString)"))
+```
+
 ## Source(s)
 
 [Qt for Python](https://doc.qt.io/qtforpython/)
