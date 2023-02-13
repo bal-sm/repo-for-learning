@@ -366,6 +366,24 @@ Connections can be spelled out in code or, for _widget forms_, designed in the _
         }
         ```
 
+### Slot Class
+
+Slots in `QObject`-derived classes _should be indicated by_ the decorator `@QtCore.Slot()`. Again, _to define a signature_ just pass the types similar to the `QtCore.Signal()` class.
+
+```python
+@Slot(str)
+def slot_function(self, s):
+    ...
+```
+
+- `Slot()` also accepts:
+  - a name
+    - The name keyword behaves the same way as in Signal(). 
+    - _If nothing is passed_ as name then the new slot will have _the same name_ as the function _that is being decorated_.
+  - a result keyword
+    - The result keyword defines the type _that will be returned_ 
+    - can be a C or Python type. 
+
 ## Source(s)
 
 [Qt for Python](https://doc.qt.io/qtforpython/)
