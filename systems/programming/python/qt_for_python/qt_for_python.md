@@ -315,56 +315,56 @@ Connections can be spelled out in code or, for _widget forms_, designed in the _
 - Signals are declared as (Python) class level variables of the class `QtCore.Signal()`.
     - A QWidget-based button that emits a `clicked()` signal could look as follows:
 
-    ```python
-    from PySide6.QtCore import Qt, Signal
-    from PySide6.QtWidgets import QWidget
-
-    class Button(QWidget):
+        ```python
+        from PySide6.QtCore import Qt, Signal
+        from PySide6.QtWidgets import QWidget
     
-        clicked = Signal(Qt.MouseButton)
-
-        "something"
-
-        def mousePressEvent(self, event):
-            self.clicked.emit(event.button())
-    ```
+        class Button(QWidget):
+        
+            clicked = Signal(Qt.MouseButton)
+    
+            "something"
+    
+            def mousePressEvent(self, event):
+                self.clicked.emit(event.button())
+        ```
 
     - The constructor of `Signal` takes a `tuple` or a `list` of Python types and C types:
 
-    ```python
-    from PySide6.QtCore import Signal, QUrl, QDate
-
-    signal1 = Signal(int)  # Python types
-    signal2 = Signal(QUrl)  # Qt Types
-    signal3 = Signal(int, str, int)  # more than one type
-    signal4 = Signal((float,), (QDate,))  # optional types
-    ```
+        ```python
+        from PySide6.QtCore import Signal, QUrl, QDate
+    
+        signal1 = Signal(int)  # Python types
+        signal2 = Signal(QUrl)  # Qt Types
+        signal3 = Signal(int, str, int)  # more than one type
+        signal4 = Signal((float,), (QDate,))  # optional types
+        ```
 
     - `Signal` can receive also _a named argument name_ that _defines the signal name_. _If nothing is passed_, the new signal will _have the same name as the variable_ that _it is being assigned to_.
 
-    ```python
-    signal5 = Signal(int, name='rangeChanged')
-    # SOMETHING
-    rangeChanged.emit(...)
+        ```python
+        signal5 = Signal(int, name='rangeChanged')
+        # SOMETHING
+        rangeChanged.emit(...)
 
-    signal6 = Signal(int)
-    " Some Thing "
-    signal6.emit(...)
-    ```
+        signal6 = Signal(int)
+        " Some Thing "
+        signal6.emit(...)
+        ```
 
     - _Another useful option of_ Signal is _the arguments name_, useful for QML applications _to refer to the emitted values by name_:
 
-    ```python
-    sumResult = Signal(int, arguments=['sum'])
-    ```
+        ```python
+        sumResult = Signal(int, arguments=['sum'])
+        ```
 
-    ```python
-    Connections {
-    target: ...
-    function onSumResult(sum) {
-        // do something with 'sum'
-    }
-    ```
+        ```python
+        Connections {
+        target: ...
+        function onSumResult(sum) {
+            // do something with 'sum'
+        }
+        ```
 
 ## Source(s)
 
