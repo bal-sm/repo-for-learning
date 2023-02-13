@@ -82,6 +82,34 @@ Output:
 Use exit() or Ctrl-D (i.e. EOF) to exit
 ```
 
+## `sys.exit([arg])`
+
+- considered good to be used in production code for the `sys` module is always available
+  - _unlike quit() and exit(), sys.exit()_
+
+- The optional argument arg can be an integer giving the exit or another type of object.
+  - If it is an integer, zero is considered “successful termination”.
+
+Note:
+> A string can also be passed to the sys.exit() method.
+
+Example:
+
+```python
+# Python program to demonstrate
+# sys.exit()
+import sys
+ 
+age = 17
+ 
+# program that stops execution if the age is less than 18.
+if age < 18:   
+    # exits the program
+    sys.exit("Age less than 18")   
+else:
+    print("Age is not less than 18")
+```
+
 ## Source
 
 [Python exit commands: quit(), exit(), sys.exit() and os._exit() by Geeks for Geeks](https://www.geeksforgeeks.org/python-exit-commands-quit-exit-sys-exit-and-os-_exit/)
