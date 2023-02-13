@@ -21,5 +21,6 @@
 		"markdownlint.config": {
 			"no-trailing-spaces": false,
 		},
+		"git.autofetch": false,
 	}
 }
