@@ -384,6 +384,55 @@ def slot_function(self, s):
     - The result keyword defines the type _that will be returned_ 
     - can be a C or Python type. 
 
+### Overloading Signals and Slots with Different Types
+
+Cenah:
+> Legacy from Qt 5. Not recommended for new code.
+
+Use signals and slots of the same name with different parameter type lists.
+
+Cenah:
+> In Qt 6, signals have distinct names for different types.
+
+The following example uses _two handlers_ for a `Signal` and a `Slot` _to showcase the different functionality_.
+
+```python
+import sys
+from PySide6.QtWidgets import QApplication, QPushButton
+from PySide6.QtCore import QObject, Signal, Slot
+
+
+class Communicate(QObject):
+    # create two new signals on the fly: one will handle
+    # int type, the other will handle strings
+    speak = Signal((int,), (str,))
+
+    def __init__(self, parent=None):
+        super().__init__(parent)
+
+        self.speak[int].connect(self.say_something)
+        self.speak[str].connect(self.say_something)
+
+    # define a new slot that receives a C 'int' or a 'str'
+    # and has 'say_something' as its name
+    @Slot(int)
+    @Slot(str)
+    def say_something(self, arg):
+        if isinstance(arg, int):
+            print("This is a number:", arg)
+        elif isinstance(arg, str):
+            print("This is a string:", arg)
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    someone = Communicate()
+
+    # emit 'speak' signal with different arguments.
+    # we have to specify the str as int is the default
+    someone.speak.emit(10)
+    someone.speak[str].emit("Hello everybody!")
+```
+
 ## Source(s)
 
 [Qt for Python](https://doc.qt.io/qtforpython/)
