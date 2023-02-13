@@ -352,6 +352,19 @@ Connections can be spelled out in code or, for _widget forms_, designed in the _
     signal6.emit(...)
     ```
 
+    - _Another useful option of_ Signal is _the arguments name_, useful for QML applications _to refer to the emitted values by name_:
+
+    ```python
+    sumResult = Signal(int, arguments=['sum'])
+    ```
+
+    ```python
+    Connections {
+    target: ...
+    function onSumResult(sum) {
+        // do something with 'sum'
+    }
+    ```
 
 ## Source(s)
 
