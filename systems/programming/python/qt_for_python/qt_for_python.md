@@ -366,6 +366,92 @@ Connections can be spelled out in code or, for _widget forms_, designed in the _
         }
         ```
 
+### Slot Class
+
+Slots in `QObject`-derived classes _should be indicated by_ the decorator `@QtCore.Slot()`. Again, _to define a signature_ just pass the types similar to the `QtCore.Signal()` class.
+
+```python
+@Slot(str)
+def slot_function(self, s):
+    ...
+```
+
+- `Slot()` also accepts:
+  - a name
+    - The name keyword behaves the same way as in Signal(). 
+    - _If nothing is passed_ as name then the new slot will have _the same name_ as the function _that is being decorated_.
+  - a result keyword
+    - The result keyword defines the type _that will be returned_ 
+    - can be a C or Python type. 
+
+### Overloading Signals and Slots with Different Types
+
+Cenah:
+> Legacy from Qt 5. Not recommended for new code.
+
+Use signals and slots of the same name with different parameter type lists.
+
+Cenah:
+> In Qt 6, signals have distinct names for different types.
+
+The following example uses _two handlers_ for a `Signal` and a `Slot` _to showcase the different functionality_.
+
+```python
+import sys
+from PySide6.QtWidgets import QApplication, QPushButton
+from PySide6.QtCore import QObject, Signal, Slot
+
+
+class Communicate(QObject):
+    # create two new signals on the fly: one will handle
+    # int type, the other will handle strings
+    speak = Signal((int,), (str,))
+
+    def __init__(self, parent=None):
+        super().__init__(parent)
+
+        self.speak[int].connect(self.say_something)
+        self.speak[str].connect(self.say_something)
+
+    # define a new slot that receives a C 'int' or a 'str'
+    # and has 'say_something' as its name
+    @Slot(int)
+    @Slot(str)
+    def say_something(self, arg):
+        if isinstance(arg, int):
+            print("This is a number:", arg)
+        elif isinstance(arg, str):
+            print("This is a string:", arg)
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    someone = Communicate()
+
+    # emit 'speak' signal with different arguments.
+    # we have to specify the str as int is the default
+    someone.speak.emit(10)
+    someone.speak[str].emit("Hello everybody!")
+```
+
+### Specifying Signals and Slots by Method Signature Strings
+
+Signals and slots _can also be specified_ as C++ method _signature_ strings _passed through_ the `SIGNAL()` and/or `SLOT()` functions:
+
+```python
+from PySide6.QtCore import SIGNAL, SLOT
+
+button.connect(SIGNAL("clicked(Qt::MouseButton)"),
+              action_handler, SLOT("action1(Qt::MouseButton)"))
+```
+
+Cenah:
+> This is **not recommended** for _connecting_ signals, it is _mostly used to specify signals for methods_ like `QWizardPage::registerField()`:
+
+```python
+wizard.registerField("text", line_edit, "text",
+                   SIGNAL("textChanged(QString)"))
+```
+
 ## Source(s)
 
 [Qt for Python](https://doc.qt.io/qtforpython/)
