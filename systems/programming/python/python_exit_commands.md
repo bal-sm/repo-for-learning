@@ -185,6 +185,12 @@ In parent process
 Child's exit code: 0
 ```
 
+## Conclusion
+
+- _Among the above four exit functions,_ `sys.exit()` is preferred mostly 
+  - because the `exit()` and `quit()` functions cannot be used in production code
+  - while `os._exit()` is for special cases only _when the immediate exit is required_.
+
 ## Source
 
 [Python exit commands: quit(), exit(), sys.exit() and os._exit() by Geeks for Geeks](https://www.geeksforgeeks.org/python-exit-commands-quit-exit-sys-exit-and-os-_exit/)
