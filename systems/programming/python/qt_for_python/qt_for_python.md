@@ -329,6 +329,17 @@ Connections can be spelled out in code or, for _widget forms_, designed in the _
             self.clicked.emit(event.button())
     ```
 
+    - The constructor of `Signal` takes a `tuple` or a `list` of Python types and C types:
+
+    ```python
+    from PySide6.QtCore import Signal, QUrl, QDate
+    
+    signal1 = Signal(int)  # Python types
+    signal2 = Signal(QUrl)  # Qt Types
+    signal3 = Signal(int, str, int)  # more than one type
+    signal4 = Signal((float,), (QDate,))  # optional types
+    ```
+
 ## Source(s)
 
 [Qt for Python](https://doc.qt.io/qtforpython/)
