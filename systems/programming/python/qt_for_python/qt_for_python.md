@@ -553,6 +553,10 @@ self.button.clicked.connect(self.greetings)
 
 > Once executed, you can enter your name in the `QLineEdit` and watch the console outputting your name because `greetings` function, of course.
 
+### Complete code
+
+[04_creating-a-dialog-application.py](some_code/04_creating-a-dialog-application.py)
+
 ## Source(s)
 
 [Qt for Python](https://doc.qt.io/qtforpython/)
