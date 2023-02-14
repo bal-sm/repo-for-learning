@@ -22,3 +22,11 @@ def get_rgb_from_hex(code):
     return QColor.fromRgb(rgb[0], rgb[1], rgb[2])
 
     app = QApplication(sys.argv)
+
+
+# Configure the `QTableWidget`
+table = QTableWidget()
+table.setRowCount(len(colors))  # = to amount of items from the colors structure
+table.setColumnCount(len(colors[0]) + 1)
+# number of columns with the members of one color entry + 1
+table.setHorizontalHeaderLabels(["Name", "Hex Code", "Color"])

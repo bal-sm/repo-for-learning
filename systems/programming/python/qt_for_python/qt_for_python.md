@@ -612,6 +612,24 @@ This Widget is _a ready-to-use version_ of something _you can customize further 
 
     > I thought `Ade Sumantri` for a second, tapi pake **mp**. By the way, `singleton` kalo `adjective` berarti _only one; not one of several._, kalo `noun` berarti _an individual person_ or _thing_ rather _than part of a pair or a group_., kalo verb berarti _choose someone_ or _something_ from _a group for special treatment_., terus ada arti dalam baseball-nya (_wow, fun, I want to try it someday_) yaitu _hit a single_ (_masih verb_).
 
+5. Configure the `QTableWidget`, to have:
+   - _a number of rows_ equivalent to the _amount of items from the colors structure_, and 
+   - _a number of columns_ with the _members of one color entry_, **plus one**. 
+   
+   You can _set the column name_ using the `setHorizontalHeaderLabels` as described below:
+
+    ```python
+    # Configure the `QTableWidget`
+    table = QTableWidget()
+    table.setRowCount(len(colors)) # = to amount of items from the colors structure
+    table.setColumnCount(len(colors[0]) + 1) 
+    # number of columns with the members of one color entry + 1
+    table.setHorizontalHeaderLabels(["Name", "Hex Code", "Color"])
+    ```
+
+    Note:
+    > the reason of using + 1 is to include a new column _where we can display the color_.
+
 ## Source(s)
 
 [Qt for Python](https://doc.qt.io/qtforpython/)
