@@ -30,3 +30,13 @@ table.setRowCount(len(colors))  # = to amount of items from the colors structure
 table.setColumnCount(len(colors[0]) + 1)
 # number of columns with the members of one color entry + 1
 table.setHorizontalHeaderLabels(["Name", "Hex Code", "Color"])
+
+# Iteration, etc
+for i, (name, code) in enumerate(colors):
+    item_name = QTableWidgetItem(name)
+    item_code = QTableWidgetItem(code)
+    item_color = QTableWidgetItem()
+    item_color.setBackground(get_rgb_from_hex(code))
+    table.setItem(i, 0, item_name)
+    table.setItem(i, 1, item_code)
+    table.setItem(i, 2, item_color)

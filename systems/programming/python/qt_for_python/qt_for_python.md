@@ -630,6 +630,25 @@ This Widget is _a ready-to-use version_ of something _you can customize further 
     Note:
     > the reason of using + 1 is to include a new column _where we can display the color_.
 
+6. Iteration
+   - Iterate _the data structure_, 
+   - create the `QTableWidgetItems` instances, and 
+   - add them into the table _using a x, y coordinate_. 
+   
+   Here the data is being _assigned row-per-row_:
+
+    ```python
+    # Iteration, etc
+    for i, (name, code) in enumerate(colors):
+        item_name = QTableWidgetItem(name)
+        item_code = QTableWidgetItem(code)
+        item_color = QTableWidgetItem()
+        item_color.setBackground(get_rgb_from_hex(code))
+        table.setItem(i, 0, item_name)
+        table.setItem(i, 1, item_code)
+        table.setItem(i, 2, item_color)
+    ```
+
 ## Source(s)
 
 [Qt for Python](https://doc.qt.io/qtforpython/)
