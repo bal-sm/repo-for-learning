@@ -21,8 +21,8 @@ def get_rgb_from_hex(code):
     rgb = tuple(int(code_hex[i : i + 2], 16) for i in (0, 2, 4))
     return QColor.fromRgb(rgb[0], rgb[1], rgb[2])
 
-    app = QApplication(sys.argv)
 
+app = QApplication(sys.argv)
 
 # Configure the `QTableWidget`
 table = QTableWidget()
