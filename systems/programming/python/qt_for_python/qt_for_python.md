@@ -567,6 +567,18 @@ Cenah:
 Note:
 This Widget is _a ready-to-use version_ of something _you can customize further on_. To know more about the **Model/View architecture** in Qt, refer to its official documentation.
 
+1. Import `QTableWidget`, `QTableWidgetItem`, and `QColor` to display background colors:
+
+```python
+import sys
+from PySide6.QtGui import QColor
+from PySide6.QtWidgets import QTableWidget
+from PySide6.QtWidgets import QTableWidgetItem
+from PySide6.QtWidgets import QApplication
+```
+
+> QApplication buat menampilkan aplikasi setelah jadi.
+
 ## Source(s)
 
 [Qt for Python](https://doc.qt.io/qtforpython/)
