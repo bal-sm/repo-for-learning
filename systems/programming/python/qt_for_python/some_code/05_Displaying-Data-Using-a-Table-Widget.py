@@ -40,3 +40,7 @@ for i, (name, code) in enumerate(colors):
     table.setItem(i, 0, item_name)
     table.setItem(i, 1, item_code)
     table.setItem(i, 2, item_color)
+
+# Show `table` and execute `QApplication`.
+table.show()
+sys.exit(app.exec())

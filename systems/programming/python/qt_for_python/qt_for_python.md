@@ -649,6 +649,14 @@ This Widget is _a ready-to-use version_ of something _you can customize further 
         table.setItem(i, 2, item_color)
     ```
 
+7. Show `table` and execute `QApplication`
+
+    ```python
+    # Show `table` and execute `QApplication`.
+    table.show()
+    sys.exit(app.exec())
+    ```
+
 ## Source(s)
 
 [Qt for Python](https://doc.qt.io/qtforpython/)
