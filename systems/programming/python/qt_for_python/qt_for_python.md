@@ -557,6 +557,106 @@ self.button.clicked.connect(self.greetings)
 
 [04_creating-a-dialog-application.py](some_code/04_creating-a-dialog-application.py)
 
+## Displaying Data Using a Table Widget
+
+If you want to display data _arranged in a table_, use a `QTableWidget` to do so, _without dealing with much configuration_.
+
+Cenah:
+> Notice that using a `QTableWidget` is _not the only path to display information in tables_. You can also _create a data model_ and _display_ it using a `QTableView`, but **that is not in the scope of this tutorial**.
+
+Note:
+This Widget is _a ready-to-use version_ of something _you can customize further on_. To know more about the **Model/View architecture** in Qt, refer to its official documentation.
+
+1. Import `QTableWidget`, `QTableWidgetItem`, and `QColor` to display background colors:
+
+    ```python
+    import sys
+    from PySide6.QtGui import QColor
+    from PySide6.QtWidgets import QTableWidget
+    from PySide6.QtWidgets import QTableWidgetItem
+    from PySide6.QtWidgets import QApplication
+    ```
+
+    > QApplication buat menampilkan aplikasi setelah jadi.
+
+2. Create a simple data model containing the list of names and hex codes for different colors:
+
+    ```python
+    colors = [
+        ("Red", "#FF0000"),
+        ("Green", "#00FF00"),
+        ("Blue", "#0000FF"),
+        ("Black", "#000000"),
+        ("White", "#FFFFFF"),
+        ("Electric Green", "#41CD52"),
+        ("Dark Blue", "#222840"),
+        ("Yellow", "#F9E56D"),  # I fix it, you're welcome.
+    ]
+    ```
+
+3. Define a function to translate the hex code into an RGB equivalent:
+
+    ```python
+    # Define a function to translate the hex code into an RGB equivalent
+    def get_rgb_from_hex(code):
+        code_hex = code.replace("#", "")
+        rgb = tuple(int(code_hex[i : i + 2], 16) for i in (0, 2, 4))
+        return QColor.fromRgb(rgb[0], rgb[1], rgb[2])
+    ```
+
+4. Initialize the QApplication singleton:
+
+    ```python
+    app = QApplication(sys.argv)
+    ```
+
+    > I thought `Ade Sumantri` for a second, tapi pake **mp**. By the way, `singleton` kalo `adjective` berarti _only one; not one of several._, kalo `noun` berarti _an individual person_ or _thing_ rather _than part of a pair or a group_., kalo verb berarti _choose someone_ or _something_ from _a group for special treatment_., terus ada arti dalam baseball-nya (_wow, fun, I want to try it someday_) yaitu _hit a single_ (_masih verb_).
+
+5. Configure the `QTableWidget`, to have:
+   - _a number of rows_ equivalent to the _amount of items from the colors structure_, and 
+   - _a number of columns_ with the _members of one color entry_, **plus one**. 
+   
+   You can _set the column name_ using the `setHorizontalHeaderLabels` as described below:
+
+    ```python
+    # Configure the `QTableWidget`
+    table = QTableWidget()
+    table.setRowCount(len(colors)) # = to amount of items from the colors structure
+    table.setColumnCount(len(colors[0]) + 1) 
+    # number of columns with the members of one color entry + 1
+    table.setHorizontalHeaderLabels(["Name", "Hex Code", "Color"])
+    ```
+
+    Note:
+    > the reason of using + 1 is to include a new column _where we can display the color_.
+
+6. Iteration
+   - Iterate _the data structure_, 
+   - create the `QTableWidgetItems` instances, and 
+   - add them into the table _using a x, y coordinate_. 
+   
+   Here the data is being _assigned row-per-row_:
+
+    ```python
+    # Iteration, etc
+    for i, (name, code) in enumerate(colors):
+        item_name = QTableWidgetItem(name)
+        item_code = QTableWidgetItem(code)
+        item_color = QTableWidgetItem()
+        item_color.setBackground(get_rgb_from_hex(code))
+        table.setItem(i, 0, item_name)
+        table.setItem(i, 1, item_code)
+        table.setItem(i, 2, item_color)
+    ```
+
+7. Show `table` and execute `QApplication`
+
+    ```python
+    # Show `table` and execute `QApplication`.
+    table.show()
+    sys.exit(app.exec())
+    ```
+
 ## Source(s)
 
 [Qt for Python](https://doc.qt.io/qtforpython/)
