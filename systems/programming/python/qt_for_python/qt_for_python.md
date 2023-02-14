@@ -557,6 +557,16 @@ self.button.clicked.connect(self.greetings)
 
 [04_creating-a-dialog-application.py](some_code/04_creating-a-dialog-application.py)
 
+## Displaying Data Using a Table Widget
+
+If you want to display data _arranged in a table_, use a `QTableWidget` to do so, _without dealing with much configuration_.
+
+Cenah:
+> Notice that using a `QTableWidget` is _not the only path to display information in tables_. You can also _create a data model_ and _display_ it using a `QTableView`, but **that is not in the scope of this tutorial**.
+
+Note:
+This Widget is _a ready-to-use version_ of something _you can customize further on_. To know more about the **Model/View architecture** in Qt, refer to its official documentation.
+
 ## Source(s)
 
 [Qt for Python](https://doc.qt.io/qtforpython/)
