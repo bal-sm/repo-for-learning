@@ -569,30 +569,30 @@ This Widget is _a ready-to-use version_ of something _you can customize further 
 
 1. Import `QTableWidget`, `QTableWidgetItem`, and `QColor` to display background colors:
 
-```python
-import sys
-from PySide6.QtGui import QColor
-from PySide6.QtWidgets import QTableWidget
-from PySide6.QtWidgets import QTableWidgetItem
-from PySide6.QtWidgets import QApplication
-```
+    ```python
+    import sys
+    from PySide6.QtGui import QColor
+    from PySide6.QtWidgets import QTableWidget
+    from PySide6.QtWidgets import QTableWidgetItem
+    from PySide6.QtWidgets import QApplication
+    ```
 
-> QApplication buat menampilkan aplikasi setelah jadi.
+    > QApplication buat menampilkan aplikasi setelah jadi.
 
 2. Create a simple data model containing the list of names and hex codes for different colors:
 
-```python
-colors = [
-    ("Red", "#FF0000"),
-    ("Green", "#00FF00"),
-    ("Blue", "#0000FF"),
-    ("Black", "#000000"),
-    ("White", "#FFFFFF"),
-    ("Electric Green", "#41CD52"),
-    ("Dark Blue", "#222840"),
-    ("Yellow", "#F9E56D"),  # I fix it, you're welcome.
-]
-```
+    ```python
+    colors = [
+        ("Red", "#FF0000"),
+        ("Green", "#00FF00"),
+        ("Blue", "#0000FF"),
+        ("Black", "#000000"),
+        ("White", "#FFFFFF"),
+        ("Electric Green", "#41CD52"),
+        ("Dark Blue", "#222840"),
+        ("Yellow", "#F9E56D"),  # I fix it, you're welcome.
+    ]
+    ```
 
 ## Source(s)
 
