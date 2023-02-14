@@ -498,6 +498,20 @@ You can create any class that subclasses `PySide6` widgets.
   - Also, the new `setWindowTitle()` method _just sets the title of the dialog window_. 
   - In `main()`, you can see that we are creating a `Form` object and show it.
 
+### Create the Widgets
+
+- We are going to create two widgets: 
+  - a `QLineEdit` where users can _enter their name_
+  - a `QPushButton` that _prints the contents of the `QLineEdit`_. 
+
+So, let’s add the following code to the `init()` method of our `Form`:
+
+```python
+# Create widgets
+self.edit = QLineEdit("Write my name here..")
+self.button = QPushButton("Show Greetings")
+```
+
 ## Source(s)
 
 [Qt for Python](https://doc.qt.io/qtforpython/)
