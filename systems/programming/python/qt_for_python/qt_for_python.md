@@ -594,6 +594,16 @@ This Widget is _a ready-to-use version_ of something _you can customize further 
     ]
     ```
 
+3. Define a function to translate the hex code into an RGB equivalent:
+
+    ```python
+    # Define a function to translate the hex code into an RGB equivalent
+    def get_rgb_from_hex(code):
+        code_hex = code.replace("#", "")
+        rgb = tuple(int(code_hex[i : i + 2], 16) for i in (0, 2, 4))
+        return QColor.fromRgb(rgb[0], rgb[1], rgb[2])
+    ```
+
 ## Source(s)
 
 [Qt for Python](https://doc.qt.io/qtforpython/)
