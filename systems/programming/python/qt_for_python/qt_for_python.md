@@ -610,7 +610,7 @@ This Widget is _a ready-to-use version_ of something _you can customize further 
     app = QApplication(sys.argv)
     ```
 
-> I thought `Ade Sumantri` for a second, tapi pake **mp**. By the way, `singleton` kalo `adjective` berarti _only one; not one of several._, kalo `noun` berarti _an individual person_ or _thing_ rather _than part of a pair or a group_., kalo verb berarti _choose someone_ or _something_ from _a group for special treatment_., terus ada arti dalam baseball-nya (_wow, fun, I want to try it someday_) yaitu _hit a single_ (_masih verb_).
+    > I thought `Ade Sumantri` for a second, tapi pake **mp**. By the way, `singleton` kalo `adjective` berarti _only one; not one of several._, kalo `noun` berarti _an individual person_ or _thing_ rather _than part of a pair or a group_., kalo verb berarti _choose someone_ or _something_ from _a group for special treatment_., terus ada arti dalam baseball-nya (_wow, fun, I want to try it someday_) yaitu _hit a single_ (_masih verb_).
 
 ## Source(s)
 
