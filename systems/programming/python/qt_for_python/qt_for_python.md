@@ -452,6 +452,111 @@ wizard.registerField("text", line_edit, "text",
                    SIGNAL("textChanged(QString)"))
 ```
 
+## Creating a Dialog Application
+
+- This tutorial shows _how to build a simple dialog with_ some basic widgets. The idea:
+  - to let users provide their name in a `QLineEdit`
+  - the dialog greets them on click of a `QPushButton`.
+
+Start with a simple stub that creates and shows a dialog. 
+
+Cenah:
+> This stub is updated during the course of this tutorial, but you can use this stub as is if you need to:
+
+```python
+# Creating a Dialog Application
+import sys
+from PySide6.QtWidgets import QApplication, QDialog, QLineEdit, QPushButton
+
+class Form(QDialog):
+
+    def __init__(self, parent=None):
+        super(Form, self).__init__(parent)
+        self.setWindowTitle("My Form")
+
+
+if __name__ == '__main__':
+    # Create the Qt Application
+    app = QApplication(sys.argv)
+    # Create and show the form
+    form = Form()
+    form.show()
+    # Run the main Qt loop
+    sys.exit(app.exec())
+```
+
+Cenah:
+> _The imports aren’t new to you, the same for the creation of the `QApplication` and the execution of the Qt main loop._ _The only **novelty** here_ is the **class definition**.
+
+You can create any class that subclasses `PySide6` widgets. 
+
+- In this case, 
+  - We are subclassing `QDialog` to _define a custom dialog_, 
+    - which we name as `Form`. 
+  - We have also implemented the `init()` method 
+    - that calls the `QDialog`’s _init method with the parent widget_, if any. 
+  - Also, the new `setWindowTitle()` method _just sets the title of the dialog window_. 
+  - In `main()`, you can see that we are creating a `Form` object and show it.
+
+### Create the Widgets
+
+- We are going to create two widgets: 
+  - a `QLineEdit` where users can _enter their name_
+  - a `QPushButton` that _prints the contents of the `QLineEdit`_. 
+
+So, let’s add the following code to the `init()` method of our `Form`:
+
+```python
+# Create widgets
+self.edit = QLineEdit("Write my name here..")
+self.button = QPushButton("Show Greetings")
+```
+
+### Create a layout to organize the Widgets
+
+Qt comes with _layout-support_ that _helps you organize the widgets in your application_. 
+
+In this case, let’s use `QVBoxLayout` to _lay out the widgets vertically_. 
+
+> V untuk vertically (kayaknya dalam \`Q**V**BoxLayout\`) and something else in my mind lol why I write this though
+
+Add the following code to the `init()` method, after _creating the widgets_:
+
+```python
+from PySide6.QtWidgets import QVBoxLayout
+
+# Create layout and add widgets
+layout = QVBoxLayout(self) # The create layout
+layout.addWidget(self.edit) # The first add widget
+layout.addWidget(self.button) # The second add widget
+```
+
+### Create the function to greet and connect the Button
+
+- _Finally_, we just have to add a function to our custom `Form` and connect our button to it. 
+  - Our function will be a part of the `Form`, so you have to add it after the `init()` function:
+
+```python
+# Greets the user
+def greetings(self):
+    print(f"Hello {self.edit.text()}")
+```
+
+Our function just _prints the contents of_ the `QLineEdit` _to the python console_. We have _access to the text by means of_ the `QLineEdit.text()` method.
+
+Now that we have everything, we just need to connect the `QPushButton` to the `Form.greetings()` method. To do so, add the following line to the `init()` method:
+
+```python
+# Add button signal to greetings slot
+self.button.clicked.connect(self.greetings)
+```
+
+> Once executed, you can enter your name in the `QLineEdit` and watch the console outputting your name because `greetings` function, of course.
+
+### Complete code
+
+[04_creating-a-dialog-application.py](some_code/04_creating-a-dialog-application.py)
+
 ## Source(s)
 
 [Qt for Python](https://doc.qt.io/qtforpython/)
