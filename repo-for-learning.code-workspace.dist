@@ -20,6 +20,7 @@
 		"prettier.tabWidth": 2,
 		"markdownlint.config": {
 			"no-trailing-spaces": false,
+			"ul-indent": false,
 		},
 		"git.autofetch": false,
 	}
