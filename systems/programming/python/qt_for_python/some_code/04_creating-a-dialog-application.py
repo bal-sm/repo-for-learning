@@ -18,6 +18,10 @@ class Form(QDialog):
         layout.addWidget(self.edit)  # The first add widget
         layout.addWidget(self.button)  # The second add widget
 
+    # Greets the user
+    def greetings(self):
+        print(f"Hello {self.edit.text()}")
+
 
 if __name__ == "__main__":
     # Create the Qt Application

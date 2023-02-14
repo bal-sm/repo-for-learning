@@ -531,6 +531,17 @@ layout.addWidget(self.edit) # The first add widget
 layout.addWidget(self.button) # The second add widget
 ```
 
+### Create the function to greet and connect the Button
+
+- _Finally_, we just have to add a function to our custom `Form` and connect our button to it. 
+  - Our function will be a part of the `Form`, so you have to add it after the `init()` function:
+
+```python
+# Greets the user
+def greetings(self):
+    print(f"Hello {self.edit.text()}")
+```
+
 ## Source(s)
 
 [Qt for Python](https://doc.qt.io/qtforpython/)
