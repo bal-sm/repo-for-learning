@@ -1,6 +1,7 @@
 # Creating a Dialog Application
 import sys
 from PySide6.QtWidgets import QApplication, QDialog, QLineEdit, QPushButton
+from PySide6.QtWidgets import QVBoxLayout
 
 
 class Form(QDialog):
@@ -11,6 +12,11 @@ class Form(QDialog):
         # Create widgets
         self.edit = QLineEdit("Write my name here..")
         self.button = QPushButton("Show Greetings")
+
+        # Create layout and add widgets
+        layout = QVBoxLayout(self)  # The create layout
+        layout.addWidget(self.edit)  # The first add widget
+        layout.addWidget(self.button)  # The second add widget
 
 
 if __name__ == "__main__":

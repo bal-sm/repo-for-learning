@@ -512,6 +512,25 @@ self.edit = QLineEdit("Write my name here..")
 self.button = QPushButton("Show Greetings")
 ```
 
+### Create a layout to organize the Widgets
+
+Qt comes with _layout-support_ that _helps you organize the widgets in your application_. 
+
+In this case, let’s use `QVBoxLayout` to _lay out the widgets vertically_. 
+
+> V untuk vertically (kayaknya dalam \`Q**V**BoxLayout\`) and something else in my mind lol why I write this though
+
+Add the following code to the `init()` method, after _creating the widgets_:
+
+```python
+from PySide6.QtWidgets import QVBoxLayout
+
+# Create layout and add widgets
+layout = QVBoxLayout(self) # The create layout
+layout.addWidget(self.edit) # The first add widget
+layout.addWidget(self.button) # The second add widget
+```
+
 ## Source(s)
 
 [Qt for Python](https://doc.qt.io/qtforpython/)
