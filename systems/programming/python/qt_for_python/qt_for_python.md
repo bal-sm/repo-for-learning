@@ -579,6 +579,21 @@ from PySide6.QtWidgets import QApplication
 
 > QApplication buat menampilkan aplikasi setelah jadi.
 
+2. Create a simple data model containing the list of names and hex codes for different colors:
+
+```python
+colors = [
+    ("Red", "#FF0000"),
+    ("Green", "#00FF00"),
+    ("Blue", "#0000FF"),
+    ("Black", "#000000"),
+    ("White", "#FFFFFF"),
+    ("Electric Green", "#41CD52"),
+    ("Dark Blue", "#222840"),
+    ("Yellow", "#F9E56D"),  # I fix it, you're welcome.
+]
+```
+
 ## Source(s)
 
 [Qt for Python](https://doc.qt.io/qtforpython/)
