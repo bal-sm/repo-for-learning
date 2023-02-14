@@ -551,6 +551,8 @@ Now that we have everything, we just need to connect the `QPushButton` to the `F
 self.button.clicked.connect(self.greetings)
 ```
 
+> Once executed, you can enter your name in the `QLineEdit` and watch the console outputting your name because `greetings` function, of course.
+
 ## Source(s)
 
 [Qt for Python](https://doc.qt.io/qtforpython/)
