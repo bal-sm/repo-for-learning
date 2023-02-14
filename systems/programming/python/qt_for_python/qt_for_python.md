@@ -542,6 +542,15 @@ def greetings(self):
     print(f"Hello {self.edit.text()}")
 ```
 
+Our function just _prints the contents of_ the `QLineEdit` _to the python console_. We have _access to the text by means of_ the `QLineEdit.text()` method.
+
+Now that we have everything, we just need to connect the `QPushButton` to the `Form.greetings()` method. To do so, add the following line to the `init()` method:
+
+```python
+# Add button signal to greetings slot
+self.button.clicked.connect(self.greetings)
+```
+
 ## Source(s)
 
 [Qt for Python](https://doc.qt.io/qtforpython/)

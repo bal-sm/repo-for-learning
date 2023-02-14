@@ -18,6 +18,9 @@ class Form(QDialog):
         layout.addWidget(self.edit)  # The first add widget
         layout.addWidget(self.button)  # The second add widget
 
+        # Add button signal to greetings slot
+        self.button.clicked.connect(self.greetings)
+
     # Greets the user
     def greetings(self):
         print(f"Hello {self.edit.text()}")
