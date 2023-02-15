@@ -16,10 +16,14 @@ The structure:
 
 ```
 some_repo_for_python_code/
-└── src/
-    └── some_repo_for_python_code/
-        ├── __init__.py
-        └── example.py
+├── LICENSE
+├── pyproject.toml
+├── README.md
+├── src/
+│   └── some_repo_for_python_code/
+│       ├── __init__.py
+│       └── example.py
+└── tests/
 ```
 
 - Those contains:
@@ -34,6 +38,16 @@ some_repo_for_python_code/
     def the_one():
         return "1"
     ```
+
+  - `tests/` is a folder for test files. 
+    > Leave it empty, if you don't know what it is. But keep the folder.
+  - `pyproject.toml` tells _frontend_ build tools like `pip` and build what _backend_ tool to use _to create distribution packages_ for your project.
+    > I use poetry. Build your own `pyproject.toml` using `poetry init` command.
+  - `README.md`.
+    > A `m`ah`d`i file.
+  - `LICENSE` tells users who install your package the terms under which they can use your package.
+    Notes:
+    > For help picking a license, see <https://choosealicense.com/>.
 
 ## Source
 
