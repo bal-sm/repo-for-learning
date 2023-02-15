@@ -21,6 +21,7 @@
 		"markdownlint.config": {
 			"no-trailing-spaces": false,
 			"ul-indent": false,
+			"fenced-code-language": false,
 		},
 		"git.autofetch": false,
 	}
