@@ -70,8 +70,10 @@ pipx upgrade build
 Then run this command _from the same directory where `pyproject.toml` is located_:
 
 ```sh
-build
+pyproject-build
 ```
+
+> Maybe something is different between `pip` and `pipx`. In my case, build with `pyproject-build` command. If it fails to do so, refer to Poetry documentaion. Hm.
 
 ## Source
 
