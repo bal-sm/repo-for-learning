@@ -49,6 +49,30 @@ some_repo_for_python_code/
     Notes:
     > For help picking a license, see <https://choosealicense.com/>.
 
+## Generating distribution archives
+
+- The next step is _to generate distribution packages_ for the package. 
+  - These are _archives that are uploaded_ to the Python Package Index and 
+  - can be installed by `pip`.
+
+Source Distribution (or `sdist`), from Glossary:
+> A distribution format (usually generated using `python setup.py sdist`) that _provides metadata and the essential source files needed_ for installing by a tool like `pip`, or for generating a Built Distribution.
+
+Make sure you have the latest version of PyPA’s build installed:
+
+```sh
+pipx install build
+pipx upgrade build
+```
+
+> I use `pipx`, make sure you have done whatever `pipx` told you so after installing or running `pipx` for the first time.
+
+Then run this command _from the same directory where `pyproject.toml` is located_:
+
+```sh
+build
+```
+
 ## Source
 
 [Packaging Python Projects](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
