@@ -62,6 +62,41 @@ bismillah_on_py/
 
     > I use MIT for this package.
 
+### Poetry's `pyproject.toml`
+
+```python
+[tool.poetry]
+# name
+name = "bismillah_on_py"
+# The name of the package. This should be a valid name as defined by PEP 508. Required
+# version
+version = "1.0.1"
+# The version of the package. This should be a valid PEP 440 string. Required
+# description
+description = "as `the_sentence`, and `print_them` function." 
+# A short description of the package. Required
+# authors
+authors = ["Iqbal Syifa Mahmuda <bal.mahmuda@gmail.com>", "اللّٰه"] 
+# The authors of the package. This is a list of authors and should contain at least one author. Authors must be in the form name <email>. Required
+# license
+license = "MIT"
+# The license of the package.
+# readme
+readme = "README.md"
+# A path, or list of paths corresponding to the README file(s) of the package. Optional
+# packages
+packages = [{include = "bismillah_on_py", from = "src"}]
+# A list of packages and modules to include in the final distribution.
+
+[tool.poetry.dependencies]
+python = "^3.7"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+```
+
 ## Generating distribution archives
 
 - The next step is _to generate distribution packages_ for the package. 
@@ -91,3 +126,5 @@ pyproject-build
 ## Source
 
 [Packaging Python Projects](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
+
+[Poetry Documentation](https://python-poetry.org/docs/)
