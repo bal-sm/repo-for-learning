@@ -125,6 +125,6 @@ pyproject-build
 
 ## Source
 
-[Packaging Python Projects](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
+[^1]: [Packaging Python Projects](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
 
-[Poetry Documentation](https://python-poetry.org/docs/)
+[^2]: [Poetry Documentation](https://python-poetry.org/docs/)
