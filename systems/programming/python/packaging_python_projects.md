@@ -64,6 +64,8 @@ bismillah_on_py/
 
 ### Poetry's `pyproject.toml`
 
+Here's the content _with added some explanation_[^2]:
+
 ```python
 [tool.poetry]
 # name
