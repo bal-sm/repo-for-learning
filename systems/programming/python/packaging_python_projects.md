@@ -144,14 +144,16 @@ Cenah:
 
 Change directory to `dist` and run this command:
 
-```
+```sh
 twine upload *
 ```
 
-> Use TestPyPI if it's a test package.
+> Use TestPyPI if it's a test package.[^1.1]
 
 ## Source
 
 [^1]: [Packaging Python Projects](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
+
+[^1.1]: [Uploading the distribution archives](https://packaging.python.org/en/latest/tutorials/packaging-projects/#uploading-the-distribution-archives)
 
 [^2]: [Poetry's pyproject.toml file](https://python-poetry.org/docs/pyproject/)
