@@ -150,6 +150,12 @@ twine upload *
 
 > Use TestPyPI if it's a test package.[^1.1]
 
+## Installing your newly uploaded package
+
+```sh
+pip install bismillah_on_py
+```
+
 ## Source
 
 [^1]: [Packaging Python Projects](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
