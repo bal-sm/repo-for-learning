@@ -1,6 +1,6 @@
 # Packaging Python Projects
 
-This will be a _to-the-point_ tutorial.
+This will be a _to-the-point_ tutorial. Based on Python Packaging User Guide » Tutorials » Packaging Python Projects[^1]
 
 ## Make sure our pip is on the latest
 
