@@ -129,4 +129,4 @@ pyproject-build
 
 [^1]: [Packaging Python Projects](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
 
-[^2]: [Poetry Documentation](https://python-poetry.org/docs/)
+[^2]: [Poetry's pyproject.toml file](https://python-poetry.org/docs/pyproject/)
