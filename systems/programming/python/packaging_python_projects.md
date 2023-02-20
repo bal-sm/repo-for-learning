@@ -140,6 +140,16 @@ dist/
 Cenah:
 > Newer `pip` versions preferentially install built distributions, but will fall back to source distributions if needed. You should always upload a source distribution and provide built distributions for the platforms your project is compatible with. In this case, our example package is compatible with Python on any platform so only one built distribution is needed.
 
+## Uploading the distribution archives
+
+Change directory to `dist` and run this command:
+
+```
+twine upload *
+```
+
+> Use TestPyPI if it's a test package.
+
 ## Source
 
 [^1]: [Packaging Python Projects](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
