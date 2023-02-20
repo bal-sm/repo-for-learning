@@ -125,6 +125,21 @@ pyproject-build
 
 > Maybe something is different between `pip` and `pipx`. In my case, build with `pyproject-build` command. If it fails to do so, refer to Poetry documentaion. Hm.
 
+This command should output a lot of text and once completed should generate two files in the dist directory:
+
+```
+dist/
+├── bismillah_on_py-1.0.1-py3-none-any.whl
+└── bismillah_on_py-1.0.1.tar.gz
+```
+
+- Here's the explanation of those two files:
+  - The `tar.gz` file is a source distribution 
+  - whereas the `.whl` file is a built distribution. 
+
+Cenah:
+> Newer `pip` versions preferentially install built distributions, but will fall back to source distributions if needed. You should always upload a source distribution and provide built distributions for the platforms your project is compatible with. In this case, our example package is compatible with Python on any platform so only one built distribution is needed.
+
 ## Source
 
 [^1]: [Packaging Python Projects](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
