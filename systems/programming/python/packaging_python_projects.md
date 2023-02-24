@@ -4,7 +4,7 @@ This will be a _to-the-point_ tutorial. Based on Python Packaging User Guide » 
 
 ## Make sure our pip is on the latest
 
-```python
+```sh
 python3 -m pip install --upgrade pip
 ```
 
