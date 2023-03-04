@@ -1,8 +1,3 @@
-# QML_euy
-
-## The main `.py` file
-
-```python
 import sys
 import os
 
@@ -23,10 +18,3 @@ if __name__ == "__main__":
     if not engine.rootObjects():
         sys.exit(-1)
     sys.exit(app.exec_())
-```
-
-> taken from [the_piece_of_code.py](the_piece_of_code.py)
-
-## Source
-
-[PySide6, Qt Quick, Material Design, VS Code And Python 3.9.1 - Tutorial Modern GUI - Part 1](https://www.youtube.com/watch?v=Jn0PpzB14Y8)
