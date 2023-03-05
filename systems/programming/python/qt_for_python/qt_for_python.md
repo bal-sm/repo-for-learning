@@ -669,6 +669,10 @@ Note:
 
 _Skipped_
 
+## Using `.ui` files from Designer or QtCreator with `QUiLoader` and `pyside6-uic`
+
+_Skipped_
+
 ## Source(s)
 
 [Qt for Python](https://doc.qt.io/qtforpython/)
