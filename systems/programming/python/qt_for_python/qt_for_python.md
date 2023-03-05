@@ -673,6 +673,26 @@ _Skipped_
 
 _Skipped_
 
+## Using `.qrc` Files (`pyside6-rcc`)
+
+The [Qt Resource System](https://doc.qt.io/qt-5/resources.html) is a _mechanism for storing binary files_ in an application.
+
+- The files will be 
+  - embedded into the application and be acessible for 
+    - the `QFile` class and 
+    - the constructors of 
+      - the `QIcon` and 
+      - `QPixmap` classes 
+  - taking **a file name** by _using a special file name starting with_ `:/`.
+    - e.g.:
+      
+      ":/some_image.png"
+
+      From Merriam-Websters ([link](https://www.merriam-webster.com/words-at-play/ie-vs-eg-abbreviation-meaning-usage-difference))
+      > E.g. means “for example.” (It stands for _exempli gratia_ in Latin.)
+
+The most common uses are for custom images, icons, fonts, among others.
+
 ## Source(s)
 
 [Qt for Python](https://doc.qt.io/qtforpython/)
