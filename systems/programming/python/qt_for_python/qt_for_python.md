@@ -693,6 +693,23 @@ The [Qt Resource System](https://doc.qt.io/qt-5/resources.html) is a _mechanism 
 
 The most common uses are for custom images, icons, fonts, among others.
 
+### The `.qrc` file
+
+Before running any command, add information about the resources to a .qrc file. In the following example, notice how the resources are listed in icons.qrc
+
+```xml
+</ui>
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <file>icons/play.png</file>
+    <file>icons/pause.png</file>
+    <file>icons/stop.png</file>
+    <file>icons/previous.png</file>
+    <file>icons/forward.png</file>
+</qresource>
+</RCC>
+```
+
 ## Source(s)
 
 [Qt for Python](https://doc.qt.io/qtforpython/)
