@@ -657,6 +657,18 @@ This Widget is _a ready-to-use version_ of something _you can customize further 
     sys.exit(app.exec())
     ```
 
+## Displaying Data Using a Tree Widget
+
+Display data arranged in a tree, using `QTreeWidget`.
+
+Cenah:
+> Notice that using a `QTreeWidget` is not the only path to display information in trees. You can also create a data model and display it using a `QTreeView`, but **that is not in the scope of this tutorial**.
+
+Note:
+> This Widget is a ready-to-use version of something you can customize further on. To know more about the Model/View architecture in Qt, refer to its [official documentation](https://doc.qt.io/qt-6/model-view-programming.html).
+
+_Skipped_
+
 ## Source(s)
 
 [Qt for Python](https://doc.qt.io/qtforpython/)
