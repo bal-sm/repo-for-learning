@@ -13,6 +13,9 @@ ApplicationWindow{
     // should've been disabled maximize button cenah, but on my end don't, maybe KDE thing
     flags: Qt.WindowCloseButtonHint | Qt.WindowMinimizeButtonHint | Qt.CustomizeWindowHint | Qt.Dialog | Qt.WindowTitleHint
 
+    Material.theme: Material.Dark
+    Material.accent: Material.LightBlue
+
     // Top bar
     Rectangle{
         id: topBar // camelCase

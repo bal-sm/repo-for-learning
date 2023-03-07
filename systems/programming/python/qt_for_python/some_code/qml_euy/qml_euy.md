@@ -64,6 +64,16 @@ flags: Qt.WindowCloseButtonHint | Qt.WindowMinimizeButtonHint | Qt.CustomizeWind
 
 > should've been disabled maximize button cenah, but on my end don't, maybe KDE thing
 
+### Theming
+
+```qml
+Material.theme: Material.Dark
+Material.accent: Material.LightBlue
+```
+
+The result:
+![Themed Application Window](images_for_md/2_application_window_theming.png)
+
 ### Top bar
 
 [Positioning with Anchors](https://doc.qt.io/qt-6/qtquick-positioning-anchors.html)
