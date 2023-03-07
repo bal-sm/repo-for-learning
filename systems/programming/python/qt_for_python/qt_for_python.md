@@ -710,6 +710,27 @@ Before running any command, add information about the resources to a .qrc file. 
 </RCC>
 ```
 
+### Generating the `.py` from `.qrc`
+
+Now that the `icons.qrc` file is ready, 
+
+Use the `pyside6-rcc` tool to generate a Python class containing the binary information about the resources.
+
+Run this command:
+
+```sh
+pyside6-rcc icons.rc -o rc_icons.py
+```
+
+Cenah:
+> The `-o` option lets you specify the output filename, which is `rc_icons.py` in this case.
+
+To use the generated file, add the following import at the top of your main Python file:
+
+```python
+import rc_icons
+```
+
 ## Source(s)
 
 [Qt for Python](https://doc.qt.io/qtforpython/)
