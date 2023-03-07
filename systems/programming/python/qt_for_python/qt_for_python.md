@@ -565,7 +565,7 @@ Cenah:
 > Notice that using a `QTableWidget` is _not the only path to display information in tables_. You can also _create a data model_ and _display_ it using a `QTableView`, but **that is not in the scope of this tutorial**.
 
 Note:
-This Widget is _a ready-to-use version_ of something _you can customize further on_. To know more about the **Model/View architecture** in Qt, refer to its official documentation.
+> This Widget is _a ready-to-use version_ of something _you can customize further on_. To know more about the **Model/View architecture** in Qt, refer to its official documentation.
 
 1. Import `QTableWidget`, `QTableWidgetItem`, and `QColor` to display background colors:
 
@@ -656,6 +656,80 @@ This Widget is _a ready-to-use version_ of something _you can customize further 
     table.show()
     sys.exit(app.exec())
     ```
+
+## Displaying Data Using a Tree Widget
+
+Display data arranged in a tree, using `QTreeWidget`.
+
+Cenah:
+> Notice that using a `QTreeWidget` is not the only path to display information in trees. You can also create a data model and display it using a `QTreeView`, but **that is not in the scope of this tutorial**.
+
+Note:
+> This Widget is a ready-to-use version of something you can customize further on. To know more about the Model/View architecture in Qt, refer to its [official documentation](https://doc.qt.io/qt-6/model-view-programming.html).
+
+_Skipped_
+
+## Using `.ui` files from Designer or QtCreator with `QUiLoader` and `pyside6-uic`
+
+_Skipped_
+
+## Using `.qrc` Files (`pyside6-rcc`)
+
+The [Qt Resource System](https://doc.qt.io/qt-5/resources.html) is a _mechanism for storing binary files_ in an application.
+
+- The files will be 
+  - embedded into the application and be acessible for 
+    - the `QFile` class and 
+    - the constructors of 
+      - the `QIcon` and 
+      - `QPixmap` classes 
+  - taking **a file name** by _using a special file name starting with_ `:/`.
+    - e.g.:
+      
+      ":/some_image.png"
+
+      From Merriam-Websters ([link](https://www.merriam-webster.com/words-at-play/ie-vs-eg-abbreviation-meaning-usage-difference))
+      > E.g. means “for example.” (It stands for _exempli gratia_ in Latin.)
+
+The most common uses are for custom images, icons, fonts, among others.
+
+### The `.qrc` file
+
+Before running any command, add information about the resources to a .qrc file. In the following example, notice how the resources are listed in icons.qrc
+
+```xml
+</ui>
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <file>icons/play.png</file>
+    <file>icons/pause.png</file>
+    <file>icons/stop.png</file>
+    <file>icons/previous.png</file>
+    <file>icons/forward.png</file>
+</qresource>
+</RCC>
+```
+
+### Generating the `.py` from `.qrc`
+
+Now that the `icons.qrc` file is ready, 
+
+Use the `pyside6-rcc` tool to generate a Python class containing the binary information about the resources.
+
+Run this command:
+
+```sh
+pyside6-rcc icons.rc -o rc_icons.py
+```
+
+Cenah:
+> The `-o` option lets you specify the output filename, which is `rc_icons.py` in this case.
+
+To use the generated file, add the following import at the top of your main Python file:
+
+```python
+import rc_icons
+```
 
 ## Source(s)
 
