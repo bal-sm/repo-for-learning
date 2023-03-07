@@ -565,7 +565,7 @@ Cenah:
 > Notice that using a `QTableWidget` is _not the only path to display information in tables_. You can also _create a data model_ and _display_ it using a `QTableView`, but **that is not in the scope of this tutorial**.
 
 Note:
-This Widget is _a ready-to-use version_ of something _you can customize further on_. To know more about the **Model/View architecture** in Qt, refer to its official documentation.
+> This Widget is _a ready-to-use version_ of something _you can customize further on_. To know more about the **Model/View architecture** in Qt, refer to its official documentation.
 
 1. Import `QTableWidget`, `QTableWidgetItem`, and `QColor` to display background colors:
 
