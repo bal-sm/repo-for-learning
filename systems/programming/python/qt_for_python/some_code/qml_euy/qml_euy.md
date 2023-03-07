@@ -50,6 +50,9 @@ ApplicationWindow{
 }
 ```
 
+The result:
+![Basic Application Window](images_for_md/1_application_window.png)
+
 Note:
 > Use qsTr() for all Literal User Interface Strings, [link](https://doc.qt.io/qt-6/qtquick-internationalization.html)
 
