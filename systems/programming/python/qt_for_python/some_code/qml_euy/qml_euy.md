@@ -127,6 +127,12 @@ Image{
 }
 ```
 
+The results:
+- ![added_qt_(kayak_kamu)_image](images_for_md/6_added_qt_(kayak_kamu)_image.png)
+- ![qt_image_anchors.hC=parent.horizontalCenter](images_for_md/7_qt_image_anchors.hC=parent.horizontalCenter.png)
+- ![anchors.top=topBar.bottom](images_for_md/8_anchors.top=topBar.bottom.png)
+- ![anchors.topMargin=60](images_for_md/9_anchors.topMargin=60.png)
+
 Note:
 > Use [The Qt Resource System](https://doc.qt.io/qt-5/resources.html), lebih better cenah, daripada misah-misah resource-nya.
 
