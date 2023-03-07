@@ -56,6 +56,14 @@ The result:
 Note:
 > Use qsTr() for all Literal User Interface Strings, [link](https://doc.qt.io/qt-6/qtquick-internationalization.html)
 
+### Flags
+
+```qml
+flags: Qt.WindowCloseButtonHint | Qt.WindowMinimizeButtonHint | Qt.CustomizeWindowHint | Qt.Dialog | Qt.WindowTitleHint
+```
+
+> should've been disabled maximize button cenah, but on my end don't, maybe KDE thing
+
 ### Top bar
 
 [Positioning with Anchors](https://doc.qt.io/qt-6/qtquick-positioning-anchors.html)

@@ -10,6 +10,9 @@ ApplicationWindow{
     visible: true
     title: qsTr("Login Page") // Use qsTr() for all Literal User Interface Strings -> https://doc.qt.io/qt-6/qtquick-internationalization.html
 
+    // should've been disabled maximize button cenah, but on my end don't, maybe KDE thing
+    flags: Qt.WindowCloseButtonHint | Qt.WindowMinimizeButtonHint | Qt.CustomizeWindowHint | Qt.Dialog | Qt.WindowTitleHint
+
     // Top bar
     Rectangle{
         id: topBar // camelCase
