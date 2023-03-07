@@ -106,6 +106,12 @@ Rectangle{
 }
 ```
 
+The results:
+
+- ![rectangle_topBar](images_for_md/3_rectangle_topBar.png)
+- ![login_page_text_on_rectangle](images_for_md/4_login_page_text_on_rectangle.png)
+- ![center_the_login_page_text](images_for_md/5_center_the_login_page_text.png)
+
 #### Add Image
 
 ```qml
