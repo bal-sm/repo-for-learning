@@ -62,3 +62,5 @@ ApplicationWindow{
         anchors.top: image.bottom
         anchors.topMargin: 60
     }
+
+}
