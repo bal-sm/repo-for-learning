@@ -53,6 +53,38 @@ ApplicationWindow{
 Note:
 > Use qsTr() for all Literal User Interface Strings, [link](https://doc.qt.io/qt-6/qtquick-internationalization.html)
 
+### Top bar
+
+[Positioning with Anchors](https://doc.qt.io/qt-6/qtquick-positioning-anchors.html)
+
+Note for me:
+> Cari tahu apa units nya `cm` atau `px` kemungkinan besar px
+
+```qml
+Rectangle{
+    id: topBar // camelCase
+    height: 40
+    color: Material.color(Material.Blue)
+    anchors{
+        left: parent.left // parent teh window nya
+        right: parent.right
+        top: parent.top
+        margins: 10
+    }
+    radius: 10
+
+    Text{
+        text: qsTr("LOGIN PAGE")
+        anchors.verticalCenter: parent.verticalCenter
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignVCenter
+        color: "#ffffff"
+        anchors.horizontalCenter: parent.horizontalCenter
+        font.pointSize: 12
+    }
+}
+```
+
 ## Source
 
 [PySide6, Qt Quick, Material Design, VS Code And Python 3.9.1 - Tutorial Modern GUI - Part 1](https://www.youtube.com/watch?v=Jn0PpzB14Y8)
