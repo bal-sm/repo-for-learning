@@ -80,4 +80,13 @@ ApplicationWindow{
         //     TextInput.NoEcho - Displays nothing.
         //     TextInput.PasswordEchoOnEdit - Displays characters as they are entered while editing, otherwise displays asterisks.
     }
+
+    CheckBox{
+        id: checkBox
+        text: qsTr("Save password")
+        anchors.top: passwordField.bottom
+        anchors.topMargin: 10
+        anchors.horizontalCenter: parent.horizontalCenter
+    }
+
 }

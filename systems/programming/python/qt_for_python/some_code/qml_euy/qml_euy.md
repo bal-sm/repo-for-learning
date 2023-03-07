@@ -181,6 +181,21 @@ TextField{ // https://doc.qt.io/qt-5/qml-qtquick-controls-textfield.html
 The result:
 ![passwordField](images_for_md/11_passwordField.png)
 
+### Check box
+
+```qml
+CheckBox{
+    id: checkBox
+    text: qsTr("Save password")
+    anchors.top: passwordField.bottom
+    anchors.topMargin: 10
+    anchors.horizontalCenter: parent.horizontalCenter
+}
+```
+
+The result:
+![checkBox](images_for_md/12_checkBox.png)
+
 ## Source
 
 [PySide6, Qt Quick, Material Design, VS Code And Python 3.9.1 - Tutorial Modern GUI - Part 1](https://www.youtube.com/watch?v=Jn0PpzB14Y8)
