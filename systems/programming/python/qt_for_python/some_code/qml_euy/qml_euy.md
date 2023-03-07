@@ -136,6 +136,25 @@ The results:
 Note:
 > Use [The Qt Resource System](https://doc.qt.io/qt-5/resources.html), lebih better cenah, daripada misah-misah resource-nya.
 
+### Username field
+
+```qml
+TextField{ // https://doc.qt.io/qt-5/qml-qtquick-controls-textfield.html
+    id: usernameField
+    width: 300
+    text: qsTr("")
+    selectByMouse: true // This property determines if the user can select the text with the mouse.
+    placeholderText: qsTr("Your username or email") // This property contains the text that is shown in the text field when the text field is empty.
+    verticalAlignment: Text.AlignVCenter
+    anchors.horizontalCenter: parent.horizontalCenter
+    anchors.top: image.bottom
+    anchors.topMargin: 60
+}
+```
+
+The result:
+![10_usernameField](images_for_md/10_usernameField.png)
+
 ## Source
 
 [PySide6, Qt Quick, Material Design, VS Code And Python 3.9.1 - Tutorial Modern GUI - Part 1](https://www.youtube.com/watch?v=Jn0PpzB14Y8)

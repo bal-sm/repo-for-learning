@@ -50,3 +50,15 @@ ApplicationWindow{
         anchors.top: topBar.bottom // id-nya Rectangle tea
         anchors.topMargin: 60
     }
+
+    TextField{ // https://doc.qt.io/qt-5/qml-qtquick-controls-textfield.html
+        id: usernameField
+        width: 300
+        text: qsTr("")
+        selectByMouse: true // This property determines if the user can select the text with the mouse.
+        placeholderText: qsTr("Your username or email") // This property contains the text that is shown in the text field when the text field is empty.
+        verticalAlignment: Text.AlignVCenter
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.top: image.bottom
+        anchors.topMargin: 60
+    }
