@@ -212,6 +212,77 @@ Button{
 The result:
 ![buttonLogin](images_for_md/13_buttonLogin.png)
 
+### JavaScript thing
+
+On the top of `Rectangle` and below theming code:
+
+```qml
+QtObject { //katanya bisa python backendnya, ada di channelnya
+    id: internal
+    property string user: "AhmadBinAbdullah@naksoleh.com"
+    property string pass: "muiza"
+
+    function checkLogin(username, password) {
+        if(username === user && password === pass){
+            var component = Qt.createComponent("app.qml")
+            var win = component.createObject()
+            win.show()
+            visible = false
+        } else {
+                if(username !== user){
+                    usernameField.Material.foreground = Material.Pink
+                    usernameField.Material.accent = Material.Pink
+                } else {
+                    usernameField.Material.foreground = Material.LightBlue
+                    usernameField.Material.accent = Material.LightBlue
+                }
+
+                if(password !== pass){
+                    passwordField.Material.foreground = Material.Pink
+                    passwordField.Material.accent = Material.Pink
+                } else {
+                    passwordField.Material.foreground = Material.LightBlue
+                    passwordField.Material.accent = Material.LightBlue
+                }
+            }
+        }
+    }
+```
+
+On `Button`:
+
+```
+Button{
+    ...
+    onClicked: internal.checkLogin(usernameField.text, passwordField.text)
+}
+```
+
+> If the button clicked then go to `app.qml`
+
+The `app.qml`:
+
+```qml
+import QtQuick
+import QtQuick.Window
+import QtQuick.Controls
+import QtQuick.Controls.Material
+
+ApplicationWindow{
+    id: window
+    width: 760
+    height: 500
+    visible: true
+    title: qsTr("The app home")
+
+    Material.theme: Material.Dark
+    Material.accent: Material.LightBlue
+}
+```
+
+The result:
+![wrong_username_password](images_for_md/14_wrong_username_password.png)
+
 ## Source
 
 [PySide6, Qt Quick, Material Design, VS Code And Python 3.9.1 - Tutorial Modern GUI - Part 1](https://www.youtube.com/watch?v=Jn0PpzB14Y8)

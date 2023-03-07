@@ -16,6 +16,37 @@ ApplicationWindow{
     Material.theme: Material.Dark
     Material.accent: Material.LightBlue
 
+    QtObject { //katanya bisa python backendnya, ada di channelnya
+        id: internal
+        property string user: "AhmadBinAbdullah@naksoleh.com"
+        property string pass: "muiza"
+
+        function checkLogin(username, password) {
+            if(username === user && password === pass){
+                var component = Qt.createComponent("app.qml")
+                var win = component.createObject()
+                win.show()
+                visible = false
+            } else {
+                    if(username !== user){
+                        usernameField.Material.foreground = Material.Pink
+                        usernameField.Material.accent = Material.Pink
+                    } else {
+                        usernameField.Material.foreground = Material.LightBlue
+                        usernameField.Material.accent = Material.LightBlue
+                    }
+
+                    if(password !== pass){
+                        passwordField.Material.foreground = Material.Pink
+                        passwordField.Material.accent = Material.Pink
+                    } else {
+                        passwordField.Material.foreground = Material.LightBlue
+                        passwordField.Material.accent = Material.LightBlue
+                    }
+                }
+        }
+    }
+
     // Top bar
     Rectangle{
         id: topBar // camelCase
@@ -96,5 +127,6 @@ ApplicationWindow{
         anchors.top: checkBox.bottom
         anchors.topMargin: 10
         anchors.horizontalCenter: parent.horizontalCenter
+        onClicked: internal.checkLogin(usernameField.text, passwordField.text)
     }
 }
