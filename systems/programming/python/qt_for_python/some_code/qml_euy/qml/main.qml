@@ -63,4 +63,21 @@ ApplicationWindow{
         anchors.topMargin: 60
     }
 
+    TextField{ // https://doc.qt.io/qt-5/qml-qtquick-controls-textfield.html
+        id: passwordField
+        width: 300
+        text: qsTr("")
+        selectByMouse: true
+        placeholderText: qsTr("Your password")
+        verticalAlignment: Text.AlignVCenter
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.top: usernameField.bottom
+        anchors.topMargin: 10
+        echoMode: TextInput.Password // Specifies how the text should be displayed in the TextField.
+        // The possible modes are:
+        //     TextInput.Normal - Displays the text as it is. (Default)
+        //     TextInput.Password - Displays asterisks instead of characters.
+        //     TextInput.NoEcho - Displays nothing.
+        //     TextInput.PasswordEchoOnEdit - Displays characters as they are entered while editing, otherwise displays asterisks.
+    }
 }
