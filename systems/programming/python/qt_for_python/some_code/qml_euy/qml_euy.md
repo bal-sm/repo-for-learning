@@ -196,6 +196,22 @@ CheckBox{
 The result:
 ![checkBox](images_for_md/12_checkBox.png)
 
+### Login button
+
+```qml
+Button{
+    id: buttonLogin
+    width: 300
+    text: qsTr("Login")
+    anchors.top: checkBox.bottom
+    anchors.topMargin: 10
+    anchors.horizontalCenter: parent.horizontalCenter
+}
+```
+
+The result:
+![buttonLogin](images_for_md/13_buttonLogin.png)
+
 ## Source
 
 [PySide6, Qt Quick, Material Design, VS Code And Python 3.9.1 - Tutorial Modern GUI - Part 1](https://www.youtube.com/watch?v=Jn0PpzB14Y8)

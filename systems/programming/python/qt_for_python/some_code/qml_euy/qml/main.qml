@@ -89,4 +89,12 @@ ApplicationWindow{
         anchors.horizontalCenter: parent.horizontalCenter
     }
 
+    Button{
+        id: buttonLogin
+        width: 300
+        text: qsTr("Login")
+        anchors.top: checkBox.bottom
+        anchors.topMargin: 10
+        anchors.horizontalCenter: parent.horizontalCenter
+    }
 }
