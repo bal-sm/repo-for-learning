@@ -108,6 +108,19 @@ Rectangle{
 
 #### Add Image
 
+```qml
+Image{
+    id: image
+    source: "../images/Qt_logo_2016.svg" // a good idea to use qrc than this
+    width: 175
+    height: 126
+
+    anchors.horizontalCenter: parent.horizontalCenter
+    anchors.top: topBar.bottom // id-nya Rectangle tea
+    anchors.topMargin: 60
+}
+```
+
 Note:
 > Use [The Qt Resource System](https://doc.qt.io/qt-5/resources.html), lebih better cenah, daripada misah-misah resource-nya.
 

@@ -39,3 +39,14 @@ ApplicationWindow{
             font.pointSize: 12
         }
     }
+
+    Image{
+        id: image
+        source: "../images/Qt_logo_2016.svg" // a good idea to use qrc than this
+        width: 175
+        height: 126
+
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.top: topBar.bottom // id-nya Rectangle tea
+        anchors.topMargin: 60
+    }
