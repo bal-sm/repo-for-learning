@@ -85,6 +85,11 @@ Rectangle{
 }
 ```
 
+#### Add Image
+
+Note:
+> Use [The Qt Resource System](https://doc.qt.io/qt-5/resources.html), lebih better cenah, daripada misah-misah resource-nya.
+
 ## Source
 
 [PySide6, Qt Quick, Material Design, VS Code And Python 3.9.1 - Tutorial Modern GUI - Part 1](https://www.youtube.com/watch?v=Jn0PpzB14Y8)
