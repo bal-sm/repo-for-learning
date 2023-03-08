@@ -712,6 +712,8 @@ _Skipped_
 
 _Skipped_
 
+> I'll try not to use QtCreator. Too clunky for my taste.
+
 ## Using `.qrc` Files (`pyside6-rcc`)
 
 The [Qt Resource System](https://doc.qt.io/qt-5/resources.html) is a _mechanism for storing binary files_ in an application.
