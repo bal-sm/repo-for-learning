@@ -754,7 +754,7 @@ Before running any command, add information about the resources to a .qrc file. 
 
 Now that the `icons.qrc` file is ready, 
 
-Use the `pyside6-rcc` tool to generate a Python class containing the binary information about the resources.
+Use the `pyside6-rcc` tool to _generate a Python class containing the binary information about the resources_.
 
 Run this command:
 
