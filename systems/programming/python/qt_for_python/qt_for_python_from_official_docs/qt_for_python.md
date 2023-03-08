@@ -1,5 +1,44 @@
 # Qt for Python
 
+## Table of Contents
+
+- [Qt for Python](#qt-for-python)
+  - [Table of Contents](#table-of-contents)
+  - [QT/QML](#qtqml)
+    - [From doc](#from-doc)
+    - [From Wikipedia](#from-wikipedia)
+  - [File Types](#file-types)
+    - [.py](#py)
+    - [.ui](#ui)
+    - [.qrc](#qrc)
+    - [.qml](#qml)
+  - [Distributing Your Application to Other Systems/Platforms](#distributing-your-application-to-other-systemsplatforms)
+    - [Reproducible deployment](#reproducible-deployment)
+    - [Freezing Your Application](#freezing-your-application)
+    - [Compiling Python](#compiling-python)
+  - [Why Qt for Python?](#why-qt-for-python)
+    - [Lowering the Qt Barrier](#lowering-the-qt-barrier)
+    - [Shiboken](#shiboken)
+  - [Your First QtWidgets Application](#your-first-qtwidgets-application)
+  - [Signals and Slots (handling) / Using a Simple Button](#signals-and-slots-handling--using-a-simple-button)
+  - [Signals and Slots (comprehensive)](#signals-and-slots-comprehensive)
+    - [Signal Class](#signal-class)
+    - [Slot Class](#slot-class)
+    - [Overloading Signals and Slots with Different Types](#overloading-signals-and-slots-with-different-types)
+    - [Specifying Signals and Slots by Method Signature Strings](#specifying-signals-and-slots-by-method-signature-strings)
+  - [Creating a Dialog Application](#creating-a-dialog-application)
+    - [Create the Widgets](#create-the-widgets)
+    - [Create a layout to organize the Widgets](#create-a-layout-to-organize-the-widgets)
+    - [Create the function to greet and connect the Button](#create-the-function-to-greet-and-connect-the-button)
+    - [Complete code](#complete-code)
+  - [Displaying Data Using a Table Widget](#displaying-data-using-a-table-widget)
+  - [Displaying Data Using a Tree Widget](#displaying-data-using-a-tree-widget)
+  - [Using `.ui` files from Designer or QtCreator with `QUiLoader` and `pyside6-uic`](#using-ui-files-from-designer-or-qtcreator-with-quiloader-and-pyside6-uic)
+  - [Using `.qrc` Files (`pyside6-rcc`)](#using-qrc-files-pyside6-rcc)
+    - [The `.qrc` file](#the-qrc-file)
+    - [Generating the `.py` from `.qrc`](#generating-the-py-from-qrc)
+  - [Source(s)](#sources)
+
 ## QT/QML
 
 ### From doc
