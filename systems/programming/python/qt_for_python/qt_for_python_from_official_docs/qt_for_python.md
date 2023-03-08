@@ -822,7 +822,7 @@ Tools:
 
 _Skipped_
 
-> Kayaknya bisa pake utils dari Django. Django makes it easier.
+> Kayaknya bisa pake utils dari Django. Django makes it easier, I think.
 
 ## Source(s)
 
