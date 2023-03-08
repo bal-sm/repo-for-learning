@@ -759,7 +759,7 @@ Use the `pyside6-rcc` tool to generate a Python class containing the binary info
 Run this command:
 
 ```sh
-pyside6-rcc icons.rc -o rc_icons.py
+pyside6-rcc icons.qrc -o rc_icons.py
 ```
 
 Cenah:
