@@ -38,6 +38,7 @@
     - [The `.qrc` file](#the-qrc-file)
     - [Generating the `.py` from `.qrc`](#generating-the-py-from-qrc)
     - [Usage in the code](#usage-in-the-code)
+  - [Translating Applications](#translating-applications)
   - [Source(s)](#sources)
 
 ## QT/QML
@@ -811,6 +812,17 @@ icon = QIcon(QPixmap(":/icons/play_icon.png"))
 The final result of the example:
 
 [player.py](06_Using_.qrc_Files/player.py)
+
+## Translating Applications
+
+Tools:
+
+- Qt Linguist
+- GNU gettext
+
+_Skipped_
+
+> Kayaknya bisa pake utils dari Django. Django makes it easier.
 
 ## Source(s)
 
