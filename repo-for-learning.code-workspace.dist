@@ -22,6 +22,7 @@
 			"no-trailing-spaces": false,
 			"ul-indent": false,
 			"fenced-code-language": false,
+			"no-emphasis-as-heading": false,
 		},
 		"git.autofetch": false,
 	}
