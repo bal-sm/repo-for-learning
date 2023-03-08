@@ -37,6 +37,7 @@
   - [Using `.qrc` Files (`pyside6-rcc`)](#using-qrc-files-pyside6-rcc)
     - [The `.qrc` file](#the-qrc-file)
     - [Generating the `.py` from `.qrc`](#generating-the-py-from-qrc)
+    - [Usage in the code](#usage-in-the-code)
   - [Source(s)](#sources)
 
 ## QT/QML
@@ -770,6 +771,46 @@ To use the generated file, add the following import at the top of your main Pyth
 ```python
 import rc_icons
 ```
+
+### Usage in the code
+
+You need to make sure that the necessary modules are imported:
+
+```python
+from PySide6.QtGui import QIcon, QPixmap
+
+import rc_icons
+```
+
+And modify such codes like below:
+
+```
+...
+icon = QIcon.fromTheme(...)
+...
+```
+
+to:
+
+```python
+...
+icon = QIcon(QPixmap("path_to_the_file_in_qrc_file"))
+...
+```
+
+e.g.:
+
+```python
+...
+icon = QIcon(QPixmap(":/icons/play_icon.png"))
+...
+```
+
+> Weird, cuman di import doang. Ya da suka-suka developernya sih.
+
+The final result of the example:
+
+[player.py](06_Using_.qrc_Files/player.py)
 
 ## Source(s)
 

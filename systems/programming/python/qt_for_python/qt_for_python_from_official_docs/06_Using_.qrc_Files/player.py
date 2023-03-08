@@ -6,7 +6,7 @@
 
 import sys
 from PySide6.QtCore import QStandardPaths, Qt, Slot
-from PySide6.QtGui import QAction, QIcon, QKeySequence, QScreen
+from PySide6.QtGui import QAction, QIcon, QKeySequence, QPixmap, QScreen
 from PySide6.QtWidgets import (
     QApplication,
     QDialog,
@@ -19,6 +19,7 @@ from PySide6.QtWidgets import (
 from PySide6.QtMultimedia import QAudio, QAudioOutput, QMediaFormat, QMediaPlayer
 from PySide6.QtMultimediaWidgets import QVideoWidget
 
+import rc_icons
 
 AVI = "video/x-msvideo"  # AVI
 
@@ -64,39 +65,27 @@ class MainWindow(QMainWindow):
 
         play_menu = self.menuBar().addMenu("&Play")
         style = self.style()
-        icon = QIcon.fromTheme(
-            "media-playback-start.png", style.standardIcon(QStyle.SP_MediaPlay)
-        )
+        icon = QIcon(QPixmap(":/icons/play_icon.png"))
         self._play_action = tool_bar.addAction(icon, "Play")
         self._play_action.triggered.connect(self._player.play)
         play_menu.addAction(self._play_action)
 
-        icon = QIcon.fromTheme(
-            "media-skip-backward-symbolic.svg",
-            style.standardIcon(QStyle.SP_MediaSkipBackward),
-        )
+        icon = QIcon(QPixmap(":/icons/previous_icon.png"))
         self._previous_action = tool_bar.addAction(icon, "Previous")
         self._previous_action.triggered.connect(self.previous_clicked)
         play_menu.addAction(self._previous_action)
 
-        icon = QIcon.fromTheme(
-            "media-playback-pause.png", style.standardIcon(QStyle.SP_MediaPause)
-        )
+        icon = QIcon(QPixmap(":/icons/pause_icon.png"))
         self._pause_action = tool_bar.addAction(icon, "Pause")
         self._pause_action.triggered.connect(self._player.pause)
         play_menu.addAction(self._pause_action)
 
-        icon = QIcon.fromTheme(
-            "media-skip-forward-symbolic.svg",
-            style.standardIcon(QStyle.SP_MediaSkipForward),
-        )
+        icon = QIcon(QPixmap(":/icons/next_icon.png"))
         self._next_action = tool_bar.addAction(icon, "Next")
         self._next_action.triggered.connect(self.next_clicked)
         play_menu.addAction(self._next_action)
 
-        icon = QIcon.fromTheme(
-            "media-playback-stop.png", style.standardIcon(QStyle.SP_MediaStop)
-        )
+        icon = QIcon(QPixmap(":/icons/stop_icon.png"))
         self._stop_action = tool_bar.addAction(icon, "Stop")
         self._stop_action.triggered.connect(self._ensure_stopped)
         play_menu.addAction(self._stop_action)
