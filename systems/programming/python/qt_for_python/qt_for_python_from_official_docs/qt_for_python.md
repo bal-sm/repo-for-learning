@@ -5,13 +5,13 @@
 - [Qt for Python](#qt-for-python)
   - [Table of Contents](#table-of-contents)
   - [The difference of Qt, QML, and Widgets](#the-difference-of-qt-qml-and-widgets)
-    - [From doc](#from-doc)
-    - [From Wikipedia](#from-wikipedia)
+    - [Qt](#qt)
+    - [QML](#qml)
   - [File Types](#file-types)
     - [.py](#py)
     - [.ui](#ui)
     - [.qrc](#qrc)
-    - [.qml](#qml)
+    - [.qml](#qml-1)
   - [Distributing Your Application to Other Systems/Platforms](#distributing-your-application-to-other-systemsplatforms)
     - [Reproducible deployment](#reproducible-deployment)
     - [Freezing Your Application](#freezing-your-application)
@@ -45,16 +45,18 @@
 
 ## The difference of Qt, QML, and Widgets
 
-### From doc
+### Qt
 
-These modules has a specific functionality, and among this modules, there is one called QtDeclarative, in which you can find the implementation of the QML declarative language. This language is similar to CSS and JSON, and it was created to design UI applications declaratively, allowing JavaScript to take care of some imperative sections, and enabling other components to extend and connect the code with C++.
+> Deleted because I summarized it incorrectly, read on [here](https://doc.qt.io/qtforpython/tutorials/pretutorial/whatisqt.html).
+
+### QML
 
 The elements that you can find in QML/Quick applications are focused on providing a more dynamic application infrastructure which different properties based in certain behaviors.
+
 Even though QML has the motivation to provide interfaces with mobile devices, you can use it for Desktop applications, too.
 
 > udah QML aja berarti
-
-### From Wikipedia
+> Below texts are from Wikipedia, here's the [link](https://en.wikipedia.org/wiki/QML).
 
 Qt Quick is used for mobile applications where touch input, fluid animations and user experience are crucial. QML is also used with Qt3D to describe a 3D scene and a "frame graph" rendering methodology.
 
