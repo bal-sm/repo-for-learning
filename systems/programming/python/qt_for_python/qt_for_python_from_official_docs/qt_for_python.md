@@ -39,6 +39,8 @@
     - [Generating the `.py` from `.qrc`](#generating-the-py-from-qrc)
     - [Usage in the code](#usage-in-the-code)
   - [Translating Applications](#translating-applications)
+  - [Styling the Widgets Application](#styling-the-widgets-application)
+    - [Qt Style Sheets](#qt-style-sheets)
   - [Source(s)](#sources)
 
 ## QT/QML
@@ -823,6 +825,138 @@ Tools:
 _Skipped_
 
 > Kayaknya bisa pake utils dari Django. Django makes it easier, I think.
+
+## Styling the Widgets Application
+
+Qt Widgets application use a default theme depending on the platform. 
+
+In some cases, there are system-wide configurations that modify the Qt theme, and applications are displayed differently.
+
+However, you can _take care of your own widgets and provide a custom style_ to **each component**. 
+
+An example snippet before styling:
+
+```python
+import sys
+from PySide6.QtCore import Qt
+from PySide6.QtWidgets import QApplication, QLabel
+
+if __name__ == "__main__":
+    app = QApplication()
+    w = QLabel("This is a placeholder text")
+    w.setAlignment(Qt.AlignCenter)
+    w.show()
+    sys.exit(app.exec())
+```
+
+![unthemed_widget](07_styling_widget_app/1_unthemed_widget.png)
+
+You can style your application using the CSS-like syntax.
+
+A `QLabel` can be styled differently by setting some of its CSS properties, such as `background-color` and `font-family`.
+
+After styling:
+
+```python
+import sys
+from PySide6.QtCore import Qt
+from PySide6.QtWidgets import QApplication, QLabel
+
+if __name__ == "__main__":
+    app = QApplication()
+    w = QLabel("This is a placeholder text")
+    w.setAlignment(Qt.AlignCenter)
+    w.setStyleSheet("""
+        background-color: #262626;
+        color: #FFFFFF;
+        font-family: Titillium;
+        font-size: 18px;
+        """)
+    w.show()
+    sys.exit(app.exec())
+```
+
+![themed_widget](07_styling_widget_app/2_themed_widget.png)
+
+### Qt Style Sheets
+
+Some Python codes example:
+
+```python
+class Widget(QWidget):
+    def __init__(self, parent=None):
+        super(Widget, self).__init__(parent)
+
+        menu_widget = QListWidget()
+        for i in range(10):
+            item = QListWidgetItem(f"Item {i}")
+            item.setTextAlignment(Qt.AlignCenter)
+            menu_widget.addItem(item)
+
+        text_widget = QLabel(_placeholder)
+        button = QPushButton("Something")
+
+        content_layout = QVBoxLayout()
+        content_layout.addWidget(text_widget)
+        content_layout.addWidget(button)
+        main_widget = QWidget()
+        main_widget.setLayout(content_layout)
+
+        layout = QHBoxLayout()
+        layout.addWidget(menu_widget, 1)
+        layout.addWidget(main_widget, 4)
+        self.setLayout(layout)
+```
+
+![unthemed_widget_qss_tutorial](07_styling_widget_app/3_unthemed_widget_qss_tutorial.png)
+
+`style.qss`:
+
+```css
+QListWidget {
+    color: #FFFFFF;
+    background-color: #33373B;
+}
+
+QListWidget::item {
+    height: 50px;
+}
+
+QListWidget::item:selected {
+    background-color: #2ABf9E;
+}
+
+QLabel {
+    background-color: #FFFFFF;
+    qproperty-alignment: AlignCenter;
+}
+
+QPushButton {
+    background-color: #2ABf9E;
+    padding: 20px;
+    font-size: 18px;
+}
+```
+
+"Load the `style.qss`" Python code:
+
+```python
+if __name__ == "__main__":
+    app = QApplication()
+
+    w = Widget()
+    w.show()
+
+    with open("style.qss", "r") as f:
+        _style = f.read()
+        app.setStyleSheet(_style)
+
+    sys.exit(app.exec())
+```
+
+![themed_widget_with_qss](07_styling_widget_app/4_themed_widget_with_qss.png)
+
+> Read more on [here](https://doc.qt.io/qtforpython/tutorials/basictutorial/widgetstyling.html).
 
 ## Source(s)
 
