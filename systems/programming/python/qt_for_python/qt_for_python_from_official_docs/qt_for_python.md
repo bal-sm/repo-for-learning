@@ -42,6 +42,7 @@
   - [Styling the Widgets Application](#styling-the-widgets-application)
     - [Qt Style Sheets](#qt-style-sheets)
   - [Your First QtQuick/QML Application](#your-first-qtquickqml-application)
+  - [Python-QML integration](#python-qml-integration)
   - [More...](#more)
   - [How To Debug a C++ Extension of a PySide6 Application?](#how-to-debug-a-c-extension-of-a-pyside6-application)
   - [Source(s)](#sources)
@@ -974,6 +975,30 @@ In QML, a user interface is specified as _a tree of objects with properties_.
 In this tutorial, we will show how to make a simple “Hello World” application with `PySide6` and `QML`.
 
 > _Skipped_. Read more on [here](https://doc.qt.io/qtforpython/tutorials/basictutorial/qml.html).
+
+## Python-QML integration
+
+_A quick walk-through of a python application that loads, and interacts with a QML file._
+
+- QML is a declarative language that _lets you design UIs faster_ than a traditional language, such as C++. 
+  - The `QtQml` and `QtQuick` modules provides _the necessary infrastructure for QML-based UIs_.
+
+- In this tutorial, you will _learn how to integrate Python with a QML application_. 
+  - This mechanism will help us to understand _how to use Python as a backend for certain signals_ 
+    - from the UI elements in the QML interface. 
+  - Additionally, you will learn how to provide a modern look to your QML application using one of the features from `Qt Quick Controls 2`.
+
+- The tutorial is based on _an application that allow you to set many text properties_, like
+  - increasing the font size, 
+  - changing the color, 
+  - changing the style, 
+  - and so on.
+
+The following step-by-step process will guide you through the key elements of the QML based application and `PySide6` integration:
+
+1. First, let’s start with the following QML-based UI:
+   
+   [view.qml](08_Python-QML_integration/view.qml)
 
 ## More...
 
