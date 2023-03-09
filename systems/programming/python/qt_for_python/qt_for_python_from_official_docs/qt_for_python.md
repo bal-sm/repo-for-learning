@@ -41,6 +41,7 @@
   - [Translating Applications](#translating-applications)
   - [Styling the Widgets Application](#styling-the-widgets-application)
     - [Qt Style Sheets](#qt-style-sheets)
+  - [Your First QtQuick/QML Application](#your-first-qtquickqml-application)
   - [More...](#more)
   - [How To Debug a C++ Extension of a PySide6 Application?](#how-to-debug-a-c-extension-of-a-pyside6-application)
   - [Source(s)](#sources)
@@ -961,6 +962,18 @@ if __name__ == "__main__":
 ![themed_widget_with_qss](07_styling_widget_app/4_themed_widget_with_qss.png)
 
 > Read more on [here](https://doc.qt.io/qtforpython/tutorials/basictutorial/widgetstyling.html).
+
+## Your First QtQuick/QML Application
+
+QML is a declarative language that _lets you develop applications faster_ than with traditional languages. 
+
+It is **ideal** for _designing the UI of your application_ because of its **declarative** nature. 
+
+In QML, a user interface is specified as _a tree of objects with properties_. 
+
+In this tutorial, we will show how to make a simple “Hello World” application with `PySide6` and `QML`.
+
+> _Skipped_. Read more on [here](https://doc.qt.io/qtforpython/tutorials/basictutorial/qml.html).
 
 ## More...
 
