@@ -1034,7 +1034,53 @@ The following step-by-step process will guide you through the key elements of th
    ```
    
    > Notice that we only need a `QQmlApplicationEngine` to load the QML file.
+
+4. Define the `Bridge` class, containing all the logic for the element that will be register in QML:
+
+   ```python
+   # To be used on the @QmlElement decorator
+   # (QML_IMPORT_MINOR_VERSION is optional)
+   QML_IMPORT_NAME = "io.qt.textproperties" # bebas namanya
+   QML_IMPORT_MAJOR_VERSION = 1
    
+   
+   @QmlElement
+   class Bridge(QObject):
+   
+       @Slot(str, result=str)
+       def getColor(self, s):
+           if s.lower() == "red":
+               return "#ef9a9a"
+           elif s.lower() == "green":
+               return "#a5d6a7"
+           elif s.lower() == "blue":
+               return "#90caf9"
+           else:
+               return "white"
+   
+       @Slot(float, result=int)
+       def getSize(self, s):
+           size = int(s * 34)
+           if size <= 0:
+               return 1
+           else:
+               return size
+   
+       @Slot(str, result=bool)
+       def getItalic(self, s):
+           if s.lower() == "italic":
+               return True
+           else:
+               return False
+   
+       @Slot(str, result=bool)
+       def getBold(self, s):
+           if s.lower() == "bold":
+               return True
+           else:
+               return False
+   ```
+
 ## More...
 
 Read on here[^1].
