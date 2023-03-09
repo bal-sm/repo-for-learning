@@ -1016,6 +1016,25 @@ The following step-by-step process will guide you through the key elements of th
 
    > Should've been included..
 
+3. With the QML file in place, you can load it from Python:
+
+   ```python
+   if __name__ == '__main__':
+       app = QGuiApplication(sys.argv)
+       QQuickStyle.setStyle("Material")
+       engine = QQmlApplicationEngine()
+   
+       # Get the path of the current directory, and then add the name
+       # of the QML file, to load it.
+       qml_file = Path(__file__).parent / 'view.qml'
+       engine.load(qml_file)
+   
+       if not engine.rootObjects():
+           sys.exit(-1)
+   ```
+   
+   > Notice that we only need a `QQmlApplicationEngine` to load the QML file.
+   
 ## More...
 
 Read on here[^1].
