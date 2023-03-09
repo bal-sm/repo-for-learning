@@ -996,6 +996,8 @@ _A quick walk-through of a python application that loads, and interacts with a Q
 
 The following step-by-step process will guide you through the key elements of the QML based application and `PySide6` integration:
 
+> Qt for Python official docs is atrocious.
+
 1. First, let’s start with the following QML-based UI:
    
    [view.qml](08_Python-QML_integration/view.qml)
@@ -1031,6 +1033,8 @@ The following step-by-step process will guide you through the key elements of th
    
        if not engine.rootObjects():
            sys.exit(-1)
+
+       sys.exit(app.exec())
    ```
    
    > Notice that we only need a `QQmlApplicationEngine` to load the QML file.
@@ -1076,6 +1080,13 @@ The following step-by-step process will guide you through the key elements of th
        @Slot(str, result=bool)
        def getBold(self, s):
            if s.lower() == "bold":
+               return True
+           else:
+               return False
+               
+       @Slot(str, result=bool)
+       def getUnderline(self, s):
+           if s.lower() == "underline":
                return True
            else:
                return False

@@ -47,6 +47,13 @@ class Bridge(QObject):
         else:
             return False
 
+    @Slot(str, result=bool)
+    def getUnderline(self, s):
+        if s.lower() == "underline":
+            return True
+        else:
+            return False
+
 
 if __name__ == "__main__":
     app = QGuiApplication(sys.argv)
@@ -60,3 +67,5 @@ if __name__ == "__main__":
 
     if not engine.rootObjects():
         sys.exit(-1)
+
+    sys.exit(app.exec())
