@@ -971,10 +971,14 @@ Read on here[^1].
 _Skipped_
 
 > I'll revisit someday, maybe.
+> 
 > But there's interesting quote from them.
 
 Cenah:
 > With VSCode, you should be able to see the combined call stacks for both C++ and Python together. With Qt Creator, unfortunately you would only be able to debug the native C++ code of the PySide module; that is you won’t be able to set breakpoints inside the Python code.
+
+Mine:
+> They are using VSCode.
 
 ## Source(s)
 
