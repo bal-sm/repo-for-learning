@@ -1000,6 +1000,8 @@ The following step-by-step process will guide you through the key elements of th
    
    [view.qml](08_Python-QML_integration/view.qml)
 
+   ![qml_example](08_Python-QML_integration/qml_example.png)
+
 ## More...
 
 Read on here[^1].
