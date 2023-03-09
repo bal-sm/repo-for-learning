@@ -4,7 +4,7 @@
 
 - [Qt for Python](#qt-for-python)
   - [Table of Contents](#table-of-contents)
-  - [QT/QML](#qtqml)
+  - [The difference of Qt, QML, and Widgets](#the-difference-of-qt-qml-and-widgets)
     - [From doc](#from-doc)
     - [From Wikipedia](#from-wikipedia)
   - [File Types](#file-types)
@@ -43,7 +43,7 @@
     - [Qt Style Sheets](#qt-style-sheets)
   - [Source(s)](#sources)
 
-## QT/QML
+## The difference of Qt, QML, and Widgets
 
 ### From doc
 
