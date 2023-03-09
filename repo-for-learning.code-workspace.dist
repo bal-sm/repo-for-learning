@@ -23,6 +23,7 @@
 			"ul-indent": false,
 			"fenced-code-language": false,
 			"no-emphasis-as-heading": false,
+			"no-trailing-punctuation": false,
 		},
 		"git.autofetch": false,
 		// taken from my user settings.json
