@@ -1081,6 +1081,11 @@ The following step-by-step process will guide you through the key elements of th
                return False
    ```
 
+- Notice that _the registration happens_ thanks to the `QmlElement` decorator,
+  - that underneath uses the reference to
+    - the `Bridge` class and 
+    - the variables `QML_IMPORT_NAME` and `QML_IMPORT_MAJOR_VERSION`.
+
 ## More...
 
 Read on here[^1].
