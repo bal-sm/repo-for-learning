@@ -41,6 +41,8 @@
   - [Translating Applications](#translating-applications)
   - [Styling the Widgets Application](#styling-the-widgets-application)
     - [Qt Style Sheets](#qt-style-sheets)
+  - [More...](#more)
+  - [How To Debug a C++ Extension of a PySide6 Application?](#how-to-debug-a-c-extension-of-a-pyside6-application)
   - [Source(s)](#sources)
 
 ## The difference of Qt, QML, and Widgets
@@ -960,8 +962,22 @@ if __name__ == "__main__":
 
 > Read more on [here](https://doc.qt.io/qtforpython/tutorials/basictutorial/widgetstyling.html).
 
+## More...
+
+Read on here[^1].
+
+## How To Debug a C++ Extension of a PySide6 Application?
+
+_Skipped_
+
+> I'll revisit someday, maybe.
+> But there's interesting quote from them.
+
+Cenah:
+> With VSCode, you should be able to see the combined call stacks for both C++ and Python together. With Qt Creator, unfortunately you would only be able to debug the native C++ code of the PySide module; that is you won’t be able to set breakpoints inside the Python code.
+
 ## Source(s)
 
-[Qt for Python](https://doc.qt.io/qtforpython/)
+[^1]: [Qt for Python](https://doc.qt.io/qtforpython/)
 
 [Learn Python GUI Development for Desktop – PySide6 and Qt Tutorial](https://www.youtube.com/watch?v=Z1N9JzNax2k)
