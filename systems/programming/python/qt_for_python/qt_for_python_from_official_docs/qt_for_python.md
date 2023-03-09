@@ -1014,7 +1014,7 @@ The following step-by-step process will guide you through the key elements of th
    from PySide6.QtQuickControls2 import QQuickStyle
    ```
 
-> Should've been included..
+   > Should've been included..
 
 ## More...
 
