@@ -1002,6 +1002,20 @@ The following step-by-step process will guide you through the key elements of th
 
    ![qml_example](08_Python-QML_integration/qml_example.png)
 
+2. Add these imports to the top of Python file:
+
+   ```python
+   import sys
+   from pathlib import Path
+   
+   from PySide6.QtCore import QObject, Slot
+   from PySide6.QtGui import QGuiApplication
+   from PySide6.QtQml import QQmlApplicationEngine, QmlElement
+   from PySide6.QtQuickControls2 import QQuickStyle
+   ```
+
+> Should've been included..
+
 ## More...
 
 Read on here[^1].
