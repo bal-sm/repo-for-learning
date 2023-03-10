@@ -46,7 +46,15 @@ ApplicationWindow {
                 id: italic
                 Layout.alignment: Qt.AlignLeft
                 text: "Italic"
-                onToggled: {}
+                onToggled: {
+                    leftlabel.font.italic = bridge.getItalic(italic.text)
+                    // getItalic is a Python function in main.py
+                    // which takes an str
+                    // if it's "italic"
+                    // then `return True` (boolean)
+                    leftlabel.font.bold = bridge.getBold(italic.text)
+                    leftlabel.font.underline = bridge.getUnderline(italic.text)
+                }
             }
             RadioButton {
                 id: bold
