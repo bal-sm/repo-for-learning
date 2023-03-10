@@ -1,17 +1,67 @@
 # Qt for Python
 
-## QT/QML
+## Table of Contents
 
-### From doc
+- [Qt for Python](#qt-for-python)
+  - [Table of Contents](#table-of-contents)
+  - [The difference of Qt, QML, and Widgets](#the-difference-of-qt-qml-and-widgets)
+    - [Qt](#qt)
+    - [QML](#qml)
+  - [File Types](#file-types)
+    - [.py](#py)
+    - [.ui](#ui)
+    - [.qrc](#qrc)
+    - [.qml](#qml-1)
+  - [Distributing Your Application to Other Systems/Platforms](#distributing-your-application-to-other-systemsplatforms)
+    - [Reproducible deployment](#reproducible-deployment)
+    - [Freezing Your Application](#freezing-your-application)
+    - [Compiling Python](#compiling-python)
+  - [Why Qt for Python?](#why-qt-for-python)
+    - [Lowering the Qt Barrier](#lowering-the-qt-barrier)
+    - [Shiboken](#shiboken)
+  - [Your First QtWidgets Application](#your-first-qtwidgets-application)
+  - [Signals and Slots (handling) / Using a Simple Button](#signals-and-slots-handling--using-a-simple-button)
+  - [Signals and Slots (comprehensive)](#signals-and-slots-comprehensive)
+    - [Signal Class](#signal-class)
+    - [Slot Class](#slot-class)
+    - [Overloading Signals and Slots with Different Types](#overloading-signals-and-slots-with-different-types)
+    - [Specifying Signals and Slots by Method Signature Strings](#specifying-signals-and-slots-by-method-signature-strings)
+  - [Creating a Dialog Application](#creating-a-dialog-application)
+    - [Create the Widgets](#create-the-widgets)
+    - [Create a layout to organize the Widgets](#create-a-layout-to-organize-the-widgets)
+    - [Create the function to greet and connect the Button](#create-the-function-to-greet-and-connect-the-button)
+    - [Complete code](#complete-code)
+  - [Displaying Data Using a Table Widget](#displaying-data-using-a-table-widget)
+  - [Displaying Data Using a Tree Widget](#displaying-data-using-a-tree-widget)
+  - [Using `.ui` files from Designer or QtCreator with `QUiLoader` and `pyside6-uic`](#using-ui-files-from-designer-or-qtcreator-with-quiloader-and-pyside6-uic)
+  - [Using `.qrc` Files (`pyside6-rcc`)](#using-qrc-files-pyside6-rcc)
+    - [The `.qrc` file](#the-qrc-file)
+    - [Generating the `.py` from `.qrc`](#generating-the-py-from-qrc)
+    - [Usage in the code](#usage-in-the-code)
+  - [Translating Applications](#translating-applications)
+  - [Styling the Widgets Application](#styling-the-widgets-application)
+    - [Qt Style Sheets](#qt-style-sheets)
+  - [Your First QtQuick/QML Application](#your-first-qtquickqml-application)
+  - [Python-QML integration](#python-qml-integration)
+    - [Theming Python-QML](#theming-python-qml)
+  - [More...](#more)
+  - [How To Debug a C++ Extension of a PySide6 Application?](#how-to-debug-a-c-extension-of-a-pyside6-application)
+  - [Source(s)](#sources)
 
-These modules has a specific functionality, and among this modules, there is one called QtDeclarative, in which you can find the implementation of the QML declarative language. This language is similar to CSS and JSON, and it was created to design UI applications declaratively, allowing JavaScript to take care of some imperative sections, and enabling other components to extend and connect the code with C++.
+## The difference of Qt, QML, and Widgets
+
+### Qt
+
+> Deleted because I summarized it incorrectly, read on [here](https://doc.qt.io/qtforpython/tutorials/pretutorial/whatisqt.html).
+
+### QML
 
 The elements that you can find in QML/Quick applications are focused on providing a more dynamic application infrastructure which different properties based in certain behaviors.
+
 Even though QML has the motivation to provide interfaces with mobile devices, you can use it for Desktop applications, too.
 
 > udah QML aja berarti
-
-### From Wikipedia
+> Below texts are from Wikipedia, here's the [link](https://en.wikipedia.org/wiki/QML).
 
 Qt Quick is used for mobile applications where touch input, fluid animations and user experience are crucial. QML is also used with Qt3D to describe a 3D scene and a "frame graph" rendering methodology.
 
@@ -565,7 +615,7 @@ Cenah:
 > Notice that using a `QTableWidget` is _not the only path to display information in tables_. You can also _create a data model_ and _display_ it using a `QTableView`, but **that is not in the scope of this tutorial**.
 
 Note:
-This Widget is _a ready-to-use version_ of something _you can customize further on_. To know more about the **Model/View architecture** in Qt, refer to its official documentation.
+> This Widget is _a ready-to-use version_ of something _you can customize further on_. To know more about the **Model/View architecture** in Qt, refer to its official documentation.
 
 1. Import `QTableWidget`, `QTableWidgetItem`, and `QColor` to display background colors:
 
@@ -657,8 +707,579 @@ This Widget is _a ready-to-use version_ of something _you can customize further 
     sys.exit(app.exec())
     ```
 
+## Displaying Data Using a Tree Widget
+
+Display data arranged in a tree, using `QTreeWidget`.
+
+Cenah:
+> Notice that using a `QTreeWidget` is not the only path to display information in trees. You can also create a data model and display it using a `QTreeView`, but **that is not in the scope of this tutorial**.
+
+Note:
+> This Widget is a ready-to-use version of something you can customize further on. To know more about the Model/View architecture in Qt, refer to its [official documentation](https://doc.qt.io/qt-6/model-view-programming.html).
+
+_Skipped_
+
+## Using `.ui` files from Designer or QtCreator with `QUiLoader` and `pyside6-uic`
+
+_Skipped_
+
+> I'll try not to use QtCreator. Too clunky for my taste.
+
+## Using `.qrc` Files (`pyside6-rcc`)
+
+The [Qt Resource System](https://doc.qt.io/qt-5/resources.html) is a _mechanism for storing binary files_ in an application.
+
+- The files will be 
+  - embedded into the application and be acessible for 
+    - the `QFile` class and 
+    - the constructors of 
+      - the `QIcon` and 
+      - `QPixmap` classes 
+  - taking **a file name** by _using a special file name starting with_ `:/`.
+    - e.g.:
+      
+      ":/some_image.png"
+
+      From Merriam-Websters ([link](https://www.merriam-webster.com/words-at-play/ie-vs-eg-abbreviation-meaning-usage-difference))
+      > E.g. means “for example.” (It stands for _exempli gratia_ in Latin.)
+
+The most common uses are for custom images, icons, fonts, among others.
+
+### The `.qrc` file
+
+Before running any command, add information about the resources to a `.qrc` file. In the following example, _notice how the resources are listed_ in `icons.qrc`:
+
+```xml
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <file>icons/play.png</file>
+    <file>icons/pause.png</file>
+    <file>icons/stop.png</file>
+    <file>icons/previous.png</file>
+    <file>icons/forward.png</file>
+</qresource>
+</RCC>
+```
+
+### Generating the `.py` from `.qrc`
+
+Now that the `icons.qrc` file is ready, 
+
+Use the `pyside6-rcc` tool to _generate a Python class containing the binary information about the resources_.
+
+Run this command:
+
+```sh
+pyside6-rcc icons.qrc -o rc_icons.py
+```
+
+Cenah:
+> The `-o` option lets you specify the output filename, which is `rc_icons.py` in this case.
+
+To use the generated file, add the following import at the top of your main Python file:
+
+```python
+import rc_icons
+```
+
+### Usage in the code
+
+You need to make sure that the necessary modules are imported:
+
+```python
+from PySide6.QtGui import QIcon, QPixmap
+
+import rc_icons
+```
+
+And modify such codes like below:
+
+```
+...
+icon = QIcon.fromTheme(...)
+...
+```
+
+to:
+
+```python
+...
+icon = QIcon(QPixmap("path_to_the_file_in_qrc_file"))
+...
+```
+
+e.g.:
+
+```python
+...
+icon = QIcon(QPixmap(":/icons/play_icon.png"))
+...
+```
+
+> Weird, cuman di import doang. Ya da suka-suka developernya sih.
+
+The final result of the example:
+
+[player.py](06_Using_.qrc_Files/player.py)
+
+## Translating Applications
+
+Tools:
+
+- Qt Linguist
+- GNU gettext
+
+_Skipped_
+
+> Kayaknya bisa pake utils dari Django. Django makes it easier, I think.
+
+## Styling the Widgets Application
+
+Qt Widgets application use a default theme depending on the platform. 
+
+In some cases, there are system-wide configurations that modify the Qt theme, and applications are displayed differently.
+
+However, you can _take care of your own widgets and provide a custom style_ to **each component**. 
+
+An example snippet before styling:
+
+```python
+import sys
+from PySide6.QtCore import Qt
+from PySide6.QtWidgets import QApplication, QLabel
+
+if __name__ == "__main__":
+    app = QApplication()
+    w = QLabel("This is a placeholder text")
+    w.setAlignment(Qt.AlignCenter)
+    w.show()
+    sys.exit(app.exec())
+```
+
+![unthemed_widget](07_styling_widget_app/1_unthemed_widget.png)
+
+You can style your application using the CSS-like syntax.
+
+A `QLabel` can be styled differently by setting some of its CSS properties, such as `background-color` and `font-family`.
+
+After styling:
+
+```python
+import sys
+from PySide6.QtCore import Qt
+from PySide6.QtWidgets import QApplication, QLabel
+
+if __name__ == "__main__":
+    app = QApplication()
+    w = QLabel("This is a placeholder text")
+    w.setAlignment(Qt.AlignCenter)
+    w.setStyleSheet("""
+        background-color: #262626;
+        color: #FFFFFF;
+        font-family: Titillium;
+        font-size: 18px;
+        """)
+    w.show()
+    sys.exit(app.exec())
+```
+
+![themed_widget](07_styling_widget_app/2_themed_widget.png)
+
+### Qt Style Sheets
+
+Some Python codes example:
+
+```python
+class Widget(QWidget):
+    def __init__(self, parent=None):
+        super(Widget, self).__init__(parent)
+
+        menu_widget = QListWidget()
+        for i in range(10):
+            item = QListWidgetItem(f"Item {i}")
+            item.setTextAlignment(Qt.AlignCenter)
+            menu_widget.addItem(item)
+
+        text_widget = QLabel(_placeholder)
+        button = QPushButton("Something")
+
+        content_layout = QVBoxLayout()
+        content_layout.addWidget(text_widget)
+        content_layout.addWidget(button)
+        main_widget = QWidget()
+        main_widget.setLayout(content_layout)
+
+        layout = QHBoxLayout()
+        layout.addWidget(menu_widget, 1)
+        layout.addWidget(main_widget, 4)
+        self.setLayout(layout)
+```
+
+![unthemed_widget_qss_tutorial](07_styling_widget_app/3_unthemed_widget_qss_tutorial.png)
+
+`style.qss`:
+
+```css
+QListWidget {
+    color: #FFFFFF;
+    background-color: #33373B;
+}
+
+QListWidget::item {
+    height: 50px;
+}
+
+QListWidget::item:selected {
+    background-color: #2ABf9E;
+}
+
+QLabel {
+    background-color: #FFFFFF;
+    qproperty-alignment: AlignCenter;
+}
+
+QPushButton {
+    background-color: #2ABf9E;
+    padding: 20px;
+    font-size: 18px;
+}
+```
+
+"Load the `style.qss`" Python code:
+
+```python
+if __name__ == "__main__":
+    app = QApplication()
+
+    w = Widget()
+    w.show()
+
+    with open("style.qss", "r") as f:
+        _style = f.read()
+        app.setStyleSheet(_style)
+
+    sys.exit(app.exec())
+```
+
+![themed_widget_with_qss](07_styling_widget_app/4_themed_widget_with_qss.png)
+
+> Read more on [here](https://doc.qt.io/qtforpython/tutorials/basictutorial/widgetstyling.html).
+
+## Your First QtQuick/QML Application
+
+QML is a declarative language that _lets you develop applications faster_ than with traditional languages. 
+
+It is **ideal** for _designing the UI of your application_ because of its **declarative** nature. 
+
+In QML, a user interface is specified as _a tree of objects with properties_. 
+
+In this tutorial, we will show how to make a simple “Hello World” application with `PySide6` and `QML`.
+
+> _Skipped_. Read more on [here](https://doc.qt.io/qtforpython/tutorials/basictutorial/qml.html).
+
+## Python-QML integration
+
+_A quick walk-through of a python application that loads, and interacts with a QML file._
+
+- QML is a declarative language that _lets you design UIs faster_ than a traditional language, such as C++. 
+  - The `QtQml` and `QtQuick` modules provides _the necessary infrastructure for QML-based UIs_.
+
+- In this tutorial, you will _learn how to integrate Python with a QML application_. 
+  - This mechanism will help us to understand _how to use Python as a backend for certain signals_ 
+    - from the UI elements in the QML interface. 
+  - Additionally, you will learn how to provide a modern look to your QML application using one of the features from `Qt Quick Controls 2`.
+
+- The tutorial is based on _an application that allow you to set many text properties_, like
+  - increasing the font size, 
+  - changing the color, 
+  - changing the style, 
+  - and so on.
+
+The following step-by-step process will guide you through the key elements of the QML based application and `PySide6` integration:
+
+> Qt for Python official docs is atrocious.
+
+1. First, let’s start with the following QML-based UI:
+   
+   [view.qml](08_Python-QML_integration/view.qml)
+
+   ![qml_example](08_Python-QML_integration/qml_example.png)
+
+2. Add these imports to the top of Python file:
+
+   ```python
+   import sys
+   from pathlib import Path
+   
+   from PySide6.QtCore import QObject, Slot
+   from PySide6.QtGui import QGuiApplication
+   from PySide6.QtQml import QQmlApplicationEngine, QmlElement
+   from PySide6.QtQuickControls2 import QQuickStyle
+   ```
+
+   > Should've been included..
+
+3. With the QML file in place, you can load it from Python:
+
+   ```python
+   if __name__ == '__main__':
+       app = QGuiApplication(sys.argv)
+       QQuickStyle.setStyle("Material")
+       engine = QQmlApplicationEngine()
+   
+       # Get the path of the current directory, and then add the name
+       # of the QML file, to load it.
+       qml_file = Path(__file__).parent / 'view.qml'
+       engine.load(qml_file)
+   
+       if not engine.rootObjects():
+           sys.exit(-1)
+
+       sys.exit(app.exec())
+   ```
+   
+   > Notice that we only need a `QQmlApplicationEngine` to load the QML file.
+
+4. Define the `Bridge` class, containing all the logic for the element that will be register in QML:
+
+   ```python
+   # To be used on the @QmlElement decorator
+   # (QML_IMPORT_MINOR_VERSION is optional)
+   QML_IMPORT_NAME = "io.qt.textproperties" # bebas namanya
+   QML_IMPORT_MAJOR_VERSION = 1
+   
+   
+   @QmlElement
+   class Bridge(QObject):
+   
+       @Slot(str, result=str)
+       def getColor(self, s):
+           if s.lower() == "red":
+               return "#ef9a9a"
+           elif s.lower() == "green":
+               return "#a5d6a7"
+           elif s.lower() == "blue":
+               return "#90caf9"
+           else:
+               return "white"
+   
+       @Slot(float, result=int)
+       def getSize(self, s):
+           size = int(s * 34)
+           if size <= 0:
+               return 1
+           else:
+               return size
+   
+       @Slot(str, result=bool)
+       def getItalic(self, s):
+           if s.lower() == "italic":
+               return True
+           else:
+               return False
+   
+       @Slot(str, result=bool)
+       def getBold(self, s):
+           if s.lower() == "bold":
+               return True
+           else:
+               return False
+               
+       @Slot(str, result=bool)
+       def getUnderline(self, s):
+           if s.lower() == "underline":
+               return True
+           else:
+               return False
+   ```
+
+   - Notice that _the registration happens_ thanks to the `QmlElement` decorator,
+     - that underneath uses the reference to
+       - the `Bridge` class and 
+       - the variables `QML_IMPORT_NAME` and `QML_IMPORT_MAJOR_VERSION`.
+
+5. Back to the QML file and connect the signals to the slots defined in the `Bridge` class:
+   - Signalling `RadioButton`s to the `Slot`s on `main.py`
+   
+     ```qml
+     Bridge {
+        id: bridge
+     }
+     ```
+     
+     Inside the `ApplicationWindow` we declare a component with the same name as the Python class _which is `Bridge`_, and provide an `id:`. This `id` will help you to get a reference to the element that was registered from Python.
+  
+     ```qml
+     RadioButton {
+         id: italic
+         Layout.alignment: Qt.AlignLeft
+         text: "Italic"
+         onToggled: {
+             leftlabel.font.italic = bridge.getItalic(italic.text) 
+             // getItalic is a Python function in main.py
+             // which takes an str
+             // if it's "italic"
+             // then `return True` (boolean)
+             leftlabel.font.bold = bridge.getBold(italic.text)
+             leftlabel.font.underline = bridge.getUnderline(italic.text)
+         }
+     }
+     ```
+  
+     then the `italic.text` property will passed in to the `getItalic` function.
+  
+     ```python
+     @Slot(str, result=bool)
+     def getItalic(self, s):
+         if s.lower() == "italic":
+             return True
+         else:
+             return False
+     ```
+  
+     which will return `True`, if the `RadioButton` is toggled.
+  
+     Then, continue writing for other `RadioButton` components.
+
+   - Signalling `Slider` value to corresponding `Slot`s on `main.py`
+     
+     ```qml
+     Slider {
+         width: rightcolumn.width*0.6
+         Layout.alignment: Qt.AlignRight
+         id: slider
+         value: 0.5
+         onValueChanged: {
+             leftlabel.font.pointSize = bridge.getSize(slider.value)
+         }
+     }
+     ```
+
+     then, like so, the `slider.value` property will passed in to the `getSize` function.
+
+     ```python
+     @Slot(float, result=int)
+     def getSize(self, s):
+         size = int(s * 34)
+         if size <= 0:
+             return 1
+         else:
+             return size
+     ```
+  
+     which will return its appropriate value, if the `Slider` is slid.
+
+   - Signalling `Button` value to corresponding `Slot`s on `main.py`
+     
+     ```qml
+     Button {
+         id: red
+         text: "Red"
+         highlighted: true
+         Material.accent: Material.Red
+         onClicked: {
+             leftlabel.color = bridge.getColor(red.text)
+         }
+     }
+     ```
+
+     then, like so, the `red.text` property will passed in to the `getColor` function:
+     
+     ```python
+     @Slot(str, result=str)
+     def getColor(self, s):
+         if s.lower() == "red":
+             return "#ef9a9a"
+         elif s.lower() == "green":
+             return "#a5d6a7"
+         elif s.lower() == "blue":
+             return "#90caf9"
+         else:
+             return "white"
+     ```
+
+     which will return its a str of **hex of color** value, if the `Button` is clicked.
+
+     Then, continue writing for other `Button` components.
+
+> The current section of official docs have a tutorial to apply theme to these codes which is redundant since the theme has been set in the `view.qml` anyway. [Here's the link](https://doc.qt.io/qtforpython/tutorials/qmlintegration/qmlintegration.html).
+
+### Theming Python-QML
+
+> Well I'll add the tutorial by the way.
+> Instead using `qtquickcontrols2.conf` which tutored below, 
+> you can _use the command line_ to _execute the python file with adding the option_, `–style`:
+> `python main.py --style material`
+
+1. Create a `qtquickcontrols2.conf`. Here's [how](https://doc.qt.io/qt-6/qtquickcontrols2-configuration.html).
+
+   e.g.:
+   
+   ```conf
+   [Controls]
+   Style=Material
+   
+   [Universal]
+   Theme=System
+   Accent=Red
+   
+   [Material]
+   Theme=Dark
+   Accent=Red
+   ```
+
+2. Add it to your `.qrc` file:
+   
+   ```xml
+   <!DOCTYPE RCC><RCC version="1.0">
+   <qresource prefix="/">
+       <file>qtquickcontrols2.conf</file>
+   </qresource>
+   </RCC>
+   ```
+
+3. Generate the rc file, running:
+
+   ```sh
+   pyside6-rcc style.qrc > style_rc.py
+   ```
+
+4. Finally import it **from** your `main.py` script.
+   
+   > Oh heueuh, kalo import teh from. Aku tidak ngeuh soalnya kan dimasukin ke codenya, jadi dipikiran aku harusnya to. Penekanan saja buat aku.
+
+   ```python
+   import sys
+   from pathlib import Path
+   
+   from PySide6.QtCore import QObject, Slot
+   from PySide6.QtGui import QGuiApplication
+   from PySide6.QtQml import QQmlApplicationEngine, QmlElement
+   from PySide6.QtQuickControls2 import QQuickStyle
+   
+   import style_rc # still weird cuman di import doang
+   ```
+
+## More...
+
+Read on here[^1].
+
+## How To Debug a C++ Extension of a PySide6 Application?
+
+_Skipped_
+
+> I'll revisit someday, maybe.
+> 
+> But there's interesting quote from them.
+
+Cenah:
+> With VSCode, you should be able to see the combined call stacks for both C++ and Python together. With Qt Creator, unfortunately you would only be able to debug the native C++ code of the PySide module; that is you won’t be able to set breakpoints inside the Python code.
+
+Mine:
+> They are using VSCode.
+
 ## Source(s)
 
-[Qt for Python](https://doc.qt.io/qtforpython/)
+[^1]: [Qt for Python](https://doc.qt.io/qtforpython/)
 
 [Learn Python GUI Development for Desktop – PySide6 and Qt Tutorial](https://www.youtube.com/watch?v=Z1N9JzNax2k)
