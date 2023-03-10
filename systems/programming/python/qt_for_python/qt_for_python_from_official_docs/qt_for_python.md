@@ -1201,7 +1201,7 @@ The following step-by-step process will guide you through the key elements of th
 
      Then, continue writing for other `Button` components.
 
-> The official docs have a tutorial to apply theme to these codes which is redundant since the theme has been set in the `view.qml` anyway. [Here's the link](https://doc.qt.io/qtforpython/tutorials/qmlintegration/qmlintegration.html).
+> The current section of official docs have a tutorial to apply theme to these codes which is redundant since the theme has been set in the `view.qml` anyway. [Here's the link](https://doc.qt.io/qtforpython/tutorials/qmlintegration/qmlintegration.html).
 
 ## More...
 
