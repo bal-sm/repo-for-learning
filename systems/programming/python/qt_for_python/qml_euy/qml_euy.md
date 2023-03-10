@@ -1,5 +1,24 @@
 # QML_euy
 
+## Table of Contents
+
+- [QML\_euy](#qml_euy)
+  - [Table of Contents](#table-of-contents)
+  - [The main `.py` file](#the-main-py-file)
+  - [`main.qml`](#mainqml)
+    - [Import necessary modules](#import-necessary-modules)
+    - [Application Window](#application-window)
+    - [Flags](#flags)
+    - [Theming](#theming)
+    - [Top bar](#top-bar)
+      - [Add Image](#add-image)
+    - [Username field](#username-field)
+    - [Password field](#password-field)
+    - [Check box](#check-box)
+    - [Login button](#login-button)
+    - [JavaScript thing](#javascript-thing)
+  - [Source](#source)
+
 ## The main `.py` file
 
 ```python
