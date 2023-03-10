@@ -43,6 +43,7 @@
     - [Qt Style Sheets](#qt-style-sheets)
   - [Your First QtQuick/QML Application](#your-first-qtquickqml-application)
   - [Python-QML integration](#python-qml-integration)
+    - [Theming Python-QML](#theming-python-qml)
   - [More...](#more)
   - [How To Debug a C++ Extension of a PySide6 Application?](#how-to-debug-a-c-extension-of-a-pyside6-application)
   - [Source(s)](#sources)
@@ -1202,6 +1203,62 @@ The following step-by-step process will guide you through the key elements of th
      Then, continue writing for other `Button` components.
 
 > The current section of official docs have a tutorial to apply theme to these codes which is redundant since the theme has been set in the `view.qml` anyway. [Here's the link](https://doc.qt.io/qtforpython/tutorials/qmlintegration/qmlintegration.html).
+
+### Theming Python-QML
+
+> Well I'll add the tutorial by the way.
+> Instead using `qtquickcontrols2.conf` which tutored below, 
+> you can _use the command line_ to _execute the python file with adding the option_, `–style`:
+> `python main.py --style material`
+
+1. Create a `qtquickcontrols2.conf`. Here's [how](https://doc.qt.io/qt-6/qtquickcontrols2-configuration.html).
+
+   e.g.:
+   
+   ```conf
+   [Controls]
+   Style=Material
+   
+   [Universal]
+   Theme=System
+   Accent=Red
+   
+   [Material]
+   Theme=Dark
+   Accent=Red
+   ```
+
+2. Add it to your `.qrc` file:
+   
+   ```xml
+   <!DOCTYPE RCC><RCC version="1.0">
+   <qresource prefix="/">
+       <file>qtquickcontrols2.conf</file>
+   </qresource>
+   </RCC>
+   ```
+
+3. Generate the rc file, running:
+
+   ```sh
+   pyside6-rcc style.qrc > style_rc.py
+   ```
+
+4. Finally import it **from** your `main.py` script.
+   
+   > Oh heueuh, kalo import teh from. Aku tidak ngeuh soalnya kan dimasukin ke codenya, jadi dipikiran aku harusnya to. Penekanan saja buat aku.
+
+   ```python
+   import sys
+   from pathlib import Path
+   
+   from PySide6.QtCore import QObject, Slot
+   from PySide6.QtGui import QGuiApplication
+   from PySide6.QtQml import QQmlApplicationEngine, QmlElement
+   from PySide6.QtQuickControls2 import QQuickStyle
+   
+   import style_rc # still weird cuman di import doang
+   ```
 
 ## More...
 
