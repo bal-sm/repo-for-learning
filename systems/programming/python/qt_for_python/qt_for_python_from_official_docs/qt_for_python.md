@@ -1168,6 +1168,37 @@ The following step-by-step process will guide you through the key elements of th
   
      which will return its appropriate value, if the `Slider` is slid.
 
+   - Signalling `Button` value to corresponding `Slot`s on `main.py`
+     
+     ```qml
+     Button {
+         id: red
+         text: "Red"
+         highlighted: true
+         Material.accent: Material.Red
+         onClicked: {
+             leftlabel.color = bridge.getColor(red.text)
+         }
+     }
+     ```
+
+     then, like so, the `red.text` property will passed in to the `getColor` function:
+     
+     ```python
+     @Slot(str, result=str)
+     def getColor(self, s):
+         if s.lower() == "red":
+             return "#ef9a9a"
+         elif s.lower() == "green":
+             return "#a5d6a7"
+         elif s.lower() == "blue":
+             return "#90caf9"
+         else:
+             return "white"
+     ```
+
+     which will return its a str of **hex of color** value, if the `Button` is clicked.
+
 ## More...
 
 Read on here[^1].

@@ -106,7 +106,9 @@ ApplicationWindow {
                     text: "Red"
                     highlighted: true
                     Material.accent: Material.Red
-                    onClicked: {}
+                    onClicked: {
+                        leftlabel.color = bridge.getColor(red.text)
+                    }
                 }
                 Button {
                     id: green
