@@ -115,21 +115,27 @@ ApplicationWindow {
                     text: "Green"
                     highlighted: true
                     Material.accent: Material.Green
-                    onClicked: {}
+                    onClicked: {
+                        leftlabel.color = bridge.getColor(green.text)
+                    }
                 }
                 Button {
                     id: blue
                     text: "Blue"
                     highlighted: true
                     Material.accent: Material.Blue
-                    onClicked: {}
+                    onClicked: {
+                        leftlabel.color = bridge.getColor(blue.text)
+                    }
                 }
                 Button {
                     id: nonebutton
                     text: "None"
                     highlighted: true
                     Material.accent: Material.BlueGrey
-                    onClicked: {}
+                    onClicked: {
+                        leftlabel.color = bridge.getColor(nonebutton.text)
+                    }
                 }
             }
             RowLayout {

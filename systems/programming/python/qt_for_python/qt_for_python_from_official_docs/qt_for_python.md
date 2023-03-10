@@ -1199,6 +1199,8 @@ The following step-by-step process will guide you through the key elements of th
 
      which will return its a str of **hex of color** value, if the `Button` is clicked.
 
+     Then, continue writing for other `Button` components.
+
 ## More...
 
 Read on here[^1].
