@@ -1098,46 +1098,47 @@ The following step-by-step process will guide you through the key elements of th
        - the variables `QML_IMPORT_NAME` and `QML_IMPORT_MAJOR_VERSION`.
 
 5. Back to the QML file and connect the signals to the slots defined in the `Bridge` class:
+   - Signalling `RadioButton`s to the `Slot`s on `main.py`
    
-   ```qml
-   Bridge {
-      id: bridge
-   }
-   ```
-   
-   Inside the `ApplicationWindow` we declare a component with the same name as the Python class _which is `Bridge`_, and provide an `id:`. This `id` will help you to get a reference to the element that was registered from Python.
-
-   ```qml
-   RadioButton {
-       id: italic
-       Layout.alignment: Qt.AlignLeft
-       text: "Italic"
-       onToggled: {
-           leftlabel.font.italic = bridge.getItalic(italic.text) 
-           // getItalic is a Python function in main.py
-           // which takes an str
-           // if it's "italic"
-           // then `return True` (boolean)
-           leftlabel.font.bold = bridge.getBold(italic.text)
-           leftlabel.font.underline = bridge.getUnderline(italic.text)
-       }
-   }
-   ```
-
-   then the `italic.text` property will passed in to the `getItalic` function.
-
-   ```python
-   @Slot(str, result=bool)
-   def getItalic(self, s):
-       if s.lower() == "italic":
-           return True
-       else:
-           return False
-   ```
-
-   which will return `True`, if the `RadioButton` is toggled.
-
-   Then, continue writing for other `RadioButton` components.
+     ```qml
+     Bridge {
+        id: bridge
+     }
+     ```
+     
+     Inside the `ApplicationWindow` we declare a component with the same name as the Python class _which is `Bridge`_, and provide an `id:`. This `id` will help you to get a reference to the element that was registered from Python.
+  
+     ```qml
+     RadioButton {
+         id: italic
+         Layout.alignment: Qt.AlignLeft
+         text: "Italic"
+         onToggled: {
+             leftlabel.font.italic = bridge.getItalic(italic.text) 
+             // getItalic is a Python function in main.py
+             // which takes an str
+             // if it's "italic"
+             // then `return True` (boolean)
+             leftlabel.font.bold = bridge.getBold(italic.text)
+             leftlabel.font.underline = bridge.getUnderline(italic.text)
+         }
+     }
+     ```
+  
+     then the `italic.text` property will passed in to the `getItalic` function.
+  
+     ```python
+     @Slot(str, result=bool)
+     def getItalic(self, s):
+         if s.lower() == "italic":
+             return True
+         else:
+             return False
+     ```
+  
+     which will return `True`, if the `RadioButton` is toggled.
+  
+     Then, continue writing for other `RadioButton` components.
 
 ## More...
 
