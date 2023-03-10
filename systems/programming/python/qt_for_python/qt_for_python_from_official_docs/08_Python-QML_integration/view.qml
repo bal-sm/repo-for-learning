@@ -60,20 +60,32 @@ ApplicationWindow {
                 id: bold
                 Layout.alignment: Qt.AlignLeft
                 text: "Bold"
-                onToggled: {}
+                onToggled: {
+                    leftlabel.font.italic = bridge.getItalic(bold.text)
+                    leftlabel.font.bold = bridge.getBold(bold.text)
+                    leftlabel.font.underline = bridge.getUnderline(bold.text)
+                }
             }
             RadioButton {
                 id: underline
                 Layout.alignment: Qt.AlignLeft
                 text: "Underline"
-                onToggled: {}
+                onToggled: {
+                    leftlabel.font.italic = bridge.getItalic(underline.text)
+                    leftlabel.font.bold = bridge.getBold(underline.text)
+                    leftlabel.font.underline = bridge.getUnderline(underline.text)
+                }
             }
             RadioButton {
                 id: noneradio
                 Layout.alignment: Qt.AlignLeft
                 text: "None"
-                checked: true
-                onToggled: {}
+                checked: true // defaulted to checked this radio button.
+                onToggled: {
+                    leftlabel.font.italic = bridge.getItalic(noneradio.text)
+                    leftlabel.font.bold = bridge.getBold(noneradio.text)
+                    leftlabel.font.underline = bridge.getUnderline(noneradio.text)
+                }
             }
         }
 
