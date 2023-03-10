@@ -1140,6 +1140,34 @@ The following step-by-step process will guide you through the key elements of th
   
      Then, continue writing for other `RadioButton` components.
 
+   - Signalling `Slider` value to corresponding `Slot`s on `main.py`
+     
+     ```qml
+     Slider {
+         width: rightcolumn.width*0.6
+         Layout.alignment: Qt.AlignRight
+         id: slider
+         value: 0.5
+         onValueChanged: {
+             leftlabel.font.pointSize = bridge.getSize(slider.value)
+         }
+     }
+     ```
+
+     then, like so, the `slider.value` property will passed in to the `getSize` function.
+
+     ```python
+     @Slot(float, result=int)
+     def getSize(self, s):
+         size = int(s * 34)
+         if size <= 0:
+             return 1
+         else:
+             return size
+     ```
+  
+     which will return its appropriate value, if the `Slider` is slid.
+
 ## More...
 
 Read on here[^1].

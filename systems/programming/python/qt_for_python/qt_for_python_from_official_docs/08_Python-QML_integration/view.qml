@@ -145,7 +145,9 @@ ApplicationWindow {
                     Layout.alignment: Qt.AlignRight
                     id: slider
                     value: 0.5
-                    onValueChanged: {}
+                    onValueChanged: {
+                        leftlabel.font.pointSize = bridge.getSize(slider.value)
+                    }
                 }
             }
         }
