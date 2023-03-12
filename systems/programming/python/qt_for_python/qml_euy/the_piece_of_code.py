@@ -17,4 +17,6 @@ if __name__ == "__main__":
     # Check if not valid then
     if not engine.rootObjects():
         sys.exit(-1)
-    sys.exit(app.exec_())
+    # sys.exit(app.exec_())
+    # .../the_piece_of_code.py:20: DeprecationWarning: 'exec_' will be removed in the future. Use 'exec' instead.
+    sys.exit(app.exec())
