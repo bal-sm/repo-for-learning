@@ -42,4 +42,24 @@ if __name__ == "__main__":
 
 > A regular QML engine then load the file
 
+### Method 1: Use a StackView
+
+> Read the docs about [`StackView QML Type` here](https://doc.qt.io/qt-6/qml-qtquick-controls2-stackview.html).
+
+1. Created `ApplicationWindow` in `main.qml`:
+   
+   ```qml
+   import QtQuick
+   import QtQuick.Controls
+   import QtQuick.Controls.Material 2.15
+   
+   ApplicationWindow {
+       id: mainFrame
+       width: 640
+       height: 480
+       visible: true
+       title: qsTr("Windows handeling in QML")
+       Material.theme: Material.Dark
+   }
+
 _To be continued._
