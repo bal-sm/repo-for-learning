@@ -60,6 +60,6 @@ if __name__ == "__main__":
        visible: true
        title: qsTr("Windows handeling in QML")
        Material.theme: Material.Dark
-   }
+   ```
 
 _To be continued._
