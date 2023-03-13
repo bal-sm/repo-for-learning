@@ -48,19 +48,19 @@ if __name__ == "__main__":
 
 1. Created `ApplicationWindow` in `main.qml`:
    
-   ```qml
-   import QtQuick
-   import QtQuick.Controls
-   import QtQuick.Controls.Material 2.15
-   
-   ApplicationWindow {
-       id: mainFrame
-       width: 640
-       height: 480
-       visible: true
-       title: qsTr("Windows handeling in QML")
-       Material.theme: Material.Dark
-   ```
+    ```qml
+    import QtQuick
+    import QtQuick.Controls
+    import QtQuick.Controls.Material 2.15
+    
+    ApplicationWindow {
+        id: mainFrame
+        width: 640
+        height: 480
+        visible: true
+        title: qsTr("Windows handeling in QML")
+        Material.theme: Material.Dark
+    ```
 
 2. Created `StackView` in `main.qml`:
 
