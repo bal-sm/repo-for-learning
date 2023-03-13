@@ -62,7 +62,7 @@ if __name__ == "__main__":
         Material.theme: Material.Dark
     ```
 
-2. Created `StackView` in `main.qml`:
+3. Created `StackView` in `main.qml`:
 
     ```qml
         StackView{id: stack_view
@@ -86,5 +86,7 @@ if __name__ == "__main__":
         }
     }
     ```
+
+3
 
 _To be continued._
