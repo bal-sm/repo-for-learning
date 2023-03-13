@@ -9,4 +9,24 @@ ApplicationWindow {
     visible: true
     title: qsTr("Windows handeling in QML")
     Material.theme: Material.Dark
+
+    StackView{id: stack_view
+        initialItem: logginWin
+        anchors.fill: parent;
+        Component{id: logginWin
+            LoginWin{
+                onLoggedIn: {
+                    stack_view.push(stack_le)
+                    console.log("logged In")
+                }
+            }
+        }
+        Component{id: stack_le
+            StackLayoutWin{
+                onReturnToLogginWin:{
+                    stack_view.pop()
+                }
+            }
+        }
+    }
 }

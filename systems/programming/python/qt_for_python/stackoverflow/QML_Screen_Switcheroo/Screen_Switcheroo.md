@@ -62,4 +62,29 @@ if __name__ == "__main__":
        Material.theme: Material.Dark
    ```
 
+2. Created `StackView` in `main.qml`:
+
+    ```qml
+        StackView{id: stack_view
+            initialItem: logginWin
+            anchors.fill: parent;
+            Component{id: logginWin
+                LoginWin{
+                    onLoggedIn: {
+                        stack_view.push(stack_le)
+                        console.log("logged In")
+                    }
+                }
+            }
+            Component{id: stack_le
+                StackLayoutWin{
+                    onReturnToLogginWin:{
+                        stack_view.pop()
+                    }
+                }
+            }
+        }
+    }
+    ```
+
 _To be continued._
