@@ -16,6 +16,8 @@ Although all the code here is coherent and **meant to be run together**, it show
 
 ![](PICTURE PLZ kalo sama)
 
+[Original Codes](https://github.com/nrbnlulu/Qt-answers/tree/master/QtQuick/HandelingWindows)
+
 ### Setup
 
 [main.py](method_1_stackview/main.py)
