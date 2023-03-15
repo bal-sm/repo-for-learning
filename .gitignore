@@ -3,3 +3,6 @@
 
 # LibreOffice #
 .~lock.*
+
+# Bal gitignore this
+bal_temp
