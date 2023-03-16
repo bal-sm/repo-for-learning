@@ -9,3 +9,11 @@ repos:
       - id: check-added-large-files
       - id: no-commit-to-branch
         args: [--branch, master]
+  - repo: https://github.com/nrbnlulu/qt-hooks
+    rev: v0.1.5
+    hooks:
+      - id: qml-format
+        files: |
+            (?x)^(
+                systems/programming/qt/
+            )$
