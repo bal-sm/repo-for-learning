@@ -200,6 +200,20 @@ if __name__ == "__main__":
         > Let's test.
         > It's working.
 
+5. In `StackLayoutWin.qml`:
+
+   - Anchored
+
+        ```qml
+        Item {
+            id: root
+            signal returnToLogginWin
+            anchors.fill: parent
+        }
+        ```
+        
+        > Biasain untuk sementara, signal dulu baru anchors, nanti mau baca qml coding guide lagi kalo ada waktunya.
+        
 _To be continued._
 
 > Thanks to nrbnlulu/ניר
