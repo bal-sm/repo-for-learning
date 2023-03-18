@@ -35,5 +35,10 @@ Item {
                 text: qsTr("Loader")
             }
         }
+
+        StackLayout {
+            id: stack_layout
+            currentIndex: tab_bar.currentIndex
+        }
     }
 }

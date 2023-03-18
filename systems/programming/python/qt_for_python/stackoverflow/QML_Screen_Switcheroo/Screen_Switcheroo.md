@@ -290,6 +290,20 @@ if __name__ == "__main__":
 
             > Dikirain pake signal handler lagi. Ternyata beda lagi.
 
+       - Added `StackLayout`:
+
+            ```qml
+            StackLayout {
+                id: stack_layout
+                currentIndex: tab_bar.currentIndex
+                // Screens to be added
+            }
+            ```
+
+            Meanwhile, this is a screenshot of the application between this step and the next step:
+
+            ![Added `StackLayout`](pics/step_5cb_on_StackLayout.png)
+            
 _To be continued._
 
 > Thanks to nrbnlulu/ניר
