@@ -44,7 +44,7 @@ if __name__ == "__main__":
 
 > A regular QML engine then load the file
 
-### Method 1: Use a StackView
+### The `qml`s
 
 > Read the docs about [`StackView QML Type` here](https://doc.qt.io/qt-6/qml-qtquick-controls2-stackview.html).
 
