@@ -358,6 +358,32 @@ if __name__ == "__main__":
         }
         ```
 
+    Now back to `JustALoader.qml`.
+
+   - Created `ColumnLayout` with `Row` that contains `Button`s
+  
+        ```qml
+            ColumnLayout {
+                anchors.fill: parent
+                Row {
+                    Button {
+                        Layout.fillWidth: true
+                        text: " To cyan rect"
+                        onClicked: {
+                            loader_.sourceComponent = cyan_rect;
+                        }
+                    }
+                    Button {
+                        Layout.fillWidth: true
+                        text: " To red rect"
+                        onClicked: {
+                            loader_.sourceComponent = red_rect;
+                        }
+                    }
+                }
+            }
+        ```
+
 _To be continued._
 
 > Thanks to nrbnlulu/ניר
