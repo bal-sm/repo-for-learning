@@ -19,5 +19,21 @@ Item {
     }
     ColumnLayout {
         anchors.fill: parent
+
+        TabBar {
+            id: tab_bar
+            TabButton {
+                width: 100
+                text: qsTr("foo")
+            }
+            TabButton {
+                width: 100
+                text: qsTr("bar")
+            }
+            TabButton {
+                width: 100
+                text: qsTr("Loader")
+            }
+        }
     }
 }

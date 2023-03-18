@@ -241,11 +241,42 @@ if __name__ == "__main__":
         > Pokoknya kayak Bootstrap apa gitu. Pas urg ngerjain TA terus konsul sama si Daris. Jago desain.
         > Read more:
         > [`ColumnLayout` QML Type](https://doc.qt.io/qt-6/qml-qtquick-layouts-columnlayout.html)
-        
+
         ```qml
             ColumnLayout {
                 anchors.fill: parent
         ```
+
+       - Added `TabBar`:
+            
+            > Allows the user to switch between _different views or subtasks_
+            > Provides a tab-based navigation model.
+            > - `TabBar` is populated with `TabButton` controls,
+            >   - and can be used together with any layout or container control 
+            >   - that provides `currentIndex`-property, such as `StackLayout` _(di bawah)_ or `SwipeView`.
+
+            Read more:
+            > [TabBar QML Type](https://doc.qt.io/qt-6/qml-qtquick-controls2-tabbar.html)
+
+            ```qml
+                    TabBar {
+                        id: tab_bar
+                        TabButton {
+                            width: 100
+                            text: qsTr("foo")
+                        }
+                        TabButton {
+                            width: 100
+                            text: qsTr("bar")
+                        }
+                        TabButton {
+                            width: 100
+                            text: qsTr("Loader")
+                        }
+                    }
+            ```
+
+            > Dikirain pake signal handler lagi. Ternyata beda lagi.
 
 _To be continued._
 
