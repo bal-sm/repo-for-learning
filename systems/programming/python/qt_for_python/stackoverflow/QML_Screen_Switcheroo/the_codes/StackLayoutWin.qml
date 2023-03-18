@@ -17,4 +17,7 @@ Item {
             root.returnToLogginWin();
         }
     }
+    ColumnLayout {
+        anchors.fill: parent
+    }
 }

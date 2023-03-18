@@ -235,6 +235,18 @@ if __name__ == "__main__":
         > Is it the only way to make it responsive?
         > Really need responsitivity for my Bless app.
 
+   - Added `ColumnLayout`
+
+        > Susahnya ngerangkumnya harus bikin manual aja biar ngerti gambarannya gimana
+        > Pokoknya kayak Bootstrap apa gitu. Pas urg ngerjain TA terus konsul sama si Daris. Jago desain.
+        > Read more:
+        > [`ColumnLayout` QML Type](https://doc.qt.io/qt-6/qml-qtquick-layouts-columnlayout.html)
+        
+        ```qml
+            ColumnLayout {
+                anchors.fill: parent
+        ```
+
 _To be continued._
 
 > Thanks to nrbnlulu/ניר
