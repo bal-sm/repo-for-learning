@@ -122,6 +122,11 @@ if __name__ == "__main__":
                     }
                 }
             }
+    ```
+
+    > So, `onLoggedIn` handler that contains some JavaScript codes can be invoked. The button signal code is TBA.
+
+    ```qml
             Component{id: stack_le
                 StackLayoutWin{
                     onReturnToLogginWin:{
@@ -132,6 +137,8 @@ if __name__ == "__main__":
         }
     }
     ```
+
+    > same as above but, `onReturnToLogginWin`.
 
 _To be continued._
 
