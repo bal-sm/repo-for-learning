@@ -214,6 +214,25 @@ if __name__ == "__main__":
         
         > Biasain untuk sementara, signal dulu baru anchors, nanti mau baca qml coding guide lagi kalo ada waktunya.
         
+   - Added `Button`:
+
+        ```qml
+            Button {
+                id: return_to_StackView
+                x: parent.width - width
+                y: tab_bar.y
+                text: "return to login page"
+                onClicked: {
+                    root.returnToLogginWin();
+                }
+            }
+        ```
+        
+        > Jadi si x nya pasti digigir kanan.
+        My Question:
+        > Is it the only way to make it responsive?
+        > Really need responsitivity for my Bless app.
+
 _To be continued._
 
 > Thanks to nrbnlulu/ניר
