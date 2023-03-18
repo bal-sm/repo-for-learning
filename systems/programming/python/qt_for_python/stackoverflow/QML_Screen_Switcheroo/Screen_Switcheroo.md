@@ -140,6 +140,21 @@ if __name__ == "__main__":
 
     > same as above but, `onReturnToLogginWin`.
 
+4. In `LoginWin.qml`:
+   - Anchored
+
+        ```qml
+        Item {
+            id: root
+            anchors.fill: parent
+            signal loggedIn
+        }
+        ```
+
+        > `anchors.fill` is a convenience that is the same as setting the left,right,top and bottom anchors to the left,right,top and bottom of the target item. 
+        > Read more:
+        > [Positioning with Anchors](https://doc.qt.io/qt-6/qtquick-positioning-anchors.html)
+
 _To be continued._
 
 > Thanks to nrbnlulu/ניר
