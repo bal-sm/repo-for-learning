@@ -426,6 +426,39 @@ if __name__ == "__main__":
                 }
         ```
 
-_To be continued._
+### Comparisons
 
-> Thanks to nrbnlulu/ניר
+#### `StackView` method
+
+- Pros
+  - Default animation
+  - Very easy for one direction pages workflow that also can be reversed.
+
+- Cons
+  - You will have to `pop / append` windows while navigating, That makes it inconvenient for multi-directional pages workflow.
+  - Not very customizable.
+
+#### `StackLayout` With `TabBar` method
+
+- Pros
+  - Ability to navigate threw different pages simultaneously
+- Cons
+  - Harder to implement than `StackView`
+  - Not very customizable.
+
+#### `Loader` method
+
+- Pros
+  - Customizable
+- Cons
+  - Not very useful "out of the box"
+
+Note from  nrbnlulu/ניר:
+> I generally don't use `QtQuick.Controls` because I think it holds you back at a certain point. So I would recommend creating your own page-management when needed using the Loader element and other components.
+
+Mine:
+> I don't even know what `QtQuick.Controls` contains.
+>
+> Let's find out.
+> 
+> By the way, thanks to nrbnlulu/ניר
