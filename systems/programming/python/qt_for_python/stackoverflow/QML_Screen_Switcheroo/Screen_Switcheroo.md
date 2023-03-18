@@ -336,27 +336,27 @@ if __name__ == "__main__":
 
    - A usual `Item` QML Type:
     
-    ```qml
-    import QtQuick
-    import QtQuick.Controls
-    import QtQuick.Layouts
-    import QtQuick.Controls.Material 2.15
-
-    Item {
-        anchors.fill: parent
-    }
-    ```
-
-    Meanwhile, in `StackLayoutWin.qml`:
-
-    ```qml
-    ...
-                JustALoader {
+        ```qml
+        import QtQuick
+        import QtQuick.Controls
+        import QtQuick.Layouts
+        import QtQuick.Controls.Material 2.15
+    
+        Item {
+            anchors.fill: parent
+        }
+        ```
+    
+        Meanwhile, in `StackLayoutWin.qml`:
+    
+        ```qml
+        ...
+                    JustALoader {
+                    }
                 }
             }
         }
-    }
-    ```
+        ```
 
 _To be continued._
 
