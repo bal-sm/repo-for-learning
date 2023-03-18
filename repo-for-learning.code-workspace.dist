@@ -25,6 +25,8 @@
 			"no-emphasis-as-heading": false,
 			"no-trailing-punctuation": false,
 			"no-inline-html": false,
+			"blanks-around-lists": false,
+			// Rationale: Aside from aesthetic reasons, some parsers, including kramdown, will not parse lists that don't have blank lines before and after them.
 		},
 		"git.autofetch": false,
 		// taken from my user settings.json
