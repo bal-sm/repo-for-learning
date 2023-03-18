@@ -215,6 +215,8 @@ if __name__ == "__main__":
         > Biasain untuk sementara, signal dulu baru anchors, nanti mau baca qml coding guide lagi kalo ada waktunya.
         
    - Added `Button`:
+        
+        > Buat kembali ke login page.
 
         ```qml
             Button {
