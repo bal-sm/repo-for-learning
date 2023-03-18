@@ -158,11 +158,11 @@ if __name__ == "__main__":
    - Added `TextArea`:
 
         > `anchors.centerIn` is another convenience anchor, and is the same as setting the `verticalCenter` and `horizontalCenter` anchors to the `verticalCenter` and `horizontalCenter` of the target item.
-        
+
         My Question:
         > Apa bedanya sama `anchors.fill`?
         > Ngerti da. Pokoknya kalo `anchors.fill` nyari tengah-tengah dari sekitar, kalo `anchors.centerIn` berarti ngambil dari tengah-tengah suatu benda. Gitu we lah. Semoga bener.
-        
+
         ```qml
             TextArea {
                 id: input_
@@ -171,6 +171,34 @@ if __name__ == "__main__":
             }
         ```
 
+   - Added `Button`:
+
+        ```qml
+            Button {
+                text: "Login"
+        
+                anchors {
+                    horizontalCenter: parent.horizontalCenter
+                    top: input_.bottom
+                }
+        ```
+        
+        with `onClicked` handler JavaScript codes:
+        
+        ```qml
+                onClicked: {
+                    console.log(input_.text);
+                    if (input_.text == "12345") {
+                        root.loggedIn();
+                    } else {
+                        input_.text = "Wrong password";
+                    }
+                }
+        ```
+        
+        > So, if the `Button` is clicked then _built-in_ signal clicked will be emitted then the `onClicked` handler code will be invoked then the text input will be checked, if it's "12345" then on to `loggedIn` signal.
+        > Let's test.
+        
 _To be continued._
 
 > Thanks to nrbnlulu/ניר
