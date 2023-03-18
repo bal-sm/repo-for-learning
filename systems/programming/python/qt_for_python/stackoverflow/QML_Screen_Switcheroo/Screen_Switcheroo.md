@@ -303,7 +303,35 @@ if __name__ == "__main__":
             Meanwhile, this is a screenshot of the application between this step and the next step:
 
             ![Added `StackLayout`](pics/step_5cb_on_StackLayout.png)
-            
+
+           - Added screens with `Rectangle`s
+
+                ```qml
+                        StackLayout {
+                            id: stack_layout
+                            currentIndex: tab_bar.currentIndex
+                            Rectangle {
+                                color: 'teal'
+                                Label {
+                                    anchors.centerIn: parent
+                                    text: "Page " + stack_layout.currentIndex
+                                }
+                                implicitWidth: 200
+                                implicitHeight: 200
+                            }
+                            Rectangle {
+                                color: 'plum'
+                                implicitWidth: 300
+                                implicitHeight: 200
+                                Label {
+                                    anchors.centerIn: parent
+                                    text: "Page " + stack_layout.currentIndex
+                                }
+                            }
+                ```
+
+                > Ribet listing nya kagok
+                
 _To be continued._
 
 > Thanks to nrbnlulu/ניר

@@ -39,6 +39,26 @@ Item {
         StackLayout {
             id: stack_layout
             currentIndex: tab_bar.currentIndex
+            Rectangle {
+                color: 'teal'
+                Label {
+                    anchors.centerIn: parent
+                    text: "Page " + stack_layout.currentIndex
+                }
+                implicitWidth: 200
+                implicitHeight: 200
+            }
+            Rectangle {
+                color: 'plum'
+                implicitWidth: 300
+                implicitHeight: 200
+                Label {
+                    anchors.centerIn: parent
+                    text: "Page " + stack_layout.currentIndex
+                }
+            }
+            //JustALoader {
+            //}
         }
     }
 }
