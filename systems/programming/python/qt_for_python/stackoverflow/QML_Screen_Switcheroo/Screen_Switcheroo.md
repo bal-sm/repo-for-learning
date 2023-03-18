@@ -176,15 +176,15 @@ if __name__ == "__main__":
         ```qml
             Button {
                 text: "Login"
-        
+
                 anchors {
                     horizontalCenter: parent.horizontalCenter
                     top: input_.bottom
                 }
         ```
-        
+
         with `onClicked` handler JavaScript codes:
-        
+
         ```qml
                 onClicked: {
                     console.log(input_.text);
@@ -195,10 +195,11 @@ if __name__ == "__main__":
                     }
                 }
         ```
-        
+
         > So, if the `Button` is clicked then _built-in_ signal clicked will be emitted then the `onClicked` handler code will be invoked then the text input will be checked, if it's "12345" then on to `loggedIn` signal.
         > Let's test.
-        
+        > It's working.
+
 _To be continued._
 
 > Thanks to nrbnlulu/ניר
