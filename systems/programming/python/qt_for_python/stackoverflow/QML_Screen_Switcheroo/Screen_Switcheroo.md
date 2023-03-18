@@ -155,6 +155,22 @@ if __name__ == "__main__":
         > Read more:
         > [Positioning with Anchors](https://doc.qt.io/qt-6/qtquick-positioning-anchors.html)
 
+   - Added `TextArea`:
+
+        > `anchors.centerIn` is another convenience anchor, and is the same as setting the `verticalCenter` and `horizontalCenter` anchors to the `verticalCenter` and `horizontalCenter` of the target item.
+        
+        My Question:
+        > Apa bedanya sama `anchors.fill`?
+        > Ngerti da. Pokoknya kalo `anchors.fill` nyari tengah-tengah dari sekitar, kalo `anchors.centerIn` berarti ngambil dari tengah-tengah suatu benda. Gitu we lah. Semoga bener.
+        
+        ```qml
+            TextArea {
+                id: input_
+                placeholderText: "Enter password"
+                anchors.centerIn: parent
+            }
+        ```
+
 _To be continued._
 
 > Thanks to nrbnlulu/ניר

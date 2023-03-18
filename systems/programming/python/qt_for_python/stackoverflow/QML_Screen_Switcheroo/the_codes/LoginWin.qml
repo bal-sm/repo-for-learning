@@ -6,4 +6,10 @@ Item {
     id: root
     anchors.fill: parent
     signal loggedIn
+    
+    TextArea {
+        id: input_
+        placeholderText: "Enter password"
+        anchors.centerIn: parent
+    }
 }
