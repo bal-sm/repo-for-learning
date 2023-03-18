@@ -24,6 +24,7 @@
 			"fenced-code-language": false,
 			"no-emphasis-as-heading": false,
 			"no-trailing-punctuation": false,
+			"no-inline-html": false,
 		},
 		"git.autofetch": false,
 		// taken from my user settings.json
