@@ -384,6 +384,48 @@ if __name__ == "__main__":
             }
         ```
 
+   - Finally, added `Component`s and the `Loader`
+
+        > `Loader` QML Type:
+        >
+        > `Loader` is used to dynamically load QML components.
+        >
+        > `Loader` can load a `QML` file (using the source property) or a Component object (using the sourceComponent property).
+        > 
+        >
+        > `Component` QML Type:
+        >
+        > Components are reusable, encapsulated QML types with well-defined interfaces.
+        > 
+        > Components are _often defined by component **files**_ - **that is, `.qml` files**. 
+        >
+        > The `Component` **type** essentially allows QML components to be _defined inline, within a QML document_, rather than as a _separate QML file_.
+
+        Read more:
+        > [`Component` QML Type](https://doc.qt.io/qt-6/qml-qtqml-component.html)
+        > [`Loader` QML Type](https://doc.qt.io/qt-6/qml-qtquick-loader.html)
+
+        ```qml
+                Component {
+                    id: cyan_rect
+                    Rectangle {
+                        color: "cyan"
+                    }
+                }
+                Component {
+                    id: red_rect
+                    Rectangle {
+                        color: "red"
+                    }
+                }
+                Loader {
+                    id: loader_
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    sourceComponent: red_rect
+                }
+        ```
+
 _To be continued._
 
 > Thanks to nrbnlulu/ניר

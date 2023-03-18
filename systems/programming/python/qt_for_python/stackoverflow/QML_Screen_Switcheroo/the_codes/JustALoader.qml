@@ -23,5 +23,24 @@ Item {
                 }
             }
         }
+
+        Component {
+            id: cyan_rect
+            Rectangle {
+                color: "cyan"
+            }
+        }
+        Component {
+            id: red_rect
+            Rectangle {
+                color: "red"
+            }
+        }
+        Loader {
+            id: loader_
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+            sourceComponent: red_rect
+        }
     }
 }
