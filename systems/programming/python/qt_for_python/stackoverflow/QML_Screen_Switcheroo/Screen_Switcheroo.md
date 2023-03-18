@@ -1,4 +1,4 @@
-# Efficient way to switch pyside6 qml screens
+# [Efficient way to switch pyside6 qml screens](https://stackoverflow.com/questions/73010212/efficient-way-to-switch-pyside6-qml-screens)
 
 ## Question by lakkadaayush
 
