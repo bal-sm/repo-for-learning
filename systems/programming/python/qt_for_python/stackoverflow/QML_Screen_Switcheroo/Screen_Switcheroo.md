@@ -69,8 +69,10 @@ if __name__ == "__main__":
    Also added with appropriate signaling.
 
    > Receiving signals with signal handlers
+   >
    > ...the object definition should declare a signal handler named `on<Signal>`, where `<Signal>` is the _name of the signal_, with the _first letter **capitalized**_. 
-   > Read more:
+   
+   Read more:
    > [Signal and Handler Event System](https://doc.qt.io/qt-6/qtqml-syntax-signals.html)
 
     - In `LoginWin.qml`:
@@ -152,7 +154,8 @@ if __name__ == "__main__":
         ```
 
         > `anchors.fill` is a convenience that is the same as setting the left,right,top and bottom anchors to the left,right,top and bottom of the target item. 
-        > Read more:
+        
+        Read more:
         > [Positioning with Anchors](https://doc.qt.io/qt-6/qtquick-positioning-anchors.html)
 
    - Added `TextArea`:
@@ -161,6 +164,7 @@ if __name__ == "__main__":
 
         My Question:
         > Apa bedanya sama `anchors.fill`?
+        >
         > Ngerti da. Pokoknya kalo `anchors.fill` nyari tengah-tengah dari sekitar, kalo `anchors.centerIn` berarti ngambil dari tengah-tengah suatu benda. Gitu we lah. Semoga bener.
 
         ```qml
@@ -197,7 +201,9 @@ if __name__ == "__main__":
         ```
 
         > So, if the `Button` is clicked then _built-in_ signal clicked will be emitted then the `onClicked` handler code will be invoked then the text input will be checked, if it's "12345" then on to `loggedIn` signal.
+        >
         > Let's test.
+        >
         > It's working.
 
 5. In `StackLayoutWin.qml`:
@@ -233,13 +239,17 @@ if __name__ == "__main__":
         > Jadi si x nya pasti digigir kanan.
         My Question:
         > Is it the only way to make it responsive?
+        >
         > Really need responsitivity for my Bless app.
 
    - Added `ColumnLayout`
 
         > Susahnya ngerangkumnya harus bikin manual aja biar ngerti gambarannya gimana
+        >
         > Pokoknya kayak Bootstrap apa gitu. Pas urg ngerjain TA terus konsul sama si Daris. Jago desain.
+        >
         > Read more:
+        >
         > [`ColumnLayout` QML Type](https://doc.qt.io/qt-6/qml-qtquick-layouts-columnlayout.html)
 
         ```qml
@@ -250,7 +260,9 @@ if __name__ == "__main__":
        - Added `TabBar`:
             
             > Allows the user to switch between _different views or subtasks_
+            >
             > Provides a tab-based navigation model.
+            > 
             > - `TabBar` is populated with `TabButton` controls,
             >   - and can be used together with any layout or container control 
             >   - that provides `currentIndex`-property, such as `StackLayout` _(di bawah)_ or `SwipeView`.
