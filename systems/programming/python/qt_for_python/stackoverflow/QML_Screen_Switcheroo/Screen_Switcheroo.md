@@ -331,7 +331,33 @@ if __name__ == "__main__":
                 ```
 
                 > Ribet listing nya kagok
-                
+
+6. In `JustALoader.qml`:
+
+   - A usual `Item` QML Type:
+    
+    ```qml
+    import QtQuick
+    import QtQuick.Controls
+    import QtQuick.Layouts
+    import QtQuick.Controls.Material 2.15
+
+    Item {
+        anchors.fill: parent
+    }
+    ```
+
+    Meanwhile, in `StackLayoutWin.qml`:
+
+    ```qml
+    ...
+                JustALoader {
+                }
+            }
+        }
+    }
+    ```
+
 _To be continued._
 
 > Thanks to nrbnlulu/ניר

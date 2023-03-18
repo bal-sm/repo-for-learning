@@ -57,8 +57,8 @@ Item {
                     text: "Page " + stack_layout.currentIndex
                 }
             }
-            //JustALoader {
-            //}
+            JustALoader {
+            }
         }
     }
 }
