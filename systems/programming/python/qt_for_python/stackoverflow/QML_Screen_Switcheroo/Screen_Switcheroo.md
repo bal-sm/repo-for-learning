@@ -64,6 +64,50 @@ if __name__ == "__main__":
         Material.theme: Material.Dark
     ```
 
+2. Created other `qml`s file that will be transitioned with:
+   
+   Also added with appropriate signaling.
+
+   > Receiving signals with signal handlers
+   > ...the object definition should declare a signal handler named `on<Signal>`, where `<Signal>` is the _name of the signal_, with the _first letter **capitalized**_. 
+   > Read more:
+   > [Signal and Handler Event System](https://doc.qt.io/qt-6/qtqml-syntax-signals.html)
+
+    - In `LoginWin.qml`:
+    
+        ```qml
+        import QtQuick
+        import QtQuick.Controls
+        import QtQuick.Controls.Material 2.15
+
+        Item {
+            id: root
+            signal loggedIn
+        }
+        ```
+
+        > - So, 
+        >   - the name of the signal is `loggedIn` 
+        >   - with the signal handler named `onLoggedIn`.
+    
+    - `StackLayoutWin.qml`:
+
+        ```qml
+        import QtQuick
+        import QtQuick.Controls
+        import QtQuick.Layouts
+        import QtQuick.Controls.Material 2.15
+
+        Item {
+            id: root
+            signal returnToLogginWin
+        }
+        ```
+
+        > - So, 
+        >   - the name of the signal is `returnToLogginWin` 
+        >   - with the signal handler named `onReturnToLogginWin`.
+
 3. Created `StackView` in `main.qml`:
 
     ```qml
@@ -88,8 +132,6 @@ if __name__ == "__main__":
         }
     }
     ```
-
-3
 
 _To be continued._
 
