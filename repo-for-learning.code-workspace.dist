@@ -22,7 +22,23 @@
 			"no-trailing-spaces": false,
 			"ul-indent": false,
 			"fenced-code-language": false,
+			"no-emphasis-as-heading": false,
+			"no-trailing-punctuation": false,
+			"no-inline-html": false,
+			"blanks-around-lists": false,
+			// Rationale: Aside from aesthetic reasons, some parsers, including kramdown, will not parse lists that don't have blank lines before and after them.
 		},
 		"git.autofetch": false,
+		// taken from my user settings.json
+		// path (Linux): ~/.config/Code - Insiders/User/settings.json
+    	"diffEditor.ignoreTrimWhitespace": false,
+    	"editor.fontFamily": "'RobotoMono Nerd Font', 'Droid Sans Mono', 'monospace', monospace",
+    	"git.confirmSync": false, // I hate to be asked everytime I want to sync.
+    	"github.gitAuthentication": false, // I don't want to deal with GitHub for VSCode. I want it to be a lightweight code editor.
+    	"github.gitProtocol": "ssh", // 'cause ssh is better than https, imo.
+    	"gitlens.plusFeatures.enabled": false, // I don't need it.
+    	"gitlens.codeLens.enabled": false, // again, I don't need it.
+		// Bonus
+		"telemetry.telemetryLevel": "off", // don't work in a workspace file, must be added to user settings.json
 	}
 }
