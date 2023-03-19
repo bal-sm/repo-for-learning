@@ -3,3 +3,11 @@
 
 # LibreOffice #
 .~lock.*
+
+# Bal gitignore this
+bal_temp
+
+# Bug aneh
+# rc_icons.py muncul tiba-tiba padahal dah dihapus
+# sebelum terhapus ke modify wae
+systems/programming/python/qt_for_python/qt_for_python_from_official_docs/06_Using_.qrc_Files/rc_icons.py
