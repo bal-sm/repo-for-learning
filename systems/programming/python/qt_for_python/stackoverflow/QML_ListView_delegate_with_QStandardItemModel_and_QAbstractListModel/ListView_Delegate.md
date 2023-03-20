@@ -9,6 +9,7 @@
     - [With `QStandardItemModel`](#with-qstandarditemmodel)
       - [The `main.qml`](#the-mainqml)
       - [The `main_with_QSIM.py`](#the-main_with_qsimpy)
+    - [With `QStandardItemModel` but the path to pictures is something else](#with-qstandarditemmodel-but-the-path-to-pictures-is-something-else)
     - [With `QAbstractListModel`](#with-qabstractlistmodel)
       - [The (same) `main.qml`](#the-same-mainqml)
       - [The Python codes](#the-python-codes)
@@ -167,6 +168,12 @@ Rectangle{
         w.show()
         sys.exit(app.exec_())
     ```
+
+### With `QStandardItemModel` but the path to pictures is something else
+
+[main_with_QSIM_copy.py](main_with_QSIM_copy.py)
+
+> Jadi, sebenernya gampang da, bisa pake relative path cuman harus tau dulu apa si class nya nerima berupa `QUrl`/`QDir`/langsung bisa berupa `Path` built-in dari Python-nya.
 
 ### With `QAbstractListModel`
 
