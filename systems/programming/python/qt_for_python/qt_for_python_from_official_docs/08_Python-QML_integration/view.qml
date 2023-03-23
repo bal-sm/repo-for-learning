@@ -37,7 +37,7 @@ ApplicationWindow {
                 Layout.alignment: Qt.AlignHCenter
                 color: "white"
                 font.pointSize: 16
-                text: "Muhammad"
+                text: "Mahmuda"
                 Layout.preferredHeight: 100
                 Material.accent: Material.Green
             }
