@@ -4,18 +4,25 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
+// import QtQuick kayak biasa, engga ketang ini pake as
 import QtQuick 2.15
 import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Dialogs 1.3 as QQD
+
+// custom code berarti bisa bikin code sendiri, cuman MANA DOCS buat Qt for Python
 import org.kde.okular 2.0 as Okular
 import org.kde.kirigami 2.17 as Kirigami
 import org.kde.okular.app 2.0
 
+// tuh contohnya dari Kirigami.ApplicationWindow katanya 
+// tapi kenapa ya pake custom code gitu ga dari ApplicationWindow biasa
 Kirigami.ApplicationWindow {
     id: fileBrowserRoot
-
+    
+    // Property declarations
     readonly property int columnWidth: Kirigami.Units.gridUnit * 13
 
+    // Attached properties and signal handlers
     wideScreen: width > columnWidth * 5
     visible: true
 
@@ -97,6 +104,7 @@ Kirigami.ApplicationWindow {
         }
     }
 
+// tuh jadinya rapih kan dipanggil dulu gitu loh QQC2 nya baru Dialog
     QQC2.Dialog {
         id: passwordDialog
         focus: true
