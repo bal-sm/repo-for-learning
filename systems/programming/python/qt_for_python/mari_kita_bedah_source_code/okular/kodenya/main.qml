@@ -11,6 +11,7 @@ import QtQuick.Dialogs 1.3 as QQD
 
 // custom code berarti bisa bikin code sendiri, cuman MANA DOCS buat Qt for Python
 import org.kde.okular 2.0 as Okular
+// tuh ada org.kde.kirigami dari sini https://api.kde.org/frameworks/kirigami/html/index.html
 import org.kde.kirigami 2.17 as Kirigami
 import org.kde.okular.app 2.0
 
