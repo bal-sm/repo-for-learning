@@ -975,7 +975,59 @@ In QML, a user interface is specified as _a tree of objects with properties_.
 
 In this tutorial, we will show how to make a simple “Hello World” application with `PySide6` and `QML`.
 
-> _Skipped_. Read more on [here](https://doc.qt.io/qtforpython/tutorials/basictutorial/qml.html).
+`view.qml`:
+
+```qml
+import QtQuick 2.0
+
+Rectangle {
+    width: 200
+    height: 200
+    color: "green"
+
+    Text {
+        text: "Hello World"
+        anchors.centerIn: parent
+    }
+}
+```
+
+Note from docs:
+> anchors.centerIn: parent makes the text appear centered in relation to its immediate parent, which is the Rectangle in this case.
+
+`main.py`:
+
+```python
+import sys
+from PySide6.QtWidgets import QApplication
+from PySide6.QtQuick import QQuickView
+
+if __name__ == "__main__":
+    app = QApplication()
+    view = QQuickView()
+
+    qml_file = QUrl(str(Path(__file__).parent / "view.qml"))
+
+    # view.setSource("view.qml")
+    view.setSource(qml_file)
+    view.show()
+    sys.exit(app.exec())
+```
+
+Note from docs.
+> If you are programming for desktop, you should consider adding `view.setResizeMode(QQuickView.SizeRootObjectToView)` before showing the view.
+
+A note from [What is the difference between QQmlApplicationEngine and QQuickView?](https://stackoverflow.com/questions/40153361/what-is-the-difference-between-qqmlapplicationengine-and-qquickview):
+> `QQmlApplicationEngine` is newer and more powerful than `QQuickView`.
+>
+> - Qt Quick Controls 2.0 is able to make use of this extra application control, through the new item ApplicationWindow, which:
+>   - is similar to the regular `QQuickWindow`, but adds support for setting a window specific `MenuBar`, `ToolBar` and `StatusBar` in QML.
+>   - makes it convenient to add a header and footer item to the window.
+>   - makes it possible to control the window's properties, appearance and layout from QML.
+>   - supports popups via its overlay property, which ensures that popups are displayed above other content and that the background is dimmed when a modal popup is visible.
+
+Mine:
+> _Simplified_. Read more on [here](https://doc.qt.io/qtforpython/tutorials/basictutorial/qml.html).
 
 ## Python-QML integration
 
