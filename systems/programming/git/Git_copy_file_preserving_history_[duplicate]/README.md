@@ -1,4 +1,6 @@
-Source: https://stackoverflow.com/questions/16937359/git-copy-file-preserving-history
+# [Git copy file preserving history [duplicate]](https://stackoverflow.com/questions/16937359/git-copy-file-preserving-history)
+
+## Answer
 
 All you have to do is:
 
