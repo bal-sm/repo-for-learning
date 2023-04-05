@@ -12,6 +12,11 @@ You will be able to see historical attributions (using `git blame`) and full his
 
 Suppose you want to create a copy of file `foo` called `bar`. In that case the workflow you'd use would look like this:
 
+My note:
+> Don't forget to create a new branch, before do steps below.
+> For example:
+> "duplicate#thing" branch
+
 ```bash
 git mv foo bar
 git commit
