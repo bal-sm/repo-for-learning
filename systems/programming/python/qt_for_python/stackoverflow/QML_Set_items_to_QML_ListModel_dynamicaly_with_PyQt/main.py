@@ -14,7 +14,7 @@ def onTimeout(obj):
         "subject": "PE",
         "day": QDate.fromString(str(1 + counter % 7), "dddd"),
     }
-    QMetaObject.invokeMethod(obj, "append", Q_ARG(QMetaType.QVariant, value))
+    QMetaObject.invokeMethod(obj, "append", Q_ARG(QMetaType.QStringList, value))
     # QMetaObject.invokeMethod(obj, "append", value)
     # RuntimeError: qArgDataFromPyType: Parameter should be a type or type string.
     counter += 1
