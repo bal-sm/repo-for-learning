@@ -16,8 +16,12 @@ Application and user interface components _need to communicate with each other_.
       > past tense: `invoked`; past participle: `invoked`
       >
       > General meaning:
+      >
       > cite or appeal to (someone or something) as an authority for an action or in support of an argument.
+      >
+      >
       > In Computing:
+      >
       > cause (a procedure) to be carried out.
       - **Placing `logic`** such as a script or other operations in the handler _allows the component to respond to the event_.
 
