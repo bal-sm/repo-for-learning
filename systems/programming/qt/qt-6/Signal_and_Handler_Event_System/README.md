@@ -25,4 +25,11 @@ Application and user interface components _need to communicate with each other_.
       > cause (a procedure) to be carried out.
       - **Placing `logic`** such as a script or other operations in the handler _allows the component to respond to the event_.
 
+## Receiving _signals_ with _signal handlers_
+
+- To receive a **notification** when _a particular signal is emitted_ for _a particular object_, 
+  - the object definition should declare **a signal handler** named `on<Signal>`,
+    - where `<Signal>` is **the name of the signal**, with the first letter _capitalized_. 
+    - **The signal handler** should contain the JavaScript code to be executed when the signal handler is invoked.
+
 > To be continued.
