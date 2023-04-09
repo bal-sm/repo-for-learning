@@ -32,4 +32,30 @@ Application and user interface components _need to communicate with each other_.
     - where `<Signal>` is **the name of the signal**, with the first letter _capitalized_. 
     - **The signal handler** should contain the JavaScript code to be executed when the signal handler is invoked.
 
+For example: 
+- the [`Button`](https://doc.qt.io/qt-6/qml-qtquick-controls2-button.html) type _from the [`Qt Quick Controls`](https://doc.qt.io/qt-6/qtquickcontrols-index.html) module_ has a `clicked` signal, 
+  - which is _emitted_ whenever the button is _clicked_. 
+  - In this case, the **signal handler** for receiving this signal should be `onClicked`. 
+
+In the example below, whenever _the button is clicked_, the `onClicked` handler is **invoked**, applying a random color to the parent `Rectangle`:
+
+```qml
+import QtQuick
+import QtQuick.Controls
+
+Rectangle {
+    id: rect
+    width: 250; height: 250
+
+    Button {
+        anchors.bottom: parent.bottom
+        anchors.horizontalCenter: parent.horizontalCenter
+        text: "Change color!"
+        onClicked: {
+            rect.color = Qt.rgba(Math.random(), Math.random(), Math.random(), 1);
+        }
+    }
+}
+```
+
 > To be continued.
