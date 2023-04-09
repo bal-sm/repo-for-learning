@@ -58,4 +58,34 @@ Rectangle {
 }
 ```
 
+## Property change signal handlers
+
+- A signal is automatically emitted when _the value of a QML property changes_. 
+  - This type of **signal** is _a property change signal_
+    - and **signal handlers** for _these signals are written in the form_ `on<Property>Changed`,
+    - where `<Property>` is _the name of the property_,
+      - with the first letter _capitalized_.
+
+For example:
+- the [`MouseArea`](https://doc.qt.io/qt-6/qml-qtquick-mousearea.html) type has a [_`pressed`_](https://doc.qt.io/qt-6/qml-qtquick-mousearea.html#pressed-signal) property. 
+  - To _receive a notification whenever this property **changes**_,
+    - write a signal handler named `onPressedChanged`:
+
+```qml
+import QtQuick
+
+Rectangle {
+    id: rect
+    width: 100; height: 100
+
+    TapHandler {
+        onPressedChanged: console.log("taphandler pressed?", pressed)
+    }
+}
+```
+
+Even though the [`TapHandler`](https://doc.qt.io/qt-6/qml-qtquick-taphandler.html) documentation does not document a signal handler named `onPressedChanged`, the signal is _implicitly_ provided by the fact that _the pressed property exists_.
+
+> Excuse me? Implicitly?
+
 > To be continued.
