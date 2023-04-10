@@ -95,4 +95,60 @@ Even though the [`TapHandler`](https://doc.qt.io/qt-6/qml-qtquick-taphandler.htm
 
 > Excuse me? Implicitly?
 
+### Signal parameters
+
+- Signals might have **parameters**.
+  - To access those, you should _assign a **function**_ to the handler.
+    - Both arrow functions and anonymous functions work.
+      > [JavaScript Arrow Function](https://www.w3schools.com/js/js_arrow_function.asp)
+      >
+      > [JavaScript Function Definitions](https://www.w3schools.com/js/js_function_definition.asp)
+
+For the following examples:
+- consider a `Status` component with an **`errorOccurred`** signal 
+  - _see [Adding signals to custom QML types](#adding-signals-to-custom-qml-types) for more information about how signals can be added to QML components._
+  
+  ```qml
+  // Status.qml
+  import QtQuick
+
+  Item {
+      id: myitem
+      signal errorOccurred(message: string, line: int, column: int)
+  }
+  ```
+
+  ```qml
+  Status {
+      onErrorOccurred: (mgs, line, col) => console.log(`${line}:${col}: ${msg}`)
+  }
+  ```
+
+  Note:
+  > _The names of the formal parameters in the function_ **do not have to** match _those in the signal_.
+  
+  - If you _do not need to handle all parameters_, it is possible to _**omit** trailing ones_:
+
+    ```qml
+    Status {
+        onErrorOccurred: function (message) { console.log(message) }
+    }
+    ```
+
+  - It is not possible to leave out leading parameters you are interested in, however you can use some placeholder name to indicate to readers that they are not important:
+
+    ```qml
+    Status {
+        onErrorOccurred: (_, _, col) => console.log(`Error happened at column ${col}`)
+    }
+    ```
+
+  Note:
+  > Instead of using a function, it is possible, but discouraged, to use a plain code block. In that case all signal parameters get injected into the scope of the block. However, this can make code difficult to read as it's unclear where the parameters come from, and results in slower lookups in the QML engine. Injecting parameters in this way is deprecated, and will cause runtime warnings if the parameter is actually used.
+
+  Mine for note above:
+  > It's not necessary then.
+
+## Adding signals to custom QML types
+
 > To be continued.
