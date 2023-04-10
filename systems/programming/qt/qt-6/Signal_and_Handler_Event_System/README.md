@@ -58,7 +58,7 @@ Rectangle {
 }
 ```
 
-## Property change signal handlers
+### Property change signal handlers
 
 - A signal is automatically emitted when _the value of a QML property changes_. 
   - This type of **signal** is _a property change signal_
