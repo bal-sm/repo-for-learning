@@ -5,6 +5,7 @@ _**Table of Contents**_
   - [Receiving _signals_ with _signal handlers_](#receiving-signals-with-signal-handlers)
     - [Property change signal handlers](#property-change-signal-handlers)
     - [Signal parameters](#signal-parameters)
+    - [Using the Connections type](#using-the-connections-type)
   - [Adding signals to custom QML types](#adding-signals-to-custom-qml-types)
 
 Application and user interface components _need to communicate with each other_.
@@ -149,6 +150,48 @@ For the following examples:
   Mine for note above:
   > It's not necessary then.
 
+### Using the Connections type
+
+- In some cases it may be desirable to _access a signal outside of the object that emits it_. 
+  - For these purposes, the `QtQuick` module provides the [`Connections`](https://doc.qt.io/qt-6/qml-qtqml-connections.html) type 
+    - for connecting to **signals** of _arbitrary objects_. 
+    - A `Connections` object can receive any signal from its specified [target](https://doc.qt.io/qt-6/qml-qtqml-connections.html#target-prop).
+
+For example:
+- the `onClicked` handler in the earlier example could have been received by the root [`Rectangle`](https://doc.qt.io/qt-6/qml-qtquick-rectangle.html) instead,
+  - by placing the `onClicked` handler in a `Connections` object 
+    - that has its target set to the button:
+
+    ```qml
+    import QtQuick
+    import QtQuick.Controls
+    
+    Rectangle {
+        id: rect
+        width: 250; height: 250
+    
+        Button {
+            id: button
+            anchors.bottom: parent.bottom
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: "Change color!"
+        }
+    
+        Connections {
+            target: button
+            function onClicked() {
+                rect.color = Qt.rgba(Math.random(), Math.random(), Math.random(), 1);
+            }
+        }
+    }
+    ```
+
+/// Attached signal handlers
+
 ## Adding signals to custom QML types
+
+// Connecting signals to methods and signals
+
+/// Signal to signal connect
 
 > To be continued.
