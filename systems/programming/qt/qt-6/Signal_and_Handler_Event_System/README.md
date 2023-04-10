@@ -1,5 +1,12 @@
 # [Signal and Handler Event System](https://doc.qt.io/qt-6/qtqml-syntax-signals.html)
 
+_**Table of Contents**_
+- [Signal and Handler Event System](#signal-and-handler-event-system)
+  - [Receiving _signals_ with _signal handlers_](#receiving-signals-with-signal-handlers)
+    - [Property change signal handlers](#property-change-signal-handlers)
+    - [Signal parameters](#signal-parameters)
+  - [Adding signals to custom QML types](#adding-signals-to-custom-qml-types)
+
 Application and user interface components _need to communicate with each other_.
 
 - For example, a **button** needs to know _that the user has clicked on it_. 
