@@ -8,6 +8,7 @@ _**Table of Contents**_
     - [Using the Connections type](#using-the-connections-type)
     - [Attached signal handlers](#attached-signal-handlers)
   - [Adding signals to custom QML types](#adding-signals-to-custom-qml-types)
+  - [Connecting signals to methods and signals](#connecting-signals-to-methods-and-signals)
 
 Application and user interface components _need to communicate with each other_.
 
@@ -280,7 +281,63 @@ For example:
 
 > See [Signal Attributes](https://doc.qt.io/qt-6/qtqml-syntax-objectattributes.html#signal-attributes) for more details on writing signals for custom QML types.
 
-// Connecting signals to methods and signals
+## Connecting signals to methods and signals
+
+- Signal objects have a `connect()` method to a connect a signal 
+  - either to _a method_ or _another signal_.
+  - When a signal is connected to a method, 
+    - the method is _automatically invoked_ whenever the signal is emitted. 
+      - This mechanism enables a signal to be _received by a method instead of a signal handler_.
+
+Below, the `messageReceived` signal is connected to three methods using the `connect()` method:
+
+```qml
+import QtQuick
+
+Rectangle {
+    id: relay
+
+    signal messageReceived(string person, string notice)
+
+    Component.onCompleted: {
+        relay.messageReceived.connect(sendToPost)
+        relay.messageReceived.connect(sendToTelegraph)
+        relay.messageReceived.connect(sendToEmail)
+        relay.messageReceived("Tom", "Happy Birthday")
+    }
+
+    function sendToPost(person, notice) {
+        console.log("Sending to post: " + person + ", " + notice)
+    }
+    function sendToTelegraph(person, notice) {
+        console.log("Sending to telegraph: " + person + ", " + notice)
+    }
+    function sendToEmail(person, notice) {
+        console.log("Sending to email: " + person + ", " + notice)
+    }
+}
+```
+
+- In many cases it is sufficient to receive signals through signal handlers 
+  - rather than using the `connect()` function.
+
+- However, using the `connect` method _allows a signal to be received by multiple methods_ as shown earlier, 
+  - which would not be possible with signal handlers as they must be uniquely named.
+  - Also, the `connect` method is useful when connecting signals to [dynamically created objects](https://doc.qt.io/qt-6/qtqml-javascript-dynamicobjectcreation.html).
+    > I need to read that.
+
+There is a corresponding `disconnect()` method _for removing connected signals_:
+
+```qml
+Rectangle {
+    id: relay
+    //...
+
+    function removeTelegraphSignal() {
+        relay.messageReceived.disconnect(sendToTelegraph)
+    }
+}
+```
 
 /// Signal to signal connect
 
