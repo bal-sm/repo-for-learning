@@ -1,4 +1,6 @@
-Source: https://stackoverflow.com/questions/16937359/git-copy-file-preserving-history
+# [Git copy file preserving history [duplicate]](https://stackoverflow.com/questions/16937359/git-copy-file-preserving-history)
+
+## Answer
 
 All you have to do is:
 
@@ -9,6 +11,11 @@ All you have to do is:
 You will be able to see historical attributions (using `git blame`) and full history of changes (using `git log`) for both files.
 
 Suppose you want to create a copy of file `foo` called `bar`. In that case the workflow you'd use would look like this:
+
+My note:
+> Don't forget to create a new branch, before do steps below.
+> For example:
+> "duplicate#thing" branch
 
 ```bash
 git mv foo bar
