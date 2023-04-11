@@ -9,6 +9,7 @@ _**Table of Contents**_
     - [Attached signal handlers](#attached-signal-handlers)
   - [Adding signals to custom QML types](#adding-signals-to-custom-qml-types)
   - [Connecting signals to methods and signals](#connecting-signals-to-methods-and-signals)
+    - [Signal to signal connect](#signal-to-signal-connect)
 
 Application and user interface components _need to communicate with each other_.
 
@@ -339,6 +340,37 @@ Rectangle {
 }
 ```
 
-/// Signal to signal connect
+### Signal to signal connect
 
-> To be continued.
+By connecting signals to other signals, the `connect()` method can form different signal chains.
+
+```qml
+import QtQuick
+
+Rectangle {
+    id: forwarder
+    width: 100; height: 100
+
+    signal send()
+    onSend: console.log("Send clicked")
+
+    TapHandler {
+        id: mousearea
+        anchors.fill: parent
+        onTapped: console.log("Mouse clicked")
+    }
+
+    Component.onCompleted: {
+        mousearea.tapped.connect(send)
+    }
+}
+```
+
+- Whenever the `TapHandler`'s `tapped` signal is emitted, 
+  - the `send` signal will automatically be emitted as well.
+
+```qml
+output:
+    MouseArea clicked
+    Send clicked
+```
