@@ -6,6 +6,7 @@ _**Table of Contents**_
     - [Property change signal handlers](#property-change-signal-handlers)
     - [Signal parameters](#signal-parameters)
     - [Using the Connections type](#using-the-connections-type)
+    - [Attached signal handlers](#attached-signal-handlers)
   - [Adding signals to custom QML types](#adding-signals-to-custom-qml-types)
 
 Application and user interface components _need to communicate with each other_.
@@ -186,7 +187,46 @@ For example:
     }
     ```
 
-/// Attached signal handlers
+### Attached signal handlers
+
+- An attached signal handler _receives a signal from an **`attaching type`**_ 
+  - rather than _the object within which the handler is declared_.
+
+For example:
+- [`Component.onCompleted`](https://doc.qt.io/qt-6/qml-qtqml-component.html#completed-signal) is _an attached signal handler_. 
+  - It is often used _to execute some JavaScript code_ 
+    - when its _creation process is **complete**_. 
+
+  Here is an example:
+
+  ```qml
+  import QtQuick
+
+  Rectangle {
+      width: 200; height: 200
+      color: Qt.rgba(Qt.random(), Qt.random(), Qt.random(), 1)
+
+      Component.onCompleted: {
+          console.log("The rectangle's color is", color)
+      }
+  }
+  ```
+
+The `onCompleted` handler is not responding to a `completed` signal from the `Rectangle` type. 
+
+- Instead, an object of the `Component` _attaching type_ with a `completed` signal 
+  - _has automatically been attached_ to the `Rectangle` object by the QML engine. 
+  - _The engine emits this signal_ when the `Rectangle` object is created, 
+    - thus triggering the `Component.onCompleted` signal handler.
+
+- **Attached signal handlers** _allow objects to be notified of particular signals_ 
+  - that are significant to each individual object. 
+  - If there was no `Component.onCompleted` attached signal handler, for example, 
+    - an object **could not** receive this notification without _registering for some special signal_ from _some special object_. 
+  - The _attached signal handler_ mechanism enables objects to receive particular signals without extra code.
+
+Note:
+> See [Attached properties and attached signal handlers](https://doc.qt.io/qt-6/qtqml-syntax-objectattributes.html#attached-properties-and-attached-signal-handlers) for more information on _attached_ signal handlers.
 
 ## Adding signals to custom QML types
 
