@@ -230,6 +230,56 @@ Note:
 
 ## Adding signals to custom QML types
 
+Signals can be added to custom QML types through the `signal` keyword.
+
+The syntax for defining a new signal is:
+
+```qml
+signal <name>[([<type> <parameter name>[, ...]])]
+```
+
+A signal is **emitted** by _invoking the signal as a method_.
+
+For example:
+- the code below is defined in a file named `SquareButton.qml`.
+  - The root `Rectangle` object has an `activated` signal, 
+    - which is **emitted** whenever the child `TapHandler` is tapped. 
+- In this particular example the **activated signal** is emitted with _the x and y coordinates of the mouse click_:
+
+  ```qml
+  // SquareButton.qml
+  import QtQuick
+
+  Rectangle {
+      id: root
+
+      signal activated(real xPosition, real yPosition)
+      property point mouseXY
+      property int side: 100
+      width: side; height: side
+
+      TapHandler {
+          id: handler
+          onTapped: root.activated(root.mouseXY.x, root.mouseXY.y)
+          onPressedChanged: root.mouseXY = handler.point.position
+      }
+  }
+  ```
+
+  > Let's revisit [`TapHandler`](https://doc.qt.io/qt-6/qml-qtquick-taphandler.html)
+
+  - Now any objects of the `SquareButton` (_because the previous file named `SquareButton.qml`_) can connect to the `activated` signal 
+    - using an `onActivated` signal handler:
+
+    ```qml
+    // myapplication.qml
+    SquareButton {
+        onActivated: (xPosition, yPosition)=> console.log("Activated at " + xPosition + "," + yPosition)
+    }
+    ```
+
+> See [Signal Attributes](https://doc.qt.io/qt-6/qtqml-syntax-objectattributes.html#signal-attributes) for more details on writing signals for custom QML types.
+
 // Connecting signals to methods and signals
 
 /// Signal to signal connect
