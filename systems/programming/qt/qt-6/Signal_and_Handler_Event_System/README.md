@@ -6,7 +6,10 @@ _**Table of Contents**_
     - [Property change signal handlers](#property-change-signal-handlers)
     - [Signal parameters](#signal-parameters)
     - [Using the Connections type](#using-the-connections-type)
+    - [Attached signal handlers](#attached-signal-handlers)
   - [Adding signals to custom QML types](#adding-signals-to-custom-qml-types)
+  - [Connecting signals to methods and signals](#connecting-signals-to-methods-and-signals)
+    - [Signal to signal connect](#signal-to-signal-connect)
 
 Application and user interface components _need to communicate with each other_.
 
@@ -186,12 +189,188 @@ For example:
     }
     ```
 
-/// Attached signal handlers
+### Attached signal handlers
+
+- An attached signal handler _receives a signal from an **`attaching type`**_ 
+  - rather than _the object within which the handler is declared_.
+
+For example:
+- [`Component.onCompleted`](https://doc.qt.io/qt-6/qml-qtqml-component.html#completed-signal) is _an attached signal handler_. 
+  - It is often used _to execute some JavaScript code_ 
+    - when its _creation process is **complete**_. 
+
+  Here is an example:
+
+  ```qml
+  import QtQuick
+
+  Rectangle {
+      width: 200; height: 200
+      color: Qt.rgba(Qt.random(), Qt.random(), Qt.random(), 1)
+
+      Component.onCompleted: {
+          console.log("The rectangle's color is", color)
+      }
+  }
+  ```
+
+The `onCompleted` handler is not responding to a `completed` signal from the `Rectangle` type. 
+
+- Instead, an object of the `Component` _attaching type_ with a `completed` signal 
+  - _has automatically been attached_ to the `Rectangle` object by the QML engine. 
+  - _The engine emits this signal_ when the `Rectangle` object is created, 
+    - thus triggering the `Component.onCompleted` signal handler.
+
+- **Attached signal handlers** _allow objects to be notified of particular signals_ 
+  - that are significant to each individual object. 
+  - If there was no `Component.onCompleted` attached signal handler, for example, 
+    - an object **could not** receive this notification without _registering for some special signal_ from _some special object_. 
+  - The _attached signal handler_ mechanism enables objects to receive particular signals without extra code.
+
+Note:
+> See [Attached properties and attached signal handlers](https://doc.qt.io/qt-6/qtqml-syntax-objectattributes.html#attached-properties-and-attached-signal-handlers) for more information on _attached_ signal handlers.
 
 ## Adding signals to custom QML types
 
-// Connecting signals to methods and signals
+Signals can be added to custom QML types through the `signal` keyword.
 
-/// Signal to signal connect
+The syntax for defining a new signal is:
 
-> To be continued.
+```qml
+signal <name>[([<type> <parameter name>[, ...]])]
+```
+
+A signal is **emitted** by _invoking the signal as a method_.
+
+For example:
+- the code below is defined in a file named `SquareButton.qml`.
+  - The root `Rectangle` object has an `activated` signal, 
+    - which is **emitted** whenever the child `TapHandler` is tapped. 
+- In this particular example the **activated signal** is emitted with _the x and y coordinates of the mouse click_:
+
+  ```qml
+  // SquareButton.qml
+  import QtQuick
+
+  Rectangle {
+      id: root
+
+      signal activated(real xPosition, real yPosition)
+      property point mouseXY
+      property int side: 100
+      width: side; height: side
+
+      TapHandler {
+          id: handler
+          onTapped: root.activated(root.mouseXY.x, root.mouseXY.y)
+          onPressedChanged: root.mouseXY = handler.point.position
+      }
+  }
+  ```
+
+  > Let's revisit [`TapHandler`](https://doc.qt.io/qt-6/qml-qtquick-taphandler.html)
+
+  - Now any objects of the `SquareButton` (_because the previous file named `SquareButton.qml`_) can connect to the `activated` signal 
+    - using an `onActivated` signal handler:
+
+    ```qml
+    // myapplication.qml
+    SquareButton {
+        onActivated: (xPosition, yPosition)=> console.log("Activated at " + xPosition + "," + yPosition)
+    }
+    ```
+
+> See [Signal Attributes](https://doc.qt.io/qt-6/qtqml-syntax-objectattributes.html#signal-attributes) for more details on writing signals for custom QML types.
+
+## Connecting signals to methods and signals
+
+- Signal objects have a `connect()` method to a connect a signal 
+  - either to _a method_ or _another signal_.
+  - When a signal is connected to a method, 
+    - the method is _automatically invoked_ whenever the signal is emitted. 
+      - This mechanism enables a signal to be _received by a method instead of a signal handler_.
+
+Below, the `messageReceived` signal is connected to three methods using the `connect()` method:
+
+```qml
+import QtQuick
+
+Rectangle {
+    id: relay
+
+    signal messageReceived(string person, string notice)
+
+    Component.onCompleted: {
+        relay.messageReceived.connect(sendToPost)
+        relay.messageReceived.connect(sendToTelegraph)
+        relay.messageReceived.connect(sendToEmail)
+        relay.messageReceived("Tom", "Happy Birthday")
+    }
+
+    function sendToPost(person, notice) {
+        console.log("Sending to post: " + person + ", " + notice)
+    }
+    function sendToTelegraph(person, notice) {
+        console.log("Sending to telegraph: " + person + ", " + notice)
+    }
+    function sendToEmail(person, notice) {
+        console.log("Sending to email: " + person + ", " + notice)
+    }
+}
+```
+
+- In many cases it is sufficient to receive signals through signal handlers 
+  - rather than using the `connect()` function.
+
+- However, using the `connect` method _allows a signal to be received by multiple methods_ as shown earlier, 
+  - which would not be possible with signal handlers as they must be uniquely named.
+  - Also, the `connect` method is useful when connecting signals to [dynamically created objects](https://doc.qt.io/qt-6/qtqml-javascript-dynamicobjectcreation.html).
+    > I need to read that.
+
+There is a corresponding `disconnect()` method _for removing connected signals_:
+
+```qml
+Rectangle {
+    id: relay
+    //...
+
+    function removeTelegraphSignal() {
+        relay.messageReceived.disconnect(sendToTelegraph)
+    }
+}
+```
+
+### Signal to signal connect
+
+By connecting signals to other signals, the `connect()` method can form different signal chains.
+
+```qml
+import QtQuick
+
+Rectangle {
+    id: forwarder
+    width: 100; height: 100
+
+    signal send()
+    onSend: console.log("Send clicked")
+
+    TapHandler {
+        id: mousearea
+        anchors.fill: parent
+        onTapped: console.log("Mouse clicked")
+    }
+
+    Component.onCompleted: {
+        mousearea.tapped.connect(send)
+    }
+}
+```
+
+- Whenever the `TapHandler`'s `tapped` signal is emitted, 
+  - the `send` signal will automatically be emitted as well.
+
+```qml
+output:
+    MouseArea clicked
+    Send clicked
+```
