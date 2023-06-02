@@ -1,5 +1,3 @@
-OS: Arch Linux
-Desktop Environment: KDE
 Command-line Shell: zsh
 Browser: Mozilla Firefox
 Must-have Extensions:
