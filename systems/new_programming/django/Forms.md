@@ -8,8 +8,6 @@ Django provides a range of tools and libraries to help you build forms to accept
 
 > who the fuck use normal HTML form while django handles it perfectly (I hope)
 >
-> Another tutorial [here](https://docs.djangoproject.com/en/3.2/intro/tutorial04/#write-a-minimal-form).
->
 > Ini ringkasan sedikit.
 
 Isi dari HTML forms berawal dari `<form>` ke `</form>`.
@@ -30,6 +28,8 @@ Ini contohnya:
 <input type="submit" value="Vote">
 </form>
 ```
+
+> taken from [here](https://docs.djangoproject.com/en/3.2/intro/tutorial04/#write-a-minimal-form).
 
 > Please ganti ke login and password form.
 
