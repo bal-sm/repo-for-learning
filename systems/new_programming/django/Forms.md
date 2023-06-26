@@ -31,7 +31,7 @@ Ini contohnya:
 
 > taken from [here](https://docs.djangoproject.com/en/3.2/intro/tutorial04/#write-a-minimal-form).
 
-> Please ganti ke login and password form.
+> Please ganti ke login and password form. [Dari ini](https://www.w3schools.com/howto/howto_css_login_form.asp).
 
 ### Django's role in forms
 
