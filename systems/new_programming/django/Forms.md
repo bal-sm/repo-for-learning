@@ -9,6 +9,29 @@ Django provides a range of tools and libraries to help you build forms to accept
 > who the fuck use normal HTML form while django handles it perfectly (I hope)
 >
 > Another tutorial [here](https://docs.djangoproject.com/en/3.2/intro/tutorial04/#write-a-minimal-form).
+>
+> Ini ringkasan sedikit.
+
+Isi dari HTML forms berawal dari `<form>` ke `</form>`.
+
+Ini contohnya:
+
+```html
+<form action="{% url 'polls:vote' question.id %}" method="post">
+{% csrf_token %}
+<fieldset>
+    <legend><h1>{{ question.question_text }}</h1></legend>
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    {% for choice in question.choice_set.all %}
+        <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+        <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
+    {% endfor %}
+</fieldset>
+<input type="submit" value="Vote">
+</form>
+```
+
+> Please ganti ke login and password form.
 
 ### Django's role in forms
 
