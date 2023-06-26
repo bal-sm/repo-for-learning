@@ -36,3 +36,30 @@ Ini contohnya:
 ### Django's role in forms
 
 > See the vault, aing skip.
+
+### Forms in Django, The Django Form Class
+
+Illustration of Django's forms with comparison of Django's model (sic pisan):
+
+```model
+class ArticleForm(forms.Form):
+    title = forms.CharField(max_length=100)
+    pub_date = forms.DateField()
+```
+
+jadi gini kan:
+
+| id     | title | pub_date |
+|:------:|:-----:|---------:|
+| 1      | Kosa  | 22/4/12  |
+| 2      | Jalan | 22/4/12  |
+
+kalo dibikin `ModelFoms` yang bakal nyocokin sama modelnya gini:
+
+```html
+<form action="/article atau apa we da ada urlconf tea kan/" method="post">
+    <input id="title" type="text" name="title" value="..." maxlength="100" required>
+    <input id="pub_date" type="text" name="pub_date" value="..." ...>
+    <input type="submit" value="OK">
+</form>
+```
