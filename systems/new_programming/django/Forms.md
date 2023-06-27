@@ -63,3 +63,9 @@ kalo dibikin `ModelFoms` yang bakal nyocokin sama modelnya gini:
     <input type="submit" value="OK">
 </form>
 ```
+
+### Instantiating, processing, and rendering forms
+
+- Skip, pokoknya:
+  - dari `model` tertulis _`fields`_nya seperti apa, lalu menggambarkan bagaimana tabel-tabel dari databasenya.
+  - kalau `forms`, akan menggambarkan isian formulir di html.
