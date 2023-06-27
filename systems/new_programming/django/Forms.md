@@ -96,3 +96,27 @@ kalo dibikin `ModelFoms` yang bakal nyocokin sama modelnya gini:
 
 Mine:
 > [1]: Apalagi buat d_jurnal tea
+
+#### Building a form in Django
+
+_The Form class_
+
+forms.py:
+
+```python
+from django import forms
+
+
+class NameForm(forms.Form):
+    your_name = forms.CharField(label="Your name", max_length=100)
+```
+
+Mine:
+> Mending `ModelForm` gak sih.
+
+Docs:
+> This defines a `Form` class with a single field (`your_name`). 
+>
+> Penting Pisan:
+> 
+> _We’ve applied a human-friendly **label** to the field, which will appear in the <label> when it’s rendered (although in this case, the label we specified is actually the same one that would be generated automatically if we had omitted it)._
