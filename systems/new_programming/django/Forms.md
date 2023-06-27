@@ -120,3 +120,6 @@ Docs:
 > Penting Pisan:
 > 
 > _We’ve applied a human-friendly **label** to the field, which will appear in the <label> when it’s rendered (although in this case, the label we specified is actually the same one that would be generated automatically if we had omitted it)._
+
+Mine:
+> OMG, aku mau skip my Rabb, soalnya django-crispyformssss. :*
