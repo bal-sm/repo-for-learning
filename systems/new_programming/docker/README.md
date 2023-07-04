@@ -46,3 +46,8 @@ Oh iya aing pake "Arch Linux" jadi pake podman to docker, to emulate its CLI.
   - to run process on any running container
   - ex: `docker exec ubuntu cat /etc/hosts`
     - to show hosts file on ubuntu container.
+
+## Source(s)
+
+- [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
+  - > last position, `27:05`
