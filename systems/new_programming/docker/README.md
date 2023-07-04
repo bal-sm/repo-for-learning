@@ -29,3 +29,11 @@ Oh iya aing pake "Arch Linux" jadi pake podman to docker, to emulate its CLI.
     - container name
     - ...
   - ex: `podman stop my-archie`
+- `podman rm`_`things`_
+  - to remove any container.
+  - dangerous.
+  - ex: `podman rm my-archie`
+    > who the frick wants to delete archie, he's national treasure. It's a TV show guys, it's not cringe.
+- > Now, aku tulis tulis aja dulu, bisi gak ada di podman sebenernya.
+- `docker images`
+  - to list all images.
