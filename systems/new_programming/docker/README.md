@@ -13,3 +13,9 @@ Use podman instead, no enterprise segala.
 WSL? lebok, kecuali buat si orang nyantei.
 
 Oh iya aing pake "Arch Linux" jadi pake podman to docker, to emulate its CLI.
+
+## Commands
+
+- `podman run `_`things`_
+  - ex: `podman run docker/whalesay cowsay asyik-podman`
+    - then, choose: `docker.io/docker/whalesay:latest`
