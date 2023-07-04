@@ -37,3 +37,5 @@ Oh iya aing pake "Arch Linux" jadi pake podman to docker, to emulate its CLI.
 - > Now, aku tulis tulis aja dulu, bisi gak ada di podman sebenernya.
 - `docker images`
   - to list all images.
+- `docker rmi`_`things`_
+  - to remove any image.
