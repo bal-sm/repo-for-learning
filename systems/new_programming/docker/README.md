@@ -23,3 +23,8 @@ Oh iya aing pake "Arch Linux" jadi pake podman to docker, to emulate its CLI.
   - to list all containers.
 - `podman ps -a`
   - to list running containers.
+- `podman stop`_`things`_
+  - to stop any container,
+  - _`things`_, such as:
+    - container name
+    - ...
