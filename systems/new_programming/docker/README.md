@@ -42,3 +42,7 @@ Oh iya aing pake "Arch Linux" jadi pake podman to docker, to emulate its CLI.
   - to remove any image.
 - `docker pull`_`image`_
   - to pull any image.
+- `podman exec`_`running container`_` `_`command`_
+  - to run process on any running container
+  - ex: `docker exec ubuntu cat /etc/hosts`
+    - to show hosts file on ubuntu container.
