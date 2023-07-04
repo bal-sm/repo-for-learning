@@ -16,7 +16,7 @@ Oh iya aing pake "Arch Linux" jadi pake podman to docker, to emulate its CLI.
 
 ## Commands
 
-- `podman run `_`things`_
+- `podman run `_`image`_` `_`command`_
   - ex: `podman run docker/whalesay cowsay asyik-podman`
     - then, choose: `docker.io/docker/whalesay:latest`
   - apabila dilakukan command ini, maka ketika dijalankan `podman ps` maka container nya tidak akan terlihat (tidak running), tapi di `podman ps -a` ada and in exited state, soalnya jalannya cuman sedetik.
