@@ -28,3 +28,4 @@ Oh iya aing pake "Arch Linux" jadi pake podman to docker, to emulate its CLI.
   - _`things`_, such as:
     - container name
     - ...
+  - ex: `podman stop my-archie`
