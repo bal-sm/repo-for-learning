@@ -24,6 +24,8 @@ Oh iya aing pake "Arch Linux" jadi pake podman to docker, to emulate its CLI.
       - to run container detach from the console/in background.
     - `--name` > `--name <the name of the container>`
       - to name the container.
+  - another ex: `docker run -d --name webapp nginx:1.14-alpine`
+    - > susunannya harus kayak gitu, goblog terminal teh, di Surga enggak.
 - `podman ps`
   - to list all containers.
 - `podman ps -a`
