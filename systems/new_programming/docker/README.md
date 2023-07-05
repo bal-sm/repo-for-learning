@@ -22,7 +22,8 @@ Oh iya aing pake "Arch Linux" jadi pake podman to docker, to emulate its CLI.
   - arguments:
     - `-d`
       - to run container detach from the console/in background.
-    - 
+    - `--name` > `--name <the name of the container>`
+      - to name the container.
 - `podman ps`
   - to list all containers.
 - `podman ps -a`
