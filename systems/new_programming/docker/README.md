@@ -19,6 +19,10 @@ Oh iya aing pake "Arch Linux" jadi pake podman to docker, to emulate its CLI.
 - `podman run `_`things`_
   - ex: `podman run docker/whalesay cowsay asyik-podman`
     - then, choose: `docker.io/docker/whalesay:latest`
+  - arguments:
+    - `-d`
+      - to run container detach from the console/in background.
+    - 
 - `podman ps`
   - to list all containers.
 - `podman ps -a`
@@ -32,3 +36,4 @@ Oh iya aing pake "Arch Linux" jadi pake podman to docker, to emulate its CLI.
 - `docker run -d `_`things`_
   - to run container detach from the console/in background.
   - to attach any running container that are detached to the current console(sick), just type `docker attach `_`things`_.
+  - > move ke atas plz
