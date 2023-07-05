@@ -29,3 +29,6 @@ Oh iya aing pake "Arch Linux" jadi pake podman to docker, to emulate its CLI.
     - container name
     - ...
   - ex: `podman stop my-archie`
+- `docker run -d `_`things`_
+  - to run container detach from the console/in background.
+  - to attach any running container that are detached to the current console(sick), just type `docker attach `_`things`_.
