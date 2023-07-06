@@ -126,6 +126,12 @@ ENTRYPOINT FLASK_APP=/opt/the_source_code/app.py flask run
 # liat we di django gimana biar gak pake `manage.py` barina ge salah da yah kalo ngandelin `manage.py`
 ```
 
+### The `Dockerfile` explanation
+
+- `Dockerfile` terdiri dari dua bagian:
+  - `INSTRUCTION`, such as `FROM`, `RUN`, `COPY`, `ENTRYPOINT`, etc.
+  - `ARGUMENT`, such as `ubuntu:latest`, `apt-get update -y`, `pip install flask`, etc.
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
