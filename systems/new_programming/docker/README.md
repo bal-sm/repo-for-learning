@@ -228,6 +228,10 @@ to override entrypoint:
 docker run --entrypoint sleep2.0 ubuntu-sleeper 10
 ```
 
+## Default networks
+
+> 59:38, please add euy, pake graphic soalnya and very important.
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
