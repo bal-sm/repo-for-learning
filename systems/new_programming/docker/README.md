@@ -150,6 +150,9 @@ ENTRYPOINT FLASK_APP=/opt/the_source_code/app.py flask run
     - to specify a command that will be run when the image is run as a container.
     - ex: `ENTRYPOINT FLASK_APP=/opt/the_source_code/app.py flask run`
       - to run the web server using `flask` command.
+  - `CMD instrustion`
+    - ...
+    - > Please add.
 
 ## Layers
 
@@ -178,6 +181,10 @@ ENTRYPOINT FLASK_APP=/opt/the_source_code/app.py flask run
 
 - Jadi apabila pada layer tertentu gagal, maka ketika di repair `Dockerfile` nya tapi instruksi di atas nya sama maka akan diambil dari cache.
   - Dan berguna pisan buat source code yang terus terupdate.
+
+## CMD vs ENTRYPOINT
+
+...
 
 ## Source(s)
 
