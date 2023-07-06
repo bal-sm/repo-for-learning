@@ -25,6 +25,29 @@ Oh iya aing pake "Arch Linux" jadi pake podman to docker, to emulate its CLI.
       - to run container detach from the console/in background.
     - `--name` > `--name <the name of the container>`
       - to name the container.
+    - `image:tag`
+      - ex: `redis:5.0` / `redis:latest` / `redis:4.0`
+    - `-i`
+      - interactive mode.
+    - `-t`
+      - pseudo-terminal mode. to output prompt to the user.(sick)
+    - `-p `_`port:port`_
+      - to map port from the container to the host.
+      - ex: `docker run -p 80:5000`
+        - to map port 5000 from container to port 80 on host.
+          - So, it will be accessible by typing `0.0.0.0:80` on the browser.
+      - > 36:36 of [1].
+    - `-v `_`(dir of host):(dir of the docker container) `__`docker-app-name`_
+      - to map volume from the host to the container.
+      - ex: `docker run -v /opt/datadir:/var/lib/mysql mysql`
+        - to map `/opt/datadir` from host to `/var/lib/mysql` on the container.
+    - `-e `_`key=value `__`docker-app-name`_
+      - to set environment variable on the container.
+      - ex: `docker run -e APP_COLOR=blue simple-webapp-color`
+        - to set environment variable `APP_COLOR` to `blue` on the container.
+    - `--entrypoint `_`things`_
+      - to override the default entrypoint of the container.
+      - ex: below [4]
   - another ex: `docker run -d --name webapp nginx:1.14-alpine`
     - > susunannya harus kayak gitu, goblog terminal teh, di Surga enggak.
 - `podman ps`
@@ -63,8 +86,165 @@ Oh iya aing pake "Arch Linux" jadi pake podman to docker, to emulate its CLI.
   - to remove all containers.
 - `docker rmi $(docker images -aq)`
   - to remove all images.
+- `docker inspect `_`docker-app-name`_
+  - to inspect the container with `json` formatted output.
+- `docker logs `_`docker-app-name`_
+  - to show logs of the container.
+- `docker build `_`path/to/Dockerfile`__`-t`__`my-docker-account/slick-nextjs`_
+  - to build image from Dockerfile.
+  - what is `-t`?
+- `docker history `_`docker-container-name`_
+
+## How to create your own image
+
+> OmG, this v important. ma silk.
+
+- Why?
+  - Because, I want to dockerize my own app that I built with love.
+  - Because, my preferred set of tools doesn't exist on docker hub yet.
+
+### Example
+
+#### Manual instructions example
+
+1. Use `Ubuntu` image as a base
+2. Update `apt` repo
+3. Install dependencies using `apt`
+4. Install `Python` dependencies using `pip`
+5. Copy our app source code to `/opt` directory
+6. Run the web server using `flask` command
+
+#### The `Dockerfile` example
+
+```Dockerfile
+FROM ubuntu:latest
+
+# kenapa ya dikasih tau sama gitjob kolipot nya harus pake `-y`?
+RUN apt-get update -y 
+RUN apt-get install -y python3 python3-pip python3-dev build-essential
+# dari vid nya -> RUN apt-get install python
+
+RUN pip install flask
+RUN pip install flask-mysql
+
+# [2] kalo dari git, apa COPY juga? atau mending git clone aja eh wait da dockerfile nya kan dimasukkin source code jugak
+COPY . /opt/the_source_code
+
+ENTRYPOINT FLASK_APP=/opt/the_source_code/app.py flask run
+# liat we di django gimana biar gak pake `manage.py` barina ge salah da yah kalo ngandelin `manage.py`
+```
+
+### The `Dockerfile` explanation
+
+- `Dockerfile`
+  - terdiri dari dua bagian:
+    - `INSTRUCTION`, such as `FROM`, `RUN`, `COPY`, `ENTRYPOINT`, etc.
+    - `ARGUMENT`, such as `ubuntu:latest`, `apt-get update -y`, `pip install flask`, etc.
+  - must start with `FROM` instruction.
+  - `FROM` instruction
+    - to specify the base image.
+    - ex: `FROM ubuntu:latest`
+      - > of course, `fedora` is the best donk, y g.
+  - `RUN` instruction
+    - to specify which any command that should be ran.
+    - ex: `RUN apt-get update -y`
+      - to update `apt` repo.
+  - `ENTRYPOINT` instruction
+    - to specify a command that will be run when the image is run as a container.
+    - ex: `ENTRYPOINT FLASK_APP=/opt/the_source_code/app.py flask run`
+      - to run the web server using `flask` command.
+  - `CMD instruction`
+    - ...
+    - > Please add.
+    - `CMD `_`command `__`param1`_
+    - `CMD `_`["command", "param1",...]`_
+    - ex:
+      - `CMD sleep 5`
+      - ~~`CMD ["sleep 5"]`~~ `CMD ["sleep", "5"]`
+  - `ENTRYPOINT instruction`
+    - something selanjut dari `docker run some-app` jadi seperti ini (append)
+    - ex: `ENTRYPOINT ["sleep"]` di `ubuntu-sleeper` `Dockerfile`
+      - maka saat di run lewat terminal `docker run ubuntu-sleeper 10`
+      - tapi kalo di `docker run ubuntu-sleeper` aja tanpa argument, maka error.
+        - `sleep: missing operand` jadinya
+      - maka liat bawah [3]
+
+
+## Layers
+
+Jadi gini:
+
+```Dockerfile
+# Layer 1, Base image, 120 MB
+FROM ubuntu
+
+# Layer 2, Changes in `apt` packages
+RUN apt-get update && apt-get -y install python
+
+# Layer 3, Changes in `pip` packages
+RUN pip install flask flask-mysql
+
+# Layer 4, Copy source code
+COPY . /opt/the_source_code
+
+# Layer 5, Update Entrypoint with `flask` command
+ENTRYPOINT FLASK_APP=/opt/the_source_code/app.py flask run
+```
+
+> Liat geura docker history nya di menit ke 49:32
+>
+> sama docker build nya di menit ke 49:34
+
+- Jadi apabila pada layer tertentu gagal, maka ketika di repair `Dockerfile` nya tapi instruksi di atas nya sama maka akan diambil dari cache.
+  - Dan berguna pisan buat source code yang terus terupdate.
+
+## CMD vs ENTRYPOINT
+
+[3]
+
+```Dockerfile
+FROM Ubuntu
+
+ENTRYPOINT ["sleep"]
+
+CMD ["5"]
+```
+
+Penting pisan:
+> `ENTRYPOINT` and `CMD` must be in `JSON` format.
+
+to override argument of `5` tea:
+
+```bash
+docker run ubuntu-sleeper 7
+```
+
+> jadi `7`.
+
+[4]
+to override entrypoint:
+
+```bash
+docker run --entrypoint sleep2.0 ubuntu-sleeper 10
+```
+
+## Default networks
+
+> 59:38, please add euy, pake graphic soalnya and very important.
+>
+> Masukin yang tentang network isolation, and very penting -> Embedded DNS
 
 ## Source(s)
 
-- [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
-  - > last position, `27:05`
+[1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
+  - > last position, `1:06:14`
+
+## Learning in Progress
+
+Note 1:
+> How to apply things like `-v` volume mapping, `-p` port mapping, etc, while the container isn't running without using `docker run` command?
+
+[2]
+
+Note 2:
+> gimana ya PostgreSQL nya? apa image nya terpisah? atau gimana ya? terus kan ada binary pyscopg2. terus ada network mode tea.
