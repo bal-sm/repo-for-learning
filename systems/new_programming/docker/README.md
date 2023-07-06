@@ -164,6 +164,7 @@ ENTRYPOINT FLASK_APP=/opt/the_source_code/app.py flask run
       - maka saat di run lewat terminal `docker run ubuntu-sleeper 10`
       - tapi kalo di `docker run ubuntu-sleeper` aja tanpa argument, maka error.
         - `sleep: missing operand` jadinya
+      - maka liat bawah [3]
 
 
 ## Layers
@@ -196,7 +197,18 @@ ENTRYPOINT FLASK_APP=/opt/the_source_code/app.py flask run
 
 ## CMD vs ENTRYPOINT
 
-...
+[3]
+
+```Dockerfile
+FROM Ubuntu
+
+ENTRYPOINT ["sleep"]
+
+CMD ["5"]
+```
+
+Penting pisan:
+> `ENTRYPOINT` and `CMD` must be in `JSON` format.
 
 ## Source(s)
 
