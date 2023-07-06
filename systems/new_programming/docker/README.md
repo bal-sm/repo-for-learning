@@ -81,6 +81,8 @@ Oh iya aing pake "Arch Linux" jadi pake podman to docker, to emulate its CLI.
   - to remove all images.
 - `docker inspect `_`docker-app-name`_
   - to inspect the container with `json` formatted output.
+- `docker logs `_`docker-app-name`_
+  - to show logs of the container.
 
 ## Source(s)
 
