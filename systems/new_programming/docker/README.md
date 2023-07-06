@@ -87,6 +87,10 @@ Oh iya aing pake "Arch Linux" jadi pake podman to docker, to emulate its CLI.
   - to inspect the container with `json` formatted output.
 - `docker logs `_`docker-app-name`_
   - to show logs of the container.
+- `docker build `_`path/to/Dockerfile`__`-t`__`my-docker-account/slick-nextjs`_
+  - to build image from Dockerfile.
+  - what is `-t`?
+- `docker history `_`docker-container-name`_
 
 ## How to create your own image
 
