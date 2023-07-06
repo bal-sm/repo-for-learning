@@ -177,6 +177,7 @@ ENTRYPOINT FLASK_APP=/opt/the_source_code/app.py flask run
 > sama docker build nya di menit ke 49:34
 
 - Jadi apabila pada layer tertentu gagal, maka ketika di repair `Dockerfile` nya tapi instruksi di atas nya sama maka akan diambil dari cache.
+  - Dan berguna pisan buat source code yang terus terupdate.
 
 ## Source(s)
 
