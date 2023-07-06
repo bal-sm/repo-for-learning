@@ -172,6 +172,8 @@ COPY . /opt/the_source_code
 ENTRYPOINT FLASK_APP=/opt/the_source_code/app.py flask run
 ```
 
+> Liat geura docker history nya di menit ke 49:32
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
