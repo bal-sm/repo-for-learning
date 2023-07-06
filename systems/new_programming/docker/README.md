@@ -213,6 +213,14 @@ CMD ["5"]
 Penting pisan:
 > `ENTRYPOINT` and `CMD` must be in `JSON` format.
 
+to override argument of `5` tea:
+
+```bash
+docker run ubuntu-sleeper 7
+```
+
+> jadi `7`.
+
 [4]
 to override entrypoint:
 
