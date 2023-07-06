@@ -173,6 +173,8 @@ ENTRYPOINT FLASK_APP=/opt/the_source_code/app.py flask run
 ```
 
 > Liat geura docker history nya di menit ke 49:32
+>
+> sama docker build nya di menit ke 49:34
 
 ## Source(s)
 
