@@ -243,3 +243,6 @@ Note 1:
 > How to apply things like `-v` volume mapping, `-p` port mapping, etc, while the container isn't running without using `docker run` command?
 
 [2]
+
+Note 2:
+> gimana ya PostgreSQL nya? apa image nya terpisah? atau gimana ya? terus kan ada binary pyscopg2. terus ada network mode tea.
