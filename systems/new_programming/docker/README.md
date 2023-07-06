@@ -31,6 +31,12 @@ Oh iya aing pake "Arch Linux" jadi pake podman to docker, to emulate its CLI.
       - interactive mode.
     - `-t`
       - pseudo-terminal mode. to output prompt to the user.(sick)
+    - `-p `_`port:port`_
+      - to map port from the container to the host.
+      - ex: `docker run -p 80:5000`
+        - to map port 5000 from container to port 80 on host.
+          - So, it will be accessible by typing `0.0.0.0:80` on the browser.
+      - > 36:36 of [1].
   - another ex: `docker run -d --name webapp nginx:1.14-alpine`
     - > susunannya harus kayak gitu, goblog terminal teh, di Surga enggak.
 - `podman ps`
@@ -72,5 +78,5 @@ Oh iya aing pake "Arch Linux" jadi pake podman to docker, to emulate its CLI.
 
 ## Source(s)
 
-- [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
+[1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
   - > last position, `27:05`
