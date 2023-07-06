@@ -120,6 +120,7 @@ RUN apt-get install -y python3 python3-pip python3-dev build-essential
 RUN pip install flask
 RUN pip install flask-mysql
 
+# [2] kalo dari git, apa COPY juga? atau mending git clone aja eh wait da dockerfile nya kan dimasukkin source code jugak
 COPY . /opt/the_source_code
 
 ENTRYPOINT FLASK_APP=/opt/the_source_code/app.py flask run
@@ -147,3 +148,5 @@ ENTRYPOINT FLASK_APP=/opt/the_source_code/app.py flask run
 
 Note 1:
 > How to apply things like `-v` volume mapping, `-p` port mapping, etc, while the container isn't running without using `docker run` command?
+
+[2]
