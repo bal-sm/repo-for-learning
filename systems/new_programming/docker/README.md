@@ -41,6 +41,10 @@ Oh iya aing pake "Arch Linux" jadi pake podman to docker, to emulate its CLI.
       - to map volume from the host to the container.
       - ex: `docker run -v /opt/datadir:/var/lib/mysql mysql`
         - to map `/opt/datadir` from host to `/var/lib/mysql` on the container.
+    - `-e `_`key=value `__`docker-app-name`_
+      - to set environment variable on the container.
+      - ex: `docker run -e APP_COLOR=blue simple-webapp-color`
+        - to set environment variable `APP_COLOR` to `blue` on the container.
   - another ex: `docker run -d --name webapp nginx:1.14-alpine`
     - > susunannya harus kayak gitu, goblog terminal teh, di Surga enggak.
 - `podman ps`
