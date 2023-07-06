@@ -88,6 +88,14 @@ Oh iya aing pake "Arch Linux" jadi pake podman to docker, to emulate its CLI.
 - `docker logs `_`docker-app-name`_
   - to show logs of the container.
 
+## How to create your own image
+
+> OmG, this v important. ma silk.
+
+- Why?
+  - Because, I want to dockerize my own app that I built with love.
+  - Because, my preferred set of tools doesn't exist on docker hub yet.
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
