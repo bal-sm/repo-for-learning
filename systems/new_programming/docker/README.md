@@ -128,9 +128,15 @@ ENTRYPOINT FLASK_APP=/opt/the_source_code/app.py flask run
 
 ### The `Dockerfile` explanation
 
-- `Dockerfile` terdiri dari dua bagian:
-  - `INSTRUCTION`, such as `FROM`, `RUN`, `COPY`, `ENTRYPOINT`, etc.
-  - `ARGUMENT`, such as `ubuntu:latest`, `apt-get update -y`, `pip install flask`, etc.
+- `Dockerfile`
+  - terdiri dari dua bagian:
+    - `INSTRUCTION`, such as `FROM`, `RUN`, `COPY`, `ENTRYPOINT`, etc.
+    - `ARGUMENT`, such as `ubuntu:latest`, `apt-get update -y`, `pip install flask`, etc.
+  - must start with `FROM` instruction.
+  - `FROM` instruction
+    - to specify the base image.
+    - ex: `FROM ubuntu:latest`
+      - > of course, `fedora` is the best donk, y g.
 
 ## Source(s)
 
