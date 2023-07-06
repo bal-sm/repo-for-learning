@@ -231,6 +231,8 @@ docker run --entrypoint sleep2.0 ubuntu-sleeper 10
 ## Default networks
 
 > 59:38, please add euy, pake graphic soalnya and very important.
+>
+> Masukin yang tentang network isolation, and very penting -> Embedded DNS
 
 ## Source(s)
 
