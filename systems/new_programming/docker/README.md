@@ -92,3 +92,7 @@ Oh iya aing pake "Arch Linux" jadi pake podman to docker, to emulate its CLI.
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
   - > last position, `27:05`
+
+## Learning in Progress
+
+> How to apply things like `-v` volume mapping, `-p` port mapping, etc, while the container isn't running without using `docker run` command?
