@@ -27,6 +27,10 @@ Oh iya aing pake "Arch Linux" jadi pake podman to docker, to emulate its CLI.
       - to name the container.
     - `image:tag`
       - ex: `redis:5.0` / `redis:latest` / `redis:4.0`
+    - `-i`
+      - interactive mode.
+    - `-t`
+      - pseudo-terminal mode. to output prompt to the user.(sick)
   - another ex: `docker run -d --name webapp nginx:1.14-alpine`
     - > susunannya harus kayak gitu, goblog terminal teh, di Surga enggak.
 - `podman ps`
