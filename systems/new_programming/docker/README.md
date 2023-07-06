@@ -138,6 +138,14 @@ ENTRYPOINT FLASK_APP=/opt/the_source_code/app.py flask run
     - to specify the base image.
     - ex: `FROM ubuntu:latest`
       - > of course, `fedora` is the best donk, y g.
+  - `RUN` instruction
+    - to specify which any command that should be ran.
+    - ex: `RUN apt-get update -y`
+      - to update `apt` repo.
+  - `ENTRYPOINT` instruction
+    - to specify a command that will be run when the image is run as a container.
+    - ex: `ENTRYPOINT FLASK_APP=/opt/the_source_code/app.py flask run`
+      - to run the web server using `flask` command.
 
 ## Source(s)
 
