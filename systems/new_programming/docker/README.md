@@ -45,6 +45,9 @@ Oh iya aing pake "Arch Linux" jadi pake podman to docker, to emulate its CLI.
       - to set environment variable on the container.
       - ex: `docker run -e APP_COLOR=blue simple-webapp-color`
         - to set environment variable `APP_COLOR` to `blue` on the container.
+    - `--entrypoint `_`things`_
+      - to override the default entrypoint of the container.
+      - ex: below [4]
   - another ex: `docker run -d --name webapp nginx:1.14-alpine`
     - > susunannya harus kayak gitu, goblog terminal teh, di Surga enggak.
 - `podman ps`
@@ -209,6 +212,13 @@ CMD ["5"]
 
 Penting pisan:
 > `ENTRYPOINT` and `CMD` must be in `JSON` format.
+
+[4]
+to override entrypoint:
+
+```bash
+docker run --entrypoint sleep2.0 ubuntu-sleeper 10
+```
 
 ## Source(s)
 
