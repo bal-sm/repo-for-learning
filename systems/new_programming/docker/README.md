@@ -107,6 +107,25 @@ Oh iya aing pake "Arch Linux" jadi pake podman to docker, to emulate its CLI.
 5. Copy our app source code to `/opt` directory
 6. Run the web server using `flask` command
 
+#### The `Dockerfile`
+
+```Dockerfile
+FROM ubuntu:latest
+
+# kenapa ya dikasih tau sama gitjob kolipot nya harus pake `-y`?
+RUN apt-get update -y 
+RUN apt-get install -y python3 python3-pip python3-dev build-essential
+# dari vid nya -> RUN apt-get install python
+
+RUN pip install flask
+RUN pip install flask-mysql
+
+COPY . /opt/the_source_code
+
+ENTRYPOINT FLASK_APP=/opt/the_source_code/app.py flask run
+# liat we di django gimana biar gak pake `manage.py` barina ge salah da yah kalo ngandelin `manage.py`
+```
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
