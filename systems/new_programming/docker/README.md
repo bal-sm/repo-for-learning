@@ -162,6 +162,7 @@ ENTRYPOINT FLASK_APP=/opt/the_source_code/app.py flask run
     - something selanjut dari `docker run some-app` jadi seperti ini (append)
     - ex: `ENTRYPOINT ["sleep"]` di `ubuntu-sleeper` `Dockerfile`
       - maka saat di run lewat terminal `docker run ubuntu-sleeper 10`
+      - tapi kalo di `docker run ubuntu-sleeper` aja tanpa argument, maka error.
 
 
 ## Layers
