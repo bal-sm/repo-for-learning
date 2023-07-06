@@ -150,7 +150,7 @@ ENTRYPOINT FLASK_APP=/opt/the_source_code/app.py flask run
     - to specify a command that will be run when the image is run as a container.
     - ex: `ENTRYPOINT FLASK_APP=/opt/the_source_code/app.py flask run`
       - to run the web server using `flask` command.
-  - `CMD instrustion`
+  - `CMD instruction`
     - ...
     - > Please add.
     - `CMD `_`command `__`param1`_
@@ -158,6 +158,10 @@ ENTRYPOINT FLASK_APP=/opt/the_source_code/app.py flask run
     - ex:
       - `CMD sleep 5`
       - ~~`CMD ["sleep 5"]`~~ `CMD ["sleep", "5"]`
+  - `ENTRYPOINT instruction`
+    - something selanjut dari `docker run some-app` jadi seperti ini (append)
+    - ex: `ENTRYPOINT ["sleep"]` di `ubuntu-sleeper` `Dockerfile`
+      - maka saat di run lewat terminal `docker run ubuntu-sleeper 10`
 
 
 ## Layers
