@@ -19,6 +19,13 @@ Oh iya aing pake "Arch Linux" jadi pake podman to docker, to emulate its CLI.
 - `podman run `_`things`_
   - ex: `podman run docker/whalesay cowsay asyik-podman`
     - then, choose: `docker.io/docker/whalesay:latest`
+  - arguments:
+    - `-d`
+      - to run container detach from the console/in background.
+    - `--name` > `--name <the name of the container>`
+      - to name the container.
+  - another ex: `docker run -d --name webapp nginx:1.14-alpine`
+    - > susunannya harus kayak gitu, goblog terminal teh, di Surga enggak.
 - `podman ps`
   - to list all containers.
 - `podman ps -a`
@@ -29,3 +36,13 @@ Oh iya aing pake "Arch Linux" jadi pake podman to docker, to emulate its CLI.
     - container name
     - ...
   - ex: `podman stop my-archie`
+- `docker run -d `_`things`_
+  - to run container detach from the console/in background.
+  - to attach any running container that are detached to the current console(sick), just type `docker attach `_`things`_.
+  - > move ke atas plz
+- `docker stop $(docker ps -aq)`
+  - to stop all running containers.
+- `docker rm $(docker ps -aq)`
+  - to remove all containers.
+- `docker rmi $(docker images -aq)`
+  - to remove all images.
