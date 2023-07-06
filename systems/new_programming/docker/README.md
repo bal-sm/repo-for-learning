@@ -37,6 +37,10 @@ Oh iya aing pake "Arch Linux" jadi pake podman to docker, to emulate its CLI.
         - to map port 5000 from container to port 80 on host.
           - So, it will be accessible by typing `0.0.0.0:80` on the browser.
       - > 36:36 of [1].
+    - `-v `_`(dir of host):(dir of the docker container) `__`docker-app-name`_
+      - to map volume from the host to the container.
+      - ex: `docker run -v /opt/datadir:/var/lib/mysql mysql`
+        - to map `/opt/datadir` from host to `/var/lib/mysql` on the container.
   - another ex: `docker run -d --name webapp nginx:1.14-alpine`
     - > susunannya harus kayak gitu, goblog terminal teh, di Surga enggak.
 - `podman ps`
