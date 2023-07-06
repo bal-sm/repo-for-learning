@@ -157,7 +157,7 @@ ENTRYPOINT FLASK_APP=/opt/the_source_code/app.py flask run
     - `CMD `_`["command", "param1",...]`_
     - ex:
       - `CMD sleep 5`
-      - `CMD ["sleep", "5"]`
+      - ~~`CMD ["sleep 5"]`~~ `CMD ["sleep", "5"]`
 
 
 ## Layers
