@@ -98,7 +98,7 @@ Oh iya aing pake "Arch Linux" jadi pake podman to docker, to emulate its CLI.
 
 ### Example
 
-#### Manual instructions
+#### Manual instructions example
 
 1. Use `Ubuntu` image as a base
 2. Update `apt` repo
@@ -107,7 +107,7 @@ Oh iya aing pake "Arch Linux" jadi pake podman to docker, to emulate its CLI.
 5. Copy our app source code to `/opt` directory
 6. Run the web server using `flask` command
 
-#### The `Dockerfile`
+#### The `Dockerfile` example
 
 ```Dockerfile
 FROM ubuntu:latest
