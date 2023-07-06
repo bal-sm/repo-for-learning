@@ -237,7 +237,7 @@ docker run --entrypoint sleep2.0 ubuntu-sleeper 10
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
-  - > last position, `27:05`
+  - > last position, `1:06:14`
 
 ## Learning in Progress
 
