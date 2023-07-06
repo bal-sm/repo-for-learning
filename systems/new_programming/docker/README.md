@@ -176,6 +176,8 @@ ENTRYPOINT FLASK_APP=/opt/the_source_code/app.py flask run
 >
 > sama docker build nya di menit ke 49:34
 
+- Jadi apabila pada layer tertentu gagal, maka ketika di repair `Dockerfile` nya tapi instruksi di atas nya sama maka akan diambil dari cache.
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
