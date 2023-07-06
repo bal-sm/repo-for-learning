@@ -151,6 +151,27 @@ ENTRYPOINT FLASK_APP=/opt/the_source_code/app.py flask run
     - ex: `ENTRYPOINT FLASK_APP=/opt/the_source_code/app.py flask run`
       - to run the web server using `flask` command.
 
+## Layers
+
+Jadi gini:
+
+```Dockerfile
+# Layer 1, Base image, 120 MB
+FROM ubuntu
+
+# Layer 2, Changes in `apt` packages
+RUN apt-get update && apt-get -y install python
+
+# Layer 3, Changes in `pip` packages
+RUN pip install flask flask-mysql
+
+# Layer 4, Copy source code
+COPY . /opt/the_source_code
+
+# Layer 5, Update Entrypoint with `flask` command
+ENTRYPOINT FLASK_APP=/opt/the_source_code/app.py flask run
+```
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
