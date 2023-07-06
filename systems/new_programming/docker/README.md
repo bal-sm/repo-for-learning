@@ -139,4 +139,5 @@ ENTRYPOINT FLASK_APP=/opt/the_source_code/app.py flask run
 
 ## Learning in Progress
 
+Note 1:
 > How to apply things like `-v` volume mapping, `-p` port mapping, etc, while the container isn't running without using `docker run` command?
