@@ -96,6 +96,17 @@ Oh iya aing pake "Arch Linux" jadi pake podman to docker, to emulate its CLI.
   - Because, I want to dockerize my own app that I built with love.
   - Because, my preferred set of tools doesn't exist on docker hub yet.
 
+### Example
+
+#### Manual instructions
+
+1. Use `Ubuntu` image as a base
+2. Update `apt` repo
+3. Install dependencies using `apt`
+4. Install `Python` dependencies using `pip`
+5. Copy our app source code to `/opt` directory
+6. Run the web server using `flask` command
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
