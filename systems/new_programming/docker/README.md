@@ -290,6 +290,11 @@ docker run \
 --mount type=bind,source=/data/mysql,target=/var/lib/mysql mysql
 ```
 
+> Read [more](?) about Storage Drivers, such as AUFS, ZFS, Btrfs, Device Mapper, Overlay, Overlay2, etc.
+
+Mine:
+> Hm dimana ya linknya
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
