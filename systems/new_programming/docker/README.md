@@ -295,6 +295,22 @@ docker run \
 Mine:
 > Hm dimana ya linknya
 
+## Docker Compose
+
+`docker-compose.yaml`:
+
+```yaml
+services:
+  web:
+    image: "mmushad/simple-webapp"
+  database:
+    image: "mongodb"
+  messaging:
+    image: "redis:alpine"
+  orchestration:
+    image: "ansible"
+```
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
