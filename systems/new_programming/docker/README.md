@@ -172,6 +172,8 @@ ENTRYPOINT FLASK_APP=/opt/the_source_code/app.py flask run
 
 ## Layers
 
+[5]
+
 Jadi gini:
 
 ```Dockerfile
@@ -233,6 +235,33 @@ docker run --entrypoint sleep2.0 ubuntu-sleeper 10
 > 59:38, please add euy, pake graphic soalnya and very important.
 >
 > Masukin yang tentang network isolation, and very penting -> Embedded DNS
+
+## Unwritten
+
+...
+
+## Storage
+
+### Layered Architecture
+
+Refer to [5].
+
+When the image is used, then the container will be like this:
+
+Layer 5   x
+Layer 4   |
+Layer 3   | Read-Only
+Layer 2   |
+Layer 1   ^
+
+But if changes are made, then the container will be like this:
+
+Layer 6   <--- Read-Write
+Layer 5   x
+Layer 4   |
+Layer 3   | Read-Only
+Layer 2   |
+Layer 1   ^
 
 ## Source(s)
 
