@@ -331,6 +331,9 @@ services:
     image: "ansible"
 ```
 
+then just run:
+`docker-compose up`
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
