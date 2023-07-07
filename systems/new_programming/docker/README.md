@@ -263,6 +263,21 @@ Layer 3   | Read-Only
 Layer 2   |
 Layer 1   ^
 
+### Volume
+
+- `docker volume create data_volume`
+- `docker run -v data_volume:/var/lib/mysql mysql`
+  - > `data_volume` is the name of the volume.
+  - > `/var/lib/mysql` is the path inside the container.
+
+jadi directory-nya kayak gini:
+
+```
+/var/lib/docker
+  - volumes
+    - data_volume
+```
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
