@@ -297,6 +297,26 @@ Mine:
 
 ## Docker Compose
 
+From this:
+
+```bash
+docker run mmushad/simple-webapp
+```
+
+```bash
+docker run mongodb
+```
+
+```bash
+docker run redis:alpine
+```
+
+```bash
+docker run ansible
+```
+
+To this:
+
 `docker-compose.yaml`:
 
 ```yaml
