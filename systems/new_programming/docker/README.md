@@ -270,9 +270,6 @@ Layer 1   ^
   - > `data_volume` is the name of the volume.
   - > `/var/lib/mysql` is the path inside the container.
   - > You don't need to create volume first.
-- `docker run -v /data/mysql:/var/lib/mysql mysql`
-  - If you want to use `bind mount` instead.
-  - So the data in `/var/lib/mysql` will be stored in `/data/mysql` in the host.
 
 jadi directory-nya kayak gini:
 
@@ -281,6 +278,10 @@ jadi directory-nya kayak gini:
   - volumes
     - data_volume
 ```
+
+- `docker run -v /data/mysql:/var/lib/mysql mysql`
+  - If you want to use `bind mount` instead.
+  - So the data in `/var/lib/mysql` will be stored in `/data/mysql` in the host.
 
 ## Source(s)
 
