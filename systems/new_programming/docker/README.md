@@ -269,6 +269,7 @@ Layer 1   ^
 - `docker run -v data_volume:/var/lib/mysql mysql`
   - > `data_volume` is the name of the volume.
   - > `/var/lib/mysql` is the path inside the container.
+  - > You don't need to create volume first.
 
 jadi directory-nya kayak gini:
 
