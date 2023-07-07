@@ -283,6 +283,13 @@ jadi directory-nya kayak gini:
   - If you want to use `bind mount` instead.
   - So the data in `/var/lib/mysql` will be stored in `/data/mysql` in the host.
 
+New way of mounting volume:
+
+```bash
+docker run \
+--mount type=bind,source=/data/mysql,target=/var/lib/mysql mysql
+```
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
