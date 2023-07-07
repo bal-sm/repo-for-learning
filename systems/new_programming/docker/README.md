@@ -331,7 +331,7 @@ services:
     image: "ansible"
 ```
 
-then just run:
+then, to bring up the entire application stack, just run:
 `docker-compose up`
 
 ## Source(s)
