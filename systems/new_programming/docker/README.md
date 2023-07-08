@@ -48,6 +48,8 @@ Oh iya aing pake "Arch Linux" jadi pake podman to docker, to emulate its CLI.
     - `--entrypoint `_`things`_
       - to override the default entrypoint of the container.
       - ex: below [4]
+    - `--link `_`something:something`_
+      - > Let's READ MORE(...). Apparently, it isn't available in `podman`. Whatever, `podman-compose`.
   - another ex: `docker run -d --name webapp nginx:1.14-alpine`
     - > susunannya harus kayak gitu, goblog terminal teh, di Surga enggak.
 - `podman ps`
