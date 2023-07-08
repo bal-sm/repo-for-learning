@@ -334,6 +334,10 @@ services:
 then, to bring up the entire application stack, just run:
 `docker-compose up`
 
+### Sample application - voting application
+
+voting-app with `Python` > in-memory DB with `Redis` > worker with `.NET` > db with `PostgreSQL` > result-app with `Node.js`
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
