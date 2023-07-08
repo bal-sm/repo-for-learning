@@ -435,6 +435,16 @@ vote:
 
 So it will build the Dockerfile inside that `vote` folder.
 
+The `vote` folder:
+- `...`
+- `static/stylesheets`
+- `templates`
+- `Dockerfile`
+- `app.py`
+- `requirements.txt`
+
+> on 1:28:14
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
