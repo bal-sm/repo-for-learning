@@ -415,6 +415,26 @@ worker:
 
 tinggal `docker-compose up` deh.
 
+## Docker Compose - Build
+
+```yaml
+redis:
+  image: redis
+db:
+  image: postgres:9.4
+vote:
+```
+~~`  image: voting-app`~~`build: ./vote`
+```yaml
+  ports:
+  - 5000:80
+  links:
+  - redis
+...
+```
+
+So it will build the Dockerfile inside that `vote` folder.
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
