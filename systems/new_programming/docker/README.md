@@ -470,20 +470,21 @@ Mine:
 `docker-compose.yaml`, version 2:
 
 ```yaml
-redis:
-  image: redis
-db:
-  image: postgres:9.4
-vote:
-  image: voting-app
-  ports:
-  - 5000:80
+version: 2
+  redis:
+    image: redis
+  db:
+    image: postgres:9.4
+  vote:
+    image: voting-app
+    ports:
+    - 5000:80
 ```
-~~`  links:`~~
-~~`  - redis`~~
+~~`    links:`~~
+~~`    - redis`~~
 ```yaml
-  depends_on:
-  - redis
+    depends_on:
+    - redis
 ```
 
 - It's already attached automatically to default bridge network.
