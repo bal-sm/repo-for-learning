@@ -357,6 +357,9 @@ def get_redis():
     return g.redis
 ```
 
+Mine:
+> remember that host=docker container name tea, tapi.... liat lagi
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
