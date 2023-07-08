@@ -373,6 +373,11 @@ Nanti teh `cat /etc/hosts` dalem `voting-app` akan seperti ini:
 ...
 ```
 
+...
+
+Mine:
+> Skip, 'cause deprecated and buat apa anyway
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
