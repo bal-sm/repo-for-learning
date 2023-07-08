@@ -488,6 +488,7 @@ version: 2
 ```
 
 - It's already attached automatically to default bridge network.
+- `depends_on` biar jadi dulu `redis` containernya baru jalan `vote` container.
 
 ## Source(s)
 
