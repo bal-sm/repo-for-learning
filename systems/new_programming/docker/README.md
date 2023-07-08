@@ -358,7 +358,7 @@ def get_redis():
 ```
 
 Mine:
-> remember that host=docker container name tea, tapi.... liat lagi
+> remember that host=docker container name tea, tapi.... liat lagi, wait aing poho sumpah liat aja we yang networking tea
 
 ## Source(s)
 
