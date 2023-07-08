@@ -465,6 +465,29 @@ vote:
 Mine:
 > Hm, I need to look up proper `yaml` spacing and indent euy.
 
+- links is deprecated btw, becoz..
+
+`docker-compose.yaml`, version 2:
+
+```yaml
+redis:
+  image: redis
+db:
+  image: postgres:9.4
+vote:
+  image: voting-app
+  ports:
+  - 5000:80
+```
+~~`  links:`~~
+~~`  - redis`~~
+```yaml
+  depends_on:
+  - redis
+```
+
+- It's already attached automatically to default bridge network.
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
