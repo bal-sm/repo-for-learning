@@ -445,6 +445,26 @@ The `vote` folder:
 
 > on 1:28:14
 
+## Docker Compose - versions
+
+`docker-compose.yaml`, version 1:
+
+```yaml
+redis:
+  image: redis
+db:
+  image: postgres:9.4
+vote:
+  image: voting-app
+  ports:
+  - 5000:80
+  links:
+  - redis
+```
+
+Mine:
+> Hm, I need to look up proper `yaml` spacing and indent euy.
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
