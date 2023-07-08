@@ -365,6 +365,14 @@ Mine:
 To make it aware of the `redis` container:
 `docker run -d --name=vote -p 5000:80 --link redis:redis voting-app`
 
+Nanti teh `cat /etc/hosts` dalem `voting-app` akan seperti ini:
+
+```
+...
+172.17.0.2  redis 89cd8eb563da
+...
+```
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
