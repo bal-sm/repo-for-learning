@@ -361,3 +361,12 @@ Note 3:
 
 Note 4:
 > docker swarm?
+
+Note 5:
+> Don't ever use Arch image. Because:
+
+w0330 (a redditor) says that:
+> Arch is not used in more normal docker usecases because its rolling release nature conflicts with the whole premise of the Dockerfile being a largely consistent way to describe a container.
+
+Mine:
+> Read [more](https://www.reddit.com/r/archlinux/comments/u2he05/arch_in_docker_for_daily_use/).
