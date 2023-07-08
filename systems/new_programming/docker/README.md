@@ -377,6 +377,8 @@ Nanti teh `cat /etc/hosts` dalem `voting-app` akan seperti ini:
 
 Mine:
 > Skip, 'cause deprecated and buat apa anyway
+>
+> Kata anakku sayang, lewat docker-swarm ajah.
 
 ## Source(s)
 
