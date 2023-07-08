@@ -338,6 +338,14 @@ then, to bring up the entire application stack, just run:
 
 voting-app with `Python` > in-memory DB with `Redis` > worker with `.NET` > db with `PostgreSQL` > result-app with `Node.js`
 
+#### Deploy with `run` commands
+
+- `docker run -d --name=redis redis`
+- `docker run -d --name=db postgres:9.4`
+- `docker run -d --name=vote -p 5000:80 voting-app`
+- `docker run -d --name=result -p 5001:80 result-app`
+- `docker run -d --name=worker worker`
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
