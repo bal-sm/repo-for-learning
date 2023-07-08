@@ -354,3 +354,6 @@ Jawaban:
 
 Note 3:
 > hm pake redis gak ya? soalnya bayar lagi euyy, tapi takut bikin lemot kalo enggak pake, belajar dulu aja django + redis cache.
+
+Note 4:
+> docker swarm?
