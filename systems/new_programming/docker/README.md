@@ -346,6 +346,8 @@ voting-app with `Python` > in-memory DB with `Redis` > worker with `.NET` > db w
 - `docker run -d --name=result -p 5001:80 result-app`
 - `docker run -d --name=worker worker`
 
+> But it will display error, 'cause we haven't actually linked them together.
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
