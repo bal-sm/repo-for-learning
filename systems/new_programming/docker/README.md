@@ -172,6 +172,8 @@ ENTRYPOINT FLASK_APP=/opt/the_source_code/app.py flask run
 
 ## Layers
 
+[5]
+
 Jadi gini:
 
 ```Dockerfile
@@ -233,6 +235,104 @@ docker run --entrypoint sleep2.0 ubuntu-sleeper 10
 > 59:38, please add euy, pake graphic soalnya and very important.
 >
 > Masukin yang tentang network isolation, and very penting -> Embedded DNS
+
+## Unwritten
+
+...
+
+## Storage
+
+### Layered Architecture
+
+Refer to [5].
+
+When the image is used, then the container will be like this:
+
+Layer 5   x
+Layer 4   |
+Layer 3   | Read-Only
+Layer 2   |
+Layer 1   ^
+
+But if changes are made, then the container will be like this:
+
+Layer 6   <--- Read-Write
+Layer 5   x
+Layer 4   |
+Layer 3   | Read-Only
+Layer 2   |
+Layer 1   ^
+
+### Volume
+
+- `docker volume create data_volume`
+- `docker run -v data_volume:/var/lib/mysql mysql`
+  - > `data_volume` is the name of the volume.
+  - > `/var/lib/mysql` is the path inside the container.
+  - > You don't need to create volume first.
+
+jadi directory-nya kayak gini:
+
+```
+/var/lib/docker
+  - volumes
+    - data_volume
+```
+
+- `docker run -v /data/mysql:/var/lib/mysql mysql`
+  - If you want to use `bind mount` instead.
+  - So the data in `/var/lib/mysql` will be stored in `/data/mysql` in the host.
+
+New way of mounting volume:
+
+```bash
+docker run \
+--mount type=bind,source=/data/mysql,target=/var/lib/mysql mysql
+```
+
+> Read [more](?) about Storage Drivers, such as AUFS, ZFS, Btrfs, Device Mapper, Overlay, Overlay2, etc.
+
+Mine:
+> Hm dimana ya linknya
+
+## Docker Compose
+
+From this:
+
+```bash
+docker run mmushad/simple-webapp
+```
+
+```bash
+docker run mongodb
+```
+
+```bash
+docker run redis:alpine
+```
+
+```bash
+docker run ansible
+```
+
+To this:
+
+`docker-compose.yaml`:
+
+```yaml
+services:
+  web:
+    image: "mmushad/simple-webapp"
+  database:
+    image: "mongodb"
+  messaging:
+    image: "redis:alpine"
+  orchestration:
+    image: "ansible"
+```
+
+then, to bring up the entire application stack, just run:
+`docker-compose up`
 
 ## Source(s)
 
