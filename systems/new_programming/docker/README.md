@@ -360,6 +360,9 @@ def get_redis():
 Mine:
 > remember that host=docker container name tea, tapi.... liat lagi, wait aing poho sumpah liat aja we yang networking tea
 
+To make it aware of the `redis` container:
+`docker run -d --name=vote -p 5000:80 --link redis:redis voting-app`
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
