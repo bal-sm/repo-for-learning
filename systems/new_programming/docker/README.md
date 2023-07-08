@@ -348,3 +348,9 @@ Note 1:
 
 Note 2:
 > gimana ya PostgreSQL nya? apa image nya terpisah? atau gimana ya? terus kan ada binary pyscopg2. terus ada network mode tea.
+
+Jawaban:
+> iya dipisah aja.
+
+Note 3:
+> hm pake redis gak ya? soalnya bayar lagi euyy, tapi takut bikin lemot kalo enggak pake, belajar dulu aja django + redis cache.
