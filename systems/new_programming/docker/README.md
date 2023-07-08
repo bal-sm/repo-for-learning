@@ -490,6 +490,25 @@ version: 2
 - It's already attached automatically to default bridge network.
 - `depends_on` biar jadi dulu `redis` containernya baru jalan `vote` container.
 
+`docker-compose.yaml`, version 3:
+
+```yaml
+version: 3
+  redis:
+    image: redis
+  db:
+    image: postgres:9.4
+  vote:
+    image: voting-app
+    ports:
+    - 5000:80
+```
+
+- Is `depends_on` removed?
+
+Mine:
+> Let's just read them in the [docs](...).
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
