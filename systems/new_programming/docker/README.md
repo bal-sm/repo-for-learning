@@ -348,6 +348,14 @@ voting-app with `Python` > in-memory DB with `Redis` > worker with `.NET` > db w
 
 > But it will display error, 'cause we haven't actually linked them together.
 
+on the `voting-app` code:
+
+```py
+def get_redis():
+    if not hasattr(g, "redis"):
+
+```
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
@@ -380,3 +388,6 @@ w0330 (a redditor) says that:
 
 Mine:
 > Read [more](https://www.reddit.com/r/archlinux/comments/u2he05/arch_in_docker_for_daily_use/).
+
+Note 6:
+> How to configure tab size for appropriate file type in Visual Studio Code? Soalnya goblog kok disini 2 space.
