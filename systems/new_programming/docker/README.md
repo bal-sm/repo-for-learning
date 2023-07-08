@@ -48,6 +48,8 @@ Oh iya aing pake "Arch Linux" jadi pake podman to docker, to emulate its CLI.
     - `--entrypoint `_`things`_
       - to override the default entrypoint of the container.
       - ex: below [4]
+    - `--link `_`something:something`_
+      - > Let's READ MORE(...). Apparently, it isn't available in `podman`. Whatever, `podman-compose`.
   - another ex: `docker run -d --name webapp nginx:1.14-alpine`
     - > susunannya harus kayak gitu, goblog terminal teh, di Surga enggak.
 - `podman ps`
@@ -334,6 +336,179 @@ services:
 then, to bring up the entire application stack, just run:
 `docker-compose up`
 
+### Sample application - voting application
+
+voting-app with `Python` > in-memory DB with `Redis` > worker with `.NET` > db with `PostgreSQL` > result-app with `Node.js`
+
+#### Deploy with `run` commands
+
+- `docker run -d --name=redis redis`
+- `docker run -d --name=db postgres:9.4`
+- `docker run -d --name=vote -p 5000:80 voting-app`
+- `docker run -d --name=result -p 5001:80 result-app`
+- `docker run -d --name=worker worker`
+
+> But it will display error, 'cause we haven't actually linked them together.
+
+on the `voting-app` code:
+
+```py
+def get_redis():
+    if not hasattr(g, "redis"):
+        g.redis = Redis(host="redis", db=0, socket_timeout=5)
+    return g.redis
+```
+
+Mine:
+> remember that host=docker container name tea, tapi.... liat lagi, wait aing poho sumpah liat aja we yang networking tea
+
+To make it aware of the `redis` container:
+`docker run -d --name=vote -p 5000:80 --link redis:redis voting-app`
+
+Nanti teh `cat /etc/hosts` dalem `voting-app` akan seperti ini:
+
+```
+...
+172.17.0.2  redis 89cd8eb563da
+...
+```
+
+- The adjustments:
+  - `docker run -d --name=redis redis`
+  - `docker run -d --name=db postgres:9.4`
+  - `docker run -d --name=vote -p 5000:80 --link redis:redis voting-app`
+  - `docker run -d --name=result -p 5001:80 --link db:db result-app`
+  - `docker run -d --name=worker --link db:db --link redis:redis worker`
+
+Mine:
+> Skip, 'cause deprecated and buat apa anyway
+>
+> Kata anakku sayang, lewat docker-swarm ajah.
+
+#### With `docker-compose`
+
+Let's convert it to `docker-compose.yaml`:
+
+```yaml
+redis:
+  image: redis
+db:
+  image: postgres:9.4
+vote:
+  image: voting-app
+  ports:
+  - 5000:80
+  links:
+  - redis
+result:
+  image: result-app
+  ports:
+  - 5001:80
+  links:
+  - db
+worker:
+  image: worker
+  links:
+  - redis
+  - db
+```
+
+tinggal `docker-compose up` deh.
+
+## Docker Compose - Build
+
+```yaml
+redis:
+  image: redis
+db:
+  image: postgres:9.4
+vote:
+```
+~~`  image: voting-app`~~`build: ./vote`
+```yaml
+  ports:
+  - 5000:80
+  links:
+  - redis
+...
+```
+
+So it will build the Dockerfile inside that `vote` folder.
+
+The `vote` folder:
+- `...`
+- `static/stylesheets`
+- `templates`
+- `Dockerfile`
+- `app.py`
+- `requirements.txt`
+
+> on 1:28:14
+
+## Docker Compose - versions
+
+`docker-compose.yaml`, version 1:
+
+```yaml
+redis:
+  image: redis
+db:
+  image: postgres:9.4
+vote:
+  image: voting-app
+  ports:
+  - 5000:80
+  links:
+  - redis
+```
+
+Mine:
+> Hm, I need to look up proper `yaml` spacing and indent euy.
+
+- links is deprecated btw, becoz..
+
+`docker-compose.yaml`, version 2:
+
+```yaml
+version: 2
+  redis:
+    image: redis
+  db:
+    image: postgres:9.4
+  vote:
+    image: voting-app
+    ports:
+    - 5000:80
+```
+~~`    links:`~~
+~~`    - redis`~~
+```yaml
+    depends_on:
+    - redis
+```
+
+- It's already attached automatically to default bridge network.
+- `depends_on` biar jadi dulu `redis` containernya baru jalan `vote` container.
+
+`docker-compose.yaml`, version 3:
+
+```yaml
+version: 3
+  redis:
+    image: redis
+  db:
+    image: postgres:9.4
+  vote:
+    image: voting-app
+    ports:
+    - 5000:80
+```
+
+- Is `depends_on` removed?
+
+Mine:
+> Let's just read them in the [docs](...).
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
@@ -348,3 +523,24 @@ Note 1:
 
 Note 2:
 > gimana ya PostgreSQL nya? apa image nya terpisah? atau gimana ya? terus kan ada binary pyscopg2. terus ada network mode tea.
+
+Jawaban:
+> iya dipisah aja.
+
+Note 3:
+> hm pake redis gak ya? soalnya bayar lagi euyy, tapi takut bikin lemot kalo enggak pake, belajar dulu aja django + redis cache.
+
+Note 4:
+> docker swarm?
+
+Note 5:
+> Don't ever use Arch image. Because:
+
+w0330 (a redditor) says that:
+> Arch is not used in more normal docker usecases because its rolling release nature conflicts with the whole premise of the Dockerfile being a largely consistent way to describe a container.
+
+Mine:
+> Read [more](https://www.reddit.com/r/archlinux/comments/u2he05/arch_in_docker_for_daily_use/).
+
+Note 6:
+> How to configure tab size for appropriate file type in Visual Studio Code? Soalnya goblog kok disini 2 space.
