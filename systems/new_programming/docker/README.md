@@ -387,8 +387,30 @@ Mine:
 
 #### With `docker-compose`
 
+Let's convert it to `docker-compose.yaml`:
+
 ```yaml
-...
+redis:
+  image: redis
+db:
+  image: postgres:9.4
+vote:
+  image: voting-app
+  ports:
+  - 5000:80
+  links:
+  - redis
+result:
+  image: result-app
+  ports:
+  - 5001:80
+  links:
+  - db
+worker:
+  image: worker
+  links:
+  - redis
+  - db
 ```
 
 ## Source(s)
