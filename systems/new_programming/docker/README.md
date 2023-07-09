@@ -569,3 +569,6 @@ Note [7]:
 > OHH jadi sebenernya biar processnya cepet teh da front end communicate dengan back end with multiple endpoint tea, misalnya Django kan backend sama frontend tuh tapi taro lah ya itu teh frontend nya nah nanti kalo ada Query API usage buat write sama read nah, nanti Django talk to an IP network misal 182.91.31.1 (capruk) yaitu PostgreSQL network. Kalo ada request banyak ya gak masalah. Apalagi nanti + ASGI/WSGI. ASGI donk pastinya soalnya ansynchronous gitu.
 >
 > berhubungan sama [7].
+
+Note 8:
+> Ih atuh ada gak ya git plugin yang ngecek langsung contents of the `md` file terus generate automatically commit messagenyaaa. Penting banget. atau gak aing yang nulis code nya.
