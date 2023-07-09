@@ -516,13 +516,13 @@ Mine:
 Let's blueprint the network design:
 
 Front-end:
-voting-app with `Python`
-result-app with `Node.js`
+voting-app with `Python` .
+result-app with `Node.js` .
 
 Back-end:
-- in-memory DB with `Redis`
-- worker with `.NET`
-- db with `PostgreSQL`
+- in-memory DB with `Redis` v
+- worker with `.NET` v
+- db with `PostgreSQL` x
 
 Mine:
 > And ofc, USERS won't be able to talk with back-end network.
