@@ -569,6 +569,14 @@ networks:
 >
 > Nanti kalo udah beres vid nya.
 
+## Docker Registry
+
+- `docker run nginx`
+  - then, it must be:
+    - `image: nginx`
+      - which then corrected to `image: nginx/nginx`
+        - what is it? `nginx` is the organization/user/account, `nginx` is the image/repository name.
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
