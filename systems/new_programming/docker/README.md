@@ -625,3 +625,6 @@ Note 8:
 
 Note [9]:
 > What's even the point of `ports` properties, in next version of `docker-compose.yaml` anyway?
+
+Note [10]:
+> How podman handle it? Soalnya kan registry nya gak pake docker hub/multiple registry? Terus biar sesuai juga sama `Dockerfile`/`docker-compose.yaml` convention dari dockernya. Biar mau pake podman/docker jugak gak masalah.
