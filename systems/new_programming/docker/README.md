@@ -607,7 +607,7 @@ Docker Hub itself is a Docker container which available as `registry` image.
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
-  - > last position, `1:06:14`
+  - > last position, `1:39:59s`
 
 ## Learning in Progress
 
