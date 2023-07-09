@@ -509,6 +509,24 @@ version: 3
 Mine:
 > Let's just read them in the [docs](...).
 
+## Docker Compose - Networks
+
+[7]
+
+Let's blueprint the network design:
+
+Front-end:
+voting-app with `Python`
+result-app with `Node.js`
+
+Back-end:
+- in-memory DB with `Redis`
+- worker with `.NET`
+- db with `PostgreSQL`
+
+Mine:
+> And ofc, USERS won't be able to talk with back-end network.
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
