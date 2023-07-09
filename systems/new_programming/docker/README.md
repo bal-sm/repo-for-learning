@@ -526,6 +526,8 @@ Back-end:
 - db with `PostgreSQL` v
 - result-app with `Node.js`, _backend part_ .
 
+> Backend traffic, dedicated for traffic between applications.
+
 Mine:
 > And ofc, USERS won't be able to talk with back-end network.
 
