@@ -571,4 +571,4 @@ Note [7]:
 > berhubungan sama [7].
 
 Note 8:
-> Ih atuh ada gak ya git plugin yang ngecek langsung contents of the `md` file terus generate automatically commit messagenyaaa. Penting banget. atau gak aing yang nulis code nya. With Python aja.
+> Ih atuh ada gak ya git plugin yang ngecek langsung contents of the `md` file terus generate automatically commit messagenyaaa. Penting banget. atau gak aing yang nulis code nya. With Python aja. with git alias, jangan pre-commit, eh ketang gak tau nanti we
