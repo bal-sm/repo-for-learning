@@ -588,6 +588,18 @@ networks:
 - login to Docker Hub with `docker login private-registry.io`
   - jadi langsung set aja `docker run private-registry.io/apps/internal-app`
 
+### Deploy Private Registry
+
+Docker Hub itself is a Docker container which available as `registry` image.
+
+- `docker run -d -p 5000:5000 --name registry registry:2`
+- `docker image tag my-image localhost:5000/my-image`
+  - to tag the image, so it can be pushed to the registry.
+- `docker push localhost:5000/my-image`
+  - to push it, just like `git push`.
+- `docker pull localhost:5000/my-image`
+- `docker pull 192.168.56.100:5000/my-image`
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
