@@ -520,11 +520,11 @@ voting-app with `Python` .
 result-app with `Node.js` .
 
 Back-end:
-- voting-app with `Python` (backend part) v
+- voting-app with `Python`, _backend part_ v
 - in-memory DB with `Redis` v
 - worker with `.NET` v
 - db with `PostgreSQL` v
-- result-app with `Node.js` (backend part) .
+- result-app with `Node.js`, _backend part_ .
 
 Mine:
 > And ofc, USERS won't be able to talk with back-end network.
