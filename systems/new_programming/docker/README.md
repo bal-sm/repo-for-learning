@@ -585,6 +585,8 @@ networks:
           - `nginx` is the organization/user/account, 
           - `nginx` is the image/repository name.
     - ~~[10] euy.~~ just kidding anjing gak sabaran aing teh.
+- login to Docker Hub with `docker login private-registry.io`
+  - jadi langsung set aja `docker run private-registry.io/apps/internal-app`
 
 ## Source(s)
 
