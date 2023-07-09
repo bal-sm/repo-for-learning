@@ -581,6 +581,7 @@ networks:
               - `gcr.io` from Google, which Kubernetes, Kubernetes, related, gitu,
               - `quay.io` is the DNS name of Quay.io, a popular public registry, made by Red Hat,
             - ada juga private registries, yang disediakan oleh `AWS`, `Azure`, `GCP`,
+            - tapi public registries juga da menyediakan private repositories.
           - `nginx` is the organization/user/account, 
           - `nginx` is the image/repository name.
     - ~~[10] euy.~~ just kidding anjing gak sabaran aing teh.
