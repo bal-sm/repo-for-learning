@@ -575,7 +575,10 @@ networks:
   - then, it must be:
     - `image: nginx`
       - which then corrected to `image: docker.io/nginx/nginx`
-        - what is it? `docker.io` is the location where the `nginx` image pulled from, it's the DNS name, `nginx` is the organization/user/account, `nginx` is the image/repository name.
+        - what is it? 
+          - `docker.io` is the location where the `nginx` image pulled from, it's the DNS name of Docker Hub, Docker's default registry,
+          - `nginx` is the organization/user/account, 
+          - `nginx` is the image/repository name.
     - ~~[10] euy.~~ just kidding anjing gak sabaran aing teh.
 
 ## Source(s)
