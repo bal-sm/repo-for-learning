@@ -534,7 +534,33 @@ Mine:
 jadi gini, `docker-compose.yaml`-nya:
 
 ```yaml
-...
+version: 2
+services:
+  redis:
+    image: redis
+    networks:
+      - back-end
+  db:
+    image: postgres:9.4
+    networks:
+      - back-end
+  vote:
+    image: voting-app
+    networks:
+      - front-end
+      - back-end
+  result:
+    image: result-app
+    networks:
+      - front-end
+      - back-end
+  worker:
+    image: worker
+    networks:
+      - back-end
+networks:
+  front-end:
+  back-end:
 ```
 
 > excluded, the `ports` properties, but is it even necessary? hm [9].
