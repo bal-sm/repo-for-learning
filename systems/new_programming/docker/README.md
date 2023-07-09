@@ -509,10 +509,105 @@ version: 3
 Mine:
 > Let's just read them in the [docs](...).
 
+## Docker Compose - Networks
+
+[7]
+
+Let's blueprint the network design:
+
+Front-end:
+voting-app with `Python` .
+result-app with `Node.js` .
+
+Back-end:
+- voting-app with `Python`, _backend part_ v
+- in-memory DB with `Redis` v
+- worker with `.NET` v
+- db with `PostgreSQL` v
+- result-app with `Node.js`, _backend part_ .
+
+> Backend traffic, dedicated for traffic between applications.
+
+Mine:
+> And ofc, USERS won't be able to talk with back-end network.
+
+jadi gini, `docker-compose.yaml`-nya:
+
+```yaml
+version: 2
+services:
+  redis:
+    image: redis
+    networks:
+      - back-end
+  db:
+    image: postgres:9.4
+    networks:
+      - back-end
+  vote:
+    image: voting-app
+    networks:
+      - front-end
+      - back-end
+  result:
+    image: result-app
+    networks:
+      - front-end
+      - back-end
+  worker:
+    image: worker
+    networks:
+      - back-end
+networks:
+  front-end:
+  back-end:
+```
+
+> excluded, the `ports` properties, but is it even necessary? hm [9].
+>
+> Again, let's refer to the docs!
+>
+> Nanti kalo udah beres vid nya.
+
+## Docker Registry
+
+- `docker run nginx`
+  - then, it must be:
+    - `image: nginx`
+      - which then corrected to `image: docker.io/nginx/nginx`
+        - what is it? 
+          - `docker.io` is the location where the `nginx` image pulled from, it's the DNS name of Docker Hub, Docker's default registry,
+            - other examples of public registries are:
+              - `gcr.io` from Google, which Kubernetes, Kubernetes, related, gitu,
+              - `quay.io` is the DNS name of Quay.io, a popular public registry, made by Red Hat,
+            - ada juga private registries, yang disediakan oleh `AWS`, `Azure`, `GCP`,
+            - tapi public registries juga da menyediakan private repositories.
+          - `nginx` is the organization/user/account, 
+          - `nginx` is the image/repository name.
+    - ~~[10] euy.~~ just kidding anjing gak sabaran aing teh.
+- login to Docker Hub with `docker login private-registry.io`
+  - jadi langsung set aja `docker run private-registry.io/apps/internal-app`
+
+### Deploy Private Registry
+
+Docker Hub itself is a Docker container which available as `registry` image.
+
+- `docker run -d -p 5000:5000 --name registry registry:2`
+- `docker image tag my-image localhost:5000/my-image`
+  - to tag the image, so it can be pushed to the registry.
+- `docker push localhost:5000/my-image`
+  - to push it, just like `git push`.
+- `docker pull localhost:5000/my-image`
+- `docker pull 192.168.56.100:5000/my-image`
+
+## Docker Engine
+
+...
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
-  - > last position, `1:06:14`
+  - > last position, `1:39:59s`
 
 ## Learning in Progress
 
@@ -544,3 +639,19 @@ Mine:
 
 Note 6:
 > How to configure tab size for appropriate file type in Visual Studio Code? Soalnya goblog kok disini 2 space.
+
+**Note [7]:** (Very, like Very Important, please move to `silk` `d_is_mine`)
+> OHH jadi sebenernya biar processnya cepet teh da front end communicate dengan back end with multiple endpoint tea, misalnya Django kan backend sama frontend tuh tapi taro lah ya itu teh frontend nya nah nanti kalo ada Query API usage buat write sama read nah, nanti Django talk to an IP network misal 182.91.31.1 (capruk) yaitu PostgreSQL network. Kalo ada request banyak ya gak masalah. Apalagi nanti + ASGI/WSGI. ASGI donk pastinya soalnya ansynchronous gitu.
+>
+> berhubungan sama [7].
+
+Note 8:
+> Ih atuh ada gak ya git plugin yang ngecek langsung contents of the `md` file terus generate automatically commit messagenyaaa. Penting banget. atau gak aing yang nulis code nya. With Python aja. with git alias, jangan pre-commit, eh ketang gak tau nanti we
+>
+> ATAU GAK SEARCH AJA DULU WE BISI ADA.
+
+Note [9]:
+> What's even the point of `ports` properties, in next version of `docker-compose.yaml` anyway?
+
+~~Note [10]:~~
+~~> How podman handle it? Soalnya kan registry nya gak pake docker hub/multiple registry? Terus biar sesuai juga sama `Dockerfile`/`docker-compose.yaml` convention dari dockernya. Biar mau pake podman/docker jugak gak masalah.~~
