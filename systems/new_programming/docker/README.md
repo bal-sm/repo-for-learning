@@ -577,6 +577,9 @@ networks:
       - which then corrected to `image: docker.io/nginx/nginx`
         - what is it? 
           - `docker.io` is the location where the `nginx` image pulled from, it's the DNS name of Docker Hub, Docker's default registry,
+            - other examples of registries are:
+              - `gcr.io` from Google, which Kubernetes, Kubernetes, related, gitu,
+              - `quay.io` is the DNS name of Quay.io, a popular public registry, made by Red Hat,
           - `nginx` is the organization/user/account, 
           - `nginx` is the image/repository name.
     - ~~[10] euy.~~ just kidding anjing gak sabaran aing teh.
