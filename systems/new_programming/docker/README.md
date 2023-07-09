@@ -576,7 +576,7 @@ networks:
     - `image: nginx`
       - which then corrected to `image: docker.io/nginx/nginx`
         - what is it? `docker.io` is the location where the `nginx` image pulled from, `nginx` is the organization/user/account, `nginx` is the image/repository name.
-    - [10] euy. just kidding anjing gak sabaran aing teh.
+    - ~~[10] euy.~~ just kidding anjing gak sabaran aing teh.
 
 ## Source(s)
 
@@ -627,5 +627,5 @@ Note 8:
 Note [9]:
 > What's even the point of `ports` properties, in next version of `docker-compose.yaml` anyway?
 
-Note [10]:
-> How podman handle it? Soalnya kan registry nya gak pake docker hub/multiple registry? Terus biar sesuai juga sama `Dockerfile`/`docker-compose.yaml` convention dari dockernya. Biar mau pake podman/docker jugak gak masalah.
+~~Note [10]:~~
+~~> How podman handle it? Soalnya kan registry nya gak pake docker hub/multiple registry? Terus biar sesuai juga sama `Dockerfile`/`docker-compose.yaml` convention dari dockernya. Biar mau pake podman/docker jugak gak masalah.~~
