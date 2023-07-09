@@ -574,9 +574,9 @@ networks:
 - `docker run nginx`
   - then, it must be:
     - `image: nginx`
-      - which then corrected to `image: nginx/nginx`
-        - what is it? `nginx` is the organization/user/account, `nginx` is the image/repository name.
-    - [10] euy.
+      - which then corrected to `image: docker.io/nginx/nginx`
+        - what is it? `docker.io` is the location where the `nginx` image pulled from, `nginx` is the organization/user/account, `nginx` is the image/repository name.
+    - [10] euy. just kidding anjing gak sabaran aing teh.
 
 ## Source(s)
 
