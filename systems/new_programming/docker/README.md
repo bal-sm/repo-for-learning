@@ -531,6 +531,14 @@ Back-end:
 Mine:
 > And ofc, USERS won't be able to talk with back-end network.
 
+jadi gini, `docker-compose.yaml`-nya:
+
+```yaml
+...
+```
+
+> excluded, the `ports` properties, but is it even necessary? hm [9].
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
@@ -576,3 +584,6 @@ Note 8:
 > Ih atuh ada gak ya git plugin yang ngecek langsung contents of the `md` file terus generate automatically commit messagenyaaa. Penting banget. atau gak aing yang nulis code nya. With Python aja. with git alias, jangan pre-commit, eh ketang gak tau nanti we
 >
 > ATAU GAK SEARCH AJA DULU WE BISI ADA.
+
+Note [9]:
+> What's even the point of `ports` properties, in next version of `docker-compose.yaml` anyway?
