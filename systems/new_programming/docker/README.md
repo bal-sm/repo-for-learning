@@ -576,6 +576,7 @@ networks:
     - `image: nginx`
       - which then corrected to `image: nginx/nginx`
         - what is it? `nginx` is the organization/user/account, `nginx` is the image/repository name.
+    - [10] euy.
 
 ## Source(s)
 
