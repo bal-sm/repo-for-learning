@@ -544,3 +544,6 @@ Mine:
 
 Note 6:
 > How to configure tab size for appropriate file type in Visual Studio Code? Soalnya goblog kok disini 2 space.
+
+Note [7]:
+> OHH jadi sebenernya biar processnya cepet teh da front end communicate dengan back end with multiple endpoint tea, misalnya Django kan backend sama frontend tuh tapi taro lah ya itu teh frontend nya nah nanti kalo ada Query API usage buat write sama read nah, nanti Django talk to an IP network misal 182.91.31.1 (capruk) yaitu PostgreSQL network. Kalo ada request banyak ya gak masalah. Apalagi nanti + ASGI/WSGI. ASGI donk pastinya soalnya ansynchronous gitu.
