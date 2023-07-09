@@ -564,6 +564,8 @@ networks:
 ```
 
 > excluded, the `ports` properties, but is it even necessary? hm [9].
+>
+> Again, let's refer to the docs!
 
 ## Source(s)
 
