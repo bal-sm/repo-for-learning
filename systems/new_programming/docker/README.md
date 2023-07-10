@@ -602,7 +602,9 @@ Docker Hub itself is a Docker container which available as `registry` image.
 
 ## Docker Engine
 
-...
+Docker Engine is a client-server application with these major components:
+- Docker Daemon
+  - which control and manage images, containers, etc...
 
 ## Source(s)
 
