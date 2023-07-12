@@ -682,7 +682,8 @@ The command:
 ### Docker Swarm
 
 - `docker swarm init`
-  - setelah itu the Swarm manager bakal ngasih tau apa yang harus diinput ke workers machine
+  - setelah itu the Swarm manager bakal ngasih tau apa yang harus diinput ke workers machine, yakni:
+- `docker swarm join --token `_`the-token`_
 
 ## Source(s)
 
