@@ -684,6 +684,9 @@ The command:
 - `docker swarm init`
   - setelah itu the Swarm manager bakal ngasih tau apa yang harus diinput ke workers machine, yakni:
 - `docker swarm join --token `_`the-token`_
+- nanti di Docker Swarm Manager nya tinggal gini
+  - `docker service create --replicas=3 --network frontend my-web-server`
+    - syntax/argumentnya sama kok kayak `docker run`
 
 ## Source(s)
 
