@@ -611,6 +611,12 @@ Docker Engine is a client-server application with these major components:
 - Docker CLI;
   - which is the command line interface that talks to Docker Daemon through Docker REST API;
 
+but you can access Docker REST API with Docker CLI on remote, for example:
+
+```bash
+docker -H=remote-docker-engine:2375
+```
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
