@@ -617,6 +617,12 @@ but you can access Docker REST API with Docker CLI on remote, for example:
 docker -H=remote-docker-engine:2375
 ```
 
+for example to run `nginx` container:
+
+```bash
+docker -H=10.123.2.1:2375 run nginx
+```
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
