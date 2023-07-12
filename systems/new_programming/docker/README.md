@@ -667,6 +667,8 @@ Mine:
 
 And you can also increase and decrease (automatically) sesuai berapa user gening, nah nanti ditambahin container nya.
 
+And host nya malah, bisa ditambahin juga.
+
 The command:
 `docker service create --replicas=100 nodejs`
 
