@@ -623,6 +623,17 @@ for example to run `nginx` container:
 docker -H=10.123.2.1:2375 run nginx
 ```
 
+## Containerization
+
+...
+
+> Sebelum 1:45:49
+
+### cgroups - Allocate resources (CPU, memory, etc) to processes
+
+- `docker run --cpus=.5 ubuntu`
+- `docker run --memory=100m ubuntu`
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
