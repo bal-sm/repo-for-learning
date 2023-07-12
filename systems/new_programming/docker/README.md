@@ -665,6 +665,8 @@ That's why we need to write some script, including (hm jeung sic) that create re
 Mine:
 > Soon, Docker swarm
 
+And you can also increase and decrease (automatically) sesuai berapa user gening, nah nanti ditambahin container nya.
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
