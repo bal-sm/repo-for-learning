@@ -676,7 +676,7 @@ The command:
   - Docker Swarm
     - easy to set up
   - Kubernetes by Google
-    - rada ribet
+    - rada ribet (cenah)
   - Mesos by Patchy
 
 ## Source(s)
