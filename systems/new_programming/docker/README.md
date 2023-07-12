@@ -640,6 +640,11 @@ Mine:
 Dari Gitjob Kolipot:
 > [Resource contraints](https://docs.docker.com/config/containers/resource_constraints/).
 
+## Docker on Windows
+
+Mine:
+> ditonton aja lah ya, soalnya dendam lama sama Windows.
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
