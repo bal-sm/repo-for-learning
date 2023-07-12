@@ -681,7 +681,8 @@ The command:
 
 ### Docker Swarm
 
-`docker swarm init`
+- `docker swarm init`
+  - setelah itu the Swarm manager bakal ngasih tau apa yang harus diinput ke workers machine
 
 ## Source(s)
 
