@@ -662,6 +662,9 @@ Then, Program would be like:
 
 That's why we need to write some script, including (hm jeung sic) that create replicas across Docker host.
 
+Mine:
+> Soon, Docker swarm
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
