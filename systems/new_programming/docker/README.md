@@ -652,6 +652,16 @@ Mine:
 Mine:
 > OmG, can't wait.
 
+## Container Orchestration
+
+Program:
+> Sometimes when you feel like just want to.. you know exit lyfe.
+
+Then, Program would be like:
+> ERROR!
+
+That's why we need to write some script, including (hm jeung sic) that create replicas across Docker host.
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
