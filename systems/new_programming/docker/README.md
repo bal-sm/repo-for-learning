@@ -667,6 +667,9 @@ Mine:
 
 And you can also increase and decrease (automatically) sesuai berapa user gening, nah nanti ditambahin container nya.
 
+The command:
+`docker service create --replicas=100 nodejs`
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
