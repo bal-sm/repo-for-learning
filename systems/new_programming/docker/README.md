@@ -634,6 +634,12 @@ docker -H=10.123.2.1:2375 run nginx
 - `docker run --cpus=.5 ubuntu`
 - `docker run --memory=100m ubuntu`
 
+Mine:
+> Refer to the reference page cenah to read moreee in [here](...). Add plz.
+
+Dari Gitjob Kolipot:
+> [Resource contraints](https://docs.docker.com/config/containers/resource_constraints/).
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
