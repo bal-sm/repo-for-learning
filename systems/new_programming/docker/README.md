@@ -679,6 +679,10 @@ The command:
     - rada ribet (cenah)
   - Mesos by Patchy
 
+### Docker Swarm
+
+`docker swarm init`
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
