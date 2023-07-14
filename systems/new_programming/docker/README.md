@@ -602,7 +602,91 @@ Docker Hub itself is a Docker container which available as `registry` image.
 
 ## Docker Engine
 
+Docker Engine is a client-server application with these major components:
+- Docker Daemon;
+  - which control and manage images, containers, etc;
+- Docker REST API;
+  - which serves API interfaces that programs can use to talk to Docker Daemon;
+  - you could create your own tools using this REST API;
+- Docker CLI;
+  - which is the command line interface that talks to Docker Daemon through Docker REST API;
+
+but you can access Docker REST API with Docker CLI on remote, for example:
+
+```bash
+docker -H=remote-docker-engine:2375
+```
+
+for example to run `nginx` container:
+
+```bash
+docker -H=10.123.2.1:2375 run nginx
+```
+
+## Containerization
+
 ...
+
+> Sebelum 1:45:49
+
+### cgroups - Allocate resources (CPU, memory, etc) to processes
+
+- `docker run --cpus=.5 ubuntu`
+- `docker run --memory=100m ubuntu`
+
+Mine:
+> Refer to the reference page cenah to read moreee in [here](...). Add plz.
+
+Dari Gitjob Kolipot:
+> [Resource contraints](https://docs.docker.com/config/containers/resource_constraints/).
+
+## Docker on Windows
+
+Mine:
+> ditonton aja lah ya, soalnya dendam lama sama Windows.
+
+## Docker on macOS
+
+...
+
+Mine:
+> OmG, can't wait.
+
+## Container Orchestration
+
+Program:
+> Sometimes when you feel like just want to.. you know exit lyfe.
+
+Then, Program would be like:
+> ERROR!
+
+That's why we need to write some script, including (hm jeung sic) that create replicas across Docker host.
+
+Mine:
+> Soon, Docker swarm
+
+And you can also increase and decrease (automatically) sesuai berapa user gening, nah nanti ditambahin container nya.
+
+And host nya malah, bisa ditambahin juga.
+
+The command:
+`docker service create --replicas=100 nodejs`
+
+- Services of Container Orchestration:
+  - Docker Swarm
+    - easy to set up
+  - Kubernetes by Google
+    - rada ribet (cenah)
+  - Mesos by Patchy
+
+### Docker Swarm
+
+- `docker swarm init`
+  - setelah itu the Swarm manager bakal ngasih tau apa yang harus diinput ke workers machine, yakni:
+- `docker swarm join --token `_`the-token`_
+- nanti di Docker Swarm Manager nya tinggal gini
+  - `docker service create --replicas=3 --network frontend my-web-server`
+    - syntax/argumentnya sama kok kayak `docker run`
 
 ## Source(s)
 
