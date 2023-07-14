@@ -688,6 +688,11 @@ The command:
   - `docker service create --replicas=3 --network frontend my-web-server`
     - syntax/argumentnya sama kok kayak `docker run`
 
+## Best container image imo
+
+For Python,
+> You can get recommendations from [here](https://pythonspeed.com/articles/base-image-python-docker-images/).
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
