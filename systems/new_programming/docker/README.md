@@ -690,6 +690,9 @@ The command:
 
 ## Best container image imo
 
+Use UBI! It's very safe, 'cause it's from Red Hat.
+> Read more in [here](https://www.redhat.com/en/blog/introducing-red-hat-universal-base-image).
+
 For Python,
 > You can get recommendations from [here](https://pythonspeed.com/articles/base-image-python-docker-images/).
 
