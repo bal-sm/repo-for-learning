@@ -688,6 +688,21 @@ The command:
   - `docker service create --replicas=3 --network frontend my-web-server`
     - syntax/argumentnya sama kok kayak `docker run`
 
+## Best container image imo
+
+Use UBI! It's very safe, 'cause it's from Red Hat.
+> Read more in [here](https://www.redhat.com/en/blog/introducing-red-hat-universal-base-image).
+
+For Python,
+> You can get recommendations from [here](https://pythonspeed.com/articles/base-image-python-docker-images/).
+
+## _By design_
+
+- Docker container supposed to be run and then exited, with datas that are created automatically deleted.
+  - TAPI GOBLOGNYA TEH AING KENAPA AING GAK BISA JALANIN `podman run `_`the name of the container dari _podman ps -a_`
+    - atau aing bodo aja
+    - Huft fk marah
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
