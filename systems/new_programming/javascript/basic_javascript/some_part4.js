@@ -388,6 +388,10 @@ function checkEqualA(a, b){
 }
 console.log("The real Ternary Operators doesn't exist. Ya udah atuh, ilmu.")
 // condition ? statement-if-true : statement-if-false;
+function checkSign(num) {
+    return num > 0 ? "positive" : num < 0 ? "negative" : "zero"
+}
+console.log(checkSign(0));
 console.log("2:36:57 var vs let")
 console.log("____________________")
 console.log("2:41:32 const Keyword")
