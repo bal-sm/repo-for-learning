@@ -377,6 +377,17 @@ function checkEqualC(a, b){
 console.log(checkEqualC(13,13))
 console.log("2:34:57 Multiple Ternary Operators")
 console.log("____________________")
+console.log("Ternary Operators at home:")
+function checkEqualA(a, b){
+    if(a === b){
+        return true
+    }
+    else{
+        return false
+    }
+}
+console.log("The real Ternary Operators doesn't exist. Ya udah atuh, ilmu.")
+// condition ? statement-if-true : statement-if-false;
 console.log("2:36:57 var vs let")
 console.log("____________________")
 console.log("2:41:32 const Keyword")
