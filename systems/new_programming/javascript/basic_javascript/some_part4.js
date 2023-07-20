@@ -394,6 +394,10 @@ function checkSign(num) {
 console.log(checkSign(0));
 console.log("2:36:57 var vs let")
 console.log("____________________")
+// only use let and const, don't var, 'cause var easily changed while
+let maName = "Mahdi"
+maName = "Muhammad"
+console.log(maName)
 console.log("2:41:32 const Keyword")
 console.log("____________________")
 console.log("2:43:40 Mutate an Array Declared with const")
