@@ -399,6 +399,8 @@ let maName = "Mahdi"
 maName = "Muhammad"
 console.log(maName)
 // var is uncanon
+// use strict biar catch common coding mistake and unsafe actions
+// tapi ada JavaScript
 console.log("2:41:32 const Keyword")
 console.log("____________________")
 console.log("2:43:40 Mutate an Array Declared with const")
