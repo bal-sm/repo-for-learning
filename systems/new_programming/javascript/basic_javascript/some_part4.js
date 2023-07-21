@@ -442,7 +442,7 @@ console.log("____________________")
 function printManyTimesConstZxz(str) {
     "use strict";
 
-    const SENTENCE = str + " is cool!";
+    const SENTENCE = str + " is bad anjing";
 
     for (let i = 0; i < str.length; i += 2) {
         console.log(SENTENCE);
