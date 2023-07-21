@@ -464,6 +464,7 @@ function editInPlacezxzzxzxzxzx() {
 
 }
 editInPlacezxzzxzxzxzx();
+console.log(NUMBERSSZZSZSZ);
 console.log("2:44:52 Prevent Object Mutation")
 console.log("____________________")
 console.log("2:47:17 Arrow Functions")
