@@ -439,6 +439,16 @@ checkScope2();
 // Function scope i is: "function scope"
 console.log("2:41:32 const Keyword")
 console.log("____________________")
+function printManyTimesConstZxz(str) {
+    "use strict";
+
+    const SENTENCE = str + " is cool!";
+
+    for (let i = 0; i < str.length; i += 2) {
+        console.log(SENTENCE);
+    }
+}
+printManyTimesConstZxz("freeCodeCamp");
 console.log("2:43:40 Mutate an Array Declared with const")
 console.log("____________________")
 console.log("2:44:52 Prevent Object Mutation")
