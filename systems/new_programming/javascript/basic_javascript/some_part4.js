@@ -417,6 +417,8 @@ function checkScope() {
     console.log("Function scope i is: ", i);
     return i;
 }
+
+checkScope();
 // Output:
 // Block scope i is: "block scope"
 // Function scope i is: "block scope"
