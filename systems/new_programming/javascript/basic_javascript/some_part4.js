@@ -469,9 +469,10 @@ console.log("2:44:52 Prevent Object Mutation")
 console.log("____________________")
 function freezeObj() {
     "use strict";
-    const MATH_CONSTANTS = {
-        PI: 3,14
-    };
+    // const MATH_CONSTANTS = {
+    //     PI: 3,14
+    // };
+    // PLEASE IH APA YANG SALAH SAMA CODE DIATAS, GOBLLOGGGG
 
     Object.freeze(MATH_CONSTANTS);
 
