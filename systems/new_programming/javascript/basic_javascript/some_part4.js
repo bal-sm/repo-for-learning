@@ -406,6 +406,7 @@ function catTalk() {
     "use strict";
     console.log("...");
 }
+// baca lagi aja, var vs let vs const
 console.log("2:41:32 const Keyword")
 console.log("____________________")
 console.log("2:43:40 Mutate an Array Declared with const")
