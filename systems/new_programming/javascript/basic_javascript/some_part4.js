@@ -451,6 +451,19 @@ function printManyTimesConstZxz(str) {
 printManyTimesConstZxz("freeCodeCamp");
 console.log("2:43:40 Mutate an Array Declared with const")
 console.log("____________________")
+const NUMBERSSZZSZSZ = [5, 7, 2]
+function editInPlacezxzzxzxzxzx() {
+    "use strict";
+
+    // NUMBERSSZZSZSZ = [2, 5, 7];
+    // di comment, soalnya nanti
+    // Syntax Error blablabla
+    NUMBERSSZZSZSZ[0] = 2;
+    NUMBERSSZZSZSZ[1] = 5;
+    NUMBERSSZZSZSZ[2] = 7;
+
+}
+editInPlacezxzzxzxzxzx();
 console.log("2:44:52 Prevent Object Mutation")
 console.log("____________________")
 console.log("2:47:17 Arrow Functions")
