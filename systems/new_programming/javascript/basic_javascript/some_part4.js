@@ -417,6 +417,9 @@ function checkScope() {
     console.log("Function scope i is: ", i);
     return i;
 }
+// Output:
+// Block scope i is: "block scope"
+// Function scope i is: "block scope"
 console.log("2:41:32 const Keyword")
 console.log("____________________")
 console.log("2:43:40 Mutate an Array Declared with const")
