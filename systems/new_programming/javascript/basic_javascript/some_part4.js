@@ -422,6 +422,21 @@ checkScope();
 // Output:
 // Block scope i is: "block scope"
 // Function scope i is: "block scope"
+function checkScope2() {
+"use strict";
+    let i = "function scope";
+    if (true) {
+        let i = "block scope";
+        console.log("Block scope i is: ", i);
+    }
+    console.log("Function scope i is: ", i);
+    return i;
+}
+    
+checkScope2();
+// Output:
+// Block scope i is: "block scope"
+// Function scope i is: "function scope"
 console.log("2:41:32 const Keyword")
 console.log("____________________")
 console.log("2:43:40 Mutate an Array Declared with const")
