@@ -493,8 +493,8 @@ var wowOne = function() {
 var wowTwo = () => {
     return new Date();
 };
-
 var wowThree = () => new Date();
+const wowFour = () => new Date();
 console.log("2:53:04 Default Parameters")
 console.log("____________________")
 console.log("2:54:00 Rest Operator")
