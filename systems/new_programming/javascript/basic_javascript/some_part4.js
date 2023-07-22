@@ -516,6 +516,17 @@ console.log("____________________")
 var myConcatThree = (arr1, arr2) => arr1.concat(arr2);
 
 console.log("myConcatThree(\"sebuah\", \"2 kata\") = " + myConcatThree("sebuah", "2 kata"))
+console.log("Sub = Write Higher Order Arrow Functions")
+console.log("____________________")
+const realNumberArray = [4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2];
+
+const squareList = (arr) => {
+    const squaredIntegers = arr;
+    return squaredIntegers;
+};
+
+const squaredIntegers = squareList(realNumberArray);
+console.log(squaredIntegers);
 console.log("2:53:04 Default Parameters")
 console.log("____________________")
 console.log("2:54:00 Rest Operator")
