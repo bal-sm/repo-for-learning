@@ -490,6 +490,9 @@ console.log("____________________")
 var wowOne = function() {
     return new Date();
 };
+var wowTwo = () => {
+    return new Date();
+};
 console.log("2:53:04 Default Parameters")
 console.log("____________________")
 console.log("2:54:00 Rest Operator")
