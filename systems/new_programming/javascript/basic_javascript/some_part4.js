@@ -490,11 +490,17 @@ console.log("____________________")
 var wowOne = function() {
     return new Date();
 };
+console.log("____________________")
 var wowTwo = () => {
     return new Date();
 };
+console.log("____________________")
 var wowThree = () => new Date();
+console.log("____________________")
 const wowFour = () => new Date();
+console.log("____________________")
+console.log("Sub = Write Arrow Functions with Parameters")
+console.log("____________________")
 console.log("2:53:04 Default Parameters")
 console.log("____________________")
 console.log("2:54:00 Rest Operator")
