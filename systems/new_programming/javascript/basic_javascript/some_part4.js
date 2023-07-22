@@ -487,6 +487,9 @@ console.log("____________________")
 // const PI = freezeObj();
 console.log("2:47:17 Arrow Functions")
 console.log("____________________")
+var magic = function() {
+    return new Date();
+};
 console.log("2:53:04 Default Parameters")
 console.log("____________________")
 console.log("2:54:00 Rest Operator")
