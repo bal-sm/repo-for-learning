@@ -527,6 +527,8 @@ const squareList = (arr) => {
 
 const squaredIntegers = squareList(realNumberArray);
 console.log(squaredIntegers);
+// PENTING PISAN: Whenever one function takes another function as an argument,
+// that's a good time for an arrow function.
 console.log("2:53:04 Default Parameters")
 console.log("____________________")
 console.log("2:54:00 Rest Operator")
