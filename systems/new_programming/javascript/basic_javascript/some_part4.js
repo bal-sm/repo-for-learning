@@ -505,7 +505,7 @@ var myConcatOne = function(arr1, arr2) {
     return arr1.concat(arr2);
 };
 
-console.log("myConcatOne = " + myConcatOne("sebuah", "2 kata"))
+console.log("myConcatOne(\"sebuah\", \"2 kata\") = " + myConcatOne("sebuah", "2 kata"))
 console.log("2:53:04 Default Parameters")
 console.log("____________________")
 console.log("2:54:00 Rest Operator")
