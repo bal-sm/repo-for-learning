@@ -529,6 +529,10 @@ const squaredIntegers = squareList(realNumberArray);
 console.log(squaredIntegers);
 // PENTING PISAN: Whenever one function takes another function as an argument,
 // that's a good time for an arrow function.
+// suc·cinct
+// adjective
+// (especially of something written or spoken) briefly and clearly expressed.
+// e.g.: "use short, succinct sentences"
 console.log("2:53:04 Default Parameters")
 console.log("____________________")
 console.log("2:54:00 Rest Operator")
