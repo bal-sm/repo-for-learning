@@ -512,6 +512,10 @@ var myConcatTwo = function(arr1, arr2) {
 };
 
 console.log("myConcatTwo(\"sebuah\", \"2 kata\") = " + myConcatTwo("sebuah", "2 kata"))
+console.log("____________________")
+var myConcatThree = (arr1, arr2) => arr1.concat(arr2);
+
+console.log("myConcatThree(\"sebuah\", \"2 kata\") = " + myConcatThree("sebuah", "2 kata"))
 console.log("2:53:04 Default Parameters")
 console.log("____________________")
 console.log("2:54:00 Rest Operator")
