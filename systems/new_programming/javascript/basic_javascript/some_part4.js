@@ -487,7 +487,7 @@ console.log("____________________")
 // const PI = freezeObj();
 console.log("2:47:17 Arrow Functions")
 console.log("____________________")
-var magic = function() {
+var wowOne = function() {
     return new Date();
 };
 console.log("2:53:04 Default Parameters")
