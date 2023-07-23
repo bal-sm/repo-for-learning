@@ -690,7 +690,7 @@ const person = {
   
 // Template literal with multi-line and string interpolation
 const greeting = `Hello, my name is ${person.name}!
-I am ${person.age} years old.`;
+I am ${person.age} years old.`; // Ini teh gening gaganti ` dari " tapi mau ubah ubah gitu pake $, biar kayak Python, gimana aing we, males lookup da ngapain
 
 console.log(greeting); 
 
@@ -704,7 +704,7 @@ const result = {
 };
 function makeList(arr) {
     const resultDisplayArray = null;
-    
+
     return resultDisplayArray;
 }
 /**
