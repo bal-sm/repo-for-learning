@@ -629,10 +629,10 @@ let aZzxzzxzx = 8, bZxxzzx = 6;
 
 (() => {
     "use strict";
-
+    [aZzxzzxzx, bZxxzzx] = [bZxxzzx, aZzxzzxzx] // annother wtf, terus bangga lagi
 })();
-// console.log(aZzxzzxzx); 
-// console.log(bZxxzzx); 
+console.log(aZzxzzxzx); 
+console.log(bZxxzzx); 
 console.log("3:06:39 Template Literals")
 console.log("____________________")
 console.log("3:10:43 Simple Fields")
