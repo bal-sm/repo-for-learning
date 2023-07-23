@@ -576,6 +576,17 @@ console.log("arr1 = " + arr1);
 console.log("2:57:18 Destructuring Assignment")
 console.log("____________________")
 // Use Destructuring Assignment to Assign Variables from Objects
+var voxel = {x: 3.6, y: 7.4, z: 6.54}
+
+// old way to assigning it to new variables
+// var x = voxel.x;
+// var y = voxel.y;
+// var z = voxel.z;
+
+const { x : a, y : b, z : c } = voxel;
+console.log("a = " + a)
+console.log("b = " + b)
+console.log("c = " + c)
 console.log("3:06:39 Template Literals")
 console.log("____________________")
 console.log("3:10:43 Simple Fields")
