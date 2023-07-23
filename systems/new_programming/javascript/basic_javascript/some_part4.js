@@ -706,7 +706,10 @@ const result = {
     skipped: ["id-blacklist", "no-dup-keys"]
 };
 function makeList(arr) {
-    const resultDisplayArray = null;
+    const resultDisplayArray = [];
+    for (let i = 0; i < arr.length; i++) {
+        resultDisplayArray.push(`<li class="text-warning">${arr[i]}</li>`)
+    }
 
     return resultDisplayArray;
 }
@@ -717,6 +720,7 @@ function makeList(arr) {
  *   `<li class="text-warning">linebreak</li>` ]
  **/
 const resultDisplayArray = makeList(result.failure);
+console.log(resultDisplayArray)
 console.log("3:10:43 Simple Fields")
 console.log("____________________")
 console.log("3:12:24 Declarative Functions")
