@@ -568,10 +568,11 @@ console.log("____________________")
 const arr1 = ["JAN", "FEB", "MAR", "APR", "MAY"];
 let arr2;
 (function() {
-    arr2 = arr1; // change this line
+    arr2 = [...arr1]; // change this line
     arr1[0] = "potato"
 })();
 console.log(arr2);
+console.log(arr1);
 console.log("2:57:18 Destructuring Assignment")
 console.log("____________________")
 console.log("3:06:39 Template Literals")
