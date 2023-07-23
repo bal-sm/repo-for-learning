@@ -611,7 +611,7 @@ const LOCAL_FORECAST = {
 function getMaxOfTmrw(forecast) {
     "use strict";
     
-    const maxOfTomorrow = undefined; 
+    const { tomorrow : { max : maxOfTomorrow } } = forecast; 
     
     return maxOfTomorrow;
 }
