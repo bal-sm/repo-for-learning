@@ -638,6 +638,10 @@ console.log(bZxxzzx);
 // terus oh iya kita agamanya javascript soalnya nenek moyang aing dari dulu gitu
 // tradisinya
 // terus OH IYA ATUH, SUMPAH AGAMA JAVASCRIPT THE BEST.
+// terus teh ada yang protes, kenapa ih jadi gini agama teh
+// asal colok aja mau ke browser mana mana
+// macam macam biaya nya pula
+// OH IYA UDAH ATUH, TYPESCRIPT
 console.log("3:06:39 Template Literals")
 console.log("____________________")
 console.log("3:10:43 Simple Fields")
