@@ -547,13 +547,13 @@ console.log("incrementZzxzxzx(13) = " + incrementZzxzxzx(13));
 console.log("2:54:00 Rest Operator")
 console.log("____________________")
 // Use the Rest Operator with Function Parameters
-const sum = (function() {
-    return function sum(x, y, z) {
+const sumZxzxzx = (function() {
+    return function sumWe(x, y, z) {
         const args = [x, y, z];
         return args.reduce((a, b) => a + b, 0);
     };
 })();
-console.log("sum(1, 2, 3) = " + sum(1, 2, 3))
+console.log("sumZxzxzx(1, 2, 3) = " + sumZxzxzx(1, 2, 3))
 console.log("2:55:31 Spread Operator")
 console.log("____________________")
 console.log("2:57:18 Destructuring Assignment")
