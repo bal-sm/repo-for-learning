@@ -575,6 +575,7 @@ console.log("arr2 = " + arr2);
 console.log("arr1 = " + arr1);
 console.log("2:57:18 Destructuring Assignment")
 console.log("____________________")
+// Use Destructuring Assignment to Assign Variables from Objects
 console.log("3:06:39 Template Literals")
 console.log("____________________")
 console.log("3:10:43 Simple Fields")
