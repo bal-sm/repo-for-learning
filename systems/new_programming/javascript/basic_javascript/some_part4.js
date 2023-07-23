@@ -596,7 +596,7 @@ const AVG_TEMPERATURES = {
 function getTempOfTmrw(avgTemperatues) {
     "use strict";
     // change code below this line
-    const tempOfTomorrow = undefined;
+    const {tomorrow : tempOfTomorrow} = avgTemperatues;
     // change code above this line
     return tempOfTomorrow;
 }
