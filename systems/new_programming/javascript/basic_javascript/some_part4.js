@@ -588,6 +588,20 @@ console.log("a = " + a)
 console.log("b = " + b)
 console.log("c = " + c)
 console.log("IT'S WORKING GUYZ")
+const AVG_TEMPERATURES = {
+    today: 77.5,
+    tomorrow: 79
+};
+
+function getTempOfTmrw(avgTemperatues) {
+    "use strict";
+    // change code below this line
+    const tempOfTomorrow = undefined;
+    // change code above this line
+    return tempOfTomorrow;
+}
+
+console.log(getTempOfTmrw(AVG_TEMPERATURES))
 console.log("3:06:39 Template Literals")
 console.log("____________________")
 console.log("3:10:43 Simple Fields")
