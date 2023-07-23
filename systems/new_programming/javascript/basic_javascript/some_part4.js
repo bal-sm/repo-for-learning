@@ -564,6 +564,7 @@ const sumRestZxzxz = (function() {
 console.log("sumRestZxzxz(1, 2, 3, 4) = " + sumRestZxzxz(1, 2, 3, 4))
 console.log("2:55:31 Spread Operator")
 console.log("____________________")
+// Use the Spread Operator to Evaluate Arrays In-Place
 console.log("2:57:18 Destructuring Assignment")
 console.log("____________________")
 console.log("3:06:39 Template Literals")
