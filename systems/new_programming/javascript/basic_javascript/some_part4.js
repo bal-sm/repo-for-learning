@@ -575,52 +575,52 @@ console.log("arr2 = " + arr2);
 console.log("arr1 = " + arr1);
 console.log("2:57:18 Destructuring Assignment")
 console.log("____________________")
-// Use Destructuring Assignment to Assign Variables from Objects
-var voxel = {x: 3.6, y: 7.4, z: 6.54}
-
-// old way to assigning it to new variables
-// var x = voxel.x;
-// var y = voxel.y;
-// var z = voxel.z;
-
-const { x : a, y : b, z : c } = voxel;
-console.log("a = " + a)
-console.log("b = " + b)
-console.log("c = " + c)
-console.log("IT'S WORKING GUYZ")
-const AVG_TEMPERATURES = {
-    today: 77.5,
-    tomorrow: 79
-};
-
-function getTempOfTmrw(avgTemperatues) {
-    "use strict";
-    // change code below this line
-    const {tomorrow : tempOfTomorrow} = avgTemperatues;
-    // change code above this line
-    return tempOfTomorrow;
-}
-
-console.log(getTempOfTmrw(AVG_TEMPERATURES))
-// Destructuring Assignment with Nested Objects
-const LOCAL_FORECAST = {
-    today: { min: 72, max: 83 },
-    tomorrow: { min: 73.3, max: 84.6 }
-};
-
-function getMaxOfTmrw(forecast) {
-    "use strict";
-    
-    const { tomorrow : { max : maxOfTomorrow } } = forecast;
-    // EWW DI PYTHON MAH GINIH TAU
-    // ini_adalah_max_of_tomorrow = forecast["tomorrow"]["max"]
-    // return ini_adalah_max_of_tomorrow
-    // BERESSZSZSZSZZSZSZZSZZSZZSZSZS
-    
-    return maxOfTomorrow;
-}
-
-console.log("getMaxOfTmrw(LOCAL_FORECAST) = " + getMaxOfTmrw(LOCAL_FORECAST));
+// // Use Destructuring Assignment to Assign Variables from Objects
+// var voxel = {x: 3.6, y: 7.4, z: 6.54}
+// 
+// // old way to assigning it to new variables
+// // var x = voxel.x;
+// // var y = voxel.y;
+// // var z = voxel.z;
+// 
+// const { x : a, y : b, z : c } = voxel;
+// console.log("a = " + a)
+// console.log("b = " + b)
+// console.log("c = " + c)
+// console.log("IT'S WORKING GUYZ")
+// const AVG_TEMPERATURES = {
+//     today: 77.5,
+//     tomorrow: 79
+// };
+// 
+// function getTempOfTmrw(avgTemperatues) {
+//     "use strict";
+//     // change code below this line
+//     const {tomorrow : tempOfTomorrow} = avgTemperatues;
+//     // change code above this line
+//     return tempOfTomorrow;
+// }
+// 
+// console.log(getTempOfTmrw(AVG_TEMPERATURES))
+// // Destructuring Assignment with Nested Objects
+// const LOCAL_FORECAST = {
+//     today: { min: 72, max: 83 },
+//     tomorrow: { min: 73.3, max: 84.6 }
+// };
+// 
+// function getMaxOfTmrw(forecast) {
+//     "use strict";
+//     
+//     const { tomorrow : { max : maxOfTomorrow } } = forecast;
+//     // EWW DI PYTHON MAH GINIH TAU
+//     // ini_adalah_max_of_tomorrow = forecast["tomorrow"]["max"]
+//     // return ini_adalah_max_of_tomorrow
+//     // BERESSZSZSZSZZSZSZZSZZSZZSZSZS
+//     
+//     return maxOfTomorrow;
+// }
+// 
+// console.log("getMaxOfTmrw(LOCAL_FORECAST) = " + getMaxOfTmrw(LOCAL_FORECAST));
 // Use Destructuring Assignment to Assign Variables from Arrays
 const [z, x, , y] = [1, 2, 3, 4, 5, 6]; // EW, WTF
 console.log(z, x, y);
