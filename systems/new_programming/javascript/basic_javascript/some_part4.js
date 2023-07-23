@@ -665,7 +665,7 @@ const statsNvdnuonidv = {
 };
 const halfDvsnoi = (function() {
 
-    return function half(stats) {
+    return function half(stats) { // apparently kan kalo API API gitu teh banyak pisan datanya
         return (stats.max + stats.min) / 2.0;
     };
 
