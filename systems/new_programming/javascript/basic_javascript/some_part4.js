@@ -620,7 +620,7 @@ function getMaxOfTmrw(forecast) {
     return maxOfTomorrow;
 }
 
-console.log(getMaxOfTmrw(LOCAL_FORECAST));
+console.log("getMaxOfTmrw(LOCAL_FORECAST) = " + getMaxOfTmrw(LOCAL_FORECAST));
 console.log("3:06:39 Template Literals")
 console.log("____________________")
 console.log("3:10:43 Simple Fields")
