@@ -642,6 +642,7 @@ console.log(bZxxzzx);
 // asal colok aja mau ke browser mana mana
 // macam macam biaya nya pula
 // OH IYA UDAH ATUH, TYPESCRIPT
+// Use Destructuring Assignment with the Rest Operator to Reassign Array Elements
 console.log("3:06:39 Template Literals")
 console.log("____________________")
 console.log("3:10:43 Simple Fields")
