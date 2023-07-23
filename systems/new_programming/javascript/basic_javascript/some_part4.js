@@ -535,6 +535,7 @@ console.log(squaredIntegers);
 // e.g.: "use short, succinct sentences"
 console.log("2:53:04 Default Parameters")
 console.log("____________________")
+// last position
 console.log("2:54:00 Rest Operator")
 console.log("____________________")
 console.log("2:55:31 Spread Operator")
