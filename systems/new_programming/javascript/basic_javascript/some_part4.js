@@ -633,6 +633,7 @@ let aZzxzzxzx = 8, bZxxzzx = 6;
 })();
 console.log(aZzxzzxzx); 
 console.log(bZxxzzx); 
+// WTF BUAT APA SIH ANJING JAVASCRIPT
 console.log("3:06:39 Template Literals")
 console.log("____________________")
 console.log("3:10:43 Simple Fields")
