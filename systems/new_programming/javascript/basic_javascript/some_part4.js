@@ -611,7 +611,11 @@ const LOCAL_FORECAST = {
 function getMaxOfTmrw(forecast) {
     "use strict";
     
-    const { tomorrow : { max : maxOfTomorrow } } = forecast; 
+    const { tomorrow : { max : maxOfTomorrow } } = forecast;
+    // EWW DI PYTHON MAH GINIH TAU
+    // ini_adalah_max_of_tomorrow = forecast["tomorrow"]["max"]
+    // return ini_adalah_max_of_tomorrow
+    // BERESSZSZSZSZZSZSZZSZZSZZSZSZS
     
     return maxOfTomorrow;
 }
