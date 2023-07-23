@@ -672,6 +672,14 @@ const halfDvsnoi = (function() {
 })();
 console.log(statsNvdnuonidv); 
 console.log(halfDvsnoi(statsNvdnuonidv)); 
+const halfNewDestructured = (function() {
+
+    return function half({ max, min }) { // makanya disingkat kayak gini
+        return (max + min) / 2.0;
+    };
+
+})();
+console.log(halfNewDestructured(statsNvdnuonidv)); 
 console.log("3:06:39 Template Literals")
 console.log("____________________")
 console.log("3:10:43 Simple Fields")
