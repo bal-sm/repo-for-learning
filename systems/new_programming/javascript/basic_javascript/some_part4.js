@@ -642,7 +642,18 @@ console.log(bZxxzzx);
 // asal colok aja mau ke browser mana mana
 // macam macam biaya nya pula
 // OH IYA UDAH ATUH, TYPESCRIPT
+//
 // Use Destructuring Assignment with the Rest Operator to Reassign Array Elements
+const source = [1,2,3,4,5,6,7,8,9,10];
+function removeFirstTwo(list) {
+
+    const arr = list; 
+
+    return arr;
+}
+const arr = removeFirstTwo(source);
+console.log(arr); 
+console.log(source);
 console.log("3:06:39 Template Literals")
 console.log("____________________")
 console.log("3:10:43 Simple Fields")
