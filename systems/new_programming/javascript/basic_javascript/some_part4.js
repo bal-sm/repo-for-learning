@@ -691,7 +691,7 @@ const person = {
 // Template literal with multi-line and string interpolation
 const greeting = `Hello, my name is ${person.name}!
 I am ${person.age} years old.`; // Ini teh gening gaganti ` dari " tapi mau ubah ubah gitu pake $, biar kayak Python, gimana aing we, males lookup da ngapain
-// terus sama bisa nambahin pake new line beneran
+// terus sama bisa nambahin pake new line beneran, sama " atau ' beneran
 // ini teh guys, aku terpaksa guys, gabisa anjing tanpa js teh, that's hard truth for web devs guys.
 // yang penting HRD perusahaan mau guys
 console.log(greeting); 
