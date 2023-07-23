@@ -622,7 +622,7 @@ function getMaxOfTmrw(forecast) {
 
 console.log("getMaxOfTmrw(LOCAL_FORECAST) = " + getMaxOfTmrw(LOCAL_FORECAST));
 // Use Destructuring Assignment to Assign Variables from Arrays
-const [z, x] = [1, 2, 3, 4, 5, 6];
+const [z, x, , y] = [1, 2, 3, 4, 5, 6]; // EW, WTF
 console.log(z, x);
 
 let a = 8, b = 6;
