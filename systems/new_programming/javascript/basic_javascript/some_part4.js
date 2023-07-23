@@ -723,6 +723,10 @@ const resultDisplayArray = makeList(result.failure);
 console.log(resultDisplayArray)
 console.log("3:10:43 Simple Fields")
 console.log("____________________")
+// Write Concise Object Literal Declarations Using Simple Fields
+// last position 3:10:43
+// https://www.youtube.com/watch?v=PkZNo7MFNFg
+// https://scrimba.com/playlist/p7v3gCd
 console.log("3:12:24 Declarative Functions")
 console.log("____________________")
 console.log("3:12:56 class Syntax")
