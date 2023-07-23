@@ -541,6 +541,7 @@ const incrementZzxzxzx = (function() {
     };
 }) ();
 console.log("incrementZzxzxzx(5, 2) = " + incrementZzxzxzx(5, 2));
+console.log("incrementZzxzxzx(13) = " + incrementZzxzxzx(13));
 console.log("2:54:00 Rest Operator")
 console.log("____________________")
 console.log("2:55:31 Spread Operator")
