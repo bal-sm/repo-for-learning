@@ -587,6 +587,7 @@ const { x : a, y : b, z : c } = voxel;
 console.log("a = " + a)
 console.log("b = " + b)
 console.log("c = " + c)
+console.log("IT'S WORKING GUYZ")
 console.log("3:06:39 Template Literals")
 console.log("____________________")
 console.log("3:10:43 Simple Fields")
