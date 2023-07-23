@@ -554,6 +554,14 @@ const sumZxzxzx = (function() {
     };
 })();
 console.log("sumZxzxzx(1, 2, 3) = " + sumZxzxzx(1, 2, 3))
+// let's convert that args to rest operator
+const sumRestZxzxz = (function() {
+    return function sumWeZ(...args) {
+        return args.reduce((a, b) => a + b, 0);
+    };
+})();
+// tuh jadinya ...args
+console.log("sumRestZxzxz(1, 2, 3, 4) = " + sumRestZxzxz(1, 2, 3))
 console.log("2:55:31 Spread Operator")
 console.log("____________________")
 console.log("2:57:18 Destructuring Assignment")
