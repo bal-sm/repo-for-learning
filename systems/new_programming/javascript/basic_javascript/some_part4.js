@@ -633,7 +633,11 @@ let aZzxzzxzx = 8, bZxxzzx = 6;
 })();
 console.log(aZzxzzxzx); 
 console.log(bZxxzzx); 
-// WTF BUAT APA SIH ANJING JAVASCRIPT
+// WTF BUAT APA SIH ANJING JAVASCRIPT, very sumpah ya kayak
+// programmers teh punya agama sendiri
+// terus oh iya kita agamanya javascript soalnya nenek moyang aing dari dulu gitu
+// tradisinya
+// terus OH IYA ATUH, SUMPAH AGAMA JAVASCRIPT THE BEST.
 console.log("3:06:39 Template Literals")
 console.log("____________________")
 console.log("3:10:43 Simple Fields")
