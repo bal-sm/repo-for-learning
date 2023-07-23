@@ -602,6 +602,21 @@ function getTempOfTmrw(avgTemperatues) {
 }
 
 console.log(getTempOfTmrw(AVG_TEMPERATURES))
+// Destructuring Assignment with Nested Objects
+const LOCAL_FORECAST = {
+    today: { min: 72, max: 83 },
+    tomorrow: { min: 73.3, max: 84.6 }
+};
+
+function getMaxOfTmrw(forecast) {
+    "use strict";
+    
+    const maxOfTomorrow = undefined; 
+    
+    return maxOfTomorrow;
+}
+
+console.log(getMaxOfTmrw(LOCAL_FORECAST));
 console.log("3:06:39 Template Literals")
 console.log("____________________")
 console.log("3:10:43 Simple Fields")
