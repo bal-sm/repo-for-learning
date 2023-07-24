@@ -853,3 +853,7 @@ temp = thermos.temperature;
 console.log(temp);
 console.log("3:20:25 import and export")
 console.log("____________________")
+// Understand the Differences Between import and require
+// sumpah da ini teh web browsernya mau pisan beda js file teh
+//
+// JavaScript kok bangga
