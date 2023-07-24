@@ -711,7 +711,7 @@ function makeList(arr) {
     for (let i = 0; i < arr.length; i++) {
         resultDisplayArray.push(`<li class="text-warning">${arr[i]}</li>`)
     }
-
+    // that is very unnecessary, IN PYTHON, IT"S VERY SUCCINCT.
     return resultDisplayArray;
 }
 /**
@@ -725,14 +725,136 @@ console.log(resultDisplayArray)
 console.log("3:10:43 Simple Fields")
 console.log("____________________")
 // Write Concise Object Literal Declarations Using Simple Fields
-// last position 3:10:43
-// https://www.youtube.com/watch?v=PkZNo7MFNFg
-// https://scrimba.com/playlist/p7v3gCd
+const createPersonQw = (name, age, gender) => {
+
+    return {
+        name: name,
+        age: age,
+        gender: gender
+    };
+
+};
+console.log(createPersonQw("Zodiac Hasbro", 56, "male")); 
+const createPersonNewwwwww = (name, age, gender) => ({name, age, gender});
+console.log(createPersonNewwwwww("Zodiac Hasbro", 56, "male")); 
+// JavaScript kok bangga
 console.log("3:12:24 Declarative Functions")
 console.log("____________________")
+// Write Concise Declarative Functions with ES6
+const bicycleQAndA = {
+    gear: 2,
+    setGear: function(newGear) {
+        "use strict";
+        this.gear = newGear;
+    }
+};
+
+bicycleQAndA.setGear(3);
+console.log(bicycleQAndA.gear);
+// new way cenah gini
+const bicycleWTF = {
+    gear: 2,
+    setGear(newGear) {
+        "use strict";
+        this.gear = newGear;
+    }
+};
+// kok bangga
+
+bicycleWTF.setGear(3);
+console.log(bicycleWTF.gear);
 console.log("3:12:56 class Syntax")
 console.log("____________________")
+// Use class Syntax to Define a Constructor Function
+var SpaceShuttle = function(targetPlanet){
+    this.targetPlanet = targetPlanet;
+}
+var zeus = new SpaceShuttle('Jupiter');
+
+console.log(zeus.targetPlanet)
+
+class SpaceShuttleNew {
+    constructor(targetPlanet) {
+        this.targetPlanet = targetPlanet;
+    }
+}
+var javier = new SpaceShuttleNew('Pluto');
+
+console.log(javier.targetPlanet)
+
+function makeClass() {
+    class Vegetable {
+        constructor(name) {
+            this.name = name
+        }
+    }
+    return Vegetable;
+}
+const Vegetable = makeClass();
+const carrot = new Vegetable('carrot');
+console.log(carrot.name); 
+
+// jadi gini guys, yang penting mah anjing nurut semua pake html css, and JS
+// AING MAU CAPRAK AH NYUSUN PROGRAMMING LANGUAGE TEH, GIMANA AING AJA
 console.log("3:15:11 getters and setters")
 console.log("____________________")
+// Use getters and setters to Control Access to an Object
+// last position
+// https://www.youtube.com/watch?v=PkZNo7MFNFg
+// https://scrimba.com/playlist/p7v3gCd
+class Book {
+    constructor(author, to) {
+        this._author = author;
+        this._to = to;
+    }
+    // use _ before word to assign a ✨private variable✨
+    // getter
+    get writer(){
+        return this._author;
+    }
+    get for(){
+        return this._to;
+    }
+    // there will be no setter
+}
+
+var FiftyShades = new Book("Greg Dawson", "Craig Dawson")
+
+console.log(FiftyShades.writer)
+console.log(FiftyShades.for)
+// ever. gay, btw Greg Dawson teh nama anonim yang aku buat Baginda Rasulullah saw.,
+// dan aku Craig Dawsonnya.
+// banyak gitu loh istrinya, ngerti gak
+// "tapi baru euy ini mah aku ke cowok." - Muhammad saw.
+//
+//
+function makeClass() {
+    class Thermostat {
+        constructor (theTemp) {
+            this._theTemp = theTemp;
+        }
+        get temperaturePlz() {
+            return theTemp
+        }
+        set temperaturePlz(updatedTemp) { // whoops pake () daripada {}
+            this._theTemp = updatedTemp
+        }
+    }
+    return Thermostat;
+}
+
+const Thermostat = makeClass();
+const thermos = new Thermostat(76); 
+let temp = thermos.temperature; 
+/// if it's a function then it should be thermos temperature (). BUT IT"S NOT, 'cause get and setter are
+// accessed like property
+thermos.temperature = 26;
+temp = thermos.temperature; 
+console.log(temp);
 console.log("3:20:25 import and export")
 console.log("____________________")
+// Understand the Differences Between import and require
+// sumpah da ini teh web browsernya mau pisan beda js file teh
+//
+// JavaScript kok bangga
+// next fileee
