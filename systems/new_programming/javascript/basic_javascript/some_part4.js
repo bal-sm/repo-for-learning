@@ -836,9 +836,9 @@ function makeClass() {
         get temperaturePlz() {
             return theTemp
         }
-        set temperaturePlz(updatedTemp) (
+        set temperaturePlz(updatedTemp) { // whoops pake () daripada {}
             this._theTemp = updatedTemp
-        )
+        }
     }
     return Thermostat;
 }
