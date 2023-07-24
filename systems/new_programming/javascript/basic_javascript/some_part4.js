@@ -765,6 +765,7 @@ const bicycleWTF = {
 // kok bangga
 
 bicycleWTF.setGear(3);
+console.log(bicycleWTF.gear);
 console.log("3:12:56 class Syntax")
 console.log("____________________")
 console.log("3:15:11 getters and setters")
