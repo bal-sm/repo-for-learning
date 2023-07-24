@@ -728,7 +728,7 @@ console.log("____________________")
 // last position 3:10:43
 // https://www.youtube.com/watch?v=PkZNo7MFNFg
 // https://scrimba.com/playlist/p7v3gCd
-const createPerson = (name, age, gender) => {
+const createPersonQw = (name, age, gender) => {
 
     return {
         name: name,
@@ -737,7 +737,7 @@ const createPerson = (name, age, gender) => {
     };
 
 };
-console.log(createPerson("Zodiac Hasbro", 56, "male")); 
+console.log(createPersonQw("Zodiac Hasbro", 56, "male")); 
 console.log("3:12:24 Declarative Functions")
 console.log("____________________")
 console.log("3:12:56 class Syntax")
