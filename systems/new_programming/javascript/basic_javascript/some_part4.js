@@ -776,7 +776,14 @@ var zeus = new SpaceShuttle('Jupiter');
 
 console.log(zeus.targetPlanet)
 
+class SpaceShuttleNew {
+    constructor(targetPlanet) {
+        this.targetPlanet = targetPlanet;
+    }
+}
+var javier = new SpaceShuttleNew('Pluto');
 
+console.log(javier.targetPlanet)
 
 // function makeClass() {
 
