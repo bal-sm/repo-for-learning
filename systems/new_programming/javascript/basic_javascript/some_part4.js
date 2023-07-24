@@ -711,7 +711,7 @@ function makeList(arr) {
     for (let i = 0; i < arr.length; i++) {
         resultDisplayArray.push(`<li class="text-warning">${arr[i]}</li>`)
     }
-
+    // that is very unnecessary, IN PYTHON, IT"S VERY SUCCINCT.
     return resultDisplayArray;
 }
 /**
