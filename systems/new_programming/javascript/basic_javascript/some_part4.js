@@ -769,6 +769,22 @@ console.log("____________________")
 // last position
 // https://www.youtube.com/watch?v=PkZNo7MFNFg
 // https://scrimba.com/playlist/p7v3gCd
+var SpaceShuttle = function(targetPlanet){
+    this.targetPlanet = targetPlanet;
+}
+var zeus = new SpaceShuttle('Jupiter');
+
+console.log(zeus.targetPlanet)
+
+
+
+// function makeClass() {
+
+//   return Vegetable;
+// }
+// const Vegetable = makeClass();
+// const carrot = new Vegetable('carrot');
+// console.log(carrot.name); 
 console.log("3:15:11 getters and setters")
 console.log("____________________")
 console.log("3:20:25 import and export")
