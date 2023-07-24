@@ -846,6 +846,8 @@ function makeClass() {
 const Thermostat = makeClass();
 const thermos = new Thermostat(76); 
 let temp = thermos.temperature; 
+/// if it's a function then it should be thermos temperature (). BUT IT"S NOT, 'cause get and setter are
+// accessed like property
 thermos.temperature = 26;
 temp = thermos.temperature; 
 console.log("3:20:25 import and export")
