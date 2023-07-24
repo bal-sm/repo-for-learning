@@ -828,15 +828,25 @@ console.log(FiftyShades.for)
 // "tapi baru euy ini mah aku ke cowok." - Muhammad saw.
 //
 //
-// function makeClass() {
-// 
-//     return Thermostat;
-// }
-// 
-// const Thermostat = makeClass();
-// const thermos = new Thermostat(76); 
-// let temp = thermos.temperature; 
-// thermos.temperature = 26;
-// temp = thermos.temperature; 
+function makeClass() {
+    class Thermostat {
+        constructor (theTemp) {
+            this._theTemp = theTemp;
+        }
+        get temperaturePlz() {
+            return theTemp
+        }
+        set temperaturePlz(updatedTemp) (
+            this._theTemp = updatedTemp
+        )
+    }
+    return Thermostat;
+}
+
+const Thermostat = makeClass();
+const thermos = new Thermostat(76); 
+let temp = thermos.temperature; 
+thermos.temperature = 26;
+temp = thermos.temperature; 
 console.log("3:20:25 import and export")
 console.log("____________________")
