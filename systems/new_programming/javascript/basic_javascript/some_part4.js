@@ -785,13 +785,17 @@ var javier = new SpaceShuttleNew('Pluto');
 
 console.log(javier.targetPlanet)
 
-// function makeClass() {
-
-//   return Vegetable;
-// }
-// const Vegetable = makeClass();
-// const carrot = new Vegetable('carrot');
-// console.log(carrot.name); 
+function makeClass() {
+    class Vegetable {
+        constructor(name) {
+            this.name = name
+        }
+    }
+    return Vegetable;
+}
+const Vegetable = makeClass();
+const carrot = new Vegetable('carrot');
+console.log(carrot.name); 
 
 // jadi gini guys, yang penting mah anjing nurut semua pake html css, and JS
 // AING MAU CAPRAK AH NYUSUN PROGRAMMING LANGUAGE TEH, GIMANA AING AJA
