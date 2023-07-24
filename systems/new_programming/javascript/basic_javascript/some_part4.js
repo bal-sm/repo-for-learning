@@ -806,6 +806,7 @@ class Book {
     constructor(author) {
         this._author = author;
     }
+    // use _ before word to assign a ✨private variable✨
     // getter
     get writer(){
         return this._author;
