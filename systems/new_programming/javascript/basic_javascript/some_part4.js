@@ -803,7 +803,7 @@ console.log("____________________")
 // https://www.youtube.com/watch?v=PkZNo7MFNFg
 // https://scrimba.com/playlist/p7v3gCd
 class Book {
-    constructor(author) {
+    constructor(author, to) {
         this._author = author;
         this._to = to;
     }
