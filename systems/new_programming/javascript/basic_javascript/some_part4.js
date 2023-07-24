@@ -826,6 +826,8 @@ console.log(FiftyShades.for)
 // dan aku Craig Dawsonnya.
 // banyak gitu loh istrinya, ngerti gak
 // "tapi baru euy ini mah aku ke cowok." - Muhammad saw.
+//
+//
 // function makeClass() {
 // 
 //     return Thermostat;
