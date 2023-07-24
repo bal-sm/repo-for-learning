@@ -725,9 +725,6 @@ console.log(resultDisplayArray)
 console.log("3:10:43 Simple Fields")
 console.log("____________________")
 // Write Concise Object Literal Declarations Using Simple Fields
-// last position 3:10:43
-// https://www.youtube.com/watch?v=PkZNo7MFNFg
-// https://scrimba.com/playlist/p7v3gCd
 const createPersonQw = (name, age, gender) => {
 
     return {
@@ -743,6 +740,20 @@ console.log(createPersonNewwwwww("Zodiac Hasbro", 56, "male"));
 // JavaScript kok bangga
 console.log("3:12:24 Declarative Functions")
 console.log("____________________")
+// Write Concise Declarative Functions with ES6
+// last position
+// https://www.youtube.com/watch?v=PkZNo7MFNFg
+// https://scrimba.com/playlist/p7v3gCd
+const bicycleQAndA = {
+    gear: 2,
+    setGear: function(newGear) {
+        "use strict";
+        this.gear = newGear;
+    }
+};
+
+bicycleQAndA.setGear(3);
+console.log(bicycleQAndA.gear);
 console.log("3:12:56 class Syntax")
 console.log("____________________")
 console.log("3:15:11 getters and setters")
