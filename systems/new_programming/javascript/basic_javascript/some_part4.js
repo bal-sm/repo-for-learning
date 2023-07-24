@@ -815,12 +815,17 @@ class Book {
     get for(){
         return this._to;
     }
+    // there will be no setter
 }
 
 var FiftyShades = new Book("Greg Dawson", "Craig Dawson")
 
 console.log(FiftyShades.writer)
 console.log(FiftyShades.for)
+// ever. gay, btw Greg Dawson teh nama anonim yang aku buat Baginda Rasulullah saw.,
+// dan aku Craig Dawsonnya.
+// banyak gitu loh istrinya, ngerti gak
+// "tapi baru euy ini mah aku ke cowok." - Muhammad saw.
 // function makeClass() {
 // 
 //     return Thermostat;
