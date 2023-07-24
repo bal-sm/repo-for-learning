@@ -754,6 +754,17 @@ const bicycleQAndA = {
 
 bicycleQAndA.setGear(3);
 console.log(bicycleQAndA.gear);
+// new way cenah gini
+const bicycleWTF = {
+    gear: 2,
+    setGear(newGear) {
+        "use strict";
+        this.gear = newGear;
+    }
+};
+// kok bangga
+
+bicycleWTF.setGear(3);
 console.log("3:12:56 class Syntax")
 console.log("____________________")
 console.log("3:15:11 getters and setters")
