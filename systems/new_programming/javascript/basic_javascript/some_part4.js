@@ -802,5 +802,29 @@ console.log("____________________")
 // last position
 // https://www.youtube.com/watch?v=PkZNo7MFNFg
 // https://scrimba.com/playlist/p7v3gCd
+class Book {
+    constructor(author) {
+        this._author = author;
+    }
+    // getter
+    get writer(){
+        return this._author;
+    }
+    // setter
+    set writer(updatedAuthor){
+        this._author = updatedAuthor;
+    }
+}
+
+function makeClass() {
+
+    return Thermostat;
+}
+
+const Thermostat = makeClass();
+const thermos = new Thermostat(76); 
+let temp = thermos.temperature; 
+thermos.temperature = 26;
+temp = thermos.temperature; 
 console.log("3:20:25 import and export")
 console.log("____________________")
