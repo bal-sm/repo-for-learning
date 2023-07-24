@@ -857,3 +857,4 @@ console.log("____________________")
 // sumpah da ini teh web browsernya mau pisan beda js file teh
 //
 // JavaScript kok bangga
+// next fileee
