@@ -805,6 +805,7 @@ console.log("____________________")
 class Book {
     constructor(author) {
         this._author = author;
+        this._to = to;
     }
     // use _ before word to assign a ✨private variable✨
     // getter
@@ -815,17 +816,29 @@ class Book {
     set writer(updatedAuthor){
         this._author = updatedAuthor;
     }
+    get for(){
+        return this._to;
+    }
+    set for(updatedTo){
+        this._to = updatedTo;
+    }
 }
 
-function makeClass() {
+var FiftyShades = new Book
+FiftyShades.writer("Greg Dawson")
+FiftyShades.for("Craig Dawson")
 
-    return Thermostat;
-}
-
-const Thermostat = makeClass();
-const thermos = new Thermostat(76); 
-let temp = thermos.temperature; 
-thermos.temperature = 26;
-temp = thermos.temperature; 
+console.log(FiftyShades.writer)
+console.log(FiftyShades.for)
+// function makeClass() {
+// 
+//     return Thermostat;
+// }
+// 
+// const Thermostat = makeClass();
+// const thermos = new Thermostat(76); 
+// let temp = thermos.temperature; 
+// thermos.temperature = 26;
+// temp = thermos.temperature; 
 console.log("3:20:25 import and export")
 console.log("____________________")
