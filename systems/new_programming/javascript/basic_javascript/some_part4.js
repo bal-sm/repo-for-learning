@@ -741,9 +741,6 @@ console.log(createPersonNewwwwww("Zodiac Hasbro", 56, "male"));
 console.log("3:12:24 Declarative Functions")
 console.log("____________________")
 // Write Concise Declarative Functions with ES6
-// last position
-// https://www.youtube.com/watch?v=PkZNo7MFNFg
-// https://scrimba.com/playlist/p7v3gCd
 const bicycleQAndA = {
     gear: 2,
     setGear: function(newGear) {
@@ -768,6 +765,10 @@ bicycleWTF.setGear(3);
 console.log(bicycleWTF.gear);
 console.log("3:12:56 class Syntax")
 console.log("____________________")
+// Use class Syntax to Define a Constructor Function
+// last position
+// https://www.youtube.com/watch?v=PkZNo7MFNFg
+// https://scrimba.com/playlist/p7v3gCd
 console.log("3:15:11 getters and setters")
 console.log("____________________")
 console.log("3:20:25 import and export")
