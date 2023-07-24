@@ -766,9 +766,6 @@ console.log(bicycleWTF.gear);
 console.log("3:12:56 class Syntax")
 console.log("____________________")
 // Use class Syntax to Define a Constructor Function
-// last position
-// https://www.youtube.com/watch?v=PkZNo7MFNFg
-// https://scrimba.com/playlist/p7v3gCd
 var SpaceShuttle = function(targetPlanet){
     this.targetPlanet = targetPlanet;
 }
@@ -801,5 +798,9 @@ console.log(carrot.name);
 // AING MAU CAPRAK AH NYUSUN PROGRAMMING LANGUAGE TEH, GIMANA AING AJA
 console.log("3:15:11 getters and setters")
 console.log("____________________")
+// Use getters and setters to Control Access to an Object
+// last position
+// https://www.youtube.com/watch?v=PkZNo7MFNFg
+// https://scrimba.com/playlist/p7v3gCd
 console.log("3:20:25 import and export")
 console.log("____________________")
