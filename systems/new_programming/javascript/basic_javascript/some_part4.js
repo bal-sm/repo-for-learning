@@ -824,9 +824,7 @@ class Book {
     }
 }
 
-var FiftyShades = new Book
-FiftyShades.writer("Greg Dawson")
-FiftyShades.for("Craig Dawson")
+var FiftyShades = new Book("Greg Dawson", "Craig Dawson")
 
 console.log(FiftyShades.writer)
 console.log(FiftyShades.for)
