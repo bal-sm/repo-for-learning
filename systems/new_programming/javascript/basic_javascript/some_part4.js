@@ -785,6 +785,9 @@ console.log(zeus.targetPlanet)
 // const Vegetable = makeClass();
 // const carrot = new Vegetable('carrot');
 // console.log(carrot.name); 
+
+// jadi gini guys, yang penting mah anjing nurut semua pake html css, and JS
+// AING MAU CAPRAK AH NYUSUN PROGRAMMING LANGUAGE TEH, GIMANA AING AJA
 console.log("3:15:11 getters and setters")
 console.log("____________________")
 console.log("3:20:25 import and export")
