@@ -738,6 +738,9 @@ const createPersonQw = (name, age, gender) => {
 
 };
 console.log(createPersonQw("Zodiac Hasbro", 56, "male")); 
+const createPersonNewwwwww = (name, age, gender) => ({name, age, gender});
+console.log(createPersonNewwwwww("Zodiac Hasbro", 56, "male")); 
+// JavaScript kok bangga
 console.log("3:12:24 Declarative Functions")
 console.log("____________________")
 console.log("3:12:56 class Syntax")
