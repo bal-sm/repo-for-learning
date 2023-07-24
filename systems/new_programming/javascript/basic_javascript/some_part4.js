@@ -812,15 +812,8 @@ class Book {
     get writer(){
         return this._author;
     }
-    // setter
-    set writer(updatedAuthor){
-        this._author = updatedAuthor;
-    }
     get for(){
         return this._to;
-    }
-    set for(updatedTo){
-        this._to = updatedTo;
     }
 }
 
