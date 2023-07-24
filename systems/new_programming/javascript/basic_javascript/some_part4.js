@@ -850,5 +850,6 @@ let temp = thermos.temperature;
 // accessed like property
 thermos.temperature = 26;
 temp = thermos.temperature; 
+console.log(temp);
 console.log("3:20:25 import and export")
 console.log("____________________")
