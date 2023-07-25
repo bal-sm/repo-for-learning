@@ -28,3 +28,5 @@ import subtract
 // if it's not a default export, then it is `import { substract }`
 
 subtract(7,4);
+
+// omG, what a mob, I feel safe tapi ada Aa. Kita gak akan pernah terpisah. Benar benar satu pikiran.
