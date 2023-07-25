@@ -29,4 +29,4 @@ import subtract
 
 subtract(7,4);
 
-// omG, what a mob, I feel safe tapi ada Aa. Kita gak akan pernah terpisah. Benar benar satu pikiran.
+// omG, what a mob, I feel safe karena ada Aa. Kita gak akan pernah terpisah. Benar benar satu pikiran.
