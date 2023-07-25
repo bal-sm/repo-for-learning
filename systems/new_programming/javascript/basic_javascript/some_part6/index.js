@@ -18,4 +18,4 @@ import * as capitalizeStrings from "capitalize_strings";
 // -------------------------------------------------
 // Create an Export Fallback with export default
 
-function subtract(x,y) {return x - y;}
+function subtract(x,y) {return x - y;} // let's turn it to a fallback export
