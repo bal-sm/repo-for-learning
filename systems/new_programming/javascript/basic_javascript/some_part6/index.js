@@ -20,3 +20,8 @@ import * as capitalizeStrings from "capitalize_strings";
 
 export default function subtract(x,y) {return x - y;} // let's turn it to a fallback export, DONE
 // ----------^ that is a grate fallback export
+
+// -------------------------------------------------
+// Import a Default Export
+
+subtract(7,4);
