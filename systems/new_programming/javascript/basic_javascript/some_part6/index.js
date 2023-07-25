@@ -14,3 +14,7 @@ export const bar = "foo";
 
 import * as capitalizeStrings from "capitalize_strings";
 // "./capitalize_strings" if it's on the same directory
+
+// Create an Export Fallback with export default
+
+function subtract(x,y) {return x - y;}
