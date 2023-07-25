@@ -24,4 +24,7 @@ export default function subtract(x,y) {return x - y;} // let's turn it to a fall
 // -------------------------------------------------
 // Import a Default Export
 
+import subtract
+// if it's not a default export, then it is `import { substract }`
+
 subtract(7,4);
