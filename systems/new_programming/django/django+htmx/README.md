@@ -10,3 +10,7 @@
 
 Note 1:
 > What is AJAX requests?
+
+Note 2:
+Him:
+> It can simplify your architecture instead using library such as React or Vue.js.
