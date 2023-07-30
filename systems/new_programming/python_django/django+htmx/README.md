@@ -32,6 +32,13 @@ This tells htmx:
 >   - use _the **content** from the response_ to 
 >     - **replace** _the element with the id `parent-div`_ in the [`DOM`](https://www.w3schools.com/js/js_htmldom.asp).
 
+---
+
+- `htmx` extends and generalizes the core idea of `HTML` as a _**hypertext**_, 
+  > opening up many more possibilities directly within the language:
+  - **Now** any element, not just anchors and forms, can issue an HTTP request
+    > Misalnya kayak button di atas tadi, terus HTTP request a response text yang bakal ditaro di id yang namanya `parent-div`
+
 ## Source(s)
 
 - [Django & HTMX by Bugbytes](https://www.youtube.com/playlist?list=PL-2EBeDYMIbRByZ8GXhcnQSuv2dog4JxY)
