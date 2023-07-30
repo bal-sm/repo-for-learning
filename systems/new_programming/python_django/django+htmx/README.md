@@ -38,6 +38,8 @@ This tells htmx:
   > opening up many more possibilities directly within the language:
   - **Now** any element, not just anchors and forms, can issue an HTTP request
     > Misalnya kayak button di atas tadi, terus HTTP request a response text yang bakal ditaro di id yang namanya `parent-div`
+  - **Now** any event, not just clicks or form submissions, can trigger requests
+    > Okay, learning-in-progress , fill this plz maksudnya gimana.
 
 ## Source(s)
 
