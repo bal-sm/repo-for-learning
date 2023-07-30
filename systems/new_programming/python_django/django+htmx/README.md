@@ -122,3 +122,21 @@ Note 3 from [reddit, HTMX and Alpine.js](https://www.reddit.com/r/django/comment
 
 Mine:
 > Wow guys baca [999, wow], a drop down menu/menu bar, undo, redo, edit, etc, guys. This is very important.
+
+Note 4, still by Author of Note 3 (Very-very Important):
+
+Question:
+> Okay got it. I'm already using bootstrap so I was a little confused about the utility of alpine.js. Bootstrap already offers a lot of dynamic content with tabs, dropdowns, etc
+>
+> Same with Django, I was looking at the x-for attribute in alpine.js for example and it's something that could be achievable directly with HTMX and Django template tags.
+>
+> ~~However, there is one functionality that I was hoping I could maybe get from HTMX or alpine.js, and that would be to be able to update the content of a chart.js script without getting too involved with JavaScript. But since HTMX returns html, I don't think that I will have any other options~~ (not important part of the question)
+
+Answer by [u/_htmx](https://www.reddit.com/user/_htmx/) themself:
+> Alpine will overlap to an extent with what bootstrap gives you as far as front end functionality goes, but it is much more general and powerful.
+>
+> Also, using Alpine, you can hook into the htmx event model, [which is extensive](https://htmx.org/reference/#events), in a nice, inline manner that is consistent with the [Locality of Behavior](https://htmx.org/essays/locality-of-behaviour/) of htmx. This would be an advanced use case, but might come up as you get deeper into things.
+>
+> Alpine is a great investment of time IMO. It has a very high power to weight ratio when compared w/ other SPA libraries.
+>
+> I also have to mention, on general principle, [hyperscript](https://hyperscript.org/), a front end scripting language that we are working on alongside htmx. It is for crazy people only, but it has some interesting functionality and fills a similar niche to Alpine: light, event-driven front end scripting. Don't use it. :)
