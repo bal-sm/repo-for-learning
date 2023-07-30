@@ -95,7 +95,7 @@ Him:
 
 ---
 
-Note 3 from [reddit, HTMX and Alpine.js](https://www.reddit.com/r/django/comments/s00xij/htmx_and_alpinejs/)
+Note 3 from [reddit, HTMX and Alpine.js](https://www.reddit.com/r/django/comments/s00xij/htmx_and_alpinejs/) (VERY IMPORTANT, LIKE VERY VERY IMPORTANT):
 
 > Question:
 >
@@ -111,6 +111,9 @@ Note 3 from [reddit, HTMX and Alpine.js](https://www.reddit.com/r/django/comment
 >   - _**alpine** replaces js that doesn’t interact with the server_ and 
 >   - **htmx** covers js that **does**.
 > 
-> A drop down menu toggle would be something you would use alpine for and not htmx. If you use a component framework like bootstrap you’ll probably be fine without alpine for most cases.
+> **A drop down menu toggle**[999, wow] would be something you would use alpine for and not htmx. If you use a component framework like bootstrap you’ll probably be fine without alpine for most cases.
 > 
 > As a far as pairing goes, just include the scripts in your template and go wild.
+
+Mine:
+> Wow guys baca [999, wow], a drop down menu/menu bar, undo, redo, edit, etc, guys. This is very important.
