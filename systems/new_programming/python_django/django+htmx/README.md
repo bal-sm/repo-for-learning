@@ -1,5 +1,13 @@
 # Django + HTMX guys
 
+## Table of Contents
+
+- [Django + HTMX guys](#django--htmx-guys)
+  - [Table of Contents](#table-of-contents)
+  - [htmx in a Nutshell](#htmx-in-a-nutshell)
+  - [Source(s)](#sources)
+  - [Learning in Progress](#learning-in-progress)
+
 ## [htmx in a Nutshell](https://htmx.org/docs/#introduction)
 
 - `htmx` is a library that 
