@@ -5,6 +5,7 @@
 - [Django + HTMX guys](#django--htmx-guys)
   - [Table of Contents](#table-of-contents)
   - [htmx in a Nutshell](#htmx-in-a-nutshell)
+  - [Notebook of Video 1 by Bugbytes](#notebook-of-video-1-by-bugbytes)
   - [Source(s)](#sources)
   - [Learning in Progress](#learning-in-progress)
 
@@ -77,6 +78,10 @@ It’s worth mentioning that, if you prefer, you can use the `data-` prefix when
 
 Mine:
 > Buat apa coba, kita liat aja vid nya bugbytes.
+
+## Notebook of Video 1 by Bugbytes
+
+...
 
 ## Source(s)
 
