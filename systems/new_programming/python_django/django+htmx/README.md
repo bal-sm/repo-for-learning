@@ -94,3 +94,23 @@ Him:
 > It can simplify your architecture instead using library such as React or Vue.js.
 
 ---
+
+Note 3 from [reddit, HTMX and Alpine.js](https://www.reddit.com/r/django/comments/s00xij/htmx_and_alpinejs/)
+
+> Question:
+>
+> Hey everyone,
+> 
+> I recently started experimenting with HTMX on my Django project and I absolutely love it. Other people in this sub have been saying that htmx pairs really well with alpine.js so I started looking up tutorials on it.
+> 
+> My question is how do you pair these 2 together? What is a common practice?
+>
+> Answer:
+>
+> - I’m simplifying but:
+>   - _**alpine** replaces js that doesn’t interact with the server_ and 
+>   - **htmx** covers js that **does**.
+> 
+> A drop down menu toggle would be something you would use alpine for and not htmx. If you use a component framework like bootstrap you’ll probably be fine without alpine for most cases.
+> 
+> As a far as pairing goes, just include the scripts in your template and go wild.
