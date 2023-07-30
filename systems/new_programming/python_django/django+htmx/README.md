@@ -67,6 +67,17 @@ The rest of the note:
 Mine:
 > Okay, y'know, kayak biasa aja bacot aneh-aneh gening, padahal simple conceptnya, kayak wtf is out of band coba.
 
+---
+
+It’s worth mentioning that, if you prefer, you can use the `data-` prefix when using htmx:
+
+```html
+<a data-hx-post="/click">Click Me!</a>
+```
+
+Mine:
+> Buat apa coba, kita liat aja vid nya bugbytes.
+
 ## Source(s)
 
 - [Django & HTMX by Bugbytes](https://www.youtube.com/playlist?list=PL-2EBeDYMIbRByZ8GXhcnQSuv2dog4JxY)
