@@ -53,6 +53,20 @@ This tells htmx:
   - Now any element, not just the entire window, can be the target for update by the request
     > kayak tadi `parent-div` tea
 
+Note that: (very important) 
+> when you are using `htmx`, on the server side you _typically respond with `HTML`_, **not `JSON`**. 
+> 
+> This keeps you firmly within the [original web programming model](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm), 
+
+Mine:
+> Ew, wtf reads that.
+
+The rest of the note:
+> using [Hypertext As The Engine Of Application State](https://en.wikipedia.org/wiki/HATEOAS) without even needing to really understand that concept.
+
+Mine:
+> Okay, y'know, kayak biasa aja bacot aneh-aneh gening, padahal simple conceptnya, kayak wtf is out of band coba.
+
 ## Source(s)
 
 - [Django & HTMX by Bugbytes](https://www.youtube.com/playlist?list=PL-2EBeDYMIbRByZ8GXhcnQSuv2dog4JxY)
