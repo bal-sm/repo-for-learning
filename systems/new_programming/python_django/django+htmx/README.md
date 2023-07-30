@@ -41,6 +41,8 @@ This tells htmx:
   - **Now** any event, not just clicks or form submissions, can trigger requests
     > Okay, learning-in-progress , fill this plz maksudnya gimana.
   - **Now** any _[HTTP verb](https://en.wikipedia.org/wiki/HTTP_Verbs)_, not just `GET` and `POST`, can be used
+  - Now any element, not just the entire window, can be the target for update by the request
+    > kayak tadi `parent-div` tea
 
 ## Source(s)
 
