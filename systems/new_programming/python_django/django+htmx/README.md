@@ -40,6 +40,7 @@ This tells htmx:
     > Misalnya kayak button di atas tadi, terus HTTP request a response text yang bakal ditaro di id yang namanya `parent-div`
   - **Now** any event, not just clicks or form submissions, can trigger requests
     > Okay, learning-in-progress , fill this plz maksudnya gimana.
+  - **Now** any _[HTTP verb](https://en.wikipedia.org/wiki/HTTP_Verbs)_, not just `GET` and `POST`, can be used
 
 ## Source(s)
 
