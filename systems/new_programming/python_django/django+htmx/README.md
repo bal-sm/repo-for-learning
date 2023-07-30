@@ -59,9 +59,13 @@ This tells htmx:
 
 ## Learning in Progress
 
+From [this video](https://www.youtube.com/watch?v=Ula0c_rZ6gk&list=PL-2EBeDYMIbRByZ8GXhcnQSuv2dog4JxY&index=1&t=65s):
+
 Note 1:
 > What is AJAX requests?
 
 Note 2:
 Him:
 > It can simplify your architecture instead using library such as React or Vue.js.
+
+---
