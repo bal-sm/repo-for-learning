@@ -25,19 +25,18 @@ print("---")
 print("item2")
 
 
-class Item:
-    pass
+# class Item:
+#     pass
 
+# item2 = Item()
+# item2.name = "Phone"
+# item2.price = 100
+# item2.quantity = 5
 
-item2 = Item()
-item2.name = "Phone"
-item2.price = 100
-item2.quantity = 5
-
-print(type(item2))
-print(type(item2.name))
-print(type(item2.price))
-print(type(item2.quantity))
+# print(type(item2))
+# print(type(item2.name))
+# print(type(item2.price))
+# print(type(item2.quantity))
 
 # The output:
 # <class '__main__.Item'>
@@ -56,3 +55,25 @@ print(some_str.upper())
 # OPERA
 
 # `upper` is a method from `str` class
+
+# Back to class Item()
+
+print("---")
+
+print("item2, and updated `Item` class")
+
+
+class Item:
+    def calculate_total_price(self, x, y):
+        return x * y
+
+
+item2 = Item()
+item2.name = "Phone"
+item2.price = 100
+item2.quantity = 5
+item2_total = item2.calculate_total_price(item2.price, item2.quantity)
+
+print(item2_total)
+
+print("---")
