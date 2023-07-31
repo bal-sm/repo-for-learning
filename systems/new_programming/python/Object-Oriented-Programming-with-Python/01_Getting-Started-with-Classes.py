@@ -64,6 +64,8 @@ print("item2, and updated `Item` class")
 
 
 class Item:
+    # def __init__(self):
+    #     print("something")
     def calculate_total_price(self, x, y):
         return x * y
 
@@ -75,5 +77,9 @@ item2.quantity = 5
 item2_total = item2.calculate_total_price(item2.price, item2.quantity)
 
 print(item2_total)
+
+print("`__init__` method guys, magic pisan")
+
+print("Tulis what is `__int__` definition...")
 
 print("---")
