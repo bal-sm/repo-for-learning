@@ -38,3 +38,21 @@ print(type(item2))
 print(type(item2.name))
 print(type(item2.price))
 print(type(item2.quantity))
+
+# The output:
+# <class '__main__.Item'>
+# <class 'str'>
+# <class 'int'>
+# <class 'int'>
+
+print("---")
+
+print("some_str, string, and some of its methods")
+
+some_str = "opera"
+print(some_str.upper())
+
+# The output:
+# OPERA
+
+# `upper` is a method from `str` class
