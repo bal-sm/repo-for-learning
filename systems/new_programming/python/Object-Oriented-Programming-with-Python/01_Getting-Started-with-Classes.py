@@ -1,5 +1,7 @@
 # Getting Started with Classes
 
+print("item1")
+
 item1 = "Phone"
 item1_price = 100
 item1_quantity = 5
@@ -17,3 +19,22 @@ print(type(item1_price_total))
 # <class 'int'>
 
 # str and int are classes, guys
+
+print("---")
+
+print("item2")
+
+
+class Item:
+    pass
+
+
+item2 = Item()
+item2.name = "Phone"
+item2.price = 100
+item2.quantity = 5
+
+print(type(item2))
+print(type(item2.name))
+print(type(item2.price))
+print(type(item2.quantity))
