@@ -15,3 +15,5 @@ print(type(item1_price_total))
 # <class 'int'>
 # <class 'int'>
 # <class 'int'>
+
+# str and int are classes, guys
