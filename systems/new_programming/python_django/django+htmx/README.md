@@ -97,11 +97,13 @@ hx-posts="/check_username/" hx-trigger="keyup" hx-target="#username-error"
 > Jadinya, user name di cek setiap saat apakah udah ada, takutnya nanti duplicate, terus di cek stiap tekan tombol keyboard.
 
 Updated html:
+
 ```html
 {{ form.username.errors }}
 {% render_field form.username class="form-control" hx-posts="/check_username/" hx-trigger="keyup" hx-target="#username-error" %}
-<div id="username-error"></div>
+<div id="username-error"></div> <!-- ini nanti diganti sama hx-target -->
 ```
+
 ## Source(s)
 
 - [Django & HTMX by Bugbytes](https://www.youtube.com/playlist?list=PL-2EBeDYMIbRByZ8GXhcnQSuv2dog4JxY)
