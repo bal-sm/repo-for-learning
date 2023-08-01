@@ -28,4 +28,6 @@ class RegisterView(FormView):
 
 
 def check_username(request):
-    pass
+    username = request.POST.get(
+        "username"
+    )  # get from the `hx-post`, and `RegisterForm` filled form `username` tea
