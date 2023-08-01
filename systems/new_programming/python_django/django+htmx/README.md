@@ -100,7 +100,7 @@ Updated html:
 
 ```html
 {{ form.username.errors }}
-{% render_field form.username class="form-control" hx-posts="/check_username/" hx-trigger="keyup" hx-target="#username-error" %}
+{% render_field form.username class="form-control" hx-post="/check_username/" hx-trigger="keyup" hx-target="#username-error" %}
 <div id="username-error"></div> <!-- ini nanti diganti sama hx-target -->
 ```
 
