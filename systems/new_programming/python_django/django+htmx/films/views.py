@@ -31,3 +31,7 @@ def check_username(request):
     username = request.POST.get(
         "username"
     )  # get from the `hx-post`, and `RegisterForm` filled form `username` tea
+    if get_user_model.filter(username=username).exists:
+        return HttpResponse("This username is already exists")
+    else:
+        return HttpResponse("This username is available, guys.")
