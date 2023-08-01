@@ -6,7 +6,7 @@
   - [Table of Contents](#table-of-contents)
   - [htmx in a Nutshell](#htmx-in-a-nutshell)
   - [Notebook of Video 1 by Bugbytes](#notebook-of-video-1-by-bugbytes)
-  - [Swapping](#swapping)
+    - [Swapping example](#swapping-example)
   - [Source(s)](#sources)
   - [Learning in Progress](#learning-in-progress)
 
@@ -123,7 +123,7 @@ def check_username(request):
         return HttpResponse("This username is available, guys.")
 ```
 
-## [Swapping](https://htmx.org/docs/#swapping)
+### [Swapping](https://htmx.org/docs/#swapping) example
 
 What if:
 
