@@ -81,7 +81,17 @@ Mine:
 
 ## Notebook of Video 1 by Bugbytes
 
+```html
 ...
+{{ form.username.errors }}
+{% render_field form.username class="form-control" _hx-things_ %}
+...
+```
+
+_hx-things_:
+```html
+hx-posts="/check_username/"
+```
 
 ## Source(s)
 
