@@ -89,8 +89,9 @@ Mine:
 ```
 
 _hx-things_:
+
 ```html
-hx-posts="/check_username/"
+hx-posts="/check_username/" hx-trigger="keyup"
 ```
 
 ## Source(s)
