@@ -104,6 +104,21 @@ Updated html:
 <div id="username-error"></div> <!-- ini nanti diganti sama hx-target -->
 ```
 
+```python
+class RegisterForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ["username", "password1", "password2"]
+```
+
+```python
+def check_username(request):
+    username = request.POST.get(
+        "username"
+    )  # get from the `hx-post`, and `RegisterForm` filled form `username` tea
+    ...
+```
+
 ## Source(s)
 
 - [Django & HTMX by Bugbytes](https://www.youtube.com/playlist?list=PL-2EBeDYMIbRByZ8GXhcnQSuv2dog4JxY)
