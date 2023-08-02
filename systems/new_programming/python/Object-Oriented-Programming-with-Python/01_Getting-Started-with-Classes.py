@@ -173,3 +173,5 @@ print(item5_total)
 print(" ")
 print("-----------------------------")
 print(" ")
+
+print(NewItemWithInit.pay_rate)
