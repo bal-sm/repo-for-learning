@@ -118,6 +118,9 @@ class NewItemWithInit:
             f"An instance created with name as {name}, price as {price}, and quantity as {quantity}"
         )
 
+    def updated_calculate_total_price(self):
+        return self.price * self.quantity
+
 
 item4 = NewItemWithInit("MacBook Pro", 100000000, 1)
 
@@ -136,3 +139,17 @@ print(item5.quantity)
 item5.has_robot_keyboard = True
 
 print(item5.has_robot_keyboard)
+
+print(" ")
+
+print("item4&5 total")
+
+print(" ")
+
+item4_total = item4.updated_calculate_total_price()
+
+print(item4_total)
+
+item5_total = item4.updated_calculate_total_price()
+
+print(item5_total)
