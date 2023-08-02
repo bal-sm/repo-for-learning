@@ -63,7 +63,7 @@ print("---")
 print("item2, and updated `Item` class")
 
 
-class Item:
+class OldItemKlass:
     def __init__(self):
         print("`Item` class created.")
 
@@ -71,7 +71,7 @@ class Item:
         return x * y
 
 
-item2 = Item()
+item2 = OldItemKlass()
 item2.name = "Phone"
 item2.price = 100
 item2.quantity = 5
@@ -93,7 +93,7 @@ print(" ")
 
 print("tuh kalo mari kita instantiate ke `item3`")
 
-item3 = Item()
+item3 = OldItemKlass()
 
 print("tuh kan nongol lagi")
 
