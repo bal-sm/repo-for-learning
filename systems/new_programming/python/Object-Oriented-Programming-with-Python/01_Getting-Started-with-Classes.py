@@ -75,7 +75,7 @@ item2.name = "Phone"
 item2.price = 100
 item2.quantity = 5
 item2_total = item2.calculate_total_price(item2.price, item2.quantity)
-
+# whthppns?   ^___^ passed in as `self`   ^---^ as `x` ^------^ as `y`
 print(item2_total)
 
 print("`__init__` method guys, magic pisan")
