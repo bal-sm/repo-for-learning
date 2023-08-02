@@ -130,3 +130,9 @@ item5 = NewItemWithInit("Chuwi HiBook Pro", 3000000)
 print(item5.name)
 print(item5.price)
 print(item5.quantity)
+
+# You still can add another attributes(sic?) to existing class with `__init__` method defined.
+
+item5.has_robot_keyboard = True
+
+print(item5.has_robot_keyboard)
