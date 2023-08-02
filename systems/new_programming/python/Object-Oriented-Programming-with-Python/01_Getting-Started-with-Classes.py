@@ -109,10 +109,11 @@ print(" ")
 
 
 class NewItemWithInit:
-    def __init__(self, name, price, quantity):
+    def __init__(self, name, price, quantity=0):
         self.name = name
         self.price = price
         self.quantity = quantity
+        # quantity will be defaulted to 0, if it's not specified
         print(
             f"An instance created with name as {name}, price as {price}, and quantity as {quantity}"
         )
@@ -123,3 +124,5 @@ item4 = NewItemWithInit("MacBook Pro", 100000000, 1)
 print(item4.name)
 print(item4.price)
 print(item4.quantity)
+
+item5 = NewItemWithInit("Chuwi HiBook Pro", 3000000)
