@@ -169,3 +169,7 @@ print(item5_total)
 
 # kalau misal item6 = NewItemWithInit("WTF", -999, -666)
 # then the interpreter will produce AssertionError, and its detailed
+
+print(" ")
+print("-----------------------------")
+print(" ")
