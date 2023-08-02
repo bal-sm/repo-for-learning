@@ -119,3 +119,7 @@ class NewItemWithInit:
 
 
 item4 = NewItemWithInit("MacBook Pro", 100000000, 1)
+
+print(item4.name)
+print(item4.price)
+print(item4.quantity)
