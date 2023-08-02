@@ -106,3 +106,6 @@ class NewItemWithInit:
         print(
             f"An instance created with name as {name}, price as {price}, and quantity as {quantity}"
         )
+
+
+item4 = NewItemWithInit("MacBook Pro", 100000000, 1)
