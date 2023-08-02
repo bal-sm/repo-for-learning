@@ -110,6 +110,9 @@ print(" ")
 
 class NewItemWithInit:
     def __init__(self, name: str, price: float, quantity: int = 0):
+        # in order, to type checking work you need additional apa sih, pokoknya
+        # yang ngecek error gitu, soalnya, python nerima nerima aja.
+
         self.name = name
         self.price = price
         self.quantity = quantity
