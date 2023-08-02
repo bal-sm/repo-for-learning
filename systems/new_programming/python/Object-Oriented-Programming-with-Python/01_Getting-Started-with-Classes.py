@@ -109,6 +109,8 @@ print(" ")
 
 
 class NewItemWithInit:
+    pay_rate = 0.8  # kalo mau bikin angka yang mutlak buat class ini, maksudnya harga didiskon 20%
+
     def __init__(self, name: str, price: float, quantity: int = 0):
         # in order, to type checking work you need additional apa sih, pokoknya
         # yang ngecek error gitu, soalnya, python nerima nerima aja.
