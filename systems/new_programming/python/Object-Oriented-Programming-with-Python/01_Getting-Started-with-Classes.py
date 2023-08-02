@@ -108,7 +108,7 @@ print("-----------------------------------")
 print(" ")
 
 
-class NewItemWithInit:
+class Item:
     pay_rate = 0.8  # kalo mau bikin angka yang mutlak buat class ini, maksudnya harga didiskon 20%
     THE_PAY_RATE = 0.78  # ini kalo misalnya dibikin as constant, bakal work gak yaaa
 
@@ -135,13 +135,13 @@ class NewItemWithInit:
         return self.price * self.quantity
 
 
-item4 = NewItemWithInit("MacBook Pro", 100000000, 1)
+item4 = Item("MacBook Pro", 100000000, 1)
 
 print(item4.name)
 print(item4.price)
 print(item4.quantity)
 
-item5 = NewItemWithInit("Chuwi HiBook Pro", 3000000)
+item5 = Item("Chuwi HiBook Pro", 3000000)
 
 print(item5.name)
 print(item5.price)
@@ -174,5 +174,5 @@ print(" ")
 print("-----------------------------")
 print(" ")
 
-print(NewItemWithInit.pay_rate)
-print(NewItemWithInit.THE_PAY_RATE)
+print(Item.pay_rate)
+print(Item.THE_PAY_RATE)
