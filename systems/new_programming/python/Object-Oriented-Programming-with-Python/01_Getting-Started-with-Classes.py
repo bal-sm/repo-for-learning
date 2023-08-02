@@ -99,12 +99,12 @@ print("tuh kan nongol lagi")
 
 print(" ")
 
-print("---")
+print("---------------------------------------")
 
 print(" ")
 
 print("`item4` and `NewItemWithInit` class")
-
+print("-----------------------------------")
 print(" ")
 
 
