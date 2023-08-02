@@ -114,8 +114,8 @@ class NewItemWithInit:
         # yang ngecek error gitu, soalnya, python nerima nerima aja.
 
         # Run validations to the received arguments
-        assert price >= 0
-        assert quantity >= 0
+        assert price >= 0, f"Naha price = {price}? Ubah ke plus donk"
+        assert quantity >= 0, f"Naha quantity = {quantity}? Ubah ke plus donk"
 
         # Assign to self object
         self.name = name
@@ -165,4 +165,4 @@ item5_total = item5.updated_calculate_total_price()
 print(item5_total)
 
 # kalau misal item6 = NewItemWithInit("WTF", -999, -666)
-# then the interpreter will produce AssertionError
+# then the interpreter will produce AssertionError, and its detailed
