@@ -96,3 +96,13 @@ print("tuh kalo mari kita instantiate ke `item3`")
 item3 = Item()
 
 print("tuh kan nongol lagi")
+
+
+class NewItemWithInit:
+    def __init__(self, name, price, quantity):
+        self.name = name
+        self.price = price
+        self.quantity = quantity
+        print(
+            f"An instance created with name as {name}, price as {price}, and quantity as {quantity}"
+        )
