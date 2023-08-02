@@ -6,6 +6,7 @@
   - [Table of Contents](#table-of-contents)
   - [htmx in a Nutshell](#htmx-in-a-nutshell)
   - [Notebook of Video 1 by Bugbytes](#notebook-of-video-1-by-bugbytes)
+    - [Swapping example](#swapping-example)
   - [Source(s)](#sources)
   - [Learning in Progress](#learning-in-progress)
 
@@ -81,7 +82,73 @@ Mine:
 
 ## Notebook of Video 1 by Bugbytes
 
+```html
 ...
+{{ form.username.errors }}
+{% render_field form.username class="form-control" _hx-things_ %}
+...
+```
+
+_hx-things_:
+
+```html
+hx-posts="/check_username/" hx-trigger="keyup" hx-target="#username-error"
+```
+
+> Jadinya, user name di cek setiap saat apakah udah ada, takutnya nanti duplicate, terus di cek stiap tekan tombol keyboard.
+
+Updated html:
+
+```html
+{{ form.username.errors }}
+{% render_field form.username class="form-control" hx-post="/check_username/" hx-trigger="keyup" hx-target="#username-error" %}
+<div id="username-error"></div> <!-- ini nanti diganti sama hx-target -->
+```
+
+```python
+class RegisterForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ["username", "password1", "password2"]
+```
+
+```python
+def check_username(request):
+    username = request.POST.get(
+        "username"
+    )  # get from the `hx-post`, and `RegisterForm` filled form `username` tea
+    if get_user_model().objects.filter(username=username).exists():
+        return HttpResponse("This username is already exists")
+    else:
+        return HttpResponse("This username is available, guys.")
+```
+
+### [Swapping](https://htmx.org/docs/#swapping) example
+
+What if:
+
+```html
+{{ form.username.errors }}
+{% render_field form.username class="form-control" hx-post="/check_username/" hx-swap="outerHTML" hx-trigger="keyup" hx-target="#username-error" %}
+<div id="username-error"></div> <!-- ini nanti diganti sama hx-target -->
+```
+
+emphasize on **`hx-swap="outerHTML"`**
+
+then,
+
+```python
+def check_username(request):
+    username = request.POST.get(
+        "username"
+    )  # get from the `hx-post`, and `RegisterForm` filled form `username` tea
+    if get_user_model().objects.filter(username=username).exists():
+        return HttpResponse("<div style='color: red;'>This username is already exists</div>")
+    else:
+        return HttpResponse("<div style='color: green;'>This username is available, guys.</div>")
+```
+
+So, the output will be 🌈colored🌈.
 
 ## Source(s)
 
