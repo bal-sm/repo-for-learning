@@ -64,8 +64,9 @@ print("item2, and updated `Item` class")
 
 
 class Item:
-    # def __init__(self):
-    #     print("something")
+    def __init__(self):
+        print("`Item` class created.")
+
     def calculate_total_price(self, x, y):
         return x * y
 
