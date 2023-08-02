@@ -175,3 +175,4 @@ print("-----------------------------")
 print(" ")
 
 print(NewItemWithInit.pay_rate)
+print(NewItemWithInit.THE_PAY_RATE)
