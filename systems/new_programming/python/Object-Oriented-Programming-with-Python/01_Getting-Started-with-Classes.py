@@ -113,10 +113,17 @@ class NewItemWithInit:
         # in order, to type checking work you need additional apa sih, pokoknya
         # yang ngecek error gitu, soalnya, python nerima nerima aja.
 
+        # Run validations to the received arguments
+        assert price >= 0
+        assert quantity >= 0
+
+        # Assign to self object
         self.name = name
         self.price = price
         self.quantity = quantity
         # quantity will be defaulted to 0, if it's not specified
+
+        # Print the created instance prop and status
         print(
             f"An instance created with name as {name}, price as {price}, and quantity as {quantity}"
         )
