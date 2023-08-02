@@ -84,3 +84,15 @@ print("`__init__` method guys, magic pisan")
 print("Tulis what is `__int__` definition...")
 
 print("---")
+
+print(" ")
+
+print("BTW guys, `__init__` dari `Item` class itu kepanggil setelah instantiation")
+
+print(" ")
+
+print("tuh kalo mari kita instantiate ke `item3`")
+
+item3 = Item()
+
+print("tuh kan nongol lagi")
