@@ -150,6 +150,6 @@ item4_total = item4.updated_calculate_total_price()
 
 print(item4_total)
 
-item5_total = item4.updated_calculate_total_price()
+item5_total = item5.updated_calculate_total_price()
 
 print(item5_total)
