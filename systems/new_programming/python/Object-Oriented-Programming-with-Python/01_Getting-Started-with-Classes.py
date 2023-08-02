@@ -126,3 +126,7 @@ print(item4.price)
 print(item4.quantity)
 
 item5 = NewItemWithInit("Chuwi HiBook Pro", 3000000)
+
+print(item5.name)
+print(item5.price)
+print(item5.quantity)
