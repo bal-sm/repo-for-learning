@@ -212,7 +212,25 @@ Note 7:
 > <li>{{ contact.name }} - {{ contact.phone_number }}</li>
 > ```
 >
-> Overkill tau ini teh cenah.
+> Overkill tau ini teh cenah. Tapi da y'know biar set sat set aja. Soalnya pake render function lagi.
+
+Note 8 of 15:56 of the video:
+> Hm
+>
+> ```html
+> ...
+> <body>
+>     <div class="container mt-5">
+>         {% block content %}
+>         {% endblock %}
+>     </div>
+> </body>
+> ...
+> ```
+> 
+> `container` class di luar `block content`, is it a good idea?
+> 
+> Let's baca `container` dari Bootstrap docs nya.
 
 ## Source(s)
 
