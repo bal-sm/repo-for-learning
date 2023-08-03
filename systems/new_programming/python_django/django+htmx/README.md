@@ -267,6 +267,8 @@ Me, okay note 12:
 >
 > And also stop numbering the notes, 'cause gak cantik, but whatever aku mau rapihin lagi semuanya nanti.
 
+Last position -> 22:05
+
 ## Source(s)
 
 - [Django & HTMX by Bugbytes](https://www.youtube.com/playlist?list=PL-2EBeDYMIbRByZ8GXhcnQSuv2dog4JxY)
