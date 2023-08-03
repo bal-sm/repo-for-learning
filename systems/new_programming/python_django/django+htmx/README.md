@@ -180,6 +180,9 @@ Note 2:
 > `form.name.id_for_label`??? Buat di `html` nya dari field dari `ContactForm` tea.
 > `          ^----------^`
 
+Note 3:
+> Let's learn about flexbox, 'cause IDK wtfrick Mark syg is talking about in 7:20 of this video.
+
 ## Source(s)
 
 - [Django & HTMX by Bugbytes](https://www.youtube.com/playlist?list=PL-2EBeDYMIbRByZ8GXhcnQSuv2dog4JxY)
