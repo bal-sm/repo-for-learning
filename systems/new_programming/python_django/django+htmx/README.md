@@ -188,6 +188,9 @@ Note 4:
 >
 > Tapi hm aja, aku lakuin aja dulu gitu
 
+little note 5 of 13:32 of the video:
+> The <li> tag defines a list item
+
 ## Source(s)
 
 - [Django & HTMX by Bugbytes](https://www.youtube.com/playlist?list=PL-2EBeDYMIbRByZ8GXhcnQSuv2dog4JxY)
