@@ -255,6 +255,11 @@ Note 10 of 18:29:
 > ... hx-on="htmx:afterRequest: this.remove()" ...
 > ```
 
+Note 11 of circa 19:53:
+Him (Mark):
+> `id="submit-all"`, very important
+
+Just watch the rest of the video, to remember it(sic, IH AING INGGRISNYA BE-).
 
 ## Source(s)
 
