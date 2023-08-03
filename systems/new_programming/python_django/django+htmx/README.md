@@ -262,7 +262,10 @@ Him (Mark):
 Karena:
 > `hx-trigger="click from:#submit-all"`
 
-Just watch the rest of the video, to remember it(sic, IH AING INGGRISNYA BE-).
+Me, okay note 12:
+> Just watch the rest of the video, to remember it(sic, IH AING INGGRISNYA BE-).
+>
+> And also stop numbering the notes, 'cause gak cantik, but whatever aku mau rapihin lagi semuanya nanti.
 
 ## Source(s)
 
