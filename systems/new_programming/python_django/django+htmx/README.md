@@ -183,6 +183,11 @@ Note 2:
 Note 3:
 > Let's learn about flexbox, 'cause IDK wtfrick Mark syg is talking about in 7:20 of this video.
 
+Note 4:
+> Hm 8:37 bukannya bisa ya nambahin sendiri, jadi gak ask a request to server lewat htmx dulu, buat nambahin formnya??
+>
+> Tapi hm aja, aku lakuin aja dulu gitu
+
 ## Source(s)
 
 - [Django & HTMX by Bugbytes](https://www.youtube.com/playlist?list=PL-2EBeDYMIbRByZ8GXhcnQSuv2dog4JxY)
