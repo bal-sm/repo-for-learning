@@ -248,6 +248,13 @@ Adam Johnson (sayang ku, muah):
 
 Note 10 of 18:29:
 > `hx-on` is a thing to remove something from the list cenah. Read [more](https://htmx.org/attributes/hx-on/).
+>
+> The piece of code (in `form` tag of `partials` `form.html`):
+>
+> ```html
+> ... hx-on="htmx:afterRequest: this.remove()" ...
+> ```
+
 
 ## Source(s)
 
