@@ -247,7 +247,7 @@ Adam Johnson (sayang ku, muah):
 > Makanya pake `django-htmx` papi sayang.
 
 Note 10 of 18:29:
-> `hx-on` is a thing to remove something from the list cenah. Read [more](https://htmx.org/attributes/hx-on/).
+> `hx-on` is a thing to remove ~~something from the list cenah~~ the value on the form, so it won't be submitted twice. Read [more](https://htmx.org/attributes/hx-on/).
 >
 > The piece of code (in `form` tag of `partials` `form.html`):
 >
