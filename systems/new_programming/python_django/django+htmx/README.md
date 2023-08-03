@@ -259,6 +259,9 @@ Note 11 of circa 19:53:
 Him (Mark):
 > `id="submit-all"`, very important
 
+Karena:
+> `hx-trigger="click from:#submit-all"`
+
 Just watch the rest of the video, to remember it(sic, IH AING INGGRISNYA BE-).
 
 ## Source(s)
