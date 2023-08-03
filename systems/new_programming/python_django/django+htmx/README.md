@@ -211,6 +211,8 @@ Note 7:
 > ```html
 > <li>{{ contact.name }} - {{ contact.phone_number }}</li>
 > ```
+>
+> Overkill tau ini teh cenah.
 
 ## Source(s)
 
