@@ -7,8 +7,10 @@
   - [htmx in a Nutshell](#htmx-in-a-nutshell)
   - [Notebook of Video 1 by Bugbytes](#notebook-of-video-1-by-bugbytes)
     - [Swapping example](#swapping-example)
+  - [Django \& HTMX - Dynamic Form Creation and Submission](#django--htmx---dynamic-form-creation-and-submission)
+    - [Learning in Progress](#learning-in-progress)
   - [Source(s)](#sources)
-  - [Learning in Progress](#learning-in-progress)
+  - [Learning in Progress](#learning-in-progress-1)
 
 ## [htmx in a Nutshell](https://htmx.org/docs/#introduction)
 
@@ -150,9 +152,30 @@ def check_username(request):
 
 So, the output will be 🌈colored🌈.
 
+## Django & HTMX - Dynamic Form Creation and Submission
+
+...
+
+### Learning in Progress
+
+Note 1:
+> Apparently, you can add attrs to change form class jadi ngikut theme dari bootstrap, kayak gini
+>
+> ```python
+> class ContactForm(forms.ModelForm):
+>     class Meta:
+>         model = Contact
+>         fields = ("name", "phone_number")
+>         widgets = {
+>             "name": forms.TextInput(attrs={"class": "form-control"}),
+>             "phone_number": forms.TextInput(attrs={"class": "form-control"}),
+>         }
+> ```
+
 ## Source(s)
 
 - [Django & HTMX by Bugbytes](https://www.youtube.com/playlist?list=PL-2EBeDYMIbRByZ8GXhcnQSuv2dog4JxY)
+- [Django & HTMX - Dynamic Form Creation and Submission](https://www.youtube.com/watch?v=XdZoYmLkQ4w&list=PL-2EBeDYMIbRByZ8GXhcnQSuv2dog4JxY)
 
 ## Learning in Progress
 
