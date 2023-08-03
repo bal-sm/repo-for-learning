@@ -174,6 +174,12 @@ Note 1:
 >
 > Tapi masalahnya kan ada `django-crispy-forms`/`django-widget-tweaks`. Mari kita belajar lagi.
 
+Note 2:
+> hm
+>
+> `form.name.id_for_label`??? Buat di `html` nya dari field dari `ContactForm` tea.
+> `          ^----------^`
+
 ## Source(s)
 
 - [Django & HTMX by Bugbytes](https://www.youtube.com/playlist?list=PL-2EBeDYMIbRByZ8GXhcnQSuv2dog4JxY)
