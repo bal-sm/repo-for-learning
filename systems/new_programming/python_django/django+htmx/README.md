@@ -159,7 +159,7 @@ So, the output will be 🌈colored🌈.
 ### Learning in Progress
 
 Note 1:
-> Apparently, you can add attrs to change form class jadi ngikut theme dari bootstrap, kayak gini
+> Apparently, you can add `attrs` to change form class jadi ngikut theme dari bootstrap, kayak gini
 >
 > ```python
 > class ContactForm(forms.ModelForm):
@@ -171,6 +171,8 @@ Note 1:
 >             "phone_number": forms.TextInput(attrs={"class": "form-control"}),
 >         }
 > ```
+>
+> Tapi masalahnya kan ada `django-crispy-forms`/`django-widget-tweaks`. Mari kita belajar lagi.
 
 ## Source(s)
 
