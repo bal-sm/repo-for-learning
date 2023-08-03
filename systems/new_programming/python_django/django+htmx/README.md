@@ -190,6 +190,8 @@ Note 4:
 
 little note 5 of 13:32 of the video:
 > The <li> tag defines a list item
+>
+> derivative (daleman li tag) diantaranya adalah <ul>.
 
 Note 6:
 > A portion of html could be called as `partials`. Nice.
