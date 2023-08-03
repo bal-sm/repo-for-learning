@@ -232,6 +232,20 @@ Note 8 of 15:56 of the video:
 > 
 > Let's baca `container` dari Bootstrap docs nya.
 
+
+> Wow
+Note 9 of 16:00:
+> on `base.html`:
+> 
+> ```html
+> <body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
+> ```
+>
+> Read [more](https://django-htmx.readthedocs.io/en/latest/tips.html#make-htmx-pass-the-csrf-token).
+
+Adam Johnson (sayang ku, muah):
+> Makanya pake `django-htmx` papi sayang.
+
 ## Source(s)
 
 - [Django & HTMX by Bugbytes](https://www.youtube.com/playlist?list=PL-2EBeDYMIbRByZ8GXhcnQSuv2dog4JxY)
