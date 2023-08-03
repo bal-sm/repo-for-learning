@@ -246,6 +246,9 @@ Note 9 of 16:00:
 Adam Johnson (sayang ku, muah):
 > Makanya pake `django-htmx` papi sayang.
 
+Note 10 of 18:29:
+> `hx-on` is a thing to remove something from the list cenah. Read [more](https://htmx.org/attributes/hx-on/).
+
 ## Source(s)
 
 - [Django & HTMX by Bugbytes](https://www.youtube.com/playlist?list=PL-2EBeDYMIbRByZ8GXhcnQSuv2dog4JxY)
