@@ -235,7 +235,7 @@ Note 8 of 15:56 of the video:
 
 > Wow
 Note 9 of 16:00:
-> on `base.html`:
+> on **`base.html`**:
 > 
 > ```html
 > <body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
