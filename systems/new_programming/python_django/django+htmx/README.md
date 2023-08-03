@@ -191,6 +191,9 @@ Note 4:
 little note 5 of 13:32 of the video:
 > The <li> tag defines a list item
 
+Note 6:
+> A portion of html could be called as `partials`. Nice.
+
 ## Source(s)
 
 - [Django & HTMX by Bugbytes](https://www.youtube.com/playlist?list=PL-2EBeDYMIbRByZ8GXhcnQSuv2dog4JxY)
