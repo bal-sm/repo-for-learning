@@ -196,6 +196,22 @@ little note 5 of 13:32 of the video:
 Note 6:
 > A portion of html could be called as `partials`. Nice.
 
+Note 7:
+> Bisa kayak gini euy
+>
+> ```html
+> {% for contact in contacts %}
+>     {% include 'partials/contact.html' %}
+> {% endfor %}
+> ```
+>
+> terus
+> `partials/contact.html` nya gini
+> 
+> ```html
+> <li>{{ contact.name }} - {{ contact.phone_number }}</li>
+> ```
+
 ## Source(s)
 
 - [Django & HTMX by Bugbytes](https://www.youtube.com/playlist?list=PL-2EBeDYMIbRByZ8GXhcnQSuv2dog4JxY)
