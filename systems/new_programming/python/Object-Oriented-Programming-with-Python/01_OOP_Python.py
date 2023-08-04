@@ -209,3 +209,10 @@ print(item5.__dict__)  # All the attributes for `Instance` level
 print(" ")
 print("-----------------------------")
 print(" ")
+
+item_666 = Item("lptp gblg", 8000000, 1)  # tadinya AA3
+item_666.pay_rate = 0.000000000000000000000000000000000000000001
+
+# shddng
+
+print()
