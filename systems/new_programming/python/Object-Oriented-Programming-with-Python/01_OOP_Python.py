@@ -134,6 +134,14 @@ class Item:
     def updated_calculate_total_price(self):
         return self.price * self.quantity
 
+    def ew_apply_discount(self):
+        self.price = self.price * Item.pay_rate
+        # jadi `pay_rate` nya mutlak dari class nya
+
+    def wow_apply_discount(self):
+        self.price = self.price * self.pay_rate
+        # jadi `pay_rate` nya tergantung juga dari instantiation nya
+
 
 item4 = Item("MacBook Pro", 100000000, 1)
 
