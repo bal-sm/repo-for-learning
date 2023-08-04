@@ -7,8 +7,10 @@
   - [htmx in a Nutshell](#htmx-in-a-nutshell)
   - [Notebook of Video 1 by Bugbytes](#notebook-of-video-1-by-bugbytes)
     - [Swapping example](#swapping-example)
+  - [Django \& HTMX - Dynamic Form Creation and Submission](#django--htmx---dynamic-form-creation-and-submission)
+    - [Learning in Progress](#learning-in-progress)
   - [Source(s)](#sources)
-  - [Learning in Progress](#learning-in-progress)
+  - [Learning in Progress](#learning-in-progress-1)
 
 ## [htmx in a Nutshell](https://htmx.org/docs/#introduction)
 
@@ -150,9 +152,141 @@ def check_username(request):
 
 So, the output will be 🌈colored🌈.
 
+## Django & HTMX - Dynamic Form Creation and Submission
+
+...
+
+### Learning in Progress
+
+Note 1:
+> Apparently, you can add `attrs` to change form class jadi ngikut theme dari bootstrap, kayak gini
+>
+> ```python
+> class ContactForm(forms.ModelForm):
+>     class Meta:
+>         model = Contact
+>         fields = ("name", "phone_number")
+>         widgets = {
+>             "name": forms.TextInput(attrs={"class": "form-control"}),
+>             "phone_number": forms.TextInput(attrs={"class": "form-control"}),
+>         }
+> ```
+>
+> Tapi masalahnya kan ada `django-crispy-forms`/`django-widget-tweaks`. Mari kita belajar lagi.
+
+Note 2:
+> hm
+>
+> `form.name.id_for_label`??? Buat di `html` nya dari field dari `ContactForm` tea.
+> `          ^----------^`
+
+Note 3:
+> Let's learn about flexbox, 'cause IDK wtfrick Mark syg is talking about in 7:20 of this video.
+
+Note 4:
+> Hm 8:37 bukannya bisa ya nambahin sendiri, jadi gak ask a request to server lewat htmx dulu, buat nambahin formnya??
+>
+> Tapi hm aja, aku lakuin aja dulu gitu
+
+little note 5 of 13:32 of the video:
+> The <li> tag defines a list item
+>
+> derivative (daleman li tag) diantaranya adalah <ul>.
+
+Note 6:
+> A portion of html could be called as `partials`. Nice.
+
+Note 7:
+> Bisa kayak gini euy
+>
+> ```html
+> {% for contact in contacts %}
+>     {% include 'partials/contact.html' %}
+> {% endfor %}
+> ```
+>
+> terus
+> `partials/contact.html` nya gini
+> 
+> ```html
+> <li>{{ contact.name }} - {{ contact.phone_number }}</li>
+> ```
+>
+> Overkill tau ini teh cenah. Tapi da y'know biar set sat set aja. Soalnya pake render function lagi.
+
+Note 8 of 15:56 of the video:
+> Hm
+>
+> ```html
+> ...
+> <body>
+>     <div class="container mt-5">
+>         {% block content %}
+>         {% endblock %}
+>     </div>
+> </body>
+> ...
+> ```
+> 
+> `container` class di luar `block content`, is it a good idea?
+> 
+> Let's baca `container` dari Bootstrap docs nya.
+
+
+> Wow
+Note 9 of 16:00:
+> on **`base.html`**:
+> 
+> ```html
+> <body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
+> ```
+>
+> Read [more](https://django-htmx.readthedocs.io/en/latest/tips.html#make-htmx-pass-the-csrf-token).
+
+Adam Johnson (sayang ku, muah):
+> Makanya pake `django-htmx` papi sayang.
+
+Note 10 of 18:29:
+> `hx-on` is a thing to remove ~~something from the list cenah~~ the value on the form, so it won't be submitted twice. Read [more](https://htmx.org/attributes/hx-on/).
+>
+> The piece of code (in `form` tag of `partials` `form.html`):
+>
+> ```html
+> ... hx-on="htmx:afterRequest: this.remove()" ...
+> ```
+
+Note 11 of circa 19:53:
+Him (Mark):
+> `id="submit-all"`, very important
+
+Karena:
+> `hx-trigger="click from:#submit-all"`
+
+Me, okay note 12:
+> Just watch the rest of the video, to remember it(sic, IH AING INGGRISNYA BE-).
+>
+> And also stop numbering the notes, 'cause gak cantik, but whatever aku mau rapihin lagi semuanya nanti.
+
+Last position -> 22:05
+
+Note 13:
+> `hx-on="click: this.closest('form').remove"`
+>
+> nanti teh jadi naik naik terus sampe dapet form tag nya.
+>
+> ```html
+> <form> <--! tah di delete ieu -->
+> <div>
+> ...
+> <button ... hx-on="click: this.closest('form').remove"></button>
+> </div>
+> </form>
+> ```
+
 ## Source(s)
 
 - [Django & HTMX by Bugbytes](https://www.youtube.com/playlist?list=PL-2EBeDYMIbRByZ8GXhcnQSuv2dog4JxY)
+- [Django & HTMX - Dynamic Form Creation and Submission](https://www.youtube.com/watch?v=XdZoYmLkQ4w&list=PL-2EBeDYMIbRByZ8GXhcnQSuv2dog4JxY)
 
 ## Learning in Progress
 
