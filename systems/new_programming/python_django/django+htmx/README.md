@@ -269,6 +269,20 @@ Me, okay note 12:
 
 Last position -> 22:05
 
+Note 13:
+> `hx-on="click: this.closest('form').remove"`
+>
+> nanti teh jadi naik naik terus sampe dapet form tag nya.
+>
+> ```html
+> <form> <--! tah di delete ieu -->
+> <div>
+> ...
+> <button ... hx-on="click: this.closest('form').remove"></button>
+> </div>
+> </form>
+> ```
+
 ## Source(s)
 
 - [Django & HTMX by Bugbytes](https://www.youtube.com/playlist?list=PL-2EBeDYMIbRByZ8GXhcnQSuv2dog4JxY)
