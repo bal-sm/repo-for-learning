@@ -219,6 +219,8 @@ item_666.wow_apply_discount()
 
 print(item_666.price)
 
+# item_666.ew_apply_discount()
+
 print(" ")
 print("-----------------------------")
 print(" ")
