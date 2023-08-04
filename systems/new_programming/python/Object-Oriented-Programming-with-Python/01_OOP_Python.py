@@ -194,3 +194,10 @@ print(" ")
 
 print(Item.__dict__)  # All the attributes for `Class` level
 print(item5.__dict__)  # All the attributes for `Instance` level
+
+# {'__module__': '__main__', 'pay_rate': 0.8, 'THE_PAY_RATE': 0.78, '__init__': <function Item.__init__ at 0x7f4a7cfd1440>, 'updated_calculate_total_price': <function Item.updated_calculate_total_price at 0x7f4a7cfd14e0>, '__dict__': <attribute '__dict__' of 'Item' objects>, '__weakref__': <attribute '__weakref__' of 'Item' objects>, '__doc__': None}
+# {'name': 'Chuwi HiBook Pro', 'price': 3000000, 'quantity': 0, 'has_robot_keyboard': True}
+
+print(" ")
+print("-----------------------------")
+print(" ")
