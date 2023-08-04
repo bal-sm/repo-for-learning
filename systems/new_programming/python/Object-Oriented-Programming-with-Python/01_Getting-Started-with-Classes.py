@@ -176,3 +176,14 @@ print(" ")
 
 print(Item.pay_rate)
 print(Item.THE_PAY_RATE)
+
+print(" ")
+print("-----------------------------")
+print(" ")
+print("Instantiation terus apa kebawa juga gak sih `pay_rate` and `THE_PAY_RATE`")
+print(" ")
+
+print(item4.pay_rate)
+print(item5.THE_PAY_RATE)
+
+print("tuh guys bisa guys")
