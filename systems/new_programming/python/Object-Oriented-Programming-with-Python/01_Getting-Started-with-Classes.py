@@ -187,3 +187,10 @@ print(item4.pay_rate)
 print(item5.THE_PAY_RATE)
 
 print("tuh guys bisa guys")
+
+print(" ")
+print("-----------------------------")
+print(" ")
+
+print(Item.__dict__)  # All the attributes for `Class` level
+print(item5.__dict__)  # All the attributes for `Instance` level
