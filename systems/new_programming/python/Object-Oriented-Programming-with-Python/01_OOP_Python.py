@@ -215,4 +215,6 @@ item_666.pay_rate = 0.000000000000000000000000000000000000000001
 
 # shddng
 
-print()
+item_666.wow_apply_discount()
+
+print(item_666.price)
