@@ -224,3 +224,5 @@ print(item_666.price)
 print(" ")
 print("-----------------------------")
 print(" ")
+
+print("The end of `01_OOP_Python.py`")
