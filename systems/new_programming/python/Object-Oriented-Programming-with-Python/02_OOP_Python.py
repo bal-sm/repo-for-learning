@@ -26,3 +26,10 @@ class Item:
     def apply_discount(self):
         self.price = self.price * self.pay_rate
         # jadi `pay_rate` nya tergantung juga dari instantiation nya
+
+
+item1 = Item("iPhone 15", 20000000, 1)
+item2 = Item("MacBook Pro M2 Max", 99000000, 2)
+item3 = Item("Framework Laptop 16 Inch AMD 7000 sekian", 40000000, 1)
+item4 = Item("Mouse", 30000000, 1)
+item5 = Item("Keyboard", 63424, 1)
