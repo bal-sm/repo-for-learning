@@ -23,6 +23,6 @@ class Item:
     def calculate_total_price(self):
         return self.price * self.quantity
 
-    def wow_apply_discount(self):
+    def apply_discount(self):
         self.price = self.price * self.pay_rate
         # jadi `pay_rate` nya tergantung juga dari instantiation nya
