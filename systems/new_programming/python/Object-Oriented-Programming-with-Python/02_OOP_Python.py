@@ -33,7 +33,9 @@ class Item:
         # jadi `pay_rate` nya tergantung juga dari instantiation nya
 
     # this is a class method soalnya bisa muncul tanpa harus ada instatiation nhya
-    # def instantiate_from_csv():
+    @classmethod
+    def instantiate_from_csv(cls):
+        pass
 
     # https://www.youtube.com/watch?v=FIaPZXaePhw&t=0s
     def __repr__(self):
@@ -58,3 +60,5 @@ print(Item.all)  # ditampung disini guys, setiap instantiation nya
 
 # for instance in Item.all:
 #     print(instance.name)
+
+Item.instantiate_from_csv()
