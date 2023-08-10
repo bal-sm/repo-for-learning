@@ -110,7 +110,9 @@ print(" ")
 
 class Item:
     pay_rate = 0.8  # kalo mau bikin angka yang mutlak buat class ini, maksudnya harga didiskon 20%
-    THE_PAY_RATE = 0.78  # ini kalo misalnya dibikin as constant, bakal work gak yaaa
+    THE_PAY_RATE = (
+        0.78  # ini kalo misalnya dibikin as constant, bakal work gak yaaa. WORK!
+    )
 
     def __init__(self, name: str, price: float, quantity: int = 0):
         # in order, to type checking work you need additional apa sih, pokoknya
@@ -133,6 +135,14 @@ class Item:
 
     def updated_calculate_total_price(self):
         return self.price * self.quantity
+
+    def ew_apply_discount(self):
+        self.price = self.price * Item.pay_rate
+        # jadi `pay_rate` nya mutlak dari class nya
+
+    def wow_apply_discount(self):
+        self.price = self.price * self.pay_rate
+        # jadi `pay_rate` nya tergantung juga dari instantiation nya
 
 
 item4 = Item("MacBook Pro", 100000000, 1)
@@ -176,3 +186,45 @@ print(" ")
 
 print(Item.pay_rate)
 print(Item.THE_PAY_RATE)
+
+print(" ")
+print("-----------------------------")
+print(" ")
+print("Instantiation terus apa kebawa juga gak sih `pay_rate` and `THE_PAY_RATE`")
+print(" ")
+
+print(item4.pay_rate)
+print(item5.THE_PAY_RATE)
+
+print("tuh guys bisa guys")
+
+print(" ")
+print("-----------------------------")
+print(" ")
+
+print(Item.__dict__)  # All the attributes for `Class` level
+print(item5.__dict__)  # All the attributes for `Instance` level
+
+# {'__module__': '__main__', 'pay_rate': 0.8, 'THE_PAY_RATE': 0.78, '__init__': <function Item.__init__ at 0x7f4a7cfd1440>, 'updated_calculate_total_price': <function Item.updated_calculate_total_price at 0x7f4a7cfd14e0>, '__dict__': <attribute '__dict__' of 'Item' objects>, '__weakref__': <attribute '__weakref__' of 'Item' objects>, '__doc__': None}
+# {'name': 'Chuwi HiBook Pro', 'price': 3000000, 'quantity': 0, 'has_robot_keyboard': True}
+
+print(" ")
+print("-----------------------------")
+print(" ")
+
+item_666 = Item("lptp gblg", 8000000, 1)  # tadinya AA3
+item_666.pay_rate = 0.000000000000000000000000000000000000000001
+
+# shddng
+
+item_666.wow_apply_discount()
+
+print(item_666.price)
+
+# item_666.ew_apply_discount()
+
+print(" ")
+print("-----------------------------")
+print(" ")
+
+print("The end of `01_OOP_Python.py`")
