@@ -32,6 +32,9 @@ class Item:
         self.price = self.price * self.pay_rate
         # jadi `pay_rate` nya tergantung juga dari instantiation nya
 
+    # this is a class method soalnya bisa muncul tanpa harus ada instatiation nhya
+    # def instantiate_from_csv():
+
     # https://www.youtube.com/watch?v=FIaPZXaePhw&t=0s
     def __repr__(self):
         return f"Item('{self.name}', {self.price}, {self.quantity})"
