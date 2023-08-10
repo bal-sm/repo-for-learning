@@ -1,6 +1,8 @@
 class Item:
     pay_rate = 0.8
 
+    all = []
+
     def __init__(self, name: str, price: float, quantity: int = 0):
         # in order, to type checking work you need additional apa sih, pokoknya
         # yang ngecek error gitu, soalnya, python nerima nerima aja.
@@ -19,6 +21,9 @@ class Item:
         # print(
         #     f"An instance created with name as {name}, price as {price}, and quantity as {quantity}"
         # )
+
+        # Actions to execute
+        Item.all.append(self)
 
     def calculate_total_price(self):
         return self.price * self.quantity
