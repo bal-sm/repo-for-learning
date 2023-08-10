@@ -68,6 +68,7 @@ class Item:
 #     print(instance.name)
 
 Item.instantiate_from_csv()
+# note that you need open terminal directly in this directory
 
 # ditampung disini guys, setiap instantiation nya
 print(Item.all)
