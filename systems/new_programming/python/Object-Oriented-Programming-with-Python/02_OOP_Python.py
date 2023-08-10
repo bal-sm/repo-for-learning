@@ -45,7 +45,7 @@ item3 = Item("Framework Laptop 16 Inch AMD 7000 sekian", 40000000, 1)
 item4 = Item("Mouse", 30000000, 1)
 item5 = Item("Keyboard", 63424, 1)
 
-print(Item.all)
+print(Item.all)  # ditampung disini guys, setiap instantiation nya
 
 # /b/bin/python /var/home/d/Documents/d_project/repo-for-learning/systems/new_programming/python/Object-Oriented-Programming-with-Python/02_OOP_Python.py
 # [<__main__.Item object at 0x7f8467728a50>, <__main__.Item object at 0x7f8467728a90>, <__main__.Item object at 0x7f8467728ad0>, <__main__.Item object at 0x7f8467728b10>, <__main__.Item object at 0x7f8467728b50>]
