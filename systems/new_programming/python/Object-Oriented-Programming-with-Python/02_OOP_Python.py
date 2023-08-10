@@ -1,3 +1,6 @@
+import csv
+
+
 class Item:
     pay_rate = 0.8
 
@@ -35,7 +38,12 @@ class Item:
     # this is a class method soalnya bisa muncul tanpa harus ada instatiation nhya
     @classmethod
     def instantiate_from_csv(cls):
-        pass
+        with open("02_OOP_Python.csv", "r") as f:
+            reader = csv.DictReader(f)
+            items = list(reader)
+
+        for item in items:
+            print(item)
 
     # https://www.youtube.com/watch?v=FIaPZXaePhw&t=0s
     def __repr__(self):
