@@ -46,3 +46,6 @@ item5 = Item("Keyboard", 63424, 1)
 # tuh five element guys
 
 # print nya dicomment dulu aja guys.
+
+for instance in Item.all:
+    print(instance.name)
