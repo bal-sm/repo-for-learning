@@ -43,7 +43,12 @@ class Item:
             items = list(reader)
 
         for item in items:
-            print(item)
+            # print(item)
+            Item(
+                name=item.get("name"),
+                price=item.get("price"),
+                quantity=item.get("quantity"),
+            )
 
     # https://www.youtube.com/watch?v=FIaPZXaePhw&t=0s
     def __repr__(self):
