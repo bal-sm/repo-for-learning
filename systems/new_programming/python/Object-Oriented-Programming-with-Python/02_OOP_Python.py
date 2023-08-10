@@ -32,6 +32,12 @@ class Item:
         self.price = self.price * self.pay_rate
         # jadi `pay_rate` nya tergantung juga dari instantiation nya
 
+    # https://www.youtube.com/watch?v=FIaPZXaePhw&t=0s
+    def __repr__(self):
+        return f"Item('{self.name}', {self.price}, {self.quantity})"
+
+    # hhmm how to escape " character on f strings
+
 
 item1 = Item("iPhone 15", 20000000, 1)
 item2 = Item("MacBook Pro M3 Max", 99000000, 2)
