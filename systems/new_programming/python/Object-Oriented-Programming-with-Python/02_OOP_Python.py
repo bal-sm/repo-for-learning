@@ -46,8 +46,8 @@ class Item:
             # print(item)
             Item(
                 name=item.get("name"),
-                price=item.get("price"),
-                quantity=item.get("quantity"),
+                price=int(item.get("price")),
+                quantity=int(item.get("quantity")),
             )
 
     # https://www.youtube.com/watch?v=FIaPZXaePhw&t=0s
