@@ -46,7 +46,7 @@ class Item:
             # print(item)
             Item(
                 name=item.get("name"),
-                price=int(item.get("price")),
+                price=int(item.get("price")),  # soalnya di detect nya str
                 quantity=int(item.get("quantity")),
             )
 
