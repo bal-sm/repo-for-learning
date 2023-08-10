@@ -46,7 +46,9 @@ class Item:
             # print(item)
             Item(
                 name=item.get("name"),
-                price=int(item.get("price")),  # soalnya di detect nya str
+                price=float(
+                    item.get("price")
+                ),  # soalnya di detect nya str, terus float soalnya bisa koma koma
                 quantity=int(item.get("quantity")),
             )
 
