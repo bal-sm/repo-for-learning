@@ -53,5 +53,5 @@ print(Item.all)
 
 # print nya ~~dicomment dulu aja~~ dibuka lagi guys.
 
-for instance in Item.all:
-    print(instance.name)
+# for instance in Item.all:
+#     print(instance.name)
