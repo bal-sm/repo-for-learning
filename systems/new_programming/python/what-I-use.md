@@ -6,7 +6,7 @@
   
   I don't really see the need of PyCharm IDE. 'cause, I like VSCode, it's clean. But apparently some people says that:
 
-- PyCharm
+- PyCharm Professional
   
   is the best for:
   - its refactoring tools
@@ -22,6 +22,11 @@
   - debugger, I think
 
   > I forget where I read this sh*t.
+
+Back to
+- VSCode
+  
+  So, I really, again, don't see the need of PyCharm Professional. With its official Python extension omG, it's so good. But I maybe still use PyCharm Professional as a secondary IDE.
 
 ## Packages
 
