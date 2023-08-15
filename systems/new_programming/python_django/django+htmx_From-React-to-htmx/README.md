@@ -4,6 +4,10 @@
 
 > Read [more](#source). And PLEASE ME RANGKUM.
 
+Terus dia (si reacter) ngejelasin juga tentang [View_Transitions_API](https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API).
+
+> Aku masukin dulu disini aja.
+
 ## Source
 
 - [DjangoCon 2022 | From React to htmx on a real-world SaaS product: we did it, and it's awesome!](https://www.youtube.com/watch?v=3GObi93tjZI&t=0s)
