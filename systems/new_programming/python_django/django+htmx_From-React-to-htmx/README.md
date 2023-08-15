@@ -1,4 +1,4 @@
-# django+htmx_2
+# From React to htmx
 
 > when kayak melakukan sesuatu pada page 1, misal mengklik favorit pada suatu artikel. Terus sambil buka search bar yang di page 1 juga, dengan filtering text tertentu, yaitu based on favorite and some keyword. Maka harusnya search bar and the output harus diupdate juga gak sih? It's literally cenah harusnya butuh banyak line of codes.
 
