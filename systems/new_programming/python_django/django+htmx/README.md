@@ -1,5 +1,8 @@
 # Django + HTMX guys
 
+Important note
+> Plz [read](#notes-of-this-djangohtmx-topic).
+
 ## Table of Contents
 
 - [Django + HTMX guys](#django--htmx-guys)
@@ -11,6 +14,7 @@
     - [Learning in Progress](#learning-in-progress)
   - [Source(s)](#sources)
   - [Learning in Progress](#learning-in-progress-1)
+  - [Notes of this "django+htmx" topic](#notes-of-this-djangohtmx-topic)
 
 ## [htmx in a Nutshell](https://htmx.org/docs/#introduction)
 
@@ -341,3 +345,7 @@ Answer by [u/_htmx](https://www.reddit.com/user/_htmx/) themself:
 > Alpine is a great investment of time IMO. It has a very high power to weight ratio when compared w/ other SPA libraries.
 >
 > I also have to mention, on general principle, [hyperscript](https://hyperscript.org/), a front end scripting language that we are working on alongside htmx. It is for crazy people only, but it has some interesting functionality and fills a similar niche to Alpine: light, event-driven front end scripting. Don't use it. :)
+
+## Notes of this "django+htmx" topic
+
+Reorganized this with the rest to `django+htmx_ultimate` folder.
