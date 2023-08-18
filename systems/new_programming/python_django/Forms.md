@@ -123,3 +123,33 @@ Docs:
 
 Mine:
 > OMG, aku mau skip my Rabb, soalnya django-crispyformssss. :*
+
+## Notes of this "Forms" topic
+
+satuin sama `Forms-vault.md` and make them a dedicated folder.
+
+dan bikin a section/a dedicated file for below -vvvv
+
+### My Bookmarks
+
+- [modelforms](https://docs.djangoproject.com/en/4.2/topics/forms/modelforms/). 
+  
+  'cause who write form manually field by field.
+  - [form field type of model field on modelforms](https://docs.djangoproject.com/en/4.2/topics/forms/modelforms/#field-types)
+    
+    which model field maps to which form field.
+  
+## Learning in Progress
+
+Question:
+> What is the difference between `widgets` and `field`?
+
+Context:
+> Kebanyakan baca modelform
+
+Answer:
+> `comment = forms.CharField(widget=forms.Textarea)`
+>
+> nah `CharField` ya `CharField` cuman kalo `widget` ada [`TextInput`](https://docs.djangoproject.com/en/4.2/ref/forms/widgets/#django.forms.TextInput) yaitu widget defaultnya, dan [`Textarea`](https://docs.djangoproject.com/en/4.2/ref/forms/widgets/#django.forms.Textarea) yaitu widget yang lebih gede.
+
+Taken [from](https://docs.djangoproject.com/en/4.2/ref/forms/widgets/#specifying-widgets).
