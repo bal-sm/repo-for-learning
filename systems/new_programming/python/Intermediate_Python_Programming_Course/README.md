@@ -3,7 +3,8 @@
 > This is another my personal learning
 
 Important note:
-> Bikin cheatsheet dari sini, sama dari `Python_Coba_coba_Code`.
+> Bikin cheatsheet dari sini, sama dari `Python_Coba_coba_Code`, PAKE
+> **JUPYTER NOTEBOOK**
 
 ## new things I learned in `lists`
 
