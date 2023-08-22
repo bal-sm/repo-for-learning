@@ -27,6 +27,74 @@ Another mine
 My answer:
 > Tulis aja deh kayaknya lebar, nanti bikin cheatsheet sndiri ah.
 
+### cheatsheets for list
+
+```python
+mylist = ["banana", "orange", "pineapple"]
+
+print(len(mylist)) # to print the length of my list
+
+mylist.append("lemon") # tambah sesuatu ke tuntung mylist
+
+# jadinya mylist = ["banana", "orange", "pineapple", "lemon"]
+
+mylist.insert(1, "blueberry")
+
+# jadinya mylist = ["banana", "blueberry", "orange", "pineapple", "lemon"]
+
+item = mylist.pop()
+
+# jadinya mylist = ["banana", "blueberry", "orange", "pineapple"]
+
+# jadinya item = "lemon"
+
+mylist.remove("banana")
+
+# jadinya mylist = ["blueberry", "orange", "pineapple"]
+
+mylist.reverse()
+
+# jadinya mylist = ["pineapple", "orange", "blueberry"]
+
+mylist.clear()
+
+# jadinya mylist = []
+
+mylist.append("pineapple", "orange", "blueberry") # meureun IDK, gak ditest
+# biar ada lagi aja
+
+mylist.sort() # bisa buat list penuh dengan angka juga
+
+# jadinya mylist = ["blueberry", "orange", "pineapple" ] which
+# alphabetically sorted
+
+new_list = sorted(mylist) # bikin list baru, yg tersortir, angka tapi di tutor mah
+```
+
+Numbers now:
+
+```python
+numbers1 = [1, -1, -43, 31, 12]
+
+#bisa di sort
+
+numbers2 = sorted(numbers1)
+
+five_zeros = [0] * 5
+
+# five_zeros = [0, 0, 0, 0, 0]
+
+new_list = numbers1 + five_zeros
+
+# new_list = [1, -1, -43, 31, 12, 0, 0, 0, 0, 0]
+```
+
+## Learning In Progress
+
+> Udahlah mending di Jupyter Notebook Aja.
+
+last position: 11:38 of [1]
+
 ## Source(s)
 
-[1ntermediate Python Programming Course](https://www.youtube.com/watch?v=HGOBQPFzWKo)
+[1]: [1ntermediate Python Programming Course](https://www.youtube.com/watch?v=HGOBQPFzWKo)
