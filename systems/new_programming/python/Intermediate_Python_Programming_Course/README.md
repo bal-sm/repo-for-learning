@@ -10,7 +10,7 @@ Important note:
 Is apple on the list?
 
 ```python
-mylist = ["banana", "orange", "pineapple"]\
+mylist = ["banana", "orange", "pineapple"]
 
 if "apple" in mylist:
     print("yes")
