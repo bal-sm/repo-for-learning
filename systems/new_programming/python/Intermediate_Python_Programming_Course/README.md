@@ -2,6 +2,9 @@
 
 > This is another my personal learning
 
+Important note:
+> Bikin cheatsheet dari sini, sama dari `Python_Coba_coba_Code`.
+
 ## new things I learned in `lists`
 
 Is apple on the list?
