@@ -15,6 +15,8 @@ else:
     print("no")
 ```
 
+> OmG kalo aing, dulu, pake cara for loop, terus ==, omG
+
 ## Source(s)
 
 [1ntermediate Python Programming Course](https://www.youtube.com/watch?v=HGOBQPFzWKo)
