@@ -26,3 +26,5 @@ Mine:
 > Baca lagi we di reddit nya.
 >
 > And also the search querynya gini "best book to learn accounting reddit"
+
+terus [ini juga](https://www.reddit.com/r/Accounting/comments/bt8wdx/what_are_the_best_books_for_learning_accounting/), baca we.
