@@ -24,3 +24,5 @@
 
 Mine:
 > Baca lagi we di reddit nya.
+>
+> And also the search querynya gini "best book to learn accounting reddit"
