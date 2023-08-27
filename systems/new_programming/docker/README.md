@@ -720,7 +720,7 @@ A typical `.dockerignore` file for a Python project might look like this:
 Mine:
 > omG, this is actually a thing. Gak dijelasin sama dia euy.
 
-This is taken from Django for Professionals.
+This is taken from "Django for Professionals" Book.
 
 ## Source(s)
 
