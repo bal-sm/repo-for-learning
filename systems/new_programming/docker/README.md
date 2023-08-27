@@ -267,6 +267,9 @@ Layer 1   ^
 
 ### Volume
 
+Mine:
+> Read more on official docs, [here](https://docs.docker.com/storage/volumes/).
+
 - `docker volume create data_volume`
 - `docker run -v data_volume:/var/lib/mysql mysql`
   - > `data_volume` is the name of the volume.
