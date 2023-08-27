@@ -99,6 +99,8 @@ Oh iya aing pake "Arch Linux" jadi pake podman to docker, to emulate its CLI.
   - to build image from Dockerfile.
   - what is `-t`?
 - `docker history `_`docker-container-name`_
+- `docker-compose down`
+  - omG, to stop all running containers, _kayaknya_, I don't check.
 
 ## How to create your own image
 
