@@ -21,5 +21,11 @@
   - buat bobol modern encryption cenah
   - tapi belum ada
 
+  Wow from @MrAcuriteOf1337:
+  > The thing with Quantum Computers is that, basically, you can take a function, feed it literally every possible input in one go, retrieve every possible output simultaneously, and then sample from that statistically to tell you things about the function. It's incredibly niche, and super hard to actually build, and we're not even sure how many problems can actually be accelerated with it, but it's fun to work through the Math for.
+
+  Wow from @HerrMustermann:
+  > When you introduce CPU, GPU, TPU, DPU, and QPU at a party, CPU says 'I'm versatile', GPU says 'I'm visual', TPU says 'I'm trending', DPU says 'I'm data-centric', and QPU? Well, it's quantum; it knows all the answers, but when you look at it, it just says 'Maybe...'
+
 Mine:
 > This is my personal summarization, maaf kalo gak ngerti.
