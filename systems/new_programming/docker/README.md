@@ -744,6 +744,9 @@ volumes:
 - .:/code
 ```
 
+Hm, tapi:
+> ... the volumes mount automatically syncs the Docker filesystem with our local computer’s filesystem. This if we make a change to the code within Docker it will automatically be synced with the local filesystem.
+
 taken from Django for Professionals.
 
 ## Source(s)
