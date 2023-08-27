@@ -725,6 +725,24 @@ Mine:
 
 This is taken from "Django for Professionals" Book.
 
+## Docker Compose for django things
+
+`docker-compose.yaml`:
+
+```yaml
+version: "3.9"
+services:
+web:
+build: .
+ports:
+- "8000:8000"
+command: python manage.py runserver 0.0.0.0:8000
+volumes:
+- .:/code
+```
+
+taken from Django for Professionals.
+
 ## Source(s)
 
 [1]: [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo)
