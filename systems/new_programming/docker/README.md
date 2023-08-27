@@ -705,10 +705,22 @@ For Python,
 
 ## `.dockerignore`
 
-...
+A .dockerignore file is a best practice way to specify certain files and directories that should not
+be included in a Docker image. This can help reduce overall image size and improves security by
+keeping things that are meant to be secret out of Docker.
+
+A typical `.dockerignore` file for a Python project might look like this:
+
+```.dockerignore
+.venv
+.git
+.gitignore
+```
 
 Mine:
 > omG, this is actually a thing. Gak dijelasin sama dia euy.
+
+This is taken from Django for Professionals.
 
 ## Source(s)
 
