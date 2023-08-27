@@ -336,10 +336,6 @@ services:
 then, to bring up the entire application stack, just run:
 `docker-compose up`
 
-### Version - just a little note
-
-Dari [docs](https://docs.docker.com/compose/compose-file/compose-versioning/) nya, yang paling tinggi teh `3.8` cenah, padahal, yang paling baru `3.9` dari [sini](https://forums.docker.com/t/docker-compose-version-3-8-or-3-9-for-latest/102439).
-
 ### Sample application - voting application
 
 voting-app with `Python` > in-memory DB with `Redis` > worker with `.NET` > db with `PostgreSQL` > result-app with `Node.js`
@@ -510,8 +506,8 @@ version: 3
 
 - Is `depends_on` removed?
 
-Mine:
-> Let's just read them in the [docs](...).
+About version.. - just a little note:
+> Dari [docs](https://docs.docker.com/compose/compose-file/compose-versioning/) nya, yang paling tinggi teh `3.8` cenah, padahal, yang paling baru `3.9` dari [sini](https://forums.docker.com/t/docker-compose-version-3-8-or-3-9-for-latest/102439).
 
 ## Docker Compose - Networks
 
