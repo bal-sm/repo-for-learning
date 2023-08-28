@@ -30,5 +30,22 @@ Mine:
 
 ---
 
-Last Position:
-> Sebelum Part I, yaitu Why Python? (belum dibaca)
+~~Last Position:~~
+~~> Sebelum Part I, yaitu Why Python? (belum dibaca)~~
+
+---
+
+Loncat dulu ke Appendix B
+
+Game Changer euy:
+
+> ```json
+>     "editor.rulers": [
+>     80,
+>     88,
+>     120,
+>     ]
+> ```
+> 
+> di `settings.json` VSCode, biar ada penggaris buat nentuin panjang baris yang-
+> nah kayak gini, omg wtf. kok baru tau aing.
