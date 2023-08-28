@@ -19,3 +19,9 @@ Note 2:
 > Chapter 11 uses `pytest` to write automated tests for the code you write. The `pytest` library has become the industry standard tool for writing tests in Python.
 > 
 > It’s friendly enough to use for your first tests, and if you pursue a career as a Python programmer, you’ll use it in professional settings as well.
+
+Note 3:
+> The index has been thoroughly updated to allow you to use Python Crash Course as a reference for all of your future Python projects.
+
+Mine:
+> Wow.
