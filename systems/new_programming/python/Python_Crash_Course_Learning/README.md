@@ -17,3 +17,5 @@ Note 1:
 
 Note 2:
 > Chapter 11 uses `pytest` to write automated tests for the code you write. The `pytest` library has become the industry standard tool for writing tests in Python.
+> 
+> It’s friendly enough to use for your first tests, and if you pursue a career as a Python programmer, you’ll use it in professional settings as well.
