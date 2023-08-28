@@ -29,3 +29,6 @@ Mine:
 > Wow.
 
 ---
+
+Last Position:
+> Sebelum Part I, yaitu Why Python? (belum dibaca)
