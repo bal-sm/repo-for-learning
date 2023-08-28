@@ -9,6 +9,8 @@ Great Lakes Geek:
 
 ## Learning in Progress
 
+### From PREFACE TO THE THIRD EDITION
+
 My question:
 > What is herein?
 
@@ -25,3 +27,5 @@ Note 3:
 
 Mine:
 > Wow.
+
+---
