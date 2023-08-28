@@ -13,4 +13,7 @@ My question:
 > What is herein?
 
 Note 1:
-> use `pathlib` cenah, buat read and write file.
+> use `pathlib` cenah, buat read and write file, karna lebih simple.
+
+Note 2:
+> Chapter 11 uses `pytest` to write automated tests for the code you write. The `pytest` library has become the industry standard tool for writing tests in Python.
