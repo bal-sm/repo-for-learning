@@ -11,3 +11,6 @@ Great Lakes Geek:
 
 My question:
 > What is herein?
+
+Note 1:
+> use `pathlib` cenah, buat read and write file.
