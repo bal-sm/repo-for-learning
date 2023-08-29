@@ -49,3 +49,20 @@ Game Changer euy:
 > 
 > di `settings.json` VSCode, biar ada penggaris buat nentuin panjang baris yang-
 > nah kayak gini, omg wtf. kok baru tau aing.
+
+Note aja:
+>
+> ```json
+> {
+>     --snip--
+>     "configurations": [
+>         {
+>             --snip--
+>             "console": "internalConsole",
+>             "justMyCode": true
+>         }
+>     ]
+> }
+> ```
+>
+> biar output nya di output aja cenah, gak di terminal.
