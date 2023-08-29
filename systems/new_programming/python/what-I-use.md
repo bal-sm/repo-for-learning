@@ -38,3 +38,5 @@ Back to
 ## Testimoni
 
 > OmG ih I really love VSCode. Tuh geura yah, aku langsung ke commit window aja tanpa di save dulu setelah nulis ini
+
+> misal aja wow tuh ih pas close window langsung ke save DONG. makanya JANGAN LUPA PAKE VCS + VSC OMG OMG
