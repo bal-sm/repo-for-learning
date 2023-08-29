@@ -34,3 +34,7 @@ Back to
 - `pyupgrade`
 - and for django, `django-upgrade`, etc, etc, maybe I should dedicate Django's what I use readme instead in here.
 - `black`kkkk omG, sumpah demi Allah, jadi rapih bgt code aku
+
+## Testimoni
+
+> OmG ih I really love VSCode. Tuh geura yah, aku langsung ke commit window aja tanpa di save dulu setelah nulis ini
