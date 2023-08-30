@@ -108,3 +108,17 @@ Another one:
 > ```
 > 
 > Pake `ALT-up arrow`, or `Option-up`.
+
+Wow, very good quote:
+> Working efficiently in an editing environment takes practice, but it also takes intention. When you’re learning to work with code, try to notice the things you do repeatedly. Any action you take in your editor likely has a shortcut; if you’re clicking menu items to carry out editing tasks, look for the shortcuts for those actions. If you’re switching between your keyboard and mouse frequently, look for the navigation shortcuts that keep you from reaching for your mouse so often.
+> 
+> ~~You can see all the keyboard shortcuts in VS Code by clicking Code and then Preferences, and then choosing Keyboard Shortcuts. You can use the search bar to find a particular shortcut, or you can scroll through the list to find shortcuts that might help you work more efficiently.~~ 
+
+Mine:
+> Ignore paragraf 2, mending, use default aja terus search di Google. Apalagi VSCode sering update dgn new features.
+
+Another very good quote:
+> Remember, it’s better to focus on the code that you’re working on, and avoid spending too much time on the tools you’re using.
+
+Mine:
+> Eta pisan, + THIRD PARTY APPS you're using/considering to use. Bikin goblokk ih. Bikin a post in Reddit Django ah.
