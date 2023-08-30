@@ -66,3 +66,12 @@ Note aja:
 > ```
 >
 > biar output nya di output aja cenah, gak di terminal.
+
+Wow kyknya:
+> 
+> ```python
+> def say_hello:
+>     print("Hello!")
+> ```
+> 
+> omG game changer euy bener CTRL-], or ⌘-], CTRL-[, or ⌘-[, pas di highlight codenya.
