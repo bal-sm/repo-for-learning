@@ -92,3 +92,19 @@ Another one:
 > wow
 > 
 > `CTRL-/, or ⌘-/`
+
+Another one:
+>
+> ```python
+> def pindah_code():
+>     pass # aja dulu
+> 
+> pindah_code()
+> 
+> def wait_tapi():
+>     pass # juga
+> 
+> wait_tapi()
+> ```
+> 
+> Pake `ALT-up arrow`, or `Option-up`.
