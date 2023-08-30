@@ -75,3 +75,20 @@ Wow kyknya:
 > ```
 > 
 > omG game changer euy bener CTRL-], or ⌘-], CTRL-[, or ⌘-[, pas di highlight codenya.
+
+Another one:
+> 
+> ```python
+> # def say_wtf:
+> #     print("what the fuck")
+> ```
+> 
+> wow
+> 
+> kalo di md file ini juga bisa guys
+> 
+> <!-- kayak gini -->
+> 
+> wow
+> 
+> `CTRL-/, or ⌘-/`
