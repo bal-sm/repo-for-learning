@@ -2,6 +2,10 @@
 
 by Eric Matthes on no starch press.
 
+## Contents
+
+- [Chapter 1 - Getting Started](./Chapter_1/README.md)
+
 ## Praise For Python Crash Course
 
 Great Lakes Geek:
