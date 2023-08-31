@@ -52,6 +52,44 @@ assert     del        global     not        with
 async      elif       if         or         yield
 ```
 
+Python Built-in Functions
+-------------------------
+
+You won’t get an error if you use one of the following readily available built-in functions as a variable name, but you’ll override the behavior of that function:\
+
+```
+abs()           hash()            slice()
+aiter()         help()            sorted()
+all()           hex()             staticmethod()
+any()           id()              str()
+anext()         input()           sum()
+ascii()         int()             super()
+bin()           isinstance()      tuple()
+bool()          issubclass()      type()
+breakpoint()    iter()            vars()
+bytearray()     len()             zip()
+bytes()         list()            __import__()
+callable()      locals()
+chr()           map()
+classmethod()   max()
+compile()       memoryview()
+complex()       min()
+delattr()       next()
+dict()          object()
+dir()           oct()
+divmod()        open()
+enumerate()     ord()
+eval()          pow()
+exec()          print()
+filter()        property()
+float()         range()
+format()        repr()
+frozenset()     reversed()
+getattr()       round()
+globals()       set()
+hasattr()       setattr()
+```
+
 ---
 
 Appendix B
