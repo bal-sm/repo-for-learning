@@ -34,12 +34,28 @@ Mine:
 
 ---
 
-~~Last Position:~~
-~~> Sebelum Part I, yaitu Why Python? (belum dibaca)~~
+Appendix A
+----------
+
+Python Keywords
+---------------
+
+Each of the following keywords has a specific meaning, and you’ll see an error if you try to use any of them as a variable name.
+
+```
+False      await      else       import     pass
+None       break      except     in         raise
+True       class      finally    is         return
+and        continue   for        lambda     try
+as         def        from       nonlocal   while
+assert     del        global     not        with
+async      elif       if         or         yield
+```
 
 ---
 
-Loncat dulu ke Appendix B
+Appendix B
+----------
 
 Game Changer euy:
 
