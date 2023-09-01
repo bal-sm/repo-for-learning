@@ -2,6 +2,6 @@
 
 A lucky charm `hello_world.py` code.
 
-## Contents
+## Content(s)
 
 [`hello_world.py`](./hello_world.py)
