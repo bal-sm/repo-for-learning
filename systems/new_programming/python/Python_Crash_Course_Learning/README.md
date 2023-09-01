@@ -2,6 +2,10 @@
 
 by Eric Matthes on no starch press.
 
+## Contents
+
+- [Chapter 1 - Getting Started](./Chapter_1/README.md)
+
 ## Praise For Python Crash Course
 
 Great Lakes Geek:
@@ -30,12 +34,66 @@ Mine:
 
 ---
 
-~~Last Position:~~
-~~> Sebelum Part I, yaitu Why Python? (belum dibaca)~~
+Appendix A
+----------
+
+Python Keywords
+---------------
+
+Each of the following keywords has a specific meaning, and you’ll see an error if you try to use any of them as a variable name.
+
+```
+False      await      else       import     pass
+None       break      except     in         raise
+True       class      finally    is         return
+and        continue   for        lambda     try
+as         def        from       nonlocal   while
+assert     del        global     not        with
+async      elif       if         or         yield
+```
+
+Python Built-in Functions
+-------------------------
+
+You won’t get an error if you use one of the following readily available built-in functions as a variable name, but you’ll override the behavior of that function:\
+
+```
+abs()           hash()            slice()
+aiter()         help()            sorted()
+all()           hex()             staticmethod()
+any()           id()              str()
+anext()         input()           sum()
+ascii()         int()             super()
+bin()           isinstance()      tuple()
+bool()          issubclass()      type()
+breakpoint()    iter()            vars()
+bytearray()     len()             zip()
+bytes()         list()            __import__()
+callable()      locals()
+chr()           map()
+classmethod()   max()
+compile()       memoryview()
+complex()       min()
+delattr()       next()
+dict()          object()
+dir()           oct()
+divmod()        open()
+enumerate()     ord()
+eval()          pow()
+exec()          print()
+filter()        property()
+float()         range()
+format()        repr()
+frozenset()     reversed()
+getattr()       round()
+globals()       set()
+hasattr()       setattr()
+```
 
 ---
 
-Loncat dulu ke Appendix B
+Appendix B
+----------
 
 Game Changer euy:
 
