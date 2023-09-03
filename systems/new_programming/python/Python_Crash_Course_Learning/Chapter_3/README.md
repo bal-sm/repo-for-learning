@@ -24,3 +24,5 @@ print(f"Hello, {full_name.title()}!")
 ## Codes
 
 [`mengurangi_ketidaksetaraan.py`](mengurangi_ketidaksetaraan.py)
+
+[`stringz.ipynb`](stringz.ipynb)
