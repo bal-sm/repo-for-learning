@@ -9,6 +9,15 @@
 - `.lower()`
   - Lowercase a string
 
+## f-strings
+
+```python
+first_name = "Katy"
+last_name = "Perry"
+
+full_name = f"{first_name} {last_name}"
+```
+
 ## Codes
 
 [`mengurangi_ketidaksetaraan.py`](mengurangi_ketidaksetaraan.py)
