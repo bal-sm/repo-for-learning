@@ -4,9 +4,9 @@
 
 - `.title()`
   - Titling case a string
-- `.upper`
+- `.upper()`
   - Uppercase a string
-- `.lower`
+- `.lower()`
   - Lowercase a string
 
 ## Codes
