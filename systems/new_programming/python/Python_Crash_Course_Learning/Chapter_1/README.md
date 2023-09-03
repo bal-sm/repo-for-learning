@@ -1,7 +1,7 @@
 # Chapter 1 - Getting Started
 
-> `Insert the content of chapter 1 here.`
+A lucky charm `hello_world.py` code.
 
-## Contents
+## Content(s)
 
-> `Insert the files of the codes here`
+[`hello_world.py`](./hello_world.py)
