@@ -16,6 +16,9 @@ first_name = "Katy"
 last_name = "Perry"
 
 full_name = f"{first_name} {last_name}"
+
+# terus bisa gini
+print(f"Hello, {full_name.title()}!")
 ```
 
 ## Codes
