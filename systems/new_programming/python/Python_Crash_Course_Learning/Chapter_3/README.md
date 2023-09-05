@@ -11,7 +11,7 @@
 - `.lower()`
   - Lowercase a string
   - Example: `oh my lord`
-- `.rstrip()`
+- `.strip()`
   - To strip extra whitespace on a string
   - Example: ` python  ` -> `python` 
 
