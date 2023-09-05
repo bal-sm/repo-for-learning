@@ -41,6 +41,9 @@ favorite_language
 # Output: 'python'
 ```
 
+Mine:
+> omG, kalo di Django ada clean method, wow very clean.
+
 ## Codes
 
 [`mengurangi_ketidaksetaraan.py`](mengurangi_ketidaksetaraan.py)
