@@ -17,6 +17,15 @@
   - Variation:
     - `.lstrip()`
     - `.rstrip()`
+- `.removeprefix()`
+  - To remove a prefix
+  - Example:
+
+    ```python
+    nostarch_url = 'https://nostarch.com'
+    nostarch_url.removeprefix('https://')
+    # Output: 'nostarch.com'
+    ```
 
 ## f-strings
 
