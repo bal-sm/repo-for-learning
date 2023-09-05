@@ -143,3 +143,6 @@
 - Tidak lupa, install ext [ini](https://marketplace.visualstudio.com/items?itemName=augustocdias.tasks-shell-input).
 
 > Thanks to @romaha from Medium. Read [more](https://medium.com/@romaha/vs-code-custom-tasks-for-python-web-development-422a4d31dd8c).
+
+My opinion ketang:
+> Too hacky ketang :(, but a very good learning experience, though. I'll create a more simple `tasks`.
