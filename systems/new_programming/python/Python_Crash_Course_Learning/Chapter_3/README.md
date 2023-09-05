@@ -14,6 +14,9 @@
 - `.strip()`
   - To strip extra whitespace on a string
   - Example: ` python  ` -> `python` 
+  - Variation:
+    - `.lstrip()`
+    - `.rstrip()`
 
 ## f-strings
 
