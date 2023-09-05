@@ -27,6 +27,15 @@ full_name = f"{first_name} {last_name}"
 print(f"Hello, {full_name.title()}!")
 ```
 
+## `.rstrip()`
+
+```python
+favorite_language = 'python '
+favorite_language = favorite_language.rstrip()
+favorite_language
+# Output: 'python'
+```
+
 ## Codes
 
 [`mengurangi_ketidaksetaraan.py`](mengurangi_ketidaksetaraan.py)
