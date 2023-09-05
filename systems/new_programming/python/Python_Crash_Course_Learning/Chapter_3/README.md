@@ -4,10 +4,16 @@
 
 - `.title()`
   - Titling case a string
+  - Example: `Jim The Cult Leader`
 - `.upper()`
   - Uppercase a string
+  - Example: `Jim the drug dealer`
 - `.lower()`
   - Lowercase a string
+  - Example: `oh my lord`
+- `.rstrip()`
+  - To strip extra whitespace on a string
+  - Example: ` python  ` -> `python` 
 
 ## f-strings
 
