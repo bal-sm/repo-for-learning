@@ -29,6 +29,8 @@ print(f"Hello, {full_name.title()}!")
 
 ## `.rstrip()`
 
+To alter a whole string permanently:
+
 ```python
 favorite_language = 'python '
 favorite_language = favorite_language.rstrip()
