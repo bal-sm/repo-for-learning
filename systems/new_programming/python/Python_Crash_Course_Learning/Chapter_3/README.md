@@ -4,11 +4,25 @@
 
 - `.title()`
   - Titling case a string
-- `.upper`
+- `.upper()`
   - Uppercase a string
-- `.lower`
+- `.lower()`
   - Lowercase a string
+
+## f-strings
+
+```python
+first_name = "Katy"
+last_name = "Perry"
+
+full_name = f"{first_name} {last_name}"
+
+# terus bisa gini
+print(f"Hello, {full_name.title()}!")
+```
 
 ## Codes
 
 [`mengurangi_ketidaksetaraan.py`](mengurangi_ketidaksetaraan.py)
+
+[`stringz.ipynb`](stringz.ipynb)
