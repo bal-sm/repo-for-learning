@@ -6,3 +6,7 @@ Biaya (+)
 Pendapatan (-)
 
 Aset + Biaya = Ekuitas + Kewajiban + Pendapatan
+
+Personal Learning Note aja:
+> Aset = Ekuitas + Kewajiban
+> Laba Rugi = Aset 
