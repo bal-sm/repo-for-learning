@@ -28,3 +28,6 @@ Mine(1):
   - For example, if you take out a loan with your bank:
     - the loan is clearly a **liability** _for you_.
     - From _the perspective of your bank_, however, the loan is an **asset**.
+
+WtF is this:
+> Similarly, the balance in your savings or checking account is, of course, an asset (to you). For the bank, however, the balance is a liability. It’s money that they owe you, as you’re allowed to demand full or partial payment of it at any time.
