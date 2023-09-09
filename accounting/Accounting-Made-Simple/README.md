@@ -7,6 +7,7 @@
   - [Part One: Financial Statements](#part-one-financial-statements)
     - [Chapter One: The Accounting Equation](#chapter-one-the-accounting-equation)
       - [My Asset is Your Liability](#my-asset-is-your-liability)
+  - [Learning in Progress](#learning-in-progress)
 
 ## Part One: Financial Statements
 
@@ -37,3 +38,11 @@ Ignore this:
 
 Mine:
 > Whatever is savings or checking account means.
+
+## Learning in Progress
+
+Query?:
+> is retained earnings account equity?
+
+Just to make sure and have fun with ChatGPT guys lol:
+> Yes, retained earnings account is a type of equity and is reported in the shareholders’ equity section of the balance sheet. Retained earnings are the accumulated portion of a business’s profits that are not distributed as dividends to shareholders but instead are reserved for reinvestment back into the business. Retained earnings can be used to purchase assets or other investments.
