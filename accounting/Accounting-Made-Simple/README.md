@@ -7,6 +7,10 @@
   - [Part One: Financial Statements](#part-one-financial-statements)
     - [Chapter One: The Accounting Equation](#chapter-one-the-accounting-equation)
       - [My Asset is Your Liability](#my-asset-is-your-liability)
+    - [CHAPTER TWO: The Balance Sheet](#chapter-two-the-balance-sheet)
+      - [Assets](#assets)
+      - [Liabilities](#liabilities)
+      - [Owners’ Equity](#owners-equity)
   - [Learning in Progress](#learning-in-progress)
 
 ## Part One: Financial Statements
@@ -38,6 +42,31 @@ Ignore this:
 
 Mine:
 > Whatever is savings or checking account means.
+
+### CHAPTER TWO: The Balance Sheet
+
+The book:
+> A company’s balance sheet shows its financial situation at a given point in time. It is, quite simply, a formal presentation of the accounting equation.
+
+Mine:
+> `Insert the table from the book to here, plz.
+
+#### Assets
+
+- **Cash and Cash Equivalents**: Balances in checking and savings accounts, as well as any investments that will mature within 3 months or less.
+- **Inventory**: Goods kept in stock, available for sale.
+- **Accounts Receivable**: Amounts due from customers for goods or services that have already been delivered.
+- **Property, Plant, and Equipment**: Assets that cannot readily be converted into cash—things such as computers, manufacturing equipment, vehicles, furniture, etc.
+
+#### Liabilities
+
+- **Accounts Payable**: Amounts due to suppliers for goods or services that have already been received.
+- **Notes Payable**: Contractual obligations due to lenders (e.g., bank loans).
+
+#### Owners’ Equity
+
+- **Common Stock**: Amounts invested by the owners of the company.
+- **Retained Earnings**: The sum of all net income over the life of the business that has not been distributed to owners in the form of a dividend.
 
 ## Learning in Progress
 
