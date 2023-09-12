@@ -13,6 +13,7 @@
       - [Owners’ Equity](#owners-equity)
       - [Current vs. Long-Term](#current-vs-long-term)
       - [Multiple-Period Balance Sheets](#multiple-period-balance-sheets)
+    - [CHAPTER THREE: The Income Statement](#chapter-three-the-income-statement)
   - [Learning in Progress](#learning-in-progress)
 
 ## Part One: Financial Statements
@@ -84,6 +85,10 @@ Mine:
 #### Multiple-Period Balance Sheets
 
 > Before and After period tea. Kalo disini per tahun. Skipped.
+
+### CHAPTER THREE: The Income Statement
+
+...
 
 ## Learning in Progress
 
