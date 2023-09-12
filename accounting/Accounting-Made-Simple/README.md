@@ -11,6 +11,7 @@
       - [Assets](#assets)
       - [Liabilities](#liabilities)
       - [Owners’ Equity](#owners-equity)
+      - [Current vs. Long-Term](#current-vs-long-term)
   - [Learning in Progress](#learning-in-progress)
 
 ## Part One: Financial Statements
@@ -67,6 +68,17 @@ Mine:
 
 - **Common Stock**: Amounts invested by the owners of the company.
 - **Retained Earnings**: The sum of all net income over the life of the business that has not been distributed to owners in the form of a dividend.
+
+#### Current vs. Long-Term
+
+- **Current assets** are those that are expected to be converted into cash within 12 months or less.
+  - Accounts Receivable, Cash, and Inventory.
+- Everything that isn’t a current asset is, by default, **a long-term asset** (a.k.a. non-current asset).
+  - Property, Plant, and Equipment.
+- **Current liabilities** are those that will need to be paid off within 12 months or less.
+  - Accounts Payable.
+- **Long-term Liabilities**
+  - (_Notes Payable that are paid off over a period of time are split up on the balance sheet so that the next 12 months’ payments are shown as a current liability, while the remainder of the note is shown as a long-term liability._)
 
 ## Learning in Progress
 
