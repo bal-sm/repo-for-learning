@@ -5,7 +5,7 @@
 - [Accounting Made Simple](#accounting-made-simple)
   - [Table of Contents](#table-of-contents)
   - [Part One: Financial Statements](#part-one-financial-statements)
-    - [Chapter One: The Accounting Equation](#chapter-one-the-accounting-equation)
+    - [CHAPTER ONE: The Accounting Equation](#chapter-one-the-accounting-equation)
       - [My Asset is Your Liability](#my-asset-is-your-liability)
     - [CHAPTER TWO: The Balance Sheet](#chapter-two-the-balance-sheet)
       - [Assets](#assets)
@@ -18,7 +18,7 @@
 
 ## Part One: Financial Statements
 
-### Chapter One: The Accounting Equation
+### CHAPTER ONE: The Accounting Equation
 
 `Assets = Liabilities + Owners’ Equity`
 
