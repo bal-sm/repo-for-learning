@@ -12,6 +12,7 @@
       - [Liabilities](#liabilities)
       - [Owners’ Equity](#owners-equity)
       - [Current vs. Long-Term](#current-vs-long-term)
+      - [Multiple-Period Balance Sheets](#multiple-period-balance-sheets)
   - [Learning in Progress](#learning-in-progress)
 
 ## Part One: Financial Statements
@@ -79,6 +80,10 @@ Mine:
   - Accounts Payable.
 - **Long-term Liabilities**
   - (_Notes Payable that are paid off over a period of time are split up on the balance sheet so that the next 12 months’ payments are shown as a current liability, while the remainder of the note is shown as a long-term liability._)
+
+#### Multiple-Period Balance Sheets
+
+> Before and After period tea. Kalo disini per tahun. Skipped.
 
 ## Learning in Progress
 
