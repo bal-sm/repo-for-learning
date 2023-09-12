@@ -2,19 +2,7 @@
 
 ## Table of Contents
 
-- [Accounting Made Simple](#accounting-made-simple)
-  - [Table of Contents](#table-of-contents)
-  - [Part One: Financial Statements](#part-one-financial-statements)
-    - [CHAPTER ONE: The Accounting Equation](#chapter-one-the-accounting-equation)
-      - [My Asset is Your Liability](#my-asset-is-your-liability)
-    - [CHAPTER TWO: The Balance Sheet](#chapter-two-the-balance-sheet)
-      - [Assets](#assets)
-      - [Liabilities](#liabilities)
-      - [Owners’ Equity](#owners-equity)
-      - [Current vs. Long-Term](#current-vs-long-term)
-      - [Multiple-Period Balance Sheets](#multiple-period-balance-sheets)
-    - [CHAPTER THREE: The Income Statement](#chapter-three-the-income-statement)
-  - [Learning in Progress](#learning-in-progress)
+> Removed, 'cause there's outline on GitJob Online.
 
 ## Part One: Financial Statements
 
