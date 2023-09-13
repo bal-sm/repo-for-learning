@@ -138,6 +138,20 @@ Example:
     - so he has no Cost of Goods Sold
   - His gross profit is simply equal to his revenues.
 
+#### Operating Income vs. Net Income
+
+- Sometimes, you need to separates operating revenues and expenses from non-operating revenues and expenses on income statements.
+  - Operating revenues are those coming from the sale of the business’s primary products or services.
+  - Operating expenses are the expenses related to the core operation of the business.
+- Non-operating revenues and expenses are those that are unrelated to the core operations of the business.
+- The point of separating operating revenues and expenses from non-operating revenues and expenses is 
+  - to allow for the calculation of operating income.
+    - Mine:
+      > y'know the purpose of operating income.
+
+Mine:
+> Insert the table that seperates _these_, here.
+
 ## Learning in Progress
 
 Query?:
