@@ -79,21 +79,22 @@ Mine:
 - A company’s **income statement** shows the company’s financial performance over a period of time (usually one year).
   - This is in contrast to the **balance sheet**, which shows financial position at a point in time.
 
-||Income Statement ||
+**Income Statement**
+|                    |`..............`|                  |
 |-----|-----|-----|
 | **Revenue** |
-| Sales | | $300,000 |
-| Cost of Goods Sold | | <u>(100,000)</u> |
-| Gross Profit | | <u>200,000</u> |
-|       |
+| Sales |                           | $300,000 |
+| Cost of Goods Sold |              | <u>(100,000)</u> |
+| Gross Profit |                    | <u>200,000</u> |
+| |`.`| |
 | **Expenses** |
-| Rent | | 30,000 |
-| Salaries and Wages | | 80,000 |
-| Advertising | | 15,000 |
-| Insurance | | <u>10,000</u> |
-| Total Expenses | | <u>135,000</u> |
-|       | |
-| **Net Income** | | $65,000 |
+| Rent |                            | 30,000 |
+| Salaries and Wages |              | 80,000 |
+| Advertising |                     | 15,000 |
+| Insurance |                       | <u>10,000</u> |
+| Total Expenses |                  | <u>135,000</u> |
+| |`.`| |
+| **Net Income** |                  | $65,000 |
 
 ## Learning in Progress
 
