@@ -119,6 +119,25 @@ Mine:
 Mine:
 > Wow for `⠀` character.
 
+#### Gross Profit and Cost of Goods Sold
+
+- `Gross profit = "the sum of a company’s revenues" - Cost of Goods Sold`
+- **Cost of Goods Sold (CoGS)** is the amount that the company **paid** for the goods that it **sold** _over the course of the period_.
+
+Example:
+- Laura
+  - Bought 100 t-shirts for $12 each.
+  - Sold all of those t-shirts for $2,500. _Sales = $2,500_
+  - CoGS = $1,200
+  - Gross Profit = $1,300
+- Rich
+  - His costs are all overhead.
+    - 'cause he is selling services.
+    - which is preparing tax returns.
+  - each additional return he prepares adds nothing to his total costs
+    - so he has no Cost of Goods Sold
+  - His gross profit is simply equal to his revenues.
+
 ## Learning in Progress
 
 Query?:
