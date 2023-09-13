@@ -1,6 +1,13 @@
 # Visual Studio Code Things
 
+## Extensions
+
 ...
+
+Mine:
+> New one.
+
+- [Markdown Table](https://marketplace.visualstudio.com/items?itemName=TakumiI.markdowntable)
 
 ## Source(s) / Plz rangkum me kesini
 
