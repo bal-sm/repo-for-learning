@@ -39,8 +39,28 @@ Mine:
 The book:
 > A company’s balance sheet shows its financial situation at a given point in time. It is, quite simply, a formal presentation of the accounting equation.
 
+| <u>**Assets**</u>                   |⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀|          |
+|-------------------------------------|----------------|----------|
+| Cash and Cash Equivalents           |⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀| $50,000  |
+| Inventory                           |⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀| $110,000 |
+| Accounts Receivable                 |⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀| $20,000  |
+| Property, Plant, and Equipment      |⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀| <u>$300,000</u> |
+| Total Assets:                       |⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀| <u>$480,000</u> |
+|                                     |⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀|          |
+| <u>**Liabilities**</u>              |⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀|          |
+| Accounts Payable                    |⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀| $20,000  |
+| Notes Payable                       |⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀| <u>$270,000</u> |
+| Total Liabilities:                  |⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀| <u>$290,000</u> |
+|                                     |⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀|          |
+| <u>**Owners’ Equity**</u>           |⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀|          |
+| Common Stock                        |⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀| $50,000  |
+| Retained Earnings                   |⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀| <u>$140,000</u> |
+| Total Owners’ Equity                |⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀| <u>$190,000</u> |
+|                                     |⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀| <u>⠀⠀⠀⠀⠀⠀⠀</u> |
+| Total Liabilities + Owners’ Equity: |⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀| <u>$480,000<u> |
+
 Mine:
-> `Insert the table from the book to here, plz.
+> ~~`Insert the table from the book to here, plz.`~~ Done.
 
 #### Assets
 
