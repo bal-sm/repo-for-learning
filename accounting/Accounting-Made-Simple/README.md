@@ -39,25 +39,25 @@ Mine:
 The book:
 > A company’s balance sheet shows its financial situation at a given point in time. It is, quite simply, a formal presentation of the accounting equation.
 
-| <u>**Assets**</u>                   |⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀|          |
-|-------------------------------------|----------------|----------|
-| Cash and Cash Equivalents           |⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀| $50,000  |
-| Inventory                           |⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀| $110,000 |
-| Accounts Receivable                 |⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀| $20,000  |
-| Property, Plant, and Equipment      |⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀| <u>$300,000</u> |
-| Total Assets:                       |⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀| <u>$480,000</u> |
-|                                     |⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀|          |
-| <u>**Liabilities**</u>              |⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀|          |
-| Accounts Payable                    |⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀| $20,000  |
-| Notes Payable                       |⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀| <u>$270,000</u> |
-| Total Liabilities:                  |⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀| <u>$290,000</u> |
-|                                     |⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀|          |
-| <u>**Owners’ Equity**</u>           |⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀|          |
-| Common Stock                        |⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀| $50,000  |
-| Retained Earnings                   |⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀| <u>$140,000</u> |
-| Total Owners’ Equity                |⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀| <u>$190,000</u> |
-|                                     |⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀| <u>⠀⠀⠀⠀⠀⠀⠀</u> |
-| Total Liabilities + Owners’ Equity: |⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀| <u>$480,000<u> |
+| <u>**Assets**</u>                   | ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ |                 |
+| ----------------------------------- | ------------- | --------------- |
+| Cash and Cash Equivalents           | ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ | $50,000         |
+| Inventory                           | ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ | $110,000        |
+| Accounts Receivable                 | ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ | $20,000         |
+| Property, Plant, and Equipment      | ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ | <u>$300,000</u> |
+| Total Assets:                       | ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ | <u>$480,000</u> |
+|                                     | ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ |                 |
+| <u>**Liabilities**</u>              | ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ |                 |
+| Accounts Payable                    | ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ | $20,000         |
+| Notes Payable                       | ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ | <u>$270,000</u> |
+| Total Liabilities:                  | ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ | <u>$290,000</u> |
+|                                     | ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ |                 |
+| <u>**Owners’ Equity**</u>           | ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ |                 |
+| Common Stock                        | ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ | $50,000         |
+| Retained Earnings                   | ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ | <u>$140,000</u> |
+| Total Owners’ Equity                | ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ | <u>$190,000</u> |
+|                                     | ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ | <u>⠀⠀⠀⠀⠀⠀⠀</u>  |
+| Total Liabilities + Owners’ Equity: | ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ | <u>$480,000<u>  |
 
 Mine:
 > ~~`Insert the table from the book to here, plz.`~~ Done.
@@ -100,21 +100,21 @@ Mine:
   - This is in contrast to the **balance sheet**, which shows financial position at a point in time.
 
 **Income Statement**
-|                    |⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀|                  |
-|--------------------|--------------|-----------------:|
-| **Revenue** |
-| Sales |                           | $300,000 |
-| Cost of Goods Sold |              | <u>(100,000)</u> |
-| Gross Profit |                    | <u>200,000</u> |
-| |⠀| |
-| **Expenses** |
-| Rent |                            | 30,000 |
-| Salaries and Wages |              | 80,000 |
-| Advertising |                     | 15,000 |
-| Insurance |                       | <u>10,000</u> |
-| Total Expenses |                  | <u>135,000</u> |
-| |⠀| |
-| **Net Income** |                  | $65,000 |
+|                    | ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ |                  |
+| ------------------ | ----------- | ---------------: |
+| **Revenue**        |             |                  |
+| Sales              |             |         $300,000 |
+| Cost of Goods Sold |             | <u>(100,000)</u> |
+| Gross Profit       |             |   <u>200,000</u> |
+|                    | ⠀           |                  |
+| **Expenses**       |             |                  |
+| Rent               |             |           30,000 |
+| Salaries and Wages |             |           80,000 |
+| Advertising        |             |           15,000 |
+| Insurance          |             |    <u>10,000</u> |
+| Total Expenses     |             |   <u>135,000</u> |
+|                    | ⠀           |                  |
+| **Net Income**     |             |          $65,000 |
 
 Mine:
 > Wow for `⠀` character.
