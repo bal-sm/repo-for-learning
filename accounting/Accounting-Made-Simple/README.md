@@ -80,21 +80,24 @@ Mine:
   - This is in contrast to the **balance sheet**, which shows financial position at a point in time.
 
 **Income Statement**
-|                    |`..............`|                  |
+|                    |⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀|                  |
 |--------------------|--------------|-----------------:|
 | **Revenue** |
 | Sales |                           | $300,000 |
 | Cost of Goods Sold |              | <u>(100,000)</u> |
 | Gross Profit |                    | <u>200,000</u> |
-| |`.`| |
+| |⠀| |
 | **Expenses** |
 | Rent |                            | 30,000 |
 | Salaries and Wages |              | 80,000 |
 | Advertising |                     | 15,000 |
 | Insurance |                       | <u>10,000</u> |
 | Total Expenses |                  | <u>135,000</u> |
-| |`.`| |
+| |⠀| |
 | **Net Income** |                  | $65,000 |
+
+Mine:
+> Wow for `⠀` character.
 
 ## Learning in Progress
 
