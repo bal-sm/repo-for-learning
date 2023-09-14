@@ -30,10 +30,10 @@ Halaman 313 - Masalah Persediaan Lainnya - Aturan Mana yang Terendah antara Biay
 ## Note 3 - Jurnal Aneh
 
 jurnal penyesuaian, menurut saya:
-> mengingat keadaan akuntansi sebenarnya pada periode tersebut.
+> menelaah kembali keadaan akuntansi sebenarnya pada periode tersebut.
 
 jurnal pembalik, menurut saya:
-> soalnya gak dibaca lagi kan jurnal penyesuaian periode sebelumnya.
+> soalnya gak dibaca lagi kan jurnal penyesuaian periode sebelumnya. jadi keliatan jelas di buku besar (t-chart) periode saat ini setelah jurnal pembalik tersebut terposting.
 
 ### Source(s)
 
