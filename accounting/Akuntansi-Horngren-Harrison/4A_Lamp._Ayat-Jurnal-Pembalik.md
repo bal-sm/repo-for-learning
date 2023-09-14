@@ -6,6 +6,9 @@
   - Akibatnya akan tampak saldo negatif (kredit) pada akun beban yang bersangkutan.
     - Sehingga saat pembayaran, akun beban tersebut kembali pada saldo nol dan ditambahkan sesuai berapa besar kas/equivalents (lawan akun) yang terpakai.
 
+Mine for this md:
+> Formatting nya harus dibenerin euy.
+
 ## Contohnya
 
 ### Akuntansi untuk Beban Akrual
