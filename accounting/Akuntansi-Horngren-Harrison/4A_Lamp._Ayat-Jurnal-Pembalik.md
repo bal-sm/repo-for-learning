@@ -56,6 +56,9 @@ Beban Gaji pada 30 April 2008, setelah penyesuaian tersebut.
 | 30 Apr. Saldo - 1.800 | 30 Apr. Closing - 1.800 |
 |                       |               Saldo Nol |
 
+Mine:
+> Langsung skip aja ke [sini](#membuat-ayat-jurnal-pembalik)
+
 ### Akuntansi Tanpa Ayat Jurnal Pembalik
 
 Jurnal pembayaran gaji sebesar $1.000.
@@ -71,4 +74,36 @@ Keterangan (bahasa sendiri):
 
 ### Membuat Ayat Jurnal Pembalik
 
-...
+Ayat Jurnal Pembalik berdasarkan kebalikan Ayat Jurnal Penyesuaian tea.
+| 1     | 2              | 3   | 4   |
+| :---- | :------------- | :-- | :-- |
+| 1 Mei | Utang Gaji     | 900 |     |
+|       | ____Beban Gaji |     | 900 |
+
+Utang Gaji
+| 1                       | 2                    |
+| :---------------------- | :------------------- |
+| **1 Mei Reverse - 900** | 30 April Saldo - 900 |
+|                         | Saldo Nol            |
+
+Beban Gaji
+| 1                      | 2                        |
+| :--------------------- | :----------------------- |
+| 30 April Saldo - 1.800 | 30 April Closing - 1.800 |
+|                        | Saldo Nol                |
+|                        | **1 Mei Reverse - 900**  |
+
+Jurnal pembayaran gaji sebesar $1.000.
+| 1   | 2          | 3     | 4     |
+| :-- | :--------- | :---- | :---- |
+|     | Beban Gaji | 1.000 |       |
+|     | ____Kas    |       | 1.000 |
+
+Beban Gaji
+| 1                          | 2                   |
+| :------------------------- | :------------------ |
+| 5 Mei Cash Payment - 1.000 | 1 Mei Reverse - 900 |
+| 5 Mei Saldo - 100          |                     |
+
+Mine:
+> Tuh kan sama. Pokoknya Utang Gaji kebayar juga semua.
