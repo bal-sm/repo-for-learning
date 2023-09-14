@@ -40,7 +40,7 @@ jurnal penyesuaian, menurut saya:
 > menelaah kembali keadaan akuntansi sebenarnya pada periode tersebut.
 
 jurnal penutup, menurut saya:
-> menutup seluruh beban dan pendapatan pada periode tersebut.
+> menutup seluruh beban dan pendapatan pada periode tersebut, soalnya periode besok kan mau lanjut bisnis lagi.
 
 jurnal pembalik, menurut saya:
 > optional, but a must! soalnya gak dibaca lagi kan jurnal penyesuaian periode sebelumnya. jadi keliatan jelas di buku besar (t-chart) periode saat ini setelah jurnal pembalik tersebut terposting.
