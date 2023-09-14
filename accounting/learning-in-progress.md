@@ -27,6 +27,13 @@ Halaman 313 - Masalah Persediaan Lainnya - Aturan Mana yang Terendah antara Biay
 - Penyusunan Jurnal Pembalik
   - just kidding lol, inget dong masih ada yang belum terlunaskan
 
+Source(s)
+---------
+
+- [11 Tahap Siklus Akuntansi yang Perlu Anda Dipahami](https://www.jurnal.id/id/blog/2018-11-tahap-siklus-akuntansi-yang-perlu-anda-dipahami/)
+
+  > Aku liat grafiknya aja, Ily. Your app zucks, I don't use it.
+
 ## Note 3 - Jurnal Aneh
 
 jurnal penyesuaian, menurut saya:
@@ -34,9 +41,3 @@ jurnal penyesuaian, menurut saya:
 
 jurnal pembalik, menurut saya:
 > optional, but a must! soalnya gak dibaca lagi kan jurnal penyesuaian periode sebelumnya. jadi keliatan jelas di buku besar (t-chart) periode saat ini setelah jurnal pembalik tersebut terposting.
-
-### Source(s)
-
-- [11 Tahap Siklus Akuntansi yang Perlu Anda Dipahami](https://www.jurnal.id/id/blog/2018-11-tahap-siklus-akuntansi-yang-perlu-anda-dipahami/)
-
-  > Aku liat grafiknya aja, Ily. Your app zucks, I don't use it.
