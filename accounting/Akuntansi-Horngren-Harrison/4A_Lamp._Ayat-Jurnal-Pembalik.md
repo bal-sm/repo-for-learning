@@ -8,6 +8,12 @@
 
 ## Contohnya
 
+### Akuntansi untuk Beban Akrual
+
+Perusahaan Cookie Lapp.
+
+Ringkasan Neraca yang menjadi perhatian topik ini.
+
 Beban Gaji pada 30 April 2008, sebelum penyesuaian.
 |                                          |     |
 | ---------------------------------------: | --: |
@@ -49,5 +55,20 @@ Beban Gaji pada 30 April 2008, setelah penyesuaian tersebut.
 |    30 Apr. Adj. - 900 |                         |
 | 30 Apr. Saldo - 1.800 | 30 Apr. Closing - 1.800 |
 |                       |               Saldo Nol |
+
+### Akuntansi Tanpa Ayat Jurnal Pembalik
+
+Jurnal pembayaran gaji sebesar $1.000.
+| 1     | 2          | 3   | 4    |
+| :---- | :--------- | :-- | :--- |
+| 5 Mei | Utang Gaji | 900 |      |
+|       | Beban Gaji | 100 |      |
+|       | ____Kas    |     | 1000 |
+
+Keterangan (bahasa sendiri):
+- Akuntan akan kesulitan membuat jurnal ini, soalnya utang gaji harus merujuk ke jurnal penyesuaian periode sebelumnya.
+- Maka dibutuhkan jurnal pembalik.
+
+### Membuat Ayat Jurnal Pembalik
 
 ...
