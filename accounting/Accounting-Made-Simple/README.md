@@ -170,3 +170,6 @@ Answer:
 
 Realization:
 > OmG ya, definition of "operating" di Income Statement, and Cash flow goblok ya.
+
+Hm:
+> I need to explain why each thing from cash flow statement is classified as (sic njg ih) its blabla.
