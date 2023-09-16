@@ -184,6 +184,22 @@ Mine:
 - Again, retained earnings is the sum of all of a company’s undistributed profits over the entire existence of the company.
   - We say “undistributed” in order to distinguish from profits that have been distributed to company shareholders in the form of dividend payments.
 
+#### Pending Tables
+
+`1.`
+| Retained Earnings, 1/1/2013    | $0       |
+| :----------------------------- | :------- |
+| Net Income                     | 50,000   |
+| Dividends Paid to Shareholders | (20,000) |
+| Retained Earnings, 12/31/2013  | $30,000  |
+
+`2.`
+| Retained Earnings, 1/1/2014    | $30,000  |
+| :----------------------------- | :------- |
+| Net Income                     | 70,000   |
+| Dividends Paid to Shareholders | (20,000) |
+| Retained Earnings, 12/31/2014  | $80,000  |
+
 ## Learning in Progress
 
 Query?:
