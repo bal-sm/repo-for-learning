@@ -152,6 +152,14 @@ Example:
 Mine:
 > Insert the table that seperates _these_, here.
 
+### CHAPTER FOUR: The Statement of Retained Earnings
+
+- Very brief.
+- Only has 1 purpose:
+  - to detail the changes in a company’s retained earnings over a period of time.
+- Again, retained earnings is the sum of all of a company’s undistributed profits over the entire existence of the company.
+  - We say “undistributed” in order to distinguish from profits that have been distributed to company shareholders in the form of dividend payments.
+
 ## Learning in Progress
 
 Query?:
