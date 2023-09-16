@@ -149,32 +149,32 @@ Example:
     - Mine:
       > y'know the purpose of operating income.
 
-| 1                           | 2                   | 3               |
-| :-------------------------- | :------------------ | :-------------- |
-| **Revenue**                 | `.................` |                 |
-| Sales                       |                     | $450,000        |
-| Cost of Goods Sold          |                     | <u>(75,000)</u> |
-| Gross Profit                |                     | <u>375,000</u>  |
-| `...`                       |                     |                 |
-| Operating Expenses          |                     |                 |
-| Rent                        |                     | 45,000          |
-| Salaries and Wages          |                     | 120,000         |
-| Advertising                 |                     | 25,000          |
-| Insurance                   |                     | <u>10,000</u>   |
-| Total Operating Expenses    |                     | <u>200,000</u>  |
-| `...`                       |                     | _______         |
-| Operating Income            |                     | <u>175,000</u>  |
-| `...`                       |                     |                 |
-| Other Income and Expenses   |                     |                 |
-| Gain on Sale of Investments |                     | 25,000          |
-| Interest Expense            |                     | <u>(13,000)</u> |
-| Other Income, net           |                     | <u>12,000</u>   |
-| `...`                       |                     |                 |
-| `...`                       |                     | _______         |
-| Net Income                  |                     | <u>$187,000</u> |
+| 1                             | 2                   | 3               |
+| :---------------------------- | :------------------ | :-------------- |
+| **Revenue**                   | `.................` |                 |
+| Sales                         |                     | $450,000        |
+| Cost of Goods Sold            |                     | <u>(75,000)</u> |
+| Gross Profit                  |                     | <u>375,000</u>  |
+| `...`                         |                     |                 |
+| **Operating Expenses**        |                     |                 |
+| Rent                          |                     | 45,000          |
+| Salaries and Wages            |                     | 120,000         |
+| Advertising                   |                     | 25,000          |
+| Insurance                     |                     | <u>10,000</u>   |
+| Total Operating Expenses      |                     | <u>200,000</u>  |
+| `...`                         |                     | _______         |
+| **Operating Income**          |                     | <u>175,000</u>  |
+| `...`                         |                     |                 |
+| **Other Income and Expenses** |                     |                 |
+| Gain on Sale of Investments   |                     | 25,000          |
+| Interest Expense              |                     | <u>(13,000)</u> |
+| Other Income, net             |                     | <u>12,000</u>   |
+| `...`                         |                     |                 |
+| `...`                         |                     | _______         |
+| **Net Income**                |                     | <u>$187,000</u> |
 
 Mine:
-> ~~Insert the table that seperates _these_, here.~~ Half-Done.
+> ~~Insert the table that seperates _these_, here.~~ Done.
 
 ### CHAPTER FOUR: The Statement of Retained Earnings
 
