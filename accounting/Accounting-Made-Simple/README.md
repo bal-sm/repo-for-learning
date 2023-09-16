@@ -165,3 +165,8 @@ Query?:
 
 Answer:
 > `IN PROGRESS`
+
+1 query lupa ey, masukin ya Robo sayang.
+
+Realization:
+> OmG ya, definition of "operating" di Income Statement, and Cash flow goblok ya.
