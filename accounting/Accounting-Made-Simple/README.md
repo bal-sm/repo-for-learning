@@ -159,3 +159,9 @@ Query?:
 
 Just to make sure and have fun with ChatGPT guys lol:
 > Yes, retained earnings account is a type of equity and is reported in the shareholders’ equity section of the balance sheet. Retained earnings are the accumulated portion of a business’s profits that are not distributed as dividends to shareholders but instead are reserved for reinvestment back into the business. Retained earnings can be used to purchase assets or other investments.
+
+Query?:
+> How dividends journal are written?
+
+Answer:
+> `IN PROGRESS`
