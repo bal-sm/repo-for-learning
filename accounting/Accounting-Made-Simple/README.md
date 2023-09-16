@@ -173,3 +173,6 @@ Realization:
 
 Hm:
 > I need to explain why each thing from cash flow statement is classified as (sic njg ih) its blabla.
+
+Hm:
+> Jadi di income statement teh akrual things (sebelum) semua???
