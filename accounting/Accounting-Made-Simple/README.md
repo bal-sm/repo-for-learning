@@ -149,8 +149,56 @@ Example:
     - Mine:
       > y'know the purpose of operating income.
 
+| 1                             | 2                   | 3               |
+| :---------------------------- | :------------------ | :-------------- |
+| **Revenue**                   | `.................` |                 |
+| Sales                         |                     | $450,000        |
+| Cost of Goods Sold            |                     | <u>(75,000)</u> |
+| Gross Profit                  |                     | <u>375,000</u>  |
+| `...`                         |                     |                 |
+| **Operating Expenses**        |                     |                 |
+| Rent                          |                     | 45,000          |
+| Salaries and Wages            |                     | 120,000         |
+| Advertising                   |                     | 25,000          |
+| Insurance                     |                     | <u>10,000</u>   |
+| Total Operating Expenses      |                     | <u>200,000</u>  |
+| `...`                         |                     | _______         |
+| **Operating Income**          |                     | <u>175,000</u>  |
+| `...`                         |                     |                 |
+| **Other Income and Expenses** |                     |                 |
+| Gain on Sale of Investments   |                     | 25,000          |
+| Interest Expense              |                     | <u>(13,000)</u> |
+| Other Income, net             |                     | <u>12,000</u>   |
+| `...`                         |                     |                 |
+| `...`                         |                     | _______         |
+| **Net Income**                |                     | <u>$187,000</u> |
+
 Mine:
-> Insert the table that seperates _these_, here.
+> ~~Insert the table that seperates _these_, here.~~ Done.
+
+### CHAPTER FOUR: The Statement of Retained Earnings
+
+- Very brief.
+- Only has 1 purpose:
+  - to detail the changes in a company’s retained earnings over a period of time.
+- Again, retained earnings is the sum of all of a company’s undistributed profits over the entire existence of the company.
+  - We say “undistributed” in order to distinguish from profits that have been distributed to company shareholders in the form of dividend payments.
+
+#### Pending Tables
+
+`1.`
+| Retained Earnings, 1/1/2013    | $0       |
+| :----------------------------- | :------- |
+| Net Income                     | 50,000   |
+| Dividends Paid to Shareholders | (20,000) |
+| Retained Earnings, 12/31/2013  | $30,000  |
+
+`2.`
+| Retained Earnings, 1/1/2014    | $30,000  |
+| :----------------------------- | :------- |
+| Net Income                     | 70,000   |
+| Dividends Paid to Shareholders | (20,000) |
+| Retained Earnings, 12/31/2014  | $80,000  |
 
 ## Learning in Progress
 
