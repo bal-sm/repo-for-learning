@@ -90,3 +90,33 @@
 
 <kbd>
 <fieldset>
+
+## D tier
+
+<header>
+<small>
+<track>
+<style>
+<button>
+
+<wbr>
+<cite>
+<data>
+<h6>
+<html>
+
+<object>
+<u>
+<area>
+<hgroup>
+<q>
+
+<body>
+<abbr>
+<b>
+<section>
+<col>
+
+<colgroup>
+<samp>
+<footer>
