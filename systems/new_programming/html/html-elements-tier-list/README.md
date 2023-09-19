@@ -29,3 +29,25 @@
 - `<iframe>`
 - `<embed>`
 - `<center>`
+
+## A tier
+
+- <nav>
+- <head>
+- <thead>
+- <sub>
+- <option>
+
+- <td>
+- <picture>
+- <code>
+- <strike>
+- <h2>
+
+- <h1>
+- <svg>
+- <ol>
+- <textarea>
+- <meta>
+
+- <datalist>
