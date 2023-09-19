@@ -73,3 +73,20 @@
 <input>
 
 <span>
+
+## C tier
+
+<caption>
+<article>
+<a>
+<dialog>
+<tfoot>
+
+<figcaption>
+<figure>
+<h4>
+<h5>
+<blockquote>
+
+<kbd>
+<fieldset>
