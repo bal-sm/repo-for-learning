@@ -180,9 +180,9 @@ Mine:
 
 - Very brief.
 - Only has 1 purpose:
-  - to detail the changes in a company’s retained earnings over a period of time.
-- Again, retained earnings is the sum of all of a company’s undistributed profits over the entire existence of the company.
-  - We say “undistributed” in order to distinguish from profits that have been distributed to company shareholders in the form of dividend payments.
+  - to detail the **changes** in a _company’s retained earnings_ over a period of time.
+- Again, retained earnings is the sum of all of a company’s _undistributed_ profits over the entire existence of the company.
+  - **“undistributed” profits** vs profits that have been **distributed** to company shareholders in the form of _dividend_ payments.
 
 #### Pending Tables
 
