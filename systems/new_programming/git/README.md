@@ -39,6 +39,50 @@
     - gak sabar fork git jadi gimana aku.
       - atau gak ya bikin extension. semoga pada pake.
 
-For config:
-- `git config --global --add --bool push.autoSetupRemote true`
-  - > nanti liat we ketang my personal `.gitconfig` <!-- with the credentialssss ofc, just kidding,  IDK wtf vscode put in there --->
+## For config
+
+```.gitconfig
+# This is Git's per-user configuration file.
+[user]
+	name = ???
+	email = ???
+# Please adapt and uncomment the following lines:
+#	name = Jajang Maulana
+#	email = jajangmaulana452@yahoo.com
+[alias]
+    cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 -r git branch -d"
+	rb = "rebase"
+	rb-ulti = "rebase --interactive --autosquash --rebase-merges"
+	com = "commit"
+	com-ulti = "commit --all --verbose --no-signoff --edit"
+	com-ulti-for-linux = "commit --all --verbose --signoff --edit"
+	fix-com = "commit --all --fixup"
+	cekot = "checkout"
+	new-branch = "checkout -b"
+	del = "branch -d" # rey. Mama.
+	push-ulti = "push --all"
+	push-ulti-and-tags = "!git push --all && git push --tags" # Whatever we can have it
+	push-o = "push origin"
+	# [`hub sync`](https://stackoverflow.com/a/9781639)
+	# -------------------------------------------------
+	# This updates all local branches that have a matching upstream branch.
+	# Need `hub` binary.
+	sync = "!hub sync"
+	# end of aliases that are not harmful
+	del-y = "branch -D" # "Fuck you." - (jealousy) Qabil
+	push-force = "push --force-with-lease"
+	# end of aliases that **are** harmful
+[core]
+	editor = code --wait
+[filter "lfs"]
+# Apa ya ini teh
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[credential]
+	helper = ???
+[push]
+	# biar gampang push nya kalo belum ada di "remote"/"origin"
+	autoSetupRemote = true
+```
