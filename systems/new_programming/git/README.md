@@ -86,3 +86,5 @@
 	# biar gampang push nya kalo belum ada di "remote"/"origin"
 	autoSetupRemote = true
 ```
+
+> Wow kan ya guys. Cuman kayak y'know what the frick terminal. Anjing ada yang lupa ya gatau. Udah we pokoknya kenapa manual-nya gblk terus kalo mau masukin nama, kadang harus `--` dulu. Udahlah, pusing. Future I can see it.
