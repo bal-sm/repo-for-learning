@@ -37,7 +37,7 @@ TL;DR:
 Lanjutan in Indonesia:
 > Jadinya kalau dipanggil nih suatu `function` yang `return`-nya pake `lambda`, terus besoknya bisa dipanggil lagi sama pake `argument` lagi
 
-Syntax:
+Example:
 
 ```python
 def the_function(n):
