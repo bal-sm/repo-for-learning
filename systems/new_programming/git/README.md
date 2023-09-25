@@ -38,3 +38,7 @@
   - jadi gak bakal ke white washed (ma aing we ngaranna), branch nya, kok gblg ih
     - gak sabar fork git jadi gimana aku.
       - atau gak ya bikin extension. semoga pada pake.
+
+For config:
+- `git config --global --add --bool push.autoSetupRemote true`
+  - > nanti liat we ketang my personal `.gitconfig` <!-- with the credentialssss ofc, just kidding,  IDK wtf vscode put in there --->
