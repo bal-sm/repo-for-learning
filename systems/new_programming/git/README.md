@@ -20,8 +20,10 @@
 
   - jadi branch selain yang di checked out, terus commit nya udah ada di checked out, di delete semua.
     - kecuali kalo git nya lagi bego (not loaded commit tungtungnya)
-- `git push --tags`
-  - soalnya kok goblok ya, `push` biasa teh gak sama `tags` nya
+- ~~`git pus --tags`~~ 
+  - ~~soalnya kok goblok ya, `push` biasa teh gak sama `tags` nya~~
+  - gblk [cenah](https://stackoverflow.com/questions/2988088/do-git-tags-get-pushed-as-well#comment51762361_2988099):
+    > I recommend not using or training others to use git push --tags as it can be very very difficult to get rid of bad tags when your co-workers are trained to push all tags, as people continue to push the old bad tags they have locally every time they want to push a new tag. Because of this, I will only every advise someone to use `git push origin <tag_name>`` now.
 - `git pull --rebase`
   - kalo edit di github terus ada editan di vscode juga cumn belum di push jadi rebase lah.
 - `git merge master --no-ff`
