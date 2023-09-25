@@ -11,23 +11,26 @@ A lambda function can take any number of arguments, but can only have one expres
 `1.`
 
 ```python
-x = lambda a : a + 10
-print(x(5))
+plus_ten = lambda a : a + 10
+print(plus_ten(5))
 ```
 
 `2.`
 
 ```python
-x = lambda a, b : a * b
-print(x(5, 6))
+multiply_these_two = lambda a, b : a * b
+print(multiply_these_two(5, 6))
 ```
 
 `3.`
 
 ```python
-x = lambda a, b, c : a + b + c
-print(x(5, 6, 2))
+plus_these_three = lambda a, b, c : a + b + c
+print(plus_these_three(5, 6, 2))
 ```
+
+Mine:
+> Don't write these like w3schools. `x` is more like a variable rather than a (nonymous) function.
 
 ## Why Use Lambda Functions?
 
@@ -54,3 +57,7 @@ hasil_afjtmic = anoder_function_just_to_make_it_clear(3)
 # there's a
 print(hasil_afjtmic) # hour in a day.
 ```
+
+## Source
+
+[Python Lambda](https://www.w3schools.com/python/python_lambda.asp)
