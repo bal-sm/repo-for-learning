@@ -178,7 +178,7 @@ Mine:
 
 ### CHAPTER FOUR: The Statement of Retained Earnings
 
-- Very brief.
+- Very **brief** financial statement
 - Only has 1 purpose:
   - to detail the **changes** in a _company’s retained earnings_ over a period of time.
 - Again, retained earnings is the sum of all of a company’s _undistributed_ profits over the entire existence of the company.
