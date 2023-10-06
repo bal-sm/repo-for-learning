@@ -1,5 +1,6 @@
 import csv
 
+from decimal import Decimal
 from pprint import pprint
 
 
@@ -8,7 +9,7 @@ class Item:
 
     all = []
 
-    def __init__(self, name: str, price: float, quantity: int = 0):
+    def __init__(self, name: str, price: Decimal, quantity: int = 0):
         # in order, to type checking work you need additional apa sih, pokoknya
         # yang ngecek error gitu, soalnya, python nerima nerima aja.
 
@@ -48,7 +49,7 @@ class Item:
             # print(item)
             Item(
                 name=item.get("name"),
-                price=float(
+                price=Decimal(
                     item.get("price")
                 ),  # soalnya di detect nya str, terus float soalnya bisa koma koma
                 quantity=int(item.get("quantity")),
