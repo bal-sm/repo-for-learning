@@ -1,5 +1,7 @@
 import csv
 
+from pprint import pprint
+
 
 class Item:
     pay_rate = 0.8
@@ -79,4 +81,4 @@ Item.instantiate_from_csv()
 
 # ditampung disini guys, setiap instantiation nya
 print("Item.all =")
-print(Item.all)
+pprint(Item.all)
