@@ -48,7 +48,7 @@ class Item:
         for item in items:
             # print(item)
             # ?: `Item` vs `cls`? HM?
-            Item(
+            cls(  # ! Aku ganti jadi `cls` dari `Item` soalnya jadi sama aja.
                 name=item.get("name"),
                 price=Decimal(
                     item.get("price")
