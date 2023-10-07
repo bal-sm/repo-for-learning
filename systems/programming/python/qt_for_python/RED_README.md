@@ -1,5 +1,9 @@
 # Learn Qt for Python with me
 
+## RED NOTICE
+
+> Organize this rongsok directories plz.
+
 ## How-to
 
 makes sure you have [Poetry](https://python-poetry.org/docs/#installation) installed on your system.
