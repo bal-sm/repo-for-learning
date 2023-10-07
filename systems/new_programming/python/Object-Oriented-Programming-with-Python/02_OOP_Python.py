@@ -1,12 +1,15 @@
 import csv
 
+from decimal import Decimal
+from pprint import pprint
+
 
 class Item:
     pay_rate = 0.8
 
     all = []
 
-    def __init__(self, name: str, price: float, quantity: int = 0):
+    def __init__(self, name: str, price: Decimal, quantity: int = 0):
         # in order, to type checking work you need additional apa sih, pokoknya
         # yang ngecek error gitu, soalnya, python nerima nerima aja.
 
@@ -44,9 +47,10 @@ class Item:
 
         for item in items:
             # print(item)
-            Item(
+            # ?: `Item` vs `cls`? HM?
+            cls(  # ! Aku ganti jadi `cls` dari `Item` soalnya jadi sama aja.
                 name=item.get("name"),
-                price=float(
+                price=Decimal(
                     item.get("price")
                 ),  # soalnya di detect nya str, terus float soalnya bisa koma koma
                 quantity=int(item.get("quantity")),
@@ -78,4 +82,5 @@ Item.instantiate_from_csv()
 # note that you need open terminal directly in this directory
 
 # ditampung disini guys, setiap instantiation nya
-print(Item.all)
+print("Item.all =")
+pprint(Item.all)
