@@ -24,6 +24,8 @@ _italic_
 
 ~~strikethrough~~
 
+<u>underlined words</u> <!-- github exclusive kayaknya -->
+
 <sub>téks leutik dihandap</sub>
 
 <sup>téks leutik diluhur</sup>
