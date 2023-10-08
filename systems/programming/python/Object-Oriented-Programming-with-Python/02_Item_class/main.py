@@ -41,7 +41,7 @@ class Item:
     # this is a class method soalnya bisa muncul tanpa harus ada instatiation nhya
     @classmethod
     def instantiate_from_csv(cls):
-        with open("02_OOP_Python.csv", "r") as f:
+        with open("some_item_examples.csv", "r") as f:
             reader = csv.DictReader(f)
             items = list(reader)
 
