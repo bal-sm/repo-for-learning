@@ -5,6 +5,8 @@ from pprint import pprint
 
 
 class Phone(Item):
+    all = []
+
     def __init__(
         self, name: str, price: Decimal, quantity: int = 0, broken_phones: int = 0
     ):
