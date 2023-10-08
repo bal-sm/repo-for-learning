@@ -1,0 +1,3 @@
+# TL;DR `classmethod` vs `staticmethod`
+
+...
