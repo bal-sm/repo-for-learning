@@ -56,6 +56,20 @@ class Item:
                 quantity=int(item.get("quantity")),
             )
 
+    @staticmethod
+    def is_integer(num):
+        # We will count out the floats that are point zero
+        # For i.e: 5.0, 10.0
+        if isinstance(num, float):
+            # Count out the floats that are point zero, like 5.0, 10.0.
+            return num.is_integer()
+        elif isinstance(num, int):
+            # Kalau 5 dan 10 ya udah we.
+            return True
+        else:
+            # ya udah we.
+            return False
+
     # https://www.youtube.com/watch?v=FIaPZXaePhw&t=0s
     def __repr__(self):
         return f"Item('{self.name}', {self.price}, {self.quantity})"
