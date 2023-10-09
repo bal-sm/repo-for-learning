@@ -1,5 +1,7 @@
 from main import Item
 
+from pprint import pprint
+
 # item1 = Item("iPhone 15", 20000000, 1)
 # item2 = Item("MacBook Pro M3 Max", 99000000, 2)
 # item3 = Item("Framework Laptop 16 Inch AMD 7000 sekian", 40000000, 1)
