@@ -72,7 +72,9 @@ class Item:
 
     # https://www.youtube.com/watch?v=FIaPZXaePhw&t=0s
     def __repr__(self):
-        return f"Item('{self.name}', {self.price}, {self.quantity})"
+        return (
+            f"{self.__class__.__name__}('{self.name}', {self.price}, {self.quantity})"
+        )
 
     # hhmm how to escape " character on f strings
 
