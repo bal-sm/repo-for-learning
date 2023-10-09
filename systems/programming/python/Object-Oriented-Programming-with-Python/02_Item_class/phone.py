@@ -18,6 +18,3 @@ class Phone(Item):
 
         # Assign to self object
         self.broken_phones = broken_phones
-
-        # Append to this class
-        Phone.all.append(self)
