@@ -76,8 +76,6 @@ class Item:
             f"{self.__class__.__name__}('{self.name}', {self.price}, {self.quantity})"
         )
 
-    # hhmm how to escape " character on f strings
-
 
 if __name__ == "__main__":
     pprint(Item.__dict__)
