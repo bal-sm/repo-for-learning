@@ -1,6 +1,6 @@
 from pprint import pprint
-from main import Item
-from phone import Phone
+from classes.main import Item
+from classes.phone import Phone
 
 
 phone_wow = Phone(name="iPhone 15 Pro max", price=30_000_000, quantity=5)

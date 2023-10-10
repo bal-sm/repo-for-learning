@@ -1,4 +1,4 @@
-from main import Item
+from classes.main import Item
 
 from pprint import pprint
 

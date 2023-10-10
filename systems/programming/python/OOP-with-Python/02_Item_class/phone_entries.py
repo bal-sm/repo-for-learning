@@ -1,4 +1,4 @@
-from phone import Phone
+from classes.phone import Phone
 
 from pprint import pprint
 
