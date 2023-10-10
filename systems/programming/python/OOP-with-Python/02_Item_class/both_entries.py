@@ -14,4 +14,6 @@ pprint(Item.all)
 print("Phone.all =")
 pprint(Phone.all)
 
-# frick Item.all = Phone.all
+# * frick Item.all = Phone.all
+# ! harusnya beda
+# TODO nanti solve ya.
