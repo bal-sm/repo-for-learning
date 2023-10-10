@@ -77,3 +77,7 @@ class Item:
         )
 
     # hhmm how to escape " character on f strings
+
+
+if __name__ == "__main__":
+    pprint(Item.__dict__)
