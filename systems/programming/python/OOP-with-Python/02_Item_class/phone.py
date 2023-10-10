@@ -18,3 +18,7 @@ class Phone(Item):
 
         # Assign to self object
         self.broken_phones = broken_phones
+
+
+if __name__ == "__main__":
+    pprint(Phone.__dict__)
