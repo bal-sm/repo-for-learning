@@ -192,12 +192,12 @@ Mine:
     - _(because it hasn’t had any net income yet)_.
 
 `1.`
-|                                |                 |
-| :----------------------------- | --------------: |
-| Retained Earnings, 1/1/2013    |              $0 |
-| Net Income                     |          50,000 |
-| Dividends Paid to Shareholders | <u>(20,000)</u> |
-| Retained Earnings, 12/31/2013  |  <u>$30,000</u> |
+| **Statement of Retained Earnings** |                 |
+| :--------------------------------- | --------------: |
+| Retained Earnings, 1/1/2013        |              $0 |
+| Net Income                         |          50,000 |
+| Dividends Paid to Shareholders     | <u>(20,000)</u> |
+| Retained Earnings, 12/31/2013      |  <u>$30,000</u> |
 
 `2.`
 | Retained Earnings, 1/1/2014    | $30,000  |
