@@ -27,8 +27,8 @@ Mine(1):
 
 Ignore this:
 > - Similarly, the balance in your savings or checking account is,
->   - of course, an asset (to you). 
->   - For the bank, however, the balance is a liability. 
+>   - of course, an asset (to you).
+>   - For the bank, however, the balance is a liability.
 >     - It’s money that they owe you, as you’re allowed to demand full or partial payment of it at any time.
 
 Mine:
@@ -144,7 +144,7 @@ Example:
   - Operating revenues are those coming from the sale of the business’s primary products or services.
   - Operating expenses are the expenses related to the core operation of the business.
 - Non-operating revenues and expenses are those that are unrelated to the core operations of the business.
-- The point of separating operating revenues and expenses from non-operating revenues and expenses is 
+- The point of separating operating revenues and expenses from non-operating revenues and expenses is
   - to allow for the calculation of operating income.
     - Mine:
       > y'know the purpose of operating income.
@@ -184,7 +184,12 @@ Mine:
 - Again, retained earnings is the sum of all of a company’s _undistributed_ profits over the entire existence of the company.
   - **“undistributed” profits** vs profits that have been **distributed** to company shareholders in the form of _dividend_ payments.
 
-#### Pending Tables
+#### Example
+
+- ABC Construction
+  - formed on 1st January 2013.
+  - At its date of formation, it naturally has a **Retained Earnings balance of zero**
+    - _(because it hasn’t had any net income yet)_.
 
 `1.`
 | Retained Earnings, 1/1/2013    |              $0 |
