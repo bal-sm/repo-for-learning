@@ -201,7 +201,7 @@ Mine:
 
 `2.`
 | **Statement of Retained Earnings** |                 |
-| :--------------------------------- | :-------------- |
+| :--------------------------------- | --------------: |
 | Retained Earnings, 1/1/2014        | $30,000         |
 | Net Income                         | 70,000          |
 | Dividends Paid to Shareholders     | <u>(20,000)</u> |
