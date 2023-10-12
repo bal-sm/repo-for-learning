@@ -188,7 +188,7 @@ Mine:
 
 - ABC Construction
   - formed on 1st January 2013.
-  - At its date of formation, it naturally has a **Retained Earnings balance of zero**
+  - it naturally has a **Retained Earnings balance of zero** ⬅️ _(At its date of formation,)_
     - _(because it hasn’t had any net income yet)_.
 
 `1.`
