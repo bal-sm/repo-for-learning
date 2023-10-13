@@ -228,7 +228,7 @@ Let's break that relationship down:
 
 ##### Step "1": The Processed Income Statement
 
-The final step of preparing an income statement is calculating the company’s net income:
+The final step of preparing an income statement is _calculating **the company’s net income**_:
 
 **Income Statement**
 | 1                  |               2 |
