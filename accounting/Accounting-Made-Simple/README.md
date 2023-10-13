@@ -224,6 +224,26 @@ Its 2014 retained earnings statement would appear as follows:
     - It _takes information_ from **the income statement**, and
     - it _provides information_ to **the balance sheet**.
 
+Let's break that relationship down:
+
+##### Step "1": The Processed Income Statement
+
+The final step of preparing an income statement is calculating the company’s net income:
+
+**Income Statement**
+| 1                  |               2 |
+| :----------------- | --------------: |
+| **Revenue**        |                 |
+| Sales              | <u>$240,000</u> |
+| Gross Profit       |  <u>240,000</u> |
+|                    |                 |
+| **Expenses**       |                 |
+| Rent               |          70,000 |
+| Salaries and Wages |   <u>80,000</u> |
+| Total Expenses     |  <u>150,000</u> |
+|                    |         _______ |
+| **Net Income**     |  <u>$90,000</u> |
+
 ## Learning in Progress
 
 Query?:
