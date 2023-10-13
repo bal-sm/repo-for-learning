@@ -283,6 +283,14 @@ My note:
 |                                     |     _______     |
 | Total Liabilities + Owners’ Equity: | <u>$210,000</u> |
 
+##### Note: Dividends: Not an Expense!
+
+```{note}
+`Divident Payments` =/= `Expense`
+
+Emang sih dua-duanya pembayaran kas (cash payments) kepada pihak lain, cuman bedanya kalo `Divident Payments` itu distribusi dari keuntungan perusahaan kepada pemegang saham. Sehingga kalkulasinya tercantum pada `Statement of Retained Earnings`, bukan `Income Statement`
+```
+
 ## Learning in Progress
 
 Query?:
