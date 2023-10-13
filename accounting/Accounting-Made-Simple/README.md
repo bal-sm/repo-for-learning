@@ -283,13 +283,29 @@ My note:
 |                                     |     _______     |
 | Total Liabilities + Owners’ Equity: | <u>$210,000</u> |
 
-##### Note: Dividends: Not an Expense!
+##### Notes
 
 ```{note}
 `Divident Payments` =/= `Expense`
 
 Emang sih dua-duanya pembayaran kas (cash payments) kepada pihak lain, cuman bedanya kalo `Divident Payments` itu distribusi dari keuntungan perusahaan kepada pemegang saham. Sehingga kalkulasinya tercantum pada `Statement of Retained Earnings`, bukan `Income Statement`
 ```
+
+```{note}
+`Retained Earnings` =/= `Cash`
+
+Memang kan definisi dari `Retained Earnings` (Pendapatan yang Tersimpan/Ditahan) adalah laba yang belum terdistribusi atas seluruh keberadaan perusahaan, dapat membuat kita berpikir: ~~bahwa _ini_ adalah sama dengan kas.~~
+
+Hanya karena sebuah perusahaan belum membagikan keuntungannya kepada pemiliknya, bukan berarti perusahaan tersebut belum menggunakannya untuk hal lain.
+
+Misalnya, keuntungan sering kali diinvestasikan kembali untuk mengembangkan perusahaan dengan membeli lebih banyak persediaan untuk dijual atau membeli lebih banyak peralatan untuk produksi.
+```
+
+Mine:
+> Note `Retained Earnings` =/= `Cash` butuh diringkas lagi.
+
+Note (?):
+> Simple summary harus dimasukkin gak ya? Enggak dulu deh.
 
 ## Learning in Progress
 
