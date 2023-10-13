@@ -1,4 +1,4 @@
-# Akuntansi oleh Horngren Harrison Edisi Ke-4
+# Akuntansi oleh Horngren Harrison Edisi Ke-7
 
 ## Last position
 
