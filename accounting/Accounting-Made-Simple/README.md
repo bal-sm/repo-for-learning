@@ -184,7 +184,7 @@ Mine:
 - Again, retained earnings is the sum of all of a company’s _undistributed_ profits over the entire existence of the company.
   - **“undistributed” profits** vs profits that have been **distributed** to company shareholders in the form of _dividend_ payments.
 
-#### Example
+#### Example of _The Statement of Retained Earnings_
 
 - ABC Construction
   - formed on 1st January 2013.
