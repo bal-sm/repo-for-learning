@@ -217,6 +217,13 @@ Its 2014 retained earnings statement would appear as follows:
 | Dividends Paid to Shareholders     | <u>(20,000)</u> |
 | Retained Earnings, 12/31/2014      | <u>$80,000</u>  |
 
+#### Bridge Between Financial Statements
+
+- The statement of retained earnings functions much like _a bridge between the income statement and the balance sheet_.
+  - `Income Statement` ➡️ **`Statement of Retained Earnings`** ➡️ `Balance Sheet`
+    - It _takes information_ from **the income statement**, and
+    - it _provides information_ to **the balance sheet**.
+
 ## Learning in Progress
 
 Query?:
