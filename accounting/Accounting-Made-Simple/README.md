@@ -246,7 +246,8 @@ The final step of preparing an income statement is _calculating **the company’
 
 ##### Step "2": The Making of Statement of Retained Earnings
 
-Net income is then used in the statement of retained earningsto calculate the end-of-year balance in Retained Earnings:
+- **Net income** is then _used in **the statement of retained earnings**_
+  - _to calculate the end-of-year **balance** in **Retained Earnings**_:
 
 My note:
 > I wish `flow` thing tea udah ada ih, jadi `$90,000` nya ke sini, gitu loh.
