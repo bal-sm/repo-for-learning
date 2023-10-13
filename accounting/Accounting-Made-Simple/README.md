@@ -1,5 +1,7 @@
 # Accounting Made Simple
 
+> From _Accounting Made Simple: Accounting Explained in 100 Pages or Less (Financial Topics in 100 Pages or Less) by Mike Piper_. [Buy here](https://www.amazon.com/Accounting-Made-Simple-Explained-Pages-ebook/dp/B004JHYTDE).
+
 ## Table of Contents
 
 > Removed, 'cause there's outline on GitJob Online.
