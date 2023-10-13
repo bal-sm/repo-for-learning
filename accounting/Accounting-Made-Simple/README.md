@@ -260,6 +260,29 @@ My note:
 | Dividends Paid to Shareholders | <u>(50,000)</u> |
 | Retained Earnings, Ending      |  <u>$80,000</u> |
 
+##### Step "3": The Aftermath, Balance Sheet
+
+- _The ending Retained Earnings balance_
+  - is then used to _prepare the company’s **end-of-year balance sheet**_:
+
+| 1                                   |               2 |
+| :---------------------------------- | --------------: |
+| Assets                              |                 |
+| Cash and Cash Equivalents           |        $130,000 |
+| Inventory                           |   <u>80,000</u> |
+| Total Assets:                       |  <u>210,000</u> |
+|                                     |                 |
+| Liabilities                         |                 |
+| Accounts Payable                    |   <u>20,000</u> |
+| Total Liabilities:                  |   <u>20,000</u> |
+|                                     |                 |
+| Owners’ Equity                      |                 |
+| Common Stock                        |         110,000 |
+| Retained Earnings                   |   <u>80,000</u> |
+| Total Owners’ Equity                |  <u>190,000</u> |
+|                                     |     _______     |
+| Total Liabilities + Owners’ Equity: | <u>$210,000</u> |
+
 ## Learning in Progress
 
 Query?:
