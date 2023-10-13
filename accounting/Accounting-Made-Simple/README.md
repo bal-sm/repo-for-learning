@@ -244,6 +244,21 @@ The final step of preparing an income statement is calculating the company’s n
 |                    |         _______ |
 | **Net Income**     |  <u>$90,000</u> |
 
+##### Step "2": The Making of Statement of Retained Earnings
+
+Net income is then used in the statement of retained earningsto calculate the end-of-year balance in Retained Earnings:
+
+My note:
+> I wish `flow` thing tea udah ada ih, jadi `$90,000` nya ke sini, gitu loh.
+
+**Statement of Retained Earnings**
+| 1                              |               2 |
+| :----------------------------- | --------------: |
+| Retained Earnings, Beginning   |         $40,000 |
+| Net Income                     |          90,000 |
+| Dividends Paid to Shareholders | <u>(50,000)</u> |
+| Retained Earnings, Ending      |  <u>$80,000</u> |
+
 ## Learning in Progress
 
 Query?:
