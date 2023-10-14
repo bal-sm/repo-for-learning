@@ -1,5 +1,7 @@
 # Accounting Made Simple
 
+> From _Accounting Made Simple: Accounting Explained in 100 Pages or Less (Financial Topics in 100 Pages or Less) by Mike Piper_. [Buy here](https://www.amazon.com/Accounting-Made-Simple-Explained-Pages-ebook/dp/B004JHYTDE).
+
 ## Table of Contents
 
 > Removed, 'cause there's outline on GitJob Online.
@@ -184,7 +186,7 @@ Mine:
 - Again, retained earnings is the sum of all of a company’s _undistributed_ profits over the entire existence of the company.
   - **“undistributed” profits** vs profits that have been **distributed** to company shareholders in the form of _dividend_ payments.
 
-#### Example
+#### Example of _The Statement of Retained Earnings_
 
 - ABC Construction
   - formed on 1st January 2013.
@@ -216,6 +218,96 @@ Its 2014 retained earnings statement would appear as follows:
 | Net Income                         | 70,000          |
 | Dividends Paid to Shareholders     | <u>(20,000)</u> |
 | Retained Earnings, 12/31/2014      | <u>$80,000</u>  |
+
+#### Bridge Between Financial Statements
+
+- The statement of retained earnings functions much like _a bridge between the income statement and the balance sheet_.
+  - `Income Statement` ➡️ **`Statement of Retained Earnings`** ➡️ `Balance Sheet`
+    - It _takes information_ from **the income statement**, and
+    - it _provides information_ to **the balance sheet**.
+
+Let's break that relationship down:
+
+##### Step "1": The Processed Income Statement
+
+The final step of preparing an income statement is _calculating **the company’s net income**_:
+
+**Income Statement**
+| 1                  |               2 |
+| :----------------- | --------------: |
+| **Revenue**        |                 |
+| Sales              | <u>$240,000</u> |
+| Gross Profit       |  <u>240,000</u> |
+|                    |                 |
+| **Expenses**       |                 |
+| Rent               |          70,000 |
+| Salaries and Wages |   <u>80,000</u> |
+| Total Expenses     |  <u>150,000</u> |
+|                    |         _______ |
+| **Net Income**     |  <u>$90,000</u> |
+
+##### Step "2": The Making of Statement of Retained Earnings
+
+- **Net income** is then _used in **the statement of retained earnings**_
+  - _to calculate the end-of-year **balance** in **Retained Earnings**_:
+
+My note:
+> I wish `flow` thing tea udah ada ih, jadi `$90,000` nya ke sini, gitu loh.
+
+**Statement of Retained Earnings**
+| 1                              |               2 |
+| :----------------------------- | --------------: |
+| Retained Earnings, Beginning   |         $40,000 |
+| Net Income                     |          90,000 |
+| Dividends Paid to Shareholders | <u>(50,000)</u> |
+| Retained Earnings, Ending      |  <u>$80,000</u> |
+
+##### Step "3": The Aftermath, Balance Sheet
+
+- _The ending Retained Earnings balance_
+  - is then used to _prepare the company’s **end-of-year balance sheet**_:
+
+| 1                                   |               2 |
+| :---------------------------------- | --------------: |
+| Assets                              |                 |
+| Cash and Cash Equivalents           |        $130,000 |
+| Inventory                           |   <u>80,000</u> |
+| Total Assets:                       |  <u>210,000</u> |
+|                                     |                 |
+| Liabilities                         |                 |
+| Accounts Payable                    |   <u>20,000</u> |
+| Total Liabilities:                  |   <u>20,000</u> |
+|                                     |                 |
+| Owners’ Equity                      |                 |
+| Common Stock                        |         110,000 |
+| Retained Earnings                   |   <u>80,000</u> |
+| Total Owners’ Equity                |  <u>190,000</u> |
+|                                     |     _______     |
+| Total Liabilities + Owners’ Equity: | <u>$210,000</u> |
+
+##### Notes
+
+```{note}
+`Divident Payments` =/= `Expense`
+
+Emang sih dua-duanya pembayaran kas (cash payments) kepada pihak lain, cuman bedanya kalo `Divident Payments` itu distribusi dari keuntungan perusahaan kepada pemegang saham. Sehingga kalkulasinya tercantum pada `Statement of Retained Earnings`, bukan `Income Statement`
+```
+
+```{note}
+`Retained Earnings` =/= `Cash`
+
+Memang kan definisi dari `Retained Earnings` (Pendapatan yang Tersimpan/Ditahan) adalah laba yang belum terdistribusi atas seluruh keberadaan perusahaan, dapat membuat kita berpikir: ~~bahwa _ini_ adalah sama dengan kas.~~
+
+Hanya karena sebuah perusahaan belum membagikan keuntungannya kepada pemiliknya, bukan berarti perusahaan tersebut belum menggunakannya untuk hal lain.
+
+Misalnya, keuntungan sering kali diinvestasikan kembali untuk mengembangkan perusahaan dengan membeli lebih banyak persediaan untuk dijual atau membeli lebih banyak peralatan untuk produksi.
+```
+
+Mine:
+> Note `Retained Earnings` =/= `Cash` butuh diringkas lagi.
+
+Note (?):
+> Simple summary harus dimasukkin gak ya? Enggak dulu deh.
 
 ## Learning in Progress
 
