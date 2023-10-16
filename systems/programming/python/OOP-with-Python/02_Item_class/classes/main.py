@@ -43,8 +43,8 @@ class Item:
     # -------------
 
     @property
-    def read_only_name(self):
-        return "something"
+    def name(self):
+        return self.name
 
     # Other methods
     # -------------

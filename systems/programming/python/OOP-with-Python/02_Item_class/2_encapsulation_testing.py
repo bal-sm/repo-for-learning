@@ -10,3 +10,7 @@ print(item1.read_only_name)
 # except:
 #     print("Tuh error cenah")
 """
+
+item1 = Item(name="My Item", price=750)
+
+print(item1.name)
