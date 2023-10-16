@@ -13,5 +13,5 @@ print(item1.read_only_name)
 
 item1 = Item(name="My Item", price=750)
 
-item1._name = "Something else"  # Masih bisa diubah
+item1._name = "Something else"  # Masih bisa diubah, let's fix it.
 print(item1.name)
