@@ -30,7 +30,7 @@ class Item:
 
         # Actions to execute
         Item.all.append(self)
-        
+
     # https://www.youtube.com/watch?v=FIaPZXaePhw&t=0s -> Differences between
     # `__str__` and `__repr__`
     # -----------------------------------------------------------------------
