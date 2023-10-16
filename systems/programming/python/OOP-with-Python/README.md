@@ -6,6 +6,7 @@
 
 - `__init__`
   - > What is `__init__` method? Tulis.
+  - A constructor of a class.
 - "Encapsulation" from Object Oriented Programming
   - tulis dong
   - `@property`
