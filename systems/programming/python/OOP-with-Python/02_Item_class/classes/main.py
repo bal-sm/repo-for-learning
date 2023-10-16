@@ -18,7 +18,7 @@ class Item:
         assert quantity >= 0, f"Naha quantity = {quantity}? Ubah ke plus donk"
 
         # Assign to self object
-        self.name = name
+        self._name = name
         self.price = price
         self.quantity = quantity
         # quantity will be defaulted to 0, if it's not specified
@@ -44,7 +44,7 @@ class Item:
 
     @property
     def name(self):
-        return self.name
+        return self._name
 
     # Other methods
     # -------------
@@ -87,7 +87,6 @@ class Item:
         else:
             # ya udah we.
             return False
-
 
 
 if __name__ == "__main__":
