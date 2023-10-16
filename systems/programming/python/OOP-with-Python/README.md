@@ -12,6 +12,8 @@
   - `@property`
     - what does it mean? tulis dong tapi
     - TL;DR: take a function and convert it to a read-only attribute.
+- `_` prefix in variable name ➡️ `_var`
+  - This hints that the variable is private, and only used for "internal use", a weak "internal use" indicator.
 
 ## Source(s)
 
