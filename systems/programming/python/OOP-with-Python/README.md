@@ -9,7 +9,8 @@
 - "Encapsulation" from Object Oriented Programming
   - tulis dong
   - `@property`
-    - what does it mean?
+    - what does it mean? tulis dong tapi
+    - TL;DR: take a function and convert it to a read-only attribute.
 
 ## Source(s)
 
