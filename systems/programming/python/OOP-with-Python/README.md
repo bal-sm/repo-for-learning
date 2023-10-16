@@ -8,6 +8,8 @@
   - > What is `__init__` method? Tulis.
 - "Encapsulation" from Object Oriented Programming
   - tulis dong
+  - `@property`
+    - what does it mean?
 
 ## Source(s)
 
