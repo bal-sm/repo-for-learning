@@ -30,6 +30,24 @@ class Item:
 
         # Actions to execute
         Item.all.append(self)
+        
+    # https://www.youtube.com/watch?v=FIaPZXaePhw&t=0s -> Differences between
+    # `__str__` and `__repr__`
+    # -----------------------------------------------------------------------
+    def __repr__(self):
+        return (
+            f"{self.__class__.__name__}('{self.name}', {self.price}, {self.quantity})"
+        )
+
+    # Encapsulation
+    # -------------
+
+    @property
+    def read_only_name(self):
+        return "something"
+
+    # Other methods
+    # -------------
 
     def calculate_total_price(self):
         return self.price * self.quantity
@@ -70,18 +88,6 @@ class Item:
             # ya udah we.
             return False
 
-    # https://www.youtube.com/watch?v=FIaPZXaePhw&t=0s
-    def __repr__(self):
-        return (
-            f"{self.__class__.__name__}('{self.name}', {self.price}, {self.quantity})"
-        )
-
-    # Encapsulation
-    # -------------
-
-    @property
-    def read_only_name(self):
-        return "something"
 
 
 if __name__ == "__main__":
