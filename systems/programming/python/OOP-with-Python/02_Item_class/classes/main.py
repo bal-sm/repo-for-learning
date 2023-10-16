@@ -79,6 +79,10 @@ class Item:
     # Encapsulation
     # -------------
 
+    @property
+    def read_only_name(self):
+        return "something"
+
 
 if __name__ == "__main__":
     pprint(Item.__dict__)
