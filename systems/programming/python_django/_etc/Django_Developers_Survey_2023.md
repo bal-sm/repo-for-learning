@@ -1,5 +1,8 @@
 # Django Developers Survey 2023
 
+Mine:
+> Penting buat liat-liat lagi masalah dependencies, and deploy ASGI tea.
+
 ## Page 1
 
 For what purposes do you mainly use Django? *
