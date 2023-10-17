@@ -347,6 +347,21 @@ My note(?):
 Mine:
 > See? A record of income/expense **can/cannot** with its cash flow yet. Gitu we lah (sic, lebih teu puguh we sih bahasana).
 
+##### The 2nd major difference
+
+- between them is that:
+  - The cash flow statement includes:
+    - several types of transactions that **are not included** in _the income statement._
+
+**EXAMPLE 1:**
+
+- XYZ Consulting **takes out a loan** with its bank.
+  - The loan will not appear on the income statement,
+    - as the transaction is neither a revenue item nor an expense item.
+  - It is simply an increase of an asset (Cash) and a liability (Notes Payable).
+  - **However**, because it’s a cash inflow,
+    - the loan **will appear on the cash flow statement**.
+
 ## Learning in Progress
 
 Query?:
