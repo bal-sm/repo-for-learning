@@ -311,7 +311,38 @@ Note (?):
 
 ### CHAPTER FIVE: The Cash Flow Statement
 
-...
+- The Cash Flow Statement
+  - It reports _a company’s cash **inflows** and **outflows** over an accounting period._
+
+#### Cash Flow Statement vs. Income Statement
+
+- Cash Flow Statement =/= Income Statement
+  - Why?
+
+##### The 1st Reason Why
+
+In English:
+> First, there are often differences in timing between when an income or expense item is recorded and when the cash actually comes in or goes out the door.
+
+Dalam Indonesia:
+> Sering kali terdapat perbedaan waktu antara waktu **pencatatan pendapatan atau pengeluaran** dan waktu dimana uang tunai **benar-benar diterima atau dikeluarkan**.
+
+My note(?):
+> Bagus gak sih format gini?
+
+**EXAMPLE:**
+
+- In September, XYZ Consulting
+  - _performs marketing services for a customer_
+    - who **does not pay until** the beginning of October.
+  - In September, this sale would be **recorded as an increase** in both **Sales** and **Accounts Receivable**.
+    - _(And the sale would show up on a September **income statement**.)_
+
+  TODO:
+  > INSERT THE JOURNAL HERE, PLEASE.
+
+  - The cash, however, isn’t actually **received until October**,
+    - so the activity **would not appear** on _September’s cash flow statement_.
 
 ## Learning in Progress
 
