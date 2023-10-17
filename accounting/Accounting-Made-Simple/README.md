@@ -358,7 +358,7 @@ Mine:
 - XYZ Consulting **takes out a loan** with its bank.
   - The loan will not appear on the income statement,
     - as the transaction is neither a revenue item nor an expense item.
-  - It is simply an increase of an asset (Cash) and a liability (Notes Payable).
+  - It is simply an **increase** of _an asset (Cash) and a liability (Notes Payable)_.
   - **However**, because it’s a cash inflow,
     - the loan **will appear on the cash flow statement**.
 
