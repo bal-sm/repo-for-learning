@@ -369,6 +369,22 @@ Mine:
     - **Therefore**, the dividend **will not appear** on the _income statement_.
     - It will, **however**, **appear** on the _cash flow statement as a cash outflow_.
 
+#### Categories of Cash Flow
+
+...
+
+##### Cash Flow from Operating Activities
+
+...
+
+##### Cash Flow from Investing Activities
+
+...
+
+##### Cash Flow from Financing Activities
+
+...
+
 ## Learning in Progress
 
 Query?:
