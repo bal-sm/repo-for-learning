@@ -319,7 +319,7 @@ Note (?):
 - Cash Flow Statement =/= Income Statement
   - Why?
 
-##### The 1st Reason Why
+##### The 1st major difference
 
 In English:
 > First, there are often differences in timing between when an income or expense item is recorded and when the cash actually comes in or goes out the door.
