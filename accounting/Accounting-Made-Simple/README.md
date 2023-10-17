@@ -362,6 +362,13 @@ Mine:
   - **However**, because it’s a cash inflow,
     - the loan **will appear on the cash flow statement**.
 
+**EXAMPLE 2:**
+
+- XYZ Consulting **pays** _its shareholders a $30,000 dividend_.
+  - _(As discussed in Chapter 4)_, dividends **are not** an expense.
+    - **Therefore**, the dividend **will not appear** on the _income statement_.
+    - It will, **however**, **appear** on the _cash flow statement as a cash outflow_.
+
 ## Learning in Progress
 
 Query?:
