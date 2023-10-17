@@ -18,7 +18,7 @@ class Item:
         assert quantity >= 0, f"Naha quantity = {quantity}? Ubah ke plus donk"
 
         # Assign to self object
-        self.name = name
+        self.__name = name
         self.price = price
         self.quantity = quantity
         # quantity will be defaulted to 0, if it's not specified
@@ -30,6 +30,24 @@ class Item:
 
         # Actions to execute
         Item.all.append(self)
+
+    # https://www.youtube.com/watch?v=FIaPZXaePhw&t=0s -> Differences between
+    # `__str__` and `__repr__`
+    # -----------------------------------------------------------------------
+    def __repr__(self):
+        return (
+            f"{self.__class__.__name__}('{self.name}', {self.price}, {self.quantity})"
+        )
+
+    # Encapsulation
+    # -------------
+
+    @property
+    def name(self):
+        return self.__name
+
+    # Other methods
+    # -------------
 
     def calculate_total_price(self):
         return self.price * self.quantity
@@ -69,12 +87,6 @@ class Item:
         else:
             # ya udah we.
             return False
-
-    # https://www.youtube.com/watch?v=FIaPZXaePhw&t=0s
-    def __repr__(self):
-        return (
-            f"{self.__class__.__name__}('{self.name}', {self.price}, {self.quantity})"
-        )
 
 
 if __name__ == "__main__":
