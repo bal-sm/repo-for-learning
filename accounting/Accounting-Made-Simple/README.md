@@ -335,13 +335,13 @@ My note(?):
 - In September, XYZ Consulting
   - _performs marketing services for a customer_
     - who **does not pay until** the beginning of October.
-  - In September, this sale would be **recorded as an increase** in both **Sales** and **Accounts Receivable**.
+  - In September, this sale would be **recorded as an increase** in _both Sales and Accounts Receivable._
     - _(And the sale would show up on a September **income statement**.)_
 
   TODO:
   > INSERT THE JOURNAL HERE, PLEASE.
 
-  - The cash, however, isn’t actually **received until October**,
+  - _The cash,_ however, isn’t actually **received until October**,
     - so the activity **would not appear** on _September’s cash flow statement_.
 
 ## Learning in Progress
