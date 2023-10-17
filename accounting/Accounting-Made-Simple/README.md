@@ -344,6 +344,9 @@ My note(?):
   - _The cash,_ however, isn’t actually **received until October**,
     - so the activity **would not appear** on _September’s cash flow statement_.
 
+Mine:
+> See? A record of income/expense **can/cannot** with its cash flow yet. Gitu we lah (sic, lebih teu puguh we sih bahasana).
+
 ## Learning in Progress
 
 Query?:
