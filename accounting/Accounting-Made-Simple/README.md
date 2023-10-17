@@ -385,6 +385,30 @@ Mine:
 
 ...
 
+#### An example of Cash Flow Statements
+
+**Cash Flow Statement**
+
+| 1                                       |                2 |
+| :-------------------------------------- | ---------------: |
+| Cash Flow from Operating Activities:    |                  |
+| Cash receipts from customers            |         $320,000 |
+| Cash paid to suppliers                  |         (50,000) |
+| Cash paid to employees                  |         (40,000) |
+| Income taxes paid                       |  <u>(55,000)</u> |
+| Net Cash Flow From Operating Activities |   <u>175,000</u> |
+|                                         |                  |
+| Cash Flow from Investing Activities:    |                  |
+| Cash spent on purchase of equipment     | <u>(210,000)</u> |
+| Net Cash Flow From Investing Activities | <u>(210,000)</u> |
+|                                         |                  |
+| Cash Flow from Financing Activities:    |                  |
+| Dividends paid to shareholders          |         (25,000) |
+| Cash received from issuing new shares   |   <u>250,000</u> |
+| Net Cash Flow From Financing Activities |   <u>225,000</u> |
+|                                         |         ________ |
+| Net increase in cash:                   |  <u>$190,000</u> |
+
 ## Learning in Progress
 
 Query?:
