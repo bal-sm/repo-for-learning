@@ -309,6 +309,106 @@ Mine:
 Note (?):
 > Simple summary harus dimasukkin gak ya? Enggak dulu deh.
 
+### CHAPTER FIVE: The Cash Flow Statement
+
+- The Cash Flow Statement
+  - It reports _a company’s cash **inflows** and **outflows** over an accounting period._
+
+#### Cash Flow Statement vs. Income Statement
+
+- Cash Flow Statement =/= Income Statement
+  - Why?
+
+##### The 1st major difference
+
+In English:
+> First, there are often differences in timing between when an income or expense item is recorded and when the cash actually comes in or goes out the door.
+
+Dalam Indonesia:
+> Sering kali terdapat perbedaan waktu antara waktu **pencatatan pendapatan atau pengeluaran** dan waktu dimana uang tunai **benar-benar diterima atau dikeluarkan**.
+
+My note(?):
+> Bagus gak sih format gini?
+
+**EXAMPLE:**
+
+- In September, XYZ Consulting
+  - _performs marketing services for a customer_
+    - who **does not pay until** the beginning of October.
+  - In September, this sale would be **recorded as an increase** in _both Sales and Accounts Receivable._
+    - _(And the sale would show up on a September **income statement**.)_
+
+  TODO:
+  > INSERT THE JOURNAL HERE, PLEASE.
+
+  - _The cash,_ however, isn’t actually **received until October**,
+    - so the activity **would not appear** on _September’s cash flow statement_.
+
+Mine:
+> See? A record of income/expense **can/cannot** with its cash flow yet. Gitu we lah (sic, lebih teu puguh we sih bahasana).
+
+##### The 2nd major difference
+
+- between them is that:
+  - The cash flow statement includes:
+    - several types of transactions that **are not included** in _the income statement._
+
+**EXAMPLE 1:**
+
+- XYZ Consulting **takes out a loan** with its bank.
+  - The loan will not appear on the income statement,
+    - as the transaction is neither a revenue item nor an expense item.
+  - It is simply an **increase** of _an asset (Cash) and a liability (Notes Payable)_.
+  - **However**, because it’s a cash inflow,
+    - the loan **will appear on the cash flow statement**.
+
+**EXAMPLE 2:**
+
+- XYZ Consulting **pays** _its shareholders a $30,000 dividend_.
+  - _(As discussed in Chapter 4)_, dividends **are not** an expense.
+    - **Therefore**, the dividend **will not appear** on the _income statement_.
+    - It will, **however**, **appear** on the _cash flow statement as a cash outflow_.
+
+#### Categories of Cash Flow
+
+...
+
+##### Cash Flow from Operating Activities
+
+...
+
+##### Cash Flow from Investing Activities
+
+...
+
+##### Cash Flow from Financing Activities
+
+...
+
+#### An example of Cash Flow Statements
+
+**Cash Flow Statement**
+
+| 1                                       |                2 |
+| :-------------------------------------- | ---------------: |
+| Cash Flow from Operating Activities:    |                  |
+| Cash receipts from customers            |         $320,000 |
+| Cash paid to suppliers                  |         (50,000) |
+| Cash paid to employees                  |         (40,000) |
+| Income taxes paid                       |  <u>(55,000)</u> |
+| Net Cash Flow From Operating Activities |   <u>175,000</u> |
+|                                         |                  |
+| Cash Flow from Investing Activities:    |                  |
+| Cash spent on purchase of equipment     | <u>(210,000)</u> |
+| Net Cash Flow From Investing Activities | <u>(210,000)</u> |
+|                                         |                  |
+| Cash Flow from Financing Activities:    |                  |
+| Dividends paid to shareholders          |         (25,000) |
+| Cash received from issuing new shares   |   <u>250,000</u> |
+| Net Cash Flow From Financing Activities |   <u>225,000</u> |
+|                                         |         ________ |
+| Net increase in cash:                   |  <u>$190,000</u> |
+
 ## Learning in Progress
 
 Query?:
