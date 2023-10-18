@@ -8,6 +8,8 @@
 
 > OMG IH `repo-for-learning` acak-acakan banget. Plz order the priority list, rapihin ini should be on the top.
 
+- [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
+  - > Soalnya biar terstruktur semua, emang keselin soalnya jadi banyak notif gitu, but it's worth the price. Linters are wow.
 - [GitHub Markdown Preview](https://marketplace.visualstudio.com/items?itemName=bierner.github-markdown-preview)
 
   except:
