@@ -438,7 +438,6 @@ Cash flow from investing activities includes:
     - _**capital assets**_ (i.e., assets expected to last longer than one year).
 
 Typical items in this category include:
-
 - _Purchase_ or _sale_ of
   - property,
   - plant, or
