@@ -491,6 +491,15 @@ Common items that would fall in this category include:
 |                                         |         ________ |
 | Net increase in cash:                   |  <u>$190,000</u> |
 
+### CHAPTER 6
+
+...
+
+## Maintenance notes
+
+Note 1:
+> Hapus Part One, Two, etc as headings.
+
 ## Learning in Progress
 
 Query?:
