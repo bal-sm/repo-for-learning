@@ -448,15 +448,22 @@ Typical items in this category include:
 
 ##### Cash Flow from Financing Activities
 
-Cash flow from financing activities includes cash inflows and outflows relating to transactions with the company’s owners and creditors. Common items that would fall in this category include:
+- Cash flow from financing activities includes:
+  - cash _inflows_ and _outflows_
+    - relating to transactions with:
+      - the company’s owners and
+      - creditors.
 
-- Cash received from investors when new shares of stock are issued,
-- Dividends paid to shareholders,
-- Cash received from taking out a loan, and
-- Cash paid to pay back the principal on a loan. (Payments of interest are classified as an operating activity.)
+Common items that would fall in this category include:
+- Cash **received** from investors when **new shares of stock are issued**,
+- **Dividends paid** to shareholders,
+- Cash received from **taking out a loan**, and
+- Cash paid to **pay back the principal on a loan**.
+  - _(Payments of interest are classified as an operating activity.)_
+    > Bunganya masuk ke _operating activity_
 
-Important note:
-> Rapihin euy. (2)
+"Learning in Progress" note while do this summary:
+> Let's not overengineer with _italic_ words, except for _(an unnecessary necessary words with two parentheses)_.
 
 #### An example of Cash Flow Statements
 
