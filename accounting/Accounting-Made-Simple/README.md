@@ -428,13 +428,24 @@ Common items _that are categorized as cash flow from operating activities_ inclu
 
 ##### Cash Flow from Investing Activities
 
-Cash flow from investing activities includes cash spent on—or received from the sale of— investments in financial securities (stocks, bonds, etc.) as well as cash spent on—or received from the sale of—capital assets (i.e., assets expected to last longer than one year). Typical items in this category include:
+Cash flow from investing activities includes:
+- cash **spent** on
+  - _(—or **received** from the sale of—)_
+    - _**investments**_ in financial securities (stocks, bonds, etc.)
+- _(as well as)_
+- cash **spent** on
+  - _(—or **received** from the sale of—)_
+    - _**capital assets**_ (i.e., assets expected to last longer than one year).
 
-- Purchase or sale of property, plant, or equipment, and
-- Purchase or sale of stocks or bonds.
+Typical items in this category include:
 
-Important note:
-> Rapihin euy.
+- _Purchase_ or _sale_ of
+  - property,
+  - plant, or
+  - equipment, and
+- _Purchase_ or _sale_ of
+  - stocks or
+  - bonds.
 
 ##### Cash Flow from Financing Activities
 
