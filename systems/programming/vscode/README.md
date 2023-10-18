@@ -18,6 +18,7 @@
     - > [Liat we](https://www.google.com/search?q=myst+markdown), tuh ada 3 main site [1](https://jupyterbook.org/content/myst.html), [2](https://mystmd.org/), [3](https://myst-parser.readthedocs.io/).
     - > And also for future `.md`. Utilize [this](https://www.sphinx-doc.org/).
   - > Thanks to this [person](https://stackoverflow.com/a/71429932).
+- [Markdown All-in-One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
 - [Markdown Table](https://marketplace.visualstudio.com/items?itemName=TakumiI.markdowntable)
   Mine:
   > New one.
