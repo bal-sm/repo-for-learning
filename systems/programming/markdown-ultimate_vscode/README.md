@@ -1,8 +1,9 @@
-# What I use for writing `.md` files
 
-## Visual Studio Code
+# Visual Studio Code
 
-### Extensions
+> What I use for writing `.md` files on `vscode`.
+
+## Extensions
 
 - [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
   - > Soalnya biar terstruktur semua, emang keselin soalnya jadi banyak notif gitu, but it's worth the price. Linters are wow.

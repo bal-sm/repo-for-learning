@@ -4,7 +4,7 @@
 
 ## Extensions
 
-For writing `.md` files, see [here](/systems/programming/markdown-ultimate/what-I-use.md)
+- For writing `.md` files, see [here](/systems/programming/markdown-ultimate_vscode/README.md)
 
 ## Source(s) / Plz rangkum me kesini
 
