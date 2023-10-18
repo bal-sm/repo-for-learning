@@ -411,7 +411,20 @@ On a cash flow statement, all _cash inflows_ or _outflows_ are _separated into o
 
 ##### Cash Flow from Operating Activities
 
-...
+- Technically, cash flow from operating activities includes:
+  - any cash flows **not specifically defined** as _investing or financing activities_.
+- **The general idea, however,**
+  - is to reflect most of the cash transactions **that would be included** in _the determination of **net income**._
+
+Common items _that are categorized as cash flow from operating activities_ include:
+- Receipts from
+  - the sale _(of goods or services)_,
+- Payments made
+  - to suppliers,
+  - to employees,
+- Interest **payments** made to _lenders_,
+- Interest or dividends **received** from _investments_, and
+- Tax payments.
 
 ##### Cash Flow from Investing Activities
 
