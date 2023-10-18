@@ -8,6 +8,10 @@
 
 > OMG IH `repo-for-learning` acak-acakan banget. Plz order the priority list, rapihin ini should be on the top.
 
+- [GitHub Markdown Preview](https://marketplace.visualstudio.com/items?itemName=bierner.github-markdown-preview)
+
+  except:
+  - [Markdown Footnotes nya](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-footnotes), soalnya tabrakan sama ⬇️MyST-Markdown⬇️.
 - [MyST-Markdown](https://marketplace.visualstudio.com/items?itemName=ExecutableBookProject.myst-highlight)
   - > Ada [MultiMarkdown](https://www.google.com/search?q=superset+of+markdown+alternative) cenah tapi. Liat juga we nanti.
   - > And this is also technically an extension, and I should be put the main site/program on another `.md`.
