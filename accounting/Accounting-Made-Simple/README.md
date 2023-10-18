@@ -438,7 +438,15 @@ Important note:
 
 ##### Cash Flow from Financing Activities
 
-...
+Cash flow from financing activities includes cash inflows and outflows relating to transactions with the company’s owners and creditors. Common items that would fall in this category include:
+
+- Cash received from investors when new shares of stock are issued,
+- Dividends paid to shareholders,
+- Cash received from taking out a loan, and
+- Cash paid to pay back the principal on a loan. (Payments of interest are classified as an operating activity.)
+
+Important note:
+> Rapihin euy. (2)
 
 #### An example of Cash Flow Statements
 
