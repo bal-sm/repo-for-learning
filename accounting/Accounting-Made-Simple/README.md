@@ -464,6 +464,8 @@ Common items that would fall in this category include:
 
 "Learning in Progress" note while do this summary:
 > Let's not overengineer with _italic_ words, except for _(an unnecessary necessary words with two parentheses)_.
+>
+> Aku bingung note ini mending masukin kemana. TODO.
 
 #### An example of Cash Flow Statements
 
