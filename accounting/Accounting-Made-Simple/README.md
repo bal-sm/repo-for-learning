@@ -371,7 +371,11 @@ Mine:
 
 #### Categories of Cash Flow
 
-...
+On a cash flow statement, all _cash inflows_ or _outflows_ are _separated into one of three categories_:
+
+- [Cash flow from operating activities](#cash-flow-from-operating-activities),
+- [Cash flow from investing activities](#cash-flow-from-investing-activities), and
+- [Cash flow from financing activities](#cash-flow-from-financing-activities).
 
 ##### Cash Flow from Operating Activities
 
