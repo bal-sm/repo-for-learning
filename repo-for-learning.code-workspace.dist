@@ -31,8 +31,7 @@
 		"git.autofetch": false,
 		// taken from my user settings.json
 		// path (Linux): ~/.config/Code - Insiders/User/settings.json
-    	"diffEditor.ignoreTrimWhitespace": false,
-    	"editor.fontFamily": "'RobotoMono Nerd Font', 'Droid Sans Mono', 'monospace', monospace",
+		"diffEditor.ignoreTrimWhitespace": false,
     	"git.confirmSync": false, // I hate to be asked everytime I want to sync.
     	"github.gitAuthentication": false, // I don't want to deal with GitHub for VSCode. I want it to be a lightweight code editor.
     	"github.gitProtocol": "ssh", // 'cause ssh is better than https, imo.
@@ -40,6 +39,5 @@
     	"gitlens.codeLens.enabled": false, // again, I don't need it.
 		// Bonus
 		"telemetry.telemetryLevel": "off", // don't work in a workspace file, must be added to user settings.json
-		"editor.autoClosingBrackets": "never", // frick, automatic closing bracket anjing goblog
 	}
 }
