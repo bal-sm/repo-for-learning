@@ -22,7 +22,7 @@ def my_view(request):
 
 `@login_required()` does the following:
 - If the user **isn’t logged in**,
-  - redirect to `settings.LOGIN_URL`, passing **the current absolute path** [_in the query string_](https://en.wikipedia.org/wiki/Query_string).
+  - redirect to [`settings.LOGIN_URL`](https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-LOGIN_URL), passing **the current absolute path** [_in the query string_](https://en.wikipedia.org/wiki/Query_string).
     - > TODO: eta maksudna query string tea. jieun rfl na.
   - Example: `/accounts/login/?next=/polls/3/`.
     - > tuh maksudnya _query string_ teh setelah `?` character, `next=/polls/3/`.
@@ -54,6 +54,55 @@ My note:
     - _since the template context variable which stores the redirect path will use the value of `redirect_field_name` as its key **rather than** `next` (**the default**)._
       - > **SO DON'T.**
       - > Kejawab sudah gripe learning note 1 tea.
+
+### Penjelasan lanjutan (wajib ini mah): `login_url` parameter
+
+```python
+from django.contrib.auth.decorators import login_required
+
+
+@login_required(login_url="/accounts/login/")
+def my_view(request):
+    ...
+```
+
+Mine:
+> Udah we baca aja, [`settings.LOGIN_URL`](https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-LOGIN_URL). Bawah ini juga.
+
+- Note that if you _**don’t** specify_ the `login_url` parameter,
+  - you’ll need to **ensure** that the `settings.LOGIN_URL` and
+  - your login view **are properly associated**.
+  - For example, using the defaults, add the following lines to your URLconf:
+
+    ```python
+    from django.contrib.auth import views as auth_views
+
+    path("accounts/login/", auth_views.LoginView.as_view()),
+    ```
+
+- The `settings.LOGIN_URL` also accepts
+  - view function names
+    - > Function Based View, gening.
+  - and [named URL patterns](https://docs.djangoproject.com/en/4.2/topics/http/urls/#naming-url-patterns).
+    - > Hmmm aja dulu. Nanti baca.
+  - This allows you _to **freely remap** your login view_
+    - within **your URLconf** **without** _having to update the setting_.
+
+"Kade tapi enteu" note:
+
+```{note}
+- The `@login_required()` decorator does **NOT** check the `is_active` flag on a user,
+  - but the default `AUTHENTICATION_BACKENDS` **reject** inactive users.
+  - > berkesinambungan maksudnya gening, jadi santai aja.
+```
+
+"Liat geura ini" note:
+
+```{note}
+- If you are **writing** custom views for Django’s admin
+  - _(or **need** the same **authorization** **check** **that the built-in views** use)_,
+  - you may find the `django.contrib.admin.views.decorators.staff_member_required()` decorator a useful alternative to `login_required()`.
+```
 
 ## Source(s)
 
