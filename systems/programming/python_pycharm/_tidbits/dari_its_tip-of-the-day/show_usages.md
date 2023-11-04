@@ -8,8 +8,8 @@ To jump to a usage, select it from the list and press `Enter`.
 
 ```
 `city` variable from `meteo` -> `views.py`
- |- `city = random_item.city`
- |- `'city': city` (maksudnya di `context`-nya gening)
+  |- `city = random_item.city`
+  |- `'city': city` (maksudnya di `context`-nya gening)
 ```
 
 ## My note(s)
