@@ -22,7 +22,7 @@ def my_view(request):
 
 `@login_required()` does the following:
 - If the user **isn’t logged in**,
-  - redirect to `settings.LOGIN_URL`, passing **the current absolute path** [_in the query string_](https://en.wikipedia.org/wiki/Query_string) (meureun).
+  - redirect to `settings.LOGIN_URL`, passing **the current absolute path** [_in the query string_](https://en.wikipedia.org/wiki/Query_string).
     - > TODO: eta maksudna query string tea. jieun rfl na.
   - Example: `/accounts/login/?next=/polls/3/`.
     - > tuh maksudnya _query string_ teh setelah `?` character, `next=/polls/3/`.
