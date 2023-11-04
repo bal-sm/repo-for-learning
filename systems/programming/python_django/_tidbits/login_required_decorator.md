@@ -39,3 +39,20 @@ def my_view(request):
 
 Learning in Progress Note 1:
 > Itu teh `next` argument -nya, bakal dipake sama Django buat redirect atau gimana lier ih
+
+Learning in Progress Note 1, **solved**, TODO: bikin dedicated file buat ini:
+
+```{note}
+The `?next=/something/` is a query parameter in the request. So you can access it using `request.GET` that is a dict-like. So in this case, you can:
+
+```python
+# Either redirect the user to the `next` url if any, or the home page
+next_url = request.GET.get("next", "store:home")
+return redirect(next_url)
+```
+
+This is possible because redirect allows you to pass either a url, or a “reversable” url name
+```
+
+My gripe:
+> Kesel ih tapi, kenapa gak dijelasin sama sekali (not appearing in my search session) di <https://docs.djangoproject.com/>.
