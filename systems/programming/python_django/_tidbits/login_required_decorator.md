@@ -40,6 +40,9 @@ def my_view(request):
 Learning in Progress Note 1:
 > Itu teh `next` argument -nya, bakal dipake sama Django buat redirect atau gimana lier ih
 
+Penjelasan:
+> `next` nya itu parameter, after `=` character, _argument (meureun)_
+
 Learning in Progress Note 1, **solved**, TODO: bikin dedicated file buat ini:
 
 ```{note}
