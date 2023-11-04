@@ -4,7 +4,39 @@
 
 ## Table of Contents
 
-> Removed, 'cause there's outline on GitJob Online.
+- [Accounting Made Simple](#accounting-made-simple)
+  - [Table of Contents](#table-of-contents)
+  - [Part One: Financial Statements](#part-one-financial-statements)
+    - [CHAPTER ONE: The Accounting Equation](#chapter-one-the-accounting-equation)
+      - [My Asset is Your Liability](#my-asset-is-your-liability)
+    - [CHAPTER TWO: The Balance Sheet](#chapter-two-the-balance-sheet)
+      - [Assets](#assets)
+      - [Liabilities](#liabilities)
+      - [Owners’ Equity](#owners-equity)
+      - [Current vs. Long-Term](#current-vs-long-term)
+      - [Multiple-Period Balance Sheets](#multiple-period-balance-sheets)
+    - [CHAPTER THREE: The Income Statement](#chapter-three-the-income-statement)
+      - [Gross Profit and Cost of Goods Sold](#gross-profit-and-cost-of-goods-sold)
+      - [Operating Income vs. Net Income](#operating-income-vs-net-income)
+    - [CHAPTER FOUR: The Statement of Retained Earnings](#chapter-four-the-statement-of-retained-earnings)
+      - [Example of _The Statement of Retained Earnings_](#example-of-the-statement-of-retained-earnings)
+      - [Bridge Between Financial Statements](#bridge-between-financial-statements)
+        - [Step "1": The Processed Income Statement](#step-1-the-processed-income-statement)
+        - [Step "2": The Making of Statement of Retained Earnings](#step-2-the-making-of-statement-of-retained-earnings)
+        - [Step "3": The Aftermath, Balance Sheet](#step-3-the-aftermath-balance-sheet)
+        - [Notes](#notes)
+    - [CHAPTER FIVE: The Cash Flow Statement](#chapter-five-the-cash-flow-statement)
+      - [Cash Flow Statement vs. Income Statement](#cash-flow-statement-vs-income-statement)
+        - [The 1st major difference](#the-1st-major-difference)
+        - [The 2nd major difference](#the-2nd-major-difference)
+      - [Categories of Cash Flow](#categories-of-cash-flow)
+        - [Cash Flow from Operating Activities](#cash-flow-from-operating-activities)
+        - [Cash Flow from Investing Activities](#cash-flow-from-investing-activities)
+        - [Cash Flow from Financing Activities](#cash-flow-from-financing-activities)
+      - [An example of Cash Flow Statements](#an-example-of-cash-flow-statements)
+  - [Learning in Progress](#learning-in-progress)
+
+> Recreated for aesthetic and uniformity purposes.
 
 ## Part One: Financial Statements
 
@@ -308,6 +340,165 @@ Mine:
 
 Note (?):
 > Simple summary harus dimasukkin gak ya? Enggak dulu deh.
+
+### CHAPTER FIVE: The Cash Flow Statement
+
+- The Cash Flow Statement
+  - It reports _a company’s cash **inflows** and **outflows** over an accounting period._
+
+#### Cash Flow Statement vs. Income Statement
+
+- Cash Flow Statement =/= Income Statement
+  - Why?
+
+##### The 1st major difference
+
+In English:
+> First, there are often differences in timing between when an income or expense item is recorded and when the cash actually comes in or goes out the door.
+
+Dalam Indonesia:
+> Sering kali terdapat perbedaan waktu antara waktu **pencatatan pendapatan atau pengeluaran** dan waktu dimana uang tunai **benar-benar diterima atau dikeluarkan**.
+
+My note(?):
+> Bagus gak sih format gini?
+
+**EXAMPLE:**
+
+- In September, XYZ Consulting
+  - _performs marketing services for a customer_
+    - who **does not pay until** the beginning of October.
+  - In September, this sale would be **recorded as an increase** in _both Sales and Accounts Receivable._
+    - _(And the sale would show up on a September **income statement**.)_
+
+  TODO:
+  > INSERT THE JOURNAL HERE, PLEASE.
+
+  - _The cash,_ however, isn’t actually **received until October**,
+    - so the activity **would not appear** on _September’s cash flow statement_.
+
+Mine:
+> See? A record of income/expense **can/cannot** with its cash flow yet. Gitu we lah (sic, lebih teu puguh we sih bahasana).
+
+##### The 2nd major difference
+
+- between them is that:
+  - The cash flow statement includes:
+    - several types of transactions that **are not included** in _the income statement._
+
+**EXAMPLE 1:**
+
+- XYZ Consulting **takes out a loan** with its bank.
+  - The loan will not appear on the income statement,
+    - as the transaction is neither a revenue item nor an expense item.
+  - It is simply an **increase** of _an asset (Cash) and a liability (Notes Payable)_.
+  - **However**, because it’s a cash inflow,
+    - the loan **will appear on the cash flow statement**.
+
+**EXAMPLE 2:**
+
+- XYZ Consulting **pays** _its shareholders a $30,000 dividend_.
+  - _(As discussed in Chapter 4)_, dividends **are not** an expense.
+    - **Therefore**, the dividend **will not appear** on the _income statement_.
+    - It will, **however**, **appear** on the _cash flow statement as a cash outflow_.
+
+#### Categories of Cash Flow
+
+On a cash flow statement, all _cash inflows_ or _outflows_ are _separated into one of three categories_:
+
+- [Cash flow from operating activities](#cash-flow-from-operating-activities),
+- [Cash flow from investing activities](#cash-flow-from-investing-activities), and
+- [Cash flow from financing activities](#cash-flow-from-financing-activities).
+
+##### Cash Flow from Operating Activities
+
+- Technically, cash flow from operating activities includes:
+  - any cash flows **not specifically defined** as _investing or financing activities_.
+- **The general idea, however,**
+  - is to reflect most of the cash transactions **that would be included** in _the determination of **net income**._
+
+Common items _that are categorized as cash flow from operating activities_ include:
+- Receipts from
+  - the sale _(of goods or services)_,
+- Payments made
+  - to suppliers,
+  - to employees,
+- Interest **payments** made to _lenders_,
+- Interest or dividends **received** from _investments_, and
+- Tax payments.
+
+##### Cash Flow from Investing Activities
+
+Cash flow from investing activities includes:
+- cash **spent** on
+  - _(—or **received** from the sale of—)_
+    - _**investments**_ in financial securities (stocks, bonds, etc.)
+- _(as well as)_
+- cash **spent** on
+  - _(—or **received** from the sale of—)_
+    - _**capital assets**_ (i.e., assets expected to last longer than one year).
+
+Typical items in this category include:
+- _Purchase_ or _sale_ of
+  - property,
+  - plant, or
+  - equipment, and
+- _Purchase_ or _sale_ of
+  - stocks or
+  - bonds.
+
+##### Cash Flow from Financing Activities
+
+- Cash flow from financing activities includes:
+  - cash _inflows_ and _outflows_
+    - relating to transactions with:
+      - the company’s owners and
+      - creditors.
+
+Common items that would fall in this category include:
+- Cash **received** from investors when **new shares of stock are issued**,
+- **Dividends paid** to shareholders,
+- Cash received from **taking out a loan**, and
+- Cash paid to **pay back the principal on a loan**.
+  - _(Payments of interest are classified as an operating activity.)_
+    > Bunganya masuk ke _operating activity_
+
+"Learning in Progress" note while do this summary:
+> Let's not overengineer with _italic_ words, except for _(an unnecessary necessary words with two parentheses)_.
+>
+> Aku bingung note ini mending masukin kemana. TODO.
+
+#### An example of Cash Flow Statements
+
+**Cash Flow Statement**
+
+| 1                                       |                2 |
+| :-------------------------------------- | ---------------: |
+| Cash Flow from Operating Activities:    |                  |
+| Cash receipts from customers            |         $320,000 |
+| Cash paid to suppliers                  |         (50,000) |
+| Cash paid to employees                  |         (40,000) |
+| Income taxes paid                       |  <u>(55,000)</u> |
+| Net Cash Flow From Operating Activities |   <u>175,000</u> |
+|                                         |                  |
+| Cash Flow from Investing Activities:    |                  |
+| Cash spent on purchase of equipment     | <u>(210,000)</u> |
+| Net Cash Flow From Investing Activities | <u>(210,000)</u> |
+|                                         |                  |
+| Cash Flow from Financing Activities:    |                  |
+| Dividends paid to shareholders          |         (25,000) |
+| Cash received from issuing new shares   |   <u>250,000</u> |
+| Net Cash Flow From Financing Activities |   <u>225,000</u> |
+|                                         |         ________ |
+| Net increase in cash:                   |  <u>$190,000</u> |
+
+### CHAPTER 6
+
+...
+
+## Maintenance notes
+
+Note 1:
+> Hapus Part One, Two, etc as headings.
 
 ## Learning in Progress
 
