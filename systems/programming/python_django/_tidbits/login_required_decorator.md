@@ -104,6 +104,9 @@ Mine:
   - you may find the `django.contrib.admin.views.decorators.staff_member_required()` decorator a useful alternative to `login_required()`.
 ```
 
+My different "liat geura ini" note:
+> Liat tapi itu ada `LoginRequiredMixin` cenah.
+
 ## Source(s)
 
 [The `"@"login_required` decorator](https://docs.djangoproject.com/en/4.2/topics/auth/default/#the-login-required-decorator).
