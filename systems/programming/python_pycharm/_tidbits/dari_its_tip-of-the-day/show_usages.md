@@ -6,8 +6,8 @@ To jump to a usage, select it from the list and press `Enter`.
 
 ## Misalnya
 
-```
-city variable from `meteo` -> `views.py`
+```{note}
+`city` variable from `meteo` -> `views.py`
  |- `city = random_item.city`
  |- `'city': city` (maksudnya di `context`-nya gening)
 ```
