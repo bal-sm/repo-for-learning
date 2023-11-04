@@ -31,6 +31,30 @@ def my_view(request):
   - execute the view _normally_.
   - The view code _is free to assume the user is logged in_.
 
+### Penjelasan lanjutan (opsional untuk dibaca): `next` -> a query string parameter
+
+- By default, the path that the user should be redirected to upon successful authentication
+  - is stored in a query string parameter called `next`.
+  - If you would prefer to use a different name for this parameter, `@login_required()` takes an optional `redirect_field_name` parameter:
+
+  ```python
+  from django.contrib.auth.decorators import login_required
+
+
+  @login_required(redirect_field_name="my_redirect_field")
+  def my_view(request):
+      ...
+  ```
+
+My note:
+> Oh, tuh jadi contohnya url yang di passed in nya gini: `/accounts/login/?my_redirect_field=/polls/3/`.
+
+- Note that if you provide a value to `redirect_field_name`,
+  - you will most likely **need to customize your login template as well**,
+    - _since the template context variable which stores the redirect path will use the value of `redirect_field_name` as its key **rather than** `next` (**the default**)._
+      - > **SO DON'T.**
+      - > Kejawab sudah gripe learning note 1 tea.
+
 ## Source(s)
 
 [The `"@"login_required` decorator](https://docs.djangoproject.com/en/4.2/topics/auth/default/#the-login-required-decorator).
@@ -57,5 +81,5 @@ return redirect(next_url)
 This is possible because redirect allows you to pass either a url, or a “reversable” url name
 ```
 
-My gripe:
-> Kesel ih tapi, kenapa gak dijelasin sama sekali (not appearing in my search session) di <https://docs.djangoproject.com/>.
+~~My gripe of learning note 1~~, just kidding:
+> ~~Kesel ih tapi, kenapa gak dijelasin sama sekali (not appearing in my search session) di <https://docs.djangoproject.com/>.~~ Tuh baca lanjutannya. Jadi ignore this whole note section, baca aja [itu](#penjelasan-lanjutan-opsional-untuk-dibaca-next---a-query-string-parameter).
