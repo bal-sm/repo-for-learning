@@ -170,3 +170,46 @@ Mine:
 > Hah? Asa technical terus unnecessary complexity banget ini. **Skip aja**. IMO IMO ya original author.
 
 **SKIPPED**.
+
+## Utilization both of `verification_required` and `xhr_request_only`
+
+```python
+@verification_required
+@login_required(login_url="accounts:login")
+@xhr_request_only
+@require_POST
+def post_vote_view(request):
+    ...
+```
+
+Mine:
+> Skipped.
+
+## Wow, Decorating class based views -> `views.py`
+
+- A Django application always uses class based views
+  - because of their simplicity.
+  - > Sometimes euy
+  - **But** using decorators with class based views is **not as straightforward as function based views**.
+    - **Luckily**, Django provides a utility decorator called `@method_decorator` to achieve that.
+
+- To add a decorator function to **every** instance of a **class based views**,
+  - you need to **decorate** **the class definition** itself.
+    - > Kayak biasa.
+
+To do this, you pass **the name of the method** to be **decorated** as the keyword argument name:
+
+```python
+from .decorators import authentication_not_required
+from django.utils.decorators import method_decorator
+
+@method_decorator(authentication_not_required, name='dispatch')
+class LoginView(TemplateView):
+    ...
+```
+
+Mine:
+> [Read more.](https://docs.djangoproject.com/en/4.2/topics/class-based-views/intro/#decorating-the-class)
+
+Maintenance learning note:
+> Harus dibikin dedicated md nya.
