@@ -34,6 +34,99 @@ def authentication_not_required(view_func, redirect_url="accounts:profile"):
 Mine:
 > Tuh ada `@functools.wraps()` wajib itu teh ih.
 
+### Utilization
+
+Mine:
+> Tuh jadi dipakenya gini.
+
+```python
+...
+
+@authentication_not_required
+def register(request):
+    """
+    Registration view for users
+    """
+    ...
+
+@authentication_not_required
+def login(request):
+    """
+    To login
+    """
+    ...
+
+```
+
+#### Full code-nya
+
+`accounts/views.py`
+
+```python
+from django.http import HttpResponse
+from django.shortcuts import render, redirect
+from django.contrib import auth
+from .forms import RegisterForm,LoginForm
+from django.contrib import messages
+from .decorators import authentication_not_required, verification_required
+from django.contrib.auth.decorators import login_required
+
+@authentication_not_required
+def register(request):
+    """
+        registration view for users
+    """
+    if request.method == 'POST':
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            # don't save to the database yet
+            instance = form.save(commit=False)
+            instance.set_password(form.cleaned_data['password1'])
+            instance.is_active = False
+            instance.save()
+            messages.success(request, "Account created successfully!")
+            return redirect('accounts:login')
+        else:
+            messages.error(request, 'Error creating your account!!!')
+    else:
+        form = RegisterForm()
+    return render(request, 'accounts/register.html', context={'form': form})
+
+@authentication_not_required
+def login(request):
+    login_form = LoginForm()
+    if request.method == 'POST':
+        login_form = LoginForm(request.POST)
+        if login_form.is_valid():
+            cleaned_data = login_form.cleaned_data
+            user = auth.authenticate(request, username=cleaned_data.get('username'),
+            password=cleaned_data.get('password'))
+            if user is not None:
+                auth.login(request, user)
+                messages.success(request, "Logged in Successfully!")
+                print("Logged in Successfully!")
+                return redirect("accounts:profile")
+            else:
+                messages.error(request, "Invalid credentials, wrong username or password")
+                print("Invalid credentials, wrong username or password")
+        else:
+            messages.error(request, "form invalid")
+            print("form invalid")
+    return render(request, 'accounts/login.html', {'form': login_form})
+
+def profile(request):
+    return render(request, 'accounts/profile.html')
+```
+
+Mine:
+> Baca we cuman. Bawah.
+
+Learning note ke-?:
+> Gimana sih built-in `login` sama `registration` dari Django nya. Bagusnya pake itu aja gak seh. Maksud saya teh salah satu class based `views.py` gening.
+
+My opinion:
+> Namanya lebih bagus `@logout_required()`, gak sih.
+
 ## `verification_required`
 
 - The function: Users who **haven’t verified** **their** **email** address _or phone number_
