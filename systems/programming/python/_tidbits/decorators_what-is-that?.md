@@ -13,6 +13,7 @@ def tictoc(func):
         t1 = time.time()
         func() # gak pake `return` soalnya biar gak berhenti kode dibawah ini
         # + biar `t1` jalan dulu terus `t2`
+        # [68]
         t2 = time.time() - t1
         print(f"{func.__name__} ran in" f" {t2} seconds")
 
@@ -64,3 +65,8 @@ print(example.__name__)
 
 print(example.__doc__)
 ```
+
+## Notes
+
+Learning note [68]:
+> Harus rangkum masalah bedanya pake `return`, `continue`, pokoknya keluar masuk function gening. Ayeuna kitu we nya?
