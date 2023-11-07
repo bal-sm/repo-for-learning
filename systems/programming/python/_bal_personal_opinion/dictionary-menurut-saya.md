@@ -39,7 +39,7 @@ print(murid_murid[0][2])
 
 # Yuli Nur Anti, aja. ~~Soalna sabenerna Arifin teh sanes nama dinasti kitu.~~
 
-# "YNA, YNA, angger, tong bebeja nya bu masalah ~~REDACTED~~."
+# "Tong bebeja nya bu masalah ~~REDACTED~~."
 ```
 
 2. Nah berarti sebenernya gini juga:
