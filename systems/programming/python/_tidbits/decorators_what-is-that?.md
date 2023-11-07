@@ -1,6 +1,6 @@
 # Decorators - What is that?
 
-[By b001](https://www.youtube.com/watch?v=BE-L7xu8pO4)
+## [By b001](https://www.youtube.com/watch?v=BE-L7xu8pO4)
 
 ```python
 from functools import wraps
@@ -11,7 +11,9 @@ def tictoc(func):
     @wraps(func)
     def wrapper():
         t1 = time.time()
-        func()
+        func() # gak pake `return` soalnya biar gak berhenti kode dibawah ini
+        # + biar `t1` jalan dulu terus `t2`
+        # [68]
         t2 = time.time() - t1
         print(f"{func.__name__} ran in" f" {t2} seconds")
 
@@ -37,3 +39,34 @@ print("Done")
 
 Kegunaan `functools.wraps()`, [from](https://docs.python.org/3/library/functools.html#functools.wraps):
 > Without the use of this decorator factory, the name of the example function would have been 'wrapper', and the docstring of the original example() would have been lost.
+
+Mine:
+> liat section di bawah ini.
+
+## `@functools.wraps()`, [from the docs](https://docs.python.org/3/library/functools.html#functools.wraps)
+
+```python
+from functools import wraps
+def my_decorator(f):
+    @wraps(f)
+    def wrapper(*args, **kwds):
+        print('Calling decorated function')
+        return f(*args, **kwds)
+    return wrapper
+
+@my_decorator
+def example():
+    """Docstring"""
+    print('Called example function')
+
+example()
+
+print(example.__name__)
+
+print(example.__doc__)
+```
+
+## Notes
+
+Learning note [68]:
+> Harus rangkum masalah bedanya pake `return`, `continue`, pokoknya keluar masuk function gening. Ayeuna kitu we nya?
