@@ -13,6 +13,9 @@ Mine:
 
 [Source](https://www.youtube.com/watch?v=eBsc65jTKvw).
 
+Mine:
+> Author used `3.0` version of Django.
+
 Tidbit(s) made:
 - [`@login_required` decorator](../../../../_tidbits/login_required_decorator.md).
 
