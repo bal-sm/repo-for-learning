@@ -7,7 +7,7 @@
 ```
 
 Mine:
-> Made with https://ascii-generator.site/.
+> Made with https://ascii-generator.site/. `stforek` font.
 
 # User Role Based Permissions & Authentication
 
