@@ -1,3 +1,32 @@
+# `__getitem__` method
+
+Mine:
+> Thanks to Indently for the [video](https://youtu.be/XWhyAtB6RuU?si=5Gr08wDHxR9DeCh0)!
+
+## Content
+
+```python
+class Book:
+    def __init__(self, content):
+        self.content = content
+
+    def __getitem__(self, index):
+        try:
+            page = self.content[index]
+        except IndexError:
+            page = "404. Page not found."
+
+        return page
+
+
+book = Book(["Eggs", "Spam", "Ham"])
+print("book[2] = " + book[2])
+
+print("book[3] = " + book[3])  # at least, we're trying, high hope, high as hope.
+```
+
+## Notes
+
 Learning note:
 > - Perbedaan dan maksud dari `self.content` dan `content` adalah sebagai berikut:
 >   - `self.content`
