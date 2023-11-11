@@ -22,7 +22,11 @@ class Book:
 book = Book(["Eggs", "Spam", "Ham"])
 print("book[2] = " + book[2])
 
+# output: book[2] = Ham
+
 print("book[3] = " + book[3])  # at least, we're trying, high hope, high as hope.
+
+# output: book[3] = 404. Page not found.
 ```
 
 ## Notes
