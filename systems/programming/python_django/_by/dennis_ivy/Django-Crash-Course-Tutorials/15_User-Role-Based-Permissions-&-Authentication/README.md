@@ -26,7 +26,22 @@ Mine:
 
 ### `@unautheticated_user()`
 
-...
+```python
+from django.http import HttpResponse
+from django.shortcuts import redirect
+
+def unauthenticated_user(view_func):
+    def wrapper_func(request, *args, **kwargs):
+        if request.user.is_authenticated:
+            return redirect('home')
+        else:
+            return view_func(request, *args, **kwargs)
+
+    return wrapper_func
+```
+
+Ilustrasi masalah `view_func` -> its argument(s) -> available on `unauthenticated_user()` scope (?):
+> Mari kita bawa lagi.. soalnya dibawa oleh decorator.. melalui arguments -> `unauthenticated_user`(**`view_func`**), bener toh? Nanti kita lihat saja lewat magic method -> `__dict__`.
 
 ## Note(s)
 
