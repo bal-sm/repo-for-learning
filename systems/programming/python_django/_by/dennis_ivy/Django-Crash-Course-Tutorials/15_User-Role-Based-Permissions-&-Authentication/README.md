@@ -43,6 +43,48 @@ def unauthenticated_user(view_func):
 Ilustrasi masalah `view_func` -> its argument(s) -> available on `unauthenticated_user()` scope (?):
 > Mari kita bawa lagi.. soalnya dibawa oleh decorator.. melalui arguments -> `unauthenticated_user`(**`view_func`**), bener toh? Nanti kita lihat saja lewat magic method -> `__dict__`.
 
+#### Benefits
+
+Before:
+
+```python
+def registerPage(request):
+    if request.user.is_authenticated:
+        return redirect('home')
+    else:
+        form = RegisterForm()
+        if request.method == 'POST':
+            form = RegisterForm(request.POST)
+            if form.is_valid():
+                form.save()
+                # user = form.cleaned_data.get("username")
+                # message.success(request, 'Account was created for ' + user)
+
+                return redirect('login')
+        context = {'form': form}
+        return render(request, 'accounts/register.html', context)
+```
+
+After:
+
+```python
+def registerPage(request):
+    form = RegisterForm()
+    if request.method == 'POST':
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            # user = form.cleaned_data.get("username")
+            # message.success(request, 'Account was created for ' + user)
+
+            return redirect('login')
+    context = {'form': form}
+    return render(request, 'accounts/register.html', context)
+```
+
+Mine:
+> And for **every** **view** that **need** this.
+
 ## Note(s)
 
 Mine:
