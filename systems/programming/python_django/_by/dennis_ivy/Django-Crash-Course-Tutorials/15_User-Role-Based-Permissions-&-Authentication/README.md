@@ -127,6 +127,11 @@ def admin_only(view_func):
     return wrapper_function
 ```
 
+Mine:
+> Soalnya khusus buat home page cenah, yang admin sama yang per customer teh beda.
+>
+> Kalo admin, semua customer. Kalo per customer, ya buat customer yang login aja.
+
 ### Associate new user with a group automatically
 
 Dennis Ivy:
