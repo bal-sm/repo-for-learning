@@ -13,7 +13,19 @@ Mine:
 GitHub Copilot:
 > Sure, here's a brief explanation of Python's `return` keyword:
 
-The `return` keyword in Python is used to exit a function and return a value. When the `return` statement is executed, the function terminates immediately. If the `return` statement is without any expression, then the special value `None` is returned. If there is no `return` statement in the function code, the function will end, when the control flow reaches the end of the function body and `None` will be returned.
+- The `return` keyword in Python is
+  - used to **exit** a function and **return a value**.
+  - When the `return` statement is executed, **the function terminates immediately**.
+  - _Optional read_:
+    - If the `return` statement is **without any expression**,
+      - then the special value `None` is returned.
+    - If there is **no `return` statement** _in the function code_,
+      - > ya, berarti `return` keyword is a must on any function, ya, pastinya ada exception.
+        - > you need to quit it gening.
+      - the function **will end**,
+        - when the control flow:
+          - > _event loop atau apa gening, pokoknya yang bikin program jalan terus, sampe user "udah ah" -> exit (meureunnn)_
+          - reaches the end of the function body and `None` will be returned.
 
 Here are some other Python keywords and their brief explanations:
 
