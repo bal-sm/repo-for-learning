@@ -1,6 +1,8 @@
 # `return`, and Python's other keywords
 
-## Question
+## Q&A 1
+
+### Question
 
 bal-sm (me):
 > Can you explain all of Python's keyword such as `return`?
@@ -8,7 +10,7 @@ bal-sm (me):
 Mine:
 > Copilot used a file from my notes as reference, if it matters.
 
-## Answer
+### Answer
 
 GitHub Copilot:
 > Sure, here's a brief explanation of Python's `return` keyword:
@@ -39,3 +41,42 @@ Here are some other Python keywords and their brief explanations:
 
 Dia:
 > Remember, Python keywords are case sensitive.
+
+## Q&A 2
+
+### Question
+
+bal-sm:
+> Give me Python's code example which utilize `return`, `break`, `continue`, `try`, `except`, and `finally`.
+
+### Answer
+
+GitHub Copilot:
+> Sure, here is a Python code example that utilizes `return`, `break`, `continue`, `try`, `except`, and `finally`.
+
+```python
+def process_numbers(numbers):
+    for i in numbers:
+        if i < 0:
+            return "Negative number detected"  # return statement
+        try:  # try statement
+            if i == 0:
+                break  # break statement
+            elif i % 2 == 0:
+                continue  # continue statement
+            else:
+                print(i)
+        except TypeError:  # except statement
+            print("Non-numeric value detected")
+        finally:  # finally statement
+            print("End of processing")
+
+numbers = [1, 2, 3, 0, -1, "a"]
+print(process_numbers(numbers))
+```
+
+Ignore:
+
+```{note}
+In this code, the function `process_numbers` takes a list of numbers as input. It iterates over each number in the list. If a negative number is detected, it immediately returns a message and stops execution. If the number is zero, it breaks the loop. If the number is even, it skips the rest of the loop and continues with the next iteration. If the number is odd, it prints the number. If a non-numeric value is encountered, it catches the `TypeError` and prints a message. Regardless of whether an exception was raised or not, it prints "End of processing" at the end of each iteration.
+```
