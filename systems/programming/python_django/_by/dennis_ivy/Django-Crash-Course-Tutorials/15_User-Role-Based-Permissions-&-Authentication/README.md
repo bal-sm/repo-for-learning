@@ -48,6 +48,7 @@ Ilustrasi masalah `view_func` -> its argument(s) -> available on `unauthenticate
 Before:
 
 ```python
+@unauthenticated_user()
 def registerPage(request):
     if request.user.is_authenticated:
         return redirect('home')
