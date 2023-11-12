@@ -140,7 +140,7 @@ Mine:
 ## Note(s)
 
 Mine:
-> Last position, 11:12.
+> Last position, 17:37.
 
 Learning note 1:
 > Kenapa ya di return nya gak pake `gini()`, **`()`**. Baca we ya yang dari stackoverflow, ultimate penjelasan tea.
