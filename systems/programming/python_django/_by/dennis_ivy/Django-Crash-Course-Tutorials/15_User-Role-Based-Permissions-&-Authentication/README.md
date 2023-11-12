@@ -144,3 +144,6 @@ Mine:
 
 Learning note 1:
 > Kenapa ya di return nya gak pake `gini()`, **`()`**. Baca we ya yang dari stackoverflow, ultimate penjelasan tea.
+
+Learning note 2:
+> Cenah biar user automatically assigned to a group, biasanya pake Django's signals.
