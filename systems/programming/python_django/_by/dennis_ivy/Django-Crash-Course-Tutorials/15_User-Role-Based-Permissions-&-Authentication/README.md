@@ -106,6 +106,23 @@ def allowed_users(allowed_roles=[]):
     return decorator
 ```
 
+### `@admin_only()`
+
+Dennis Ivy:
+> This is duct tape fix, cenah. Jangan pake buat big and formal project.
+
+...
+
+### Associate new user with a group automatically
+
+Dennis Ivy:
+> You can achieve this with Django's signals.
+
+Mine:
+> It's on another video, cenah.
+
+...
+
 ## Note(s)
 
 Mine:
