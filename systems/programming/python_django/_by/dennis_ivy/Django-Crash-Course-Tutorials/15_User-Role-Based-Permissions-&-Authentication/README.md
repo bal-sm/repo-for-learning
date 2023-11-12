@@ -152,3 +152,6 @@ Learning note 1:
 
 Learning note 2:
 > Cenah biar user automatically assigned to a group, biasanya pake Django's signals.
+
+Learning note 3:
+> Django's Middleware cenah towards end of the series buat beresin masalah authentication yang lebih lanjut.
