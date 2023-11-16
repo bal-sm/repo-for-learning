@@ -132,6 +132,9 @@ Mine:
 >
 > Kalo admin, semua customer. Kalo per customer, ya buat customer yang login aja.
 
+Mine:
+> Kalo saya, namain nya begini `@admin_or_customer_redirect()`
+
 ### Associate new user with a group automatically
 
 Dennis Ivy:
