@@ -48,7 +48,6 @@ Ilustrasi masalah `view_func` -> its argument(s) -> available on `unauthenticate
 Before:
 
 ```python
-@unauthenticated_user()
 def registerPage(request):
     if request.user.is_authenticated:
         return redirect('home')
@@ -69,6 +68,7 @@ def registerPage(request):
 After:
 
 ```python
+@unauthenticated_user()
 def registerPage(request):
     form = RegisterForm()
     if request.method == 'POST':
