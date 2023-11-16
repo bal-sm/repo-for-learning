@@ -48,7 +48,6 @@ Ilustrasi masalah `view_func` -> its argument(s) -> available on `unauthenticate
 Before:
 
 ```python
-@unauthenticated_user()
 def registerPage(request):
     if request.user.is_authenticated:
         return redirect('home')
@@ -69,6 +68,7 @@ def registerPage(request):
 After:
 
 ```python
+@unauthenticated_user()
 def registerPage(request):
     form = RegisterForm()
     if request.method == 'POST':
@@ -132,20 +132,45 @@ Mine:
 >
 > Kalo admin, semua customer. Kalo per customer, ya buat customer yang login aja.
 
-### Associate new user with a group automatically
+Mine:
+> Kalo saya, namain nya begini `@admin_or_customer_redirect()`
+
+### Associate new user with `customer` group automatically
 
 Dennis Ivy:
 > You can achieve this with Django's signals.
 
 Mine:
-> It's on another video, cenah.
+> It's on another video, cenah, penjelasan complete-nya.
+>
+> Tapi gini dulu aja sementara ⬇️
 
-...
+Mine:
+> `flow, please`
+```python
+@unauthenticated_user()
+def registerPage(request):
+    form = RegisterForm()
+    if request.method == 'POST':
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            username = form.cleaned_data.get("username")
+
+            group = Group.objects.get(name="customer") # tah ditambahan ieu.
+            user.groups.add()
+
+            message.success(request, 'Account was created for ' + user)
+
+            return redirect('login')
+    context = {'form': form}
+    return render(request, 'accounts/register.html', context)
+```
 
 ## Note(s)
 
 Mine:
-> Last position, 17:37.
+> Part 15, **complete summarization** of the video.
 
 Learning note 1:
 > Kenapa ya di return nya gak pake `gini()`, **`()`**. Baca we ya yang dari stackoverflow, ultimate penjelasan tea.
@@ -155,3 +180,9 @@ Learning note 2:
 
 Learning note 3:
 > Django's Middleware cenah towards end of the series buat beresin masalah authentication yang lebih lanjut.
+
+Learning note 4:
+> itu gening dennis ivy bikin group antara customer sama admin -> tapi plan to use multiple group -> bikin group detection terus ambil group pertama -> ya it will work, tapi nanti teh ditinggalin function keburu lupa, tau tau, ngebug emang bego.
+
+Learning note 5:
+> Baca lagi geura ih dari `form` terus jadi the real object of the model.
