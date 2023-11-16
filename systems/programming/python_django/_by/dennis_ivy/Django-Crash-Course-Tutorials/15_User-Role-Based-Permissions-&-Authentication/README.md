@@ -170,7 +170,7 @@ def registerPage(request):
 ## Note(s)
 
 Mine:
-> Last position, 17:37.
+> Part 15, **complete summarization** of the video.
 
 Learning note 1:
 > Kenapa ya di return nya gak pake `gini()`, **`()`**. Baca we ya yang dari stackoverflow, ultimate penjelasan tea.
