@@ -141,7 +141,7 @@ Dennis Ivy:
 > You can achieve this with Django's signals.
 
 Mine:
-> It's on another video, cenah.
+> It's on another video, cenah, penjelasan complete-nya.
 
 ...
 
