@@ -186,8 +186,3 @@ Learning note 4:
 
 Learning note 5:
 > Baca lagi geura ih dari `form` terus jadi the real object of the model.
-
-Learning note 6:
-> `is_staff` vs `group`?
->
-> Apa bedanya?
