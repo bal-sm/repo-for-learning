@@ -108,3 +108,8 @@
 - `<colgroup>`
 - `<samp>`
 - `<footer>`
+
+## Notes
+
+Maintenance note:
+> These are Theo's opinion.
