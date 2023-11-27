@@ -374,3 +374,6 @@ Learning note 2:
 
 Me on 2023-11-27, 17:02 PM:
 > Nice VSCode, I love to tinker more engke.
+
+Mine:
+> Tapi sebenernya teh gini, Emmet itu suatu aplikasi, [read more](https://en.wikipedia.org/wiki/Emmet_(software)), tapi jadinya vscode plugin.
