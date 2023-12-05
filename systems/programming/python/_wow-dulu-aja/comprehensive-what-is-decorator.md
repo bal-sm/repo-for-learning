@@ -1,3 +1,15 @@
+# Decorator explained - How can I make a chain of function decorators in Python?
+
+Sources:
+- [Original QnA post](https://stackoverflow.com/questions/739654/)how-do-i-make-function-decorators-and-chain-them-together
+  - [Jump to the answer](https://stackoverflow.com/a/1594484)
+- [GitHub Gist](https://gist.github.com/Zearin/2f40b7b9cfc51132851a)
+- [Reddit]https://www.reddit.com/r/Python/comments/8jup2z/the_best_explanation_of_python_decorators_ive/
+
+Mine
+> Thanks to them all.
+
+## Answer / Contents
 
 ...
 
@@ -41,3 +53,5 @@ print(getTalk("whisper")())  # print getTalk('whisper')()
 
 # omG ~~versi 2 anying~~ versi 3 ayeuna
 ```
+
+...
