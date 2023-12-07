@@ -1,5 +1,8 @@
 # Underhood of Django series: Manager's Response for an empty QuerySet
 
+Maintenance note:
+> Another pembelajaran sendiri, bikin section sendiri ih!
+
 What will ever Django do about it?
 
 ```python
