@@ -1,6 +1,8 @@
 # Python's "Cheat-sheet"
 
 - `super().method(arg)`
+  - ~~`super(`**`C, self`**`).method(arg)`~~
+    - > gak perlu.
   - Example:
 
   ```python
