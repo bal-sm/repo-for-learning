@@ -2,9 +2,24 @@
 
 ...
 
+_Skipped_
+
+## How Django processes a request
+
+- When a user -_requests_-> a page from your Django-powered site,
+  - **this** **is** **the** **algorithm** the system **follows** _to determine which Python code to execute_;
+  1. Django determines _the root ~~URLconf~~ URL configuration module to use_.
+     - Ordinarily, this is the value of the `ROOT_URLCONF` setting,
+       - but if the incoming `HttpRequest` object has a `urlconf` attribute (_set by middleware_) [LN1], its value will be used in place of the `ROOT_URLCONF` setting.
+  2. ...
+
+## ...
+
+...
+
 ## Learning notes
 
-Penggalan 1:
+[LN1]: Penggalan 1:
 > ...`HttpRequest` object has a `urlconf` attribute (**set by middleware**)...
 
 My Question 1:
