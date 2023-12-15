@@ -11,7 +11,26 @@ _Skipped_
   1. Django determines _the root ~~URLconf~~ URL configuration module to use_.
      - Ordinarily, this is the value of the `ROOT_URLCONF` setting,
        - but if the incoming `HttpRequest` object has a `urlconf` attribute (_set by middleware_) [LN1], its value will be used in place of the `ROOT_URLCONF` setting.
-  2. ...
+     - _(usually `urls.py`)_
+  2. Django **loads** that Python module _(usually `urls.py`)_ and **looks** for the variable `urlpatterns`.
+     - This should be a sequence of `django.urls.path()` and/or `django.urls.re_path()` instances.
+     - Example:
+
+       ```python
+       urlpatterns = [
+           path("articles/2003/", views.special_case_2003),
+       ]
+       ```
+  3. Django runs _through each URL pattern_, in order,
+     - and stops at the first one that matches the requested URL, matching against `path_info`.
+  4. Once one of the URL patterns **matches**,
+     5. Django _**imports** and **calls** the given view_, _which is a Python function (or a class-based view)_.
+     6. The view gets passed the following arguments:
+        - An instance of `HttpRequest`.
+        - _(If the matched URL pattern contained no named groups, then the matches from the regular expression are provided as positional arguments.)_
+          - _Skip aja, we don't use Regex ieuh._
+        - The keyword arguments are made up of **any named parts matched** by the path expression that are provided, overridden by any arguments specified in the optional kwargs argument to `django.urls.path()` or `django.urls.re_path()`.
+  7. If **no URL pattern matches**, or if **an exception is raised** during any point in this process, Django invokes an appropriate _error-handling_ view.
 
 ## ...
 
