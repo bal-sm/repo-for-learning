@@ -22,7 +22,21 @@ Penggalan 2 (Untranslated/not summarized yet):
 TL;DR 2:
 > Jadi, baca we, males hehe.
 
+Penggalan 3:
+> **`HttpRequest.user`**
+>
+> - From the `AuthenticationMiddleware`: An instance of `AUTH_USER_MODEL` representing the currently logged-in user.
+>   - If the user isn’t currently logged in, user will be set to an instance of `AnonymousUser`.
+> ...
+
+Realization on 3:
+> Tuh makanya ada `request.user` pas di route melalui `urls.py`.
+
+Masih bingung tapi:
+> Kenapa dinamain `URLconf` kayak suatu objek atau apa gitu, padahal bukan, nama objects nya `urls.py` / `urlpatterns` / etc..
+
 ## Source(s)
 
 [1]: [URL dispatcher](https://docs.djangoproject.com/en/5.0/topics/http/urls/)
 [2]: [`HttpRequest.path_info`](https://docs.djangoproject.com/en/5.0/ref/request-response/#django.http.HttpRequest.path_info)
+[3]: [`HttpRequest.user`](https://docs.djangoproject.com/en/5.0/ref/request-response/#django.http.HttpRequest.user)
