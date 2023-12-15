@@ -30,7 +30,7 @@ _Skipped_
         - _(If the matched URL pattern contained no named groups, then the matches from the regular expression are provided as positional arguments.)_
           - _Skip aja, we don't use Regex ieuh._
         - The keyword arguments are made up of **any named parts matched** by the path expression that are provided, overridden by any arguments specified in the optional kwargs argument to `django.urls.path()` or `django.urls.re_path()`.
-  7. If **no URL pattern matches**, or if **an exception is raised** during any point in this process, Django invokes an appropriate _error-handling_ view.
+  7. If **no URL pattern matches**, or if **an exception is raised** during any point in this process, Django invokes an appropriate **error-handling** view.
 
 ## ...
 
