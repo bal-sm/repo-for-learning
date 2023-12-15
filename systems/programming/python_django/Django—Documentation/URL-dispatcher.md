@@ -2,10 +2,6 @@
 
 ...
 
-## Source(s)
-
-[1]: [URL dispatcher](https://docs.djangoproject.com/en/5.0/topics/http/urls/)
-
 ## Learning notes
 
 Penggalan 1:
@@ -20,3 +16,7 @@ Penggalan 2 (Untranslated/not summarized yet):
 > ...
 
 ...
+
+## Source(s)
+
+[1]: [URL dispatcher](https://docs.djangoproject.com/en/5.0/topics/http/urls/)
