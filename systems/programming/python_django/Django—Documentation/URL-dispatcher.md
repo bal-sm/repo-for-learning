@@ -15,3 +15,8 @@ My Question 1:
 > Which middleware?
 
 _Not answered yet._
+
+Penggalan 2 (Untranslated/not summarized yet):
+> ...
+
+...
