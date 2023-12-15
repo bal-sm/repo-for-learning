@@ -52,6 +52,6 @@ Masih bingung tapi:
 
 ## Source(s)
 
-[1]: [URL dispatcher](https://docs.djangoproject.com/en/5.0/topics/http/urls/)
-[2]: [`HttpRequest.path_info`](https://docs.djangoproject.com/en/5.0/ref/request-response/#django.http.HttpRequest.path_info)
-[3]: [`HttpRequest.user`](https://docs.djangoproject.com/en/5.0/ref/request-response/#django.http.HttpRequest.user)
+- [1]: [URL dispatcher](https://docs.djangoproject.com/en/5.0/topics/http/urls/)
+- [2]: [`HttpRequest.path_info`](https://docs.djangoproject.com/en/5.0/ref/request-response/#django.http.HttpRequest.path_info)
+- [3]: [`HttpRequest.user`](https://docs.djangoproject.com/en/5.0/ref/request-response/#django.http.HttpRequest.user)
