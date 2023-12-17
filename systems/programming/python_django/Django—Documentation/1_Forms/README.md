@@ -36,6 +36,18 @@ Ini contohnya:
 
 > Please ganti ke login and password form. [Dari ini](https://www.w3schools.com/howto/howto_css_login_form.asp).
 
+#### [GET vs POST](https://docs.djangoproject.com/en/5.0/topics/forms/#get-and-post)
+
+```{note}
+**TL;DR**:
+
+GET:
+Pake buat queri yang pantas dilihat oleh user dan dishare ke orang lain url-nya, seperti search kueri. (sic)
+
+POST:
+Pake buat data data yang bener bener isian dan private, jadi gak muncul di URL cuman dikirim melalui request.
+```
+
 ### Django's role in forms
 
 - Handling forms is a complex business. Consider Django’s admin:
