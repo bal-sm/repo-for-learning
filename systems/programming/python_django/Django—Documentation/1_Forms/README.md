@@ -133,7 +133,7 @@ Trivia:
 
 A `Form`'s field type -> Default (HTML) `Widget` class -> (Can Be Overridden) -> Rendered on HTML
 
-### Forms in Django, Instantiating, processing, and rendering forms
+#### Instantiating, processing, and rendering forms
 
 - Skip, pokoknya:
   - dari `model` tertulis _`fields`_nya seperti apa, lalu menggambarkan bagaimana tabel-tabel dari databasenya.
