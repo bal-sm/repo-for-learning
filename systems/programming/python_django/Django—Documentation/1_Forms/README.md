@@ -72,7 +72,9 @@ Django handles _three distinct parts of the work_ involved in **forms**:
 
 It is _possible_ to write code that does all of this manually, but Django can take care of it all for you.
 
-### Forms in Django, The Django Form Class
+### Forms in Django
+
+#### The Django Form Class — Mahmuda's version
 
 Illustration of Django's forms with comparison of Django's model (sic pisan):
 
