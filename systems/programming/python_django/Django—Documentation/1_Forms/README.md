@@ -101,6 +101,38 @@ kalo dibikin `ModelFoms` yang bakal nyocokin sama modelnya gini:
 </form>
 ```
 
+##### Sedikit Tambahan 
+
+Jadi bisa disimpulkan seperti ini:
+
+`Model` "class" -> *the logical structure of an object, its behavior, and the way its parts are represented to us*
+
+`Form` class -> *a form and determines how it works and appears.*
+
+---
+
+`Model`'s fieldss -map-to-> Database's fields
+
+`Form`'s fields -map-to-> HTML form `<input>` elements
+
+`ModelForm` -utilizes-> `Model`'s fields -map-to-> Appropriate `Form`'s fields -map-to-> HTML form `<input>` elements
+
+Trivia:
+> this is what the Django admin is based upon.
+
+---
+
+- A `Form`’s fields are themselves `class`es; 
+  - they manage _form data_ and 
+  - _perform **validation**_ when a form is **submitted**.
+  - Ex:
+    - `DateField` -> Is it a date?, is it on the range?
+    - `FileField` -> Is it a file?, is it too big?
+
+---
+
+A `Form`'s field type -> Default (HTML) `Widget` class -> (Can Be Overridden) -> Rendered on HTML
+
 ### Forms in Django, Instantiating, processing, and rendering forms
 
 - Skip, pokoknya:
