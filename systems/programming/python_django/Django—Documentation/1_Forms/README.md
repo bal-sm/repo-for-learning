@@ -135,9 +135,14 @@ A `Form`'s field type -> Default (HTML) `Widget` class -> (Can Be Overridden) ->
 
 #### Instantiating, processing, and rendering forms
 
+```
 - Skip, pokoknya:
   - dari `model` tertulis _`fields`_nya seperti apa, lalu menggambarkan bagaimana tabel-tabel dari databasenya.
   - kalau `forms`, akan menggambarkan isian formulir di html.
+```
+
+Maintenance note:
+> Terlalu rancu. Fix it.
 
 ### Building a form
 
