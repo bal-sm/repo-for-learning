@@ -72,7 +72,9 @@ Django handles _three distinct parts of the work_ involved in **forms**:
 
 It is _possible_ to write code that does all of this manually, but Django can take care of it all for you.
 
-### Forms in Django, The Django Form Class
+### Forms in Django
+
+#### The Django Form Class — Mahmuda's version
 
 Illustration of Django's forms with comparison of Django's model (sic pisan):
 
@@ -99,11 +101,48 @@ kalo dibikin `ModelFoms` yang bakal nyocokin sama modelnya gini:
 </form>
 ```
 
-### Forms in Django, Instantiating, processing, and rendering forms
+##### Sedikit Tambahan 
 
+Jadi bisa disimpulkan seperti ini:
+
+`Model` "class" -> *the logical structure of an object, its behavior, and the way its parts are represented to us*
+
+`Form` class -> *a form and determines how it works and appears.*
+
+---
+
+`Model`'s fieldss -map-to-> Database's fields
+
+`Form`'s fields -map-to-> HTML form `<input>` elements
+
+`ModelForm` -utilizes-> `Model`'s fields -map-to-> Appropriate `Form`'s fields -map-to-> HTML form `<input>` elements
+
+Trivia:
+> this is what the Django admin is based upon.
+
+---
+
+- A `Form`’s fields are themselves `class`es; 
+  - they manage _form data_ and 
+  - _perform **validation**_ when a form is **submitted**.
+  - Ex:
+    - `DateField` -> Is it a date?, is it on the range?
+    - `FileField` -> Is it a file?, is it too big?
+
+---
+
+A `Form`'s field type -> Default (HTML) `Widget` class -> (Can Be Overridden) -> Rendered on HTML
+
+#### Instantiating, processing, and rendering forms
+
+```
 - Skip, pokoknya:
   - dari `model` tertulis _`fields`_nya seperti apa, lalu menggambarkan bagaimana tabel-tabel dari databasenya.
   - kalau `forms`, akan menggambarkan isian formulir di html.
+```
+
+Maintenance note:
+> Terlalu rancu. Fix it.
 
 ### Building a form
 
