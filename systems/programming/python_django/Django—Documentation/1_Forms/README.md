@@ -3,7 +3,7 @@
 Important note:
 > Plz read -> Notes of this "Forms" topic section
 
-## [Working with forms](https://docs.djangoproject.com/en/4.2/topics/forms/)
+## [Working with forms](https://docs.djangoproject.com/en/5.0/topics/forms/)
 
 Django provides a range of tools and libraries to help you build forms to accept input from site visitors, and then process and respond to the input.
 
@@ -133,20 +133,38 @@ Trivia:
 
 A `Form`'s field type -> Default (HTML) `Widget` class -> (Can Be Overridden) -> Rendered on HTML
 
-#### Instantiating, processing, and rendering forms
+#### Instantiating, processing, and rendering forms — Mahmuda's version
 
-```
-- Skip, pokoknya:
-  - dari `model` tertulis _`fields`_nya seperti apa, lalu menggambarkan bagaimana tabel-tabel dari databasenya.
-  - kalau `forms`, akan menggambarkan isian formulir di html.
-```
+Them:
+> When rendering an object in Django, we generally:
+> 1. **get hold** of it _in the view_ (fetch it from the database, for example)
+> 2. **pass it** to _the template context_
+> 3. **expand it** to HTML markup using _template variables_
 
-Maintenance note:
-> Terlalu rancu. Fix it.
+Rendering a **form** in a template **≈** Rendering any other kind of object, but:
+1. Kalau _instance_ (~~perwakilan~~ instansi, (u)) dari model, yang merupakan suatu object juga, biasanya harus ada **_value_** (from databse)nya
+2. Kalau object form, kalau unpopulated/no **_value_** sebelumnya juga gak apa-apa.
+   - Terus biarkan user sendiri yang memasukkan _values_nya
+
+Berdasarkan atas, berarti:
+1. Diambil dari database dan taruh di view.
+2. Formnya langsung di _instatiate_ dalam view. Cuman ada beberapa jenis **instance of form**:
+   - Empty, unpopulated form
+   - Prepopulated with data dari:
+     - Dari _a saved model instance_ (instansi model yang tersimpan)
+       - seperti `admin` forms untuk diedit
+     - Terambil dari sumber-sumber lain, seperti kurs uang misalnya
+     - Data yang diterima dari _submission (penyerahan, (u)) formulir HTML sebelumnya
+
+Jadinya:
+- User baca view ✔️
+- User ngirim data ✔️✔️ (juga)
 
 ### Building a form
 
 #### The work that needs to be done
+
+HTML simple form of user's name (sic, by TS):
 
 ```html
 <form action="/your-name/" method="post">
@@ -156,26 +174,31 @@ Maintenance note:
 </form>
 ```
 
-> This tells the browser to return the form data to the URL /your-name/, using the POST method. It will display a text field, labeled “Your name:”, and a button marked “OK”. If the template context contains a current_name variable, that will be used to pre-fill the your_name field.
+Them (skip aja, 'cause codenya juga jelas):
+> This tells the browser to return the form data to the URL `/your-name/`, using the `POST` method. It will display a text field, labeled “Your name:”, and a button marked “OK”. If the template context contains a `current_name` variable, that will be used to pre-fill the `your_name` field.
 >
-> ... [Read more](https://docs.djangoproject.com/en/4.2/topics/forms/#the-work-that-needs-to-be-done)
+> You’ll need a view that renders the template containing the HTML form, and that can supply the `current_name` field as appropriate.
 >
-> Now you’ll also need a view corresponding to that /your-name/ URL which will find the appropriate key/value pairs in the request, and then process them.
->
+> When the form is submitted, the `POST` request which is sent to the server will contain the form data.
+
+Them, **penting**:
+> _Now you’ll also need a view corresponding to that `/your-name/` URL which will find the appropriate key/value pairs in the request, and then process them._
+
+Them, rada penting:
 > This is a very simple form. In practice, a form might contain dozens or hundreds of fields, many of which might need to be prepopulated, and _we might expect the user to work through the edit-submit cycle several times_ **(hm)** before concluding the operation.
 >
 > We might require some **validation** to occur in the browser, even **before** the form is _submitted_; we might want to use much more **complex** fields, that allow the user to do things like pick dates from a calendar and so on.
->
-> **At this point it’s much easier to get Django to do most of this work for us.**[1]
 
-Mine:
-> [1]: Apalagi buat d_jurnal tea
+Them, conclusion penting:
+> **At this point it’s much easier to get Django to do most of this work for us.**
 
 #### Building a form in Django
 
-_The Form class_
+_The `Form` class_
 
-forms.py:
+Penjabaran dari [The work that needs to be done](#the-work-that-needs-to-be-done), jika dijadikan Django's code:
+
+`forms.py`:
 
 ```python
 from django import forms
@@ -188,15 +211,51 @@ class NameForm(forms.Form):
 Mine:
 > Mending `ModelForm` gak sih.
 
-Docs:
+Mine, now:
+> Mari belajar runtut, basic `Form` -> `ModelForm`.
+
+Them:
 > This defines a `Form` class with a single field (`your_name`).
->
-> Penting Pisan:
->
+
+Them, rada penting tapi panjang, skip aja ke bawah:
 > _We’ve applied a human-friendly **label** to the field, which will appear in the <label> when it’s rendered (although in this case, the label we specified is actually the same one that would be generated automatically if we had omitted it)._
 
-Mine:
-> OMG, aku mau skip my Rabb, soalnya django-crispyformssss. :*
+Mine, TL;DR:
+> Jadi, karena nama fieldnya `your_name`, label nya juga harusnya "Your name" automatically.
+
+Mine, oge:
+> Mending udah itu pake translation `gettext` utility tea untuk labelnya, `_("Your name")`.
+
+Them:
+> The field’s maximum allowable length is defined by `max_length`. This does two things. It puts a `max_length="100"` on the HTML `<input>` (so the browser should prevent the user from entering more than that number of characters in the first place). It also means that when Django receives the form back from the browser, it will validate the length of the data.
+
+Mine, TL;DR atas:
+> - Jadi gini:
+>   - Limit 100 character -> Browser's front end
+>   - Validate, is it 100 character? -> Saved to the database
+
+Them, **penting pisan**:
+> - A `Form` instance **has an `is_valid()` method**, 
+>   - which runs validation routines for all its fields.
+>   - When **this method is called**, if _all fields contain_ **valid data**, it will:
+>     - **return `True`**
+>     - **place the form’s data** in its _**`cleaned_data`** attribute_.
+
+The whole form, when rendered for the first time, will look like:
+
+```html
+<label for="your_name">Your name: </label>
+<input id="your_name" type="text" name="your_name" maxlength="100" required>
+```
+
+Them, note:
+> Note that it **does not include** the `<form>` tags, or a submit button. We’ll have to provide those ourselves in the template.
+
+---
+
+_The view_
+
+...
 
 ## Notes of this "Forms" topic
 
