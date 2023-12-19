@@ -226,7 +226,13 @@ Mine, TL;DR:
 Mine, oge:
 > Mending udah itu pake translation `gettext` utility tea untuk labelnya, `_("Your name")`.
 
-...
+Them:
+> The field’s maximum allowable length is defined by `max_length`. This does two things. It puts a `max_length="100"` on the HTML `<input>` (so the browser should prevent the user from entering more than that number of characters in the first place). It also means that when Django receives the form back from the browser, it will validate the length of the data.
+
+Mine, TL;DR atas:
+> - Jadi gini:
+>   - Limit 100 character -> Browser's front end
+>   - Validate, is it 100 character? -> Saved to the database
 
 ## Notes of this "Forms" topic
 
