@@ -196,7 +196,9 @@ Them, conclusion penting:
 
 _The Form class_
 
-forms.py:
+Penjabaran dari [The work that needs to be done](#the-work-that-needs-to-be-done), jika dijadikan Django's code:
+
+`forms.py`:
 
 ```python
 from django import forms
@@ -209,15 +211,22 @@ class NameForm(forms.Form):
 Mine:
 > Mending `ModelForm` gak sih.
 
-Docs:
+Mine, now:
+> Mari belajar runtut, basic `Form` -> `ModelForm`.
+
+Them:
 > This defines a `Form` class with a single field (`your_name`).
->
-> Penting Pisan:
->
+
+Them, rada penting tapi panjang, skip aja ke bawah:
 > _We’ve applied a human-friendly **label** to the field, which will appear in the <label> when it’s rendered (although in this case, the label we specified is actually the same one that would be generated automatically if we had omitted it)._
 
-Mine:
-> OMG, aku mau skip my Rabb, soalnya django-crispyformssss. :*
+Mine, TL;DR:
+> Jadi, karena nama fieldnya `your_name`, label nya juga harusnya "Your name" automatically.
+
+Mine, oge:
+> Mending udah itu pake translation `gettext` utility tea untuk labelnya, `_("Your name")`.
+
+...
 
 ## Notes of this "Forms" topic
 
