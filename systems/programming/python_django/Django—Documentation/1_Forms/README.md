@@ -174,20 +174,23 @@ HTML simple form of user's name (sic, by TS):
 </form>
 ```
 
-> This tells the browser to return the form data to the URL /your-name/, using the POST method. It will display a text field, labeled “Your name:”, and a button marked “OK”. If the template context contains a current_name variable, that will be used to pre-fill the your_name field.
+Them (skip aja, 'cause codenya juga jelas):
+> This tells the browser to return the form data to the URL `/your-name/`, using the `POST` method. It will display a text field, labeled “Your name:”, and a button marked “OK”. If the template context contains a `current_name` variable, that will be used to pre-fill the `your_name` field.
 >
-> ... [Read more](https://docs.djangoproject.com/en/4.2/topics/forms/#the-work-that-needs-to-be-done)
+> You’ll need a view that renders the template containing the HTML form, and that can supply the `current_name` field as appropriate.
 >
-> Now you’ll also need a view corresponding to that /your-name/ URL which will find the appropriate key/value pairs in the request, and then process them.
->
+> When the form is submitted, the `POST` request which is sent to the server will contain the form data.
+
+Them, **penting**:
+> _Now you’ll also need a view corresponding to that `/your-name/` URL which will find the appropriate key/value pairs in the request, and then process them._
+
+Them, rada penting:
 > This is a very simple form. In practice, a form might contain dozens or hundreds of fields, many of which might need to be prepopulated, and _we might expect the user to work through the edit-submit cycle several times_ **(hm)** before concluding the operation.
 >
 > We might require some **validation** to occur in the browser, even **before** the form is _submitted_; we might want to use much more **complex** fields, that allow the user to do things like pick dates from a calendar and so on.
->
-> **At this point it’s much easier to get Django to do most of this work for us.**[1]
 
-Mine:
-> [1]: Apalagi buat d_jurnal tea
+Them, conclusion penting:
+> **At this point it’s much easier to get Django to do most of this work for us.**
 
 #### Building a form in Django
 
