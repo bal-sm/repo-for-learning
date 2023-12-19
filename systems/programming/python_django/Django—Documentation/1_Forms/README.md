@@ -234,6 +234,29 @@ Mine, TL;DR atas:
 >   - Limit 100 character -> Browser's front end
 >   - Validate, is it 100 character? -> Saved to the database
 
+Them, **penting pisan**:
+> - A `Form` instance **has an `is_valid()` method**, 
+>   - which runs validation routines for all its fields.
+>   - When **this method is called**, if _all fields contain_ **valid data**, it will:
+>     - **return `True`**
+>     - **place the form’s data** in its _**`cleaned_data`** attribute_.
+
+The whole form, when rendered for the first time, will look like:
+
+```html
+<label for="your_name">Your name: </label>
+<input id="your_name" type="text" name="your_name" maxlength="100" required>
+```
+
+Them, note:
+> Note that it **does not include** the `<form>` tags, or a submit button. We’ll have to provide those ourselves in the template.
+
+---
+
+_The view_
+
+...
+
 ## Notes of this "Forms" topic
 
 satuin sama `Forms-vault.md` and make them a dedicated folder.
