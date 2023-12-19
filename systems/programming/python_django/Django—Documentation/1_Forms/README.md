@@ -133,16 +133,32 @@ Trivia:
 
 A `Form`'s field type -> Default (HTML) `Widget` class -> (Can Be Overridden) -> Rendered on HTML
 
-#### Instantiating, processing, and rendering forms
+#### Instantiating, processing, and rendering forms — Mahmuda's version
 
-```
-- Skip, pokoknya:
-  - dari `model` tertulis _`fields`_nya seperti apa, lalu menggambarkan bagaimana tabel-tabel dari databasenya.
-  - kalau `forms`, akan menggambarkan isian formulir di html.
-```
+Them:
+> When rendering an object in Django, we generally:
+> 1. **get hold** of it _in the view_ (fetch it from the database, for example)
+> 2. **pass it** to _the template context_
+> 3. **expand it** to HTML markup using _template variables_
 
-Maintenance note:
-> Terlalu rancu. Fix it.
+Rendering a **form** in a template **≈** Rendering any other kind of object, but:
+1. Kalau _instance_ (~~perwakilan~~ instansi, (u)) dari model, yang merupakan suatu object juga, biasanya harus ada **_value_** (from databse)nya
+2. Kalau object form, kalau unpopulated/no **_value_** sebelumnya juga gak apa-apa.
+   - Terus biarkan user sendiri yang memasukkan _values_nya
+
+Berdasarkan atas, berarti:
+1. Diambil dari database dan taruh di view.
+2. Formnya langsung di _instatiate_ dalam view. Cuman ada beberapa jenis **instance of form**:
+   - Empty, unpopulated form
+   - Prepopulated with data dari:
+     - Dari _a saved model instance_ (instansi model yang tersimpan)
+       - seperti `admin` forms untuk diedit
+     - Terambil dari sumber-sumber lain, seperti kurs uang misalnya
+     - Data yang diterima dari _submission (penyerahan, (u)) formulir HTML sebelumnya
+
+Jadinya:
+- User baca view ✔️
+- User ngirim data ✔️✔️ (juga)
 
 ### Building a form
 
