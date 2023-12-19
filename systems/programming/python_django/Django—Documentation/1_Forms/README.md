@@ -194,7 +194,7 @@ Them, conclusion penting:
 
 #### Building a form in Django
 
-_The Form class_
+_The `Form` class_
 
 Penjabaran dari [The work that needs to be done](#the-work-that-needs-to-be-done), jika dijadikan Django's code:
 
