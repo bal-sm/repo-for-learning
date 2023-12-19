@@ -164,6 +164,8 @@ Jadinya:
 
 #### The work that needs to be done
 
+HTML simple form of user's name (sic, by TS):
+
 ```html
 <form action="/your-name/" method="post">
     <label for="your_name">Your name: </label>
