@@ -287,6 +287,9 @@ def get_name(request):
     return render(request, "name.html", {"form": form})
 ```
 
+Mine, penting, learning note:
+> Tuh liat `NameForm` form, dikira cuman ngasih `form` doang, padahal ada validation-nya (setelah submit), terus bikin error messages yang bisa ditangkep dan ditunjukkin dengan instantiate the `messages` to `context` of view.
+
 ...
 
 ## Notes of this "Forms" topic
