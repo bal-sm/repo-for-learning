@@ -295,6 +295,9 @@ Mine, again:
 
 ...
 
+Mine, penting, learning note:
+> "process the data in form.cleaned_data as required" nya `Form` tuh pastinya beda sama `ModelForm`, makanya udah ini langsung ke `ModelForm`.
+
 ## Notes of this "Forms" topic
 
 satuin sama `Forms-vault.md` and make them a dedicated folder.
