@@ -341,6 +341,11 @@ Note from them 2, unmodded:
 ∴:
 > `Form` class => Processed by a view => Rendered as an HTML `<form>`
 
+Wow, them, modded:
+> - That’s all you need to get started, ✔️
+>   - but the forms framework puts a lot more at your fingertips ❗
+>     - ... you should be prepared to understand other features of the forms system and ready to learn a bit more about the underlying machinery ‼️
+
 ## Notes of this "Forms" topic
 
 satuin sama `Forms-vault.md` and make them a dedicated folder.
