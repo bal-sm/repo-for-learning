@@ -290,6 +290,9 @@ def get_name(request):
 Mine, penting, learning note:
 > Tuh liat `NameForm` form, dikira cuman ngasih `form` doang, padahal ada validation-nya (setelah submit), terus bikin error messages yang bisa ditangkep dan ditunjukkin dengan instantiate the `messages` to `context` of view.
 
+Mine, again:
+> Penjelasan di official docs nya, saya lupa di mana.
+
 ...
 
 ## Notes of this "Forms" topic
