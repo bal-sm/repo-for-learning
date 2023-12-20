@@ -310,6 +310,32 @@ Mine, TL;DR:
 Mine, penting, learning note:
 > "process the data in form.cleaned_data as required" nya `Form` tuh pastinya beda sama `ModelForm`, makanya udah ini langsung ke `ModelForm`.
 
+---
+
+_The template_
+
+`name.html`:
+
+```html
+<form action="/your-name/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
+```
+
+`form` instance -> `form` as `context`
+
+Note from them, modded:
+> Forms and Cross Site Request Forgery protection
+>
+> `csrf_token` is a security thing of Django.
+
+Note from them 2, unmodded:
+> HTML5 input types and browser validation
+>
+> If your form includes a `URLField`, an `EmailField` or any integer field type, Django will use the `url`, `email` and `number` HTML5 input types. By default, browsers may apply their own validation on these fields, which may be stricter than Django’s validation. If you would like to disable this behavior, set the `novalidate` attribute on the `form` tag, or specify a different widget on the field, like `TextInput`.
+
 ## Notes of this "Forms" topic
 
 satuin sama `Forms-vault.md` and make them a dedicated folder.
