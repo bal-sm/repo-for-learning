@@ -293,7 +293,19 @@ Mine, penting, learning note:
 Mine, again:
 > Penjelasan di official docs nya, saya lupa di mana.
 
-...
+Them, skip:
+> If we arrive at this view with a `GET` request, it will _create an empty form instance_ and _place it in the template context to be rendered_. This is what we can expect to happen _the first time we visit the URL_.
+>
+> If the form is submitted using a `POST` request, the view will once again create a form instance and populate it with data from the request: `form = NameForm(request.POST)` This is called “binding data to the form” (it is now a bound form).
+>
+> We call the form’s `is_valid()` method; if it’s not `True`, we go back to the template with the form. This time the form is no longer empty (_unbound_) so the HTML form will be populated with the data previously submitted, where it can be edited and corrected as required.
+>
+> If `is_valid()` is `True`, we’ll now be able to find all the validated form data in its `cleaned_data` attribute. We can use this data to update the database or do other processing before sending an HTTP redirect to the browser telling it where to go next.
+
+Mine, TL;DR:
+> - `GET` request -> Empty form -> User -> Submitted filled form -> `POST` request with the data -validated-by-> `is_valid()` method -the-result-> `True` or `False`.
+>   - `True` --> `cleaned_data` which contains all the validated form data --> update the database with the data / do ther processing / etc --> redirection to any other page.
+>   - `False` --> Redirected back to the template + Data previously submitted -> User reediting -> `POST` request with the data, again.
 
 Mine, penting, learning note:
 > "process the data in form.cleaned_data as required" nya `Form` tuh pastinya beda sama `ModelForm`, makanya udah ini langsung ke `ModelForm`.
