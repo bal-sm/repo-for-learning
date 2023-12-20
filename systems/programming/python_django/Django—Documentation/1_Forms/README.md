@@ -255,7 +255,96 @@ Them, note:
 
 _The view_
 
-...
+View from `views.py` -Publishes-> Form on DOM -to-be-filled-by-> User -sends-back-> Filled Form -to-be-processed-by-> View again (A portion of `if` "filled" block)
+
+Example of instantiating form in a view:
+
+`views.py`:
+
+```python
+from django.http import HttpResponseRedirect
+from django.shortcuts import render
+
+from .forms import NameForm
+
+
+def get_name(request):
+    # if this is a POST request we need to process the form data
+    if request.method == "POST":
+        # create a form instance and populate it with data from the request:
+        form = NameForm(request.POST)
+        # check whether it's valid:
+        if form.is_valid():
+            # process the data in form.cleaned_data as required
+            # ...
+            # redirect to a new URL:
+            return HttpResponseRedirect("/thanks/")
+
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        form = NameForm()
+
+    return render(request, "name.html", {"form": form})
+```
+
+Mine, penting, learning note:
+> Tuh liat `NameForm` form, dikira cuman ngasih `form` doang, padahal ada validation-nya (setelah submit), terus bikin error messages yang bisa ditangkep dan ditunjukkin dengan instantiate the `messages` to `context` of view.
+
+Mine, again:
+> Penjelasan di official docs nya, saya lupa di mana.
+
+Them, skip:
+> If we arrive at this view with a `GET` request, it will _create an empty form instance_ and _place it in the template context to be rendered_. This is what we can expect to happen _the first time we visit the URL_.
+>
+> If the form is submitted using a `POST` request, the view will once again create a form instance and populate it with data from the request: `form = NameForm(request.POST)` This is called “binding data to the form” (it is now a bound form).
+>
+> We call the form’s `is_valid()` method; if it’s not `True`, we go back to the template with the form. This time the form is no longer empty (_unbound_) so the HTML form will be populated with the data previously submitted, where it can be edited and corrected as required.
+>
+> If `is_valid()` is `True`, we’ll now be able to find all the validated form data in its `cleaned_data` attribute. We can use this data to update the database or do other processing before sending an HTTP redirect to the browser telling it where to go next.
+
+Mine, TL;DR:
+> - `GET` request -> Empty form -> User -> Submitted filled form -> `POST` request with the data -validated-by-> `is_valid()` method -the-result-> `True` or `False`.
+>   - `True` --> `cleaned_data` which contains all the validated form data --> update the database with the data / do ther processing / etc --> redirection to any other page.
+>   - `False` --> Redirected back to the template + Data previously submitted -> User reediting -> `POST` request with the data, again.
+
+Mine, penting, learning note:
+> "process the data in form.cleaned_data as required" nya `Form` tuh pastinya beda sama `ModelForm`, makanya udah ini langsung ke `ModelForm`.
+
+---
+
+_The template_
+
+`name.html`:
+
+```html
+<form action="/your-name/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
+```
+
+`form` instance -> `form` as `context`
+
+Note from them, modded:
+> Forms and Cross Site Request Forgery protection
+>
+> `csrf_token` is a security thing of Django.
+
+Note from them 2, unmodded:
+> HTML5 input types and browser validation
+>
+> If your form includes a `URLField`, an `EmailField` or any integer field type, Django will use the `url`, `email` and `number` HTML5 input types. By default, browsers may apply their own validation on these fields, which may be stricter than Django’s validation. If you would like to disable this behavior, set the `novalidate` attribute on the `form` tag, or specify a different widget on the field, like `TextInput`.
+
+---
+
+∴:
+> `Form` class => Processed by a view => Rendered as an HTML `<form>`
+
+Wow, them, modded:
+> - That’s all you need to get started, ✔️
+>   - but the forms framework puts a lot more at your fingertips ❗
+>     - ... you should be prepared to understand other features of the forms system and ready to learn a bit more about the underlying machinery ‼️
 
 ## Notes of this "Forms" topic
 
