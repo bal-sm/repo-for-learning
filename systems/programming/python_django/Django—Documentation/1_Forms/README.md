@@ -438,9 +438,43 @@ class ContactForm(forms.Form):
   - > This data will have been nicely converted into Python types for you, them.
   - > You can still access the unvalidated data directly from `request.POST` at this point, but the validated data is better, them again.
 
-##### ...
+Example(s):
 
-...
+- In the contact form example above, `cc_myself` will be a boolean value.
+- Likewise, fields such as `IntegerField` and `FloatField` convert values to a Python `int` and `float` respectively.
+  - > terus emang data nya juga disimpen secara `str` aja gening, cari geura, learning note.
+
+Here’s how the form data could be processed in the view that handles this form:
+
+```python
+from django.core.mail import send_mail
+
+if form.is_valid():
+    subject = form.cleaned_data["subject"]
+    message = form.cleaned_data["message"]
+    sender = form.cleaned_data["sender"]
+    cc_myself = form.cleaned_data["cc_myself"]
+
+    recipients = ["info@example.com"]
+    if cc_myself:
+        recipients.append(sender)
+
+    send_mail(subject, message, sender, recipients)
+    return HttpResponseRedirect("/thanks/")
+```
+
+Them:
+> For more on sending email from Django, see [Sending email](https://docs.djangoproject.com/en/5.0/topics/email/).
+
+_**"Files" fields**_
+
+Can be retrieved `request.FILES`, rather than `request.POST`.
+
+Read more, [Binding uploaded files to a form](https://docs.djangoproject.com/en/5.0/ref/forms/api/#binding-uploaded-files).
+
+##### ~~...~~
+
+~~...~~
 
 ##### Notes
 
