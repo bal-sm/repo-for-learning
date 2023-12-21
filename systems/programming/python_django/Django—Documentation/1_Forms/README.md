@@ -346,6 +346,26 @@ Wow, them, modded:
 >   - but the forms framework puts a lot more at your fingertips ❗
 >     - ... you should be prepared to understand other features of the forms system and ready to learn a bit more about the underlying machinery ‼️
 
+---
+
+### [More about Django [`Form`](https://docs.djangoproject.com/en/5.0/ref/forms/api/#django.forms.Form) classes](https://docs.djangoproject.com/en/5.0/topics/forms/#more-about-django-form-classes)
+
+`BaseForm` -> `Form` / `ModelForm`
+
+My note:
+> Please use `ModelForm` if your form is a direct of one of your models copy.
+
+#### Bound vs unbound form instances
+
+- Unbound form instance == No data -> Empty form on the view
+- Bound form instance == Datas by User ✔️ -> Submitted datas -> `POST` request with the data -> ...
+
+Mine:
+> baca lagi section atas. tapi- ⬇️
+
+Mine:
+> Tuh baru ngeuh ada dua macam formulir. Bound vs Unbound.
+
 ## Notes of this "Forms" topic
 
 satuin sama `Forms-vault.md` and make them a dedicated folder.
