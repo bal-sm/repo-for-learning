@@ -360,6 +360,54 @@ My note:
 - Unbound form instance == No data -> Empty form on the view
 - Bound form instance == Datas by User ✔️ -> Submitted datas -> `POST` request with the data -> ...
 
+##### Bound and unbound forms API - Mahmuda's version
+
+Mine:
+> [Taken from](https://docs.djangoproject.com/en/5.0/ref/forms/api/#bound-and-unbound-forms)
+
+If a form:
+- Bound to a set of data -> Data validation ✔️, Rendering the form + data on HTML ✔️
+- Unbound -> No data (+ validation ❌), Rendering blank form on HTML
+
+Unbound `Form` instance:
+
+```python
+f = ContactForm()
+```
+
+Bound form with data as a dictionary:
+
+```python
+data = {
+    "subject": "hello",
+    "message": "Hi there",
+    "sender": "foo@example.com",
+    "cc_myself": True,
+}
+
+f = ContactForm(data)
+```
+
+The `ContactForm`:
+
+```python
+class ContactForm(forms.Form):
+    subject = forms.CharField()
+    message = forms.CharField()
+    sender = forms.EmailField()
+    cc_myself = forms.BooleanField()
+```
+
+My note:
+> Tuh keys dari `data` dictionary nya nyocok sama nama field nya di `ContactForm`.
+
+... (Skipped)
+
+Maintenance note:
+> Pindahin as a collection of API docs, maybe?
+
+##### Notes
+
 Mine:
 > baca lagi section atas. tapi- ⬇️
 
