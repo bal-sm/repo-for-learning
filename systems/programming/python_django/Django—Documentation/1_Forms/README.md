@@ -472,10 +472,6 @@ Can be retrieved `request.FILES`, rather than `request.POST`.
 
 Read more, [Binding uploaded files to a form](https://docs.djangoproject.com/en/5.0/ref/forms/api/#binding-uploaded-files).
 
-##### ~~...~~
-
-~~...~~
-
 ##### Notes
 
 Mine:
