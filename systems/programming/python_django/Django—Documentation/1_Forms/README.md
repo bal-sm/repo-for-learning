@@ -346,6 +346,140 @@ Wow, them, modded:
 >   - but the forms framework puts a lot more at your fingertips ❗
 >     - ... you should be prepared to understand other features of the forms system and ready to learn a bit more about the underlying machinery ‼️
 
+---
+
+### [More about Django [`Form`](https://docs.djangoproject.com/en/5.0/ref/forms/api/#django.forms.Form) classes](https://docs.djangoproject.com/en/5.0/topics/forms/#more-about-django-form-classes)
+
+`BaseForm` -> `Form` / `ModelForm`
+
+My note:
+> Please use `ModelForm` if your form is a direct of one of your models copy.
+
+#### Bound vs unbound form instances
+
+- Unbound form instance == No data -> Empty form on the view
+- Bound form instance == Datas by User ✔️ -> Submitted datas -> `POST` request with the data -> ...
+
+##### Bound and unbound forms API — Mahmuda's version
+
+Mine:
+> [Taken from](https://docs.djangoproject.com/en/5.0/ref/forms/api/#bound-and-unbound-forms)
+
+If a form:
+- Bound to a set of data -> Data validation ✔️, Rendering the form + data on HTML ✔️
+- Unbound -> No data (+ validation ❌), Rendering blank form on HTML
+
+Unbound `Form` instance:
+
+```python
+f = ContactForm()
+```
+
+Bound form with data as a dictionary:
+
+```python
+data = {
+    "subject": "hello",
+    "message": "Hi there",
+    "sender": "foo@example.com",
+    "cc_myself": True,
+}
+
+f = ContactForm(data)
+```
+
+The `ContactForm`:
+
+```python
+class ContactForm(forms.Form):
+    subject = forms.CharField()
+    message = forms.CharField()
+    sender = forms.EmailField()
+    cc_myself = forms.BooleanField()
+```
+
+My note:
+> Tuh keys dari `data` dictionary nya nyocok sama nama field nya di `ContactForm`.
+
+... (Skipped)
+
+Maintenance note:
+> Pindahin as a collection of API docs, maybe?
+
+#### More on fields — Mahmuda's version
+
+`forms.py`:
+
+```python
+from django import forms
+
+
+class ContactForm(forms.Form):
+    subject = forms.CharField(max_length=100)
+    message = forms.CharField(widget=forms.Textarea)
+    sender = forms.EmailField()
+    cc_myself = forms.BooleanField(required=False)
+```
+
+##### Widgets
+
+- Widgets
+  - Each form field has a corresponding [Widget class](https://docs.djangoproject.com/en/5.0/ref/forms/widgets/),
+    - which in turn corresponds to an HTML form widget
+      - such as `<input type="text">`.
+  - The field will have a _sensible_ default widget.
+    - Ex: [`CharField`](https://docs.djangoproject.com/en/5.0/ref/forms/fields/#django.forms.CharField) -default-widget-> [`TextInput`](https://docs.djangoproject.com/en/5.0/ref/forms/widgets/#django.forms.TextInput) -produces-> `<input type="text">`
+    - Ex: `message` field -> `CharField` -widget-overridden-to-> `Textarea` -produces-> `<textarea>`
+
+##### Field data
+
+- Field data
+  - Submitted data with a form -> validated by calling `is_valid()` -> True -> data -goes-to-> `form.cleaned_data`
+  - > This data will have been nicely converted into Python types for you, them.
+  - > You can still access the unvalidated data directly from `request.POST` at this point, but the validated data is better, them again.
+
+Example(s):
+
+- In the contact form example above, `cc_myself` will be a boolean value.
+- Likewise, fields such as `IntegerField` and `FloatField` convert values to a Python `int` and `float` respectively.
+  - > terus emang data nya juga disimpen secara `str` aja gening, cari geura, learning note.
+
+Here’s how the form data could be processed in the view that handles this form:
+
+```python
+from django.core.mail import send_mail
+
+if form.is_valid():
+    subject = form.cleaned_data["subject"]
+    message = form.cleaned_data["message"]
+    sender = form.cleaned_data["sender"]
+    cc_myself = form.cleaned_data["cc_myself"]
+
+    recipients = ["info@example.com"]
+    if cc_myself:
+        recipients.append(sender)
+
+    send_mail(subject, message, sender, recipients)
+    return HttpResponseRedirect("/thanks/")
+```
+
+Them:
+> For more on sending email from Django, see [Sending email](https://docs.djangoproject.com/en/5.0/topics/email/).
+
+_**"Files" fields**_
+
+Can be retrieved `request.FILES`, rather than `request.POST`.
+
+Read more, [Binding uploaded files to a form](https://docs.djangoproject.com/en/5.0/ref/forms/api/#binding-uploaded-files).
+
+##### Notes
+
+Mine:
+> baca lagi section atas. tapi- ⬇️
+
+Mine:
+> Tuh baru ngeuh ada dua macam formulir. Bound vs Unbound.
+
 ## Notes of this "Forms" topic
 
 satuin sama `Forms-vault.md` and make them a dedicated folder.
