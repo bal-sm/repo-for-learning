@@ -421,7 +421,8 @@ class ContactForm(forms.Form):
     cc_myself = forms.BooleanField(required=False)
 ```
 
-```{note}
+##### Widgets
+
 - Widgets
   - Each form field has a corresponding [Widget class](https://docs.djangoproject.com/en/5.0/ref/forms/widgets/),
     - which in turn corresponds to an HTML form widget
@@ -429,13 +430,17 @@ class ContactForm(forms.Form):
   - The field will have a _sensible_ default widget.
     - Ex: [`CharField`](https://docs.djangoproject.com/en/5.0/ref/forms/fields/#django.forms.CharField) -default-widget-> [`TextInput`](https://docs.djangoproject.com/en/5.0/ref/forms/widgets/#django.forms.TextInput) -produces-> `<input type="text">`
     - Ex: `message` field -> `CharField` -widget-overridden-to-> `Textarea` -produces-> `<textarea>`
+
+##### Field data
+
 - Field data
   - Submitted data with a form -> validated by calling `is_valid()` -> True -> data -goes-to-> `form.cleaned_data`
   - > This data will have been nicely converted into Python types for you, them.
   - > You can still access the unvalidated data directly from `request.POST` at this point, but the validated data is better, them again.
 
+##### ...
+
 ...
-```
 
 ##### Notes
 
