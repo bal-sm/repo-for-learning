@@ -406,9 +406,31 @@ My note:
 Maintenance note:
 > Pindahin as a collection of API docs, maybe?
 
-#### ...
+#### More on fields — Mahmuda's version
 
-...
+`forms.py`:
+
+```python
+from django import forms
+
+
+class ContactForm(forms.Form):
+    subject = forms.CharField(max_length=100)
+    message = forms.CharField(widget=forms.Textarea)
+    sender = forms.EmailField()
+    cc_myself = forms.BooleanField(required=False)
+```
+
+```{note}
+- Widgets
+  - Each form field has a corresponding [Widget class](https://docs.djangoproject.com/en/5.0/ref/forms/widgets/),
+    - which in turn corresponds to an HTML form widget
+      - such as `<input type="text">`.
+  - The field will have a _sensible_ default widget.
+    - Ex: [`CharField`](https://docs.djangoproject.com/en/5.0/ref/forms/fields/#django.forms.CharField) -default-widget-> [`TextInput`](https://docs.djangoproject.com/en/5.0/ref/forms/widgets/#django.forms.TextInput) -produces-> `<input type="text">`
+    - Ex: `message` field -> `CharField` -widget-overridden-to-> `Textarea` -produces-> `<textarea>`
+- ...
+```
 
 ##### Notes
 
