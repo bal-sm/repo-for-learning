@@ -360,7 +360,7 @@ My note:
 - Unbound form instance == No data -> Empty form on the view
 - Bound form instance == Datas by User ✔️ -> Submitted datas -> `POST` request with the data -> ...
 
-##### Bound and unbound forms API - Mahmuda's version
+##### Bound and unbound forms API — Mahmuda's version
 
 Mine:
 > [Taken from](https://docs.djangoproject.com/en/5.0/ref/forms/api/#bound-and-unbound-forms)
