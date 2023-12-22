@@ -488,7 +488,10 @@ How to get your form into a template:
 Mine, reminder note:
 > Jangan lupa ngasih processed HTML nya + proper `submit` nya
 
-...
+... (Skipped, kayaknya)
+
+Mine, the reason why these part is skipped:
+> Soalnya you will relearn this with `django-crispy-forms` anyways.
 
 ##### Notes
 
