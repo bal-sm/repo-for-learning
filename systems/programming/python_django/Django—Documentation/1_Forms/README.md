@@ -472,6 +472,24 @@ Can be retrieved `request.FILES`, rather than `request.POST`.
 
 Read more, [Binding uploaded files to a form](https://docs.djangoproject.com/en/5.0/ref/forms/api/#binding-uploaded-files).
 
+#### Working with form templates — Mahmuda's version
+
+How to get your form into a template:
+
+`Form()` -> `form` in context -> {{ form }} ❌ Does not include `<form>` tags and `submit` control itself.
+
+```html
+<form>
+    {{ form }}
+    <!-- and its `submit control`-->
+</form
+```
+
+Mine, reminder note:
+> Jangan lupa ngasih processed HTML nya + proper `submit` nya
+
+...
+
 ##### Notes
 
 Mine:
