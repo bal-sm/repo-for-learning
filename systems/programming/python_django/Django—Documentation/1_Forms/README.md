@@ -548,14 +548,22 @@ class CustomFormRenderer(TemplatesSetting):
 FORM_RENDERER = "project.settings.CustomFormRenderer"
 ```
 
-**`/`**
-
-or for a single form:
+**`/`** (for a single form):
 
 ```python
 class MyForm(forms.Form):
     template_name = "form_snippet.html"
     ...
+```
+
+**`/`** (for a single render of a form instance):
+
+```python
+def index(request):
+    form = MyForm()
+    rendered_form = form.render("form_snippet.html")
+    context = {"form": rendered_form}
+    return render(request, "index.html", context)
 ```
 
 ...
