@@ -575,6 +575,9 @@ Mine:
 Mine:
 > Tuh baru ngeuh ada dua macam formulir. Bound vs Unbound.
 
+Mine, learning note:
+> Hubungannya sama `django-crispy-forms`?
+
 ## Notes of this "Forms" topic
 
 satuin sama `Forms-vault.md` and make them a dedicated folder.
