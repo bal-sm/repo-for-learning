@@ -488,7 +488,32 @@ How to get your form into a template:
 Mine, reminder note:
 > Jangan lupa ngasih processed HTML nya + proper `submit` nya
 
-... (Skipped, kayaknya)
+#### Reusable form templates — Mahmuda's version
+
+Mine:
+> Asal-usul dari `form` sendiri itu, adalah template-template juga. Bisa diubah katanya dengan override `form_template_name` dalam:
+
+[`FORM_RENDERER`](https://docs.djangoproject.com/en/5.0/ref/settings/#form-renderer) -which-defaults-to-> `'django.forms.renderers.DjangoTemplates'` -which-subclasses-> `django.forms.renderers.BaseRenderer` --> [`form_template_name`](https://docs.djangoproject.com/en/5.0/ref/forms/renderers/#django.forms.renderers.BaseRenderer.form_template_name):
+
+```python
+class BaseRenderer:
+    form_template_name = "django/forms/div.html"
+    formset_template_name = "django/forms/formsets/div.html"
+    field_template_name = "django/forms/field.html"
+
+    def get_template(self, template_name):
+        raise NotImplementedError("subclasses must implement get_template()")
+
+    def render(self, template_name, context, request=None):
+        template = self.get_template(template_name)
+        return template.render(context, request=request).strip()
+```
+
+...
+
+#### ...
+
+... (~~Skipped~~ rada di skip, kayaknya)
 
 Mine, the reason why these part is skipped:
 > Soalnya you will relearn this with `django-crispy-forms` anyways.
