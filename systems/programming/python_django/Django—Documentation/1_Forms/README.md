@@ -509,6 +509,30 @@ class BaseRenderer:
         return template.render(context, request=request).strip()
 ```
 
+You can also customize per-form: `Form()` -instantiate-to-> `some_form` -then-override-its-> `template_name` attribute
+
+Or by: passing the template name -directly-to-> `Form.render()`
+
+##### Example of reusable form templates — Mahmuda's version
+
+Them, skip:
+> The example below will result in `{{ form }}` being rendered as the output of the `form_snippet.html` template.
+
+In templates:
+
+```html
+# In your template:
+{{ form }}
+
+# In form_snippet.html:
+{% for field in form %}
+    <div class="fieldWrapper">
+        {{ field.errors }}
+        {{ field.label_tag }} {{ field }}
+    </div>
+{% endfor %}
+```
+
 ...
 
 #### ...
