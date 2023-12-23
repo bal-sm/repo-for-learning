@@ -533,6 +533,31 @@ In templates:
 {% endfor %}
 ```
 
+Then you can configure the `FORM_RENDERER` setting:
+
+`settings.py`:
+
+```python
+from django.forms.renderers import TemplatesSetting
+
+
+class CustomFormRenderer(TemplatesSetting):
+    form_template_name = "form_snippet.html"
+
+
+FORM_RENDERER = "project.settings.CustomFormRenderer"
+```
+
+**`/`**
+
+or for a single form:
+
+```python
+class MyForm(forms.Form):
+    template_name = "form_snippet.html"
+    ...
+```
+
 ...
 
 #### ...
