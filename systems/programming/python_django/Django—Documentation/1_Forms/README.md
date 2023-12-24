@@ -360,6 +360,9 @@ My note:
 - Unbound form instance == No data -> Empty form on the view
 - Bound form instance == Datas by User ✔️ -> Submitted datas -> `POST` request with the data -> ...
 
+Mine, learning note:
+> Tuh baru ngeuh ada dua macam formulir. Bound vs Unbound.
+
 ##### Bound and unbound forms API — Mahmuda's version
 
 Mine:
@@ -732,19 +735,9 @@ Mine:
 >
 > Kalau make "reusable" things kayaknya nanti `js` things-nya ribet.
 
-##### Notes
-
-Mine:
-> baca lagi section atas. tapi- ⬇️
-
-Mine:
-> Tuh baru ngeuh ada dua macam formulir. Bound vs Unbound.
-
-Mine, learning note:
-> Hubungannya sama `django-crispy-forms`?
-
 ## Notes of this "Forms" topic
 
+```
 satuin sama `Forms-vault.md` and make them a dedicated folder.
 
 dan bikin a section/a dedicated file for below -vvvv
@@ -757,6 +750,17 @@ dan bikin a section/a dedicated file for below -vvvv
   - [form field type of model field on modelforms](https://docs.djangoproject.com/en/4.2/topics/forms/modelforms/#field-types)
 
     which model field maps to which form field.
+```
+
+## Formsets
+
+...
+
+Mine, learning note, di skip karena:
+> - Tapi liat lagi dulu geura
+>   - [Django & HTMX - Dynamic Form Creation and Submission](https://youtu.be/XdZoYmLkQ4w?si=uyapTxZulF5MVImz), and 
+>   - [Django and HTMX #3 - Listing and Creating Items (with no refresh!)](https://youtu.be/H_m1g8XOtHY?si=g0QEMP5M9XMcll-A).
+> - Terus `django-crispy-forms` juga support formsets lagi, [baca di sini](https://django-crispy-forms.readthedocs.io/en/latest/crispy_tag_formsets.html#formsets).
 
 ## Learning in Progress
 
