@@ -488,7 +488,7 @@ How to get your form into a template:
 Mine, reminder note:
 > Jangan lupa ngasih processed HTML nya + proper `submit` nya
 
-#### Reusable form templates — Mahmuda's version
+##### Reusable form templates — Mahmuda's version
 
 Mine:
 > Asal-usul dari `form` sendiri itu, adalah template-template juga. Bisa diubah katanya dengan override `form_template_name` dalam:
@@ -513,7 +513,7 @@ You can also customize per-form: `Form()` -instantiate-to-> `some_form` -then-ov
 
 Or by: passing the template name -directly-to-> `Form.render()`
 
-##### Example of reusable form templates — Mahmuda's version
+###### Example of reusable form templates — Mahmuda's version
 
 Them, skip:
 > The example below will result in `{{ form }}` being rendered as the output of the `form_snippet.html` template.
@@ -566,7 +566,7 @@ def index(request):
     return render(request, "index.html", context)
 ```
 
-##### Tidbit — Outputting forms as HTML — Mahmuda's version
+###### Tidbit — Outputting forms as HTML — Mahmuda's version
 
 _Printed blank form_
 
@@ -630,7 +630,7 @@ Them, skip aja, redundant soalnya, cuman ngingetin juga:
 > 
 > See [Reusable form templates](https://docs.djangoproject.com/en/5.0/topics/forms/#reusable-form-templates) / [Reusable form templates — Mahmuda's version](#reusable-form-templates--mahmudas-version).
 
-#### Reusable field group templates — Mahmuda's version
+##### Reusable field group templates — Mahmuda's version
 
 Them, note:
 > **New in Django 5.0.**
@@ -643,7 +643,7 @@ Them, note:
 Mine:
 > Skipped, baca aja [example](#example-from-50-release-notes) apabila tertarik, dan buka official docs-nya.
 
-##### Example from [`5.0` release notes](https://docs.djangoproject.com/en/5.0/releases/5.0/#simplified-templates-for-form-field-rendering)
+###### Example from [`5.0` release notes](https://docs.djangoproject.com/en/5.0/releases/5.0/#simplified-templates-for-form-field-rendering)
 
 Them:
 > - Django 5.0 introduces the concept of:
@@ -715,12 +715,14 @@ Now, can be simplified to:
 Them:
 > `as_field_group()` renders fields with the `"django/forms/field.html"` template by default and can be customized on a per-project, per-field, or per-request basis. See [Reusable field group templates](#reusable-field-group-templates--mahmudas-version).
 
-#### Skipped section
+### Skipped section
 
-- Rendering fields manually
-  - Rendering form error messages
-- Looping over the form’s fields
-  - Looping over hidden and visible fields
+- Working with form templates
+  - ~~...~~
+  - Rendering fields manually
+    - Rendering form error messages
+  - Looping over the form’s fields
+    - Looping over hidden and visible fields
 
 Mine, the reason why these part is skipped:
 > Soalnya you will relearn this with `django-crispy-forms` anyways.
