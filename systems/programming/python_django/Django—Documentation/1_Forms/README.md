@@ -630,6 +630,88 @@ Them, skip aja, redundant soalnya, cuman ngingetin juga:
 > 
 > See [Reusable form templates](https://docs.djangoproject.com/en/5.0/topics/forms/#reusable-form-templates) / [Reusable form templates — Mahmuda's version](#reusable-form-templates--mahmudas-version).
 
+#### Reusable field group templates — Mahmuda's version
+
+Them, note:
+> **New in Django 5.0.**
+
+- **Each field** is available as an attribute of the form,
+  - using `{{ form.name_of_field }}`
+
+...
+
+##### Example from [`5.0` release notes](https://docs.djangoproject.com/en/5.0/releases/5.0/#simplified-templates-for-form-field-rendering)
+
+Them:
+> - Django 5.0 introduces the concept of:
+>   - a _field_ **group**;
+>   - and _field group_ **templates**. 
+>   - This **simplifies** _rendering of the related elements of a Django form field_ such as:
+>     - its **label**;
+>     - **widget**;
+>     - **help text**;
+>     - and **errors**.
+
+Dari ini, (before 5.0):
+
+```html
+<form>
+...
+<div>
+  {{ form.name.label_tag }}
+  {% if form.name.help_text %}
+    <div class="helptext" id="{{ form.name.auto_id }}_helptext">
+      {{ form.name.help_text|safe }}
+    </div>
+  {% endif %}
+  {{ form.name.errors }}
+  {{ form.name }}
+  <div class="row">
+    <div class="col">
+      {{ form.email.label_tag }}
+      {% if form.email.help_text %}
+        <div class="helptext" id="{{ form.email.auto_id }}_helptext">
+          {{ form.email.help_text|safe }}
+        </div>
+      {% endif %}
+      {{ form.email.errors }}
+      {{ form.email }}
+    </div>
+    <div class="col">
+      {{ form.password.label_tag }}
+      {% if form.password.help_text %}
+        <div class="helptext" id="{{ form.password.auto_id }}_helptext">
+          {{ form.password.help_text|safe }}
+        </div>
+      {% endif %}
+      {{ form.password.errors }}
+      {{ form.password }}
+    </div>
+  </div>
+</div>
+...
+</form>
+```
+
+Now, can be simplified to:
+
+```html
+<form>
+...
+<div>
+  {{ form.name.as_field_group }}
+  <div class="row">
+    <div class="col">{{ form.email.as_field_group }}</div>
+    <div class="col">{{ form.password.as_field_group }}</div>
+  </div>
+</div>
+...
+</form>
+```
+
+Them:
+> `as_field_group()` renders fields with the `"django/forms/field.html"` template by default and can be customized on a per-project, per-field, or per-request basis. See [Reusable field group templates](#reusable-field-group-templates--mahmudas-version).
+
 #### ...
 
 ... (~~Skipped~~ rada di skip, kayaknya)
