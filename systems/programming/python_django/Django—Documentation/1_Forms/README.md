@@ -638,7 +638,10 @@ Them, note:
 - **Each field** is available as an attribute of the form,
   - using `{{ form.name_of_field }}`
 
-...
+~~...~~ 
+
+Mine:
+> Skipped, baca aja [example](#example-from-50-release-notes) apabila tertarik, dan buka official docs-nya.
 
 ##### Example from [`5.0` release notes](https://docs.djangoproject.com/en/5.0/releases/5.0/#simplified-templates-for-form-field-rendering)
 
