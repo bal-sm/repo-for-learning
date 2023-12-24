@@ -760,6 +760,7 @@ Mine, learning note, di skip karena:
 > - Tapi liat lagi dulu geura
 >   - [Django & HTMX - Dynamic Form Creation and Submission](https://youtu.be/XdZoYmLkQ4w?si=uyapTxZulF5MVImz), and 
 >   - [Django and HTMX #3 - Listing and Creating Items (with no refresh!)](https://youtu.be/H_m1g8XOtHY?si=g0QEMP5M9XMcll-A).
+> - Terus `django-crispy-forms` juga support formsets lagi, [baca di sini](https://django-crispy-forms.readthedocs.io/en/latest/crispy_tag_formsets.html#formsets).
 
 ## Learning in Progress
 
