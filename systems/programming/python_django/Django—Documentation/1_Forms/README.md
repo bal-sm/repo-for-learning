@@ -715,12 +715,20 @@ Now, can be simplified to:
 Them:
 > `as_field_group()` renders fields with the `"django/forms/field.html"` template by default and can be customized on a per-project, per-field, or per-request basis. See [Reusable field group templates](#reusable-field-group-templates--mahmudas-version).
 
-#### ...
+#### Skipped section
 
-... (~~Skipped~~ rada di skip, kayaknya)
+- Rendering fields manually
+  - Rendering form error messages
+- Looping over the form’s fields
+  - Looping over hidden and visible fields
 
 Mine, the reason why these part is skipped:
 > Soalnya you will relearn this with `django-crispy-forms` anyways.
+
+Mine:
+> Kayaknya nanti suatu saat bakal butuh deh di project akuntansi besar, cuman karena masih pake `django-crispy-forms` jadi nyem-nyem-nyem `JavaScript` things-nya bisa kepake.
+>
+> Kalau make "reusable" things kayaknya nanti `js` things-nya ribet.
 
 ##### Notes
 
