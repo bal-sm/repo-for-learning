@@ -360,6 +360,9 @@ My note:
 - Unbound form instance == No data -> Empty form on the view
 - Bound form instance == Datas by User ✔️ -> Submitted datas -> `POST` request with the data -> ...
 
+Mine, learning note:
+> Tuh baru ngeuh ada dua macam formulir. Bound vs Unbound.
+
 ##### Bound and unbound forms API — Mahmuda's version
 
 Mine:
@@ -731,17 +734,6 @@ Mine:
 > Kayaknya nanti suatu saat bakal butuh deh di project akuntansi besar, cuman karena masih pake `django-crispy-forms` jadi nyem-nyem-nyem `JavaScript` things-nya bisa kepake.
 >
 > Kalau make "reusable" things kayaknya nanti `js` things-nya ribet.
-
-##### Notes
-
-Mine:
-> baca lagi section atas. tapi- ⬇️
-
-Mine:
-> Tuh baru ngeuh ada dua macam formulir. Bound vs Unbound.
-
-Mine, learning note:
-> Hubungannya sama `django-crispy-forms`?
 
 ## Notes of this "Forms" topic
 
