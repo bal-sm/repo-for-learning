@@ -853,7 +853,19 @@ Maintenance note:
 > 1. Kayak terlalu rancu keterangannya gitu loh.
 > 2. Terus `...`-nya mending masukin aja nanti.
 
-...
+In addition, each _generated form field_ has **attributes** set as follows:
+
+- If the model field has `blank=True`,
+  - then `required=False`,
+  - else, `required=True`.
+- The form field's `label` == The model field's `verbose_name` + Capitalized first character.
+- The form field's `help_text` == The model field's `help_text`.
+- If the model field has `choices` set,
+  - the form field's `widget` -will-be-set-to-> `Select`
+    - with choices coming from the model field's `choices`.
+    - ..., [read more](https://docs.djangoproject.com/en/5.0/topics/forms/modelforms/#field-types).
+
+Finally, note that you can override the form field used for a given model field. See [Overriding the default fields](...) below.
 
 #### ...
 
