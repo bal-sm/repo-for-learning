@@ -800,6 +800,63 @@ Therefore,
 >>> form = ArticleForm(instance=article)
 ```
 
+#### Field types
+
+Generated `Form` class of `ModelForm` -will-have-> a form field -for-> every model field specified -(in-the-order-specified-in-the-`fields`-attribute.)
+
+Each model field -has-a-corresponding-> default form field.
+
+| Model field                 | Form field                                            |
+| :-------------------------- | :---------------------------------------------------- |
+| `AutoField`                 | -                                                     |
+| `BigAutoField`              | -                                                     |
+| `BigIntegerField`           | `IntegerField` with ...                               |
+| `BinaryField`               | `CharField`, if ...                                   |
+| `BooleanField`              | `BooleanField`, or `NullBooleanField` if `null=True`. |
+| `CharField`                 | `CharField` with ...                                  |
+| `DateField`                 | `DateField`                                           |
+| `DateTimeField`             | `DateTimeField`                                       |
+| `DecimalField`              | `DecimalField`                                        |
+| `DurationField`             | `DurationField`                                       |
+| `EmailField`                | `EmailField`                                          |
+| `FileField`                 | `FileField`                                           |
+| `FilePathField`             | `FilePathField`                                       |
+| `FloatField`                | `FloatField`                                          |
+| `ForeignKey`                | `ModelChoiceField`                                    |
+| `ImageField`                | `ImageField`                                          |
+| `IntegerField`              | `IntegerField`                                        |
+| `IPAddressField`            | `IPAddressField`                                      |
+| `GenericIPAddressField`     | `GenericIPAddressField`                               |
+| `JSONField`                 | `JSONField`                                           |
+| `ManyToManyField`           | `ModelMultipleChoiceField`                            |
+| `PositiveBigIntegerField`   | `IntegerField`                                        |
+| `PositiveIntegerField`      | `IntegerField`                                        |
+| `PositiveSmallIntegerField` | `IntegerField`                                        |
+| `SlugField`                 | `SlugField`                                           |
+| `SmallAutoField`            | -                                                     |
+| `SmallIntegerField`         | `IntegerField`                                        |
+| `TextField`                 | `CharField` with `widget=forms.Textarea`              |
+| `TimeField`                 | `TimeField`                                           |
+| `URLField`                  | `URLField`                                            |
+| `UUIDField`                 | `UUIDField`                                           |
+
+Keterangann:
+
+- `-` for Not represented in the form
+- `...` for read the official docs
+- `ModelChoiceField` <- `ForeignKey`
+  - |-> `ChoiceField` <-choices- model's `QuerySet`
+- `ModelMultipleChoiceField` <-- `ManyToManyField`
+  - |-> `MultipleChoiceField` <-choices- model's `QuerySet`
+
+Maintenance note:
+> 1. Kayak terlalu rancu keterangannya gitu loh.
+> 2. Terus `...`-nya mending masukin aja nanti.
+
+...
+
+#### ...
+
 ...
 
 ## Learning in Progress
