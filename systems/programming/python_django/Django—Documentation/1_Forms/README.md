@@ -840,7 +840,7 @@ Each model field -has-a-corresponding-> default form field.
 | `URLField`                  | `URLField`                                            |
 | `UUIDField`                 | `UUIDField`                                           |
 
-Keterangann:
+Keterangan:
 
 - `-` for Not represented in the form
 - `...` for read the official docs
