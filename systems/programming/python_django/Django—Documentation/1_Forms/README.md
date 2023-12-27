@@ -761,6 +761,187 @@ Mine, learning note, di skip karena:
 >   - [Django & HTMX - Dynamic Form Creation and Submission](https://youtu.be/XdZoYmLkQ4w?si=uyapTxZulF5MVImz), and 
 >   - [Django and HTMX #3 - Listing and Creating Items (with no refresh!)](https://youtu.be/H_m1g8XOtHY?si=g0QEMP5M9XMcll-A).
 > - Terus `django-crispy-forms` juga support formsets lagi, [baca di sini](https://django-crispy-forms.readthedocs.io/en/latest/crispy_tag_formsets.html#formsets).
+>
+> UPDATE: Rangkum aja we penting jg. Sesudah "Creating forms from models".
+
+## Creating forms from models
+
+### **`ModelForm`**
+
+#### _`class`_ **`ModelForm`**
+
+Full name:
+> `django.forms.ModelForm`
+
+If you’re building a database-driven app -chances-are-you’ll-have-> Forms -that-map-> Models
+
+Therefore,
+
+❌ Dupe those fields by creating another `Forms` instance.
+
+✔️ Use `ModelForms` (a helper class) to mimic those `Model` as `Forms`.
+
+```python
+>>> from django.forms import ModelForm
+>>> from myapp.models import Article
+
+# Create the form class.
+>>> class ArticleForm(ModelForm):
+...     class Meta:
+...         model = Article
+...         fields = ["pub_date", "headline", "content", "reporter"]
+...
+
+# Creating a form to add an article.
+>>> form = ArticleForm()
+
+# Creating a form to change an existing article.
+>>> article = Article.objects.get(pk=1)
+>>> form = ArticleForm(instance=article)
+```
+
+#### Field types
+
+Generated `Form` class of `ModelForm` -will-have-> a form field -for-> every model field specified -(in-the-order-specified-in-the-`fields`-attribute.)
+
+Each model field -has-a-corresponding-> default form field.
+
+| Model field                 | Form field                                            |
+| :-------------------------- | :---------------------------------------------------- |
+| `AutoField`                 | -                                                     |
+| `BigAutoField`              | -                                                     |
+| `BigIntegerField`           | `IntegerField` with ...                               |
+| `BinaryField`               | `CharField`, if ...                                   |
+| `BooleanField`              | `BooleanField`, or `NullBooleanField` if `null=True`. |
+| `CharField`                 | `CharField` with ...                                  |
+| `DateField`                 | `DateField`                                           |
+| `DateTimeField`             | `DateTimeField`                                       |
+| `DecimalField`              | `DecimalField`                                        |
+| `DurationField`             | `DurationField`                                       |
+| `EmailField`                | `EmailField`                                          |
+| `FileField`                 | `FileField`                                           |
+| `FilePathField`             | `FilePathField`                                       |
+| `FloatField`                | `FloatField`                                          |
+| `ForeignKey`                | `ModelChoiceField`                                    |
+| `ImageField`                | `ImageField`                                          |
+| `IntegerField`              | `IntegerField`                                        |
+| `IPAddressField`            | `IPAddressField`                                      |
+| `GenericIPAddressField`     | `GenericIPAddressField`                               |
+| `JSONField`                 | `JSONField`                                           |
+| `ManyToManyField`           | `ModelMultipleChoiceField`                            |
+| `PositiveBigIntegerField`   | `IntegerField`                                        |
+| `PositiveIntegerField`      | `IntegerField`                                        |
+| `PositiveSmallIntegerField` | `IntegerField`                                        |
+| `SlugField`                 | `SlugField`                                           |
+| `SmallAutoField`            | -                                                     |
+| `SmallIntegerField`         | `IntegerField`                                        |
+| `TextField`                 | `CharField` with `widget=forms.Textarea`              |
+| `TimeField`                 | `TimeField`                                           |
+| `URLField`                  | `URLField`                                            |
+| `UUIDField`                 | `UUIDField`                                           |
+
+Keterangan:
+
+- `-` for Not represented in the form
+- `...` for read the official docs
+- `ModelChoiceField` <- `ForeignKey`
+  - |-> `ChoiceField` <-choices- model's `QuerySet`
+- `ModelMultipleChoiceField` <-- `ManyToManyField`
+  - |-> `MultipleChoiceField` <-choices- model's `QuerySet`
+
+Maintenance note:
+> 1. Kayak terlalu rancu keterangannya gitu loh.
+> 2. Terus `...`-nya mending masukin aja nanti.
+
+In addition, each _generated form field_ has **attributes** set as follows:
+
+- If the model field has `blank=True`,
+  - then `required=False`,
+  - else, `required=True`.
+- The form field's `label` == The model field's `verbose_name` + Capitalized first character.
+- The form field's `help_text` == The model field's `help_text`.
+- If the model field has `choices` set,
+  - the form field's `widget` -will-be-set-to-> `Select`
+    - with choices coming from the model field's `choices`.
+    - ..., [read more](https://docs.djangoproject.com/en/5.0/topics/forms/modelforms/#field-types).
+
+Finally, note that you can override the form field used for a given model field. See [Overriding the default fields](...) below.
+
+#### A full example
+
+The `models.py`:
+
+```python
+from django.db import models
+from django.forms import ModelForm
+
+# ... unimported da contoh hungkul tea.
+
+TITLE_CHOICES = {
+    "MR": "Mr.",
+    "MRS": "Mrs.",
+    "MS": "Ms.",
+}
+
+
+class Author(models.Model):
+    name = models.CharField(max_length=100)
+    title = models.CharField(max_length=3, choices=TITLE_CHOICES)
+    birth_date = models.DateField(blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+
+
+class Book(models.Model):
+    name = models.CharField(max_length=100)
+    authors = models.ManyToManyField(Author)
+```
+
+The `forms.py`:
+
+```python
+# ... unimported da contoh hungkul tea.
+
+class AuthorForm(ModelForm):
+    class Meta:
+        model = Author
+        fields = ["name", "title", "birth_date"]
+
+
+class BookForm(ModelForm):
+    class Meta:
+        model = Book
+        fields = ["name", "authors"]
+```
+
+Those would be roughly equivalent to this (except the `save()` method), `forms.py`:
+
+```python
+from django import forms
+
+
+class AuthorForm(forms.Form):
+    name = forms.CharField(max_length=100)
+    title = forms.CharField(
+        max_length=3,
+        widget=forms.Select(choices=TITLE_CHOICES),
+    )
+    birth_date = forms.DateField(required=False)
+
+
+class BookForm(forms.Form):
+    name = forms.CharField(max_length=100)
+    authors = forms.ModelMultipleChoiceField(queryset=Author.objects.all())
+```
+
+#### Validation on a `ModelForm`
+
+...
+
+#### ...
+
+...
 
 ## Learning in Progress
 
