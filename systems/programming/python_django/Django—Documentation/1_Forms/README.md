@@ -762,7 +762,18 @@ Mine, learning note, di skip karena:
 >   - [Django and HTMX #3 - Listing and Creating Items (with no refresh!)](https://youtu.be/H_m1g8XOtHY?si=g0QEMP5M9XMcll-A).
 > - Terus `django-crispy-forms` juga support formsets lagi, [baca di sini](https://django-crispy-forms.readthedocs.io/en/latest/crispy_tag_formsets.html#formsets).
 >
-> UPDATE: Rangkum aja we penting jg.
+> UPDATE: Rangkum aja we penting jg. Sesudah "Creating forms from models".
+
+## Creating forms from models
+
+### **`ModelForm`**
+
+#### _`class`_ **`ModelForm`**
+
+Full name:
+> `django.forms.ModelForm`
+
+...
 
 ## Learning in Progress
 
