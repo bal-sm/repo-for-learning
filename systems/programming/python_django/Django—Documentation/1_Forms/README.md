@@ -773,6 +773,33 @@ Mine, learning note, di skip karena:
 Full name:
 > `django.forms.ModelForm`
 
+If you’re building a database-driven app -chances-are-you’ll-have-> Forms -that-map-> Models
+
+Therefore,
+
+❌ Dupe those fields by creating another `Forms` instance.
+
+✔️ Use `ModelForms` (a helper class) to mimic those `Model` as `Forms`.
+
+```python
+>>> from django.forms import ModelForm
+>>> from myapp.models import Article
+
+# Create the form class.
+>>> class ArticleForm(ModelForm):
+...     class Meta:
+...         model = Article
+...         fields = ["pub_date", "headline", "content", "reporter"]
+...
+
+# Creating a form to add an article.
+>>> form = ArticleForm()
+
+# Creating a form to change an existing article.
+>>> article = Article.objects.get(pk=1)
+>>> form = ArticleForm(instance=article)
+```
+
 ...
 
 ## Learning in Progress
