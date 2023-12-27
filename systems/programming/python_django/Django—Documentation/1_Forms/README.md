@@ -867,6 +867,74 @@ In addition, each _generated form field_ has **attributes** set as follows:
 
 Finally, note that you can override the form field used for a given model field. See [Overriding the default fields](...) below.
 
+#### A full example
+
+The `models.py`:
+
+```python
+from django.db import models
+from django.forms import ModelForm
+
+# ... unimported da contoh hungkul tea.
+
+TITLE_CHOICES = {
+    "MR": "Mr.",
+    "MRS": "Mrs.",
+    "MS": "Ms.",
+}
+
+
+class Author(models.Model):
+    name = models.CharField(max_length=100)
+    title = models.CharField(max_length=3, choices=TITLE_CHOICES)
+    birth_date = models.DateField(blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+
+
+class Book(models.Model):
+    name = models.CharField(max_length=100)
+    authors = models.ManyToManyField(Author)
+```
+
+The `forms.py`:
+
+```python
+# ... unimported da contoh hungkul tea.
+
+class AuthorForm(ModelForm):
+    class Meta:
+        model = Author
+        fields = ["name", "title", "birth_date"]
+
+
+class BookForm(ModelForm):
+    class Meta:
+        model = Book
+        fields = ["name", "authors"]
+```
+
+Those would be roughly equivalent to this (except the `save()` method), `forms.py`:
+
+```python
+from django import forms
+
+
+class AuthorForm(forms.Form):
+    name = forms.CharField(max_length=100)
+    title = forms.CharField(
+        max_length=3,
+        widget=forms.Select(choices=TITLE_CHOICES),
+    )
+    birth_date = forms.DateField(required=False)
+
+
+class BookForm(forms.Form):
+    name = forms.CharField(max_length=100)
+    authors = forms.ModelMultipleChoiceField(queryset=Author.objects.all())
+```
+
 #### ...
 
 ...
