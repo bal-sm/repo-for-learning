@@ -1,5 +1,9 @@
 # How to `Q` objects — Mahmuda's version
 
+## Prerequisite
+
+- [`2_Making-queries/README.md`](../Django—Documentation/2_Making-queries/README.md)
+
 ## Complex lookups with `Q` objects
 
 Mine:
