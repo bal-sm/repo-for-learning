@@ -2,7 +2,7 @@
 
 ## Prerequisite
 
-- [`2_Making-queries/README.md`](../Django—Documentation/2_Making-queries/README.md)
+- [`2_Database/2_Making-queries.md`](../Django—Documentation/2_Database/2_Making-queries.md)
 
 ## Complex lookups with `Q` objects
 
