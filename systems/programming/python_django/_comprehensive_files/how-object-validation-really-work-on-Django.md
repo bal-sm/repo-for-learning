@@ -4,6 +4,10 @@
 
 Soalnya pengen banget ada database validation (+ constraint jadi error prone pisan), bukan sekedar `clean()` method di `form` untuk object tertentu.
 
+## (Kayaknya) prerequisite
+
+- [How to `Q` objects](how-to-Q-objects.md)
+
 ## How? - `Needs maintenance`
 
 Maintenance note:
