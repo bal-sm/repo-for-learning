@@ -12,6 +12,9 @@ Mine:
 Mine lagi:
 > I really remember this section ih, di Pangandaran lagi. One of good and calm memories.
 
+Mine atas note atas:
+> Makanya rangkum kapan-kapan aja, sekarang (30 December 2023) lagi di look through nih.
+
 VERY IMPORTANT NOTE, personal experience note, FOR UPCOMING "Multi-table inheritance" section:
 > DON'T EVER USE THIS, REALLY NOT WORTH IT, BETTER OFF USE REGULAR `OneToOneField`!!! WHY TF THESE STILL NOT DEPRECATED IN THE LATEST VERSION???
 
