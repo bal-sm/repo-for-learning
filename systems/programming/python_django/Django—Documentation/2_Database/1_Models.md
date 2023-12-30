@@ -21,6 +21,6 @@ Mine, learning note:
 >     - _(rather than from model instances)_, 
 >     - to enforce a separation between:
 >       - **“table-level” operations** _-> `objects` things_ and
->       - **“record-level” operations** _-> object / model instance things_.
+>       - **“record-level” operations** _-> object / model instance / model methods things_.
 > ---
 > Maintenance note -> pindahin ke sini dan [`2_Making-queries.md`](2_Making-queries.md)
