@@ -22,5 +22,10 @@ Mine, learning note:
 >     - to enforce a separation between:
 >       - **“table-level” operations** _-> `objects` things_ and
 >       - **“record-level” operations** _-> object / model instance / model methods things_.
+> - Taken from [Model methods](https://docs.djangoproject.com/en/5.0/topics/db/models/#model-methods).
+>   - Define custom methods on a model _to add custom **“row-level”** functionality_ to your objects. 
+>     - Whereas:
+>       - **`Manager` methods** are intended _to do **“table-wide”** things_, 
+>       - **`django.models.Model`, model, methods** should _act on **a particular model** **("record-wide")** instance_.
 > ---
 > Maintenance note -> pindahin ke sini dan [`2_Making-queries.md`](2_Making-queries.md)
