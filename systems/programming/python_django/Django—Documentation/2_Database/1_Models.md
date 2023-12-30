@@ -87,4 +87,4 @@ Mine, learning note 2, for upcoming "Model methods":
 > The [model instance reference](https://docs.djangoproject.com/en/5.0/ref/models/instances/) has a complete list of [**methods automatically given to each model**](https://docs.djangoproject.com/en/5.0/ref/models/instances/#model-instance-methods). You can override most of these – see [**overriding predefined model methods**](https://docs.djangoproject.com/en/5.0/topics/db/models/#overriding-predefined-model-methods), below – but there are a couple that you’ll almost always want to define: ....
 
 Last learning position:
-> ~~[Model methods](https://docs.djangoproject.com/en/5.0/topics/db/models/#model-methods)~~
+> Masih di [Model methods](https://docs.djangoproject.com/en/5.0/topics/db/models/#model-methods)
