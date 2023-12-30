@@ -12,7 +12,7 @@ Mine:
 Mine lagi:
 > I really remember this section ih, di Pangandaran lagi. One of good and calm memories.
 
-VERY IMPORTANT NOTE, FOR UPCOMING `Multi-table inheritance` section:
+VERY IMPORTANT NOTE, personal experience note, FOR UPCOMING "Multi-table inheritance" section:
 > DON'T EVER USE THIS, REALLY NOT WORTH IT, BETTER OFF USE REGULAR `OneToOneField`!!! WHY TF THESE STILL NOT DEPRECATED IN THE LATEST VERSION???
 
 Mine, learning note:
@@ -29,3 +29,8 @@ Mine, learning note:
 >       - **`django.models.Model`, model, methods** should _act on **a particular model** **("record-wide")** instance_.
 > ---
 > Maintenance note -> pindahin ke sini dan [`2_Making-queries.md`](2_Making-queries.md)
+
+Mine, learning note 2, for upcoming "Model methods":
+> The most important part of this section:
+>
+> The [model instance reference](https://docs.djangoproject.com/en/5.0/ref/models/instances/) has a complete list of [**methods automatically given to each model**](https://docs.djangoproject.com/en/5.0/ref/models/instances/#model-instance-methods). You can override most of these – see [**overriding predefined model methods**](https://docs.djangoproject.com/en/5.0/topics/db/models/#overriding-predefined-model-methods), below – but there are a couple that you’ll almost always want to define: ....
