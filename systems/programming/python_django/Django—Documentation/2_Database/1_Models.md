@@ -7,6 +7,54 @@ Mine:
 
 ...
 
+## Model methods
+
+...
+
+### Overriding predefined model methods
+
+...
+
+Them:
+> If you wish to update a field value in the `save()` method, you may also want to have this field added to the `update_fields` keyword argument. This will ensure the field is saved when `update_fields` is specified. For example:
+
+```python
+from django.db import models
+from django.utils.text import slugify
+
+
+class Blog(models.Model):
+    name = models.CharField(max_length=100)
+    slug = models.TextField()
+
+    def save(
+        self, force_insert=False, force_update=False, using=None, update_fields=None
+    ):
+        self.slug = slugify(self.name)
+        if update_fields is not None and "name" in update_fields:
+            update_fields = {"slug"}.union(update_fields)
+        super().save(
+            force_insert=force_insert,
+            force_update=force_update,
+            using=using,
+            update_fields=update_fields,
+        )
+```
+
+My own:
+> Jadi gimana sih `update_fields` dan mekanisme update a record?
+> 
+> Tuh jadi kalo ada suatu object yang udah tertulis, terus diubah / **di-update** dengan value baru pada `field` tertentu -maka-> `field` yang terupdate dengan value baru tersebut -akan-tertulis-pada-> `update_fields` (dengan type: `set`) -yang-akan-dikelola-oleh-Django-sehingga-> new and updated model / object / record instance.
+
+Mine:
+> Dipindahin lebih dulu soalnya penting.
+
+...
+
+## ...
+
+...
+
 ## Notes
 
 Mine lagi:
@@ -39,4 +87,4 @@ Mine, learning note 2, for upcoming "Model methods":
 > The [model instance reference](https://docs.djangoproject.com/en/5.0/ref/models/instances/) has a complete list of [**methods automatically given to each model**](https://docs.djangoproject.com/en/5.0/ref/models/instances/#model-instance-methods). You can override most of these – see [**overriding predefined model methods**](https://docs.djangoproject.com/en/5.0/topics/db/models/#overriding-predefined-model-methods), below – but there are a couple that you’ll almost always want to define: ....
 
 Last learning position:
-> [Model methods](https://docs.djangoproject.com/en/5.0/topics/db/models/#model-methods)
+> ~~[Model methods](https://docs.djangoproject.com/en/5.0/topics/db/models/#model-methods)~~
