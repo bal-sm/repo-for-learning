@@ -13,6 +13,9 @@ Mine:
 
 ### Overriding predefined model methods
 
+Maintenance note -> Important note "nih gini caranya" -> Prerequisition note:
+> Baca dulu ini, dari file [`2_Making-queries.md`](2_Making-queries.md) -> [Other model instance methods](2_Making-queries.md#other-model-instance-methods), and [Specifying which fields to save](2_Making-queries.md#specifying-which-fields-to-save).
+
 ...
 
 Them:
