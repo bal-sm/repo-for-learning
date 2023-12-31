@@ -61,6 +61,14 @@ Maintenance note buat 2 note di atas:
 
 ...
 
+## API-API things bookmarks
+
+- [Model instance reference](https://docs.djangoproject.com/en/5.0/ref/models/instances/)
+- [Model field reference](https://docs.djangoproject.com/en/5.0/ref/models/fields/)
+- [Model `Meta` options](https://docs.djangoproject.com/en/5.0/ref/models/options/)
+
+... (> add more, kalau ada)
+
 ## Notes
 
 Mine lagi:
