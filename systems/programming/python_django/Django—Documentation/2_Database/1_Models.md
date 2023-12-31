@@ -13,6 +13,9 @@ Mine:
 
 ### Overriding predefined model methods
 
+Maintenance note -> Important note "nih gini caranya" -> Prerequisition note:
+> Baca dulu ini, dari file [`2_Making-queries.md`](2_Making-queries.md) -> [Other model instance methods](2_Making-queries.md#other-model-instance-methods), and [Specifying which fields to save](2_Making-queries.md#specifying-which-fields-to-save).
+
 ...
 
 Them:
@@ -49,11 +52,22 @@ My own:
 Mine:
 > Dipindahin lebih dulu soalnya penting.
 
+Maintenance note buat 2 note di atas:
+> Pindahin / Dupe ke [`2_Making-queries.md`](2_Making-queries.md) -> [section Specifying which fields to save](https://docs.djangoproject.com/en/5.0/ref/models/instances/#specifying-which-fields-to-save).
+
 ...
 
 ## ...
 
 ...
+
+## API-API things bookmarks
+
+- [Model instance reference](https://docs.djangoproject.com/en/5.0/ref/models/instances/)
+- [Model field reference](https://docs.djangoproject.com/en/5.0/ref/models/fields/)
+- [Model `Meta` options](https://docs.djangoproject.com/en/5.0/ref/models/options/)
+
+... (> add more, kalau ada)
 
 ## Notes
 
