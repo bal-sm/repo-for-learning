@@ -937,7 +937,10 @@ class BookForm(forms.Form):
 
 #### Validation on a `ModelForm`
 
-...
+Notice:
+> Baca/lanjutkeun ieu [`how-object-validation-really-work-on-Django.md`](../../_comprehensive_files/how-object-validation-really-work-on-Django.md)
+
+~~...~~
 
 #### ...
 
