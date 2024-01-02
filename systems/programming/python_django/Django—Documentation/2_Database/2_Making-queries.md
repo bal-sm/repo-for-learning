@@ -44,6 +44,18 @@ class Entry(models.Model):
         return self.headline
 ```
 
+## Creating objects
+
+### Philosophy/How-Django-utilizes-Python-convention.
+
+To represent **`database`** <-> **`table data`**
+
+...
+
+### Code
+
+...
+
 ...
 
 ## Saving objects
