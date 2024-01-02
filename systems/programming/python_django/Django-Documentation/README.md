@@ -19,6 +19,7 @@
                 - [`1_models.md`](./2_db/1_topics/1_models.md) <-- <https://docs.djangoproject.com/en/5.0/topics/db/models/>
               - [`2_ref_slash_bookmarks`](./2_db/2_ref_slash_bookmarks/) <-- [`1_models`](./2_db/2_ref_slash_bookmarks/1_models/) <-- <https://docs.djangoproject.com/en/5.0/ref/models/>
       - > ngerti plz :(
+        - > liat raw text nya guys.
 
 Maintenance note:
 > Hide this section aja kalo udah "nix", :(
