@@ -44,13 +44,13 @@ class Entry(models.Model):
         return self.headline
 ```
 
-## Creating objects
+## Creating objects — Mahmuda's version
 
-### Philosophy/How-Django-utilizes-Python-convention.
+### Philosophy/How-Django-utilizes-Python-objects-convention.
 
-To represent **`database`** <-> **`table data`**
-
-...
+- To represent **`database`** <-> **`table data`** in Python objects, Django uses an intuitive system:
+  - A model **class** <-represents--> a database **table**, and
+  - An **instance** of that _(model)_ _**class**_ <-"--> **A particular record** in the database table.
 
 ### Code
 
