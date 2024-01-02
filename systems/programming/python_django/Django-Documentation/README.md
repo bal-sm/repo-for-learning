@@ -17,5 +17,5 @@
             - Daleman
               - `1_topics` <-- <https://docs.djangoproject.com/en/5.0/topics/db/>
                 - `1_models.md` <-- <https://docs.djangoproject.com/en/5.0/topics/db/models/>
-              - ...
+              - `2_ref_slash_bookmarks` <-- `1_models` (nurutin tea gening.) <-- <https://docs.djangoproject.com/en/5.0/ref/models/>
       - ...
