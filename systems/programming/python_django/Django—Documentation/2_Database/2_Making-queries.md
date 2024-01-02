@@ -57,13 +57,3 @@ class Entry(models.Model):
 ...
 
 ...
-
-## Saving objects
-
-### Specifying which fields to save
-
-WIP.
-
-## Other model instance methods
-
-WIP.
