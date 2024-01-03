@@ -48,7 +48,7 @@ class Entry(models.Model):
 
 ### Philosophy/How-Django-utilizes-Python-objects-convention.
 
-- To represent **`database`** <-> **`table data`** in Python objects, Django uses an intuitive system:
+- To represent **`database`-`table data`** <-> **Python objects**, Django uses an intuitive system:
   - A model **class** <-represents--> a database **table**, and
   - An **instance** of that _(model)_ _**class**_ <-"--> **A particular record** in the database table.
 
