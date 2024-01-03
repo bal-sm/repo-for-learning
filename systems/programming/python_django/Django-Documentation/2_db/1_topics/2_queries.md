@@ -178,6 +178,22 @@ Them, important / ignore aja sih bebas, soalnya dupe / penjelasan lebih:
 
 ### Retrieving all objects
 
+- The simplest way to retrieve objects from a table is to **get all of them**. 
+  - To do this, use `all()` method on a `Manager`.
+
+    ```python
+    >>> all_entries = Entry.objects.all()
+    ```
+
+    Mine, again:
+    > Refer to [this `models.py`](#models-used-as-reference) for this `Entry` model.
+
+  - > The `all()` method returns a `QuerySet` of all _thoose_ `objects`-objects in the database, me.
+
+---
+
+### Retrieving specific objects with filters
+
 ...
 
 ...
