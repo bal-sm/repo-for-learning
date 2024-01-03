@@ -142,4 +142,36 @@ Based on [this `models.py`](#models-used-as-reference):
 
   - > Django will complain if you try to assign or add an object of the wrong type, them.
 
+## Retrieving objects — Mahmuda's version
+
+To retrieve objects from your database -> construct a `QuerySet` -via-> a `Manager` on your model class.
+
+- A `QuerySet` -represents-> _a collection of **objects**_ from your **database**.
+  - It can have zero, one or many _filters_.
+  - Filters narrow down the query results _based on the given **parameters**_.
+  - In _SQL terms_, a `QuerySet` -equates-to-a-> `SELECT` statement, 
+    - and a filter -is-a-limiting-clause---such-as-> `WHERE` or `LIMIT`.
+
+- How to get a `QuerySet` which contains all the objects you queried:
+  - Each model -has-at-least-one-> Default `Manager` / `objects` -> `objects` + arguments -> `QuerySet`
+  - Access it directly via the model class, like so:
+
+    ```python
+    >>> Blog.objects
+    <django.db.models.manager.Manager object at ...>
+    >>> b = Blog(name="Foo", tagline="Bar")
+    >>> b.objects
+    Traceback:
+        ...
+    AttributeError: "Manager isn't accessible via Blog instances."
+    ```
+    - > `Manager`s / `objects` are accessible only via model classes, ~~rather than from model instances~~,
+      - > to _enforce a separation_ between: 
+        - > **“table-level”** operations and 
+        - > **“record-level”** operations.
+        - > them.
+        - > again gening eta level-level.
+
+...
+
 ...
