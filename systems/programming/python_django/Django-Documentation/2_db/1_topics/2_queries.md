@@ -172,6 +172,12 @@ To retrieve objects from your database -> construct a `QuerySet` -via-> a `Manag
         - > them.
         - > again gening eta level-level.
 
+Them, important:
+> - The **`Manager`** is the **main source of `QuerySets`** for a model. 
+>   - For example, `Blog.objects.all()` -returns-a-> `QuerySet` -that-contains-all-> `Blog` objects in the database.
+
+### Retrieving all objects
+
 ...
 
 ...
