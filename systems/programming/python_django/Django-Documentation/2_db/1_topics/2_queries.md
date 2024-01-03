@@ -48,11 +48,66 @@ class Entry(models.Model):
 
 ### Philosophy/How-Django-utilizes-Python-objects-convention.
 
-- To represent **`database`** <-> **`table data`** in Python objects, Django uses an intuitive system:
+- To represent **`database`-`table data`** <-> **Python objects**, Django uses an intuitive system:
   - A model **class** <-represents--> a database **table**, and
   - An **instance** of that _(model)_ _**class**_ <-"--> **A particular record** in the database table.
 
 ### Code
+
+To create an object -> instantiate _these_-> model class + keyword arguments (fields as parameters) -then-> call `save()` -to-save-it-to-the-> database.
+
+Assuming `Model`s -live-in-> a file => `mysite/blog/models.py`, here's an example:
+
+```python
+>>> from blog.models import Blog
+>>> b = Blog(name="Beatles Blog", tagline="All the latest Beatles news.")
+>>> b.save()
+```
+
+### Behind the SQL
+
+Little note:
+> Let's make this a thing, throughout this topic and document.
+
+**This** (call **`save()`**) -performs-> an `INSERT` SQL statement (BTS) -> ...
+
+Mine lagi:
+> Tapi saya pun belum mengerti gimana isi SQL nya, sebenernya.
+
+### Notes
+
+- Django **does not** hit the database until you explicitly call `save()`.
+- `save()` -/-> return value (maksudnya moal mere value nanaon deui)
+- `save()` <-takes- a number of advanced options not described here, but [here](https://docs.djangoproject.com/en/5.0/ref/models/instances/#django.db.models.Model.save)
+  - > nanti ubah ke link di repo ieu, maintenance note.
+- `create()` -> create an object and `save()` it in a single step.
+  - Read more about [`create()`](https://docs.djangoproject.com/en/5.0/ref/models/querysets/#django.db.models.query.QuerySet.create).
+
+## Saving changes to objects — Mahmuda's version
+
+To _save **changes**_ to an object that's already in the database, use `save()`, again, yes.
+
+### Code
+
+```python
+>>> from blog.models import Blog
+>>> b_2 = Blog(name="Yoko Ono's Blog", tagline="All the latest Yoko Ono's news.") # ngikutin aja, I love the Beatles.
+>>> b_2.save()
+>>> b_2.name = "Yoko Ono and Sean's Blog"
+>>> b_2.save()
+```
+
+### Behind the SQL
+
+**This** -performs-> an `UPDATE` SQL statement (BTS) -> ...
+
+Again, them:
+> Django **does not** hit the database until you explicitly call `save()`.
+
+Maintenance note:
+> Add the SQL statement here, please.
+
+### Saving `ForeignKey` and `ManyToManyField` fields
 
 ...
 
