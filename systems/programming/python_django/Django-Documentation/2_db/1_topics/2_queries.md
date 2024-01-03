@@ -64,7 +64,7 @@ Assuming `Model`s -live-in-> a file => `mysite/blog/models.py`, here's an exampl
 >>> b.save()
 ```
 
-#### Behind the SQL
+### Behind the SQL
 
 Little note:
 > Let's make this a thing, throughout this topic and document.
@@ -74,7 +74,7 @@ Little note:
 Mine lagi:
 > Tapi saya pun belum mengerti gimana isi SQL nya, sebenernya.
 
-#### Notes
+### Notes
 
 - `save()` -/-> return value (maksudnya moal mere value nanaon deui)
 - `save()` <-takes- a number of advanced options not described here, but [here](https://docs.djangoproject.com/en/5.0/ref/models/instances/#django.db.models.Model.save)
