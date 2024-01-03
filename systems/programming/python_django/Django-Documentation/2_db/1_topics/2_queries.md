@@ -109,6 +109,91 @@ Maintenance note:
 
 ### Saving `ForeignKey` and `ManyToManyField` fields
 
+Almost similar to [Creating objects](#creating-objects--mahmudas-version).
+
+Based on [this `models.py`](#models-used-as-reference):
+
+```python
+>>> from blog.models import Blog, Entry
+>>> entry = Entry.objects.get(pk=1)
+>>> cheese_blog = Blog.objects.get(name="Cheddar Talk")
+>>> entry.blog = cheese_blog
+>>> entry.save()
+```
+
+- Updating a `ManyToManyField` works a little differently:
+  - use the `add()` method on the field to add a record to the relation.
+
+    ```python
+    >>> from blog.models import Author
+    >>> joe = Author.objects.create(name="Joe")
+    >>> entry.authors.add(joe)
+    ```
+
+  - To add multiple records to a `ManyToManyField` in one go:
+
+    ```python
+    >>> john = Author.objects.create(name="John")
+    >>> paul = Author.objects.create(name="Paul")
+    >>> george = Author.objects.create(name="George")
+    >>> ringo = Author.objects.create(name="Ringo")
+    >>> entry.authors.add(john, paul, george, ringo)
+    ```
+
+  - > Django will complain if you try to assign or add an object of the wrong type, them.
+
+## Retrieving objects — Mahmuda's version
+
+To retrieve objects from your database -> construct a `QuerySet` -via-> a `Manager` on your model class.
+
+- A `QuerySet` -represents-> _a collection of **objects**_ from your **database**.
+  - It can have zero, one or many _filters_.
+  - Filters narrow down the query results _based on the given **parameters**_.
+  - In _SQL terms_, a `QuerySet` -equates-to-a-> `SELECT` statement, 
+    - and a filter -is-a-limiting-clause---such-as-> `WHERE` or `LIMIT`.
+
+- How to get a `QuerySet` which contains all the objects you queried:
+  - Each model -has-at-least-one-> Default `Manager` / `objects` -> `objects` + arguments -> `QuerySet`
+  - Access it directly via the model class, like so:
+
+    ```python
+    >>> Blog.objects
+    <django.db.models.manager.Manager object at ...>
+    >>> b = Blog(name="Foo", tagline="Bar")
+    >>> b.objects
+    Traceback:
+        ...
+    AttributeError: "Manager isn't accessible via Blog instances."
+    ```
+    - > `Manager`s / `objects` are accessible only via model classes, ~~rather than from model instances~~,
+      - > to _enforce a separation_ between: 
+        - > **“table-level”** operations and 
+        - > **“record-level”** operations.
+        - > them.
+        - > again gening eta level-level.
+
+Them, important / ignore aja sih bebas, soalnya dupe / penjelasan lebih:
+> - The **`Manager`** is the **main source of `QuerySets`** for a model. 
+>   - For example, `Blog.objects.all()` -returns-a-> `QuerySet` -that-contains-all-> `Blog` objects in the database.
+
+### Retrieving all objects
+
+- The simplest way to retrieve objects from a table is to **get all of them**. 
+  - To do this, use `all()` method on a `Manager`.
+
+    ```python
+    >>> all_entries = Entry.objects.all()
+    ```
+
+    Mine, again:
+    > Refer to [this `models.py`](#models-used-as-reference) for this `Entry` model.
+
+  - > The `all()` method returns a `QuerySet` of all _thoose_ `objects`-objects in the database, me.
+
+---
+
+### Retrieving specific objects with filters
+
 ...
 
 ...
