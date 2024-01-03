@@ -140,4 +140,6 @@ Based on [this `models.py`](#models-used-as-reference):
     >>> entry.authors.add(john, paul, george, ringo)
     ```
 
+  - > Django will complain if you try to assign or add an object of the wrong type, them.
+
 ...
