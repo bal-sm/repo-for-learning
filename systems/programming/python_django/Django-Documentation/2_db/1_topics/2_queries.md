@@ -124,10 +124,20 @@ Based on [this `models.py`](#models-used-as-reference):
 - Updating a `ManyToManyField` works a little differently:
   - use the `add()` method on the field to add a record to the relation.
 
-```python
->>> from blog.models import Author
->>> joe = Author.objects.create(name="Joe")
->>> entry.authors.add(joe)
-```
+    ```python
+    >>> from blog.models import Author
+    >>> joe = Author.objects.create(name="Joe")
+    >>> entry.authors.add(joe)
+    ```
+
+  - To add multiple records to a `ManyToManyField` in one go:
+
+    ```python
+    >>> john = Author.objects.create(name="John")
+    >>> paul = Author.objects.create(name="Paul")
+    >>> george = Author.objects.create(name="George")
+    >>> ringo = Author.objects.create(name="Ringo")
+    >>> entry.authors.add(john, paul, george, ringo)
+    ```
 
 ...
