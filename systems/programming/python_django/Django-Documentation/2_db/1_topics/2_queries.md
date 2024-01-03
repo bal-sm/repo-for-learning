@@ -74,4 +74,12 @@ Little note:
 Mine lagi:
 > Tapi saya pun belum mengerti gimana isi SQL nya, sebenernya.
 
+#### Notes
+
+- `save()` -/-> return value (maksudnya moal mere value nanaon deui)
+- `save()` <-takes- a number of advanced options not described here, but [here](https://docs.djangoproject.com/en/5.0/ref/models/instances/#django.db.models.Model.save)
+  - > nanti ubah ke link di repo ieu, maintenance note.
+- `create()` -> create an object and `save()` it in a single step.
+  - Read more about [`create()`](https://docs.djangoproject.com/en/5.0/ref/models/querysets/#django.db.models.query.QuerySet.create).
+
 ...
