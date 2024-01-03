@@ -109,6 +109,16 @@ Maintenance note:
 
 ### Saving `ForeignKey` and `ManyToManyField` fields
 
-...
+Almost similar to [Creating objects](#creating-objects--mahmudas-version).
+
+Based on [this `models.py`](#models-used-as-reference):
+
+```python
+>>> from blog.models import Blog, Entry
+>>> entry = Entry.objects.get(pk=1)
+>>> cheese_blog = Blog.objects.get(name="Cheddar Talk")
+>>> entry.blog = cheese_blog
+>>> entry.save()
+```
 
 ...
