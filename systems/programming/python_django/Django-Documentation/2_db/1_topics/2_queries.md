@@ -54,6 +54,21 @@ class Entry(models.Model):
 
 ### Code
 
-...
+To create an object -> instantiate _these_-> model class + keyword arguments (fields as parameters) -then-> call `save()` -to-save-it-to-the-> database.
+
+Assuming `Model`s -live-in-> a file => `mysite/blog/models.py`, here's an example:
+
+```python
+>>> from blog.models import Blog
+>>> b = Blog(name="Beatles Blog", tagline="All the latest Beatles news.")
+>>> b.save()
+```
+
+#### Behind the SQL
+
+Little note:
+> Let's make this a thing, throughout this topic and document.
+
+**This** -performs-> an `INSERT` SQL
 
 ...
