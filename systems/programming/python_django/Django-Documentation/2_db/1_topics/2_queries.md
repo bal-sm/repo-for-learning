@@ -69,6 +69,9 @@ Assuming `Model`s -live-in-> a file => `mysite/blog/models.py`, here's an exampl
 Little note:
 > Let's make this a thing, throughout this topic and document.
 
-**This** -performs-> an `INSERT` SQL
+**This** (call **`save()`**) -performs-> an `INSERT` SQL statement (BTS) -> ...
+
+Mine lagi:
+> Tapi saya pun belum mengerti gimana isi SQL nya, sebenernya.
 
 ...
