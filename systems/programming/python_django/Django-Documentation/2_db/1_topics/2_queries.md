@@ -176,7 +176,7 @@ Them, important / ignore aja sih bebas, soalnya dupe / penjelasan lebih:
 > - The **`Manager`** is the **main source of `QuerySets`** for a model. 
 >   - For example, `Blog.objects.all()` -returns-a-> `QuerySet` -that-contains-all-> `Blog` objects in the database.
 
-### Retrieving all objects
+### Retrieving all objects — Mahmuda's version
 
 - The simplest way to retrieve objects from a table is to **get all of them**. 
   - To do this, use `all()` method on a `Manager`.
