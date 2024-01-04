@@ -284,6 +284,28 @@ Them, skip aja, kecuali yang di-**bold**:
 Mine:
 > Penting banget inih. It really is optimized, makanya stop overthink! ME!
 
+- `QuerySet`s are lazy:
+  - the act of creating a `QuerySet` doesn’t involve any database activity. 
+  - You can stack `filter`s together all day long, and 
+    - Django **won’t actually run** the query until the `QuerySet` is evaluated. 
+
+##### Example
+
+```python
+>>> q = Entry.objects.filter(headline__startswith="What")
+>>> q = q.filter(pub_date__lte=datetime.date.today())
+>>> q = q.exclude(body_text__icontains="food")
+>>> print(q)
+```
+
+Mine:
+> Jadi pas "diminta" saat `print(q)`, baru database-nya diakses. Sehingga sebenarnya database hanya **diakses satu kali**, bukan tiga kali.
+
+Them, skip aja kalo udah ngerti:
+> Though this looks like three database hits, in fact it hits the database only once, at the last line (`print(q)`). In general, the results of a `QuerySet` aren’t fetched from the database until you “ask” for them. When you do, the `QuerySet` is _evaluated_ by accessing the database. For more details on exactly when evaluation takes place, see When `QuerySet`s are evaluated, [from the official docs](https://docs.djangoproject.com/en/5.0/ref/models/querysets/#when-querysets-are-evaluated), [~~from this repo~~](belum-dibuat).
+
+### Retrieving a single object with `get()` - Mahmuda's version
+
 ...
 
 ### Field lookups — Mahmuda's version
