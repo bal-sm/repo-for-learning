@@ -260,9 +260,26 @@ Them, modded:
 Mine:
 > Fix the styling, please, rada ribet lagi.
 
-#### Filtered `QuerySet`s are unique
+#### Filtered `QuerySet`s are unique — Mahmuda's version
 
-...
+- Each time you refine a `QuerySet` -> you get a **brand-new** `QuerySet` 
+  - that _is in **no way**_ **bound** to the previous `QuerySet`.
+  - _Each refinement_ **creates** a *separate* and *distinct* `QuerySet` that can be *stored*, *used* and *reused*.
+
+##### Example
+
+```python
+>>> q1 = Entry.objects.filter(headline__startswith="What")
+>>> q2 = q1.exclude(pub_date__gte=datetime.date.today())
+>>> q3 = q1.filter(pub_date__gte=datetime.date.today())
+```
+
+Them, skip aja, kecuali yang di-**bold**:
+> - These three `QuerySet`s are separate. 
+>   - The first is a base `QuerySet` containing all entries that contain a headline starting with “What”. 
+>   - The second is a subset of the first, with an additional criteria that excludes records whose `pub_date` is today or in the future. 
+>   - The third is a subset of the first, with an additional criteria that selects only the records whose `pub_date` is today or in the future. 
+>   - **The initial `QuerySet` (`q1`) is unaffected by the refinement process.**
 
 #### `QuerySet`s are lazy — Mahmuda's version
 
