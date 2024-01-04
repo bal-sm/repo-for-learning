@@ -64,7 +64,7 @@ Assuming `Model`s -live-in-> a file => `mysite/blog/models.py`, here's an exampl
 >>> b.save()
 ```
 
-### Behind the SQL
+### Behind the SQL — Mahmuda's version
 
 Little note:
 > Let's make this a thing, throughout this topic and document.
