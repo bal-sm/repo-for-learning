@@ -254,6 +254,13 @@ Them, modded:
 
 ...
 
+#### `QuerySet`s are lazy — Mahmuda's version
+
+Mine:
+> Penting banget inih. It really is optimized, makanya stop overthink! ME!
+
+...
+
 ### Field lookups — Mahmuda's version
 
 ...
