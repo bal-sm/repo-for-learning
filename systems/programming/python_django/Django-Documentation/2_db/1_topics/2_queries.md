@@ -46,7 +46,7 @@ class Entry(models.Model):
 
 ## Creating objects — Mahmuda's version
 
-### Philosophy/How-Django-utilizes-Python-objects-convention.
+### Philosophy/How-Django-utilizes-Python-objects-convention — Mahmuda's version
 
 - To represent **`database`-`table data`** <-> **Python objects**, Django uses an intuitive system:
   - A model **class** <-represents--> a database **table**, and
