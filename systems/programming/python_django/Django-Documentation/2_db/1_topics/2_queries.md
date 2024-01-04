@@ -74,7 +74,7 @@ Little note:
 Mine lagi:
 > Tapi saya pun belum mengerti gimana isi SQL nya, sebenernya.
 
-### Notes
+### Notes — Mahmuda's version
 
 - Django **does not** hit the database until you explicitly call `save()`.
 - `save()` -/-> return value (maksudnya moal mere value nanaon deui)
