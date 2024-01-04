@@ -97,7 +97,7 @@ To _save **changes**_ to an object that's already in the database, use `save()`,
 >>> b_2.save()
 ```
 
-### Behind the SQL
+### Behind the SQL — Mahmuda's version
 
 **This** -performs-> an `UPDATE` SQL statement (BTS) -> ...
 
