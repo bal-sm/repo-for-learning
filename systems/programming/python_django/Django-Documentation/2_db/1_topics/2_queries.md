@@ -87,7 +87,7 @@ Mine lagi:
 
 To _save **changes**_ to an object that's already in the database, use `save()`, again, yes.
 
-### Code
+### The Code
 
 ```python
 >>> from blog.models import Blog
