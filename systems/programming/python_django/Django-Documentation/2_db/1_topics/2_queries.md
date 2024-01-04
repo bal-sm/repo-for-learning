@@ -192,10 +192,10 @@ Them, important / ignore aja sih bebas, soalnya dupe / penjelasan lebih:
 
 ---
 
-### Retrieving specific objects with filters — Emma's version
+### Retrieving specific objects with filters — Mahmuda's version
 
 Mine:
-> Kalo udah gak goblok, diganti please.
+> ~~Kalo udah gak goblok, diganti please.~~ Done.
 
 - `QuerySet` <-returned-by- `all()`
   - -describes-> all objects -in-the-> database table
@@ -206,9 +206,9 @@ Mine:
   - -> adding filter conditions.
   - The two most common ways to refine a `QuerySet` are:
     - `filter(**kwargs)`
-      - _**Returns** a new `QuerySet`_ containing objects that **match** _the given **lookup parameters**_.
+      - _Returns a new `QuerySet` containing objects that_ **match** _the given lookup parameters_.
     - `exclude(**kwargs)`
-      - **Returns a new `QuerySet`** containing objects that **do not match** the given **lookup parameters**.
+      - _Returns a new `QuerySet` containing objects that_ **do not match** _the given lookup parameters_.
 
 Them:
 > The lookup parameters (`**kwargs` in the above function definitions) should be in the format described in [Field lookups](#field-lookups--mahmudas-version) below.
