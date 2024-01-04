@@ -240,6 +240,18 @@ To get a `QuerySet` of:
 
 #### Chaining filters — Mahmuda's version
 
+Them, modded:
+> - The result of refining => a `QuerySet` is -itself-a=> `QuerySet`, 
+>   - so it’s possible to chain refinements together.
+
+##### For example
+
+```python
+>>> Entry.objects.filter(headline__startswith="What").exclude(
+...     pub_date__gte=datetime.date.today()
+... ).filter(pub_date__gte=datetime.date(2005, 1, 30))
+```
+
 ...
 
 ### Field lookups — Mahmuda's version
