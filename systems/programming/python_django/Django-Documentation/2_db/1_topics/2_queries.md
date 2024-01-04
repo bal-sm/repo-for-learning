@@ -107,7 +107,7 @@ Again, them:
 Maintenance note:
 > Add the SQL statement here, please.
 
-### Saving `ForeignKey` and `ManyToManyField` fields
+### Saving `ForeignKey` and `ManyToManyField` fields — Mahmuda's version
 
 Almost similar to [Creating objects](#creating-objects--mahmudas-version).
 
