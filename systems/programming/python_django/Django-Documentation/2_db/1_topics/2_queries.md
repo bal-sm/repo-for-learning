@@ -194,6 +194,26 @@ Them, important / ignore aja sih bebas, soalnya dupe / penjelasan lebih:
 
 ### Retrieving specific objects with filters
 
+- `QuerySet` <-returned-by- `all()`
+  - -describes-> all objects -in-the-> database table
+  - Usually though, you'll need to select only a subset of the complete set of objects.
+
+- To create such a subset, 
+  - -> you refine the initial `QuerySet`, 
+  - -> adding filter conditions.
+  - The two most common ways to refine a `QuerySet` are:
+    - `filter(**kwargs)`
+      - _**Returns** a new `QuerySet`_ containing objects that **match** _the given **lookup parameters**_.
+    - `exclude(**kwargs)`
+      - **Returns a new `QuerySet`** containing objects that **do not match** the given **lookup parameters**.
+
+Them:
+> The lookup parameters (`**kwargs` in the above function definitions) should be in the format described in [Field lookups](#field-lookups--mahmudas-version) below.
+
+...
+
+### Field lookups — Mahmuda's version
+
 ...
 
 ...
