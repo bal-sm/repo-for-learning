@@ -213,6 +213,24 @@ Mine:
 Them:
 > The lookup parameters (`**kwargs` in the above function definitions) should be in the format described in [Field lookups](#field-lookups--mahmudas-version) below.
 
+#### For example
+
+To get a `QuerySet` of:
+
+- Blog entries from the year 2006:
+
+  ```python
+  Entry.objects.filter(pub_date__year=2006)
+  ```
+
+  - or:
+
+    ```python
+    Entry.objects.all().filter(pub_date__year=2006)
+    ```
+
+#### Chaining filters — Mahmuda's version
+
 ...
 
 ### Field lookups — Mahmuda's version
