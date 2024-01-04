@@ -229,6 +229,15 @@ To get a `QuerySet` of:
     Entry.objects.all().filter(pub_date__year=2006)
     ```
 
+    Learning note:
+
+    ```{note}
+    Them:
+    > With the default manager class, it is the same as: ... (above)
+
+    Maksudnya kalo custom manager class, gak bisa? atau gimana?
+    ```
+
 #### Chaining filters — Mahmuda's version
 
 ...
