@@ -190,8 +190,6 @@ Them, important / ignore aja sih bebas, soalnya dupe / penjelasan lebih:
 
   - > The `all()` method returns a `QuerySet` of all _thoose_ `objects`-objects in the database, me.
 
----
-
 ### Retrieving specific objects with filters — Mahmuda's version
 
 Mine:
