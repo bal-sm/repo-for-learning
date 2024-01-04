@@ -52,7 +52,7 @@ class Entry(models.Model):
   - A model **class** <-represents--> a database **table**, and
   - An **instance** of that _(model)_ _**class**_ <-"--> **A particular record** in the database table.
 
-### Code
+### The Code
 
 To create an object -> instantiate _these_-> model class + keyword arguments (fields as parameters) -then-> call `save()` -to-save-it-to-the-> database.
 
