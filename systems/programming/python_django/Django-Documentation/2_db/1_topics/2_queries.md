@@ -46,13 +46,13 @@ class Entry(models.Model):
 
 ## Creating objects — Mahmuda's version
 
-### Philosophy/How-Django-utilizes-Python-objects-convention.
+### Philosophy/How-Django-utilizes-Python-objects-convention — Mahmuda's version
 
 - To represent **`database`-`table data`** <-> **Python objects**, Django uses an intuitive system:
   - A model **class** <-represents--> a database **table**, and
   - An **instance** of that _(model)_ _**class**_ <-"--> **A particular record** in the database table.
 
-### Code
+### The Code
 
 To create an object -> instantiate _these_-> model class + keyword arguments (fields as parameters) -then-> call `save()` -to-save-it-to-the-> database.
 
@@ -64,7 +64,7 @@ Assuming `Model`s -live-in-> a file => `mysite/blog/models.py`, here's an exampl
 >>> b.save()
 ```
 
-### Behind the SQL
+### Behind the SQL — Mahmuda's version
 
 Little note:
 > Let's make this a thing, throughout this topic and document.
@@ -74,7 +74,7 @@ Little note:
 Mine lagi:
 > Tapi saya pun belum mengerti gimana isi SQL nya, sebenernya.
 
-### Notes
+### Notes — Mahmuda's version
 
 - Django **does not** hit the database until you explicitly call `save()`.
 - `save()` -/-> return value (maksudnya moal mere value nanaon deui)
@@ -87,7 +87,7 @@ Mine lagi:
 
 To _save **changes**_ to an object that's already in the database, use `save()`, again, yes.
 
-### Code
+### The Code
 
 ```python
 >>> from blog.models import Blog
@@ -97,7 +97,7 @@ To _save **changes**_ to an object that's already in the database, use `save()`,
 >>> b_2.save()
 ```
 
-### Behind the SQL
+### Behind the SQL — Mahmuda's version
 
 **This** -performs-> an `UPDATE` SQL statement (BTS) -> ...
 
@@ -107,7 +107,7 @@ Again, them:
 Maintenance note:
 > Add the SQL statement here, please.
 
-### Saving `ForeignKey` and `ManyToManyField` fields
+### Saving `ForeignKey` and `ManyToManyField` fields — Mahmuda's version
 
 Almost similar to [Creating objects](#creating-objects--mahmudas-version).
 
@@ -176,7 +176,7 @@ Them, important / ignore aja sih bebas, soalnya dupe / penjelasan lebih:
 > - The **`Manager`** is the **main source of `QuerySets`** for a model. 
 >   - For example, `Blog.objects.all()` -returns-a-> `QuerySet` -that-contains-all-> `Blog` objects in the database.
 
-### Retrieving all objects
+### Retrieving all objects — Mahmuda's version
 
 - The simplest way to retrieve objects from a table is to **get all of them**. 
   - To do this, use `all()` method on a `Manager`.
@@ -190,9 +190,10 @@ Them, important / ignore aja sih bebas, soalnya dupe / penjelasan lebih:
 
   - > The `all()` method returns a `QuerySet` of all _thoose_ `objects`-objects in the database, me.
 
----
+### Retrieving specific objects with filters — Mahmuda's version
 
-### Retrieving specific objects with filters
+Mine:
+> ~~Kalo udah gak goblok, diganti please.~~ Done.
 
 - `QuerySet` <-returned-by- `all()`
   - -describes-> all objects -in-the-> database table
@@ -203,12 +204,115 @@ Them, important / ignore aja sih bebas, soalnya dupe / penjelasan lebih:
   - -> adding filter conditions.
   - The two most common ways to refine a `QuerySet` are:
     - `filter(**kwargs)`
-      - _**Returns** a new `QuerySet`_ containing objects that **match** _the given **lookup parameters**_.
+      - _Returns a new `QuerySet` containing objects that_ **match** _the given lookup parameters_.
     - `exclude(**kwargs)`
-      - **Returns a new `QuerySet`** containing objects that **do not match** the given **lookup parameters**.
+      - _Returns a new `QuerySet` containing objects that_ **do not match** _the given lookup parameters_.
 
 Them:
 > The lookup parameters (`**kwargs` in the above function definitions) should be in the format described in [Field lookups](#field-lookups--mahmudas-version) below.
+
+#### For example
+
+To get a `QuerySet` of:
+
+- Blog entries from the year 2006:
+
+  ```python
+  Entry.objects.filter(pub_date__year=2006)
+  ```
+
+  - or:
+
+    ```python
+    Entry.objects.all().filter(pub_date__year=2006)
+    ```
+
+    Learning note:
+
+    ```{note}
+    Them:
+    > With the default manager class, it is the same as: ... (above)
+
+    Maksudnya kalo custom manager class, gak bisa? atau gimana?
+    ```
+
+#### Chaining filters — Mahmuda's version
+
+Them, modded:
+> - The result of refining => a `QuerySet` is -itself-a=> `QuerySet`, 
+>   - so it’s possible to chain refinements together.
+
+##### For example
+
+```python
+>>> Entry.objects.filter(headline__startswith="What").exclude(
+...     pub_date__gte=datetime.date.today()
+... ).filter(pub_date__gte=datetime.date(2005, 1, 30))
+```
+
+- This takes the initial `QuerySet` of _all entries in the database_ -> adds a filter, -then-an-> exclusion, -then-> another filter. 
+  - The final result =is=a=> `QuerySet` =containing=> _all entries_ =with=> _a headline_ that:
+    - **starts** **with** _“What”_, 
+    - that were published between January 30, 2005, and the current day.
+
+Mine:
+> Fix the styling, please, rada ribet lagi.
+
+#### Filtered `QuerySet`s are unique — Mahmuda's version
+
+- Each time you refine a `QuerySet` -> you get a **brand-new** `QuerySet` 
+  - that _is in **no way**_ **bound** to the previous `QuerySet`.
+  - _Each refinement_ **creates** a *separate* and *distinct* `QuerySet` that can be *stored*, *used* and *reused*.
+
+##### Example
+
+```python
+>>> q1 = Entry.objects.filter(headline__startswith="What")
+>>> q2 = q1.exclude(pub_date__gte=datetime.date.today())
+>>> q3 = q1.filter(pub_date__gte=datetime.date.today())
+```
+
+Them, skip aja, kecuali yang di-**bold**:
+> - These three `QuerySet`s are separate. 
+>   - The first is a base `QuerySet` containing all entries that contain a headline starting with “What”. 
+>   - The second is a subset of the first, with an additional criteria that excludes records whose `pub_date` is today or in the future. 
+>   - The third is a subset of the first, with an additional criteria that selects only the records whose `pub_date` is today or in the future. 
+>   - **The initial `QuerySet` (`q1`) is unaffected by the refinement process.**
+
+#### `QuerySet`s are lazy — Mahmuda's version
+
+Mine:
+> Penting banget inih. It really is optimized, makanya stop overthink! ME!
+
+- `QuerySet`s are lazy:
+  - the act of creating a `QuerySet` doesn’t involve any database activity. 
+  - You can stack `filter`s together all day long, and 
+    - Django **won’t actually run** the query until the `QuerySet` is evaluated. 
+
+##### Example
+
+```python
+>>> q = Entry.objects.filter(headline__startswith="What")
+>>> q = q.filter(pub_date__lte=datetime.date.today())
+>>> q = q.exclude(body_text__icontains="food")
+>>> print(q)
+```
+
+Mine:
+> Jadi pas "diminta" saat `print(q)`, baru database-nya diakses. Sehingga sebenarnya database hanya **diakses satu kali**, bukan tiga kali.
+
+Them, skip aja kalo udah ngerti:
+> Though this looks like three database hits, in fact it hits the database only once, at the last line (`print(q)`). In general, the results of a `QuerySet` aren’t fetched from the database until you “ask” for them. When you do, the `QuerySet` is _evaluated_ by accessing the database. For more details on exactly when evaluation takes place, see When `QuerySet`s are evaluated, [from the official docs](https://docs.djangoproject.com/en/5.0/ref/models/querysets/#when-querysets-are-evaluated), [~~from this repo~~](belum-dibuat).
+
+### Retrieving a single object with `get()` - Mahmuda's version
+
+...
+
+Mine, learning note:
+> - Makanya usahain kalo pake `get()`, parameters (fields) -nya yang:
+>   - berupa `primary_key`
+>   - `unique=True`
+>   - `unique_together`-nya (ykiyk)
 
 ...
 
