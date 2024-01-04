@@ -252,6 +252,16 @@ Them, modded:
 ... ).filter(pub_date__gte=datetime.date(2005, 1, 30))
 ```
 
+- This takes the initial `QuerySet` of _all entries in the database_ -> adds a filter, -then-an-> exclusion, -then-> another filter. 
+  - The final result =is=a=> `QuerySet` =containing=> _all entries_ =with=> _a headline_ that:
+    - **starts** **with** _“What”_, 
+    - that were published between January 30, 2005, and the current day.
+
+Mine:
+> Fix the styling, please, rada ribet lagi.
+
+#### Filtered `QuerySet`s are unique
+
 ...
 
 #### `QuerySet`s are lazy — Mahmuda's version
