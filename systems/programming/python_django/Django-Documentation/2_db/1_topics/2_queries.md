@@ -308,7 +308,7 @@ Them, skip aja kalo udah ngerti:
 
 ...
 
-Mine:
+Mine, learning note:
 > - Makanya usahain kalo pake `get()`, parameters (fields) -nya yang:
 >   - berupa `primary_key`
 >   - `unique=True`
