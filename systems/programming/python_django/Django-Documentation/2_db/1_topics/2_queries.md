@@ -192,7 +192,10 @@ Them, important / ignore aja sih bebas, soalnya dupe / penjelasan lebih:
 
 ---
 
-### Retrieving specific objects with filters
+### Retrieving specific objects with filters — Emma's version
+
+Mine:
+> Kalo udah gak goblok, diganti please.
 
 - `QuerySet` <-returned-by- `all()`
   - -describes-> all objects -in-the-> database table
