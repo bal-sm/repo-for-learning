@@ -308,6 +308,14 @@ Them, skip aja kalo udah ngerti:
 
 ...
 
+Mine:
+> - Makanya usahain kalo pake `get()`, parameters (fields) -nya yang:
+>   - berupa `primary_key`
+>   - `unique=True`
+>   - `unique_together`-nya (ykiyk)
+
+...
+
 ### Field lookups — Mahmuda's version
 
 ...
