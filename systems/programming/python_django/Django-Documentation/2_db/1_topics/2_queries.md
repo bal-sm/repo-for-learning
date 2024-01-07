@@ -306,13 +306,41 @@ Them, skip aja kalo udah ngerti:
 
 ### Retrieving a single object with `get()` - Mahmuda's version
 
-...
+- `filter()` will always -> give you a `QuerySet`
+  - even if only a *single* object matches the query - 
+  - in this case, it will be a `QuerySet` containing a single element.
+
+vs.
+
+- or, you can use the `get()` method on a `Manager` which returns the object directly,
+  - If you know there is only one object that matches your query.
+
+For example:
+
+```python
+>>> one_entry = Entry.objects.get(pk=1)
+```
 
 Mine, learning note:
 > - Makanya usahain kalo pake `get()`, parameters (fields) -nya yang:
 >   - berupa `primary_key`
 >   - `unique=True`
 >   - `unique_together`-nya (ykiyk)
+
+Them:
+> You can use any query expression with `get()`, just like with `filter()` - again, see [Field lookups](#field-lookups--mahmudas-version) below.
+
+Them, important / skip ykiyk:
+> - Note that there is a difference between *using `get()`*, and *using `filter()` with a slice of `[0]`*. 
+>   - If there are no results that match the query, `get()` -> will *raise a `DoesNotExist` exception*. 
+>   - _This exception is an attribute of the model class that the query is *being performed on*_ - 
+>   - **so in the code above, if there is no `Entry` object with a primary key of `1`, Django will raise **`Entry.DoesNotExist`**.**
+>
+> - Similarly, Django will complain *if more than one item* **matches** the `get()` query. 
+>   - *In this case, it will raise `MultipleObjectsReturned`*, 
+>   - **which again is an attribute of the model class itself.**
+
+### Other `QuerySet` methods — Mahmuda's version
 
 ...
 
