@@ -343,7 +343,7 @@ Them, important / skip ykiyk:
 ### Other `QuerySet` methods — Just a note edition
 
 Them:
-> Most of the time you’ll use `all()`, `get()`, `filter()` and `exclude()` when you need to look up objects from the database. However, that’s far from all there is; see the [`QuerySet` API Reference](...) for a complete list of all the various `QuerySet` methods.
+> Most of the time you’ll use `all()`, `get()`, `filter()` and `exclude()` when you need to look up objects from the database. However, that’s far from all there is; see the [`QuerySet` API Reference](../2_ref_slash_bookmarks/1_models/10_querysets/2_queryset_api_slash_bookmarks.md) for a complete list of all the various `QuerySet` methods.
 
 ### Field lookups — Mahmuda's version
 
