@@ -340,9 +340,10 @@ Them, important / skip ykiyk:
 >   - *In this case, it will raise `MultipleObjectsReturned`*, 
 >   - **which again is an attribute of the model class itself.**
 
-### Other `QuerySet` methods — Mahmuda's version
+### Other `QuerySet` methods — Just a note edition
 
-...
+Them:
+> Most of the time you’ll use `all()`, `get()`, `filter()` and `exclude()` when you need to look up objects from the database. However, that’s far from all there is; see the [`QuerySet` API Reference](...) for a complete list of all the various `QuerySet` methods.
 
 ### Field lookups — Mahmuda's version
 
