@@ -39,6 +39,9 @@ The `QuerySet` class has the following public attributes you can use for *intros
 Mine, learning note:
 > Maksudnya meureun *public attributes* teh `QuerySet.ordered`, meureun ya.
 
+Them, trivia ceuk saya mah:
+> The `query` parameter to `QuerySet` exists so that specialized query subclasses can reconstruct internal query state. The value of the parameter is an opaque representation of that query state and is not part of a public API.
+
 ## Methods that return new `QuerySet`s
 
 Mine (temporary note):
