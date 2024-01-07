@@ -27,7 +27,14 @@ class QuerySet(model=None, query=None, using=None, hints=None)
 
 ## `QuerySet`s public attributes
 
-...
+The `QuerySet` class has the following public attributes you can use for *introspection*:
+
+- `ordered`
+  - `True` _if the `QuerySet` is **ordered**_
+    - — i.e. has an `order_by()` clause or a default ordering on the model. 
+  - `False` otherwise.
+- `db`
+  - _The database that *will be used*_ if _this query is *executed now*_.
 
 Mine, learning note:
 > Maksudnya meureun *public attributes* teh `QuerySet.ordered`, meureun ya.
