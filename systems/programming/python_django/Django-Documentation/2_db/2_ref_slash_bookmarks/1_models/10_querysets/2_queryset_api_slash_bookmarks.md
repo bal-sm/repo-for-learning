@@ -3,7 +3,16 @@
 Mine:
 > Taken from, [official docs](https://docs.djangoproject.com/en/5.0/ref/models/querysets/#queryset-api).
 
+Here’s the formal declaration of a `QuerySet`:
+
+```python
+class QuerySet(model=None, query=None, using=None, hints=None)
+```
+
 ...
+
+Mine, learning note:
+> Maksudnya meureun *public attributes* teh `QuerySet.ordered`, meureun ya.
 
 ## Methods that return new `QuerySet`s
 
