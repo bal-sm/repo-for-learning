@@ -10,4 +10,12 @@ Mine:
 Mine (temporary note):
 > Ambil dua aja dulu, sebagai contoh.
 
+- [`filter()`](https://docs.djangoproject.com/en/5.0/ref/models/querysets/#filter)
+  - Returns a new `QuerySet` containing objects that **match** the given lookup parameters.
+- [`exclude()`](https://docs.djangoproject.com/en/5.0/ref/models/querysets/#exclude)
+  - Returns a new `QuerySet` containing objects that **do not match** the given lookup parameters.
+
 ...
+
+Mine (temporary note 2):
+> Lanjutin kalo sering ditulis API-nya.
