@@ -344,8 +344,12 @@ Them:
 
 ## Limiting `QuerySet`s — Mahmuda's version
 
-- Use a subset of Python’s array-slicing syntax _to limit your `QuerySet` to *a certain number of results*._
-  - > This is the equivalent of SQL’s `LIMIT` and `OFFSET` clauses.
+Mine, important:
+> Skip aj gpp, da.
+
+Them:
+> - Use a subset of Python’s array-slicing syntax _to limit your `QuerySet` to *a certain number of results*._
+>   - > This is the equivalent of SQL’s `LIMIT` and `OFFSET` clauses.
 
 1-5 objects:
 
@@ -378,8 +382,9 @@ Mine:
 Them:
 > Negative indexing (i.e. `Entry.objects.all()[-1]`) is not supported.
 
-- Generally, slicing a `QuerySet` -returns-a-new-> `QuerySet` – *it doesn’t evaluate the query*.
-  - An exception is _if you use the “step” parameter of Python slice syntax_. 
+Them:
+> - Generally, slicing a `QuerySet` -returns-a-new-> `QuerySet` – *it doesn’t evaluate the query*.
+>   - An exception is _if you use the “step” parameter of Python slice syntax_. 
 
 For example, this would actually execute the query in order to return _a list of every (2) *second* object of the first 10_:
 
