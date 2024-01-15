@@ -192,9 +192,6 @@ Them, important / ignore aja sih bebas, soalnya dupe / penjelasan lebih:
 
 ### Retrieving specific objects with filters — Mahmuda's version
 
-Mine:
-> ~~Kalo udah gak goblok, diganti please.~~ Done.
-
 - `QuerySet` <-returned-by- `all()`
   - -describes-> all objects -in-the-> database table
   - Usually though, you'll need to select only a subset of the complete set of objects.
