@@ -342,6 +342,44 @@ Them, important / skip ykiyk:
 Them:
 > Most of the time you’ll use `all()`, `get()`, `filter()` and `exclude()` when you need to look up objects from the database. However, that’s far from all there is; see the [`QuerySet` API Reference](../2_ref_slash_bookmarks/1_models/10_querysets/2_queryset_api_slash_bookmarks.md) for a complete list of all the various `QuerySet` methods.
 
+## Limiting `QuerySet`s — Mahmuda's version
+
+- Use a subset of Python’s array-slicing syntax _to limit your `QuerySet` to *a certain number of results*._
+  - > This is the equivalent of SQL’s `LIMIT` and `OFFSET` clauses.
+
+1-5 objects:
+
+```python
+>>> Entry.objects.all()[:5]
+```
+
+Them, SQLnya cenah:
+> `LIMIT 5`
+
+6-10 objects:
+
+```python
+>>> Entry.objects.all()[5:10]
+```
+
+Them, SQLnya cenah:
+> `OFFSET 5 LIMIT 5`
+
+~~-1 object:~~
+
+```
+Entry.objects.all()[-1]
+# JUST KIDDING
+```
+
+Mine:
+> bikin error
+
+Them:
+> Negative indexing (i.e. `Entry.objects.all()[-1]`) is not supported.
+
+...
+
 ### Field lookups — Mahmuda's version
 
 ...
