@@ -192,9 +192,6 @@ Them, important / ignore aja sih bebas, soalnya dupe / penjelasan lebih:
 
 ### Retrieving specific objects with filters — Mahmuda's version
 
-Mine:
-> ~~Kalo udah gak goblok, diganti please.~~ Done.
-
 - `QuerySet` <-returned-by- `all()`
   - -describes-> all objects -in-the-> database table
   - Usually though, you'll need to select only a subset of the complete set of objects.
@@ -344,6 +341,75 @@ Them, important / skip ykiyk:
 
 Them:
 > Most of the time you’ll use `all()`, `get()`, `filter()` and `exclude()` when you need to look up objects from the database. However, that’s far from all there is; see the [`QuerySet` API Reference](../2_ref_slash_bookmarks/1_models/10_querysets/2_queryset_api_slash_bookmarks.md) for a complete list of all the various `QuerySet` methods.
+
+## Limiting `QuerySet`s — Mahmuda's version
+
+Mine, important:
+> Skip aj gpp, da.
+
+Them:
+> - Use a subset of Python’s array-slicing syntax _to limit your `QuerySet` to *a certain number of results*._
+>   - > This is the equivalent of SQL’s `LIMIT` and `OFFSET` clauses.
+
+1-5 objects:
+
+```python
+>>> Entry.objects.all()[:5]
+```
+
+Them, SQLnya cenah:
+> `LIMIT 5`
+
+6-10 objects:
+
+```python
+>>> Entry.objects.all()[5:10]
+```
+
+Them, SQLnya cenah:
+> `OFFSET 5 LIMIT 5`
+
+~~-1 object:~~
+
+```
+Entry.objects.all()[-1]
+# JUST KIDDING
+```
+
+Mine:
+> bikin error
+
+Them:
+> Negative indexing (i.e. `Entry.objects.all()[-1]`) is not supported.
+
+Them:
+> - Generally, slicing a `QuerySet` -returns-a-new-> `QuerySet` – *it doesn’t evaluate the query*.
+>   - An exception is _if you use the “step” parameter of Python slice syntax_. 
+
+For example, this would actually execute the query in order to return _a list of every (2) *second* object of the first 10_:
+
+```python
+>>> Entry.objects.all()[:10:2]
+```
+
+Them:
+> Further filtering or ordering of a sliced queryset is **prohibited** due to the ambiguous nature of how that might work.
+
+Them:
+> To retrieve a *single* object rather than a list (e.g. `SELECT foo FROM bar LIMIT 1`), use an index instead of a slice. For example, this returns the first `Entry` in the database, after ordering entries alphabetically by headline:
+
+```python
+>>> Entry.objects.order_by("headline")[0]
+```
+
+This is roughly equivalent to:
+
+```python
+>>> Entry.objects.order_by("headline")[0:1].get()
+```
+
+Them:
+> Note, however, that the first of these will raise `IndexError` while the second will raise `DoesNotExist` if no objects match the given criteria. See `get()` for more details.
 
 ### Field lookups — Mahmuda's version
 
