@@ -464,4 +464,11 @@ blog_id # ⏎
 >>> Entry.objects.filter(blog_id=4)
 ```
 
+---
+
+```python
+Entry.objects.filter(blog_id="sixty_nine")
+# TypeError, 'cause invalid keyword argument
+```
+
 ...
