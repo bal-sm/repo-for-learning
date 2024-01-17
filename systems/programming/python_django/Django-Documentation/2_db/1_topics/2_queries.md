@@ -586,12 +586,11 @@ Maintenance note:
 
 ... (isi `♯♯♯` nya)
 
-```
 ## Querying `JSONField`
 
 ...
 
-### Storing and querying for None
+### Storing and querying for `None`
 
 ...
 
@@ -599,7 +598,7 @@ Maintenance note:
 
 ...
 
-#### KT() expressions
+#### `KT()` expressions
 
 ...
 
@@ -607,27 +606,27 @@ Maintenance note:
 
 ...
 
-#### contains
+#### `contains`
 
 ...
 
-#### contained_by
+#### `contained_by`
 
 ...
 
-#### has_key
+#### `has_key`
 
 ...
 
-#### has_keys
+#### `has_keys`
 
 ...
 
-#### has_any_keys
+#### `has_any_keys`
 
 ...
 
-## Complex lookups with Q objects
+## Complex lookups with `Q` objects
 
 ...
 
@@ -690,7 +689,6 @@ Maintenance note:
 ## Falling back to raw SQL
 
 ...
-```
 
 Maintenance note:
-> WIP sectioning ieu, tinggal `ngeginiin`,
+> ~~WIP sectioning ieu, tinggal `ngeginiin`~~, udah deh.
