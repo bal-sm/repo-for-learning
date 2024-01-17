@@ -411,7 +411,7 @@ This is roughly equivalent to:
 Them:
 > Note, however, that the first of these will raise `IndexError` while the second will raise `DoesNotExist` if no objects match the given criteria. See `get()` for more details.
 
-### Field lookups — Mahmuda's version
+## Field lookups — Mahmuda's version
 
 Them, skip:
 > - Field lookups are how you specify the meat of an SQL `WHERE` clause. 
