@@ -471,4 +471,35 @@ Entry.objects.filter(blog_id="sixty_nine")
 # TypeError, 'cause invalid keyword argument
 ```
 
+---
+
+Them:
+> The database API supports about two dozen lookup types; a complete reference can be found in the [field lookup reference](https://docs.djangoproject.com/en/5.0/ref/models/querysets/#field-lookups). To give you a taste of what’s available, here’s some of the more common lookups you’ll probably use:
+
+Maintenance note:
+> Jangan lupa rangkum "field lookup reference" (bookmark-kin maksudnya).
+
+- `exact`
+  - An “exact” match.
+  - Example:
+
+    ```python
+    >>> Entry.objects.get(headline__exact="Cat bites dog")
+    ```
+
+  - Would generate SQL along these lines:
+
+    ```sql
+    SELECT ... WHERE headline = 'Cat bites dog';
+    ```
+  
+  - By the way,
+    
+    Me:
+    > I'm going out tonight.
+
+    ...
+  
+  ...
+
 ...
