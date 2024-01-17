@@ -586,10 +586,111 @@ Maintenance note:
 
 ... (isi `♯♯♯` nya)
 
+```
 ## Querying `JSONField`
 
-... (isi `♯♯♯` -> `♯♯♯♯` nya)
+...
 
-## ...
+### Storing and querying for None
 
 ...
+
+### Key, index, and path transforms
+
+...
+
+#### KT() expressions
+
+...
+
+### Containment and key lookups
+
+...
+
+#### contains
+
+...
+
+#### contained_by
+
+...
+
+#### has_key
+
+...
+
+#### has_keys
+
+...
+
+#### has_any_keys
+
+...
+
+## Complex lookups with Q objects
+
+...
+
+## Comparing objects
+
+...
+
+## Deleting objects
+
+...
+
+## Copying model instances
+
+...
+
+## Updating multiple objects at once
+
+...
+
+## Related objects
+
+...
+
+### One-to-many relationships
+
+...
+
+#### Forward
+
+...
+
+#### Following relationships “backward”
+
+...
+
+#### Using a custom reverse manager
+
+...
+
+#### Additional methods to handle related objects
+
+...
+
+### Many-to-many relationships
+
+...
+
+### One-to-one relationships
+
+...
+
+### How are the backward relationships possible?
+
+...
+
+### Queries over related objects
+
+...
+
+## Falling back to raw SQL
+
+...
+```
+
+Maintenance note:
+> WIP sectioning ieu, tinggal `ngeginiin`,
