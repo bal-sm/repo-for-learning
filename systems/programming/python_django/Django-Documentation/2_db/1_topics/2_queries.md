@@ -496,9 +496,20 @@ Maintenance note:
   - By the way,
     
     Me:
-    > I'm going out tonight.
+    > ~~I'm going out tonight.~~ ~~Nice.~~
 
-    ...
+    Them:
+    > If you don’t provide a lookup type – that is, if your keyword argument doesn’t contain a double underscore – the lookup type is assumed to be `exact`.
+    >
+    > For example, the following two statements are equivalent:
+
+    ```python
+    >>> Blog.objects.get(id__exact=14)  # Explicit form
+    >>> Blog.objects.get(id=14)  # __exact is implied
+    ```
+
+    Them:
+    > This is **for convenience**, because exact lookups are the common case.
   
   ...
 
