@@ -509,8 +509,45 @@ Maintenance note:
     ```
 
     Them:
-    > This is **for convenience**, because exact lookups are the common case.
-  
-  ...
+    > This is **for convenience**, because **`exact`** lookups are the common case.
+- `iexact`
+  - A case-insensitive match.
+    - > A=a, B=b, ....
+  - So, the query:
+
+    ```python
+    >>> Blog.objects.get(name__iexact="beatles blog")
+    ```
+
+    Them:
+    > Would match a `Blog` titled **"Beatles Blog"**, **"beatles blog"**, or even **"BeAtlES blOG"**.
+- `contains`
+  - Case-sensitive (version of) containment test.
+  - For example:
+
+    ```python
+    Entry.objects.get(headline__contains="Lennon")
+    ```
+
+  - Roughly translates to this SQL:
+
+    ```sql
+    SELECT ... WHERE headline LIKE '%Lennon%';
+    ```
+
+    Them:
+    > Note this will match the `headline` **'Today Lennon honored'** ~~but not *'today lennon honored'*~~.
+- `icontains`
+  - > versi case-insensitive dari `contains`
+- `startswith`, `endswith`
+  - Starts-with and ends-with search, respectively.
+  - `istartswith` and `iendswith`
+    - > the case-insensitive versions.
+
+Them:
+> Again, this only scratches the surface. A complete reference can be found in the [field lookup reference](https://docs.djangoproject.com/en/5.0/ref/models/querysets/#field-lookups).
+
+Maintenance note:
+> dupe biar inget, rangkum tea.
 
 ...
