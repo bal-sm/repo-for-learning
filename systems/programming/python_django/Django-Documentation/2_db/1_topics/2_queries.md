@@ -689,6 +689,3 @@ Maintenance note:
 ## Falling back to raw SQL
 
 ...
-
-Maintenance note:
-> ~~WIP sectioning ieu, tinggal `ngeginiin`~~, udah deh.
