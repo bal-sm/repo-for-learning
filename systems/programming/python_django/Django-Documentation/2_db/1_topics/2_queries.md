@@ -342,7 +342,7 @@ Them, important / skip ykiyk:
 Them:
 > Most of the time you’ll use `all()`, `get()`, `filter()` and `exclude()` when you need to look up objects from the database. However, that’s far from all there is; see the [`QuerySet` API Reference](../2_ref_slash_bookmarks/1_models/10_querysets/2_queryset_api_slash_bookmarks.md) for a complete list of all the various `QuerySet` methods.
 
-## Limiting `QuerySet`s — Mahmuda's version
+### Limiting `QuerySet`s — Mahmuda's version
 
 Mine, important:
 > Skip aj gpp, da.
@@ -470,5 +470,84 @@ blog_id # ⏎
 Entry.objects.filter(blog_id="sixty_nine")
 # TypeError, 'cause invalid keyword argument
 ```
+
+---
+
+Them:
+> The database API supports about two dozen lookup types; a complete reference can be found in the [field lookup reference](https://docs.djangoproject.com/en/5.0/ref/models/querysets/#field-lookups). To give you a taste of what’s available, here’s some of the more common lookups you’ll probably use:
+
+Maintenance note:
+> Jangan lupa rangkum "field lookup reference" (bookmark-kin maksudnya).
+
+- `exact`
+  - An “exact” match.
+  - Example:
+
+    ```python
+    >>> Entry.objects.get(headline__exact="Cat bites dog")
+    ```
+
+  - Would generate SQL along these lines:
+
+    ```sql
+    SELECT ... WHERE headline = 'Cat bites dog';
+    ```
+  
+  - By the way,
+    
+    Me:
+    > ~~I'm going out tonight.~~ ~~Nice.~~
+
+    Them:
+    > If you don’t provide a lookup type – that is, if your keyword argument doesn’t contain a double underscore – the lookup type is assumed to be `exact`.
+    >
+    > For example, the following two statements are equivalent:
+
+    ```python
+    >>> Blog.objects.get(id__exact=14)  # Explicit form
+    >>> Blog.objects.get(id=14)  # __exact is implied
+    ```
+
+    Them:
+    > This is **for convenience**, because **`exact`** lookups are the common case.
+- `iexact`
+  - A case-insensitive match.
+    - > A=a, B=b, ....
+  - So, the query:
+
+    ```python
+    >>> Blog.objects.get(name__iexact="beatles blog")
+    ```
+
+    Them:
+    > Would match a `Blog` titled **"Beatles Blog"**, **"beatles blog"**, or even **"BeAtlES blOG"**.
+- `contains`
+  - Case-sensitive (version of) containment test.
+  - For example:
+
+    ```python
+    Entry.objects.get(headline__contains="Lennon")
+    ```
+
+  - Roughly translates to this SQL:
+
+    ```sql
+    SELECT ... WHERE headline LIKE '%Lennon%';
+    ```
+
+    Them:
+    > Note this will match the `headline` **'Today Lennon honored'** ~~but not *'today lennon honored'*~~.
+- `icontains`
+  - > versi case-insensitive dari `contains`
+- `startswith`, `endswith`
+  - Starts-with and ends-with search, respectively.
+  - `istartswith` and `iendswith`
+    - > the case-insensitive versions.
+
+Them:
+> Again, this only scratches the surface. A complete reference can be found in the [field lookup reference](https://docs.djangoproject.com/en/5.0/ref/models/querysets/#field-lookups).
+
+Maintenance note:
+> dupe biar inget, rangkum tea.
 
 ...
