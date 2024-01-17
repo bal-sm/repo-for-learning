@@ -588,7 +588,7 @@ Maintenance note:
 
 ## Querying `JSONField`
 
-... (isi `♯♯♯` nya)
+... (isi `♯♯♯` -> `♯♯♯♯` nya)
 
 ## ...
 
