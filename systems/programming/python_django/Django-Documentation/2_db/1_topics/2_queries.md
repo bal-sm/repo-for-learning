@@ -550,4 +550,46 @@ Them:
 Maintenance note:
 > dupe biar inget, rangkum tea.
 
+### Lookups that span relationships
+
+...
+
+#### Spanning multi-valued relationships
+
+...
+
+### Filters can reference fields on the model
+
+...
+
+### Expressions can reference transforms
+
+...
+
+### The `pk` lookup shortcut
+
+...
+
+### Escaping percent signs and underscores in `LIKE` statements
+
+...
+
+### Caching and `QuerySet`s
+
+...
+
+#### When `QuerySet`s are not cached
+
+...
+
+## Asynchronous queries
+
+... (isi `♯♯♯` nya)
+
+## Querying `JSONField`
+
+... (isi `♯♯♯` nya)
+
+## ...
+
 ...
