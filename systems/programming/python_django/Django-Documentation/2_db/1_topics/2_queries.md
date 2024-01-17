@@ -413,6 +413,62 @@ Them:
 
 ### Field lookups — Mahmuda's version
 
-...
+Them, skip:
+> - Field lookups are how you specify the meat of an SQL `WHERE` clause. 
+>   - They’re specified as keyword arguments to the `QuerySet` methods `filter()`, `exclude()` and `get()`.
+
+Basic lookups keyword arguments take the form:
+
+```python
+field__lookuptype=value. 
+```
+
+(That’s a double-underscore). 
+
+For example:
+
+```python
+>>> Entry.objects.filter(pub_date__lte="2006-01-01")
+```
+
+translates (roughly) into the following SQL:
+
+```sql
+SELECT * FROM blog_entry WHERE pub_date <= '2006-01-01';
+```
+
+Them, skip:
+> How this is possible
+>
+> Python has the ability to define functions that accept arbitrary name-value arguments whose names and values are evaluated at runtime. For more information, see [Keyword Arguments](https://docs.python.org/3/tutorial/controlflow.html#tut-keywordargs) in the official Python tutorial.
+
+---
+
+Harus kayak gini:
+
+```python
+field-tea__lookuptype=value. 
+```
+
+Nah,
+
+```
+field-tea = field-specified-in-a-lookup = model-field
+```
+
+Kecuali, kalo berupa `ForeignKey`:
+
+```python
+ForeignKeyField_id # = contain the raw value of the foreign model’s primary key # ⏎
+blog_id # ⏎
+>>> Entry.objects.filter(blog_id=4)
+```
+
+---
+
+```python
+Entry.objects.filter(blog_id="sixty_nine")
+# TypeError, 'cause invalid keyword argument
+```
 
 ...
