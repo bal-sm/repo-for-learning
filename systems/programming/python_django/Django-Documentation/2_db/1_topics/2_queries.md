@@ -342,7 +342,7 @@ Them, important / skip ykiyk:
 Them:
 > Most of the time you’ll use `all()`, `get()`, `filter()` and `exclude()` when you need to look up objects from the database. However, that’s far from all there is; see the [`QuerySet` API Reference](../2_ref_slash_bookmarks/1_models/10_querysets/2_queryset_api_slash_bookmarks.md) for a complete list of all the various `QuerySet` methods.
 
-## Limiting `QuerySet`s — Mahmuda's version
+### Limiting `QuerySet`s — Mahmuda's version
 
 Mine, important:
 > Skip aj gpp, da.
@@ -411,7 +411,7 @@ This is roughly equivalent to:
 Them:
 > Note, however, that the first of these will raise `IndexError` while the second will raise `DoesNotExist` if no objects match the given criteria. See `get()` for more details.
 
-## Field lookups — Mahmuda's version
+### Field lookups — Mahmuda's version
 
 Them, skip:
 > - Field lookups are how you specify the meat of an SQL `WHERE` clause. 
