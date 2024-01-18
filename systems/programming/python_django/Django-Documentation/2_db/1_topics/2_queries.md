@@ -584,10 +584,16 @@ Learning note:
         - Returned: that one object
 
 - If:
+  
+  Them, remove kalo udah:
+  > If you are filtering across multiple relationships and one of the intermediate models doesn’t have a value that meets the filter condition, Django will treat it as if there is an empty (all values are `NULL`), but valid, object there. All this means is that no error will be raised. For example, in this filter:
 
   ```python
   Blog.objects.filter(entry__authors__name="Lennon")
   ```
+
+  Them, remove kalo udah:
+  > (if there was a related `Author` model), if there was no `author` associated with an entry, it would be treated as if there was also no `name` attached, rather than raising an error because of the missing `author`. ..
 
   - Tapi:
     - related `Author` ✔️ / `authors` adaan
