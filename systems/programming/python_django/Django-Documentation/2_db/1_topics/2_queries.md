@@ -17,7 +17,9 @@ class Blog(models.Model):
     name = models.CharField(max_length=100)
     tagline = models.TextField()
 
-    def __str__(self):
+    def __str__(self):    - ~~related `Author` ✔️ / `authors` adaan~~
+    - ~~`Author` with `name` = `Lennon` ❌~~
+
         return self.name
 
 
@@ -550,9 +552,74 @@ Them:
 Maintenance note:
 > dupe biar inget, rangkum tea.
 
-### Lookups that span relationships
+### Lookups that span relationships — Mahmuda's version
 
-...
+Them:
+> Django offers a powerful and intuitive way to “follow” relationships in lookups, taking care of the SQL **`JOIN`**s for you automatically, behind the scenes.
+
+Masih them:
+> To span a relationship, use the field name of related fields across models, separated by double underscores, until you get to the field you want.
+
+Learning note:
+> Ovt masalah formatting note eta, cuman da saya teh utama prakteknya. Jadi gini udah cukup: ..
+
+`foreignkey_field__foreignkey_field__field` (dst.)
+
+---
+
+- For example:
+
+  ```python
+  >>> Entry.objects.filter(blog__name="Beatles Blog")
+  ```
+
+- Jangan lupa ada, reverse-nya juga gening:
+  - `related_query_name=entry`
+  - Misal:
+
+    ```python
+    >>> Blog.objects.filter(entry__headline__contains="Lennon")
+    ```
+    
+    - Terus:
+      - `Entry` whose `headline` contains `Lennon`, ada 1 objek
+        - Returned: that one object
+
+- If:
+  
+  Them, remove kalo udah:
+  > If you are filtering across multiple relationships and one of the intermediate models doesn’t have a value that meets the filter condition, Django will treat it as if there is an empty (all values are `NULL`), but valid, object there. All this means is that no error will be raised. For example, in this filter:
+
+  ```python
+  Blog.objects.filter(entry__authors__name="Lennon")
+  ```
+
+  Them, remove kalo udah:
+  > , if there was no `author` associated with an entry, it would be treated as if there was also no `name` attached, rather than raising an error because of the missing `author`. ..
+
+  - Terus:
+    - `authors` ❌ (gak ada sama sekali)
+      - returned: empty `QuerySet`, rather an error because of the missing `author`.
+    - `authors` ✔️, but `authors` with `Lennon` as `name` ❌
+      - returned: empty `QuerySet` juga.
+
+  - masalah `isnull`:
+
+    Them:
+    > The only case where it might be confusing is if you are using `isnull`. Thus:
+    > 
+    > ```python
+    > Blog.objects.filter(entry__authors__name__isnull=True)
+    > ```
+    > 
+    > will return `Blog` objects that have an empty `name` on the `author` and also those which have an empty `author` on the `entry`. If you don’t want those latter objects, you could write:
+    > 
+    > ```python
+    > Blog.objects.filter(entry__authors__isnull=False, entry__authors__name__isnull=True)
+    > ```
+
+    Mine, my feedback nanti kirim meureun:
+    > Gak dikasih tau **"misalnya"** soalnya gak ada attribute `null` di field `name` of `Author`.
 
 #### Spanning multi-valued relationships
 
