@@ -595,9 +595,7 @@ Learning note:
   Them, remove kalo udah:
   > , if there was no `author` associated with an entry, it would be treated as if there was also no `name` attached, rather than raising an error because of the missing `author`. ..
 
-  - ~~Tapi~~ Terus:
-    - ~~related `Author` ✔️ / `authors` adaan~~
-    - ~~`Author` with `name` = `Lennon` ❌~~
+  - Terus:
     - `authors` ❌ (gak ada sama sekali)
       - returned: empty `QuerySet`, rather an error because of the missing `author`.
     - `authors` ✔️, but `authors` with `Lennon` as `name` ❌
