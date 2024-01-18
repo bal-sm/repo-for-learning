@@ -593,7 +593,7 @@ Learning note:
   ```
 
   Them, remove kalo udah:
-  > (if there was a related `Author` model), if there was no `author` associated with an entry, it would be treated as if there was also no `name` attached, rather than raising an error because of the missing `author`. ..
+  > , if there was no `author` associated with an entry, it would be treated as if there was also no `name` attached, rather than raising an error because of the missing `author`. ..
 
   - Tapi:
     - related `Author` ✔️ / `authors` adaan
