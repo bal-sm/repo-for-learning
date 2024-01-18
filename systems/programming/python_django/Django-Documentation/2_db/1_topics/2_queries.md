@@ -579,6 +579,20 @@ Learning note:
     >>> Blog.objects.filter(entry__headline__contains="Lennon")
     ```
 
+- If:
+
+  ```python
+  Blog.objects.filter(entry__authors__name="Lennon")
+  ```
+
+  - Tapi:
+    - related `Author` ✔️ / `authors` adaan
+    - `Author` with `name` = `Lennon` ❌
+
+  ...
+  
+  Me:
+  > Kieu kan ya bentar.
 ...
 
 #### Spanning multi-valued relationships
