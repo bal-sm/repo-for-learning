@@ -595,13 +595,19 @@ Learning note:
   Them, remove kalo udah:
   > , if there was no `author` associated with an entry, it would be treated as if there was also no `name` attached, rather than raising an error because of the missing `author`. ..
 
-  - Tapi:
+  - ~~Tapi~~ Terus:
     - ~~related `Author` ✔️ / `authors` adaan~~
     - ~~`Author` with `name` = `Lennon` ❌~~
+    - `authors` ❌ (gak ada sama sekali)
+      - returned: empty `QuerySet`, rather an error because of the missing `author`.
+    - `authors` ✔️, but `authors` with `Lennon` as `name` ❌
+      - returned: empty `QuerySet` juga.
 
   ...
+
   Me:
-  > Kieu kan ya bentar.
+  > Kieu kan ya bentar. Tuh rada mending.
+
 ...
 
 #### Spanning multi-valued relationships
