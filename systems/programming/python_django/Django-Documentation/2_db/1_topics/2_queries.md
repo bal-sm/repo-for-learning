@@ -603,9 +603,23 @@ Learning note:
     - `authors` ✔️, but `authors` with `Lennon` as `name` ❌
       - returned: empty `QuerySet` juga.
 
-  ...
+  - masalah `isnull`:
 
-...
+    Them:
+    > The only case where it might be confusing is if you are using `isnull`. Thus:
+    > 
+    > ```python
+    > Blog.objects.filter(entry__authors__name__isnull=True)
+    > ```
+    > 
+    > will return `Blog` objects that have an empty `name` on the `author` and also those which have an empty `author` on the `entry`. If you don’t want those latter objects, you could write:
+    > 
+    > ```python
+    > Blog.objects.filter(entry__authors__isnull=False, entry__authors__name__isnull=True)
+    > ```
+
+    Mine, my feedback nanti kirim meureun:
+    > Gak dikasih tau **"misalnya"** soalnya gak ada attribute `null` di field `name` of `Author`.
 
 #### Spanning multi-valued relationships
 
