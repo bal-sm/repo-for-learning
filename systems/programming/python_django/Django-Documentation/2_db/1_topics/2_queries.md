@@ -605,9 +605,6 @@ Learning note:
 
   ...
 
-  Me:
-  > Kieu kan ya bentar. Tuh rada mending. Udah da bagus.
-
 ...
 
 #### Spanning multi-valued relationships
