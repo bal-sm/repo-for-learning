@@ -550,7 +550,28 @@ Them:
 Maintenance note:
 > dupe biar inget, rangkum tea.
 
-### Lookups that span relationships
+### Lookups that span relationships — Mahmuda's version
+
+Them:
+> Django offers a powerful and intuitive way to “follow” relationships in lookups, taking care of the SQL **`JOIN`**s for you automatically, behind the scenes.
+
+Masih them:
+> To span a relationship, use the field name of related fields across models, separated by double underscores, until you get to the field you want.
+
+Learning note:
+> Ovt masalah formatting note eta, cuman da saya teh utama prakteknya. Jadi gini udah cukup: ..
+
+`foreignkey_field__foreignkey_field__field` (dst.)
+
+---
+
+For example:
+
+```python
+>>> Entry.objects.filter(blog__name="Beatles Blog")
+```
+
+Jangan lupa ada, reverse-nya juga gening:
 
 ...
 
