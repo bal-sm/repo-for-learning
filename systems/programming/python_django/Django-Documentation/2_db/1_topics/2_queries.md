@@ -565,19 +565,19 @@ Learning note:
 
 ---
 
-For example:
+- For example:
 
-```python
->>> Entry.objects.filter(blog__name="Beatles Blog")
-```
+  ```python
+  >>> Entry.objects.filter(blog__name="Beatles Blog")
+  ```
 
-Jangan lupa ada, reverse-nya juga gening:
+- Jangan lupa ada, reverse-nya juga gening:
+  - `related_query_name=entry`
+  - Misal:
 
-`related_query_name=entry`
-
-```python
->>> Blog.objects.filter(entry__headline__contains="Lennon")
-```
+    ```python
+    >>> Blog.objects.filter(entry__headline__contains="Lennon")
+    ```
 
 ...
 
