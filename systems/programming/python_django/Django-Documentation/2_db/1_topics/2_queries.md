@@ -573,6 +573,12 @@ For example:
 
 Jangan lupa ada, reverse-nya juga gening:
 
+`related_query_name=entry`
+
+```python
+>>> Blog.objects.filter(entry__headline__contains="Lennon")
+```
+
 ...
 
 #### Spanning multi-valued relationships
