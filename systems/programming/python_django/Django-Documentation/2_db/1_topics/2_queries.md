@@ -17,7 +17,9 @@ class Blog(models.Model):
     name = models.CharField(max_length=100)
     tagline = models.TextField()
 
-    def __str__(self):
+    def __str__(self):    - ~~related `Author` ✔️ / `authors` adaan~~
+    - ~~`Author` with `name` = `Lennon` ❌~~
+
         return self.name
 
 
@@ -604,7 +606,7 @@ Learning note:
   ...
 
   Me:
-  > Kieu kan ya bentar. Tuh rada mending.
+  > Kieu kan ya bentar. Tuh rada mending. Udah da bagus.
 
 ...
 
