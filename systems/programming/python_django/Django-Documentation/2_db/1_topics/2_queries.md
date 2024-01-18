@@ -578,6 +578,10 @@ Learning note:
     ```python
     >>> Blog.objects.filter(entry__headline__contains="Lennon")
     ```
+    
+    - Terus:
+      - `Entry` whose `headline` contains `Lennon`, ada 1 objek
+        - Returned: that one object
 
 - If:
 
@@ -590,7 +594,6 @@ Learning note:
     - `Author` with `name` = `Lennon` ❌
 
   ...
-  
   Me:
   > Kieu kan ya bentar.
 ...
