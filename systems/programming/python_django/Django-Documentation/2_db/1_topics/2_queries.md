@@ -636,7 +636,7 @@ From Google Translate:
 >   - ~~Spaniard. (wut)~~
 
 Mine, learning note:
-> Mari kita pake approach "langsung praktek" lagi.
+> Mari kita pake approach ~~"langsung praktek" lagi~~ "mari kita bedah".
 
 - Exhibit A:
 
@@ -664,6 +664,74 @@ Mine, learning note:
     - At least have **one** entry which contains `Lennon` in its headline,
     - and those blogs that are selected, have at least one entry from `2008`.
     - > harus bikin rating bangga/enggak bangga euy, buat tiap "Mahmuda's version", maintenance note.
+
+Mine:
+> Nah sekarang prakteknya.
+
+- > Perkiraan hasil dari queries-nya apabila ada kontennya.
+  - Suppose:
+    - there is only one blog:
+      - that has both entries:
+        - entries containing `Lennon`, **and**
+        - entries from `2008`.
+      - but those entries different to each other:
+        - none of the entries:
+          - from `2008` contained;
+          - `Lennon`.
+  - The Exhibit A:
+    - would not return any blogs;
+  - but the Exhibit B:
+    - would return that one blog;
+    - > soalnya:
+      - `Blog`s dengan `entry__headline__contains="Lennon"` ✔️ (ada)
+      - > terus blogs di atas teh, "punya" `entry__pub_date__year=2008` ✔️ (juga)
+  - > udahlah ada `Q` juga lagi. pokoknya inget bedanya `and` sama `or`.
+
+Them, skip aja:
+> **Note**
+>
+> As the second (more permissive) query chains multiple filters, it performs multiple joins to the primary model, potentially yielding duplicates.
+>
+> ```python
+> >>> from datetime import date
+> >>> beatles = Blog.objects.create(name="Beatles Blog")
+> >>> pop = Blog.objects.create(name="Pop Music Blog")
+> >>> Entry.objects.create(
+> ...     blog=beatles,
+> ...     headline="New Lennon Biography",
+> ...     pub_date=date(2008, 6, 1),
+> ... )
+> <Entry: New Lennon Biography>
+> >>> Entry.objects.create(
+> ...     blog=beatles,
+> ...     headline="New Lennon Biography in Paperback",
+> ...     pub_date=date(2009, 6, 1),
+> ... )
+> <Entry: New Lennon Biography in Paperback>
+> >>> Entry.objects.create(
+> ...     blog=pop,
+> ...     headline="Best Albums of 2008",
+> ...     pub_date=date(2008, 12, 15),
+> ... )
+> <Entry: Best Albums of 2008>
+> >>> Entry.objects.create(
+> ...     blog=pop,
+> ...     headline="Lennon Would Have Loved Hip Hop",
+> ...     pub_date=date(2020, 4, 1),
+> ... )
+> <Entry: Lennon Would Have Loved Hip Hop>
+> >>> Blog.objects.filter(
+> ...     entry__headline__contains="Lennon",
+> ...     entry__pub_date__year=2008,
+> ... )
+> <QuerySet [<Blog: Beatles Blog>]>
+> >>> Blog.objects.filter(
+> ...     entry__headline__contains="Lennon",
+> ... ).filter(
+> ...     entry__pub_date__year=2008,
+> ... )
+> <QuerySet [<Blog: Beatles Blog>, <Blog: Beatles Blog>, <Blog: Pop Music Blog]>
+> ```
 
 ...
 
