@@ -638,6 +638,33 @@ From Google Translate:
 Mine, learning note:
 > Mari kita pake approach "langsung praktek" lagi.
 
+- Exhibit A:
+
+  ```python
+  Blog.objects.filter(entry__headline__contains="Lennon", entry__pub_date__year=2008)
+  ```
+
+  - Select all blogs which fulfill these conditions:
+    - At least have **one** entry from `2008`,
+    - having (and) `Lennon` in its headline.
+    - *(the same entry satisfying **both** conditions)*
+
+- Exhibit B:
+
+  ```python
+  Blog.objects.filter(entry__headline__contains="Lennon").filter(
+      entry__pub_date__year=2008
+  )
+  ```
+
+  - Select all blogs which fulfill these conditions:
+    - ~~At least have **one** entry from `2008`,~~
+    - ~~and those blogs that are selected have at least one entry contains `Lennon` in its headline~~
+    - > oops.
+    - At least have **one** entry which contains `Lennon` in its headline,
+    - and those blogs that are selected, have at least one entry from `2008`.
+    - > harus bikin rating bangga/enggak bangga euy, buat tiap "Mahmuda's version", maintenance note.
+
 ...
 
 ### Filters can reference fields on the model
