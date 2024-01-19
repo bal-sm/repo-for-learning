@@ -886,9 +886,38 @@ This example finds the value of the highest rated entry and the total number of 
 ... )
 ```
 
-### The `pk` lookup shortcut
+### The `pk` lookup shortcut — Mahmuda's version
 
-...
+For convenience, Django provides a `pk` lookup shortcut, which stands for “primary key”.
+
+Mine, jadi, literally, with conditions:
+> `id`=`pk`.
+
+In the example `Blog` model, the primary key is the `id` field, so these three statements are equivalent:
+
+```python
+>>> Blog.objects.get(id__exact=14)  # Explicit form
+>>> Blog.objects.get(id=14)  # __exact is implied
+>>> Blog.objects.get(pk=14)  # pk implies id__exact
+```
+
+bla-bla-bla
+
+```python
+# Get blogs entries with id 1, 4 and 7
+>>> Blog.objects.filter(pk__in=[1, 4, 7])
+
+# Get all blog entries with id > 14
+>>> Blog.objects.filter(pk__gt=14)
+```
+
+bla-bla-bla
+
+```python
+>>> Entry.objects.filter(blog__id__exact=3)  # Explicit form
+>>> Entry.objects.filter(blog__id=3)  # __exact is implied
+>>> Entry.objects.filter(blog__pk=3)  # __pk implies __id__exact
+```
 
 ### Escaping percent signs and underscores in `LIKE` statements
 
