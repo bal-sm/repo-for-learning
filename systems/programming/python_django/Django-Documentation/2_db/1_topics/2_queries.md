@@ -926,7 +926,10 @@ bla-bla-bla
 Reasoning:
 > Lanjut nanti kalo udah SQL comprehensively.
 
-### Caching and `QuerySet`s
+### Caching and `QuerySet`s — Mahmuda's version (coming soon)
+
+Approach-nya:
+> Step-by-step + listing method tea.
 
 ...
 
