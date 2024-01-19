@@ -843,6 +843,12 @@ Them, (but whatever, I won't ever be a corporate slave, amen.):
 >
 > Oracle doesn’t support bitwise XOR operation.
 
+Read more, tentunya:
+> - [`F()` expressions](https://docs.djangoproject.com/en/5.0/ref/models/expressions/#django.db.models.F)
+> - [`timedelta`](https://docs.python.org/3/library/datetime.html#datetime.timedelta)
+>
+> Nanti kalo udah dirangkum, ubah, maintenance note.
+
 ### Expressions can reference transforms
 
 ...
