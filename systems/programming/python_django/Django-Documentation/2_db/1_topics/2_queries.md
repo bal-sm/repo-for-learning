@@ -663,7 +663,9 @@ Mine, learning note:
     - > oops.
     - At least have **one** entry which contains `Lennon` in its headline,
     - and those blogs that are selected, have at least one entry from `2008`.
-    - > harus bikin rating bangga/enggak bangga euy, buat tiap "Mahmuda's version", maintenance note.
+
+Mine, learning + maintenance note:
+> harus bikin rating bangga/enggak bangga euy, buat tiap "Mahmuda's version", ~~tapi yang ini enggak hehe `:(`~~ just kidding, bagus loh ini cara ngerangkumnya, karena intricate jadi dijelasinnya "per line", cuman memang masih bisa di-improved.
 
 Mine:
 > Nah sekarang prakteknya.
