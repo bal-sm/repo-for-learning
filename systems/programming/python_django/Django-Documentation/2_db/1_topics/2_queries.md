@@ -919,9 +919,12 @@ bla-bla-bla
 >>> Entry.objects.filter(blog__pk=3)  # __pk implies __id__exact
 ```
 
-### Escaping percent signs and underscores in `LIKE` statements
+### ~~Escaping percent signs and underscores in `LIKE` statements~~
 
-...
+~~...~~ _Skipped_
+
+Reasoning:
+> Lanjut nanti kalo udah SQL comprehensively.
 
 ### Caching and `QuerySet`s
 
