@@ -621,7 +621,19 @@ Learning note:
     Mine, my feedback nanti kirim meureun:
     > Gak dikasih tau **"misalnya"** soalnya gak ada attribute `null` di field `name` of `Author`.
 
-#### Spanning multi-valued relationships
+#### Spanning multi-valued relationships — Mahmuda's version
+
+From Google Translate:
+> _Span_
+>
+> - as noun:
+>   - the full extent of something from end to end; the amount of space that something covers.
+> - as verb:
+>   - (of a bridge, arch, etc.) extend from side to side of.
+> - as adjective:
+>   - see spick and span.
+> - ~~as abbreviation:~~
+>   - ~~Spaniard. (wut)~~
 
 ...
 
