@@ -786,7 +786,8 @@ Them:
 >>> Entry.objects.filter(number_of_comments__gt=F("number_of_pingbacks"))
 ```
 
-Tuh dari sini:
+Mine:
+> Tuh dari sini, `number_of_comments` dan `number_of_pingbacks`-nya:
 
 ```python
 ...
