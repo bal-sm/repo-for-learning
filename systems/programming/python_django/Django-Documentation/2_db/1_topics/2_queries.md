@@ -635,6 +635,9 @@ From Google Translate:
 > - ~~as abbreviation:~~
 >   - ~~Spaniard. (wut)~~
 
+Mine, learning note:
+> Mari kita pake approach "langsung praktek" lagi.
+
 ...
 
 ### Filters can reference fields on the model
