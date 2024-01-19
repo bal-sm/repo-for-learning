@@ -758,7 +758,44 @@ Them, skip aja:
 > )
 > ```
 
-### Filters can reference fields on the model
+### Reference fields on the model with `F()` expressions — Mahmuda's version
+
+Old title: "Filters can reference fields on the model"
+
+Them:
+> In the examples given so far, we have constructed filters that compare the value of a model field with a constant. But what if you want to compare the value of a model field with another field on the same model?
+
+Mine:
+> Kalau filters dipakai buat membandingkan konten dari model *field* dengan suatu konstan. Nah, `F()` ini bisa dipakai untuk "compare" field to field.
+
+Them:
+> Django provides `F` expressions to allow such comparisons. Instances of `F()` act as a reference to a model field within a query. These references can then be used in query filters to compare the values of two different fields on the same model instance.
+
+Mine:
+> `F("the-name-of-the-field")`
+>
+> terus bisa dipakai sebagai field lookup value tea, kayak gini:
+> 
+> `field-tea__lookuptype=F("the-name-of-the-field")`
+
+Them:
+> For example, to find a list of all blog entries that have had more comments than pingbacks, we construct an `F()` object to reference the pingback count, and use that `F()` object in the query:
+
+```python
+>>> from django.db.models import F
+>>> Entry.objects.filter(number_of_comments__gt=F("number_of_pingbacks"))
+```
+
+Tuh dari sini:
+
+```python
+...
+class Entry(models.Model):
+    ...
+    number_of_comments = models.IntegerField(default=0)
+    number_of_pingbacks = models.IntegerField(default=0)
+    ...
+```
 
 ...
 
