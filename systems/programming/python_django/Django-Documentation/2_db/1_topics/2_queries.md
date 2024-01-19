@@ -735,7 +735,28 @@ Them, skip aja:
 > <QuerySet [<Blog: Beatles Blog>, <Blog: Beatles Blog>, <Blog: Pop Music Blog]>
 > ```
 
-...
+Them, skip aja:
+> The behavior of `filter()` for queries that span multi-value relationships, as described above, is not implemented equivalently for `exclude()`. Instead, the conditions in a single `exclude()` call will not necessarily refer to the same item.
+> 
+> For example, the following query would exclude blogs that contain _both_ entries with `Lennon` in the headline _and_ entries published in `2008`:
+> 
+> ```python
+> Blog.objects.exclude(
+>     entry__headline__contains="Lennon",
+>     entry__pub_date__year=2008,
+> )
+> ```
+> 
+> However, unlike the behavior when using `filter()`, this will not limit blogs based on entries that satisfy both conditions. In order to do that, i.e. to select all blogs that do not contain entries published with `Lennon` that were published in `2008`, you need to make two queries:
+> 
+> ```python
+> Blog.objects.exclude(
+>     entry__in=Entry.objects.filter(
+>         headline__contains="Lennon",
+>         pub_date__year=2008,
+>     ),
+> )
+> ```
 
 ### Filters can reference fields on the model
 
