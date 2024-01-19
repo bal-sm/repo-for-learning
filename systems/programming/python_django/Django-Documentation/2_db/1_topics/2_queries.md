@@ -798,7 +798,50 @@ class Entry(models.Model):
     ...
 ```
 
-...
+---
+
+**Examples**
+
+Them:
+> Django supports the use of addition, subtraction, multiplication, division, modulo, and power arithmetic with `F()` objects, both with constants and with other `F()` objects. To find all the blog entries with more than _twice_ as many comments as pingbacks, we modify the query:
+
+```python
+>>> Entry.objects.filter(number_of_comments__gt=F("number_of_pingbacks") * 2)
+```
+
+Them:
+> To find all the entries where the rating of the entry is less than the sum of the pingback count and comment count, we would issue the query:
+
+```python
+>>> Entry.objects.filter(rating__lt=F("number_of_comments") + F("number_of_pingbacks"))
+```
+
+Them:
+> You can also use the double underscore notation to span relationships in an `F()` object. An `F()` object with a double underscore will introduce any joins needed to access the related object. For example, to retrieve all the entries where the author’s name is the same as the blog name, we could issue the query:
+
+```python
+>>> Entry.objects.filter(authors__name=F("blog__name"))
+```
+
+Them:
+> For date and date/time fields, you can add or subtract a `timedelta` object. The following would return all entries that were modified more than 3 days after they were published:
+
+```python
+>>> from datetime import timedelta
+>>> Entry.objects.filter(mod_date__gt=F("pub_date") + timedelta(days=3))
+```
+
+Them:
+> The `F()` objects support bitwise operations by `.bitand()`, `.bitor()`, `.bitxor()`, `.bitrightshift()`, and `.bitleftshift()`. For example:
+
+```python
+>>> F("somefield").bitand(16)
+```
+
+Them, (but whatever, I won't ever be a corporate slave, amen.):
+> Oracle
+>
+> Oracle doesn’t support bitwise XOR operation.
 
 ### Expressions can reference transforms
 
