@@ -621,27 +621,315 @@ Learning note:
     Mine, my feedback nanti kirim meureun:
     > Gak dikasih tau **"misalnya"** soalnya gak ada attribute `null` di field `name` of `Author`.
 
-#### Spanning multi-valued relationships
+#### Spanning multi-valued relationships — Mahmuda's version
 
+From Google Translate:
+> _Span_
+>
+> - as noun:
+>   - the full extent of something from end to end; the amount of space that something covers.
+> - as verb:
+>   - (of a bridge, arch, etc.) extend from side to side of.
+> - as adjective:
+>   - see spick and span.
+> - ~~as abbreviation:~~
+>   - ~~Spaniard. (wut)~~
+
+Mine, learning note:
+> Mari kita pake approach ~~"langsung praktek" lagi~~ "mari kita bedah".
+
+- Exhibit A:
+
+  ```python
+  Blog.objects.filter(entry__headline__contains="Lennon", entry__pub_date__year=2008)
+  ```
+
+  - Select all blogs which fulfill these conditions:
+    - At least have **one** entry from `2008`,
+    - having (and) `Lennon` in its headline.
+    - *(the same entry satisfying **both** conditions)*
+
+- Exhibit B:
+
+  ```python
+  Blog.objects.filter(entry__headline__contains="Lennon").filter(
+      entry__pub_date__year=2008
+  )
+  ```
+
+  - Select all blogs which fulfill these conditions:
+    - ~~At least have **one** entry from `2008`,~~
+    - ~~and those blogs that are selected have at least one entry contains `Lennon` in its headline~~
+    - > oops.
+    - At least have **one** entry which contains `Lennon` in its headline,
+    - and those blogs that are selected, have at least one entry from `2008`.
+
+Mine, learning + maintenance note:
+> harus bikin rating bangga/enggak bangga euy, buat tiap "Mahmuda's version", ~~tapi yang ini enggak hehe `:(`~~ just kidding, bagus loh ini cara ngerangkumnya, karena intricate jadi dijelasinnya "per line", cuman memang masih bisa di-improved.
+
+Mine:
+> Nah sekarang prakteknya.
+
+- > Perkiraan hasil dari queries-nya apabila ada kontennya.
+  - Suppose:
+    - there is only one blog:
+      - that has both entries:
+        - entries containing `Lennon`, **and**
+        - entries from `2008`.
+      - but those entries different to each other:
+        - none of the entries:
+          - from `2008` contained;
+          - `Lennon`.
+  - The Exhibit A:
+    - would not return any blogs;
+  - but the Exhibit B:
+    - would return that one blog;
+    - > soalnya:
+      - `Blog`s dengan `entry__headline__contains="Lennon"` ✔️ (ada)
+      - > terus blogs di atas teh, "punya" `entry__pub_date__year=2008` ✔️ (juga)
+  - > udahlah ada `Q` juga lagi. pokoknya inget bedanya `and` sama `or`.
+
+Them, skip aja:
+> **Note**
+>
+> As the second (more permissive) query chains multiple filters, it performs multiple joins to the primary model, potentially yielding duplicates.
+>
+> ```python
+> >>> from datetime import date
+> >>> beatles = Blog.objects.create(name="Beatles Blog")
+> >>> pop = Blog.objects.create(name="Pop Music Blog")
+> >>> Entry.objects.create(
+> ...     blog=beatles,
+> ...     headline="New Lennon Biography",
+> ...     pub_date=date(2008, 6, 1),
+> ... )
+> <Entry: New Lennon Biography>
+> >>> Entry.objects.create(
+> ...     blog=beatles,
+> ...     headline="New Lennon Biography in Paperback",
+> ...     pub_date=date(2009, 6, 1),
+> ... )
+> <Entry: New Lennon Biography in Paperback>
+> >>> Entry.objects.create(
+> ...     blog=pop,
+> ...     headline="Best Albums of 2008",
+> ...     pub_date=date(2008, 12, 15),
+> ... )
+> <Entry: Best Albums of 2008>
+> >>> Entry.objects.create(
+> ...     blog=pop,
+> ...     headline="Lennon Would Have Loved Hip Hop",
+> ...     pub_date=date(2020, 4, 1),
+> ... )
+> <Entry: Lennon Would Have Loved Hip Hop>
+> >>> Blog.objects.filter(
+> ...     entry__headline__contains="Lennon",
+> ...     entry__pub_date__year=2008,
+> ... )
+> <QuerySet [<Blog: Beatles Blog>]>
+> >>> Blog.objects.filter(
+> ...     entry__headline__contains="Lennon",
+> ... ).filter(
+> ...     entry__pub_date__year=2008,
+> ... )
+> <QuerySet [<Blog: Beatles Blog>, <Blog: Beatles Blog>, <Blog: Pop Music Blog]>
+> ```
+
+Them, skip aja:
+> The behavior of `filter()` for queries that span multi-value relationships, as described above, is not implemented equivalently for `exclude()`. Instead, the conditions in a single `exclude()` call will not necessarily refer to the same item.
+> 
+> For example, the following query would exclude blogs that contain _both_ entries with `Lennon` in the headline _and_ entries published in `2008`:
+> 
+> ```python
+> Blog.objects.exclude(
+>     entry__headline__contains="Lennon",
+>     entry__pub_date__year=2008,
+> )
+> ```
+> 
+> However, unlike the behavior when using `filter()`, this will not limit blogs based on entries that satisfy both conditions. In order to do that, i.e. to select all blogs that do not contain entries published with `Lennon` that were published in `2008`, you need to make two queries:
+> 
+> ```python
+> Blog.objects.exclude(
+>     entry__in=Entry.objects.filter(
+>         headline__contains="Lennon",
+>         pub_date__year=2008,
+>     ),
+> )
+> ```
+
+### Reference fields on the model with `F()` expressions — Mahmuda's version
+
+Old title: "Filters can reference fields on the model"
+
+Them:
+> In the examples given so far, we have constructed filters that compare the value of a model field with a constant. But what if you want to compare the value of a model field with another field on the same model?
+
+Mine:
+> Kalau filters dipakai buat membandingkan konten dari model *field* dengan suatu konstan. Nah, `F()` ini bisa dipakai untuk "compare" field to field.
+
+Them:
+> Django provides `F` expressions to allow such comparisons. Instances of `F()` act as a reference to a model field within a query. These references can then be used in query filters to compare the values of two different fields on the same model instance.
+
+Mine:
+> `F("the-name-of-the-field")`
+>
+> terus bisa dipakai sebagai field lookup value tea, kayak gini:
+> 
+> `field-tea__lookuptype=F("the-name-of-the-field")`
+
+Them:
+> For example, to find a list of all blog entries that have had more comments than pingbacks, we construct an `F()` object to reference the pingback count, and use that `F()` object in the query:
+
+```python
+>>> from django.db.models import F
+>>> Entry.objects.filter(number_of_comments__gt=F("number_of_pingbacks"))
+```
+
+Mine:
+> Tuh dari sini, `number_of_comments` dan `number_of_pingbacks`-nya:
+
+```python
 ...
+class Entry(models.Model):
+    ...
+    number_of_comments = models.IntegerField(default=0)
+    number_of_pingbacks = models.IntegerField(default=0)
+    ...
+```
 
-### Filters can reference fields on the model
+---
 
-...
+**Examples**
 
-### Expressions can reference transforms
+Them:
+> Django supports the use of addition, subtraction, multiplication, division, modulo, and power arithmetic with `F()` objects, both with constants and with other `F()` objects. To find all the blog entries with more than _twice_ as many comments as pingbacks, we modify the query:
 
-...
+```python
+>>> Entry.objects.filter(number_of_comments__gt=F("number_of_pingbacks") * 2)
+```
 
-### The `pk` lookup shortcut
+Them:
+> To find all the entries where the rating of the entry is less than the sum of the pingback count and comment count, we would issue the query:
 
-...
+```python
+>>> Entry.objects.filter(rating__lt=F("number_of_comments") + F("number_of_pingbacks"))
+```
 
-### Escaping percent signs and underscores in `LIKE` statements
+Them:
+> You can also use the double underscore notation to span relationships in an `F()` object. An `F()` object with a double underscore will introduce any joins needed to access the related object. For example, to retrieve all the entries where the author’s name is the same as the blog name, we could issue the query:
 
-...
+```python
+>>> Entry.objects.filter(authors__name=F("blog__name"))
+```
 
-### Caching and `QuerySet`s
+Them:
+> For date and date/time fields, you can add or subtract a `timedelta` object. The following would return all entries that were modified more than 3 days after they were published:
+
+```python
+>>> from datetime import timedelta
+>>> Entry.objects.filter(mod_date__gt=F("pub_date") + timedelta(days=3))
+```
+
+Them:
+> The `F()` objects support bitwise operations by `.bitand()`, `.bitor()`, `.bitxor()`, `.bitrightshift()`, and `.bitleftshift()`. For example:
+
+```python
+>>> F("somefield").bitand(16)
+```
+
+Them, (but whatever, I won't ever be a corporate slave, amen.):
+> Oracle
+>
+> Oracle doesn’t support bitwise XOR operation.
+
+Read more, tentunya:
+> - [`F()` expressions](https://docs.djangoproject.com/en/5.0/ref/models/expressions/#django.db.models.F)
+> - [`timedelta`](https://docs.python.org/3/library/datetime.html#datetime.timedelta)
+>
+> Nanti kalo udah dirangkum, ubah, maintenance note.
+
+### Expressions can reference transforms — Mahmuda's version
+
+Django supports using transforms in expressions.
+
+Mine:
+> Cuman sekedar **examples**.
+
+For example, to find all `Entry` objects published in the same year as they were last modified:
+
+```python
+>>> from django.db.models import F
+>>> Entry.objects.filter(pub_date__year=F("mod_date__year"))
+```
+
+To find the earliest year an entry was published, we can issue the query:
+
+```python
+>>> from django.db.models import Min
+>>> Entry.objects.aggregate(first_published_year=Min("pub_date__year"))
+```
+
+This example finds the value of the highest rated entry and the total number of comments on all entries for each year:
+
+```python
+>>> from django.db.models import OuterRef, Subquery, Sum
+>>> Entry.objects.values("pub_date__year").annotate(
+...     top_rating=Subquery(
+...         Entry.objects.filter(
+...             pub_date__year=OuterRef("pub_date__year"),
+...         )
+...         .order_by("-rating")
+...         .values("rating")[:1]
+...     ),
+...     total_comments=Sum("number_of_comments"),
+... )
+```
+
+### The `pk` lookup shortcut — Mahmuda's version
+
+For convenience, Django provides a `pk` lookup shortcut, which stands for “primary key”.
+
+Mine, jadi, literally, with conditions:
+> `id`=`pk`.
+
+In the example `Blog` model, the primary key is the `id` field, so these three statements are equivalent:
+
+```python
+>>> Blog.objects.get(id__exact=14)  # Explicit form
+>>> Blog.objects.get(id=14)  # __exact is implied
+>>> Blog.objects.get(pk=14)  # pk implies id__exact
+```
+
+bla-bla-bla
+
+```python
+# Get blogs entries with id 1, 4 and 7
+>>> Blog.objects.filter(pk__in=[1, 4, 7])
+
+# Get all blog entries with id > 14
+>>> Blog.objects.filter(pk__gt=14)
+```
+
+bla-bla-bla
+
+```python
+>>> Entry.objects.filter(blog__id__exact=3)  # Explicit form
+>>> Entry.objects.filter(blog__id=3)  # __exact is implied
+>>> Entry.objects.filter(blog__pk=3)  # __pk implies __id__exact
+```
+
+### ~~Escaping percent signs and underscores in `LIKE` statements~~
+
+~~...~~ _Skipped_
+
+Reasoning:
+> Lanjut nanti kalo udah SQL comprehensively.
+
+### Caching and `QuerySet`s — Mahmuda's version (coming soon)
+
+Approach-nya:
+> Step-by-step + listing method tea.
 
 ...
 
