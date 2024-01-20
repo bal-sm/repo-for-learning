@@ -926,10 +926,20 @@ bla-bla-bla
 Reasoning:
 > Lanjut nanti kalo udah SQL comprehensively.
 
-### Caching and `QuerySet`s — Mahmuda's version (coming soon)
+### Caching and `QuerySet`s — Mahmuda's version
 
 Approach-nya:
 > Step-by-step + listing method tea.
+
+- Each `QuerySet` contains a cache _to **minimize** *database* *access*_. 
+  - Understanding how it works will allow you to write the *most efficient code*.
+
+/
+
+Each `QuerySet` contains a cache to minimize database access. Understanding how it works will allow you to write the most efficient code.
+
+Mine, mildning note:
+> Which is better? Hm.
 
 ...
 
