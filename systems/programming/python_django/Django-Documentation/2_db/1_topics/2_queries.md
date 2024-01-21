@@ -942,7 +942,14 @@ Them:
 Mine, mildning note:
 > Which is better? Hm.
 
+---
+
+In a newly created `QuerySet`, the cache is empty. The first time a `QuerySet` is evaluated – and, hence, a database query happens – Django saves the query results in the `QuerySet`’s cache and returns the results that have been explicitly requested (e.g., the next element, if the `QuerySet` is being iterated over). Subsequent evaluations of the `QuerySet` reuse the cached results.
+
 ...
+
+Read more:
+> [`QuerySet`](https://docs.djangoproject.com/en/5.0/ref/models/querysets/#django.db.models.query.QuerySet)
 
 #### When `QuerySet`s are not cached
 
