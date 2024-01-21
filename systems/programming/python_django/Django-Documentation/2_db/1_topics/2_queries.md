@@ -936,12 +936,55 @@ Approach-nya:
 
 /
 
-Each `QuerySet` contains a cache to minimize database access. Understanding how it works will allow you to write the most efficient code.
+Them:
+> Each `QuerySet` contains a cache to minimize database access. Understanding how it works will allow you to write the most efficient code.
 
 Mine, mildning note:
 > Which is better? Hm.
 
-...
+---
+
+1. In a newly created `QuerySet`,
+   - the cache is **empty**. [ ].
+2. The first time a `QuerySet` is 
+   1. *evaluated* ✔️ – and, hence, 
+   2. a database query *happens* ✔️ – 
+   3. Django *saves* the query results in the **`QuerySet`’s cache** ✔️(✔️) and - 
+   4. *returns* the results that have been **explicitly requested** ✔️ 
+      > (e.g., the next element, if the `QuerySet` is being iterated over). 
+   5. *Subsequent evaluations* of the `QuerySet` **reuse** the cached results.
+
+Them:
+> Keep this caching behavior in mind, because **it may bite you** if you *don’t* use your `QuerySet`s **correctly**. For example, the following will create two `QuerySet`s, evaluate them, and throw them away:
+
+Lanjut,
+
+```python
+>>> print([e.headline for e in Entry.objects.all()]) # the 1st execution, hits the database.
+>>> print([e.pub_date for e in Entry.objects.all()]) # the 2nd execution, *also* **hits** the database, therefore **unnecessary** overhead.
+```
+
+- That means the same database query will be *executed* **twice**,
+  - effectively **doubling** your *database* **load**. 
+- Also, there’s a possibility the two lists:
+  - the before list,
+  - and the after list.
+  - may not *include* the **same** database records, 
+    - because an `Entry` may have been *added* or *deleted* in the split second **between the two requests**:
+      - the before list,
+      - the before list + irregulaties (added/deleted entries tea) = the after list.
+        - > bisa jadi race condition juga, tapi rada out of topic.
+
+To avoid this problem, **save** the `QuerySet` and reuse it:
+
+```python
+>>> queryset = Entry.objects.all()  # This is *saving* the **`QuerySet`**.
+>>> print([p.headline for p in queryset])  # Evaluate the query set.
+>>> print([p.pub_date for p in queryset])  # Reuse the cache from the evaluation.
+```
+
+Read more:
+> [`QuerySet`](https://docs.djangoproject.com/en/5.0/ref/models/querysets/#django.db.models.query.QuerySet)
 
 #### When `QuerySet`s are not cached
 
