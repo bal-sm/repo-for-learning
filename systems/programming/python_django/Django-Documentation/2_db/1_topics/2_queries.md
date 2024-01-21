@@ -964,8 +964,16 @@ Lanjut,
 >>> print([e.pub_date for e in Entry.objects.all()]) # the 2nd execution, *also* **hits** the database, therefore **unnecessary** overhead.
 ```
 
-Them, a note:
-> That means the same database query will be executed twice, effectively doubling your database load. Also, there’s a possibility the two lists may not include the same database records, because an `Entry` may have been added or deleted in the split second between the two requests.
+- That means the same database query will be *executed* **twice**,
+  - effectively **doubling** your *database* **load**. 
+- Also, there’s a possibility the two lists:
+  - the before list,
+  - and the after list.
+  - may not *include* the **same** database records, 
+    - because an `Entry` may have been *added* or *deleted* in the split second **between the two requests**:
+      - the before list,
+      - the before list + irregulaties (added/deleted entries tea) = the after list.
+        - > bisa jadi race condition juga, tapi rada out of topic.
 
 ...
 
