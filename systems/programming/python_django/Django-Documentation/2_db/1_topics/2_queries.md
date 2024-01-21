@@ -961,8 +961,11 @@ Lanjut,
 
 ```python
 >>> print([e.headline for e in Entry.objects.all()]) # the 1st execution, hits the database.
->>> print([e.pub_date for e in Entry.objects.all()]) # the 2nd execution, *also* **hits** the database, therefore unnecessary overhead.
+>>> print([e.pub_date for e in Entry.objects.all()]) # the 2nd execution, *also* **hits** the database, therefore **unnecessary** overhead.
 ```
+
+Them, a note:
+> That means the same database query will be executed twice, effectively doubling your database load. Also, there’s a possibility the two lists may not include the same database records, because an `Entry` may have been added or deleted in the split second between the two requests.
 
 ...
 
