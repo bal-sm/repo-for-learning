@@ -954,6 +954,16 @@ Mine, mildning note:
       > (e.g., the next element, if the `QuerySet` is being iterated over). 
    5. *Subsequent evaluations* of the `QuerySet` **reuse** the cached results.
 
+Them:
+> Keep this caching behavior in mind, because **it may bite you** if you *don’t* use your `QuerySet`s **correctly**. For example, the following will create two `QuerySet`s, evaluate them, and throw them away:
+
+Lanjut,
+
+```python
+>>> print([e.headline for e in Entry.objects.all()]) # the 1st execution, hits the database.
+>>> print([e.pub_date for e in Entry.objects.all()]) # the 2nd execution, *also* **hits** the database, therefore unnecessary overhead.
+```
+
 ...
 
 Read more:
