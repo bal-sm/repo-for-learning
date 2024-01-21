@@ -936,7 +936,8 @@ Approach-nya:
 
 /
 
-Each `QuerySet` contains a cache to minimize database access. Understanding how it works will allow you to write the most efficient code.
+Them:
+> Each `QuerySet` contains a cache to minimize database access. Understanding how it works will allow you to write the most efficient code.
 
 Mine, mildning note:
 > Which is better? Hm.
