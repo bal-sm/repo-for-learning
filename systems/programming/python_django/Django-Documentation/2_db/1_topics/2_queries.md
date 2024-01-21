@@ -975,7 +975,13 @@ Lanjut,
       - the before list + irregulaties (added/deleted entries tea) = the after list.
         - > bisa jadi race condition juga, tapi rada out of topic.
 
-...
+To avoid this problem, **save** the `QuerySet` and reuse it:
+
+```python
+>>> queryset = Entry.objects.all()  # This is *saving* the **`QuerySet`**.
+>>> print([p.headline for p in queryset])  # Evaluate the query set.
+>>> print([p.pub_date for p in queryset])  # Reuse the cache from the evaluation.
+```
 
 Read more:
 > [`QuerySet`](https://docs.djangoproject.com/en/5.0/ref/models/querysets/#django.db.models.query.QuerySet)
