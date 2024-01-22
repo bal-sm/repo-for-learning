@@ -1003,17 +1003,7 @@ Read more:
          - will **not** *populate* the *cache*.
 
 - For example, 
-  - _repeatedly_ *getting* a *certain* **index** in a queryset object:
-    - query based on index,
-      - > on Django side.
-    - hits the database,
-      - > on SQL (technically) side.
-    - print/whatever the value is,
-    - query based on index *again*,
-    - hits the database *again*,
-      - > it's the second hits now.
-    - print/whatever the value is *again*.
-  - will **query** the *database* each time:
+  - _repeatedly_ *getting* a *certain* **index** in a queryset object will **query** the *database* each time:
 
     ```python
     >>> queryset = Entry.objects.all()
