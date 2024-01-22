@@ -1029,7 +1029,15 @@ Read more:
     >>> list(queryset)
     ```
 
-...
+Them:
+> - Simply **printing** the 'queryset':
+>   - will not **populate** the cache ❌ 
+>     - > therefore kosong, [ ].
+> - This is because *the call* to `__repr__()` 
+>   - only **returns** a slice of the entire queryset.
+
+Mine, a question, learning note:
+> Tapi bukannya print sama cuman call di shell itu beda? Nanti kita cek aja
 
 ## Asynchronous queries
 
