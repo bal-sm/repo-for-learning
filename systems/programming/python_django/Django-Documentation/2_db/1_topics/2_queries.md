@@ -1002,13 +1002,24 @@ Read more:
            - > read again, [Limiting `QuerySet`s](#limiting-querysets--mahmudas-version)
          - will **not** *populate* the *cache*.
 
-For example, _repeatedly_ *getting* a *certain* **index** in a queryset object will **query** the *database* each time:
+- For example, 
+  - _repeatedly_ *getting* a *certain* **index** in a queryset object:
+    - query based on index,
+      - > on Django side.
+    - hits the database,
+      - > on SQL (technically) side.
+    - print/whatever the value is,
+    - query based on index *again*,
+    - hits the database *again*,
+      - > it's the second hits now.
+    - print/whatever the value is *again*.
+  - will **query** the *database* each time:
 
-```python
->>> queryset = Entry.objects.all()
->>> print(queryset[5])  # Queries the database
->>> print(queryset[5])  # Queries the database again
-```
+    ```python
+    >>> queryset = Entry.objects.all()
+    >>> print(queryset[5])  # Queries the database
+    >>> print(queryset[5])  # Queries the database again
+    ```
 
 ...
 
