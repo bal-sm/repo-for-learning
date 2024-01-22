@@ -986,7 +986,21 @@ To avoid this problem, **save** the `QuerySet` and reuse it:
 Read more:
 > [`QuerySet`](https://docs.djangoproject.com/en/5.0/ref/models/querysets/#django.db.models.query.QuerySet)
 
-#### When `QuerySet`s are not cached
+#### When `QuerySet`s are **not cached** — Mahmuda's version
+
+- Querysets *do not always* **cache** *their* **results**.
+  1. When **evaluating** only _part_ of the queryset,
+  2. the cache is **checked**,
+     - but if it is not populated
+       - (cache not found ❌)
+     - then the items *returned* by the **subsequent** query are not **cached**. 
+       - **Specifically**, this means that [limiting the queryset](#limiting-querysets--mahmudas-version) using:
+         - an array slice or
+           - ex: `Things.object.all()[5:10]`.
+         - an index.
+           - ex: `Things.object.all()[2]`
+           - > read again, [Limiting `QuerySet`s](#limiting-querysets--mahmudas-version)
+         - will **not** *populate* the *cache*.
 
 ...
 
