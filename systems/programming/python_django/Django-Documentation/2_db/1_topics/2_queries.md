@@ -1002,6 +1002,14 @@ Read more:
            - > read again, [Limiting `QuerySet`s](#limiting-querysets--mahmudas-version)
          - will **not** *populate* the *cache*.
 
+For example, _repeatedly_ *getting* a *certain* **index** in a queryset object will **query** the *database* each time:
+
+```python
+>>> queryset = Entry.objects.all()
+>>> print(queryset[5])  # Queries the database
+>>> print(queryset[5])  # Queries the database again
+```
+
 ...
 
 ## Asynchronous queries
