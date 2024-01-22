@@ -1011,6 +1011,15 @@ Read more:
     >>> print(queryset[5])  # Queries the database again
     ```
 
+  - However, if the entire queryset *has already* been *evaluated*, the cache will be **checked** instead:
+
+    ```python
+    >>> queryset = Entry.objects.all()
+    >>> [entry for entry in queryset]  # Queries the database
+    >>> print(queryset[5])  # Uses cache
+    >>> print(queryset[5])  # Uses cache
+    ```
+
 ...
 
 ## Asynchronous queries
