@@ -1020,6 +1020,15 @@ Read more:
     >>> print(queryset[5])  # Uses cache
     ```
 
+  - Here are some examples of other actions that will *result* in the **entire 'queryset'** being **evaluated** and therefore **populate** the cache:
+
+    ```python
+    >>> [entry for entry in queryset]
+    >>> bool(queryset)
+    >>> entry in queryset
+    >>> list(queryset)
+    ```
+
 ...
 
 ## Asynchronous queries
