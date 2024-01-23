@@ -1054,7 +1054,14 @@ Mine, a question, learning note:
     - has an asynchronous variant (`aget()` or `adelete()`), 
     - and when you **iterate** over *results*, you can use asynchronous iteration (`async for`) instead.
 
-### Query iteration
+### Query iteration — Mahmuda's version
+
+...
+
+```python
+async for entry in Authors.objects.filter(name__startswith="A"):
+    ...
+```
 
 ...
 
