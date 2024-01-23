@@ -1039,9 +1039,20 @@ Them:
 Mine, a question, learning note:
 > Tapi bukannya print sama cuman call di shell itu beda? Nanti kita cek aja
 
-## Asynchronous queries
+## Asynchronous queries — Mahmuda's version
 
-...
+- If you are writing asynchronous views or code, 
+  - you **cannot** use the ORM for *queries* ❌
+    - _(in quite the way we have described above)_, 
+  - as you **cannot** **call** **blocking** synchronous code from asynchronous code ❌:
+    1. it will block up the event loop 
+    2. (or, more likely, Django will notice and raise a `SynchronousOnlyOperation` to *stop* *that* from **happening**).
+
+- Fortunately, you *can* *do* *many* *queries* using Django’s **asynchronous** *query* *APIs*. 
+  - Every method that might block - such as:
+    - `get()` or `delete()` 
+    - has an asynchronous variant (`aget()` or `adelete()`), 
+    - and when you **iterate** over *results*, you can use asynchronous iteration (`async for`) instead.
 
 ### Query iteration
 
