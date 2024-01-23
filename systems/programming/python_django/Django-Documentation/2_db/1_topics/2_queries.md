@@ -986,9 +986,58 @@ To avoid this problem, **save** the `QuerySet` and reuse it:
 Read more:
 > [`QuerySet`](https://docs.djangoproject.com/en/5.0/ref/models/querysets/#django.db.models.query.QuerySet)
 
-#### When `QuerySet`s are not cached
+#### When `QuerySet`s are **not cached** — Mahmuda's version
 
-...
+- Querysets *do not always* **cache** *their* **results**.
+  1. When **evaluating** only _part_ of the queryset,
+  2. the cache is **checked**,
+     - but if it is not populated
+       - (cache not found ❌)
+     - then the items *returned* by the **subsequent** query are not **cached**. 
+       - **Specifically**, this means that [limiting the queryset](#limiting-querysets--mahmudas-version) using:
+         - an array slice or
+           - ex: `Things.object.all()[5:10]`.
+         - an index.
+           - ex: `Things.object.all()[2]`
+           - > read again, [Limiting `QuerySet`s](#limiting-querysets--mahmudas-version)
+         - will **not** *populate* the *cache*.
+
+- For example, 
+  - _repeatedly_ *getting* a *certain* **index** in a queryset object will **query** the *database* each time:
+
+    ```python
+    >>> queryset = Entry.objects.all()
+    >>> print(queryset[5])  # Queries the database
+    >>> print(queryset[5])  # Queries the database again
+    ```
+
+  - However, if the entire queryset *has already* been *evaluated*, the cache will be **checked** instead:
+
+    ```python
+    >>> queryset = Entry.objects.all()
+    >>> [entry for entry in queryset]  # Queries the database
+    >>> print(queryset[5])  # Uses cache
+    >>> print(queryset[5])  # Uses cache
+    ```
+
+  - Here are some examples of other actions that will *result* in the **entire 'queryset'** being **evaluated** and therefore **populate** the cache:
+
+    ```python
+    >>> [entry for entry in queryset]
+    >>> bool(queryset)
+    >>> entry in queryset
+    >>> list(queryset)
+    ```
+
+Them:
+> - Simply **printing** the 'queryset':
+>   - will not **populate** the cache ❌ 
+>     - > therefore kosong, [ ].
+> - This is because *the call* to `__repr__()` 
+>   - only **returns** a slice of the entire queryset.
+
+Mine, a question, learning note:
+> Tapi bukannya print sama cuman call di shell itu beda? Nanti kita cek aja
 
 ## Asynchronous queries
 
