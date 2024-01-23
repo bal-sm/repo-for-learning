@@ -1041,7 +1041,19 @@ Mine, a question, learning note:
 
 ## Asynchronous queries
 
-... (isi `♯♯♯` nya)
+...
+
+### Query iteration
+
+...
+
+### `QuerySet` and manager methods
+
+...
+
+### Transactions
+
+...
 
 ## Querying `JSONField`
 
