@@ -1056,14 +1056,38 @@ Mine, a question, learning note:
 
 ### Query iteration — Mahmuda's version
 
-...
+- The default way of iterating over a query - with `for` -:
+  - will result in a **blocking** database query _behind the scenes_ 
+    - as Django *loads* the *results* at *iteration* *time*. 
+  - To fix this, you can swap to `async for`:
 
 ```python
 async for entry in Authors.objects.filter(name__startswith="A"):
     ...
 ```
 
-...
+---
+
+Them, skip:
+> Be aware that you also can’t do other things that might iterate over the queryset, such as wrapping `list()` around it to force its evaluation (you can use `async for` in a comprehension, if you want it).
+
+~~`list(queryset.objects.all())`~~ ❌
+
+`[async for item in queryset.objects.all()]` ✔️
+
+---
+
+Them:
+> Because `QuerySet` methods like `filter()` and `exclude()` do not actually run the query - they set up the queryset to run when it’s iterated over - you can use those freely in asynchronous code.
+
+`queryset.objects.filter(field=value, ...)` ✔️
+
+`queryset.objects.exclude(field=value, ...)` ✔️
+
+etc.
+
+Them:
+> For a guide to which methods can keep being used like this, and which have asynchronous versions, read the next section.
 
 ### `QuerySet` and manager methods
 
