@@ -1056,7 +1056,10 @@ Mine, a question, learning note:
 
 ### Query iteration — Mahmuda's version
 
-...
+- The default way of iterating over a query - with `for` -:
+  - will result in a **blocking** database query _behind the scenes_ 
+    - as Django *loads* the *results* at *iteration* *time*. 
+  - To fix this, you can swap to `async for`:
 
 ```python
 async for entry in Authors.objects.filter(name__startswith="A"):
