@@ -1080,7 +1080,11 @@ Them, skip:
 Them:
 > Because `QuerySet` methods like `filter()` and `exclude()` do not actually run the query - they set up the queryset to run when it’s iterated over - you can use those freely in asynchronous code.
 
-...
+`queryset.objects.filter(field=value, ...)` ✔️
+
+`queryset.objects.exclude(field=value, ...)` ✔️
+
+etc.
 
 Them:
 > For a guide to which methods can keep being used like this, and which have asynchronous versions, read the next section.
