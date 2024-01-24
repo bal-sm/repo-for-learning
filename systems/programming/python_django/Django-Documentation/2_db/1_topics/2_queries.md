@@ -1066,7 +1066,24 @@ async for entry in Authors.objects.filter(name__startswith="A"):
     ...
 ```
 
+---
+
+Them, skip:
+> Be aware that you also can’t do other things that might iterate over the queryset, such as wrapping `list()` around it to force its evaluation (you can use `async for` in a comprehension, if you want it).
+
+~~`list(queryset.objects.all())`~~ ❌
+
+`[async for item in queryset.objects.all()]` ✔️
+
+---
+
+Them:
+> Because `QuerySet` methods like `filter()` and `exclude()` do not actually run the query - they set up the queryset to run when it’s iterated over - you can use those freely in asynchronous code.
+
 ...
+
+Them:
+> For a guide to which methods can keep being used like this, and which have asynchronous versions, read the next section.
 
 ### `QuerySet` and manager methods
 
