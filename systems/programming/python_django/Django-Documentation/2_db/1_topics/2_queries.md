@@ -1147,9 +1147,24 @@ Them:
 Mine, a learning and maintenance note:
 > Kalau [Asynchronous support](https://docs.djangoproject.com/en/5.0/topics/async/) udah dirangkum, ubah linknya ke yang di `rfl` ini dongggg.
 
-## Querying `JSONField`
+## Querying `JSONField` — Mahmuda's version
 
-...
+- Lookups implementation is **different** in **`JSONField`**, 
+  - mainly *due* to **the existence of key transformations**.
+
+To demonstrate, we will use the following example model:
+
+```python
+from django.db import models
+
+
+class Dog(models.Model):
+    name = models.CharField(max_length=200)
+    data = models.JSONField(null=True)
+
+    def __str__(self):
+        return self.name
+```
 
 ### Storing and querying for `None`
 
