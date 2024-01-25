@@ -1089,17 +1089,85 @@ etc.
 Them:
 > For a guide to which methods can keep being used like this, and which have asynchronous versions, read the next section.
 
-### `QuerySet` and manager methods
+### `QuerySet` and manager methods — Mahmuda's version
 
-...
+Them:
+> Some methods on managers and querysets - like `get()` and `first()` - force execution of the queryset and are blocking. Some, like `filter()` and `exclude()`, don’t force execution and so are safe to run from asynchronous code. But how are you supposed to tell the difference?
 
-### Transactions
+Mine, ~~TL;DR~~, bahasa Indonesia:
+> - Kan gini:
+>   - `get()` dan `first()` memaksa untuk dilakukan eksekusi pada 'queryset' dan mengakibatkan terjadinya *blocking*.
+>   - Cuman `filter()` dan `exclude()` sebaliknya, sehingga bisa dijalankan dalam asynchronous code.
+>   - Sehingga gimana sih cara membedakannya?
 
-...
+Them, skip:
+> While you could poke around and see if there is an a-prefixed version of the method (for example, we have `aget()` but not `afilter()`), there is a more logical way - look up what kind of method it is in the [`QuerySet` reference](../2_ref_slash_bookmarks/1_models/10_querysets/README.md).
 
-## Querying `JSONField`
+- In there, you’ll find the methods on `QuerySet`s grouped into two sections:
+  - _Methods that return new 'queryset's_: 
+    - These are the **non-blocking** *ones*, and
+    - **don’t have asynchronous** versions.
+    - > You’re free to use these in any situation, though read the notes on `defer()` and `only()` before you use them.
+  - _Methods that do not return 'queryset's_: 
+    - These are the **blocking** *ones*, and 
+    - **have asynchronous** versions -:
+      - the asynchronous name for each 
+        - is noted in its documentation, 
+        - though our standard pattern is to add an `a-` prefix.
+        - example(s):
+          - `get()` vs. `aget()`
 
-...
+---
+
+Them:
+> Using this distinction, you can work out when you **need to use asynchronous versions**, and when **you don’t**. For example, here’s a valid asynchronous query:
+
+```python
+user = await User.objects.filter(username=my_input).afirst()
+```
+
+- The explanations:
+  - `filter()` returns a queryset, and 
+    - so it’s fine to keep chaining it inside an asynchronous environment, 
+  - whereas `first()` *evaluates* and *returns* a model instance -:
+    - thus, we **change** to **`afirst()`**, and 
+    - **use** `await` _at the front of the whole expression_ 
+    - in order to call it in an asynchronous-friendly way.
+
+Them, as a note:
+> If you forget to put the `await` part in, you may see errors like “`coroutine object has no attribute x`” or “`<coroutine …>`” strings in place of your model instances. If you ever see these, you are missing an `await` somewhere to turn that coroutine into a real value.
+
+### "Async" Transactions — as a note
+
+Them:
+> Transactions are **not currently supported** with asynchronous queries and updates. You will find that trying to use one raises `SynchronousOnlyOperation`.
+>
+> If you wish to use a transaction, we suggest you write your ORM code inside a separate, synchronous function and then call that using `sync_to_async` - see [Asynchronous support](https://docs.djangoproject.com/en/5.0/topics/async/) for more.
+
+Mine, a learning and maintenance note:
+> Kalau [Asynchronous support](https://docs.djangoproject.com/en/5.0/topics/async/) udah dirangkum, ubah linknya ke yang di `rfl` ini dongggg.
+
+## Querying `JSONField` — Mahmuda's version
+
+- Lookups implementation is **different** in **`JSONField`**, 
+  - mainly *due* to **the existence of key transformations**.
+
+To demonstrate, we will use the following example model:
+
+```python
+from django.db import models
+
+
+class Dog(models.Model):
+    name = models.CharField(max_length=200)
+    data = models.JSONField(null=True)
+
+    def __str__(self):
+        return self.name
+```
+
+Learning and maintenance note:
+> Skip dulu aja deh, soalnya mau kapan-kapan aja masalah `JSONField`, (kayaknya bari ngoding `JSONField`s di my own personal project).
 
 ### Storing and querying for `None`
 
@@ -1137,7 +1205,12 @@ Them:
 
 ...
 
-## Complex lookups with `Q` objects
+## Complex lookups with `Q` objects — Mahmuda's version
+
+Keyword argument queries – in `filter()`, etc. – are “`AND`”ed together. If you need to execute more complex queries (for example, queries with `OR` statements), you can use [`Q` objects](https://docs.djangoproject.com/en/5.0/ref/models/querysets/#django.db.models.Q).
+
+Learning and maintenance note:
+> Kalau [`Q` objects](https://docs.djangoproject.com/en/5.0/ref/models/querysets/#django.db.models.Q) udah dirangkum, masukin link `rfl` nya.
 
 ...
 
