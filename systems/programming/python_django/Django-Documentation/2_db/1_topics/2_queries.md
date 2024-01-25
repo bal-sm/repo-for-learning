@@ -1117,7 +1117,25 @@ Them, skip:
         - example(s):
           - `get()` vs. `aget()`
 
-...
+---
+
+Them:
+> Using this distinction, you can work out when you **need to use asynchronous versions**, and when **you don’t**. For example, here’s a valid asynchronous query:
+
+```python
+user = await User.objects.filter(username=my_input).afirst()
+```
+
+- The explanations:
+  - `filter()` returns a queryset, and 
+    - so it’s fine to keep chaining it inside an asynchronous environment, 
+  - whereas `first()` *evaluates* and *returns* a model instance -:
+    - thus, we **change** to **`afirst()`**, and 
+    - **use** `await` _at the front of the whole expression_ 
+    - in order to call it in an asynchronous-friendly way.
+
+Them, as a note:
+> If you forget to put the `await` part in, you may see errors like “`coroutine object has no attribute x`” or “`<coroutine …>`” strings in place of your model instances. If you ever see these, you are missing an `await` somewhere to turn that coroutine into a real value.
 
 ### Transactions
 
