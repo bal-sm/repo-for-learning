@@ -1103,6 +1103,20 @@ Mine, ~~TL;DR~~, bahasa Indonesia:
 Them, skip:
 > While you could poke around and see if there is an a-prefixed version of the method (for example, we have `aget()` but not `afilter()`), there is a more logical way - look up what kind of method it is in the [`QuerySet` reference](../2_ref_slash_bookmarks/1_models/10_querysets/README.md).
 
+- In there, you’ll find the methods on `QuerySet`s grouped into two sections:
+  - _Methods that return new 'queryset's_: 
+    - These are the **non-blocking** *ones*, and
+    - **don’t have asynchronous** versions.
+    - > You’re free to use these in any situation, though read the notes on `defer()` and `only()` before you use them.
+  - _Methods that do not return 'queryset's_: 
+    - These are the **blocking** *ones*, and 
+    - **have asynchronous** versions -:
+      - the asynchronous name for each 
+        - is noted in its documentation, 
+        - though our standard pattern is to add an `a-` prefix.
+        - example(s):
+          - `get()` vs. `aget()`
+
 ...
 
 ### Transactions
