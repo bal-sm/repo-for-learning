@@ -1100,6 +1100,9 @@ Mine, ~~TL;DR~~, bahasa Indonesia:
 >   - Cuman `filter()` dan `exclude()` sebaliknya, sehingga bisa dijalankan dalam asynchronous code.
 >   - Sehingga gimana sih cara membedakannya?
 
+Them, skip:
+> While you could poke around and see if there is an a-prefixed version of the method (for example, we have `aget()` but not `afilter()`), there is a more logical way - look up what kind of method it is in the [`QuerySet` reference](../2_ref_slash_bookmarks/1_models/10_querysets/README.md).
+
 ...
 
 ### Transactions
