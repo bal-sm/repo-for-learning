@@ -1089,7 +1089,16 @@ etc.
 Them:
 > For a guide to which methods can keep being used like this, and which have asynchronous versions, read the next section.
 
-### `QuerySet` and manager methods
+### `QuerySet` and manager methods — Mahmuda's version
+
+Them:
+> Some methods on managers and querysets - like `get()` and `first()` - force execution of the queryset and are blocking. Some, like `filter()` and `exclude()`, don’t force execution and so are safe to run from asynchronous code. But how are you supposed to tell the difference?
+
+Mine, ~~TL;DR~~, bahasa Indonesia:
+> - Kan gini:
+>   - `get()` dan `first()` memaksa untuk dilakukan eksekusi pada 'queryset' dan mengakibatkan terjadinya *blocking*.
+>   - Cuman `filter()` dan `exclude()` sebaliknya, sehingga bisa dijalankan dalam asynchronous code.
+>   - Sehingga gimana sih cara membedakannya?
 
 ...
 
