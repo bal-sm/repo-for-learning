@@ -1137,9 +1137,15 @@ user = await User.objects.filter(username=my_input).afirst()
 Them, as a note:
 > If you forget to put the `await` part in, you may see errors like “`coroutine object has no attribute x`” or “`<coroutine …>`” strings in place of your model instances. If you ever see these, you are missing an `await` somewhere to turn that coroutine into a real value.
 
-### Transactions
+### "Async" Transactions — as a note
 
-...
+Them:
+> Transactions are **not currently supported** with asynchronous queries and updates. You will find that trying to use one raises `SynchronousOnlyOperation`.
+>
+> If you wish to use a transaction, we suggest you write your ORM code inside a separate, synchronous function and then call that using `sync_to_async` - see [Asynchronous support](https://docs.djangoproject.com/en/5.0/topics/async/) for more.
+
+Mine, a learning and maintenance note:
+> Kalau [Asynchronous support](https://docs.djangoproject.com/en/5.0/topics/async/) udah dirangkum, ubah linknya ke yang di `rfl` ini dongggg.
 
 ## Querying `JSONField`
 
