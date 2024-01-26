@@ -22,6 +22,9 @@ Learning note:
 
 ### Journey + Yang didapatkan
 
+`Insert ih dari fake diary 2024-01-27`
+
 Dari video [First Time NixOS Install with Customization](https://www.youtube.com/watch?v=_Z32SYFbxpw):
 
+- config files mau apa-apa juga bakal bersih udahnya.
 ...
