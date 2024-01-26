@@ -8,6 +8,7 @@ _Work in Progress_
 
 - Start from here
   - [ ] <https://christitus.com/nixos-explained/>
+    - [ ] <github.com/ChrisTitusTech/nixos-titus>
     - [ ] [First Time NixOS Install with Customization](https://www.youtube.com/watch?v=_Z32SYFbxpw)
   ...
   - [ ] my own configuration
