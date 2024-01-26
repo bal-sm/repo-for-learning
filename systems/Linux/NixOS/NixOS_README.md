@@ -35,4 +35,7 @@ Komen @itme_brain
 >
 > You can also limit how many generations GRUB keeps in the boot menu and you can automate the garbage collection, all through the config file.
 
+Mine:
+> Tuh buang buang Nix store (ceuk bapak eta mah snapshot) pake garbacmge collector, terus ada integration sama GRUB juga dong? I wonder bisa utilize btrfs tea gak sih.
+
 ...
