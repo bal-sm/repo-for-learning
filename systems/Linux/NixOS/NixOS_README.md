@@ -27,4 +27,12 @@ Learning note:
 Dari video [First Time NixOS Install with Customization](https://www.youtube.com/watch?v=_Z32SYFbxpw):
 
 - config files mau apa-apa juga bakal bersih udahnya.
+
+Dari video [NixOS is not for beginners](https://youtu.be/NuPKijYukuQ?si=3vGhy-NZKEZbNxTB), penggalan video "first time bla-bla-bla" (maybe?):
+
+Komen @itme_brain
+> Regarding the nix store bloat, you can delete unused derivations with the garbage collector.
+>
+> You can also limit how many generations GRUB keeps in the boot menu and you can automate the garbage collection, all through the config file.
+
 ...
