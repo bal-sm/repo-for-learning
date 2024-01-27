@@ -1212,7 +1212,9 @@ Learning and maintenance note:
     - you *can* *use* **`Q` objects**.
 
 Read more:
-> about [`Q` objects, here](../2_ref_slash_bookmarks/1_models/10_querysets/3_query-related_tools/1_django.db.models.Q.md).
+> about [`Q` objects, `django.db.models.Q`, here](../2_ref_slash_bookmarks/1_models/10_querysets/3_query-related_tools/1_django.db.models.Q.md).
+
+A `Q` object (`django.db.models.Q`) is an object used to encapsulate a collection of keyword arguments. These keyword arguments are specified as in “Field lookups” above.
 
 ...
 
