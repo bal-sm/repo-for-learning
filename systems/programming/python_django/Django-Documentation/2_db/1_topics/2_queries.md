@@ -1234,11 +1234,21 @@ Q(question__startswith="What")
   - When an operator is used on two `Q` objects, it yields a new `Q` object.
     - > `Q` + operator + `Q` => new `Q`, mine.
 
+---
+
 For example, this statement yields a single `Q` object that **represents** ***the “`OR`” of two "question__startswith" queries***:
 
 ```python
 Q(question__startswith="Who") | Q(question__startswith="What")
 ```
+
+This is equivalent to the following SQL `WHERE` clause:
+
+```sql
+WHERE question LIKE 'Who%' OR question LIKE 'What%'
+```
+
+---
 
 ...
 
