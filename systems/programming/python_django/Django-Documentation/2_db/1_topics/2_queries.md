@@ -1343,9 +1343,31 @@ Mine, learning and maintenance note, for consideration:
 
 ---
 
-## Comparing objects
+## Comparing objects — Mahmuda's version
 
-...
+- To **compare** ***two model instances***, 
+  - use the standard Python comparison operator, 
+    - the double equals sign: `==`.
+  - Behind the scenes, that *compares* **the primary key values** _of two models_.
+
+bla-bla-bla
+
+```python
+>>> some_entry == other_entry  # equivalent to
+>>> some_entry.id == other_entry.id
+```
+
+bla-bla-bla
+
+Mine:
+> kalo `pk`-nya bukan `id` tapi `name`
+
+```python
+>>> some_obj == other_obj
+>>> some_obj.name == other_obj.name
+```
+
+---
 
 ## Deleting objects
 
