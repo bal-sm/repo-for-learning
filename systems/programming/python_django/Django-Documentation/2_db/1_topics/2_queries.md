@@ -1478,7 +1478,36 @@ Mine, CAUTIONARY TALE:
 
 ---
 
-...
+_Copy relations of `ManyToManyField`_
+
+Them:
+> This process doesn’t copy relations that aren’t part of the model’s database table. For example, `Entry` has a `ManyToManyField` to `Author`. After duplicating an entry, you **must** set the many-to-many relations for the new entry:
+> 
+> ```python
+> entry = Entry.objects.all()[0]  # some previous entry
+> old_authors = entry.authors.all()
+> entry.pk = None
+> entry._state.adding = True
+> entry.save()
+> entry.authors.set(old_authors)
+> ```
+
+---
+
+_Copy the relation of `OneToOneField`_
+
+Them:
+> For a `OneToOneField`, you must duplicate the related object and assign it to the new object’s field to **avoid violating** _the one-to-one *unique constraint*_. For example, assuming `entry` is already duplicated as above:
+> 
+> ```python
+> detail = EntryDetail.objects.all()[0]
+> detail.pk = None
+> detail._state.adding = True
+> detail.entry = entry
+> detail.save()
+> ```
+
+---
 
 ## Updating multiple objects at once
 
