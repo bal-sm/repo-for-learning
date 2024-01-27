@@ -1374,9 +1374,9 @@ Mine:
 - The delete method, 
   - conveniently, is named `delete()`. 
   - This method immediately:
-    - deletes the object and 
-    - returns the number of objects deleted and 
-    - a dictionary with the number of deletions per object type. 
+    - *deletes* **the object** and 
+    - *returns* *the number of objects deleted* and 
+    - (*returns*) *a dictionary* *with the number of deletions* *per object type*. 
     - Example: ->
 
 ->:
