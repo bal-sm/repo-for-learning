@@ -1207,7 +1207,9 @@ Learning and maintenance note:
 
 - Keyword argument queries – in `filter()`, etc. – are “`AND`”ed together. 
   - `filter(field=value, field=value)` -> 'filter(field=value & field=value)' -ish
-  - If you need to execute more complex queries (for example, queries with `OR` statements), you can use [`Q` objects](../2_ref_slash_bookmarks/1_models/10_querysets/3_query-related_tools/1_django.db.models.Q.md).
+  - If you need to **execute** *more* **complex queries** 
+    - _(for example, queries with `OR` statements)_,
+    - you *can* *use* [**`Q` objects**](../2_ref_slash_bookmarks/1_models/10_querysets/3_query-related_tools/1_django.db.models.Q.md).
 
 ...
 
