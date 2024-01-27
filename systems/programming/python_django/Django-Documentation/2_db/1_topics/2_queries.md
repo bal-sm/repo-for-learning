@@ -1386,6 +1386,15 @@ Mine:
 # (1, {'blog.Entry': 1})
 ```
 
+You can also *delete objects* **in bulk**. Every `QuerySet` has *a `delete()` method*, which **deletes all members** *of that `QuerySet`*.
+
+bla-bla-bla
+
+```python
+>>> Entry.objects.filter(pub_date__year=2005).delete()
+# (5, {'webapp.Entry': 5})
+```
+
 ...
 
 ## Copying model instances
