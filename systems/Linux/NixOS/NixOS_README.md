@@ -11,6 +11,7 @@ _Work in Progress_
     - [ ] <github.com/ChrisTitusTech/nixos-titus>
     - [ ] [First Time NixOS Install with Customization](https://www.youtube.com/watch?v=_Z32SYFbxpw)
     - [ ] <https://www.bekk.christmas/post/2021/16/dotfiles-with-nix-and-home-manager>, **must read**.
+    - [ ] <https://www.tweag.io/blog/2020-05-25-flakes/>, maybe just read it
   ...
   - [ ] my own configuration
 
