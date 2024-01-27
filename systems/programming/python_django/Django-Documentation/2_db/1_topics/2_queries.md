@@ -1434,7 +1434,15 @@ This cascade behavior is **customizable** via the `on_delete` argument to the `F
 
 ---
 
-...
+Them, cautionary tale:
+> Note that `delete()` is the only `QuerySet` method that is not exposed on a `Manager` itself. This is a safety mechanism to prevent you from accidentally requesting `Entry.objects.delete()`, and **deleting** **all** the entries. If you do want to delete all the objects, then you have to explicitly request a complete query set:
+>
+> `Entry.objects.all().delete()`
+
+Learning note:
+> Nah itu teh gimana cara disable delete completely nya, soalnya on my own personal project, aku mau ada things yang terukir di database itu, **uneditable**, ya maksudnya jadi **read-only**.
+
+---
 
 ## Copying model instances
 
