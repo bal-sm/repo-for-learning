@@ -1228,9 +1228,9 @@ Q(question__startswith="What")
 ```
 
 - `Q` objects can be combined using:
-  - the &, 
-  - |, and 
-  - ^ operators. 
+  - the `&`, 
+  - `|`, and 
+  - `^` operators. 
   - When an operator is used on two `Q` objects, it yields a new `Q` object.
     - > `Q` + operator + `Q` => new `Q`, mine.
 
@@ -1246,6 +1246,30 @@ This is equivalent to the following SQL `WHERE` clause:
 
 ```sql
 WHERE question LIKE 'Who%' OR question LIKE 'What%'
+```
+
+---
+
+- You can **compose** ***statements of arbitrary complexity*** by:
+  - > pengulangan paragraf di atas ini teh, maintenance note, is it a good thing?, learning note.
+  - combining Q objects with the: 
+    - &, 
+    - |, and 
+    - ^ operators. 
+  - and use parenthetical grouping:
+    - `(`,
+    - `)`. 
+  - Also, `Q` objects can be negated: 
+    - using the ~ operator, 
+      - **allowing** ***for combined lookups*** that combine both:
+        - a normal query and
+        - a negated (`NOT`) query
+        - ->
+
+->:
+
+```python
+Q(question__startswith="Who") | ~Q(pub_date__year=2005)
 ```
 
 ---
