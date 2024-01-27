@@ -1369,7 +1369,22 @@ Mine:
 
 ---
 
-## Deleting objects
+## Deleting objects — Mahmuda's version
+
+- The delete method, 
+  - conveniently, is named `delete()`. 
+  - This method immediately:
+    - deletes the object and 
+    - returns the number of objects deleted and 
+    - a dictionary with the number of deletions per object type. 
+    - Example: ->
+
+->:
+
+```python
+>>> e.delete()
+# (1, {'blog.Entry': 1})
+```
 
 ...
 
