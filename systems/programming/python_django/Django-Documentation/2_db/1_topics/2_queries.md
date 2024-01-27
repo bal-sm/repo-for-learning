@@ -1444,7 +1444,39 @@ Learning note:
 
 ---
 
-## Copying model instances
+## Copying model instances — Mahmuda's version
+
+- Although there is **no built-in method** for copying model instances, 
+  - it is possible to easily *create* *new* *instance* *with all fields’ values* **copied**. 
+  - In the simplest case, you can set `pk` to `None` and `_state.adding` to `True`. Using our blog example: ->
+
+->:
+
+```python
+blog = Blog(name="My blog", tagline="Blogging is easy")
+blog.save()  # blog.pk == 1
+
+blog.pk = None
+blog._state.adding = True
+blog.save()  # blog.pk == 2
+```
+
+---
+
+Them, usage in inheritance, skip aja.
+> Due to how inheritance works, you have to set both `pk` and `id` to `None`, and `_state.adding` to True:
+>
+> ```python
+> django_blog.pk = None
+> django_blog.id = None
+> django_blog._state.adding = True
+> django_blog.save()  # django_blog.pk == 4
+> ```
+
+Mine, CAUTIONARY TALE:
+> DON'T EVER USE INHERITANCE, SOALNYA BIKIN GOBLOK, UDAH PAKE FOREIGNKEY, ONETOONEFIELD, MANYTOMANYFIELD AJA.
+
+---
 
 ...
 
