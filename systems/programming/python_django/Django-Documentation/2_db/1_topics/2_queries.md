@@ -1395,6 +1395,30 @@ bla-bla-bla
 # (5, {'webapp.Entry': 5})
 ```
 
+---
+
+Them, cautionary tale:
+> Keep in mind that this will, whenever possible, be executed purely in `SQL`, and so the `delete()` methods of individual object instances will not necessarily be called during the process. If you’ve provided a custom `delete()` method on a model class and want to ensure that it is called, you will need to “manually” delete instances of that model (e.g., by iterating over a `QuerySet` and calling `delete()` on each object individually) rather than using the bulk `delete()` method of a QuerySet.
+
+~~`Modol.objects.filter(...).delete()`~~ ❌
+
+```python
+the_modol = Modol.objects.filter(...)
+
+for item in the_modol:
+    item.delete() ✔️
+
+# Jadinya:
+
+class Modol(models.Model):
+    ...
+
+    def delete(...):
+        # akan terjalankan. ✔️✔️✔️
+```
+
+---
+
 ...
 
 ## Copying model instances
