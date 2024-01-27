@@ -1306,6 +1306,33 @@ Mine:
 
 ---
 
+bla-bla-bla
+
+Mine, penjelasan bla-bla-bla:
+> With respect to Django devs, da ini tulisan buat saya doang da, hehe.
+
+Mine:
+> Kalo mau di mix `Q` objects dan keyword arguments. Keyword arguments nya harus didepan.
+
+```python
+Poll.objects.get(
+    Q(pub_date=date(2005, 5, 2)) | Q(pub_date=date(2005, 5, 6)),
+    question__startswith="Who",
+)
+# ✔️✔️✔️
+```
+
+```python
+# INVALID QUERY
+Poll.objects.get(
+    question__startswith="Who",
+    Q(pub_date=date(2005, 5, 2)) | Q(pub_date=date(2005, 5, 6)),
+)
+# ❌❌❌
+```
+
+---
+
 ...
 
 ## Comparing objects
