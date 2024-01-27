@@ -1333,7 +1333,15 @@ Poll.objects.get(
 
 ---
 
-...
+Them, interesting:
+> See also
+> 
+> The [`OR` lookups examples](https://github.com/django/django/blob/main/tests/or_lookups/tests.py) in Django’s unit tests show some possible uses of `Q`.
+
+Mine, learning and maintenance note, for consideration:
+> Kalau misalnya menarik untuk dirangkum, terus udah, maka link lah `rfl` nya, hapus yang ini.
+
+---
 
 ## Comparing objects
 
