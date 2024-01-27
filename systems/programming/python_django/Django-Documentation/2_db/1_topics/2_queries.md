@@ -1227,6 +1227,13 @@ from django.db.models import Q
 Q(question__startswith="What")
 ```
 
+- `Q` objects can be combined using:
+  - the &, 
+  - |, and 
+  - ^ operators. 
+  - When an operator is used on two `Q` objects, it yields a new `Q` object.
+    - > `Q` + operator + `Q` => new `Q`, mine.
+
 ...
 
 ## Comparing objects
