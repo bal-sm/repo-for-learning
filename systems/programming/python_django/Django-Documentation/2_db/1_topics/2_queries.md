@@ -1419,6 +1419,21 @@ class Modol(models.Model):
 
 ---
 
+- When Django *deletes* **an object**, 
+  - by default it **emulates** **the behavior of the SQL constraint** ***`ON DELETE CASCADE`***
+    - _(in other words, any objects which had foreign keys pointing at the object to be deleted will be deleted along with it.)_
+      - For example: ->
+
+```python
+b = Blog.objects.get(pk=1)
+# This will delete the `Blog` and all of its `Entry` objects.
+b.delete()
+```
+
+This cascade behavior is **customizable** via the `on_delete` argument to the `ForeignKey`.
+
+---
+
 ...
 
 ## Copying model instances
