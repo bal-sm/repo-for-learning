@@ -10,6 +10,7 @@ _Work in Progress_
   - [ ] <https://christitus.com/nixos-explained/>
     - [ ] <github.com/ChrisTitusTech/nixos-titus>
     - [ ] [First Time NixOS Install with Customization](https://www.youtube.com/watch?v=_Z32SYFbxpw)
+    - [ ] <https://www.bekk.christmas/post/2021/16/dotfiles-with-nix-and-home-manager>, **must read**.
   ...
   - [ ] my own configuration
 
