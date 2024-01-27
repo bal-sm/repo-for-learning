@@ -1207,20 +1207,242 @@ Learning and maintenance note:
 
 - Keyword argument queries – in `filter()`, etc. – are “`AND`”ed together. 
   - `filter(field=value, field=value)` -> 'filter(field=value & field=value)' -ish
-  - If you need to execute more complex queries (for example, queries with `OR` statements), you can use [`Q` objects](https://docs.djangoproject.com/en/5.0/ref/models/querysets/#django.db.models.Q).
+  - If you need to **execute** *more* **complex queries** 
+    - _(for example, queries with `OR` statements)_,
+    - you *can* *use* **`Q` objects**.
 
-Learning and maintenance note:
-> Kalau [`Q` objects](https://docs.djangoproject.com/en/5.0/ref/models/querysets/#django.db.models.Q) udah dirangkum, masukin link `rfl` nya.
+Read more:
+> about [`Q` objects, `django.db.models.Q`, here](../2_ref_slash_bookmarks/1_models/10_querysets/3_query-related_tools/1_django.db.models.Q.md).
 
-...
+A `Q` object (`django.db.models.Q`) is an object *used* *to* **encapsulate** ***a collection of keyword arguments***. 
 
-## Comparing objects
+Them, skip:
+> These keyword arguments are specified as in “Field lookups” above.
 
-...
+For example, this `Q` object **encapsulates** ***a single `LIKE` query***:
 
-## Deleting objects
+```python
+from django.db.models import Q
 
-...
+Q(question__startswith="What")
+```
+
+- `Q` objects can be combined using:
+  - the `&`, 
+  - `|`, and 
+  - `^` operators. 
+  - When an operator is used on two `Q` objects, it yields a new `Q` object.
+    - > `Q` + operator + `Q` => new `Q`, mine.
+
+---
+
+For example, this statement yields a single `Q` object that **represents** ***the “`OR`” of two "question__startswith" queries***:
+
+```python
+Q(question__startswith="Who") | Q(question__startswith="What")
+```
+
+This is equivalent to the following SQL `WHERE` clause:
+
+```sql
+WHERE question LIKE 'Who%' OR question LIKE 'What%'
+```
+
+---
+
+- You can **compose** ***statements of arbitrary complexity*** by:
+  - > pengulangan paragraf di atas ini teh, maintenance note, is it a good thing?, learning note.
+  - combining Q objects with the: 
+    - &, 
+    - |, and 
+    - ^ operators. 
+  - and use parenthetical grouping:
+    - `(`,
+    - `)`. 
+  - Also, `Q` objects can be negated: 
+    - using the ~ operator, 
+      - **allowing** ***for combined lookups*** that combine both:
+        - a normal query and
+        - a negated (`NOT`) query
+        - ->
+
+->:
+
+```python
+Q(question__startswith="Who") | ~Q(pub_date__year=2005)
+```
+
+---
+
+Them, skip:
+> - Each lookup function that takes keyword-arguments (e.g. `filter()`, `exclude()`, `get()`) 
+>   - can also be passed one or more `Q` objects as positional (not-named) arguments. 
+>   - If you provide multiple `Q` object arguments to a lookup function, the arguments will be “`AND`”ed together. For example: ->
+
+->:
+
+```python
+Poll.objects.get(
+    Q(question__startswith="Who"),
+    Q(pub_date=date(2005, 5, 2)) | Q(pub_date=date(2005, 5, 6)),
+)
+```
+
+… roughly translates into the `SQL`:
+
+```sql
+SELECT * from polls WHERE question LIKE 'Who%'
+    AND (pub_date = '2005-05-02' OR pub_date = '2005-05-06')
+```
+
+Mine:
+> kalo mau pake `&` beneran jadi gini
+> ```python
+> Poll.objects.get(
+>     Q(question__startswith="Who") &
+>     (Q(pub_date=date(2005, 5, 2)) | Q(pub_date=date(2005, 5, 6)))
+> )
+> ```
+
+---
+
+bla-bla-bla
+
+Mine, penjelasan bla-bla-bla:
+> With respect to Django devs, da ini tulisan buat saya doang da, hehe.
+
+Mine:
+> Kalo mau di mix `Q` objects dan keyword arguments. Keyword arguments nya harus didepan.
+
+```python
+Poll.objects.get(
+    Q(pub_date=date(2005, 5, 2)) | Q(pub_date=date(2005, 5, 6)),
+    question__startswith="Who",
+)
+# ✔️✔️✔️
+```
+
+```python
+# INVALID QUERY
+Poll.objects.get(
+    question__startswith="Who",
+    Q(pub_date=date(2005, 5, 2)) | Q(pub_date=date(2005, 5, 6)),
+)
+# ❌❌❌
+```
+
+---
+
+Them, interesting:
+> See also
+> 
+> The [`OR` lookups examples](https://github.com/django/django/blob/main/tests/or_lookups/tests.py) in Django’s unit tests show some possible uses of `Q`.
+
+Mine, learning and maintenance note, for consideration:
+> Kalau misalnya menarik untuk dirangkum, terus udah, maka link lah `rfl` nya, hapus yang ini.
+
+---
+
+## Comparing objects — Mahmuda's version
+
+- To **compare** ***two model instances***, 
+  - use the standard Python comparison operator, 
+    - the double equals sign: `==`.
+  - Behind the scenes, that *compares* **the primary key values** _of two models_.
+
+bla-bla-bla
+
+```python
+>>> some_entry == other_entry  # equivalent to
+>>> some_entry.id == other_entry.id
+```
+
+bla-bla-bla
+
+Mine:
+> kalo `pk`-nya bukan `id` tapi `name`
+
+```python
+>>> some_obj == other_obj
+>>> some_obj.name == other_obj.name
+```
+
+---
+
+## Deleting objects — Mahmuda's version
+
+- The delete method, 
+  - conveniently, is named `delete()`. 
+  - This method immediately:
+    - *deletes* **the object** and 
+    - *returns* *the number of objects deleted* and 
+    - (*returns*) *a dictionary* *with the number of deletions* *per object type*. 
+    - Example: ->
+
+->:
+
+```python
+>>> e.delete()
+# (1, {'blog.Entry': 1})
+```
+
+You can also *delete objects* **in bulk**. Every `QuerySet` has *a `delete()` method*, which **deletes all members** *of that `QuerySet`*.
+
+bla-bla-bla
+
+```python
+>>> Entry.objects.filter(pub_date__year=2005).delete()
+# (5, {'webapp.Entry': 5})
+```
+
+---
+
+Them, cautionary tale:
+> Keep in mind that this will, whenever possible, be executed purely in `SQL`, and so the `delete()` methods of individual object instances will not necessarily be called during the process. If you’ve provided a custom `delete()` method on a model class and want to ensure that it is called, you will need to “manually” delete instances of that model (e.g., by iterating over a `QuerySet` and calling `delete()` on each object individually) rather than using the bulk `delete()` method of a QuerySet.
+
+~~`Modol.objects.filter(...).delete()`~~ ❌
+
+```python
+the_modol = Modol.objects.filter(...)
+
+for item in the_modol:
+    item.delete() ✔️
+
+# Jadinya:
+
+class Modol(models.Model):
+    ...
+
+    def delete(...):
+        # akan terjalankan. ✔️✔️✔️
+```
+
+---
+
+- When Django *deletes* **an object**, 
+  - by default it **emulates** **the behavior of the SQL constraint** ***`ON DELETE CASCADE`***
+    - _(in other words, any objects which had foreign keys pointing at the object to be deleted will be deleted along with it.)_
+      - For example: ->
+
+```python
+b = Blog.objects.get(pk=1)
+# This will delete the `Blog` and all of its `Entry` objects.
+b.delete()
+```
+
+This cascade behavior is **customizable** via the `on_delete` argument to the `ForeignKey`.
+
+---
+
+Them, cautionary tale:
+> Note that `delete()` is the only `QuerySet` method that is not exposed on a `Manager` itself. This is a safety mechanism to prevent you from accidentally requesting `Entry.objects.delete()`, and **deleting** **all** the entries. If you do want to delete all the objects, then you have to explicitly request a complete query set:
+>
+> `Entry.objects.all().delete()`
+
+Learning note:
+> Nah itu teh gimana cara disable delete completely nya, soalnya on my own personal project, aku mau ada things yang terukir di database itu, **uneditable**, ya maksudnya jadi **read-only**.
+
+---
 
 ## Copying model instances
 
