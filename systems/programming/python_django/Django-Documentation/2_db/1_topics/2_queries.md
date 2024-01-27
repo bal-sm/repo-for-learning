@@ -1274,6 +1274,38 @@ Q(question__startswith="Who") | ~Q(pub_date__year=2005)
 
 ---
 
+Them, skip:
+> - Each lookup function that takes keyword-arguments (e.g. `filter()`, `exclude()`, `get()`) 
+>   - can also be passed one or more `Q` objects as positional (not-named) arguments. 
+>   - If you provide multiple `Q` object arguments to a lookup function, the arguments will be “`AND`”ed together. For example: ->
+
+->:
+
+```python
+Poll.objects.get(
+    Q(question__startswith="Who"),
+    Q(pub_date=date(2005, 5, 2)) | Q(pub_date=date(2005, 5, 6)),
+)
+```
+
+… roughly translates into the `SQL`:
+
+```sql
+SELECT * from polls WHERE question LIKE 'Who%'
+    AND (pub_date = '2005-05-02' OR pub_date = '2005-05-06')
+```
+
+Mine:
+> kalo mau pake `&` beneran jadi gini
+> ```python
+> Poll.objects.get(
+>     Q(question__startswith="Who") &
+>     (Q(pub_date=date(2005, 5, 2)) | Q(pub_date=date(2005, 5, 6)))
+> )
+> ```
+
+---
+
 ...
 
 ## Comparing objects
