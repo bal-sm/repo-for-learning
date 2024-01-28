@@ -1746,7 +1746,7 @@ mine.
 
 ---
 
-### One-to-one relationships
+### One-to-one relationships — Mahmuda's version
 
 - One-to-one relationships are **very similar** to many-to-one relationships. 
   - If you define a `OneToOneField` on your model,
