@@ -1563,6 +1563,23 @@ Example:
 >>> e.blog  # Returns the related Blog object.
 ```
 
+---
+
+_Get and set is available_
+
+bla-bla-bla
+
+```python
+>>> e = Entry.objects.get(id=2)
+>>> e.blog = some_blog
+>>> e.save()
+```
+
+Mine, learning note, terus buat kalyan:
+> ih bla-bla-bla bikin set-sat-set gening, CUMAN PASTINYA BISA JADI KONOTASI NEGATIF, ini teh for my own learning experience aja ya gys.
+
+---
+
 ...
 
 #### Following relationships “backward”
