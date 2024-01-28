@@ -1639,7 +1639,17 @@ Mine, TL;DR:
 
 ~~...~~ _Skipped_ dulu.
 
-#### Additional methods to handle related objects
+#### Additional methods to handle related objects — Mahmuda's version
+
+In addition to the `QuerySet` methods defined in “Retrieving objects” above, the `ForeignKey` `Manager` has additional methods used to handle the set of related objects. A synopsis of each is below, 
+
+Them:
+> and complete details can be found in the [related objects reference / `relations` ref](../2_ref_slash_bookmarks/1_models/6_relations.md).
+
+Read more about:
+> - [`django.db.models.query.QuerySet` dalem `QuerySet` API, here](../2_ref_slash_bookmarks/1_models/10_querysets/2_queryset_api_slash_bookmarks.md)
+> - [`ForeignKey` / `django.db.models.ForeignKey`, here](../2_ref_slash_bookmarks/1_models/1_fields/3_relationship_fields/1_ForeignKey.md)
+> - [`django.db.models.Manager` dalem `managers` folder](./5_managers.md)
 
 ...
 
