@@ -1549,13 +1549,18 @@ Them, skip:
 
 ---
 
-### One-to-many relationships
+### One-to-many relationships — Mahmuda's version
 
-...
+#### Forward — Mahmuda's version
 
-#### Forward
+If a model has a `ForeignKey`, instances of that model will have access -> to the related (foreign) object via -> an attribute of the model.
 
-...
+Example:
+
+```python
+>>> e = Entry.objects.get(id=2)
+>>> e.blog  # Returns the related Blog object.
+```
 
 #### Following relationships “backward”
 
