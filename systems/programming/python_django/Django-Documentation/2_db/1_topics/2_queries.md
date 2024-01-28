@@ -1563,6 +1563,8 @@ Example:
 >>> e.blog  # Returns the related Blog object.
 ```
 
+...
+
 #### Following relationships “backward”
 
 ...
