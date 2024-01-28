@@ -1725,7 +1725,26 @@ mine.
 
 ---
 
-...
+`add(), set(), and remove()` are available:
+
+```python
+a = Author.objects.get(id=7)
+a.entry_set.set([e1, e2])
+```
+
+mine.
+
+---
+
+the methods also accept primary key values:
+
+```python
+a.entry_set.set([e1.pk, e2.pk])
+```
+
+mine.
+
+---
 
 ### One-to-one relationships
 
