@@ -1511,7 +1511,7 @@ Them:
 
 ## Updating multiple objects at once
 
-...
+~~...~~ _Skipped dulu._
 
 ## Related objects
 
