@@ -1665,6 +1665,20 @@ Read more about:
 - `set(objs)`
   - **Replace** _the set of related objects_.
 
+---
+
+- To **assign** *the members of a related set*, 
+  - ***use the `set()` method*** _with an iterable of object instances_. For example, if `e1` and `e2` are `Entry` instances: ->
+
+->:
+
+```python
+b = Blog.objects.get(id=1)
+b.entry_set.set([e1, e2])
+```
+
+---
+
 ...
 
 ### Many-to-many relationships
