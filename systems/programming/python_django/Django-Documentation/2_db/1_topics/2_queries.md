@@ -1689,7 +1689,11 @@ Mine, learning note:
 
 ---
 
-...
+Them, rada cautionary tale:
+> - *Each* *“reverse”* *operation* _described in this section_ **has** **an immediate effect** **on the database**. 
+>   - Every addition, creation and deletion is *immediately and automatically* **saved** ***to the database***.
+
+---
 
 ### Many-to-many relationships
 
