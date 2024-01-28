@@ -1665,11 +1665,86 @@ Read more about:
 - `set(objs)`
   - **Replace** _the set of related objects_.
 
-...
+---
 
-### Many-to-many relationships
+- To **assign** *the members of a related set*, 
+  - ***use the `set()` method*** _with an iterable of object instances_. For example, if `e1` and `e2` are `Entry` instances: ->
 
-...
+->:
+
+```python
+b = Blog.objects.get(id=1)
+b.entry_set.set([e1, e2])
+```
+
+- If the `clear()` method is *available*, 
+  - **any** preexisting objects will be **removed** from the `entry_set` 
+    - *before* all objects in the iterable (in this case, a list) are *added* to the set. 
+- If the `clear()` method is *not available*, 
+  - **all** objects in the iterable will be **added**
+    - *without* *removing* any existing elements.
+
+Mine, learning note:
+> Maksud *not available* teh kalau memang udah gak ada `object` apapun dalam `b.entry_set`
+
+---
+
+Them, rada cautionary tale:
+> - *Each* *“reverse”* *operation* _described in this section_ **has** **an immediate effect** **on the database**. 
+>   - Every addition, creation and deletion is *immediately and automatically* **saved** ***to the database***.
+
+---
+
+### Many-to-many relationships — Mahmuda's version
+
+bla-bla-bla
+
+```python
+e = Entry.objects.get(id=3)
+e.authors.all()  # Returns all Author objects for this Entry.
+e.authors.count()
+e.authors.filter(name__contains="John")
+
+a = Author.objects.get(id=5)
+a.entry_set.all()  # Returns all Entry objects for this Author.
+```
+
+Mine:
+> Tuh mirip sama one-to-many relationship reverse-nya.
+
+---
+
+`authors = models.ManyToManyField(Author, related_name='entries')`
+
+```
+a = Author.objects.get(id=6)
+a.entries.all()  # Returns all Entry objects for this Author.
+```
+
+mine.
+
+---
+
+`add(), set(), and remove()` are available:
+
+```python
+a = Author.objects.get(id=7)
+a.entry_set.set([e1, e2])
+```
+
+mine.
+
+---
+
+the methods also accept primary key values:
+
+```python
+a.entry_set.set([e1.pk, e2.pk])
+```
+
+mine.
+
+---
 
 ### One-to-one relationships
 
