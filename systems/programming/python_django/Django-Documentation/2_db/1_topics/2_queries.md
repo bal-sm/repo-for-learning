@@ -1537,7 +1537,17 @@ Them:
 
 ---
 
-...
+- Django also *creates* **API accessors** for **the “other” side** _of the relationship_ –:
+  - *the link* _from the related model_ *to* _the model that defines the relationship_. 
+    - > bagus gak sih ngerangkum kayak gini teh, learning + maintenance note.
+  - For example, 
+    - a `Blog` object -> `b` has access to -> a list of all related `Entry` objects via -> the `entry_set` attribute: 
+      - `b.entry_set.all()`.
+
+Them, skip:
+> All examples in this section use the sample `Blog`, `Author` and `Entry` models defined at the top of this page.
+
+---
 
 ### One-to-many relationships
 
