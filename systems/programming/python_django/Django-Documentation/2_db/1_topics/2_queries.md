@@ -1637,7 +1637,7 @@ Mine, TL;DR:
 
 #### Using a custom reverse manager
 
-...
+~~...~~ _Skipped_ dulu.
 
 #### Additional methods to handle related objects
 
