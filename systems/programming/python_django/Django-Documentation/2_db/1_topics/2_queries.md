@@ -1509,6 +1509,9 @@ Them:
 
 ---
 
+Read more about:
+> [`._state` here](../2_ref_slash_bookmarks/1_models/9_instances/9_other_attributes__._state.md).
+
 ## Updating multiple objects at once
 
 ~~...~~ _Skipped dulu._
