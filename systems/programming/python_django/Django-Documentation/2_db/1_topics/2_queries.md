@@ -1753,6 +1753,22 @@ mine.
     - _instances of that model_ *will* *have* *access* _**to the related object**_ 
       - *via* ***an attribute of the model***.
 
+---
+
+For example:
+
+```python
+class EntryDetail(models.Model):
+    entry = models.OneToOneField(Entry, on_delete=models.CASCADE)
+    details = models.TextField()
+
+
+ed = EntryDetail.objects.get(id=2)
+ed.entry  # Returns the related Entry object.
+```
+
+---
+
 ...
 
 ### How are the backward relationships possible?
