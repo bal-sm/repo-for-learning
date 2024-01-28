@@ -1651,6 +1651,14 @@ Read more about:
 > - [`ForeignKey` / `django.db.models.ForeignKey`, here](../2_ref_slash_bookmarks/1_models/1_fields/3_relationship_fields/1_ForeignKey.md)
 > - [`django.db.models.Manager` dalem `managers` folder](./5_managers.md)
 
+- `add(obj1, obj2, ...)`
+  - **Adds** *the specified model objects* to the related object set.
+- `create(**kwargs)`
+  - *Creates* a new object,
+  - *saves* it and
+  - **puts** it in *the related object set*.
+  - **Returns** _the newly created object_.
+
 ...
 
 ### Many-to-many relationships
