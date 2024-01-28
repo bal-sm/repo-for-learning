@@ -1807,9 +1807,22 @@ Them, important, and cautionary tale:
 Mine, learning and maintenance note:
 > ih itu belum dirangkum 2 link itu. apalagi masalah `settings` kan lagian.
 
-### Queries over related objects
+### Queries over related objects — Mahmuda's version
 
-...
+- _Queries involving *related objects*_ **follow the same rules** as _queries involving *normal value fields*_.
+  - When *specifying* **the value** for *a query* to match:
+    - you may use either an object instance itself, or
+      - ex: `b`, `Blog` object with `id=5`
+    - the primary key value for the object.
+      - ex: `5`, `id` (field, tea gening)
+
+For example, if you have a `Blog` object `b` with `id=5` (tea gening), the *following three queries* would be **identical**:
+
+```python
+Entry.objects.filter(blog=b)  # Query using object instance
+Entry.objects.filter(blog=b.id)  # Query using `id` from instance
+Entry.objects.filter(blog=5)  # Query using `id` directly
+```
 
 ## Falling back to raw SQL
 
