@@ -917,12 +917,23 @@ bla-bla-bla
 >>> Entry.objects.filter(blog__pk=3)  # __pk implies __id__exact
 ```
 
-### ~~Escaping percent signs and underscores in `LIKE` statements~~
+### Escaping percent signs and underscores in `LIKE` statements — Light read — Unmodded
 
-~~...~~ _Skipped_
+The field lookups that equate to `LIKE` `SQL` statements (`iexact`, `contains`, `icontains`, `startswith`, `istartswith`, `endswith` and `iendswith`) will automatically escape the two special characters used in `LIKE` statements – the percent sign and the underscore. (In a `LIKE` statement, the percent sign signifies a multiple-character wildcard and the underscore signifies a single-character wildcard.)
 
-Reasoning:
-> Lanjut nanti kalo udah SQL comprehensively.
+This means things should work intuitively, so the abstraction doesn’t leak. For example, to retrieve all the entries that contain a percent sign, use the percent sign as any other character:
+
+```python
+>>> Entry.objects.filter(headline__contains="%")
+```
+
+Django takes care of the quoting for you; the resulting `SQL` will look something like this:
+
+```sql
+SELECT ... WHERE headline LIKE '%\%%';
+```
+
+Same goes for underscores. Both percentage signs and underscores are handled for you transparently.
 
 ### Caching and `QuerySet`s — Mahmuda's version
 
