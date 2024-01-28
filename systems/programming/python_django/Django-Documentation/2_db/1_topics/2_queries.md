@@ -1553,7 +1553,8 @@ Them, skip:
 
 #### Forward — Mahmuda's version
 
-If a model has a `ForeignKey`, instances of that model will have access -> to the related (foreign) object via -> an attribute of the model.
+Them, bla-bla-bla:
+> If a model has a `ForeignKey`, instances of that model will have access -> to the related (foreign) object via -> an attribute of the model.
 
 Example:
 
