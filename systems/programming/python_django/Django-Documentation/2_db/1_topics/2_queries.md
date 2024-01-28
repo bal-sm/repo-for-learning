@@ -1713,7 +1713,18 @@ Mine:
 > Tuh mirip sama one-to-many relationship reverse-nya.
 
 ---
- 
+
+`authors = models.ManyToManyField(Author, related_name='entries')`
+
+```
+a = Author.objects.get(id=6)
+a.entries.all()  # Returns all Entry objects for this Author.
+```
+
+mine.
+
+---
+
 ...
 
 ### One-to-one relationships
