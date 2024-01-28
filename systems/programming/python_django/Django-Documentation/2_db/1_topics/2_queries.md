@@ -1658,6 +1658,12 @@ Read more about:
   - *saves* it and
   - **puts** it in *the related object set*.
   - **Returns** _the newly created object_.
+- `remove(obj1, obj2, ...)`
+  - **Removes** the specified model objects from _the related object set_.
+- `clear()`
+  - **Removes** **all** *objects* from _the related object set_.
+- `set(objs)`
+  - **Replace** _the set of related objects_.
 
 ...
 
