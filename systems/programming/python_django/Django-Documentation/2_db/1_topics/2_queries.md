@@ -1782,7 +1782,16 @@ e.entrydetail  # returns the related EntryDetail object
 
 ---
 
-...
+- If **no object** _has been assigned to this relationship_,
+  - Django will raise a `DoesNotExist` **exception**.
+
+_Instances can be assigned to the *reverse relationship* in **the same way** as you would assign the *forward relationship*:_
+
+```python
+e.entrydetail = ed
+```
+
+---
 
 ### How are the backward relationships possible?
 
