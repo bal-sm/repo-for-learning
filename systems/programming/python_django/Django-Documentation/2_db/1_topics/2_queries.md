@@ -1580,6 +1580,18 @@ Mine, learning note, terus buat kalyan:
 
 ---
 
+Remove relation if `null=True`
+
+bla-bla-bla
+
+```python
+>>> e = Entry.objects.get(id=2)
+>>> e.blog = None
+>>> e.save()  # "UPDATE blog_entry SET blog_id = NULL ...;"
+```
+
+---
+
 ...
 
 #### Following relationships “backward”
