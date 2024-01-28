@@ -1522,6 +1522,21 @@ Read more about:
   - _(i.e., a `ForeignKey`, `OneToOneField`, or `ManyToManyField`)_, 
   - _instances of that model_ *will* *have* **a convenient API** to **access** the *related object(s)*.
 
+---
+
+_For example_
+
+- Using the models at the top of this page, for example: 
+  - an `Entry` object `e`
+    - can get its associated `Blog` object
+      - by accessing the `blog` attribute: 
+        - `e.blog`.
+
+Them:
+> (Behind the scenes, this functionality is implemented by Python [descriptors](https://docs.python.org/3/howto/descriptor.html). This shouldn’t really matter to you, but we point it out here for the curious.)
+
+---
+
 ...
 
 ### One-to-many relationships
