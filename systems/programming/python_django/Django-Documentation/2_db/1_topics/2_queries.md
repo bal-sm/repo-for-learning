@@ -1769,6 +1769,19 @@ ed.entry  # Returns the related Entry object.
 
 ---
 
+- _The difference_ *comes* in **“reverse” queries**:
+  - The related model in a one-to-one relationship *also* has access |=> to a `Manager` object, 
+    - but that `Manager` represents a single object, **rather than** _a collection of objects_: ->
+
+->:
+
+```python
+e = Entry.objects.get(id=2)
+e.entrydetail  # returns the related EntryDetail object
+```
+
+---
+
 ...
 
 ### How are the backward relationships possible?
