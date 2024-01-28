@@ -3,6 +3,9 @@
 Mine:
 > Taken from, [official docs](https://docs.djangoproject.com/en/5.0/ref/models/querysets/#queryset-api).
 
+Maintenance note:
+> rename to just `2_queryset_api.md` aja.
+
 Here’s the formal declaration of a `QuerySet`:
 
 ```python

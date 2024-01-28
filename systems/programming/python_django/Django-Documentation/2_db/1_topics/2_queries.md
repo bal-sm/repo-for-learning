@@ -1639,7 +1639,31 @@ Mine, TL;DR:
 
 ~~...~~ _Skipped_ dulu.
 
-#### Additional methods to handle related objects
+#### Additional methods to handle related objects — Mahmuda's version
+
+In addition to the `QuerySet` methods defined in “Retrieving objects” above, the `ForeignKey` `Manager` has additional methods used to handle the set of related objects. A synopsis of each is below, 
+
+Them:
+> and complete details can be found in the [related objects reference / `relations` ref](../2_ref_slash_bookmarks/1_models/6_relations.md).
+
+Read more about:
+> - [`django.db.models.query.QuerySet` dalem `QuerySet` API, here](../2_ref_slash_bookmarks/1_models/10_querysets/2_queryset_api_slash_bookmarks.md)
+> - [`ForeignKey` / `django.db.models.ForeignKey`, here](../2_ref_slash_bookmarks/1_models/1_fields/3_relationship_fields/1_ForeignKey.md)
+> - [`django.db.models.Manager` dalem `managers` folder](./5_managers.md)
+
+- `add(obj1, obj2, ...)`
+  - **Adds** *the specified model objects* to the related object set.
+- `create(**kwargs)`
+  - *Creates* a new object,
+  - *saves* it and
+  - **puts** it in *the related object set*.
+  - **Returns** _the newly created object_.
+- `remove(obj1, obj2, ...)`
+  - **Removes** the specified model objects from _the related object set_.
+- `clear()`
+  - **Removes** **all** *objects* from _the related object set_.
+- `set(objs)`
+  - **Replace** _the set of related objects_.
 
 ...
 
