@@ -1509,29 +1509,135 @@ Them:
 
 ---
 
+Read more about:
+> [`._state` here](../2_ref_slash_bookmarks/1_models/9_instances/9_other_attributes__._state.md).
+
 ## Updating multiple objects at once
 
-...
+~~...~~ _Skipped dulu._
 
-## Related objects
+## Related objects — Mahmuda's version
 
-...
+- When you define a relationship in a model 
+  - _(i.e., a `ForeignKey`, `OneToOneField`, or `ManyToManyField`)_, 
+  - _instances of that model_ *will* *have* **a convenient API** to **access** the *related object(s)*.
 
-### One-to-many relationships
+---
 
-...
+_For example_
 
-#### Forward
+- Using the models at the top of this page, for example: 
+  - an `Entry` object `e`
+    - can get its associated `Blog` object
+      - by accessing the `blog` attribute: 
+        - `e.blog`.
 
-...
+Them:
+> (Behind the scenes, this functionality is implemented by Python [descriptors](https://docs.python.org/3/howto/descriptor.html). This shouldn’t really matter to you, but we point it out here for the curious.)
 
-#### Following relationships “backward”
+---
 
-...
+- Django also *creates* **API accessors** for **the “other” side** _of the relationship_ –:
+  - *the link* _from the related model_ *to* _the model that defines the relationship_. 
+    - > bagus gak sih ngerangkum kayak gini teh, learning + maintenance note.
+  - For example, 
+    - a `Blog` object -> `b` has access to -> a list of all related `Entry` objects via -> the `entry_set` attribute: 
+      - `b.entry_set.all()`.
+
+Them, skip:
+> All examples in this section use the sample `Blog`, `Author` and `Entry` models defined at the top of this page.
+
+---
+
+### One-to-many relationships — Mahmuda's version
+
+#### Forward — Mahmuda's version
+
+Them, bla-bla-bla:
+> If a model has a `ForeignKey`, instances of that model will have access -> to the related (foreign) object via -> an attribute of the model.
+
+Example:
+
+```python
+>>> e = Entry.objects.get(id=2)
+>>> e.blog  # Returns the related Blog object.
+```
+
+---
+
+_Get and set is available_
+
+bla-bla-bla
+
+```python
+>>> e = Entry.objects.get(id=2)
+>>> e.blog = some_blog
+>>> e.save()
+```
+
+Mine, learning note, terus buat kalyan:
+> ih bla-bla-bla bikin set-sat-set gening, CUMAN PASTINYA BISA JADI KONOTASI NEGATIF, ini teh for my own learning experience aja ya gys.
+
+---
+
+Remove relation if `null=True`
+
+bla-bla-bla
+
+```python
+>>> e = Entry.objects.get(id=2)
+>>> e.blog = None
+>>> e.save()  # "UPDATE blog_entry SET blog_id = NULL ...;"
+```
+
+---
+
+_Caching_
+
+bla-bla-bla
+
+```python
+>>> e = Entry.objects.get(id=2)
+>>> print(e.blog)  # Hits the database to retrieve the associated Blog.
+>>> print(e.blog)  # Doesn't hit the database; uses cached version.
+```
+
+---
+
+#### Following relationships “backward” — Mahmuda's version
+
+bla-bla-bla aja deh
+
+```python
+>>> b = Blog.objects.get(id=1)
+>>> b.entry_set.all()  # Returns all Entry objects related to Blog.
+
+# b.entry_set is a Manager that returns QuerySets.
+>>> b.entry_set.filter(headline__contains="Lennon")
+>>> b.entry_set.count()
+```
+
+---
+
+bla-bla-bla
+
+Mine, TL;DR:
+> If `blog = ForeignKey(Blog, on_delete=models.CASCADE, `**`related_name='entries'`**`)`:
+
+```python
+>>> b = Blog.objects.get(id=1)
+>>> b.entries.all()  # Returns all Entry objects related to Blog.
+
+# b.entries is a Manager that returns QuerySets.
+>>> b.entries.filter(headline__contains="Lennon")
+>>> b.entries.count()
+```
+
+---
 
 #### Using a custom reverse manager
 
-...
+~~...~~ _Skipped_ dulu.
 
 #### Additional methods to handle related objects
 
