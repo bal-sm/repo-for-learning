@@ -1824,6 +1824,10 @@ Entry.objects.filter(blog=b.id)  # Query using `id` from instance
 Entry.objects.filter(blog=5)  # Query using `id` directly
 ```
 
-## Falling back to raw SQL
+## Falling back to raw SQL — Light read — Unmodded
 
-...
+Them, "tuh bisa" aja:
+> If you find yourself needing to write an SQL query that is too complex for Django’s database-mapper to handle, you can fall back on writing SQL by hand. Django has a couple of options for writing raw SQL queries; see [Performing raw SQL queries](./6_sql.md).
+
+Them, penting:
+> Finally, it’s important to note that the Django database layer is merely an interface to your database. You can access your database via other tools, programming languages or database frameworks; there’s nothing Django-specific about your database.
