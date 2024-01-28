@@ -1604,9 +1604,36 @@ bla-bla-bla
 
 ---
 
-#### Following relationships “backward”
+#### Following relationships “backward” — Mahmuda's version
 
-...
+bla-bla-bla aja deh
+
+```python
+>>> b = Blog.objects.get(id=1)
+>>> b.entry_set.all()  # Returns all Entry objects related to Blog.
+
+# b.entry_set is a Manager that returns QuerySets.
+>>> b.entry_set.filter(headline__contains="Lennon")
+>>> b.entry_set.count()
+```
+
+---
+
+bla-bla-bla
+
+Mine, TL;DR:
+> If `blog = ForeignKey(Blog, on_delete=models.CASCADE, `**`related_name='entries'`**`)`:
+
+```python
+>>> b = Blog.objects.get(id=1)
+>>> b.entries.all()  # Returns all Entry objects related to Blog.
+
+# b.entries is a Manager that returns QuerySets.
+>>> b.entries.filter(headline__contains="Lennon")
+>>> b.entries.count()
+```
+
+---
 
 #### Using a custom reverse manager
 
