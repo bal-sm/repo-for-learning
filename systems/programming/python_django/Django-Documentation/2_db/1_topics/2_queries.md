@@ -1516,7 +1516,11 @@ Read more about:
 
 ~~...~~ _Skipped dulu._
 
-## Related objects
+## Related objects — Mahmuda's version
+
+- When you define a relationship in a model 
+  - _(i.e., a `ForeignKey`, `OneToOneField`, or `ManyToManyField`)_, 
+  - _instances of that model_ *will* *have* **a convenient API** to **access** the *related object(s)*.
 
 ...
 
