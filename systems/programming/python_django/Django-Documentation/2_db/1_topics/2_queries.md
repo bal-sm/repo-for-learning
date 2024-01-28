@@ -1793,7 +1793,7 @@ e.entrydetail = ed
 
 ---
 
-### How are the backward relationships possible? — Mahmuda's version
+### How are the backward relationships possible? — Light read — Unmodded
 
 Other object-relational mappers require you to define relationships on both sides. The Django developers believe this is a violation of the DRY (Don’t Repeat Yourself) principle, so Django only requires you to define the relationship on one end.
 
