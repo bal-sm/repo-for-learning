@@ -6,4 +6,4 @@ Mine:
 ..., TBA.
 
 Learning + maintenance note:
-> Naha ini gak ada `ref` nya ya?
+> Naha `managers` ada `topics` nya tapi gak ada `ref` nya ya?
