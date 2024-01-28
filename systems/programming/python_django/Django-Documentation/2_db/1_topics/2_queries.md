@@ -1677,6 +1677,16 @@ b = Blog.objects.get(id=1)
 b.entry_set.set([e1, e2])
 ```
 
+- If the `clear()` method is *available*, 
+  - **any** preexisting objects will be **removed** from the `entry_set` 
+    - *before* all objects in the iterable (in this case, a list) are *added* to the set. 
+- If the `clear()` method is *not available*, 
+  - **all** objects in the iterable will be **added**
+    - *without* *removing* any existing elements.
+
+Mine, learning note:
+> Maksud *not available* teh kalau memang udah gak ada `object` apapun dalam `b.entry_set`
+
 ---
 
 ...
