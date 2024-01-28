@@ -1793,9 +1793,19 @@ e.entrydetail = ed
 
 ---
 
-### How are the backward relationships possible?
+### How are the backward relationships possible? — Mahmuda's version
 
-...
+Other object-relational mappers require you to define relationships on both sides. The Django developers believe this is a violation of the DRY (Don’t Repeat Yourself) principle, so Django only requires you to define the relationship on one end.
+
+But how is this possible, given that a model class doesn’t know which other model classes are related to it until those other model classes are loaded?
+
+The answer lies in the [app registry / `django.apps.apps`](https://docs.djangoproject.com/en/5.0/ref/applications/#django.apps.apps). When Django starts, it imports each application listed in [`INSTALLED_APPS`](https://docs.djangoproject.com/en/5.0/ref/settings/#std-setting-INSTALLED_APPS), and then the `models` module inside each application. Whenever a new model class is created, Django adds backward-relationships to any related models. If the related models haven’t been imported yet, Django keeps tracks of the relationships and adds them when the related models eventually are imported.
+
+Them, important, and cautionary tale:
+> For this reason, it’s particularly important that all the models you’re using be defined in applications listed in [`INSTALLED_APPS`](https://docs.djangoproject.com/en/5.0/ref/settings/#std-setting-INSTALLED_APPS). Otherwise, backwards relations may not work properly.
+
+Mine, learning and maintenance note:
+> ih itu belum dirangkum 2 link itu. apalagi masalah `settings` kan lagian.
 
 ### Queries over related objects
 
