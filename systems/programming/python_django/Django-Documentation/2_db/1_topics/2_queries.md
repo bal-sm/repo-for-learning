@@ -1176,11 +1176,37 @@ class Dog(models.Model):
 ```
 
 Learning and maintenance note:
-> Skip dulu aja deh, soalnya mau kapan-kapan aja masalah `JSONField`, (kayaknya bari ngoding `JSONField`s di my own personal project).
+> ~~Skip dulu aja deh, soalnya mau kapan-kapan aja masalah `JSONField`, (kayaknya bari ngoding `JSONField`s di my own personal project).~~
 
-### Storing and querying for `None`
+### Storing and querying for `None` — Light read — Unmodded
 
-...
+As with other fields, storing `None` as the field’s value will store it as `SQL` `NULL`. While not recommended, it is possible to store `JSON` scalar `null` instead of `SQL` `NULL` by using `Value(None, JSONField())`.
+
+Whichever of the values is stored, when retrieved from the database, the `Python` representation of the `JSON` scalar `null` is the same as `SQL` `NULL`, i.e. `None`. Therefore, it can be hard to distinguish between them.
+
+This only applies to `None` as the top-level value of the field. If `None` is inside a `list` or `dict`, it will always be interpreted as `JSON` `null`.
+
+When querying, `None` value will always be interpreted as `JSON` `null`. To query for `SQL` `NULL`, use `isnull`:
+
+```python
+>>> Dog.objects.create(name="Max", data=None)  # SQL NULL.
+<Dog: Max>
+>>> Dog.objects.create(name="Archie", data=Value(None, JSONField()))  # JSON null.
+<Dog: Archie>
+>>> Dog.objects.filter(data=None)
+<QuerySet [<Dog: Archie>]>
+>>> Dog.objects.filter(data=Value(None, JSONField()))
+<QuerySet [<Dog: Archie>]>
+>>> Dog.objects.filter(data__isnull=True)
+<QuerySet [<Dog: Max>]>
+>>> Dog.objects.filter(data__isnull=False)
+<QuerySet [<Dog: Archie>]>
+```
+
+Unless you are sure you wish to work with `SQL` `NULL` values, consider setting `null=False` and providing a suitable default for empty values, such as `default=dict`.
+
+Mine:
+> Let's do it. My own personal project have this very thing `JSONField`. Meureun mau aku jadiin abstract model juga kayaknya.
 
 ### Key, index, and path transforms
 
