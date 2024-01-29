@@ -917,12 +917,23 @@ bla-bla-bla
 >>> Entry.objects.filter(blog__pk=3)  # __pk implies __id__exact
 ```
 
-### ~~Escaping percent signs and underscores in `LIKE` statements~~
+### Escaping percent signs and underscores in `LIKE` statements — Light read — Unmodded
 
-~~...~~ _Skipped_
+The field lookups that equate to `LIKE` `SQL` statements (`iexact`, `contains`, `icontains`, `startswith`, `istartswith`, `endswith` and `iendswith`) will automatically escape the two special characters used in `LIKE` statements – the percent sign and the underscore. (In a `LIKE` statement, the percent sign signifies a multiple-character wildcard and the underscore signifies a single-character wildcard.)
 
-Reasoning:
-> Lanjut nanti kalo udah SQL comprehensively.
+This means things should work intuitively, so the abstraction doesn’t leak. For example, to retrieve all the entries that contain a percent sign, use the percent sign as any other character:
+
+```python
+>>> Entry.objects.filter(headline__contains="%")
+```
+
+Django takes care of the quoting for you; the resulting `SQL` will look something like this:
+
+```sql
+SELECT ... WHERE headline LIKE '%\%%';
+```
+
+Same goes for underscores. Both percentage signs and underscores are handled for you transparently.
 
 ### Caching and `QuerySet`s — Mahmuda's version
 
@@ -1746,18 +1757,88 @@ mine.
 
 ---
 
-### One-to-one relationships
+### One-to-one relationships — Mahmuda's version
 
-...
+- One-to-one relationships are **very similar** to many-to-one relationships. 
+  - If you define a `OneToOneField` on your model,
+    - _instances of that model_ *will* *have* *access* _**to the related object**_ 
+      - *via* ***an attribute of the model***.
 
-### How are the backward relationships possible?
+---
 
-...
+For example:
 
-### Queries over related objects
+```python
+class EntryDetail(models.Model):
+    entry = models.OneToOneField(Entry, on_delete=models.CASCADE)
+    details = models.TextField()
 
-...
 
-## Falling back to raw SQL
+ed = EntryDetail.objects.get(id=2)
+ed.entry  # Returns the related Entry object.
+```
 
-...
+---
+
+- _The difference_ *comes* in **“reverse” queries**:
+  - The related model in a one-to-one relationship *also* has access |=> to a `Manager` object, 
+    - but that `Manager` represents a single object, **rather than** _a collection of objects_: ->
+
+->:
+
+```python
+e = Entry.objects.get(id=2)
+e.entrydetail  # returns the related EntryDetail object
+```
+
+---
+
+- If **no object** _has been assigned to this relationship_,
+  - Django will raise a `DoesNotExist` **exception**.
+
+_Instances can be assigned to the *reverse relationship* in **the same way** as you would assign the *forward relationship*:_
+
+```python
+e.entrydetail = ed
+```
+
+---
+
+### How are the backward relationships possible? — Light read — Unmodded
+
+Other object-relational mappers require you to define relationships on both sides. The Django developers believe this is a violation of the DRY (Don’t Repeat Yourself) principle, so Django only requires you to define the relationship on one end.
+
+But how is this possible, given that a model class doesn’t know which other model classes are related to it until those other model classes are loaded?
+
+The answer lies in the [app registry / `django.apps.apps`](https://docs.djangoproject.com/en/5.0/ref/applications/#django.apps.apps). When Django starts, it imports each application listed in [`INSTALLED_APPS`](https://docs.djangoproject.com/en/5.0/ref/settings/#std-setting-INSTALLED_APPS), and then the `models` module inside each application. Whenever a new model class is created, Django adds backward-relationships to any related models. If the related models haven’t been imported yet, Django keeps tracks of the relationships and adds them when the related models eventually are imported.
+
+Them, important, and cautionary tale:
+> For this reason, it’s particularly important that all the models you’re using be defined in applications listed in [`INSTALLED_APPS`](https://docs.djangoproject.com/en/5.0/ref/settings/#std-setting-INSTALLED_APPS). Otherwise, backwards relations may not work properly.
+
+Mine, learning and maintenance note:
+> ih itu belum dirangkum 2 link itu. apalagi masalah `settings` kan lagian.
+
+### Queries over related objects — Mahmuda's version
+
+- _Queries involving *related objects*_ **follow the same rules** as _queries involving *normal value fields*_.
+  - When *specifying* **the value** for *a query* to match:
+    - you may use either an object instance itself, or
+      - ex: `b`, `Blog` object with `id=5`
+    - the primary key value for the object.
+      - ex: `5`, `id` (field, tea gening)
+
+For example, if you have a `Blog` object `b` with `id=5` (tea gening), the *following three queries* would be **identical**:
+
+```python
+Entry.objects.filter(blog=b)  # Query using object instance
+Entry.objects.filter(blog=b.id)  # Query using `id` from instance
+Entry.objects.filter(blog=5)  # Query using `id` directly
+```
+
+## Falling back to raw SQL — Light read — Unmodded
+
+Them, "tuh bisa" aja:
+> If you find yourself needing to write an SQL query that is too complex for Django’s database-mapper to handle, you can fall back on writing SQL by hand. Django has a couple of options for writing raw SQL queries; see [Performing raw SQL queries](./6_sql.md).
+
+Them, penting:
+> Finally, it’s important to note that the Django database layer is merely an interface to your database. You can access your database via other tools, programming languages or database frameworks; there’s nothing Django-specific about your database.
