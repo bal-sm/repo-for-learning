@@ -1176,7 +1176,7 @@ class Dog(models.Model):
 ```
 
 Learning and maintenance note:
-> Skip dulu aja deh, soalnya mau kapan-kapan aja masalah `JSONField`, (kayaknya bari ngoding `JSONField`s di my own personal project).
+> ~~Skip dulu aja deh, soalnya mau kapan-kapan aja masalah `JSONField`, (kayaknya bari ngoding `JSONField`s di my own personal project).~~
 
 ### Storing and querying for `None`
 
