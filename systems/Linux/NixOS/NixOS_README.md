@@ -40,4 +40,13 @@ Komen @itme_brain
 Mine:
 > Tuh buang buang Nix store (ceuk bapak eta mah snapshot) pake garbacmge collector, terus ada integration sama GRUB juga dong? I wonder bisa utilize btrfs tea gak sih.
 
+---
+
+- [Nix Flakes, Part 1: An introduction and tutorial](https://www.tweag.io/blog/2020-05-25-flakes/)
+  - [Flake outputs](https://www.tweag.io/blog/2020-05-25-flakes/#flake-outputs)
+    - While a flake can have arbitrary outputs, some of them, if they exist, have a special meaning to certain Nix commands and therefore must have a specific type. For example, the output `defaultPackage.<system>` must be a derivation; it’s what `nix build` and `nix shell` will build by default unless you specify another output. The `nix` CLI allows you to specify another output through a syntax reminiscent of URL fragments...
+      - > tuh.
+
+---
+
 ...
