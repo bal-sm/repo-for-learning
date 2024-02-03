@@ -1259,7 +1259,7 @@ To query for *missing keys*, use the **`isnull` lookup**:
 Them, tuh bisa:
 > The lookup examples given above implicitly use the `exact` lookup. Key, index, and path transforms can also be chained with: `icontains`, `endswith`, `iendswith`, `iexact`, `regex`, `iregex`, `startswith`, `istartswith`, `lt`, `lte`, `gt`, and `gte`, as well as with [Containment and key lookups](#containment-and-key-lookups--mahmudas-version).
 
-#### `KT()` expressions — Mahmuda's version
+#### `KT()` expressions — Light read — Light modded
 
 Them:
 > New in Django 4.2.
@@ -1273,7 +1273,41 @@ Them:
   - of `JSONField`. 
   - You can use the __double underscore notation__ in `lookup` to **chain** _dictionary key_ and _index transforms_.
 
-...
+For example:
+
+```python
+>>> from django.db.models.fields.json import KT
+>>> Dog.objects.create(
+...     name="Shep",
+...     data={
+...         "owner": {"name": "Bob"},
+...         "breed": ["collie", "lhasa apso"],
+...     },
+... )
+<Dog: Shep>
+>>> Dogs.objects.annotate(
+...     first_breed=KT("data__breed__1"), owner_name=KT("data__owner__name")
+... ).filter(first_breed__startswith="lhasa", owner_name="Bob")
+<QuerySet [<Dog: Shep>]>
+```
+
+Note from them:
+> Due to the way in which key-path queries work, `exclude()` and `filter()` are not guaranteed to produce exhaustive sets. If you want to include objects that do not have the path, add the `isnull` lookup.
+
+Warning from them:
+> Since any string could be a key in a JSON object, any lookup other than those listed below will be interpreted as a key lookup. No errors are raised. Be extra careful for typing mistakes, and always check your queries work as you intend.
+
+MariaDB and Oracle users:
+> Using `order_by()` on key, index, or path transforms will sort the objects using the string representation of the values. This is because MariaDB and Oracle Database do not provide a function that converts JSON values into their equivalent SQL values.
+
+Oracle users
+> On Oracle Database, using `None` as the lookup value in an `exclude()` query will return objects that do not have `null` as the value at the given path, including objects that do not have the path. On other database backends, the query will return objects that have the path and the value is not `null`.
+
+PostgreSQL users
+> On PostgreSQL, if only one key or index is used, the SQL operator `->` is used. If multiple operators are used then the `#>` operator is used.
+
+SQLite users
+> On SQLite, "`true`", "`false`", and "`null`" string values will always be interpreted as `True`, `False`, and JSON `null` respectively.
 
 ### Containment and key lookups — Mahmuda's version
 
