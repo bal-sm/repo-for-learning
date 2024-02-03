@@ -1207,6 +1207,32 @@ Mine:
 
 ### Key, index, and path transforms
 
+bla
+
+```python
+>>> Dog.objects.create(
+...     name="Rufus",
+...     data={
+...         "breed": "labrador",
+...         "owner": {
+...             "name": "Bob",
+...             "other_pets": [
+...                 {
+...                     "name": "Fishy",
+...                 }
+...             ],
+...         },
+...     },
+... )
+# <Dog: Rufus>
+>>> Dog.objects.create(name="Meg", data={"breed": "collie", "owner": None})
+# <Dog: Meg>
+>>> Dog.objects.filter(data__breed="collie")
+# <QuerySet [<Dog: Meg>]>
+```
+
+---
+
 ...
 
 #### `KT()` expressions
