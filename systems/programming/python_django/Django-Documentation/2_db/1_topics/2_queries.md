@@ -1175,9 +1175,6 @@ class Dog(models.Model):
         return self.name
 ```
 
-Learning and maintenance note:
-> ~~Skip dulu aja deh, soalnya mau kapan-kapan aja masalah `JSONField`, (kayaknya bari ngoding `JSONField`s di my own personal project).~~
-
 ### Storing and querying for `None` — Light read — Unmodded
 
 As with other fields, storing `None` as the field’s value will store it as `SQL` `NULL`. While not recommended, it is possible to store `JSON` scalar `null` instead of `SQL` `NULL` by using `Value(None, JSONField())`.
