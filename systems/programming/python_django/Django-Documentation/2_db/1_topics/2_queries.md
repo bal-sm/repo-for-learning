@@ -1207,7 +1207,8 @@ Mine:
 
 ### Key, index, and path transforms
 
-bla
+- To query based on **a given dictionary key**,
+  - use *that key* as **the lookup name**:
 
 ```python
 >>> Dog.objects.create(
