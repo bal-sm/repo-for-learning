@@ -1205,7 +1205,7 @@ Unless you are sure you wish to work with `SQL` `NULL` values, consider setting 
 Mine:
 > Let's do it. My own personal project have this very thing `JSONField`. Meureun mau aku jadiin abstract model juga kayaknya.
 
-### Key, index, and path transforms
+### Key, index, and path transforms — Mahmuda's version
 
 - To query based on **a given dictionary key**,
   - use *that key* as **the lookup name**:
@@ -1247,13 +1247,23 @@ Note from them:
 
 ---
 
-...
+To query for *missing keys*, use the **`isnull` lookup**:
+
+```python
+>>> Dog.objects.create(name="Shep", data={"breed": "collie"})
+# <Dog: Shep>
+>>> Dog.objects.filter(data__owner__isnull=True)
+# <QuerySet [<Dog: Shep>]>
+```
+
+Them, tuh bisa:
+> The lookup examples given above implicitly use the `exact` lookup. Key, index, and path transforms can also be chained with: `icontains`, `endswith`, `iendswith`, `iexact`, `regex`, `iregex`, `startswith`, `istartswith`, `lt`, `lte`, `gt`, and `gte`, as well as with [Containment and key lookups](#containment-and-key-lookups--mahmudas-version).
 
 #### `KT()` expressions
 
 ...
 
-### Containment and key lookups
+### Containment and key lookups — Mahmuda's version
 
 ...
 
