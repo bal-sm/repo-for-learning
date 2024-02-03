@@ -1242,6 +1242,9 @@ Mine:
 # <QuerySet [<Dog: Rufus>]>
 ```
 
+Note from them:
+> If the key you wish to query by clashes with the name of another lookup, use the `contains` lookup instead.
+
 ---
 
 ...
