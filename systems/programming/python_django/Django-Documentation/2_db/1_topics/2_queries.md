@@ -1175,9 +1175,6 @@ class Dog(models.Model):
         return self.name
 ```
 
-Learning and maintenance note:
-> ~~Skip dulu aja deh, soalnya mau kapan-kapan aja masalah `JSONField`, (kayaknya bari ngoding `JSONField`s di my own personal project).~~
-
 ### Storing and querying for `None` — Light read — Unmodded
 
 As with other fields, storing `None` as the field’s value will store it as `SQL` `NULL`. While not recommended, it is possible to store `JSON` scalar `null` instead of `SQL` `NULL` by using `Value(None, JSONField())`.
@@ -1208,15 +1205,65 @@ Unless you are sure you wish to work with `SQL` `NULL` values, consider setting 
 Mine:
 > Let's do it. My own personal project have this very thing `JSONField`. Meureun mau aku jadiin abstract model juga kayaknya.
 
-### Key, index, and path transforms
+### Key, index, and path transforms — Mahmuda's version
 
-...
+- To query based on **a given dictionary key**,
+  - use *that key* as **the lookup name**:
+
+```python
+>>> Dog.objects.create(
+...     name="Rufus",
+...     data={
+...         "breed": "labrador",
+...         "owner": {
+...             "name": "Bob",
+...             "other_pets": [
+...                 {
+...                     "name": "Fishy",
+...                 }
+...             ],
+...         },
+...     },
+... )
+# <Dog: Rufus>
+>>> Dog.objects.create(name="Meg", data={"breed": "collie", "owner": None})
+# <Dog: Meg>
+>>> Dog.objects.filter(data__breed="collie")
+# <QuerySet [<Dog: Meg>]>
+```
+
+---
+
+- If *the key* is **an integer**,
+  - it will be interpreted as *an index* **transform** in *an array*:
+
+```python
+>>> Dog.objects.filter(data__owner__other_pets__0__name="Fishy")
+# <QuerySet [<Dog: Rufus>]>
+```
+
+Note from them:
+> If the key you wish to query by clashes with the name of another lookup, use the `contains` lookup instead.
+
+---
+
+To query for *missing keys*, use the **`isnull` lookup**:
+
+```python
+>>> Dog.objects.create(name="Shep", data={"breed": "collie"})
+# <Dog: Shep>
+>>> Dog.objects.filter(data__owner__isnull=True)
+# <QuerySet [<Dog: Shep>]>
+```
+
+Them, tuh bisa:
+> The lookup examples given above implicitly use the `exact` lookup. Key, index, and path transforms can also be chained with: `icontains`, `endswith`, `iendswith`, `iexact`, `regex`, `iregex`, `startswith`, `istartswith`, `lt`, `lte`, `gt`, and `gte`, as well as with [Containment and key lookups](#containment-and-key-lookups--mahmudas-version).
 
 #### `KT()` expressions
 
 ...
 
-### Containment and key lookups
+### Containment and key lookups — Mahmuda's version
 
 ...
 
