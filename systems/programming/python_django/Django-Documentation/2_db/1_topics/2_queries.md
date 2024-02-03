@@ -1234,6 +1234,16 @@ Mine:
 
 ---
 
+- If *the key* is **an integer**,
+  - it will be interpreted as *an index* **transform** in *an array*:
+
+```python
+>>> Dog.objects.filter(data__owner__other_pets__0__name="Fishy")
+# <QuerySet [<Dog: Rufus>]>
+```
+
+---
+
 ...
 
 #### `KT()` expressions
