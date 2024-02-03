@@ -1259,7 +1259,19 @@ To query for *missing keys*, use the **`isnull` lookup**:
 Them, tuh bisa:
 > The lookup examples given above implicitly use the `exact` lookup. Key, index, and path transforms can also be chained with: `icontains`, `endswith`, `iendswith`, `iexact`, `regex`, `iregex`, `startswith`, `istartswith`, `lt`, `lte`, `gt`, and `gte`, as well as with [Containment and key lookups](#containment-and-key-lookups--mahmudas-version).
 
-#### `KT()` expressions
+#### `KT()` expressions — Mahmuda's version
+
+Them:
+> New in Django 4.2.
+
+`django.db.models.fields.json.KT` / `class KT(lookup)`
+
+- Represents the text value of:
+  - a key, 
+  - index, or 
+  - path transform -
+  - of `JSONField`. 
+  - You can use the __double underscore notation__ in `lookup` to **chain** _dictionary key_ and _index transforms_.
 
 ...
 
