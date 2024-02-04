@@ -1340,7 +1340,32 @@ Mine:
 
 #### `contained_by`
 
-...
+- _This is the inverse of the contains lookup_ -:
+  - the objects returned will be those where the key-value pairs on the object are *a subset* of those in the value passed. 
+  - For example: ->
+
+->:
+
+```python
+>>> Dog.objects.create(name="Rufus", data={"breed": "labrador", "owner": "Bob"})
+# <Dog: Rufus>
+>>> Dog.objects.create(name="Meg", data={"breed": "collie", "owner": "Bob"})
+# <Dog: Meg>
+>>> Dog.objects.create(name="Fred", data={})
+# <Dog: Fred>
+>>> Dog.objects.filter(data__contained_by={"breed": "collie", "owner": "Bob"})
+# <QuerySet [<Dog: Meg>, <Dog: Fred>]>
+>>> Dog.objects.filter(data__contained_by={"breed": "collie"})
+# <QuerySet [<Dog: Fred>]>
+```
+
+Mine, learning note:
+> Langsung aja liat contohnya, tuh, (tuing-tuing), jadinya bandingin `data__contained_by` sama `data` objectnya. Ngerti kan? :( I'll do something lagi siah ih.
+
+Them, a note:
+> Oracle and SQLite
+> 
+> `contained_by` is not supported on Oracle and SQLite.
 
 #### `has_key`
 
