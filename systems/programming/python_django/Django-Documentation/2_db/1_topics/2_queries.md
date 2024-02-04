@@ -1715,9 +1715,16 @@ Them:
 Read more about:
 > [`._state` here](../2_ref_slash_bookmarks/1_models/9_instances/9_other_attributes__._state.md).
 
-## Updating multiple objects at once
+## Updating multiple objects at once — Light modded
 
-~~...~~ _Skipped dulu._
+Sometimes you want to set a field to *a particular value* for *all the objects* in **a `QuerySet`**. You can do this with the `update()` method. For example:
+
+```python
+# Update all the headlines with pub_date in 2007.
+Entry.objects.filter(pub_date__year=2007).update(headline="Everything is the same")
+```
+
+...
 
 ## Related objects — Mahmuda's version
 
