@@ -1382,7 +1382,16 @@ Returns objects where the given key is in the top-level of the data. For example
 
 #### `has_keys`
 
-...
+Returns objects where all of the given keys are in the top-level of the data. For example:
+
+```python
+>>> Dog.objects.create(name="Rufus", data={"breed": "labrador"})
+<Dog: Rufus>
+>>> Dog.objects.create(name="Meg", data={"breed": "collie", "owner": "Bob"})
+<Dog: Meg>
+>>> Dog.objects.filter(data__has_keys=["breed", "owner"])
+<QuerySet [<Dog: Meg>]>
+```
 
 #### `has_any_keys`
 
