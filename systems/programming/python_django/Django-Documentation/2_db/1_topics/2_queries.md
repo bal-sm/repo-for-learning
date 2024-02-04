@@ -1772,7 +1772,15 @@ Them, modded:
 
 ---
 
-...
+Them, gak bisa gini cenah:
+> However, unlike `F()` objects in filter and exclude clauses, you can’t introduce joins when you use `F()` objects in an update – you can only reference fields local to the model being updated. If you attempt to introduce a join with an F`()` object, a `FieldError` will be raised:
+
+```python
+# This will raise a FieldError
+>>> Entry.objects.update(headline=F("blog__name"))
+```
+
+---
 
 ## Related objects — Mahmuda's version
 
