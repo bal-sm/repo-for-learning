@@ -1751,6 +1751,16 @@ Them:
 
 ---
 
+Them:
+> Be aware that the `update()` method is converted directly to an SQL statement. It is a bulk operation for direct updates. It doesn’t run any `save()` methods on your models, or emit the `pre_save` or `post_save` signals (which are a consequence of calling `save()`), or honor the `auto_now` field option. If you want to save every item in a `QuerySet` and make sure that the `save()` method is called on each instance, you don’t need any special function to handle that. Loop over them and call `save()`:
+
+```python
+for item in my_queryset:
+    item.save()
+```
+
+---
+
 ...
 
 ## Related objects — Mahmuda's version
