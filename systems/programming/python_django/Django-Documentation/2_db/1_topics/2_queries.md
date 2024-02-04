@@ -1715,9 +1715,72 @@ Them:
 Read more about:
 > [`._state` here](../2_ref_slash_bookmarks/1_models/9_instances/9_other_attributes__._state.md).
 
-## Updating multiple objects at once
+## Updating multiple objects at once — Light modded
 
-~~...~~ _Skipped dulu._
+Sometimes you want to set a field to *a particular value* for *all the objects* in **a `QuerySet`**. You can do this with the `update()` method. For example:
+
+```python
+# Update all the headlines with pub_date in 2007.
+Entry.objects.filter(pub_date__year=2007).update(headline="Everything is the same")
+```
+
+---
+
+- You can only set non-relation fields and `ForeignKey` fields using this method. 
+  - To update *a non-relation field*, *provide* **the new value as a constant**. 
+  - To update *`ForeignKey` fields*, *set* *the new value* to be **the new model instance** _you want to point to_. For example:
+
+```python
+>>> b = Blog.objects.get(pk=1)
+
+# Change every Entry so that it belongs to this Blog.
+>>> Entry.objects.update(blog=b)
+```
+
+---
+
+Them:
+> The `update()` method is applied instantly and returns the number of rows matched by the query (which may not be equal to the number of rows updated if some rows already have the new value). The only restriction on the `QuerySet` being updated is that it can only access one database table: the model’s main table. You can filter based on related fields, but you can only update columns in the model’s main table. Example:
+
+```python
+>>> b = Blog.objects.get(pk=1)
+
+# Update all the headlines belonging to this Blog.
+>>> Entry.objects.filter(blog=b).update(headline="Everything is the same")
+```
+
+---
+
+Them:
+> Be aware that the `update()` method is converted directly to an SQL statement. It is a bulk operation for direct updates. It doesn’t run any `save()` methods on your models, or emit the `pre_save` or `post_save` signals (which are a consequence of calling `save()`), or honor the `auto_now` field option. If you want to save every item in a `QuerySet` and make sure that the `save()` method is called on each instance, you don’t need any special function to handle that. Loop over them and call `save()`:
+
+```python
+for item in my_queryset:
+    item.save()
+```
+
+---
+
+Them, modded:
+> Calls to update can also use (`F` expressions) to update one field based on the value of another field in the model. This is especially useful for incrementing counters based upon their current value. 
+> 
+> For example, to increment the pingback count for every entry in the blog:
+
+```python
+>>> Entry.objects.update(number_of_pingbacks=F("number_of_pingbacks") + 1)
+```
+
+---
+
+Them, gak bisa gini cenah:
+> However, unlike `F()` objects in filter and exclude clauses, you can’t introduce joins when you use `F()` objects in an update – you can only reference fields local to the model being updated. If you attempt to introduce a join with an F`()` object, a `FieldError` will be raised:
+
+```python
+# This will raise a FieldError
+>>> Entry.objects.update(headline=F("blog__name"))
+```
+
+---
 
 ## Related objects — Mahmuda's version
 
@@ -1838,9 +1901,46 @@ Mine, TL;DR:
 
 ---
 
-#### Using a custom reverse manager
+#### Using a custom reverse manager — Light read — Unmodded
 
-~~...~~ _Skipped_ dulu.
+By default the `RelatedManager` used for reverse relations is a subclass of the [default manager](https://docs.djangoproject.com/en/5.0/topics/db/managers/#manager-names) for that model. If you would like to specify a different manager for a given query you can use the following syntax:
+
+Maintenance note:
+> Kalau `managers` udah dirangkum, ganti linknya yang `rfl` dong.
+
+```python
+from django.db import models
+
+
+class Entry(models.Model):
+    # ...
+    objects = models.Manager()  # Default Manager
+    entries = EntryManager()  # Custom Manager
+
+
+b = Blog.objects.get(id=1)
+b.entry_set(manager="entries").all()
+```
+
+If `EntryManager` performed default filtering in its `get_queryset()` method, that filtering would apply to the `all()` call.
+
+Specifying a custom reverse manager also enables you to call its custom methods:
+
+```python
+b.entry_set(manager="entries").is_published()
+```
+
+Them, a note:
+> _Interaction with prefetching_
+> 
+> When calling `prefetch_related()` with a reverse relation, the default manager will be used. If you want to prefetch related objects using a custom reverse manager, use `Prefetch()`. For example:
+>
+> ```python
+> from django.db.models import Prefetch
+> 
+> prefetch_manager = Prefetch("entry_set", queryset=Entry.entries.all())
+> Blog.objects.prefetch_related(prefetch_manager)
+> ```
 
 #### Additional methods to handle related objects — Mahmuda's version
 
