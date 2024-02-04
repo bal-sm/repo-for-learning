@@ -1901,9 +1901,46 @@ Mine, TL;DR:
 
 ---
 
-#### Using a custom reverse manager
+#### Using a custom reverse manager — Light read — Unmodded
 
-~~...~~ _Skipped_ dulu.
+By default the `RelatedManager` used for reverse relations is a subclass of the [default manager](https://docs.djangoproject.com/en/5.0/topics/db/managers/#manager-names) for that model. If you would like to specify a different manager for a given query you can use the following syntax:
+
+Maintenance note:
+> Kalau `managers` udah dirangkum, ganti linknya yang `rfl` dong.
+
+```python
+from django.db import models
+
+
+class Entry(models.Model):
+    # ...
+    objects = models.Manager()  # Default Manager
+    entries = EntryManager()  # Custom Manager
+
+
+b = Blog.objects.get(id=1)
+b.entry_set(manager="entries").all()
+```
+
+If `EntryManager` performed default filtering in its `get_queryset()` method, that filtering would apply to the `all()` call.
+
+Specifying a custom reverse manager also enables you to call its custom methods:
+
+```python
+b.entry_set(manager="entries").is_published()
+```
+
+Them, a note:
+> _Interaction with prefetching_
+> 
+> When calling `prefetch_related()` with a reverse relation, the default manager will be used. If you want to prefetch related objects using a custom reverse manager, use `Prefetch()`. For example:
+>
+> ```python
+> from django.db.models import Prefetch
+> 
+> prefetch_manager = Prefetch("entry_set", queryset=Entry.entries.all())
+> Blog.objects.prefetch_related(prefetch_manager)
+> ```
 
 #### Additional methods to handle related objects — Mahmuda's version
 
