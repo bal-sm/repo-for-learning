@@ -1311,11 +1311,32 @@ SQLite users
 
 ### Containment and key lookups — Mahmuda's version
 
-...
-
 #### `contains`
 
-...
+- The `contains` lookup is *overridden* on `JSONField`:
+  - The returned objects are those where the given `dict` of key-value pairs are all contained in _the top-level of the field_.
+  - For example: ->
+
+->:
+
+```python
+>>> Dog.objects.create(name="Rufus", data={"breed": "labrador", "owner": "Bob"})
+<Dog: Rufus>
+>>> Dog.objects.create(name="Meg", data={"breed": "collie", "owner": "Bob"})
+<Dog: Meg>
+>>> Dog.objects.create(name="Fred", data={})
+<Dog: Fred>
+>>> Dog.objects.filter(data__contains={"owner": "Bob"})
+<QuerySet [<Dog: Rufus>, <Dog: Meg>]>
+>>> Dog.objects.filter(data__contains={"breed": "collie"})
+<QuerySet [<Dog: Meg>]>
+```
+
+Oracle and SQLite:
+> `contains` is not supported on Oracle and SQLite.
+
+Mine:
+> who the fuck, cuman kalo development pake SQLite, bingung sih.
 
 #### `contained_by`
 
