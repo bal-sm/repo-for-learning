@@ -1395,7 +1395,16 @@ Returns objects where all of the given keys are in the top-level of the data. Fo
 
 #### `has_any_keys`
 
-...
+Returns objects where any of the given keys are in the top-level of the data. For example:
+
+```python
+>>> Dog.objects.create(name="Rufus", data={"breed": "labrador"})
+<Dog: Rufus>
+>>> Dog.objects.create(name="Meg", data={"owner": "Bob"})
+<Dog: Meg>
+>>> Dog.objects.filter(data__has_any_keys=["owner", "breed"])
+<QuerySet [<Dog: Rufus>, <Dog: Meg>]>
+```
 
 ## Complex lookups with `Q` objects — Mahmuda's version
 
