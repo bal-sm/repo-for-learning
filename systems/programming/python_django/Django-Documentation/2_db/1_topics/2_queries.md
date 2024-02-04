@@ -1761,6 +1761,17 @@ for item in my_queryset:
 
 ---
 
+Them, modded:
+> Calls to update can also use (`F` expressions) to update one field based on the value of another field in the model. This is especially useful for incrementing counters based upon their current value. 
+> 
+> For example, to increment the pingback count for every entry in the blog:
+
+```python
+>>> Entry.objects.update(number_of_pingbacks=F("number_of_pingbacks") + 1)
+```
+
+---
+
 ...
 
 ## Related objects — Mahmuda's version
