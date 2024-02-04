@@ -1259,33 +1259,152 @@ To query for *missing keys*, use the **`isnull` lookup**:
 Them, tuh bisa:
 > The lookup examples given above implicitly use the `exact` lookup. Key, index, and path transforms can also be chained with: `icontains`, `endswith`, `iendswith`, `iexact`, `regex`, `iregex`, `startswith`, `istartswith`, `lt`, `lte`, `gt`, and `gte`, as well as with [Containment and key lookups](#containment-and-key-lookups--mahmudas-version).
 
-#### `KT()` expressions
+#### `KT()` expressions — Light read — Light modded
 
-...
+Them:
+> New in Django 4.2.
+
+`django.db.models.fields.json.KT` / `class KT(lookup)`
+
+- Represents the text value of:
+  - a key, 
+  - index, or 
+  - path transform -
+  - of `JSONField`. 
+  - You can use the __double underscore notation__ in `lookup` to **chain** _dictionary key_ and _index transforms_.
+
+For example:
+
+```python
+>>> from django.db.models.fields.json import KT
+>>> Dog.objects.create(
+...     name="Shep",
+...     data={
+...         "owner": {"name": "Bob"},
+...         "breed": ["collie", "lhasa apso"],
+...     },
+... )
+<Dog: Shep>
+>>> Dogs.objects.annotate(
+...     first_breed=KT("data__breed__1"), owner_name=KT("data__owner__name")
+... ).filter(first_breed__startswith="lhasa", owner_name="Bob")
+<QuerySet [<Dog: Shep>]>
+```
+
+Note from them:
+> Due to the way in which key-path queries work, `exclude()` and `filter()` are not guaranteed to produce exhaustive sets. If you want to include objects that do not have the path, add the `isnull` lookup.
+
+Warning from them:
+> Since any string could be a key in a JSON object, any lookup other than those listed below will be interpreted as a key lookup. No errors are raised. Be extra careful for typing mistakes, and always check your queries work as you intend.
+
+MariaDB and Oracle users:
+> Using `order_by()` on key, index, or path transforms will sort the objects using the string representation of the values. This is because MariaDB and Oracle Database do not provide a function that converts JSON values into their equivalent SQL values.
+
+Oracle users
+> On Oracle Database, using `None` as the lookup value in an `exclude()` query will return objects that do not have `null` as the value at the given path, including objects that do not have the path. On other database backends, the query will return objects that have the path and the value is not `null`.
+
+PostgreSQL users
+> On PostgreSQL, if only one key or index is used, the SQL operator `->` is used. If multiple operators are used then the `#>` operator is used.
+
+SQLite users
+> On SQLite, "`true`", "`false`", and "`null`" string values will always be interpreted as `True`, `False`, and JSON `null` respectively.
 
 ### Containment and key lookups — Mahmuda's version
 
-...
-
 #### `contains`
 
-...
+- The `contains` lookup is *overridden* on `JSONField`:
+  - The returned objects are those where the given `dict` of key-value pairs are all contained in _the top-level of the field_.
+  - For example: ->
+
+->:
+
+```python
+>>> Dog.objects.create(name="Rufus", data={"breed": "labrador", "owner": "Bob"})
+<Dog: Rufus>
+>>> Dog.objects.create(name="Meg", data={"breed": "collie", "owner": "Bob"})
+<Dog: Meg>
+>>> Dog.objects.create(name="Fred", data={})
+<Dog: Fred>
+>>> Dog.objects.filter(data__contains={"owner": "Bob"})
+<QuerySet [<Dog: Rufus>, <Dog: Meg>]>
+>>> Dog.objects.filter(data__contains={"breed": "collie"})
+<QuerySet [<Dog: Meg>]>
+```
+
+Oracle and SQLite:
+> `contains` is not supported on Oracle and SQLite.
+
+Mine:
+> who the fuck, cuman kalo development pake SQLite, bingung sih.
 
 #### `contained_by`
 
-...
+- _This is the inverse of the contains lookup_ -:
+  - the objects returned will be those where the key-value pairs on the object are *a subset* of those in the value passed. 
+  - For example: ->
+
+->:
+
+```python
+>>> Dog.objects.create(name="Rufus", data={"breed": "labrador", "owner": "Bob"})
+# <Dog: Rufus>
+>>> Dog.objects.create(name="Meg", data={"breed": "collie", "owner": "Bob"})
+# <Dog: Meg>
+>>> Dog.objects.create(name="Fred", data={})
+# <Dog: Fred>
+>>> Dog.objects.filter(data__contained_by={"breed": "collie", "owner": "Bob"})
+# <QuerySet [<Dog: Meg>, <Dog: Fred>]>
+>>> Dog.objects.filter(data__contained_by={"breed": "collie"})
+# <QuerySet [<Dog: Fred>]>
+```
+
+Mine, learning note:
+> Langsung aja liat contohnya, tuh, (tuing-tuing), jadinya bandingin `data__contained_by` sama `data` objectnya. Ngerti kan? :( I'll do something lagi siah ih.
+
+Them, a note:
+> Oracle and SQLite
+> 
+> `contained_by` is not supported on Oracle and SQLite.
 
 #### `has_key`
 
-...
+Returns objects where the given key is in the top-level of the data. For example:
+
+```python
+>>> Dog.objects.create(name="Rufus", data={"breed": "labrador"})
+# <Dog: Rufus>
+>>> Dog.objects.create(name="Meg", data={"breed": "collie", "owner": "Bob"})
+# <Dog: Meg>
+>>> Dog.objects.filter(data__has_key="owner")
+# <QuerySet [<Dog: Meg>]>
+```
 
 #### `has_keys`
 
-...
+Returns objects where all of the given keys are in the top-level of the data. For example:
+
+```python
+>>> Dog.objects.create(name="Rufus", data={"breed": "labrador"})
+<Dog: Rufus>
+>>> Dog.objects.create(name="Meg", data={"breed": "collie", "owner": "Bob"})
+<Dog: Meg>
+>>> Dog.objects.filter(data__has_keys=["breed", "owner"])
+<QuerySet [<Dog: Meg>]>
+```
 
 #### `has_any_keys`
 
-...
+Returns objects where any of the given keys are in the top-level of the data. For example:
+
+```python
+>>> Dog.objects.create(name="Rufus", data={"breed": "labrador"})
+<Dog: Rufus>
+>>> Dog.objects.create(name="Meg", data={"owner": "Bob"})
+<Dog: Meg>
+>>> Dog.objects.filter(data__has_any_keys=["owner", "breed"])
+<QuerySet [<Dog: Rufus>, <Dog: Meg>]>
+```
 
 ## Complex lookups with `Q` objects — Mahmuda's version
 
