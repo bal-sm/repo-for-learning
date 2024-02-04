@@ -1724,6 +1724,21 @@ Sometimes you want to set a field to *a particular value* for *all the objects* 
 Entry.objects.filter(pub_date__year=2007).update(headline="Everything is the same")
 ```
 
+---
+
+- You can only set non-relation fields and `ForeignKey` fields using this method. 
+  - To update *a non-relation field*, *provide* **the new value as a constant**. 
+  - To update *`ForeignKey` fields*, *set* *the new value* to be **the new model instance** _you want to point to_. For example:
+
+```python
+>>> b = Blog.objects.get(pk=1)
+
+# Change every Entry so that it belongs to this Blog.
+>>> Entry.objects.update(blog=b)
+```
+
+---
+
 ...
 
 ## Related objects — Mahmuda's version
