@@ -2134,3 +2134,8 @@ Them, "tuh bisa" aja:
 
 Them, penting:
 > Finally, it’s important to note that the Django database layer is merely an interface to your database. You can access your database via other tools, programming languages or database frameworks; there’s nothing Django-specific about your database.
+
+## Bal notes
+
+Overall experience:
+> Rame banget ngerangkum ini. Perjalanannya sangat puanjang, cuman memuaskan. Aku banyak belajar banyak hal. Cuman kalo dipikir-pikir, apa harus semua `topics` dirangkum gitu ya? Kayaknya mah kalo rangkuman ini, harus banget, soalnya LITERALLY the core of aliran data dari database ke view-nya. Nah kalo custom `managers` (a topic deui), itu mah kapan-kapan aja nulisnya, bisa di look through aja, kalo sebenernya udah dibaca semua.
