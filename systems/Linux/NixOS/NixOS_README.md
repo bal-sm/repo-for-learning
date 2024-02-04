@@ -49,4 +49,6 @@ Mine:
 
 ---
 
-...
+"masukkin dong sayang"
+
+"my machine sayang, aku tawarin pake `/", SOALNYA DIA BUKAN ROBOT!"
