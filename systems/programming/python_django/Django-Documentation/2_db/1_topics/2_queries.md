@@ -1739,6 +1739,18 @@ Entry.objects.filter(pub_date__year=2007).update(headline="Everything is the sam
 
 ---
 
+Them:
+> The `update()` method is applied instantly and returns the number of rows matched by the query (which may not be equal to the number of rows updated if some rows already have the new value). The only restriction on the `QuerySet` being updated is that it can only access one database table: the model’s main table. You can filter based on related fields, but you can only update columns in the model’s main table. Example:
+
+```python
+>>> b = Blog.objects.get(pk=1)
+
+# Update all the headlines belonging to this Blog.
+>>> Entry.objects.filter(blog=b).update(headline="Everything is the same")
+```
+
+---
+
 ...
 
 ## Related objects — Mahmuda's version
