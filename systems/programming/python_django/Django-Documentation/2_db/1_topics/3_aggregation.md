@@ -212,6 +212,9 @@ Them:
 
 ## Joins and aggregates
 
+Them:
+> So far, we have dealt with aggregates over fields that belong to the model being queried. However, sometimes the value you want to aggregate will belong to a model that *is related* to the model you are querying.
+
 ...
 
 ### Following relationships backwards
