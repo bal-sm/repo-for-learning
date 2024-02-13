@@ -223,6 +223,20 @@ Mine:
 Them:
 > that is used when referring to related fields in filters. Django will then handle any table joins that are required to retrieve and aggregate the related value.
 
+---
+
+For example, to find the price range of books offered in each store, you could use the annotation:
+
+```python
+>>> from django.db.models import Max, Min
+>>> Store.objects.annotate(min_price=Min("books__price"), max_price=Max("books__price"))
+```
+
+Them:
+> This tells Django to retrieve the `Store` model, join (through the many-to-many relationship) with the `Book` model, and aggregate on the price field of the book model to produce a minimum and maximum value.
+
+---
+
 ...
 
 ### Following relationships backwards
