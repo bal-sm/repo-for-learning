@@ -106,6 +106,14 @@ Them:
        >>> Book.objects.all()
        ```
 
+     - What we need is a way to calculate summary values over the objects that belong to this `QuerySet`. This is done by appending an `aggregate()` clause onto the `QuerySet`:
+
+       ```python
+       >>> from django.db.models import Avg
+       >>> Book.objects.all().aggregate(Avg("price"))
+       {'price__avg': 34.35}
+       ```
+
 ...
 
 ## Generating aggregates for each item in a `QuerySet`
