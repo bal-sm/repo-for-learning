@@ -120,6 +120,13 @@ Them:
         >>> Book.objects.aggregate(Avg("price"))
         {'price__avg': 34.35}
         ```
+    
+     4. (Mod pisan) If you want to manually specify a name for the aggregate value:
+
+        ```python
+        >>> Book.objects.aggregate(average_price=Avg("price"))
+        {'average_price': 34.35}
+        ```
 
 ...
 
