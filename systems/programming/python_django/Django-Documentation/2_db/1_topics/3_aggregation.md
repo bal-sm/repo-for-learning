@@ -237,6 +237,14 @@ Them:
 
 ---
 
+The same rules apply to the `aggregate()` clause. If you wanted to know the lowest and highest price of any book that is available for sale in any of the stores, you could use the aggregate:
+
+```python
+>>> Store.objects.aggregate(min_price=Min("books__price"), max_price=Max("books__price"))
+```
+
+---
+
 ...
 
 ### Following relationships backwards
