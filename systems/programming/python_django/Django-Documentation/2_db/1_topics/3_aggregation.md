@@ -176,9 +176,39 @@ As with `aggregate()`, the name for the annotation is automatically derived from
 - Unlike `aggregate()`, `annotate()` is _*not* a terminal clause_.
   - The output of the `annotate()` clause is a `QuerySet`; this `QuerySet` can be modified using any other `QuerySet` operation, including `filter()`, `order_by()`, or even additional calls to `annotate()`.
 
-### Combining multiple aggregations
+### Combining multiple aggregations — Light modded
 
-...
+Combining multiple aggregations with `annotate()` will [yield the wrong results](https://code.djangoproject.com/ticket/10060) because joins are used instead of subqueries:
+
+```python
+>>> book = Book.objects.first()
+>>> book.authors.count()
+2
+>>> book.store_set.count()
+3
+>>> q = Book.objects.annotate(Count("authors"), Count("store"))
+>>> q[0].authors__count
+6
+>>> q[0].store__count
+6
+```
+
+For most aggregates, there is no way to avoid this problem, however, the `Count` aggregate has a `distinct` parameter that may help:
+
+```python
+>>> q = Book.objects.annotate(
+...     Count("authors", distinct=True), Count("store", distinct=True)
+... )
+>>> q[0].authors__count
+2
+>>> q[0].store__count
+3
+```
+
+Them:
+> _If in doubt, inspect the SQL query!_
+>
+> In order to understand what happens in your query, consider inspecting the `query` property of your `QuerySet`.
 
 ## Joins and aggregates
 
