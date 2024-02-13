@@ -210,7 +210,7 @@ Them:
 >
 > In order to understand what happens in your query, consider inspecting the `query` property of your `QuerySet`.
 
-## Joins and aggregates
+## Joins and aggregates — Rada bangga intronya
 
 Them:
 > So far, we have dealt with aggregates over fields that belong to the model being queried. However, sometimes the value you want to aggregate will belong to a model that *is related* to the model you are querying.
@@ -245,7 +245,13 @@ The same rules apply to the `aggregate()` clause. If you wanted to know the lowe
 
 ---
 
-...
+Join chains can be as deep as you require. For example, to extract the age of the youngest author of any book available for sale, you could issue the query:
+
+```python
+>>> Store.objects.aggregate(youngest_age=Min("books__authors__age"))
+```
+
+---
 
 ### Following relationships backwards
 
