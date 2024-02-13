@@ -100,26 +100,26 @@ Them:
 
 - Django provides two ways to generate aggregates.:
   1. The first way is to generate summary values over an entire `QuerySet`.:
-     - For example, say you wanted to calculate the average price of all books available for sale. Django’s query syntax provides a means for describing the set of all books:
+     1. For example, say you wanted to calculate the average price of all books available for sale. Django’s query syntax provides a means for describing the set of all books:
 
-       ```python
-       >>> Book.objects.all()
-       ```
+        ```python
+        >>> Book.objects.all()
+        ```
 
-     - What we need is a way to calculate summary values over the objects that belong to this `QuerySet`. This is done by appending an `aggregate()` clause onto the `QuerySet`:
+     2. What we need is a way to calculate summary values over the objects that belong to this `QuerySet`. This is done by appending an `aggregate()` clause onto the `QuerySet`:
 
-       ```python
-       >>> from django.db.models import Avg
-       >>> Book.objects.all().aggregate(Avg("price"))
-       {'price__avg': 34.35}
-       ```
+        ```python
+        >>> from django.db.models import Avg
+        >>> Book.objects.all().aggregate(Avg("price"))
+        {'price__avg': 34.35}
+        ```
 
-     - The `all()` is redundant in this example, so this could be simplified to:
+     3. The `all()` is redundant in this example, so this could be simplified to:
 
-       ```python
-       >>> Book.objects.aggregate(Avg("price"))
-       {'price__avg': 34.35}
-       ```
+        ```python
+        >>> Book.objects.aggregate(Avg("price"))
+        {'price__avg': 34.35}
+        ```
 
 ...
 
