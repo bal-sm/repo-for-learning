@@ -145,6 +145,24 @@ Them:
 
 Per-object summaries can be generated using the `annotate()` clause. When an `annotate()` clause is specified, each object in the `QuerySet` will be annotated with the specified values.
 
+The syntax for these annotations is identical to that used for the `aggregate()` clause. Each argument to `annotate()` describes an aggregate that is to be calculated. For example, to annotate books with the number of authors:
+
+```python
+# Build an annotated queryset
+>>> from django.db.models import Count
+>>> q = Book.objects.annotate(Count("authors"))
+# Interrogate the first object in the queryset
+>>> q[0]
+<Book: The Definitive Guide to Django>
+>>> q[0].authors__count
+2
+# Interrogate the second object in the queryset
+>>> q[1]
+<Book: Practical Django Projects>
+>>> q[1].authors__count
+1
+```
+
 ...
 
 ### Combining multiple aggregations
