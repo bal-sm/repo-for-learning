@@ -114,6 +114,13 @@ Them:
        {'price__avg': 34.35}
        ```
 
+     - The `all()` is redundant in this example, so this could be simplified to:
+
+       ```python
+       >>> Book.objects.aggregate(Avg("price"))
+       {'price__avg': 34.35}
+       ```
+
 ...
 
 ## Generating aggregates for each item in a `QuerySet`
