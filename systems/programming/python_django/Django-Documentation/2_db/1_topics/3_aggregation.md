@@ -138,6 +138,13 @@ Them:
 
 ## Generating aggregates for each item in a `QuerySet`
 
+2. The second way to generate summary values is to generate an independent summary for each object in a `QuerySet`.
+
+Them:
+> For example, if you are retrieving a list of books, you may want to know how many authors contributed to each book. Each `Book` has a many-to-many relationship with the `Author`; we want to summarize this relationship for each book in the `QuerySet`.
+
+Per-object summaries can be generated using the `annotate()` clause. When an `annotate()` clause is specified, each object in the `QuerySet` will be annotated with the specified values.
+
 ...
 
 ### Combining multiple aggregations
