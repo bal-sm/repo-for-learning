@@ -98,11 +98,13 @@ Them:
 
 ## Generating aggregates over a `QuerySet`
 
-Django provides two ways to generate aggregates. The first way is to generate summary values over an entire `QuerySet`. For example, say you wanted to calculate the average price of all books available for sale. Django’s query syntax provides a means for describing the set of all books:
+- Django provides two ways to generate aggregates.:
+  1. The first way is to generate summary values over an entire `QuerySet`.:
+     - For example, say you wanted to calculate the average price of all books available for sale. Django’s query syntax provides a means for describing the set of all books:
 
-```python
->>> Book.objects.all()
-```
+       ```python
+       >>> Book.objects.all()
+       ```
 
 ...
 
