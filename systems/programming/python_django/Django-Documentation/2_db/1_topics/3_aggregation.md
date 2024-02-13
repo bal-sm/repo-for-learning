@@ -36,4 +36,66 @@ class Store(models.Model):
     books = models.ManyToManyField(Book)
 ```
 
+## Cheat sheet
+
+...
+
+## Generating aggregates over a `QuerySet`
+
+...
+
+## Generating aggregates for each item in a `QuerySet`
+
+...
+
+### Combining multiple aggregations
+
+...
+
+## Joins and aggregates
+
+...
+
+### Following relationships backwards
+
+...
+
+## Aggregations and other `QuerySet` clauses
+
+...
+
+### `filter()` and `exclude()`
+
+...
+
+#### Filtering on annotations
+
+...
+
+#### Order of `annotate()` and `filter()` clauses
+
+...
+
+### `order_by()`
+
+...
+
+### `values()`
+
+...
+
+#### Order of `annotate()` and `values()` clauses
+
+...
+
+#### Interaction with `order_by()`
+
+...
+
+### Aggregating annotations
+
+...
+
+### Aggregating on empty querysets or groups
+
 ...
