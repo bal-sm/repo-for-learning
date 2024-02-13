@@ -136,7 +136,7 @@ Them:
         {'price__avg': 34.35, 'price__max': Decimal('81.20'), 'price__min': Decimal('12.99')}
         ```
 
-## Generating aggregates for each item in a `QuerySet`
+## Generating aggregates for each item in a `QuerySet` — Light modded
 
 2. The second way to generate summary values is to generate an independent summary for each object in a `QuerySet`.
 
@@ -163,7 +163,18 @@ The syntax for these annotations is identical to that used for the `aggregate()`
 1
 ```
 
-...
+As with `aggregate()`, the name for the annotation is automatically derived from the name of the aggregate function and the name of the field being aggregated. You can override this default name by providing an alias when you specify the annotation:
+
+```python
+>>> q = Book.objects.annotate(num_authors=Count("authors"))
+>>> q[0].num_authors
+2
+>>> q[1].num_authors
+1
+```
+
+- Unlike `aggregate()`, `annotate()` is _*not* a terminal clause_.
+  - The output of the `annotate()` clause is a `QuerySet`; this `QuerySet` can be modified using any other `QuerySet` operation, including `filter()`, `order_by()`, or even additional calls to `annotate()`.
 
 ### Combining multiple aggregations
 
