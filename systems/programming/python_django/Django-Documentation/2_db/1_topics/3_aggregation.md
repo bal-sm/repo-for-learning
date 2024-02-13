@@ -96,7 +96,7 @@ Them:
 1323
 ```
 
-## Generating aggregates over a `QuerySet`
+## Generating aggregates over a `QuerySet` — Mahmuda's version
 
 - Django provides two ways to generate aggregates.:
   1. The first way is to generate summary values over an entire `QuerySet`.:
@@ -128,7 +128,13 @@ Them:
         {'average_price': 34.35}
         ```
 
-...
+     5. If you want to generate more than one aggregate:
+
+        ```python
+        >>> from django.db.models import Avg, Max, Min
+        >>> Book.objects.aggregate(Avg("price"), Max("price"), Min("price"))
+        {'price__avg': 34.35, 'price__max': Decimal('81.20'), 'price__min': Decimal('12.99')}
+        ```
 
 ## Generating aggregates for each item in a `QuerySet`
 
