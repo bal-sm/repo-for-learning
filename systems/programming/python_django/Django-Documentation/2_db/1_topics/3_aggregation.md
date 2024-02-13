@@ -210,6 +210,8 @@ Them:
 >
 > In order to understand what happens in your query, consider inspecting the `query` property of your `QuerySet`.
 
+---
+
 ## Joins and aggregates
 
 ...
