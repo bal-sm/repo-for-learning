@@ -253,7 +253,15 @@ Join chains can be as deep as you require. For example, to extract the age of th
 
 ---
 
-### Following relationships backwards
+### Following relationships backwards — WIP
+
+`Book` + ForeignKey -> `Publisher` -> `book` -> `Book`
+
+```python
+>>> from django.db.models import Avg, Count, Min, Sum
+>>> Publisher.objects.annotate(Count("book"))
+# TODO: ...
+```
 
 ...
 
