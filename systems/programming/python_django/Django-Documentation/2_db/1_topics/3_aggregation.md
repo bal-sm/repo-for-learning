@@ -255,6 +255,9 @@ Join chains can be as deep as you require. For example, to extract the age of th
 
 ### Following relationships backwards — WIP
 
+Them:
+> In a way similar to [Lookups that span relationships](./2_queries.md#lookups-that-span-relationships--mahmudas-version), aggregations and annotations on fields of models or models that are related to the one you are querying can include traversing “reverse” relationships. The lowercase name of related models and double-underscores are used here too.
+
 `Book` + ForeignKey -> `Publisher` -> `book` -> `Book`
 
 ```python
