@@ -337,6 +337,7 @@ QuerySet.objects.filter(...=...).aggregate(...=...(...)) # also, ✔️, valid.
 
 Why this is MV:
 > - Jump to the code aja
+>   + extended code
 > - Dirumusin aja
 
 ---
@@ -350,6 +351,30 @@ QuerySet.objects.annotate(the_alias=Func("the_field")).filter(the_alias__anythin
 ```python
 >>> Book.objects.annotate(num_authors=Count("authors")).filter(num_authors__gt=1)
 ```
+
+---
+
+```python
+QuerySet.objects.annotate((first_annotation, second_annotation_plus_filter))
+```
+
+---
+
+```python
+>>> highly_rated = Count("book", filter=Q(book__rating__gte=7))
+>>> a = Author.objects.annotate(num_books=Count("book"), highly_rated_books=highly_rated)
+>>> a[0].num_books
+>>> a[0].highly_rated_books
+```
+
+---
+
+[_Conditional aggregation_](https://docs.djangoproject.com/en/5.0/ref/models/conditional-expressions/#conditional-aggregation)
+
+...
+
+Maintenance note:
+> Pindah jadi a dedicated file di `ref`.
 
 ...
 
