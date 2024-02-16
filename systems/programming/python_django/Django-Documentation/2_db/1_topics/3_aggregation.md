@@ -310,10 +310,18 @@ Them:
 Why this is MV:
 > - Jump to the code aja
 
+---
+
+```python
+QuerySet.objects.filter(...=...).annotate(...=...(...)) # ✔️
+```
+
 ```python
 >>> from django.db.models import Avg, Count
 >>> Book.objects.filter(name__startswith="Django").annotate(num_authors=Count("authors"))
 ```
+
+---
 
 ...
 
