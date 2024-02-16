@@ -406,6 +406,17 @@ QuerySet.objects.filter(...).annotate(...)
 
 ---
 
+bla-bla-bla
+
+Mine:
+> Makanya, urutan `annotate()` dan `filter()` itu penting, dan menghasilkan hasil-hasil yang berbeda.
+
+Them:
+> Given:
+> - Publisher A has two books with ratings 4 and 5.
+> - Publisher B has two books with ratings 1 and 4.
+> - Publisher C has one book with rating 1.
+
 ...
 
 ### `order_by()`
