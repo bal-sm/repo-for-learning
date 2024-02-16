@@ -371,12 +371,19 @@ QuerySet.objects.annotate((first_annotation, second_annotation_plus_filter))
 
 [_Conditional aggregation_](https://docs.djangoproject.com/en/5.0/ref/models/conditional-expressions/#conditional-aggregation)
 
-...
+```python
+QuerySet.objects.aggregate(..., filter=Q(...=...))
+```
 
 Maintenance note:
 > Pindah jadi a dedicated file di `ref`.
 
-...
+Them, a note:
+> _Choosing between `filter` and `QuerySet.filter()`_
+>
+> Avoid using the `filter` argument with a single annotation or aggregation. It’s more efficient to use `QuerySet.filter()` to exclude rows. The aggregation `filter` argument is only useful when using two or more aggregations over the same relations with different conditionals.
+
+---
 
 #### Order of `annotate()` and `filter()` clauses
 
