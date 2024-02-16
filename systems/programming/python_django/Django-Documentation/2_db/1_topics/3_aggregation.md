@@ -210,7 +210,7 @@ Them:
 >
 > In order to understand what happens in your query, consider inspecting the `query` property of your `QuerySet`.
 
-## Joins and aggregates — Rada bangga intronya
+## Joins and aggregates — Mahmuda's version
 
 Them:
 > So far, we have dealt with aggregates over fields that belong to the model being queried. However, sometimes the value you want to aggregate will belong to a model that *is related* to the model you are querying.
@@ -253,31 +253,158 @@ Join chains can be as deep as you require. For example, to extract the age of th
 
 ---
 
-### Following relationships backwards — WIP
+### Following relationships backwards — Mahmuda's version
 
-`Book` + ForeignKey -> `Publisher` -> `book` -> `Book`
+Them:
+> In a way similar to [Lookups that span relationships](./2_queries.md#lookups-that-span-relationships--mahmudas-version), aggregations and annotations on fields of models or models that are related to the one you are querying can include traversing “reverse” relationships. The lowercase name of related models and double-underscores are used here too.
+
+---
+
+Them:
+> For example, we can ask for all publishers, annotated with their respective total book stock counters (note how we use `book` to specify the `Publisher` -> `Book` reverse foreign key hop):
+
+Mine:
+> `Book` + ForeignKey -> `Publisher` -> `book` -> `Book`
 
 ```python
 >>> from django.db.models import Avg, Count, Min, Sum
->>> Publisher.objects.annotate(Count("book"))
-# TODO: ...
+>>> p = Publisher.objects.annotate(Count("book"))
+>>> p[0].book__count
 ```
 
-...
+---
+
+Them:
+> We can also ask for the oldest book of any of those managed by every publisher:
+
+```python
+>>> Publisher.objects.aggregate(oldest_pubdate=Min("book__pubdate"))
+```
+
+---
+
+Them:
+> This doesn’t apply just to foreign keys. It also works with many-to-many relations. For example, we can ask for every author, annotated with the total number of pages considering all the books the author has (co-)authored (note how we use `book` to specify the `Author` -> `Book` reverse many-to-many hop):
+
+```python
+>>> a = Author.objects.annotate(total_pages=Sum("book__pages"))
+>>> a[0].total_pages
+```
+
+---
+
+Them:
+> Or ask for the average rating of all the books written by author(s) we have on file:
+
+```python
+>>> ano_a = Author.objects.aggregate(average_rating=Avg("book__rating"))
+>>> ano_a.average_rating
+```
+
+---
 
 ## Aggregations and other `QuerySet` clauses
 
-...
+### `filter()` and `exclude()` — Mahmuda's version
 
-### `filter()` and `exclude()`
+Why this is MV:
+> - Jump to the code aja
 
-...
+---
 
-#### Filtering on annotations
+```python
+QuerySet.objects.filter(...=...).annotate(...=...(...)) # ✔️, valid.
+```
 
-...
+```python
+>>> from django.db.models import Avg, Count
+>>> Book.objects.filter(name__startswith="Django").annotate(num_authors=Count("authors"))
+```
 
-#### Order of `annotate()` and `filter()` clauses
+---
+
+```python
+QuerySet.objects.filter(...=...).aggregate(...=...(...)) # also, ✔️, valid.
+```
+
+```python
+>>> Book.objects.filter(name__startswith="Django").aggregate(Avg("price"))
+```
+
+---
+
+#### Filtering on annotations — Mahmuda's version
+
+Why this is MV:
+> - Jump to the code aja
+>   + extended code
+> - Dirumusin aja
+
+---
+
+```python
+QuerySet.objects.annotate(the_alias=Func("the_field")).filter(the_alias__anything=anything_2)
+```
+
+---
+
+```python
+>>> Book.objects.annotate(num_authors=Count("authors")).filter(num_authors__gt=1)
+```
+
+---
+
+```python
+QuerySet.objects.annotate((first_annotation, second_annotation_plus_filter))
+```
+
+---
+
+```python
+>>> highly_rated = Count("book", filter=Q(book__rating__gte=7))
+>>> a = Author.objects.annotate(num_books=Count("book"), highly_rated_books=highly_rated)
+>>> a[0].num_books
+>>> a[0].highly_rated_books
+```
+
+---
+
+[_Conditional aggregation_](https://docs.djangoproject.com/en/5.0/ref/models/conditional-expressions/#conditional-aggregation)
+
+```python
+QuerySet.objects.aggregate(..., filter=Q(...=...))
+```
+
+Maintenance note:
+> Pindah jadi a dedicated file di `ref`.
+
+Them, a note:
+> _Choosing between `filter` and `QuerySet.filter()`_
+>
+> Avoid using the `filter` argument with a single annotation or aggregation. It’s more efficient to use `QuerySet.filter()` to exclude rows. The aggregation `filter` argument is only useful when using two or more aggregations over the same relations with different conditionals.
+
+---
+
+#### Order of `annotate()` and `filter()` clauses — Mahmuda's version
+
+Why this is MV:
+> - Jump to the code aja
+> - Dirumusin aja
+> - Ilustrasi + Contoh + Hasil-in aja
+
+---
+
+```python
+QuerySet.objects.annotate(...).filter(...)
+```
+
+=/= (is not equivalent to.., *not* *commutative*)
+
+```python
+QuerySet.objects.filter(...).annotate(...)
+```
+
+---
 
 ...
 
