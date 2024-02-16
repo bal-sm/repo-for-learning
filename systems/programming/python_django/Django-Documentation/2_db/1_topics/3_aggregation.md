@@ -337,6 +337,7 @@ QuerySet.objects.filter(...=...).aggregate(...=...(...)) # also, ✔️, valid.
 
 Why this is MV:
 > - Jump to the code aja
+> - Dirumusin aja
 
 ---
 
