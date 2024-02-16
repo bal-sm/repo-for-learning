@@ -456,6 +456,34 @@ Them:
 > 
 > The second query counts the number of books that have a rating exceeding 3.0 for each publisher. The filter precedes the annotation, so the filter constrains the objects considered when calculating the annotation.
 
+---
+
+_Kalau `Avg`..._
+
+Mine, a prelude:
+> ..., TBA aja dulu hehe, sayangggg ingetinn aku, maksudnya gimana.
+
+Them:
+> Here’s another example with the `Avg` aggregate:
+
+```python
+>>> a, b = Publisher.objects.annotate(avg_rating=Avg("book__rating")).filter(
+...     book__rating__gt=3.0
+... )
+>>> a, a.avg_rating
+(<Publisher: A>, 4.5)  # (5+4)/2
+>>> b, b.avg_rating
+(<Publisher: B>, 2.5)  # (1+4)/2
+
+>>> a, b = Publisher.objects.filter(book__rating__gt=3.0).annotate(
+...     avg_rating=Avg("book__rating")
+... )
+>>> a, a.avg_rating
+(<Publisher: A>, 4.5)  # (5+4)/2
+>>> b, b.avg_rating
+(<Publisher: B>, 4.0)  # 4/1 (book with rating 1 excluded)
+```
+
 ...
 
 ### `order_by()`
