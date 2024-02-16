@@ -417,6 +417,14 @@ Them:
 > - Publisher B has two books with ratings 1 and 4.
 > - Publisher C has one book with rating 1.
 
+Mine:
+> Nah kan kalo misalnya dicari buku-buku yang ratingnya lebih dari 3 di setiap `Publisher`, jadinya gini:
+> - Publisher A, 2 buku
+> - Publisher B, 1 buku
+> - Publisher C, 0 buku
+>
+> Nah sekarang mari kita lihat apa yang terjadi apabila "switch it up" the `filter()` and `annotate()` clause.
+
 ...
 
 ### `order_by()`
