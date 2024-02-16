@@ -342,6 +342,12 @@ Why this is MV:
 ---
 
 ```python
+QuerySet.objects.annotate(the_alias=Func("the_field")).filter(the_alias__anything=anything_2)
+```
+
+---
+
+```python
 >>> Book.objects.annotate(num_authors=Count("authors")).filter(num_authors__gt=1)
 ```
 
