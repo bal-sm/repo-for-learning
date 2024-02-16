@@ -266,8 +266,8 @@ Mine:
 
 ```python
 >>> from django.db.models import Avg, Count, Min, Sum
->>> Publisher.objects.annotate(Count("book"))
-# TODO: ...
+>>> p = Publisher.objects.annotate(Count("book"))
+>>> p[0].book__count
 ```
 
 ...
