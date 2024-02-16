@@ -525,10 +525,16 @@ Mine, maintenance:
 
 ..., idem.
 
-### Aggregating annotations
+### Aggregating annotations — Mahmuda's version
 
 ...
 
-### Aggregating on empty querysets or groups
+```python
+>>> from django.db.models import Avg, Count
+>>> Book.objects.annotate(num_authors=Count("authors")).aggregate(Avg("num_authors"))
+{'num_authors__avg': 1.66}
+```
+
+### Aggregating on empty querysets or groups — Mahmuda's version
 
 ...
