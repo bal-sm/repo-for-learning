@@ -540,3 +540,14 @@ QuerySet.objects.annotate(some_alias=Func("a_field_or_something")).aggregate(Fun
 ### Aggregating on empty querysets or groups — Mahmuda's version
 
 ...
+
+```python
+>>> from django.db.models import Sum
+>>> Book.objects.filter(name__contains="web").aggregate(Sum("price"))
+{"price__sum": None}
+```
+
+```python
+>>> Book.objects.filter(name__contains="web").aggregate(Sum("price", default=0))
+{"price__sum": Decimal("0")}
+```
