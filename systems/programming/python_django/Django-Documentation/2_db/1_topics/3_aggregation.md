@@ -323,7 +323,15 @@ QuerySet.objects.filter(...=...).annotate(...=...(...)) # ✔️, valid.
 
 ---
 
-...
+```python
+QuerySet.objects.filter(...=...).aggregate(...=...(...)) # also, ✔️, valid.
+```
+
+```python
+>>> Book.objects.filter(name__startswith="Django").aggregate(Avg("price"))
+```
+
+---
 
 #### Filtering on annotations
 
