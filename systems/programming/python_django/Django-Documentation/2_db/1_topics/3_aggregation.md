@@ -258,6 +258,8 @@ Join chains can be as deep as you require. For example, to extract the age of th
 Them:
 > In a way similar to [Lookups that span relationships](./2_queries.md#lookups-that-span-relationships--mahmudas-version), aggregations and annotations on fields of models or models that are related to the one you are querying can include traversing “reverse” relationships. The lowercase name of related models and double-underscores are used here too.
 
+---
+
 Them:
 > For example, we can ask for all publishers, annotated with their respective total book stock counters (note how we use `book` to specify the `Publisher` -> `Book` reverse foreign key hop):
 
@@ -270,12 +272,16 @@ Mine:
 >>> p[0].book__count
 ```
 
+---
+
 Them:
 > We can also ask for the oldest book of any of those managed by every publisher:
 
 ```python
 >>> Publisher.objects.aggregate(oldest_pubdate=Min("book__pubdate"))
 ```
+
+---
 
 Them:
 > This doesn’t apply just to foreign keys. It also works with many-to-many relations. For example, we can ask for every author, annotated with the total number of pages considering all the books the author has (co-)authored (note how we use `book` to specify the `Author` -> `Book` reverse many-to-many hop):
@@ -285,6 +291,8 @@ Them:
 >>> a[0].total_pages
 ```
 
+---
+
 Them:
 > Or ask for the average rating of all the books written by author(s) we have on file:
 
@@ -292,6 +300,8 @@ Them:
 >>> ano_a = Author.objects.aggregate(average_rating=Avg("book__rating"))
 >>> ano_a.average_rating
 ```
+
+---
 
 ## Aggregations and other `QuerySet` clauses
 
