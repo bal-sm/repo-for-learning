@@ -270,6 +270,13 @@ Mine:
 >>> p[0].book__count
 ```
 
+Them:
+> We can also ask for the oldest book of any of those managed by every publisher:
+
+```python
+>>> Publisher.objects.aggregate(oldest_pubdate=Min("book__pubdate"))
+```
+
 ...
 
 ## Aggregations and other `QuerySet` clauses
