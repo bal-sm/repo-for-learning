@@ -494,9 +494,21 @@ Them:
 
 ---
 
-### `order_by()`
+### `order_by()` — Mahmuda's version
 
-...
+```python
+QuerySet.objects.annotate(some_alias=...).order_by("some_alias")
+```
+
+---
+
+For example:
+
+```python
+>>> Book.objects.annotate(num_authors=Count("authors")).order_by("num_authors")
+```
+
+---
 
 ### `values()`
 
