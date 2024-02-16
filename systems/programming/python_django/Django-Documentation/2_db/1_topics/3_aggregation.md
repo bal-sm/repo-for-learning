@@ -484,7 +484,15 @@ Them:
 (<Publisher: B>, 4.0)  # 4/1 (book with rating 1 excluded)
 ```
 
-...
+Mine, conclusion:
+> ..., TBA lagi, sayangggg.
+
+Them:
+> The first query asks for the average rating of all a publisher’s books for publisher’s that have at least one book with a rating exceeding 3.0. The second query asks for the average of a publisher’s book’s ratings for only those ratings exceeding 3.0.
+>
+> It’s difficult to intuit how the ORM will translate complex querysets into SQL queries so when in doubt, inspect the SQL with `str(queryset.query)` and write plenty of tests.
+
+---
 
 ### `order_by()`
 
