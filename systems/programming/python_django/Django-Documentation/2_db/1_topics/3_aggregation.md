@@ -218,7 +218,7 @@ Them:
 > When specifying the field to be aggregated in an aggregate function, Django will allow you to use the same [double underscore notation](./2_queries.md#field-lookups--mahmudas-version):
 
 Mine:
-> `field__lookuptype=value. `
+> `field__lookuptype=value` tea.
 
 Them:
 > that is used when referring to related fields in filters. Django will then handle any table joins that are required to retrieve and aggregate the related value.
