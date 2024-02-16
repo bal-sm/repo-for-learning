@@ -333,7 +333,16 @@ QuerySet.objects.filter(...=...).aggregate(...=...(...)) # also, ✔️, valid.
 
 ---
 
-#### Filtering on annotations
+#### Filtering on annotations — Mahmuda's version
+
+Why this is MV:
+> - Jump to the code aja
+
+---
+
+```python
+>>> Book.objects.annotate(num_authors=Count("authors")).filter(num_authors__gt=1)
+```
 
 ...
 
