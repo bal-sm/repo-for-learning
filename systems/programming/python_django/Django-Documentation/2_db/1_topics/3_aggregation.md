@@ -313,7 +313,7 @@ Why this is MV:
 ---
 
 ```python
-QuerySet.objects.filter(...=...).annotate(...=...(...)) # ✔️
+QuerySet.objects.filter(...=...).annotate(...=...(...)) # ✔️, valid.
 ```
 
 ```python
