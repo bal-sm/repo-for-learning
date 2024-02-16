@@ -539,7 +539,9 @@ QuerySet.objects.annotate(some_alias=Func("a_field_or_something")).aggregate(Fun
 
 ### Aggregating on empty querysets or groups — Mahmuda's version
 
-...
+```python
+QuerySet.objects.filter(...).aggregate(Func("a_field"), default=0)
+```
 
 ```python
 >>> from django.db.models import Sum
