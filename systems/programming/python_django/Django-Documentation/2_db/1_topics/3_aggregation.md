@@ -210,7 +210,7 @@ Them:
 >
 > In order to understand what happens in your query, consider inspecting the `query` property of your `QuerySet`.
 
-## Joins and aggregates — Rada bangga intronya
+## Joins and aggregates — Mahmuda's version
 
 Them:
 > So far, we have dealt with aggregates over fields that belong to the model being queried. However, sometimes the value you want to aggregate will belong to a model that *is related* to the model you are querying.
