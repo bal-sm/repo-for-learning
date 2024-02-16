@@ -305,9 +305,15 @@ Them:
 
 ## Aggregations and other `QuerySet` clauses
 
-...
+### `filter()` and `exclude()` — Mahmuda's version
 
-### `filter()` and `exclude()`
+Why this is MV:
+> - Jump to the code aja
+
+```python
+>>> from django.db.models import Avg, Count
+>>> Book.objects.filter(name__startswith="Django").annotate(num_authors=Count("authors"))
+```
 
 ...
 
