@@ -527,7 +527,9 @@ Mine, maintenance:
 
 ### Aggregating annotations — Mahmuda's version
 
-...
+```python
+QuerySet.objects.annotate(some_alias=Func("a_field_or_something")).aggregate(Func("some_alias"))
+```
 
 ```python
 >>> from django.db.models import Avg, Count
