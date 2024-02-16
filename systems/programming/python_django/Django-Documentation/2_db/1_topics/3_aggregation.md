@@ -406,28 +406,150 @@ QuerySet.objects.filter(...).annotate(...)
 
 ---
 
-...
+bla-bla-bla
 
-### `order_by()`
+Mine:
+> Makanya, urutan `annotate()` dan `filter()` itu penting, dan menghasilkan hasil-hasil yang berbeda.
 
-...
+Them:
+> Given:
+> - Publisher A has two books with ratings 4 and 5.
+> - Publisher B has two books with ratings 1 and 4.
+> - Publisher C has one book with rating 1.
 
-### `values()`
+Mine:
+> Nah kan kalo misalnya dicari buku-buku yang ratingnya lebih dari 3 di setiap `Publisher`, jadinya gini:
+> - Publisher A, 2 buku
+> - Publisher B, 1 buku
+> - Publisher C, 0 buku
+>
+> Nah sekarang mari kita lihat apa yang terjadi apabila "switch it up" the `filter()` and `annotate()` clause.
 
-...
+Them-:
+> Here’s an example with the `Count` aggregate:
+
+```python
+>>> a, b = Publisher.objects.annotate(num_books=Count("book", distinct=True)).filter(
+...     book__rating__gt=3.0
+... )
+>>> a, a.num_books
+(<Publisher: A>, 2) # ✔️
+>>> b, b.num_books
+(<Publisher: B>, 2) # ❌
+
+---
+
+>>> a, b = Publisher.objects.filter(book__rating__gt=3.0).annotate(num_books=Count("book"))
+>>> a, a.num_books
+(<Publisher: A>, 2) # ✔️
+>>> b, b.num_books
+(<Publisher: B>, 1) # ✔️
+```
+
+Mine:
+> Tuh keliatan kan, yang bener gimana?
+
+Them:
+> Both queries return a list of publishers that have at least one book with a rating exceeding 3.0, hence publisher C is excluded.
+> 
+> In the first query, the annotation precedes the filter, so the filter has no effect on the annotation. `distinct=True` is required to avoid a [query bug](https://docs.djangoproject.com/en/5.0/topics/db/aggregation/#combining-multiple-aggregations).
+> 
+> The second query counts the number of books that have a rating exceeding 3.0 for each publisher. The filter precedes the annotation, so the filter constrains the objects considered when calculating the annotation.
+
+---
+
+_Kalau `Avg`..._
+
+Mine, a prelude:
+> ..., TBA aja dulu hehe, sayangggg ingetinn aku, maksudnya gimana.
+
+Them:
+> Here’s another example with the `Avg` aggregate:
+
+```python
+>>> a, b = Publisher.objects.annotate(avg_rating=Avg("book__rating")).filter(
+...     book__rating__gt=3.0
+... )
+>>> a, a.avg_rating
+(<Publisher: A>, 4.5)  # (5+4)/2
+>>> b, b.avg_rating
+(<Publisher: B>, 2.5)  # (1+4)/2
+
+>>> a, b = Publisher.objects.filter(book__rating__gt=3.0).annotate(
+...     avg_rating=Avg("book__rating")
+... )
+>>> a, a.avg_rating
+(<Publisher: A>, 4.5)  # (5+4)/2
+>>> b, b.avg_rating
+(<Publisher: B>, 4.0)  # 4/1 (book with rating 1 excluded)
+```
+
+Mine, conclusion:
+> ..., TBA lagi, sayangggg.
+
+Them:
+> The first query asks for the average rating of all a publisher’s books for publisher’s that have at least one book with a rating exceeding 3.0. The second query asks for the average of a publisher’s book’s ratings for only those ratings exceeding 3.0.
+>
+> It’s difficult to intuit how the ORM will translate complex querysets into SQL queries so when in doubt, inspect the SQL with `str(queryset.query)` and write plenty of tests.
+
+---
+
+### `order_by()` — Mahmuda's version
+
+```python
+QuerySet.objects.annotate(some_alias=...).order_by("some_alias")
+```
+
+---
+
+For example:
+
+```python
+>>> Book.objects.annotate(num_authors=Count("authors")).order_by("num_authors")
+```
+
+---
+
+### `values()` — Mahmuda's version (coming soon)
+
+..., TBA.
+
+Mine, maintenance:
+> Sayanggg, nanti sama kamu aja ya, tambahin hasil dictionary-nya, jadi gimana.
 
 #### Order of `annotate()` and `values()` clauses
 
-...
+..., idem.
 
 #### Interaction with `order_by()`
 
-...
+..., idem.
 
-### Aggregating annotations
+### Aggregating annotations — Mahmuda's version
 
-...
+```python
+QuerySet.objects.annotate(some_alias=Func("a_field_or_something")).aggregate(Func("some_alias"))
+```
 
-### Aggregating on empty querysets or groups
+```python
+>>> from django.db.models import Avg, Count
+>>> Book.objects.annotate(num_authors=Count("authors")).aggregate(Avg("num_authors"))
+{'num_authors__avg': 1.66}
+```
 
-...
+### Aggregating on empty querysets or groups — Mahmuda's version
+
+```python
+QuerySet.objects.filter(...).aggregate(Func("a_field"), default=0)
+```
+
+```python
+>>> from django.db.models import Sum
+>>> Book.objects.filter(name__contains="web").aggregate(Sum("price"))
+{"price__sum": None}
+```
+
+```python
+>>> Book.objects.filter(name__contains="web").aggregate(Sum("price", default=0))
+{"price__sum": Decimal("0")}
+```
