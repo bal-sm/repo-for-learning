@@ -392,6 +392,20 @@ Why this is MV:
 > - Dirumusin aja
 > - Ilustrasi + Contoh + Hasil-in aja
 
+---
+
+```python
+QuerySet.objects.annotate(...).filter(...)
+```
+
+=/= (is not equivalent to.., *not* *commutative*)
+
+```python
+QuerySet.objects.filter(...).annotate(...)
+```
+
+---
+
 ...
 
 ### `order_by()`
