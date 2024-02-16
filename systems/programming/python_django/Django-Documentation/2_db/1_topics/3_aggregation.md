@@ -446,6 +446,16 @@ Them-:
 (<Publisher: B>, 1) # ✔️
 ```
 
+Mine:
+> Tuh keliatan kan, yang bener gimana?
+
+Them:
+> Both queries return a list of publishers that have at least one book with a rating exceeding 3.0, hence publisher C is excluded.
+> 
+> In the first query, the annotation precedes the filter, so the filter has no effect on the annotation. `distinct=True` is required to avoid a [query bug](https://docs.djangoproject.com/en/5.0/topics/db/aggregation/#combining-multiple-aggregations).
+> 
+> The second query counts the number of books that have a rating exceeding 3.0 for each publisher. The filter precedes the annotation, so the filter constrains the objects considered when calculating the annotation.
+
 ...
 
 ### `order_by()`
