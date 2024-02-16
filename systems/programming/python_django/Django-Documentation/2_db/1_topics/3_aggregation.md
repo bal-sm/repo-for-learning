@@ -425,6 +425,27 @@ Mine:
 >
 > Nah sekarang mari kita lihat apa yang terjadi apabila "switch it up" the `filter()` and `annotate()` clause.
 
+Them-:
+> Here’s an example with the `Count` aggregate:
+
+```python
+>>> a, b = Publisher.objects.annotate(num_books=Count("book", distinct=True)).filter(
+...     book__rating__gt=3.0
+... )
+>>> a, a.num_books
+(<Publisher: A>, 2) # ✔️
+>>> b, b.num_books
+(<Publisher: B>, 2) # ❌
+
+---
+
+>>> a, b = Publisher.objects.filter(book__rating__gt=3.0).annotate(num_books=Count("book"))
+>>> a, a.num_books
+(<Publisher: A>, 2) # ✔️
+>>> b, b.num_books
+(<Publisher: B>, 1) # ✔️
+```
+
 ...
 
 ### `order_by()`
