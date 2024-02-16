@@ -510,17 +510,20 @@ For example:
 
 ---
 
-### `values()`
+### `values()` — Mahmuda's version (coming soon)
 
-...
+..., TBA.
+
+Mine, maintenance:
+> Sayanggg, nanti sama kamu aja ya, tambahin hasil dictionary-nya, jadi gimana.
 
 #### Order of `annotate()` and `values()` clauses
 
-...
+..., idem.
 
 #### Interaction with `order_by()`
 
-...
+..., idem.
 
 ### Aggregating annotations
 
