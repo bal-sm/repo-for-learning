@@ -14,4 +14,22 @@
 
 We’ll refer to the same models used in [Making queries](./2_queries.md#models-used-as-reference).
 
+## Use Cases
+
+...
+
+### Standard textual queries
+
+...
+
+### A database’s more advanced comparison functions
+
+...
+
+### Document-based search
+
+...
+
+#### PostgreSQL support
+
 ...
