@@ -14,13 +14,17 @@
 
 We’ll refer to the same models used in [Making queries](./2_queries.md#models-used-as-reference).
 
-## Use Cases
+## Use Cases - WIP
 
-...
+### Standard textual queries - Mahmuda's version
 
-### Standard textual queries
+```python
+>>> Author.objects.filter(name__contains="Terry")
+[<Author: Terry Gilliam>, <Author: Terry Jones>]
+```
 
-...
+Mine:
+*Bad*, harusnya pake `icontains`, cuman better dikit aja. Makanya next!
 
 ### A database’s more advanced comparison functions
 
