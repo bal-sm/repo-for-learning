@@ -24,7 +24,7 @@ We’ll refer to the same models used in [Making queries](./2_queries.md#models-
 ```
 
 Mine:
-*Bad*, harusnya pake `icontains`, cuman better dikit aja. Makanya next!
+*Bad* and *fragile*, harusnya pake `icontains`, cuman better dikit aja. Makanya next!
 
 ### A database’s more advanced comparison functions
 
