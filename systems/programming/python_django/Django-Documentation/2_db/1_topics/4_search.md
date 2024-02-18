@@ -26,9 +26,45 @@ We’ll refer to the same models used in [Making queries](./2_queries.md#models-
 Mine:
 > *Bad* and *fragile*, harusnya pake `icontains`, cuman better dikit aja. Makanya next!
 
-### A database’s more advanced comparison functions
+### A database’s more advanced comparison functions - Mahmuda's version
 
-...
+Mine:
+> Mari pake `unaccent` untuk cari nama `Author` yang non-English.
+
+```python
+>>> Author.objects.filter(name__unaccent__icontains="Helen")
+[<Author: Helen Mirren>, <Author: Helena Bonham Carter>, <Author: Hélène Joy>]
+```
+
+Mine:
+> - masih BAD soalnya:
+>   - `name__unaccent__icontains="Helen"`
+>     - Helen ✔️
+>     - Helena ✔️
+>     - Hélène ✔️
+>   - `name__unaccent__icontains="Hélène"`
+>     - Helen ❌
+>     - Helena ❌
+>     - Hélène ✔️
+>
+> Makanya mari pake `trigram_similar` which compares sequences of letters cenah:
+
+```python
+>>> Author.objects.filter(name__unaccent__lower__trigram_similar="Hélène")
+[<Author: Helen Mirren>, <Author: Hélène Joy>]
+```
+
+Mine:
+> Nah masalahnya, entri:
+> - "Helena Bonham Carter" ❌ (gak bakal muncul)
+
+Them, soalnya cenah:
+> Trigram searches consider all combinations of three letters, and compares how many appear in both search and source strings. For the longer name, there are more combinations that don’t appear in the source string, so it is no longer considered a close match.
+>
+> The correct choice of comparison functions here depends on your particular data set, for example the language(s) used and the type of text being searched. All of the examples we’ve seen are on short strings where the user is likely to enter something close (by varying definitions) to the source data.
+
+Mine, kepikirannya nulis gini sekarang:
+> Makanya skip aja ini, terus baca yang selanjutnya.
 
 ### Document-based search
 
