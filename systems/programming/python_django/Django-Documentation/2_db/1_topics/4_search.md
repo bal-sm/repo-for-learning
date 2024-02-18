@@ -66,9 +66,16 @@ Them, soalnya cenah:
 Mine, kepikirannya nulis gini sekarang:
 > Makanya skip aja ini, terus baca yang selanjutnya.
 
-### Document-based search
+### Document-based search - Mahmuda's version (intro-nya)
 
-...
+Them, baca aja:
+> Standard database operations stop being a useful approach when you start considering large blocks of text. Whereas the examples above can be thought of as operations on a string of characters, full text search looks at the actual words. Depending on the system used, it’s likely to use some of the following ideas:
+>
+> - Ignoring “stop words” such as “a”, “the”, “and”.
+> - Stemming words, so that “pony” and “ponies” are considered similar.
+> - Weighting words based on different criteria such as how frequently they appear in the text, or the importance of the fields, such as the title or keywords, that they appear in.
+>
+> There are many alternatives for using searching software, some of the most prominent are [Elastic](https://www.elastic.co/) and [Solr](https://solr.apache.org/). These are full document-based search solutions. To use them with data from Django models, you’ll need a layer which translates your data into a textual document, including back-references to the database ids. When a search using the engine returns a certain document, you can then look it up in the database. There are a variety of third-party libraries which are designed to help with this process.
 
 #### PostgreSQL support
 
