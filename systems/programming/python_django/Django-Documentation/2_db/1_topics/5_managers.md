@@ -10,7 +10,7 @@ Mine:
 
 The way `Manager` classes work is documented in [Making queries](./2_queries.md); this document specifically touches on model options that customize `Manager` behavior.
 
-## Manager names - WIP
+## Manager names - Mahmuda's version
 
 Them, modded:
 > - By default, Django adds a `Manager` with the name `objects` to every Django model class. 
@@ -31,9 +31,10 @@ class Person(models.Model):
     people = models.Manager()
 ```
 
-- Using this example model, 
-  - `Person.objects` will generate an `AttributeError` exception, 
-  - but `Person.people.all()` will provide a list of all `Person` objects.
+Them, light modded:
+> - Using this example model, 
+>   - `Person.objects` will generate an `AttributeError` exception, 
+>   - but `Person.people.all()` will provide a list of all `Person` objects.
 
 ## Custom managers
 
