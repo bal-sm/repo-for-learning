@@ -10,7 +10,17 @@ Mine:
 
 The way `Manager` classes work is documented in [Making queries](./2_queries.md); this document specifically touches on model options that customize `Manager` behavior.
 
-## Manager names
+## Manager names - WIP
+
+Them, modded:
+- By default, Django adds a `Manager` with the name `objects` to every Django model class. 
+  - However, 
+    - if you want to use `objects` _as a field name_, or 
+    - if you want to use _a name other than `objects`_ for the `Manager`, 
+    - you *can* *rename* *it* _on a per-model basis_. 
+  - To rename the `Manager` for a given class, define a class attribute of type `models.Manager()` on that model.
+
+For example: ...
 
 ..., WIP.
 
