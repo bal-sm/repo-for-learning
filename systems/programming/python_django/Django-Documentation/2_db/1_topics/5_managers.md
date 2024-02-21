@@ -3,7 +3,12 @@
 Mine:
 > Taken from -> <https://docs.djangoproject.com/en/5.0/topics/db/managers/>
 
-..., WIP.
+`class Manager` / `django.db.models.Manager`
+
+- A `Manager` is the *interface* through which database query operations are provided to Django *models*. 
+  - At least one `Manager` exists for every model in a Django application.
+
+The way `Manager` classes work is documented in [Making queries](./2_queries.md); this document specifically touches on model options that customize `Manager` behavior.
 
 ## Manager names
 
