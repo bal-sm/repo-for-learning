@@ -20,9 +20,20 @@ Them, modded:
     - you *can* *rename* *it* _on a per-model basis_. 
   - To rename the `Manager` for a given class, define a class attribute of type `models.Manager()` on that model.
 
-For example: ...
+For example:
 
-..., WIP.
+```python
+from django.db import models
+
+
+class Person(models.Model):
+    # ...
+    people = models.Manager()
+```
+
+- Using this example model, 
+  - `Person.objects` will generate an `AttributeError` exception, 
+  - but `Person.people.all()` will provide a list of all `Person` objects.
 
 ## Custom managers
 
