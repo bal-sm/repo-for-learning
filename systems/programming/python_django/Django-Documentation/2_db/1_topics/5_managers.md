@@ -36,9 +36,15 @@ Them, light modded:
 >   - `Person.objects` will generate an `AttributeError` exception, 
 >   - but `Person.people.all()` will provide a list of all `Person` objects.
 
-## Custom managers
+## Custom managers - WIP
 
-..., WIP.
+- You can use a custom `Manager` _(in a particular model)_ by: 
+  - extending the base `Manager` class and 
+  - instantiating your custom `Manager` in your model.
+
+- There are *two* **reasons** _you might want to customize a `Manager`_: 
+  - to add *extra* **`Manager`** methods, and/or 
+  - to modify the *initial* **`QuerySet`** the `Manager` returns.
 
 ### Adding extra manager methods
 
