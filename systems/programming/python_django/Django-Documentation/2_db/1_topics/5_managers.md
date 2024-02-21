@@ -10,7 +10,7 @@ Mine:
 
 The way `Manager` classes work is documented in [Making queries](./2_queries.md); this document specifically touches on model options that customize `Manager` behavior.
 
-## Manager names - Mahmuda's version
+## Manager names - Mahmuda's version - Lite
 
 Them, modded:
 > - By default, Django adds a `Manager` with the name `objects` to every Django model class. 
