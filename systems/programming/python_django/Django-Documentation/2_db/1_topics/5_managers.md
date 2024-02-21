@@ -46,7 +46,7 @@ Them, light modded:
   - to add *extra* **`Manager`** methods, and/or 
   - to modify the *initial* **`QuerySet`** the `Manager` returns.
 
-### Adding extra manager methods - WIP
+### Adding extra manager methods - Mahmuda's version
 
 - Adding extra `Manager` methods is the preferred way to add **“table-level”** *functionality* to your models. 
   - Illustration:
@@ -91,7 +91,11 @@ Mine:
 >```
 >
 
-...
+Them, 2 important things:
+> - A custom `Manager` method can return anything you want. 
+>   - It doesn’t have to return a `QuerySet`.
+> - Another thing to note is that `Manager` methods can access `self.model`:
+>   - to get the model class to which they’re attached.
 
 ### Modifying a manager’s initial `QuerySet`
 
