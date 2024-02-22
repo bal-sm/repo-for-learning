@@ -97,21 +97,119 @@ Them, 2 important things:
 > - Another thing to note is that `Manager` methods can access `self.model`:
 >   - to get the model class to which they’re attached.
 
-### Modifying a manager’s initial `QuerySet`
+### Modifying a manager’s initial `QuerySet` - Mahmuda's version
 
-..., WIP.
+A `Manager`’s base `QuerySet` *returns* *all* **objects** in the system.
 
-### Default managers
+---
 
-..., WIP.
+For example, using this model:
 
-### Base managers
+```python
+from django.db import models
 
-..., WIP.
 
-#### Using managers for related object access
+class Book(models.Model):
+    title = models.CharField(max_length=100)
+    author = models.CharField(max_length=50)
+```
 
-..., WIP.
+…the statement `Book.objects.all()` will *return* **all** *books* in the database.
+
+```python
+>>> Book.objects.all()
+```
+
+---
+
+- You can override a `Manager`’s base `QuerySet` by **overriding** the **`Manager.get_queryset()`** method. 
+  - `get_queryset()` should return a `QuerySet` with the properties you require.
+
+For example, bla-bla-bla:
+
+```python
+# First, define the Manager subclass.
+class DahlBookManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(author="Roald Dahl")
+
+
+# Then hook it into the Book model explicitly.
+class Book(models.Model):
+    title = models.CharField(max_length=100)
+    author = models.CharField(max_length=50)
+
+    objects = models.Manager()  # The default manager.
+    dahl_objects = DahlBookManager()  # The Dahl-specific manager.
+```
+
+bla-bla-bla
+
+```python
+Book.objects.all() # ✔️, Returns all books.
+Book.dahl_objects.all() # ✔️, Returns all books by Roald Dahl.
+Book.dahl_objects.filter(title="Matilda") # ✔️, Returns all books by Roald Dahl with the title "Matilda".
+Book.dahl_objects.count() # ✔️, Returns the amount of books by Roald Dahl.
+```
+
+---
+
+- This example also pointed out another _interesting_ technique:
+  - using **multiple managers** on the same model. 
+    - You can attach as *many* *`Manager()`* instances to a model as you’d like. 
+      - This is a **non-repetitive way** to define common “filters” for your models.
+
+For example:
+
+```python
+class AuthorManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(role="A")
+
+
+class EditorManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(role="E")
+
+
+class Person(models.Model):
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    role = models.CharField(max_length=1, choices={"A": _("Author"), "E": _("Editor")})
+    people = models.Manager()
+    authors = AuthorManager()
+    editors = EditorManager()
+```
+
+```python
+>>> Person.authors.all() # ✔️, Returns all authors.
+>>> Person.editors.all() # ✔️, Returns all editors.
+>>> Person.people.all() # ✔️, Returns all people.
+```
+
+### Default managers - Light modded
+
+`Model._default_manager`
+
+Them, baca aja:
+> If you use custom `Manager` objects, take note that the first `Manager` Django encounters (in the order in which they’re defined in the model) has a special status. Django interprets the first `Manager` defined in a class as the “default” `Manager`, and several parts of Django (including [`dumpdata`](https://docs.djangoproject.com/en/5.0/ref/django-admin/#django-admin-dumpdata)) will use that `Manager` exclusively for that model. As a result, it’s a good idea to be careful in your choice of default manager in order to avoid a situation where overriding `get_queryset()` results in an inability to retrieve objects you’d like to work with.
+>
+> You can specify a custom default manager using [`Meta.default_manager_name`](https://docs.djangoproject.com/en/5.0/ref/models/options/#django.db.models.Options.default_manager_name).
+>
+> If you’re writing some code that must handle an unknown model, for example, in a third-party app that implements a generic view, use this manager (or [`_base_manager`](https://docs.djangoproject.com/en/5.0/topics/db/managers/#django.db.models.Model._base_manager)) rather than assuming the model has an `objects` manager.
+
+### Base managers - WIP
+
+`Model._base_manager`
+
+#### Using managers for related object access - Light modded
+
+Them, baca aja:
+> By default, Django uses an instance of the `Model._base_manager` manager class when accessing related objects (i.e. `choice.question`), not the `_default_manager` on the related object. This is because Django needs to be able to retrieve the related object, even if it would otherwise be filtered out (and hence be inaccessible) by the default manager.
+>
+> If the normal base manager class ([`django.db.models.Manager`](https://docs.djangoproject.com/en/5.0/topics/db/managers/#django.db.models.Manager)) isn’t appropriate for your circumstances, you can tell Django which class to use by setting [`Meta.base_manager_name`](https://docs.djangoproject.com/en/5.0/ref/models/options/#django.db.models.Options.base_manager_name).
+>
+> Base managers aren’t used when querying on related models, or when [accessing a one-to-many or many-to-many relationship](https://docs.djangoproject.com/en/5.0/topics/db/queries/#backwards-related-objects). For example, if the `Question` model [from the tutorial](https://docs.djangoproject.com/en/5.0/intro/tutorial02/#creating-models) had a `deleted` field and a base manager that filters out instances with `deleted=True`, a queryset like `Choice.objects.filter(question__name__startswith='What')` would include choices related to deleted questions.
 
 #### Don’t filter away any results in this type of manager subclass
 
