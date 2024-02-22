@@ -198,13 +198,18 @@ Them, baca aja:
 >
 > If you’re writing some code that must handle an unknown model, for example, in a third-party app that implements a generic view, use this manager (or [`_base_manager`](https://docs.djangoproject.com/en/5.0/topics/db/managers/#django.db.models.Model._base_manager)) rather than assuming the model has an `objects` manager.
 
-### Base managers
+### Base managers - WIP
 
-..., WIP.
+`Model._base_manager`
 
-#### Using managers for related object access
+#### Using managers for related object access - Light modded
 
-..., WIP.
+Them, baca aja:
+> By default, Django uses an instance of the `Model._base_manager` manager class when accessing related objects (i.e. `choice.question`), not the `_default_manager` on the related object. This is because Django needs to be able to retrieve the related object, even if it would otherwise be filtered out (and hence be inaccessible) by the default manager.
+>
+> If the normal base manager class ([`django.db.models.Manager`](https://docs.djangoproject.com/en/5.0/topics/db/managers/#django.db.models.Manager)) isn’t appropriate for your circumstances, you can tell Django which class to use by setting [`Meta.base_manager_name`](https://docs.djangoproject.com/en/5.0/ref/models/options/#django.db.models.Options.base_manager_name).
+>
+> Base managers aren’t used when querying on related models, or when [accessing a one-to-many or many-to-many relationship](https://docs.djangoproject.com/en/5.0/topics/db/queries/#backwards-related-objects). For example, if the `Question` model [from the tutorial](https://docs.djangoproject.com/en/5.0/intro/tutorial02/#creating-models) had a `deleted` field and a base manager that filters out instances with `deleted=True`, a queryset like `Choice.objects.filter(question__name__startswith='What')` would include choices related to deleted questions.
 
 #### Don’t filter away any results in this type of manager subclass
 
