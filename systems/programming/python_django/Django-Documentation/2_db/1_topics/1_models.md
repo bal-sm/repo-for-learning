@@ -77,8 +77,8 @@ Mine lagi:
 Mine atas note atas:
 > Makanya rangkum kapan-kapan aja, sekarang (30 December 2023) lagi di look through nih.
 
-~~VERY IMPORTANT NOTE, personal experience note, FOR UPCOMING "Multi-table inheritance" section:~~
-> ~~DON'T EVER USE THIS, REALLY NOT WORTH IT, BETTER OFF USE REGULAR `OneToOneField`!!! WHY TF THESE STILL NOT DEPRECATED IN THE LATEST VERSION???~~ I actually might change my mind..
+VERY IMPORTANT NOTE, personal experience note, FOR UPCOMING "Multi-table inheritance" section:
+> DON'T EVER USE THIS, REALLY NOT WORTH IT, BETTER OFF USE REGULAR `OneToOneField`!!! WHY TF THESE STILL NOT DEPRECATED IN THE LATEST VERSION??? ~~I actually might change my mind..~~ <https://code.djangoproject.com/ticket/7623>
 
 Mine, learning note:
 > - Taken from [Retrieving objects](https://docs.djangoproject.com/en/5.0/topics/db/queries/#retrieving-objects):
