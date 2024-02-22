@@ -120,6 +120,40 @@ class Book(models.Model):
 >>> Book.objects.all()
 ```
 
+---
+
+- You can override a `Manager`’s base `QuerySet` by **overriding** the **`Manager.get_queryset()`** method. 
+  - `get_queryset()` should return a `QuerySet` with the properties you require.
+
+For example, bla-bla-bla:
+
+```python
+# First, define the Manager subclass.
+class DahlBookManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(author="Roald Dahl")
+
+
+# Then hook it into the Book model explicitly.
+class Book(models.Model):
+    title = models.CharField(max_length=100)
+    author = models.CharField(max_length=50)
+
+    objects = models.Manager()  # The default manager.
+    dahl_objects = DahlBookManager()  # The Dahl-specific manager.
+```
+
+bla-bla-bla
+
+```python
+Book.objects.all() # ✔️, Returns all books.
+Book.dahl_objects.all() # ✔️, Returns all books by Roald Dahl.
+Book.dahl_objects.filter(title="Matilda") # ✔️, Returns all books by Roald Dahl with the title "Matilda".
+Book.dahl_objects.count() # ✔️, Returns the amount of books by Roald Dahl.
+```
+
+---
+
 ...
 
 ### Default managers
