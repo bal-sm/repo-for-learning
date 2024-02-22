@@ -187,9 +187,16 @@ class Person(models.Model):
 >>> Person.people.all() # ✔️, Returns all people.
 ```
 
-### Default managers
+### Default managers - Light modded
 
-..., WIP.
+`Model._default_manager`
+
+Them, baca aja:
+> If you use custom `Manager` objects, take note that the first `Manager` Django encounters (in the order in which they’re defined in the model) has a special status. Django interprets the first `Manager` defined in a class as the “default” `Manager`, and several parts of Django (including [`dumpdata`](https://docs.djangoproject.com/en/5.0/ref/django-admin/#django-admin-dumpdata)) will use that `Manager` exclusively for that model. As a result, it’s a good idea to be careful in your choice of default manager in order to avoid a situation where overriding `get_queryset()` results in an inability to retrieve objects you’d like to work with.
+>
+> You can specify a custom default manager using [`Meta.default_manager_name`](https://docs.djangoproject.com/en/5.0/ref/models/options/#django.db.models.Options.default_manager_name).
+>
+> If you’re writing some code that must handle an unknown model, for example, in a third-party app that implements a generic view, use this manager (or [`_base_manager`](https://docs.djangoproject.com/en/5.0/topics/db/managers/#django.db.models.Model._base_manager)) rather than assuming the model has an `objects` manager.
 
 ### Base managers
 
