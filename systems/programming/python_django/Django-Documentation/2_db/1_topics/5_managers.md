@@ -97,9 +97,30 @@ Them, 2 important things:
 > - Another thing to note is that `Manager` methods can access `self.model`:
 >   - to get the model class to which they’re attached.
 
-### Modifying a manager’s initial `QuerySet`
+### Modifying a manager’s initial `QuerySet` - WIP
 
-..., WIP.
+A `Manager`’s base `QuerySet` *returns* *all* **objects** in the system.
+
+---
+
+For example, using this model:
+
+```python
+from django.db import models
+
+
+class Book(models.Model):
+    title = models.CharField(max_length=100)
+    author = models.CharField(max_length=50)
+```
+
+…the statement `Book.objects.all()` will *return* **all** *books* in the database.
+
+```python
+>>> Book.objects.all()
+```
+
+...
 
 ### Default managers
 
