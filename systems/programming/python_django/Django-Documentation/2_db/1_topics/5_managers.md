@@ -97,7 +97,7 @@ Them, 2 important things:
 > - Another thing to note is that `Manager` methods can access `self.model`:
 >   - to get the model class to which they’re attached.
 
-### Modifying a manager’s initial `QuerySet` - WIP
+### Modifying a manager’s initial `QuerySet` - Mahmuda's version
 
 A `Manager`’s base `QuerySet` *returns* *all* **objects** in the system.
 
@@ -154,7 +154,38 @@ Book.dahl_objects.count() # ✔️, Returns the amount of books by Roald Dahl.
 
 ---
 
-...
+- This example also pointed out another _interesting_ technique:
+  - using **multiple managers** on the same model. 
+    - You can attach as *many* *`Manager()`* instances to a model as you’d like. 
+      - This is a **non-repetitive way** to define common “filters” for your models.
+
+For example:
+
+```python
+class AuthorManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(role="A")
+
+
+class EditorManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(role="E")
+
+
+class Person(models.Model):
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    role = models.CharField(max_length=1, choices={"A": _("Author"), "E": _("Editor")})
+    people = models.Manager()
+    authors = AuthorManager()
+    editors = EditorManager()
+```
+
+```python
+>>> Person.authors.all() # ✔️, Returns all authors.
+>>> Person.editors.all() # ✔️, Returns all editors.
+>>> Person.people.all() # ✔️, Returns all people.
+```
 
 ### Default managers
 
