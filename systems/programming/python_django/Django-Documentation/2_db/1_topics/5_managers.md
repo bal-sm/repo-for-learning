@@ -198,7 +198,7 @@ Them, baca aja:
 >
 > If you’re writing some code that must handle an unknown model, for example, in a third-party app that implements a generic view, use this manager (or [`_base_manager`](https://docs.djangoproject.com/en/5.0/topics/db/managers/#django.db.models.Model._base_manager)) rather than assuming the model has an `objects` manager.
 
-### Base managers - WIP
+### Base managers - Light modded
 
 `Model._base_manager`
 
@@ -211,29 +211,159 @@ Them, baca aja:
 >
 > Base managers aren’t used when querying on related models, or when [accessing a one-to-many or many-to-many relationship](https://docs.djangoproject.com/en/5.0/topics/db/queries/#backwards-related-objects). For example, if the `Question` model [from the tutorial](https://docs.djangoproject.com/en/5.0/intro/tutorial02/#creating-models) had a `deleted` field and a base manager that filters out instances with `deleted=True`, a queryset like `Choice.objects.filter(question__name__startswith='What')` would include choices related to deleted questions.
 
-#### Don’t filter away any results in this type of manager subclass
+#### Don’t filter away any results in this type of manager subclass - Light modded
 
-..., WIP.
+Them, unmodded:
+> This manager is used to access objects that are related to from some other model. In those situations, Django has to be able to see all the objects for the model it is fetching, so that *anything* which is referred to can be retrieved.
+>
+> Therefore, you should not override `get_queryset()` to filter out any rows. If you do so, Django will return incomplete results.
 
-### Calling custom `QuerySet` methods from the manager
+### Calling custom `QuerySet` methods from the manager - Light modded
 
-..., WIP.
+Them:
+> While most methods from the standard `QuerySet` are accessible directly from the `Manager`, this is only the case for the extra methods defined on a custom `QuerySet` if you also implement them on the `Manager`:
 
-### Creating a manager with `QuerySet` methods
+```python
+class PersonQuerySet(models.QuerySet):
+    def authors(self):
+        return self.filter(role="A")
 
-..., WIP.
+    def editors(self):
+        return self.filter(role="E")
 
-#### `from_queryset()`
 
-..., WIP.
+class PersonManager(models.Manager):
+    def get_queryset(self):
+        return PersonQuerySet(self.model, using=self._db)
 
-### Custom managers and model inheritance
+    def authors(self):
+        return self.get_queryset().authors()
 
-..., WIP.
+    def editors(self):
+        return self.get_queryset().editors()
 
-### Implementation concerns
 
-..., WIP.
+class Person(models.Model):
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    role = models.CharField(max_length=1, choices={"A": _("Author"), "E": _("Editor")})
+    people = PersonManager()
+```
+
+Them:
+> This example allows you to call both `authors()` and `editors()` directly from the manager `Person.people`.
+
+### Creating a manager with `QuerySet` methods - Mahmuda's version
+
+_Them, skip_
+
+Bisa gini:
+
+```python
+class Person(models.Model):
+    ...
+    people = PersonQuerySet.as_manager()
+    # jadi sama kayak
+    #people = PersonManager() # tapi langsung ke PersonQuerySet
+```
+
+_Them, skip_
+
+Me:
+> Ovt, sumpahh itu yang bla-bla-bla, I don't mean to offend, heueuh, jadi gitu aja.
+
+Methods that are copied by `as_manager()`:
+
+```python
+class CustomQuerySet(models.QuerySet):
+    # Available on both Manager and QuerySet.
+    def public_method(self):
+        return
+
+    # Available only on QuerySet.
+    def _private_method(self):
+        return
+
+    # Available only on QuerySet.
+    def opted_out_public_method(self):
+        return
+
+    opted_out_public_method.queryset_only = True
+
+    # Available on both Manager and QuerySet.
+    def _opted_in_private_method(self):
+        return
+
+    _opted_in_private_method.queryset_only = False
+```
+
+#### `from_queryset()` - Mahmuda's version
+
+`classmethod from_queryset(queryset_class)`
+
+_Them, skip_
+
+Bisa gini:
+
+```python
+class CustomManager(models.Manager):
+    def manager_only_method(self):
+        return
+
+
+class CustomQuerySet(models.QuerySet):
+    def manager_and_queryset_method(self):
+        return
+
+
+class MyModel(models.Model):
+    objects = CustomManager.from_queryset(CustomQuerySet)()
+```
+
+```python
+>>> MyModel.objects.manager_only_method() # ✔️
+>>> MyModel.objects.manager_and_queryset_method() # ✔️, meureun
+```
+
+Bisa disimpen kayak gini:
+
+```python
+MyManager = CustomManager.from_queryset(CustomQuerySet)
+
+
+class MyModel(models.Model):
+    objects = MyManager()
+```
+
+### Custom managers and model inheritance - TL;DR
+
+Mine, TL;DR:
+> Jadi ada beberapa cara Django mengendalikan banyak _custom managers_ dalam _[model inheritance](https://docs.djangoproject.com/en/5.0/topics/db/models/#model-inheritance)_.
+
+Them:
+> 1. Managers from base classes are always inherited by the child class, using Python’s normal name resolution order (names on the child class override all others; then come names on the first parent class, and so on).
+> 2. If no managers are declared on a model and/or its parents, Django automatically creates the `objects` manager.
+> 3. The default manager on a class is either the one chosen with `Meta.default_manager_name`, or the first manager declared on the model, or the default manager of the first parent model.
+
+Mine, TL;DR:
+> Nah, aturan-aturan ini memberikan kebebasan dalam menginstall _a collection of custom managers on a group of models_, via _abstract base class_, tapi masih bisa mengubah _default manager_-nya.
+>
+> Baca dan contoh selanjutnya, dalam official docs, [Custom managers and model inheritance](https://docs.djangoproject.com/en/5.0/topics/db/managers/#custom-managers-and-model-inheritance).
+
+### Implementation concerns - Skipped
+
+Terlalu technical, baca aja di official docs, [Implementation concerns](https://docs.djangoproject.com/en/5.0/topics/db/managers/#implementation-concerns).
+
+Cuman ini contoh kode-nya:
+
+```python
+>>> import copy
+>>> manager = MyManager()
+>>> my_copy = copy.copy(manager)
+```
+
+Mine, learning note:
+> Ya kan ya? Siapa coba yang `copy` `manager` daripada langsung tulis aja, tapi suatu note "hati-hati" gitu, udahlah tulis aja? Enggak. Udah we jangan lupa **BACA** kalau ngerjain `Manager`s.
 
 ## Notes
 
