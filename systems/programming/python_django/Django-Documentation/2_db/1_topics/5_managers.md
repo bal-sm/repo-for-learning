@@ -218,9 +218,40 @@ Them, unmodded:
 >
 > Therefore, you should not override `get_queryset()` to filter out any rows. If you do so, Django will return incomplete results.
 
-### Calling custom `QuerySet` methods from the manager
+### Calling custom `QuerySet` methods from the manager - Light modded
 
-..., WIP.
+Them:
+> While most methods from the standard `QuerySet` are accessible directly from the `Manager`, this is only the case for the extra methods defined on a custom `QuerySet` if you also implement them on the `Manager`:
+
+```python
+class PersonQuerySet(models.QuerySet):
+    def authors(self):
+        return self.filter(role="A")
+
+    def editors(self):
+        return self.filter(role="E")
+
+
+class PersonManager(models.Manager):
+    def get_queryset(self):
+        return PersonQuerySet(self.model, using=self._db)
+
+    def authors(self):
+        return self.get_queryset().authors()
+
+    def editors(self):
+        return self.get_queryset().editors()
+
+
+class Person(models.Model):
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    role = models.CharField(max_length=1, choices={"A": _("Author"), "E": _("Editor")})
+    people = PersonManager()
+```
+
+Them:
+> This example allows you to call both `authors()` and `editors()` directly from the manager `Person.people`.
 
 ### Creating a manager with `QuerySet` methods
 
