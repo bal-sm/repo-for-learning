@@ -335,9 +335,20 @@ class MyModel(models.Model):
     objects = MyManager()
 ```
 
-### Custom managers and model inheritance
+### Custom managers and model inheritance - TL;DR
 
-..., WIP.
+Mine, TL;DR:
+> Jadi ada beberapa cara Django mengendalikan banyak _custom managers_ dalam _[model inheritance](https://docs.djangoproject.com/en/5.0/topics/db/models/#model-inheritance)_.
+
+Them:
+> 1. Managers from base classes are always inherited by the child class, using Python’s normal name resolution order (names on the child class override all others; then come names on the first parent class, and so on).
+> 2. If no managers are declared on a model and/or its parents, Django automatically creates the `objects` manager.
+> 3. The default manager on a class is either the one chosen with `Meta.default_manager_name`, or the first manager declared on the model, or the default manager of the first parent model.
+
+Mine, TL;DR:
+> Nah, aturan-aturan ini memberikan kebebasan dalam menginstall _a collection of custom managers on a group of models_, via _abstract base class_, tapi masih bisa mengubah _default manager_-nya.
+>
+> Baca dan contoh selanjutnya, dalam official docs, [Custom managers and model inheritance](https://docs.djangoproject.com/en/5.0/topics/db/managers/#custom-managers-and-model-inheritance).
 
 ### Implementation concerns
 
