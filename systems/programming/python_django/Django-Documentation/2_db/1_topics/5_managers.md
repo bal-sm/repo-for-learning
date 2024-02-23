@@ -297,9 +297,43 @@ class CustomQuerySet(models.QuerySet):
     _opted_in_private_method.queryset_only = False
 ```
 
-#### `from_queryset()`
+#### `from_queryset()` - Mahmuda's version
 
-..., WIP.
+`classmethod from_queryset(queryset_class)`
+
+_Them, skip_
+
+Bisa gini:
+
+```python
+class CustomManager(models.Manager):
+    def manager_only_method(self):
+        return
+
+
+class CustomQuerySet(models.QuerySet):
+    def manager_and_queryset_method(self):
+        return
+
+
+class MyModel(models.Model):
+    objects = CustomManager.from_queryset(CustomQuerySet)()
+```
+
+```python
+>>> MyModel.objects.manager_only_method() # ✔️
+>>> MyModel.objects.manager_and_queryset_method() # ✔️, meureun
+```
+
+Bisa disimpen kayak gini:
+
+```python
+MyManager = CustomManager.from_queryset(CustomQuerySet)
+
+
+class MyModel(models.Model):
+    objects = MyManager()
+```
 
 ### Custom managers and model inheritance
 
