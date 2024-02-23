@@ -211,9 +211,12 @@ Them, baca aja:
 >
 > Base managers aren’t used when querying on related models, or when [accessing a one-to-many or many-to-many relationship](https://docs.djangoproject.com/en/5.0/topics/db/queries/#backwards-related-objects). For example, if the `Question` model [from the tutorial](https://docs.djangoproject.com/en/5.0/intro/tutorial02/#creating-models) had a `deleted` field and a base manager that filters out instances with `deleted=True`, a queryset like `Choice.objects.filter(question__name__startswith='What')` would include choices related to deleted questions.
 
-#### Don’t filter away any results in this type of manager subclass
+#### Don’t filter away any results in this type of manager subclass - Light modded
 
-..., WIP.
+Them, unmodded:
+> This manager is used to access objects that are related to from some other model. In those situations, Django has to be able to see all the objects for the model it is fetching, so that *anything* which is referred to can be retrieved.
+>
+> Therefore, you should not override `get_queryset()` to filter out any rows. If you do so, Django will return incomplete results.
 
 ### Calling custom `QuerySet` methods from the manager
 
