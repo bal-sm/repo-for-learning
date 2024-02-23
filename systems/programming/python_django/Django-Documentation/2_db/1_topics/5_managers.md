@@ -253,9 +253,49 @@ class Person(models.Model):
 Them:
 > This example allows you to call both `authors()` and `editors()` directly from the manager `Person.people`.
 
-### Creating a manager with `QuerySet` methods
+### Creating a manager with `QuerySet` methods - Mahmuda's version
 
-..., WIP.
+_Them, skip_
+
+Bisa gini:
+
+```python
+class Person(models.Model):
+    ...
+    people = PersonQuerySet.as_manager()
+    # jadi sama kayak
+    #people = PersonManager() # tapi langsung ke PersonQuerySet
+```
+
+_Them, skip_
+
+Me:
+> Ovt, sumpahh itu yang bla-bla-bla, I don't mean to offend, heueuh, jadi gitu aja.
+
+Methods that are copied by `as_manager()`:
+
+```python
+class CustomQuerySet(models.QuerySet):
+    # Available on both Manager and QuerySet.
+    def public_method(self):
+        return
+
+    # Available only on QuerySet.
+    def _private_method(self):
+        return
+
+    # Available only on QuerySet.
+    def opted_out_public_method(self):
+        return
+
+    opted_out_public_method.queryset_only = True
+
+    # Available on both Manager and QuerySet.
+    def _opted_in_private_method(self):
+        return
+
+    _opted_in_private_method.queryset_only = False
+```
 
 #### `from_queryset()`
 
