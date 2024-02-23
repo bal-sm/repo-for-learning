@@ -198,7 +198,7 @@ Them, baca aja:
 >
 > If you’re writing some code that must handle an unknown model, for example, in a third-party app that implements a generic view, use this manager (or [`_base_manager`](https://docs.djangoproject.com/en/5.0/topics/db/managers/#django.db.models.Model._base_manager)) rather than assuming the model has an `objects` manager.
 
-### Base managers - WIP
+### Base managers - Light modded
 
 `Model._base_manager`
 
