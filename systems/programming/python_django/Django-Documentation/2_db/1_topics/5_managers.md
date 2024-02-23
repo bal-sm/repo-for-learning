@@ -350,9 +350,20 @@ Mine, TL;DR:
 >
 > Baca dan contoh selanjutnya, dalam official docs, [Custom managers and model inheritance](https://docs.djangoproject.com/en/5.0/topics/db/managers/#custom-managers-and-model-inheritance).
 
-### Implementation concerns
+### Implementation concerns - Skipped
 
-..., WIP.
+Terlalu technical, baca aja di official docs, [Implementation concerns](https://docs.djangoproject.com/en/5.0/topics/db/managers/#implementation-concerns).
+
+Cuman ini contoh kode-nya:
+
+```python
+>>> import copy
+>>> manager = MyManager()
+>>> my_copy = copy.copy(manager)
+```
+
+Mine, learning note:
+> Ya kan ya? Siapa coba yang `copy` `manager` daripada langsung tulis aja, tapi suatu note "hati-hati" gitu, udahlah tulis aja? Enggak. Udah we jangan lupa **BACA** kalau ngerjain `Manager`s.
 
 ## Notes
 
