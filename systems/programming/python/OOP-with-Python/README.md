@@ -2,6 +2,9 @@
 
 ...
 
+Maintenance note:
+> Rapihin ih, acak-acakan banget, gimana tapi ya?
+
 ## Dictionary (rename plz)
 
 - `__init__`
