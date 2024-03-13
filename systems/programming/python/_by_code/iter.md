@@ -1,7 +1,7 @@
 # iter(something) - WIP
 
 Kenapa kepikiran ngerangkum ini:
-> Soalnya habis baca ini -> <https://peps.python.org/pep-3132/>
+> Soalnya habis baca ini -> <https://peps.python.org/pep-3132/> -> <https://peps.python.org/pep-3132/#rationale> -> `iter(seq)`.
 
 ## ...
 
