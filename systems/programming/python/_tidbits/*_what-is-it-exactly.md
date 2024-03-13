@@ -58,3 +58,19 @@ The line of code you're asking about is written in Python and it's using a few d
 4. `*`: This is the unpacking operator in Python. It's used to unpack an iterable (like a list or a tuple) into individual elements. In this context, it's used to unpack the list (or other iterable) that is returned by the `super().check(**kwargs)` call.
 
 So, to put it all together, this line of code is calling the [`check`](command:_github.copilot.openSymbolInFile?%5B%22django%2Fdb%2Fmodels%2Ffields%2F__init__.py%22%2C%22check%22%5D "django/db/models/fields/__init__.py") method from the parent class, passing in any keyword arguments that were passed to the current method. It then unpacks the iterable that is returned by the [`check`](command:_github.copilot.openSymbolInFile?%5B%22django%2Fdb%2Fmodels%2Ffields%2F__init__.py%22%2C%22check%22%5D "django/db/models/fields/__init__.py") method. This is typically done when you want to combine the elements of the returned iterable with other elements in a list.
+
+## Sebagai variabel (dari Stackoverflow) - WIP
+
+[Python unpacking operator (*)](https://stackoverflow.com/questions/50950690/python-unpacking-operator)
+
+### The Question
+
+...
+
+### The Answer
+
+...
+
+### Penjelasan lebih lanjut dari PEP
+
+...
