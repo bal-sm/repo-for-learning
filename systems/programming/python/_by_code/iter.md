@@ -8,7 +8,7 @@ Maintenance note:
 
 ## What is it?
 
-The `iter()` method returns an [iterator](#what-is-iterators) for the given argument.
+The `iter()` method returns an [iterator](#what-is-iterators-2) for the given argument.
 
 Example:
 
