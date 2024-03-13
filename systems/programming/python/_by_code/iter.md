@@ -224,6 +224,32 @@ The `iter()` method returns:
 - iterator object for the given argument until _the sentinel character is found_.
 - **`TypeError`** for a user-defined object that doesn't implement `__iter__()`, and `__next__()` or `__getitem()__`
 
+## Example 1: Python `iter()`
+
+```python
+# list of vowels
+vowels = ["a", "e", "i", "o", "u"]
+
+# iter() with a list of vowels
+vowels_iter = iter(vowels)
+
+print(next(vowels_iter))
+print(next(vowels_iter))
+print(next(vowels_iter))
+print(next(vowels_iter))
+print(next(vowels_iter))
+```
+
+Output:
+
+```
+a
+e
+i
+o
+u
+```
+
 ## ...
 
 ...
