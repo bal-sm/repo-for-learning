@@ -5,7 +5,7 @@ Kenapa kepikiran ngerangkum ini:
 
 ## What is it?
 
-The `iter()` method returns an iterator for the given argument.
+The `iter()` method returns an [iterator](#what-is-iterators) for the given argument.
 
 Example:
 
@@ -24,6 +24,15 @@ print(next(phones_iter))
 # oneplus
 ```
 
+## What is "Iterators" [2] - WIP
+
+- Iterators are methods that iterate collections like:
+  - lists,
+  - tuples,
+  - etc.
+
+...
+
 ## ...
 
 ...
@@ -31,3 +40,4 @@ print(next(phones_iter))
 ## Source(s)
 
 - [Python `iter()`](https://www.programiz.com/python-programming/methods/built-in/iter)
+- [2]: [Python Iterators](https://www.programiz.com/python-programming/iterator)
