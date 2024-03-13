@@ -1,5 +1,11 @@
 # What is `*` operator exactly?
 
+## Kok bisa ditaro di depan function gitu?
+
+### The case
+
+`*super().check(**kwargs),`
+
 Dari [sini](https://github.com/django/django/blob/761946f8e1b6d725f83fa4f3b04ca9750f486009/django/db/models/fields/__init__.py#L2770):
 
 ```python
@@ -34,3 +40,21 @@ class AutoFieldMixin:
 
 # ...
 ```
+
+### Penjelasan GitJob Colipot
+
+The line of code you're asking about is written in Python and it's using a few different concepts that I'll break down for you.
+
+```python
+*super().check(**kwargs),
+```
+
+1. `super()`: This is a built-in Python function that is often used in the context of inheritance in object-oriented programming. It's used to call a method from a parent class. In this case, it's calling the [`check`](command:_github.copilot.openSymbolInFile?%5B%22django%2Fdb%2Fmodels%2Ffields%2F__init__.py%22%2C%22check%22%5D "django/db/models/fields/__init__.py") method from the parent class.
+
+2. [`.check()`](command:_github.copilot.openSymbolInFile?%5B%22django%2Fdb%2Fmodels%2Ffields%2F__init__.py%22%2C%22.check()%22%5D "django/db/models/fields/__init__.py"): This is a method that is presumably defined in the parent class. Without more context, it's hard to say exactly what this method does, but given its name and common naming conventions, it's likely that this method performs some sort of validation or check.
+
+3. [`**kwargs`](command:_github.copilot.openSymbolInFile?%5B%22django%2Fdb%2Fmodels%2Ffields%2F__init__.py%22%2C%22**kwargs%22%5D "django/db/models/fields/__init__.py"): This is a way in Python to pass a variable number of keyword arguments to a function. The `**` operator is used to unpack the dictionary and pass the items in the dictionary as keyword arguments to the function.
+
+4. `*`: This is the unpacking operator in Python. It's used to unpack an iterable (like a list or a tuple) into individual elements. In this context, it's used to unpack the list (or other iterable) that is returned by the `super().check(**kwargs)` call.
+
+So, to put it all together, this line of code is calling the [`check`](command:_github.copilot.openSymbolInFile?%5B%22django%2Fdb%2Fmodels%2Ffields%2F__init__.py%22%2C%22check%22%5D "django/db/models/fields/__init__.py") method from the parent class, passing in any keyword arguments that were passed to the current method. It then unpacks the iterable that is returned by the [`check`](command:_github.copilot.openSymbolInFile?%5B%22django%2Fdb%2Fmodels%2Ffields%2F__init__.py%22%2C%22check%22%5D "django/db/models/fields/__init__.py") method. This is typically done when you want to combine the elements of the returned iterable with other elements in a list.
