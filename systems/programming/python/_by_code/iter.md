@@ -207,6 +207,23 @@ Output:
 Mine, cuman buat saya, note:
 > nu `yield` `yield` tea gening di Computerphile.
 
+## `iter()` Syntax
+
+The syntax of the `iter()` method is:
+
+```python
+iter(object, sentinel [optional])
+```
+
+The parameters:
+- `object` - can be a list, set, tuple, etc.
+- `sentinel [optional]` - a special value that is used to represent the end of a sequence
+  - example: `iter(DoubleIt(), 16)` -> jadinya: 2, 4, 8, ~~16~~.
+
+The `iter()` method returns:
+- iterator object for the given argument until _the sentinel character is found_.
+- **`TypeError`** for a user-defined object that doesn't implement `__iter__()`, and `__next__()` or `__getitem()__`
+
 ## ...
 
 ...
