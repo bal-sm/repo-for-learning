@@ -70,6 +70,24 @@ Output:
 0
 ```
 
+### Using for Loop
+
+```python
+# define a list
+my_list = [4, 7, 0]
+
+for element in my_list:
+    print(element)
+```
+
+Output:
+
+```
+4
+7
+0
+```
+
 ## ...
 
 ...
