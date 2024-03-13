@@ -41,3 +41,6 @@ print(next(phones_iter))
 
 - [Python `iter()`](https://www.programiz.com/python-programming/methods/built-in/iter)
 - [2]: [Python Iterators](https://www.programiz.com/python-programming/iterator)
+
+Mine:
+> omG siah aing. <www.programiz.com>. Harus sering-sering.
