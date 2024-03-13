@@ -250,6 +250,48 @@ o
 u
 ```
 
+## Example 2: `iter()` for custom objects
+
+```python
+class PrintNumber:
+    def __init__(self, max):
+        self.max = max
+
+# iter() method in a class
+    def __iter__(self):
+        self.num = 0
+        return self
+
+# next() method in a class 
+    def __next__(self):
+        if(self.num >= self.max):
+            raise StopIteration
+        self.num += 1
+        return self.num
+
+print_num = PrintNumber(3)
+
+print_num_iter = iter(print_num)
+print(next(print_num_iter))  # 1
+print(next(print_num_iter))  # 2
+print(next(print_num_iter))  # 3
+
+# raises StopIteration
+print(next(print_num_iter))
+```
+
+Output:
+
+```
+1
+2
+3
+Traceback (most recent call last):
+  File "", line 23, in 
+File "", line 11, in __next__
+StopIteration
+```
+
 ## ...
 
 ...
