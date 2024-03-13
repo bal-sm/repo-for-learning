@@ -339,6 +339,15 @@ Them, skip aja atau gak tau ketang:
 >
 > At this point in the code, the program will raise a `StopIteration` automatically. 
 
+## Note(s)
+
+Them:
+> Recommended Reading: (cenah)
+> - [Python Iterators](https://www.programiz.com/python-programming/iterator)
+>   - > ada di sini.
+> - [Python `next()`](https://www.programiz.com/python-programming/methods/built-in/next)
+>   - > belum dirangkum, maintenance, aja.
+
 ## Source(s)
 
 - [Python `iter()`](https://www.programiz.com/python-programming/methods/built-in/iter)
