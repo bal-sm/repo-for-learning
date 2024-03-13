@@ -112,6 +112,6 @@ SyntaxError: starred assignment target must be in a list or tuple
 
 Which is why that comma is there, as a trailing comma is how you indicate a single-value tuple.
 
-### Penjelasan lebih lanjut dari PEP
+### Penjelasan lebih lanjut dari PEP 3132
 
-...
+..., TBA, baca aja [di sini](https://peps.python.org/pep-3132/).
