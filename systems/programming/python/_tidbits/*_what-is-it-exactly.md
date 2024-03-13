@@ -63,9 +63,24 @@ So, to put it all together, this line of code is calling the [`check`](command:_
 
 [Python unpacking operator (*)](https://stackoverflow.com/questions/50950690/python-unpacking-operator)
 
+Mine:
+> Thanks to them all.
+
 ### The Question
 
-...
+Maksudnya apa nih?
+
+```python
+*s,='abcde'
+```
+
+(Dia) tahu sebenernya sama seperti ini:
+
+```python
+s=[*'abcde']
+```
+
+Cuman yang atas kok bisa?
 
 ### The Answer
 
