@@ -3,6 +3,9 @@
 Kenapa kepikiran ngerangkum ini:
 > Soalnya habis baca ini -> <https://peps.python.org/pep-3132/> -> <https://peps.python.org/pep-3132/#rationale> -> `iter(seq)`.
 
+Maintenance note:
+> Percantik lagi sectioning-nya.
+
 ## What is it?
 
 The `iter()` method returns an [iterator](#what-is-iterators) for the given argument.
