@@ -292,9 +292,52 @@ File "", line 11, in __next__
 StopIteration
 ```
 
-## ...
+## Example 3: `iter()` with Sentinel Parameter
 
-...
+```python
+class DoubleIt:
+
+    def __init__(self):
+        self.start = 1
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        self.start *= 2
+        return self.start
+
+    __call__ = __next__
+    
+my_iter = iter(DoubleIt(), 16)
+
+for x in my_iter:
+    print(x)
+```
+
+Output:
+
+```
+2
+4
+8
+```
+
+Mine, learning note:
+> Gak ada `StopIteration` soalnya gak diimplementasikan. Eh ketang cenah "At this point in the code, the program will raise a StopIteration automatically."
+
+Them, skip aja atau gak tau ketang:
+> In the above example, we haven't implemented a `StopIteration` condition.
+>
+> Instead, we have used the `iter()` method with a sentinel parameter to stop the iteration:
+>
+> ```python
+> my_iter = iter(DoubleIt(), 16)
+> ```
+>
+> The value of the sentinel parameter here is *16* so the program will stop when the value from the `__next__()` method is equal to this number.
+>
+> At this point in the code, the program will raise a `StopIteration` automatically. 
 
 ## Source(s)
 
