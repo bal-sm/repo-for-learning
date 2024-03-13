@@ -84,7 +84,33 @@ Cuman yang atas kok bisa?
 
 ### The Answer
 
-...
+This is [Iterable Unpacking](https://www.python.org/dev/peps/pep-3132/). You may have seen it in other places to assign values to multiple variables from a single expression
+
+```python
+a, b, c = [1, 2, 3]
+```
+
+This syntax includes a `*` to indicate that this variable should be a list containing the elements from the iterable that weren't explicitly assigned to another variable.
+
+```python
+a, *b, c = [1, 2, 3, 4, 5]
+print(b)
+# [2, 3, 4]
+```
+
+So, what's going on in your example? There's only a single variable name being assigned to, so it's going to take all the items not assigned to another variable, which in this case is all of them. If you try just
+
+```python
+*s='abcde'
+```
+
+you'll get
+
+```
+SyntaxError: starred assignment target must be in a list or tuple
+```
+
+Which is why that comma is there, as a trailing comma is how you indicate a single-value tuple.
 
 ### Penjelasan lebih lanjut dari PEP
 
