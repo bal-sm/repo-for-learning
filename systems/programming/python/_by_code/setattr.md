@@ -7,6 +7,17 @@ The `setattr()` function sets the value of the specified attribute of the specif
 Mine, addition:
 > Sama sih sebenernya sama ubah langsung lewat class-nya. Lihat contoh di bawah.
 
+## Syntax
+
+```python
+setattr(object, attribute, value)
+```
+
+Parameter values:
+- object: Required. An object.
+- attribute: Required. The name of the attribute you want to set
+- value: Required. The value you want to give the specified attribute
+
 ## ...
 
 ..., TBA.
