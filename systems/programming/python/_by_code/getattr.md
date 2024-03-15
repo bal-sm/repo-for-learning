@@ -59,3 +59,7 @@ class Book:
 x = getattr(Book, 'page', 'my message')
 # Output: 'my message'
 ```
+
+## Source(s)
+
+- [Python getattr() Function](https://www.w3schools.com/python/ref_func_getattr.asp)
