@@ -4,6 +4,16 @@
 
 The hasattr() function returns True if the specified object has the specified attribute, otherwise False.
 
+## Syntax
+
+```python
+hasattr(object, attribute)
+```
+
+Parameter values:
+- object: Required. An object.
+- attribute: The name of the attribute you want to check if exists
+
 ## ...
 
 ...
