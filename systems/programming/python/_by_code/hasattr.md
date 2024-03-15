@@ -14,9 +14,18 @@ Parameter values:
 - object: Required. An object.
 - attribute: The name of the attribute you want to check if exists
 
-## ...
+## Example
 
-...
+```python
+class Person:
+    name = "John"
+    age = 36
+    country = "Norway"
+
+x = hasattr(Person, "age") # Output: True
+
+y = hasattr(Person, "sexual_orientation") # Output: False
+```
 
 ## Source(s)
 
