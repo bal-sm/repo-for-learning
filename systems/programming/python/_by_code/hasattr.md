@@ -1,6 +1,12 @@
 # `hasattr()`
 
-..., TBA.
+## Definition and Usage
+
+The hasattr() function returns True if the specified object has the specified attribute, otherwise False.
+
+## ...
+
+...
 
 ## Source(s)
 
