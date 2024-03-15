@@ -1,5 +1,11 @@
 # `delattr()`
 
+## Definition and Usage
+
+The `delattr()` function will delete the specified attribute from the specified object.
+
+## ...
+
 ..., TBA.
 
 ## Source(s)
