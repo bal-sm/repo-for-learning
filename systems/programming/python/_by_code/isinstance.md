@@ -1,0 +1,56 @@
+# `isinstance()`
+
+## ...
+
+..., WIP.
+
+## Example
+
+### ...
+
+...
+
+### Taken from [here](https://docs.djangoproject.com/en/5.0/howto/custom-model-fields/#useful-methods) - WIP
+
+```python
+import re
+
+from django.core.exceptions import ValidationError
+from django.db import models
+from django.utils.translation import gettext_lazy as _
+
+
+def parse_hand(hand_string):
+    """Takes a string of cards and splits into a full hand."""
+    p1 = re.compile(".{26}")
+    p2 = re.compile("..")
+    args = [p2.findall(x) for x in p1.findall(hand_string)]
+    if len(args) != 4:
+        raise ValidationError(_("Invalid input for a Hand instance"))
+    return Hand(*args)
+
+
+class HandField(models.Field):
+    # ...
+
+    def from_db_value(self, value, expression, connection):
+        if value is None:
+            return value
+        return parse_hand(value)
+
+    def to_python(self, value):
+        if isinstance(value, Hand): # HERE!
+            return value
+
+        if value is None:
+            return value
+
+        return parse_hand(value)
+```
+
+Mine:
+> Basically, penjelasan `isinstance` dalam `to_python`:
+> 1. jadi kalo `value` merupakan instance/perwakilan dari `Hand` object, maka langsung aja `return` lagi `value`-nya.
+> 2. Kalo `None`, sama juga, `return` lagi `value`-nya yaitu `None`.
+> 3. Kalo selain itu..
+>    - > Honestly masih gak ngerti `re` teh apa, bentar. Learning note.
