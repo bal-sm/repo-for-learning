@@ -54,3 +54,4 @@ Mine:
 > 2. Kalo `None`, sama juga, `return` lagi `value`-nya yaitu `None`.
 > 3. Kalo selain itu..
 >    - > Honestly masih gak ngerti `re` teh apa, bentar. Learning note.
+>      - > Oh a regex things, skip aja dah, mari balik lagi.
