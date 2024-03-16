@@ -4,7 +4,17 @@
 
 ..., WIP.
 
-## Example
+## Examples
+
+### Example 1
+
+Check if "Hello" is one of the types described in the type parameter:
+
+```python
+x = isinstance("Hello", (str, float, int, str, list, dict, tuple))
+
+print(x)
+```
 
 ### ...
 
