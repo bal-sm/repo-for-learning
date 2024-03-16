@@ -1,5 +1,13 @@
 # `isinstance()`
 
+## Definition and Usage
+
+1. The `isinstance()` function returns:
+   - `True` if the specified object is of the specified type,
+   - otherwise `False`.
+2. If the type parameter is a tuple,
+   - this function will return `True` *if the object is **one of the types** in the tuple*.
+
 ## ...
 
 ..., WIP.
