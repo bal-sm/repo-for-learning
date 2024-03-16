@@ -16,9 +16,20 @@ x = isinstance("Hello", (str, float, int, str, list, dict, tuple))
 print(x)
 ```
 
-### ...
+### Example 2
 
-...
+Check if `y` is an instance of `myObj`:
+
+```python
+class myObj:
+    name = "John"
+
+y = myObj()
+
+x = isinstance(y, myObj)
+
+print(x)
+```
 
 ### Taken from [here](https://docs.djangoproject.com/en/5.0/howto/custom-model-fields/#useful-methods) - WIP
 
