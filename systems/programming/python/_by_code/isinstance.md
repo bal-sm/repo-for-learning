@@ -6,6 +6,14 @@
 
 ## Examples
 
+### Example 0
+
+```python
+x = isinstance(5, int)
+
+print(x)
+```
+
 ### Example 1
 
 Check if "Hello" is one of the types described in the type parameter:
