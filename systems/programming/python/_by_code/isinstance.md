@@ -8,9 +8,15 @@
 2. If the type parameter is a tuple,
    - this function will return `True` *if the object is **one of the types** in the tuple*.
 
-## ...
+## Syntax
 
-..., WIP.
+```python
+isinstance(object, type)
+```
+
+Parameter values:
+- object: Required. An object.
+- type: A type or a class, **or** a tuple of types and/or classes
 
 ## Examples
 
