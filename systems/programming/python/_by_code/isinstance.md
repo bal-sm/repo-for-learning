@@ -28,7 +28,7 @@ y = myObj()
 
 x = isinstance(y, myObj)
 
-print(x)
+print(x) # Output: True
 ```
 
 ### Taken from [here](https://docs.djangoproject.com/en/5.0/howto/custom-model-fields/#useful-methods) - WIP
