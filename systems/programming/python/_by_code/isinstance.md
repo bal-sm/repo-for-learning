@@ -76,3 +76,7 @@ Mine, explanation:
 > 3. Kalo selain itu semua, (berarti mostly `str` / a string gening), masukin ke `parse_hand()` biar jadi `Hand` object instance.
 >    - > ~~Honestly masih gak ngerti `re` teh apa, bentar. Learning note.~~
 >      - > ~~Oh a regex things, skip aja dah, mari balik lagi.~~
+
+## Source(s)
+
+- [Python isinstance() Function](https://www.w3schools.com/python/ref_func_isinstance.asp)
