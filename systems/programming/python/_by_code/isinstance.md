@@ -13,7 +13,7 @@ Check if "Hello" is one of the types described in the type parameter:
 ```python
 x = isinstance("Hello", (str, float, int, str, list, dict, tuple))
 
-print(x)
+print(x) # Output: True
 ```
 
 ### Example 2
