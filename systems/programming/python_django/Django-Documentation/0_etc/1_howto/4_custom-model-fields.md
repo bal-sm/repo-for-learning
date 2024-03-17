@@ -57,6 +57,13 @@ Mine, tuh, tanggapan another learning note:
 >         return cls(*args)
 > ```
 
+### Converting Python objects to query values
+
+Mine, learning note:
+> Query is when you interact with database, therefore query values are values that are made to interact with database.
+
+...
+
 ### ...
 
 ...
