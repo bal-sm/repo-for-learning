@@ -19,6 +19,9 @@
 Mine, learning note:
 > What is `isinstance()`? Baca di [sini](../../../../python/_by_code/isinstance.md).
 
+Mine, another learning note:
+> Tuh ih dia juga nulis `parse_hand()` di luar `HandField` class. Writing code style. is. relative. even if udah pake formatter and linter juga.
+
 ### ...
 
 ...
