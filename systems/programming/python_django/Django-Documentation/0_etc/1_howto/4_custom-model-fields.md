@@ -66,7 +66,7 @@ Mine, tuh, tanggapan another learning note:
 - Database -> `from_db_value()` -> Python object
 - Serialized data -> ↓
   - Cleaned data -> `to_python()` -> Python object
-- ...
+- Python object -> `get_prep_value()` -> Database
 
 ## ...
 
