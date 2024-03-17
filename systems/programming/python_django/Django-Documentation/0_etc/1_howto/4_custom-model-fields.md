@@ -17,10 +17,12 @@
 ...
 
 Mine, explanation:
-> Jadi gini:
-> - Database -> `from_db_value()` -> Python object
-> - Serialized data -> ↓
->   - Cleaned data -> `to_python()` -> Python object
+> ~~Jadi gini:~~
+> ~~- Database -> `from_db_value()` -> Python object~~
+> ~~- Serialized data -> ↓~~
+> ~~  - Cleaned data -> `to_python()` -> Python object~~
+>
+> Baca selanjutnya di [sini](#jadi-begini-mahmudas-note)
 
 ...
 
@@ -58,6 +60,13 @@ Mine, tuh, tanggapan another learning note:
 ### ...
 
 ...
+
+### Jadi begini, Mahmuda's note
+
+- Database -> `from_db_value()` -> Python object
+- Serialized data -> ↓
+  - Cleaned data -> `to_python()` -> Python object
+- ...
 
 ## ...
 
