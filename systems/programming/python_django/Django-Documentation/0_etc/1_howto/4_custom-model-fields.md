@@ -16,6 +16,14 @@
 
 ...
 
+Mine, explanation:
+> Jadi gini:
+> - Database -> `from_db_value()` -> Python object
+> - Serialized data -> ↓
+>   - Cleaned data -> `to_python()` -> Python object
+
+...
+
 Mine, learning note:
 > What is `isinstance()`? Baca di [sini](../../../../python/_by_code/isinstance.md).
 
