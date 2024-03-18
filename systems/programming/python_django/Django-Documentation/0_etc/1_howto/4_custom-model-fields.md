@@ -9,7 +9,7 @@ Them:
 >
 > Alternatively, you may have a complex Python object that can somehow be serialized to fit into a standard database column type. This is another case where a `Field` subclass will help you use your object with your models.
 
-### Our example object - Mahmuda's version - WIP
+### Our example object - Mahmuda's version
 
 Them:
 > Creating custom fields requires a bit of attention to detail. To make things easier to follow, we’ll use a consistent example throughout this document: wrapping a Python object representing the deal of cards in a hand of [Bridge](https://en.wikipedia.org/wiki/Contract_bridge). Don’t worry, you don’t have to know how to play Bridge to follow this example. You only need to know that 52 cards are dealt out equally to four players, who are traditionally called *north*, *east*, *south* and *west*. Our class looks something like this:
@@ -47,7 +47,33 @@ Them:
 Note from them:
 > You might only be wanting to take advantage of custom database column types and deal with the data as standard Python types in your models; strings, or floats, for example. This case is similar to our `Hand` example and we’ll note any differences as we go along.
 
-...
+Mine, addition:
+> Makanya caranya gini:
+>
+> ```python
+> class HandField(models.Field):
+>     # ...
+> ```
+>
+> Terus:
+>
+> ```python
+> class MyModel(models.Model):
+>     hand = HandField()
+> ```
+>
+> Makanya bisa gini juga:
+>
+> ```python
+> example = MyModel.objects.get(pk=1)
+> print(example.hand.north)
+> 
+> new_hand = Hand(north, east, south, west)
+> example.hand = new_hand
+> example.save()
+> ```
+>
+> Oh iya terus sama tergantung `from_db_value()`, `to_python()`, `get_prep_value()`, dan `value_to_string()` di `HandField` juga, baca aja di [bawah](#useful-methods).
 
 ## ...
 
