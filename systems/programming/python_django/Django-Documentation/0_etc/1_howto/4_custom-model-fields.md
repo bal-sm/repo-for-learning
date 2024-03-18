@@ -9,7 +9,24 @@ Them:
 >
 > Alternatively, you may have a complex Python object that can somehow be serialized to fit into a standard database column type. This is another case where a `Field` subclass will help you use your object with your models.
 
-### Our example object
+### Our example object - Mahmuda's version - WIP
+
+Them:
+> Creating custom fields requires a bit of attention to detail. To make things easier to follow, we’ll use a consistent example throughout this document: wrapping a Python object representing the deal of cards in a hand of [Bridge](https://en.wikipedia.org/wiki/Contract_bridge). Don’t worry, you don’t have to know how to play Bridge to follow this example. You only need to know that 52 cards are dealt out equally to four players, who are traditionally called *north*, *east*, *south* and *west*. Our class looks something like this:
+
+```python
+class Hand:
+    """A hand of cards (bridge style)"""
+
+    def __init__(self, north, east, south, west):
+        # Input parameters are lists of cards ('Ah', '9s', etc.)
+        self.north = north
+        self.east = east
+        self.south = south
+        self.west = west
+
+    # ... (other possibly useful methods omitted) ...
+```
 
 ...
 
