@@ -28,6 +28,25 @@ class Hand:
     # ... (other possibly useful methods omitted) ...
 ```
 
+Them:
+> This is an ordinary Python class, with nothing Django-specific about it. We’d like to be able to do things like this in our models (we assume the `hand` attribute on the model is an instance of `Hand`):
+>
+> ```python
+> example = MyModel.objects.get(pk=1)
+> print(example.hand.north)
+> 
+> new_hand = Hand(north, east, south, west)
+> example.hand = new_hand
+> example.save()
+> ```
+>
+> We assign to and retrieve from the `hand` attribute in our model just like any other Python class. The trick is to tell Django how to handle saving and loading such an object.
+>
+> In order to use the `Hand` class in our models, we *do not* have to change this class at all. This is ideal, because it means you can easily write model support for existing classes where you cannot change the source code.
+
+Note from them:
+> You might only be wanting to take advantage of custom database column types and deal with the data as standard Python types in your models; strings, or floats, for example. This case is similar to our `Hand` example and we’ll note any differences as we go along.
+
 ...
 
 ## ...
