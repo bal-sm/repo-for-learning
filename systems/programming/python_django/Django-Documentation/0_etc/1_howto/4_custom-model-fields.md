@@ -192,6 +192,28 @@ All of the options without an explanation in the above list have the same meanin
   - > the `max_length` tea
   - you’ll need to supplement the values being passed.
 
+`deconstruct()` returns a tuple of four items:
+
+```python
+def deconstruct(self):
+    ...
+
+    return name, path, args, kwargs
+```
+
+- explanation of the four items:
+  - `name`: The name of the field on the model / the field's attribute name.
+    - e.g. `name="hand"`
+      - > bukan `name="HandField"` kan ya? learning note, a question. jawab kalo dah tau.
+  - `path`: The Python path to the field class, relative to the root of the module. / the full import path of the field class,
+    - e.g. `path="django.db.models.TextField"`
+  - `args`: the positional arguments (as a list)
+    - e.g.: `args=[]`
+    - > did you know that you actually don't need to unpack it yet? (pake `*`) karena nanti fungsi yang nerima mengunpack this list. learning note.
+  - `kwargs`: the keyword arguments (as a dictionary)
+    - e.g. `kwargs={"max_length": 104}`
+    - > idem.
+
 ...
 
 ### ...
