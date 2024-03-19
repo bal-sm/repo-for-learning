@@ -75,7 +75,7 @@ Mine, addition:
 >
 > Oh iya terus sama tergantung `from_db_value()`, `to_python()`, `get_prep_value()`, dan `value_to_string()` di `HandField` juga, baca aja di [bawah](#useful-methods).
 
-## Backgoound theory - WIP
+## Backgoound theory - Mahmuda's version
 
 ### Database storage - Mahmuda's version
 
@@ -93,9 +93,22 @@ Mine, TL;DR:
 >
 > In case of our `HandField`: `Hand` object -convert-to-> 104 characters by concatenating all the cards (north first, then east, south, and west cards) -so-it-can-be-saved-to-> text / character columns in the database.
 
-### ...
+### What does a field class do? - Soon MV
 
-...
+Them:
+> All of Django’s fields (and when we say *fields* in this document, we always mean model fields and not [form fields](https://docs.djangoproject.com/en/5.0/ref/forms/fields/)) are subclasses of [`django.db.models.Field`](https://docs.djangoproject.com/en/5.0/ref/models/fields/#django.db.models.Field). Most of the information that Django records about a field is common to all fields – name, help text, uniqueness and so forth. Storing all that information is handled by `Field`. We’ll get into the precise details of what `Field` can do later on; for now, suffice it to say that everything descends from `Field` and then customizes key pieces of the class behavior.
+
+Them:
+> It’s important to realize that a Django field class is not what is stored in your model attributes. The model attributes contain normal Python objects. The field classes you define in a model are actually stored in the `Meta` class when the model class is created (the precise details of how this is done are unimportant here). This is because the field classes aren’t necessary when you’re just creating and modifying attributes. Instead, they provide the machinery for converting between the attribute value and what is stored in the database or sent to the [serializer](https://docs.djangoproject.com/en/5.0/topics/serialization/).
+
+Mine, learning note:
+> Masih gak ngerti btw.
+
+Them:
+> Keep this in mind when creating your own custom fields. The Django `Field` subclass you write provides the machinery for converting between your Python instances and the database/serializer values in various ways (there are differences between storing a value and using a value for lookups, for example). If this sounds a bit tricky, don’t worry – it will become clearer in the examples below. Just remember that you will often end up creating two classes when you want a custom field:
+>
+> - The first class is the Python object that your users will manipulate. They will assign it to the model attribute, they will read from it for displaying purposes, things like that. This is the `Hand` class in our example.
+> - The second class is the `Field` subclass. This is the class that knows how to convert your first class back and forth between its permanent storage form and the Python form.
 
 ## ...
 
