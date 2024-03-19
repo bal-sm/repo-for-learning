@@ -305,6 +305,31 @@ class CommaSepField(models.Field):
 Mine:
 > That don't affect a column definition.. Huh?
 
+### Changing a custom field’s base class
+
+You can’t change the base class of a custom field because Django won’t detect the change and make a migration for it. For example, if you start with:
+
+```python
+class CustomCharField(models.CharField): ...
+```
+
+and then decide that you want to use `TextField` instead, you can’t change the subclass like this:
+
+```python
+class CustomCharField(models.TextField): ... # ❌
+```
+
+Instead, you must create a new custom field class and update your models to reference it:
+
+```python
+class CustomCharField(models.CharField): ...
+
+
+class CustomTextField(models.TextField): ...
+```
+
+As discussed in [removing fields](https://docs.djangoproject.com/en/5.0/topics/migrations/#migrations-removing-model-fields), you must retain the original `CustomCharField` class as long as you have migrations that reference it.
+
 ### ...
 
 ...
