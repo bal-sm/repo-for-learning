@@ -75,7 +75,7 @@ Mine, addition:
 >
 > Oh iya terus sama tergantung `from_db_value()`, `to_python()`, `get_prep_value()`, dan `value_to_string()` di `HandField` juga, baca aja di [bawah](#useful-methods).
 
-## Backgoound theory - Mahmuda's version
+## Background theory - Mahmuda's version
 
 ### Database storage - Mahmuda's version
 
