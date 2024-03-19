@@ -271,6 +271,12 @@ Them, [930]:
 > - Pay extra attention if you set new default values for arguments in the `Field` superclass; 
 >   - you want to make sure they’re always included, rather than disappearing if they take on the old default value.
 
+Them, cautionary note:
+> In addition, try to avoid returning values as positional arguments; where possible, return values as keyword arguments for maximum future compatibility. If you change the names of things more often than their position in the constructor’s argument list, you might prefer positional, but bear in mind that people will be reconstructing your field from the serialized version for quite a while (possibly years), depending how long your migrations live for.
+
+Mine, TL;DR:
+> Don't ever return values as positional arguments. Avoid it as possible. Use keyword arguments instead.
+
 ...
 
 ### ...
