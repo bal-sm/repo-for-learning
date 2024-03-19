@@ -460,3 +460,8 @@ Mine, learning note:
 ## ...
 
 ...
+
+## Notes
+
+Mine, maintenance note:
+> Jangan lupa rangkum semua link yang masih menuju ke <https://docs.djangoproject.com/en/5.0/>.
