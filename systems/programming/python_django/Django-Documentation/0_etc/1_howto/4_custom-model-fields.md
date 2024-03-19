@@ -259,7 +259,7 @@ class CommaSepField(models.Field):
     def deconstruct(self):
         name, path, args, kwargs = super().deconstruct()
         # Only include kwarg if it's not the default
-        if self.separator != ",":
+        if self.separator != ",": # **[930]**
             kwargs["separator"] = self.separator
         return name, path, args, kwargs
 ```
@@ -267,7 +267,7 @@ class CommaSepField(models.Field):
 Them, *remember*:
 > More complex examples are beyond the scope of this document, but remember - for any configuration of your `Field` instance, `deconstruct()` must return arguments that you can pass to `__init__` to reconstruct that state.
 
-Them, ...:
+Them, [930]:
 > - Pay extra attention if you set new default values for arguments in the `Field` superclass; 
 >   - you want to make sure they’re always included, rather than disappearing if they take on the old default value.
 
