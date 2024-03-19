@@ -370,6 +370,24 @@ class Person(models.Model):
 
 ---
 
+_Them, skipped_
+
+Mine, TL;DR:
+> Kalau mau bikin jadi database agnostic maka harus dipisah tergantung `connection.vendor`-nya. Current built-in vendor names are: `sqlite`, `postgresql`, `mysql`, and `oracle`.
+
+For example:
+
+```python
+class MyDateField(models.Field):
+    def db_type(self, connection):
+        if connection.vendor == "mysql":
+            return "datetime"
+        else:
+            return "timestamp"
+```
+
+---
+
 ...
 
 #### Converting values to Python objects
