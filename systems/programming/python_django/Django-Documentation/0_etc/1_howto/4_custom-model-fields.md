@@ -185,6 +185,13 @@ All of the options without an explanation in the above list have the same meanin
       2. reduce it to a serialized form - 
          - in particular, what arguments to pass to `__init__()` to recreate it.
 
+- If you haven’t added any extra options on top of the field you inherited from,
+  - > `__init__`'s child == `__init__`'s parent
+  - then there’s no need to write a new `deconstruct()` method.
+- If, however, you’re changing the arguments passed in `__init__()` (like we are in `HandField`),
+  - > the `max_length` tea
+  - you’ll need to supplement the values being passed.
+
 ...
 
 ### ...
