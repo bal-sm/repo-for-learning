@@ -102,7 +102,7 @@ Them:
 > It’s important to realize that a Django field class is not what is stored in your model attributes. The model attributes contain normal Python objects. The field classes you define in a model are actually stored in the `Meta` class when the model class is created (the precise details of how this is done are unimportant here). This is because the field classes aren’t necessary when you’re just creating and modifying attributes. Instead, they provide the machinery for converting between the attribute value and what is stored in the database or sent to the [serializer](https://docs.djangoproject.com/en/5.0/topics/serialization/).
 
 Mine, learning note:
-> Masih gak ngerti btw.
+> Rada ngerti btw. Mungkin bisa membantu -> <https://stackoverflow.com/questions/21818728/django-model-field-class-shows-itself-as-different-class>.
 
 Them:
 > Keep this in mind when creating your own custom fields. The Django `Field` subclass you write provides the machinery for converting between your Python instances and the database/serializer values in various ways (there are differences between storing a value and using a value for lookups, for example). If this sounds a bit tricky, don’t worry – it will become clearer in the examples below. Just remember that you will often end up creating two classes when you want a custom field:
