@@ -330,9 +330,15 @@ class CustomTextField(models.TextField): ...
 
 As discussed in [removing fields](https://docs.djangoproject.com/en/5.0/topics/migrations/#migrations-removing-model-fields), you must retain the original `CustomCharField` class as long as you have migrations that reference it.
 
-### ...
+### Documenting your custom field
 
-...
+As always, you should document your field type, so users will know what it is. In addition to providing a docstring for it, which is useful for developers, you can also allow users of the admin app to see a short description of the field type via the [`django.contrib.admindocs`](https://docs.djangoproject.com/en/5.0/ref/contrib/admin/admindocs/) application. To do this provide descriptive text in a [`description`](https://docs.djangoproject.com/en/5.0/ref/models/fields/#django.db.models.Field.description) class attribute of your custom field. In the above example, the description displayed by the `admindocs` application for a `HandField` will be ‘A hand of cards (bridge style)’.
+
+In the [`django.contrib.admindocs`](https://docs.djangoproject.com/en/5.0/ref/contrib/admin/admindocs/#module-django.contrib.admindocs) display, the field description is interpolated with `field.__dict__` which allows the description to incorporate arguments of the field. For example, the description for `CharField` is:
+
+```python
+description = _("String (up to %(max_length)s)")
+```
 
 ### Useful methods
 
