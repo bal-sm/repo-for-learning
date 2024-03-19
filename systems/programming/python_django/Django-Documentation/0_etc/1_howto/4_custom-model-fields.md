@@ -465,3 +465,6 @@ Mine, learning note:
 
 Mine, maintenance note:
 > Jangan lupa rangkum semua link yang masih menuju ke <https://docs.djangoproject.com/en/5.0/>.
+
+Mine, this doc mau ~~ditinggalin~~ dikerjain besok:
+> Aku mau cobain pake `mystmd` + `myst-parser` + Sphinx biar gak capek copas copas dari docs. tapi copas-copas dari plain text mereka..
