@@ -342,9 +342,22 @@ description = _("String (up to %(max_length)s)")
 
 ### Useful methods
 
-...
+Them:
+> Once you’ve created your `Field` subclass, you might consider overriding a few standard methods, depending on your field’s behavior. The list of methods below is in approximately decreasing order of importance, so start from the top.
 
-#### ...
+#### Custom database types - Mahmuda's version - WIP
+
+Them:
+> Say you’ve created a PostgreSQL custom type called `mytype`. You can subclass `Field` and implement the `db_type()` method, like so:
+
+```python
+from django.db import models
+
+
+class MytypeField(models.Field):
+    def db_type(self, connection):
+        return "mytype"
+```
 
 ...
 
