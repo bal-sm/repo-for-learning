@@ -264,6 +264,13 @@ class CommaSepField(models.Field):
         return name, path, args, kwargs
 ```
 
+Them, *remember*:
+> More complex examples are beyond the scope of this document, but remember - for any configuration of your `Field` instance, `deconstruct()` must return arguments that you can pass to `__init__` to reconstruct that state.
+
+Them, ...:
+> - Pay extra attention if you set new default values for arguments in the `Field` superclass; 
+>   - you want to make sure they’re always included, rather than disappearing if they take on the old default value.
+
 ...
 
 ### ...
