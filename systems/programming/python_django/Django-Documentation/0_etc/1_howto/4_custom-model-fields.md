@@ -175,7 +175,7 @@ The `Field.__init__()` method takes the following parameters:
 
 All of the options without an explanation in the above list have the same meaning they do for normal Django fields. See the [field documentation](https://docs.djangoproject.com/en/5.0/ref/models/fields/) for examples and details.
 
-### Field deconstruction - Mahmuda's version - WIP
+### Field deconstruction - Mahmuda's version
 
 - The counterpoint to writing your `__init__()` method is writing the `deconstruct()` method.
   - > `__init__` -> `deconstruct()`
@@ -277,7 +277,17 @@ Them, cautionary note:
 Mine, TL;DR:
 > Don't ever return values as positional arguments. Avoid it as possible. Use keyword arguments instead.
 
-...
+Them, skip aja dulu:
+> You can see the results of deconstruction by looking in migrations that include the field, and you can test deconstruction in unit tests by deconstructing and reconstructing the field:
+>
+> ```python
+> name, path, args, kwargs = my_field_instance.deconstruct()
+> new_instance = MyField(*args, **kwargs)
+> self.assertEqual(my_field_instance.some_attribute, new_instance.some_attribute)
+> ```
+
+Mine, learning note:
+> That's not helpful.. missing some piece of code.
 
 ### ...
 
