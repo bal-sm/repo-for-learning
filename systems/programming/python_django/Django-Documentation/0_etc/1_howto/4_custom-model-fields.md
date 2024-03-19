@@ -146,6 +146,11 @@ class HandField(models.Field):
 
 - Our `HandField` accepts most of the standard field options _(see the list below)_, but we ensure it has a fixed length, since it only needs to hold 52 card values plus their suits; 104 characters in total.
 
+Note:
+> Many of Django’s model fields accept options that they don’t do anything with. For example, you can pass both [`editable`](https://docs.djangoproject.com/en/5.0/ref/models/fields/#django.db.models.Field.editable) and [`auto_now`](https://docs.djangoproject.com/en/5.0/ref/models/fields/#django.db.models.DateField.auto_now) to a [`django.db.models.DateField`](https://docs.djangoproject.com/en/5.0/ref/models/fields/#django.db.models.DateField) and it will ignore the [`editable`](https://docs.djangoproject.com/en/5.0/ref/models/fields/#django.db.models.Field.editable) parameter ([`auto_now`](https://docs.djangoproject.com/en/5.0/ref/models/fields/#django.db.models.DateField.auto_now) being set implies `editable=False`). No error is raised in this case.
+>
+> This behavior simplifies the field classes, because they don’t need to check for options that aren’t necessary. They pass all the options to the parent class and then don’t use them later on. It’s up to you whether you want your fields to be more strict about the options they select, or to use the more permissive behavior of the current fields.
+
 ...
 
 ### ...
