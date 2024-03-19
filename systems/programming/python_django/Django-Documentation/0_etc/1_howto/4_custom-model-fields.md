@@ -223,6 +223,7 @@ For example, in our `HandField` class
 1. we’re always forcibly setting `max_length` in `__init__()`.
 2. The `deconstruct()` method on the base `Field` class will see this and try to return it in the keyword arguments;
 3. thus, we can drop it from the keyword arguments for readability:
+   - > terus kenapa cik itu boleh/harus di drop? soalnya `deconstruct()` digunain pas serializing/model migration ajah, which jadi data yang udah we, gak usah ditulis lagi da pasti kayak gitu-gitu aja. learning note, bingung/~~bikin ngerti~~ gak sih? nanti fix aja we.
 
 ```python
 from django.db import models
