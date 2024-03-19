@@ -240,6 +240,30 @@ class HandField(models.Field):
         return name, path, args, kwargs
 ```
 
+- If you add a new keyword argument,
+  1. you need to write code in `deconstruct()` that puts its value into `kwargs` yourself.
+  2. You should also omit the value from `kwargs` when it isn’t necessary to reconstruct the state of the field,
+     - *such* as when the default value is being used:
+
+```python
+from django.db import models
+
+
+class CommaSepField(models.Field):
+    "Implements comma-separated storage of lists"
+
+    def __init__(self, separator=",", *args, **kwargs):
+        self.separator = separator
+        super().__init__(*args, **kwargs)
+
+    def deconstruct(self):
+        name, path, args, kwargs = super().deconstruct()
+        # Only include kwarg if it's not the default
+        if self.separator != ",":
+            kwargs["separator"] = self.separator
+        return name, path, args, kwargs
+```
+
 ...
 
 ### ...
