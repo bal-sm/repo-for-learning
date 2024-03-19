@@ -115,11 +115,7 @@ Mine, learning note:
 Them:
 > - The second class is the `Field` subclass. This is the class that knows how to convert your first class back and forth between its permanent storage form and the Python form.
 
-## ...
-
-...
-
-## Useful methods
+## Writing a field subclass
 
 ...
 
@@ -127,7 +123,15 @@ Them:
 
 ...
 
-### Converting values to Python objects
+### Useful methods
+
+...
+
+#### ...
+
+...
+
+#### Converting values to Python objects
 
 ...
 
@@ -172,23 +176,27 @@ Mine, tuh, tanggapan another learning note:
 >         return cls(*args)
 > ```
 
-### Converting Python objects to query values
+#### Converting Python objects to query values
 
 Mine, learning note:
 > Query is when you interact with database, therefore query values are values that are made to interact with database.
 
 ...
 
-### ...
+#### ...
 
 ...
 
-### Jadi begini, Mahmuda's note
+#### Jadi begini, Mahmuda's note
 
 - Database -> `from_db_value()` -> Python object
 - Serialized data -> ↓
   - Cleaned data -> `to_python()` -> Python object
 - Python object -> `get_prep_value()` -> Database
+
+### Some general advice
+
+...
 
 ## ...
 
