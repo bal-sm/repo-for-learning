@@ -219,6 +219,26 @@ def deconstruct(self):
 Them, skip aja:
 > [837]: As a custom field author, you don’t need to care about the first two values; the base `Field` class has all the code to work out the field’s attribute name and import path. You do, however, have to care about the positional and keyword arguments, as these are likely the things you are changing.
 
+For example, in our `HandField` class
+1. we’re always forcibly setting `max_length` in `__init__()`.
+2. The `deconstruct()` method on the base `Field` class will see this and try to return it in the keyword arguments;
+3. thus, we can drop it from the keyword arguments for readability:
+
+```python
+from django.db import models
+
+
+class HandField(models.Field):
+    def __init__(self, *args, **kwargs):
+        kwargs["max_length"] = 104
+        super().__init__(*args, **kwargs)
+
+    def deconstruct(self):
+        name, path, args, kwargs = super().deconstruct()
+        del kwargs["max_length"]
+        return name, path, args, kwargs
+```
+
 ...
 
 ### ...
