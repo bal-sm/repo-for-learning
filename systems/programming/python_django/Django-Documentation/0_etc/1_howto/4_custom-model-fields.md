@@ -115,7 +115,36 @@ Mine, learning note:
 Them:
 > - The second class is the `Field` subclass. This is the class that knows how to convert your first class back and forth between its permanent storage form and the Python form.
 
-## Writing a field subclass
+## Writing a field subclass - Mahmuda's version - WIP
+
+When planning your `Field` subclass,
+1. first give some thought to which existing `Field` class your new field is most similar to.
+   1. Can you subclass an existing Django field and save yourself some work? 
+   2. If not, you should subclass the `Field` class, from which everything is descended.
+
+- Initializing your new field is
+  - a matter of separating out 
+    - any arguments that are specific to your case
+    - from the common arguments and 
+    - passing the latter to the `__init__()` method of `Field` (or your parent class).
+
+- In our example, we’ll call our field `HandField`. 
+  - _(**It’s a good idea** to call your `Field` subclass `<Something>Field`, so it’s easily identifiable as a `Field` subclass.)_
+  - It doesn’t behave like any existing field, so we’ll subclass directly from `Field`:
+
+```python
+from django.db import models
+
+
+class HandField(models.Field):
+    description = "A hand of cards (bridge style)"
+
+    def __init__(self, *args, **kwargs):
+        kwargs["max_length"] = 104
+        super().__init__(*args, **kwargs)
+```
+
+- Our `HandField` accepts most of the standard field options _(see the list below)_, but we ensure it has a fixed length, since it only needs to hold 52 card values plus their suits; 104 characters in total.
 
 ...
 
