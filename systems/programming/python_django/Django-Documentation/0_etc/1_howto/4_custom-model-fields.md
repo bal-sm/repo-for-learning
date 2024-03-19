@@ -359,6 +359,17 @@ class MytypeField(models.Field):
         return "mytype"
 ```
 
+Them:
+> Once you have `MytypeField`, you can use it in any model, just like any other `Field` type:
+
+```python
+class Person(models.Model):
+    name = models.CharField(max_length=80)
+    something_else = MytypeField()
+```
+
+---
+
 ...
 
 #### Converting values to Python objects
