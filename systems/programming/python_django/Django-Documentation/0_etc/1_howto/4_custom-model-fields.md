@@ -115,7 +115,7 @@ Mine, learning note:
 Them:
 > - The second class is the `Field` subclass. This is the class that knows how to convert your first class back and forth between its permanent storage form and the Python form.
 
-## Writing a field subclass - Mahmuda's version - WIP
+## Writing a field subclass - Mahmuda's version
 
 When planning your `Field` subclass,
 1. first give some thought to which existing `Field` class your new field is most similar to.
@@ -151,7 +151,29 @@ Note:
 >
 > This behavior simplifies the field classes, because they don’t need to check for options that aren’t necessary. They pass all the options to the parent class and then don’t use them later on. It’s up to you whether you want your fields to be more strict about the options they select, or to use the more permissive behavior of the current fields.
 
-...
+The `Field.__init__()` method takes the following parameters:
+- `verbose_name`
+- `name`
+- `primary_key`
+- `max_length`
+- `unique`
+- `blank`
+- `null`
+- `db_index`
+- `rel`: Used for related fields (like `ForeignKey`). For advanced use only.
+- `default`
+- `editable`
+- `serialize`: If `False`, the field will not be serialized when the model is passed to Django’s serializers. Defaults to `True`.
+- `unique_for_date`
+- `unique_for_month`
+- `unique_for_year`
+- `choices`
+- `help_text`
+- `db_column`
+- `db_tablespace`: Only for index creation, if the backend supports tablespaces. You can usually ignore this option.
+- `auto_created`: `True` if the field was automatically created, as for the `OneToOneField` used by model inheritance. For advanced use only.
+
+All of the options without an explanation in the above list have the same meaning they do for normal Django fields. See the [field documentation](https://docs.djangoproject.com/en/5.0/ref/models/fields/) for examples and details.
 
 ### ...
 
