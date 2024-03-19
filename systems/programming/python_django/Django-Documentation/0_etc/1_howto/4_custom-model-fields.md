@@ -75,6 +75,26 @@ Mine, addition:
 >
 > Oh iya terus sama tergantung `from_db_value()`, `to_python()`, `get_prep_value()`, dan `value_to_string()` di `HandField` juga, baca aja di [bawah](#useful-methods).
 
+## Backgoound theory - WIP
+
+### Database storage - WIP
+
+Them:
+> Let’s start with model fields. If you break it down, a model field provides a way to take a normal Python object – string, boolean, `datetime`, or something more complex like `Hand` – and convert it to and from a format that is useful when dealing with the database. (Such a format is also useful for serialization, but as we’ll see later, that is easier once you have the database side under control).
+>
+> Fields in a model must somehow be converted to fit into an existing database column type. Different databases provide different sets of valid column types, but the rule is still the same: those are the only types you have to work with. Anything you want to store in the database must fit into one of those types.
+>
+> Normally, you’re either writing a Django field to match a particular database column type, or you will need a way to convert your data to, say, a string.
+>
+> For our `Hand` example, we could convert the card data to a string of 104 characters by concatenating all the cards together in a predetermined order – say, all the *north* cards first, then the *east*, *south* and *west* cards. So `Hand` objects can be saved to text or character columns in the database.
+
+Mine, TL;DR:
+> ..., TBA.
+
+### ...
+
+...
+
 ## ...
 
 ...
