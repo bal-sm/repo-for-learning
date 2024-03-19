@@ -77,7 +77,7 @@ Mine, addition:
 
 ## Backgoound theory - WIP
 
-### Database storage - WIP
+### Database storage - Mahmuda's version
 
 Them:
 > Let’s start with model fields. If you break it down, a model field provides a way to take a normal Python object – string, boolean, `datetime`, or something more complex like `Hand` – and convert it to and from a format that is useful when dealing with the database. (Such a format is also useful for serialization, but as we’ll see later, that is easier once you have the database side under control).
@@ -89,7 +89,9 @@ Them:
 > For our `Hand` example, we could convert the card data to a string of 104 characters by concatenating all the cards together in a predetermined order – say, all the *north* cards first, then the *east*, *south* and *west* cards. So `Hand` objects can be saved to text or character columns in the database.
 
 Mine, TL;DR:
-> ..., TBA.
+> A model field: normal Python object (string, boolean, `datetime`, or something more complex like `Hand`) -convert-it-to-> any existing database column type (`VARCHAR` and `INTEGER`).
+>
+> In case of our `HandField`: `Hand` object -convert-to-> 104 characters by concatenating all the cards (north first, then east, south, and west cards) -so-it-can-be-saved-to-> text / character columns in the database.
 
 ### ...
 
