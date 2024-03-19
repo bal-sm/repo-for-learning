@@ -175,6 +175,18 @@ The `Field.__init__()` method takes the following parameters:
 
 All of the options without an explanation in the above list have the same meaning they do for normal Django fields. See the [field documentation](https://docs.djangoproject.com/en/5.0/ref/models/fields/) for examples and details.
 
+### Field deconstruction - Mahmuda's version - WIP
+
+- The counterpoint to writing your `__init__()` method is writing the `deconstruct()` method.
+  - > `__init__` -> `deconstruct()`
+  - **It’s used during [model migrations](https://docs.djangoproject.com/en/5.0/topics/migrations/)** 
+    - to tell Django
+      1. how to take an instance of your new field and 
+      2. reduce it to a serialized form - 
+         - in particular, what arguments to pass to `__init__()` to recreate it.
+
+...
+
 ### ...
 
 ...
