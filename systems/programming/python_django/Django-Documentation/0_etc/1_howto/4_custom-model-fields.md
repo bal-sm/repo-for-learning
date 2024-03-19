@@ -289,6 +289,22 @@ Them, skip aja dulu:
 Mine, learning note:
 > That's not helpful.. missing some piece of code.
 
+### Field attributes not affecting database column definition
+
+You can override `Field.non_db_attrs` to customize attributes of a field that don’t affect a column definition. It’s used during model migrations to detect no-op `AlterField` operations.
+
+For example:
+
+```python
+class CommaSepField(models.Field):
+    @property
+    def non_db_attrs(self):
+        return super().non_db_attrs + ("separator",)
+```
+
+Mine:
+> That don't affect a column definition.. Huh?
+
 ### ...
 
 ...
