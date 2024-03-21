@@ -441,6 +441,14 @@ class MyModel(models.Model):
 
 ---
 
+Note from them:
+> - Finally, if your column requires truly complex SQL setup, 
+>   - return `None` from [`db_type()`](../ref/models/fields.md#django.db.models.Field.db_type). 
+>   - This will cause Django’s SQL creation code to **skip over** this **field**. 
+>   - You are then responsible for creating the column in the right table in some other way, but this gives you a way to tell Django to get out of the way.
+
+---
+
 ...
 
 #### Converting values to Python objects
