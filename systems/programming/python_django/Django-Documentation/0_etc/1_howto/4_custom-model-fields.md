@@ -470,9 +470,14 @@ class UnsignedAutoField(models.AutoField):
 
 ---
 
-#### Converting values to Python objects
+#### Converting values to Python objects - Mahmuda's version
 
-...
+Them, skip aja:
+> If your custom [`Field`](https://docs.djangoproject.com/en/5.0/ref/models/fields/#django.db.models.Field) class deals with data structures that are more complex than strings, dates, integers, or floats, then you may need to override [`from_db_value()`](https://docs.djangoproject.com/en/5.0/ref/models/fields/#django.db.models.Field.from_db_value) and [`to_python()`](https://docs.djangoproject.com/en/5.0/ref/models/fields/#django.db.models.Field.to_python).
+>
+> If present for the field subclass, `from_db_value()` will be called in all circumstances when the data is loaded from the database, including in aggregates and [`values()`](https://docs.djangoproject.com/en/5.0/ref/models/querysets/#django.db.models.query.QuerySet.values) calls.
+>
+> `to_python()` is called by deserialization and during the [`clean()`](https://docs.djangoproject.com/en/5.0/ref/models/instances/#django.db.models.Model.clean) method used from forms.
 
 Mine, explanation:
 > ~~Jadi gini:~~
