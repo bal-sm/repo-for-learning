@@ -388,6 +388,14 @@ class MyDateField(models.Field):
 
 ---
 
+The [`db_type()`](https://docs.djangoproject.com/en/5.0/ref/models/fields/#django.db.models.Field.db_type) and [`rel_db_type()`](https://docs.djangoproject.com/en/5.0/ref/models/fields/#django.db.models.Field.rel_db_type) methods are called by Django:
+1. when the framework constructs the `CREATE TABLE` statements for your application – 
+   - that is, when you first create your tables. 
+2. The methods are also called when constructing a `WHERE` clause that includes the model field – 
+   - that is, when you retrieve data using `QuerySet` methods like `get()`, `filter()`, and `exclude()` and have the model field as an argument.
+
+---
+
 ...
 
 #### Converting values to Python objects
