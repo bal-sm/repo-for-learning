@@ -487,6 +487,14 @@ Mine, explanation:
 >
 > Baca selanjutnya di [sini](#jadi-begini-mahmudas-note)
 
+As a general rule, `to_python()` _should deal gracefully_ [833] with any of the following arguments:
+- An instance of the correct type (e.g., `Hand` in our ongoing example).
+- A string
+- `None` (if the field allows `null=True`)
+
+Mine, artinya [833]:
+> harus menghadapinya dengan anggun. gracefully = neatly
+
 ...
 
 Mine, learning note:
