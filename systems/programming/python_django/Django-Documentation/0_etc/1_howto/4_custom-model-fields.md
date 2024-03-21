@@ -345,7 +345,7 @@ description = _("String (up to %(max_length)s)")
 Them:
 > Once you’ve created your `Field` subclass, you might consider overriding a few standard methods, depending on your field’s behavior. The list of methods below is in approximately decreasing order of importance, so start from the top.
 
-#### Custom database types - Mahmuda's version - WIP
+#### Custom database types - Mahmuda's version
 
 Them:
 > Say you’ve created a PostgreSQL custom type called `mytype`. You can subclass `Field` and implement the `db_type()` method, like so:
@@ -449,7 +449,26 @@ Note from them:
 
 ---
 
-...
+- The [`rel_db_type()`](https://docs.djangoproject.com/en/5.0/ref/models/fields/#django.db.models.Field.rel_db_type) method is called by fields such as:
+  - `ForeignKey` and
+  - `OneToOneField`
+  - that point to another field to
+    - *determine* their database *column data types*. 
+      - ->
+
+-> For example, if you have an `UnsignedAutoField`, you also need the foreign keys that point to that field to use the same data type:
+
+```python
+# MySQL unsigned integer (range 0 to 4294967295).
+class UnsignedAutoField(models.AutoField):
+    def db_type(self, connection):
+        return "integer UNSIGNED AUTO_INCREMENT"
+
+    def rel_db_type(self, connection):
+        return "integer UNSIGNED"
+```
+
+---
 
 #### Converting values to Python objects
 
