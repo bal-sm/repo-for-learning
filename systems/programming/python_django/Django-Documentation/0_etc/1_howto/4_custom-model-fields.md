@@ -396,6 +396,27 @@ The [`db_type()`](https://docs.djangoproject.com/en/5.0/ref/models/fields/#djang
 
 ---
 
+- Some database column types accept parameters,
+  - such as `CHAR(25)`, 
+    - where the parameter `25` represents the maximum column length. 
+  - In cases like these, 
+    - it’s more flexible if the parameter is **specified in the model** 
+    - rather than being **hard-coded in the `db_type()`** method. 
+    - For example, _it wouldn’t make much sense_ to have a `CharMaxlength25Field`, shown here:
+
+```python
+# This is a silly example of hard-coded parameters.
+class CharMaxlength25Field(models.Field):
+    def db_type(self, connection):
+        return "char(25)"
+
+
+# In the model:
+class MyModel(models.Model):
+    # ...
+    my_field = CharMaxlength25Field()
+```
+
 ...
 
 #### Converting values to Python objects
