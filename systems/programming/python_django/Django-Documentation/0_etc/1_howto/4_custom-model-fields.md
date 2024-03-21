@@ -495,6 +495,50 @@ As a general rule, `to_python()` _should deal gracefully_ [833] with any of the 
 Mine, artinya [833]:
 > harus menghadapinya dengan anggun. gracefully = neatly
 
+---
+
+- In our `HandField` class, 
+  - we’re storing the data as a `VARCHAR` field in the database,
+    - so we need to be able to process strings and `None`
+      - in the `from_db_value()`.
+  - In `to_python()`, we need to also handle `Hand` instances:
+
+```python
+import re
+
+from django.core.exceptions import ValidationError
+from django.db import models
+from django.utils.translation import gettext_lazy as _
+
+
+def parse_hand(hand_string):
+    """Takes a string of cards and splits into a full hand."""
+    p1 = re.compile(".{26}")
+    p2 = re.compile("..")
+    args = [p2.findall(x) for x in p1.findall(hand_string)]
+    if len(args) != 4:
+        raise ValidationError(_("Invalid input for a Hand instance"))
+    return Hand(*args)
+
+
+class HandField(models.Field):
+    # ...
+
+    def from_db_value(self, value, expression, connection):
+        if value is None:
+            return value
+        return parse_hand(value)
+
+    def to_python(self, value):
+        if isinstance(value, Hand):
+            return value
+
+        if value is None:
+            return value
+
+        return parse_hand(value)
+```
+
 ...
 
 Mine, learning note:
