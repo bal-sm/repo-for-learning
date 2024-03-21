@@ -539,7 +539,11 @@ class HandField(models.Field):
         return parse_hand(value)
 ```
 
-...
+Them:
+> Notice that we always return a `Hand` instance from these methods. That’s the Python object type we want to store in the model’s attribute.
+>
+> For `to_python()`, if anything goes wrong during value conversion, you should
+raise a [`ValidationError`](https://docs.djangoproject.com/en/5.0/ref/exceptions/#django.core.exceptions.ValidationError) exception.
 
 Mine, learning note:
 > What is `isinstance()`? Baca di [sini](../../../../python/_by_code/isinstance.md).
