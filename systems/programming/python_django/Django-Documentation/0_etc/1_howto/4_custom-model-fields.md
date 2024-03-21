@@ -417,6 +417,30 @@ class MyModel(models.Model):
     my_field = CharMaxlength25Field()
 ```
 
+- The *better* *way* of doing this would be to
+  - *make* the *parameter* **specifiable** at run time – 
+  - i.e., when the class is instantiated. 
+  - To do that, implement `Field.__init__()`, like so:
+
+```python
+# This is a much more flexible example.
+class BetterCharField(models.Field):
+    def __init__(self, max_length, *args, **kwargs):
+        self.max_length = max_length
+        super().__init__(*args, **kwargs)
+
+    def db_type(self, connection):
+        return "char(%s)" % self.max_length
+
+
+# In the model:
+class MyModel(models.Model):
+    # ...
+    my_field = BetterCharField(25)
+```
+
+---
+
 ...
 
 #### Converting values to Python objects
