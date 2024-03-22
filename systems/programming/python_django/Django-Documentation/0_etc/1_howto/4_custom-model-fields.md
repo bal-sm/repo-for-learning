@@ -576,10 +576,18 @@ Mine, tuh, tanggapan another learning note:
 >         return cls(*args)
 > ```
 
-#### Converting Python objects to query values
+#### Converting Python objects to query values - Mahmuda's version - WIP
 
 Mine, learning note:
 > Query is when you interact with database, therefore query values are values that are made to interact with database.
+
+- Since using a database requires conversion in both ways,
+  - if you override [`from_db_value()`](https://docs.djangoproject.com/en/5.0/ref/models/fields/#django.db.models.Field.from_db_value)
+    - you also have to override [`get_prep_value()`](https://docs.djangoproject.com/en/5.0/ref/models/fields/#django.db.models.Field.get_prep_value)
+      - to convert Python objects back to query values.
+
+Mine, learning note:
+> Baca [ini](#jadi-begini-mahmudas-note).
 
 ...
 
