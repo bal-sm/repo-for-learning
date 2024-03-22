@@ -672,6 +672,31 @@ Mine, taken from Django:
 >     ...
 > ```
 
+#### Specifying the form field for a model field - Unmodded - WIP
+
+To customize the form field used by [`ModelForm`](../topics/forms/modelforms.md#django.forms.ModelForm), you can override [`formfield()`](../ref/models/fields.md#django.db.models.Field.formfield).
+
+The form field class can be specified via the `form_class` and `choices_form_class` arguments; the latter is used if the field has choices specified, the former otherwise. If these arguments are not provided, [`CharField`](../ref/forms/fields.md#django.forms.CharField) or [`TypedChoiceField`](../ref/forms/fields.md#django.forms.TypedChoiceField) will be used.
+
+All of the `kwargs` dictionary is passed directly to the form field’s `__init__()` method. Normally, all you need to do is set up a good default for the `form_class` (and maybe `choices_form_class`) argument and then delegate further handling to the parent class. This might require you to write a custom form field (and even a form widget). See the [forms documentation](../topics/forms/index.md) for information about this.
+
+Continuing our ongoing example, we can write the [`formfield()`](../ref/models/fields.md#django.db.models.Field.formfield) method as:
+
+```python
+
+class HandField(models.Field):
+    # ...
+
+    def formfield(self, **kwargs):
+        # This is a fairly standard way to set up some defaults
+        # while letting the caller override them.
+        defaults = {"form_class": MyFormField}
+        defaults.update(kwargs)
+        return super().formfield(**defaults)
+```
+
+This assumes we’ve imported a `MyFormField` field class (which has its own default widget). This document doesn’t cover the details of writing custom form fields.
+
 #### ...
 
 ...
