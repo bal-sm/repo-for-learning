@@ -589,6 +589,18 @@ Mine, learning note:
 Mine, learning note:
 > Baca [ini](#jadi-begini-mahmudas-note).
 
+For example:
+
+```python
+class HandField(models.Field):
+    # ...
+
+    def get_prep_value(self, value):
+        return "".join(
+            ["".join(l) for l in (value.north, value.east, value.south, value.west)]
+        )
+```
+
 ...
 
 #### ...
