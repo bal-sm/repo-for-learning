@@ -698,3 +698,7 @@ Mine, maintenance note:
 
 Mine, this doc mau ~~ditinggalin~~ dikerjain besok:
 > Aku mau cobain pake `mystmd` + `myst-parser` + Sphinx biar gak capek copas copas dari docs. tapi copas-copas dari plain text mereka..
+
+Mine, 2024-03-22, 2:13:40 PM:
+> - Aku harus berhenti nich ngerangkum tapi harus satu-satu formattingnya dibenerin soalnya gak kebawa `:(`
+>   - padahal udah convert dari `Sphinx` juga, cuman relative link nya gak nyampe ke actual file terus emang- udahlah.
