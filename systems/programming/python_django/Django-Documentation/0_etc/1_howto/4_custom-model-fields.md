@@ -576,7 +576,7 @@ Mine, tuh, tanggapan another learning note:
 >         return cls(*args)
 > ```
 
-#### Converting Python objects to query values - Mahmuda's version - WIP
+#### Converting Python objects to query values - Mahmuda's version
 
 Mine, learning note:
 > Query is when you interact with database, therefore query values are values that are made to interact with database.
@@ -601,7 +601,8 @@ class HandField(models.Field):
         )
 ```
 
-...
+Note from them, warning, for MySQL user:
+> If your custom field uses the `CHAR`, `VARCHAR` or `TEXT` types for MySQL, you must make sure that [`get_prep_value()`](https://docs.djangoproject.com/en/5.0/ref/models/fields/#django.db.models.Field.get_prep_value) always returns a string type. MySQL performs flexible and unexpected matching when a query is performed on these types and the provided value is an integer, which can cause queries to include unexpected objects in their results. This problem cannot occur if you always return a string type from [`get_prep_value()`](https://docs.djangoproject.com/en/5.0/ref/models/fields/#django.db.models.Field.get_prep_value).
 
 #### ...
 
