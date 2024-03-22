@@ -604,7 +604,7 @@ class HandField(models.Field):
 Note from them, warning, for MySQL user:
 > If your custom field uses the `CHAR`, `VARCHAR` or `TEXT` types for MySQL, you must make sure that [`get_prep_value()`](https://docs.djangoproject.com/en/5.0/ref/models/fields/#django.db.models.Field.get_prep_value) always returns a string type. MySQL performs flexible and unexpected matching when a query is performed on these types and the provided value is an integer, which can cause queries to include unexpected objects in their results. This problem cannot occur if you always return a string type from [`get_prep_value()`](https://docs.djangoproject.com/en/5.0/ref/models/fields/#django.db.models.Field.get_prep_value).
 
-#### Converting query values to database values - Mahmuda's version - WIP
+#### Converting query values to database values - Mahmuda's version
 
 - Some data types (for example, dates)
   - need to be in a specific format before they can be used by a database backend.
@@ -636,7 +636,11 @@ def get_db_prep_value(self, value, connection, prepared=False):
 
 ---
 
-...
+- In case your custom field needs
+  - a special conversion when being saved
+    - that is not the same as
+      - the conversion used for normal query parameters,
+        - you can override [`get_db_prep_save()`](https://docs.djangoproject.com/en/5.0/ref/models/fields/#django.db.models.Field.get_db_prep_save).
 
 #### ...
 
