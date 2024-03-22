@@ -642,6 +642,36 @@ def get_db_prep_value(self, value, connection, prepared=False):
       - the conversion used for normal query parameters,
         - you can override [`get_db_prep_save()`](https://docs.djangoproject.com/en/5.0/ref/models/fields/#django.db.models.Field.get_db_prep_save).
 
+#### Preprocessing values before saving - Mahmuda's version
+
+- If you want to preprocess the value just before saving,
+  - you can use [`pre_save()`](https://docs.djangoproject.com/en/5.0/ref/models/fields/#django.db.models.Field.pre_save). 
+    - For example, Django’s [`DateTimeField`](https://docs.djangoproject.com/en/5.0/ref/models/fields/#django.db.models.DateTimeField) uses this method to set the attribute correctly in the case of 
+      - [`auto_now`](https://docs.djangoproject.com/en/5.0/ref/models/fields/#django.db.models.DateField.auto_now) or
+      - [`auto_now_add`](https://docs.djangoproject.com/en/5.0/ref/models/fields/#django.db.models.DateField.auto_now_add).
+
+- If you do override this method,
+  1. you must return the value of the attribute at the end.
+  2. You should also update the model’s attribute
+     - if you make any changes to the value so that code holding references to the model will always see the correct value.
+
+Mine, taken from Django:
+>
+> ```python
+> class DateField(DateTimeCheckMixin, Field):
+>     ...
+> 
+>     def pre_save(self, model_instance, add):
+>         if self.auto_now or (self.auto_now_add and add):
+>             value = datetime.date.today()
+>             setattr(model_instance, self.attname, value)
+>             return value
+>         else:
+>             return super().pre_save(model_instance, add)
+> 
+>     ...
+> ```
+
 #### ...
 
 ...
