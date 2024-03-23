@@ -14,7 +14,7 @@ Mine:
 ### Overriding predefined model methods
 
 Maintenance note -> Important note "nih gini caranya" -> Prerequisition note:
-> Baca dulu ini, dari file [`2_Making-queries.md`](2_Making-queries.md) -> [Other model instance methods](2_Making-queries.md#other-model-instance-methods), and [Specifying which fields to save](2_Making-queries.md#specifying-which-fields-to-save).
+> Baca dulu ini, dari file ["the `ref/models` files"](...) -> [Other model instance methods](...), and [Specifying which fields to save](...).
 
 ...
 
@@ -78,7 +78,7 @@ Mine atas note atas:
 > Makanya rangkum kapan-kapan aja, sekarang (30 December 2023) lagi di look through nih.
 
 VERY IMPORTANT NOTE, personal experience note, FOR UPCOMING "Multi-table inheritance" section:
-> DON'T EVER USE THIS, REALLY NOT WORTH IT, BETTER OFF USE REGULAR `OneToOneField`!!! WHY TF THESE STILL NOT DEPRECATED IN THE LATEST VERSION???
+> DON'T EVER USE THIS, REALLY NOT WORTH IT, BETTER OFF USE REGULAR `OneToOneField`!!! WHY TF THESE STILL NOT DEPRECATED IN THE LATEST VERSION??? ~~I actually might change my mind..~~ <https://code.djangoproject.com/ticket/7623>
 
 Mine, learning note:
 > - Taken from [Retrieving objects](https://docs.djangoproject.com/en/5.0/topics/db/queries/#retrieving-objects):

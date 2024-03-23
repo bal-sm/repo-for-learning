@@ -6,7 +6,8 @@ Soalnya pengen banget ada database validation (+ constraint jadi error prone pis
 
 ## (Kayaknya) prerequisite
 
-- [How to `Q` objects](how-to-Q-objects.md)
+- [Making queries](../Django—Documentation/2_Database/2_Making-queries.md)
+  - [How to `Q` objects](how-to-Q-objects.md)
 
 ## How? - `Needs maintenance`
 

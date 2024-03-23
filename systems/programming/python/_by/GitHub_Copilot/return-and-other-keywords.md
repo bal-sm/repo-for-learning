@@ -1,5 +1,8 @@
 # `return`, and Python's other keywords
 
+Maintenance note:
+> Harus dibikin di `_tidbits` ih.
+
 ## Q&A 1
 
 ### Question
