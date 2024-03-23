@@ -102,3 +102,15 @@ The implementation of this behavior is spread across several parts of Django's c
 The actual deletion behavior is implemented in the `delete` method of the `Collector` class in `django/db/models/deletion.py`. This method iterates over all objects to be deleted, and for each object, it checks the `on_delete` behavior of each related field and calls the appropriate function (`CASCADE`, `PROTECT`, etc.).
 
 The `CASCADE` function itself is defined in `django/db/models/deletion.py`. It collects related objects that need to be deleted and adds them to the `Collector`.
+
+## Setelah baca sana kemari source code
+
+[`Collector`](https://github.com/django/django/blob/761946f8e1b6d725f83fa4f3b04ca9750f486009/django/db/models/deletion.py#L96) -> [`NestedObjects`](https://github.com/django/django/blob/761946f8e1b6d725f83fa4f3b04ca9750f486009/django/contrib/admin/utils.py#L182) -> `get_deleted_objects` -> [`collector = NestedObjects(using=using, origin=objs)`](https://github.com/django/django/blob/761946f8e1b6d725f83fa4f3b04ca9750f486009/django/contrib/admin/utils.py#L137)
+
+> kayak gitu alurnya.
+
+> pokoknya gini, (karena bingung), kalo jul-jal-jol `def CASCADE(collector, field, sub_objs, using)` (arguments-nya), berarti itu teh inherit/untuk dipanggil di function lainnya (bisa disebut parent function gening). Gampang kan?
+
+> oiya terus teh gimana sih mereka mengolah `on_delete`? bentar geura, masih belum ketemu, (tapi poko'e pasti kayak gitu juga, ada "parent" function yang mengolah `on_delete` tersebut).
+
+..., TBA.
