@@ -747,6 +747,7 @@ class HandField(models.Field):
 - Serialized data -> ↓
   - Cleaned data -> `to_python()` -> Python object
 - Python object -> `get_prep_value()` -> Database
+- ...
 
 ### Some general advice
 
