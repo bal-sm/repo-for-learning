@@ -748,6 +748,7 @@ class HandField(models.Field):
   - Cleaned data -> `to_python()` -> Python object
 - Python object -> `get_prep_value()` -> Database
 - ...
+  - > lanjutin ih, kapan-kapan aja, atau pas lagi bikin custom `AutoField` tea.
 
 ### Some general advice
 
