@@ -69,7 +69,10 @@ Please note that this is a simplified example and the actual Django deletion pro
 
 ## Question 3
 
-...
+> how `CASCADE` can be passed into `on_delete` as keyword argument, which django's code that does the implementation
+
+Mine:
+> really sic, i know
 
 ## Answer 3
 
