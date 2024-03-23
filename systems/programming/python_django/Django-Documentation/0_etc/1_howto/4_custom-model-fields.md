@@ -699,8 +699,8 @@ This assumes we’ve imported a `MyFormField` field class (which has its own def
 
 #### Emulating built-in field types - Mahmuda's version - WIP
 
-- If you have created a [`db_type()`](../ref/models/fields.md#django.db.models.Field.db_type) method,
-  - you don’t need to worry about [`get_internal_type()`](../ref/models/fields.md#django.db.models.Field.get_internal_type) – it won’t be used much.
+- If you have created a [`db_type()`](https://docs.djangoproject.com/en/5.0/ref/models/fields/#django.db.models.Field.db_type) method,
+  - you don’t need to worry about [`get_internal_type()`](https://docs.djangoproject.com/en/5.0/ref/models/fields/#django.db.models.Field.get_internal_type) – it won’t be used much.
   - *Sometimes*, *though*, your database storage is similar in type to some other field, so you can use that other field’s logic to create the right column.
 
 ...
