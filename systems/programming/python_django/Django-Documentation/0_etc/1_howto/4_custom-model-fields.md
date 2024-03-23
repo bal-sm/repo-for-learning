@@ -697,6 +697,12 @@ class HandField(models.Field):
 
 This assumes we’ve imported a `MyFormField` field class (which has its own default widget). This document doesn’t cover the details of writing custom form fields.
 
+#### Emulating built-in field types - Unmodded - WIP
+
+If you have created a [`db_type()`](../ref/models/fields.md#django.db.models.Field.db_type) method, you don’t need to worry about [`get_internal_type()`](../ref/models/fields.md#django.db.models.Field.get_internal_type) – it won’t be used much. Sometimes, though, your database storage is similar in type to some other field, so you can use that other field’s logic to create the right column.
+
+...
+
 #### ...
 
 ...
