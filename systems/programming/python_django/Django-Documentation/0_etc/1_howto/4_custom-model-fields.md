@@ -714,9 +714,9 @@ class HandField(models.Field):
         return "CharField"
 ```
 
-No matter which database backend we are using, this will mean that [`migrate`](../ref/django-admin.md#django-admin-migrate) and other SQL commands create the right column type for storing a string.
+No matter which database backend we are using, this will mean that [`migrate`](https://docs.djangoproject.com/en/5.0/ref/django-admin/#django-admin-migrate) and other SQL commands create the right column type for storing a string.
 
-If [`get_internal_type()`](../ref/models/fields.md#django.db.models.Field.get_internal_type) returns a string that is not known to Django for the database backend you are using – that is, it doesn’t appear in `django.db.backends.<db_name>.base.DatabaseWrapper.data_types` – the string will still be used by the serializer, but the default [`db_type()`](../ref/models/fields.md#django.db.models.Field.db_type) method will return `None`. See the documentation of [`db_type()`](../ref/models/fields.md#django.db.models.Field.db_type) for reasons why this might be useful. Putting a descriptive string in as the type of the field for the serializer is a useful idea if you’re ever going to be using the serializer output in some other place, outside of Django.
+If [`get_internal_type()`](https://docs.djangoproject.com/en/5.0/ref/models/fields/#django.db.models.Field.get_internal_type) returns a string that is not known to Django for the database backend you are using – that is, it doesn’t appear in `django.db.backends.<db_name>.base.DatabaseWrapper.data_types` – the string will still be used by the serializer, but the default [`db_type()`](https://docs.djangoproject.com/en/5.0/ref/models/fields/#django.db.models.Field.db_type) method will return `None`. See the documentation of [`db_type()`](https://docs.djangoproject.com/en/5.0/ref/models/fields/#django.db.models.Field.db_type) for reasons why this might be useful. Putting a descriptive string in as the type of the field for the serializer is a useful idea if you’re ever going to be using the serializer output in some other place, outside of Django.
 
 #### ...
 
