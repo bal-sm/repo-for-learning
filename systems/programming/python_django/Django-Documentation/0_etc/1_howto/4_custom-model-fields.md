@@ -750,9 +750,12 @@ class HandField(models.Field):
 - ...
   - > lanjutin ih, kapan-kapan aja, atau pas lagi bikin custom `AutoField` tea, learning and maintenance note.
 
-### Some general advice
+### Some general advice - Unmodded
 
-...
+Writing a custom field can be a tricky process, particularly if you’re doing complex conversions between your Python types and your database and serialization formats. Here are a couple of tips to make things go more smoothly:
+
+1. Look at the existing Django fields (in [django/db/models/fields/_\_init_\_.py](https://github.com/django/django/blob/main/django/db/models/fields/__init__.py)) for inspiration. Try to find a field that’s similar to what you want and extend it a little bit, instead of creating an entirely new field from scratch.
+2. Put a `__str__()` method on the class you’re wrapping up as a field. There are a lot of places where the default behavior of the field code is to call `str()` on the value. (In our examples in this document, `value` would be a `Hand` instance, not a `HandField`). So if your `__str__()` method automatically converts to the string form of your Python object, you can save yourself a lot of work.
 
 ## ...
 
