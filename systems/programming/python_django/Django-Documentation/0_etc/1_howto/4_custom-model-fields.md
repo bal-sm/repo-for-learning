@@ -757,7 +757,15 @@ Writing a custom field can be a tricky process, particularly if you’re doing c
 1. Look at the existing Django fields (in [django/db/models/fields/_\_init_\_.py](https://github.com/django/django/blob/main/django/db/models/fields/__init__.py)) for inspiration. Try to find a field that’s similar to what you want and extend it a little bit, instead of creating an entirely new field from scratch.
 2. Put a `__str__()` method on the class you’re wrapping up as a field. There are a lot of places where the default behavior of the field code is to call `str()` on the value. (In our examples in this document, `value` would be a `Hand` instance, not a `HandField`). So if your `__str__()` method automatically converts to the string form of your Python object, you can save yourself a lot of work.
 
-## ...
+## Writing a `FileField` subclass - Unmodded
+
+In addition to the above methods, fields that deal with files have a few other special requirements which must be taken into account. The majority of the mechanics provided by `FileField`, such as controlling database storage and retrieval, can remain unchanged, leaving subclasses to deal with the challenge of supporting a particular type of file.
+
+Django provides a `File` class, which is used as a proxy to the file’s contents and operations. This can be subclassed to customize how the file is accessed, and what methods are available. It lives at `django.db.models.fields.files`, and its default behavior is explained in the [file documentation](https://docs.djangoproject.com/en/5.0/ref/files/file/).
+
+Once a subclass of `File` is created, the new `FileField` subclass must be told to use it. To do so, assign the new `File` subclass to the special `attr_class` attribute of the `FileField` subclass.
+
+### A few suggestions
 
 ...
 
