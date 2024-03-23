@@ -66,3 +66,36 @@ def delete_obj(obj):
 In this example, `delete_obj` is a function that deletes a Django model instance and all related objects that have a `CASCADE` relationship. It first determines the database alias to use for the deletion (`using`). Then it creates a `Collector` object and uses it to collect the objects to be deleted. It then iterates over all fields of the model, and if the field is a foreign key with a `CASCADE` deletion rule, it calls the `CASCADE` function, passing the `collector`, the field, a list containing the object, and the database alias. Finally, it calls the `delete` method on the `collector` to perform the deletion.
 
 Please note that this is a simplified example and the actual Django deletion process is more complex and handles many more cases.
+
+## Question 3
+
+...
+
+## Answer 3
+
+### Skip
+
+In Django, `on_delete` is a required argument for `ForeignKey` and `OneToOneField` relationships. It's used to specify what should happen when the referenced object is deleted. `CASCADE` is one of the options that can be passed to `on_delete`.
+
+Here's an example of how it's used:
+
+```python
+from django.db import models
+
+class Author(models.Model):
+    name = models.CharField(max_length=100)
+
+class Book(models.Model):
+    title = models.CharField(max_length=100)
+    author = models.ForeignKey(Author, on_delete=models.CASCADE)
+```
+
+In this example, `models.CASCADE` is passed to `on_delete` for the `author` field in the `Book` model. This means that when an `Author` object is deleted, all `Book` objects associated with it will also be deleted.
+
+### Baca
+
+The implementation of this behavior is spread across several parts of Django's codebase. The `on_delete` argument is processed when the `ForeignKey` field is initialized, which happens in the `__init__` method of the `ForeignKey` class in `django/db/models/fields/related.py`.
+
+The actual deletion behavior is implemented in the `delete` method of the `Collector` class in `django/db/models/deletion.py`. This method iterates over all objects to be deleted, and for each object, it checks the `on_delete` behavior of each related field and calls the appropriate function (`CASCADE`, `PROTECT`, etc.).
+
+The `CASCADE` function itself is defined in `django/db/models/deletion.py`. It collects related objects that need to be deleted and adds them to the `Collector`.
