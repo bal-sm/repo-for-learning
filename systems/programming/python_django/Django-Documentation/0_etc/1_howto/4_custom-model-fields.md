@@ -672,15 +672,15 @@ Mine, taken from Django:
 >     ...
 > ```
 
-#### Specifying the form field for a model field - Unmodded - WIP
+#### Specifying the form field for a model field - Unmodded
 
-To customize the form field used by [`ModelForm`](../topics/forms/modelforms.md#django.forms.ModelForm), you can override [`formfield()`](../ref/models/fields.md#django.db.models.Field.formfield).
+To customize the form field used by [`ModelForm`](https://docs.djangoproject.com/en/5.0/topics/forms/modelforms/#django.forms.ModelForm), you can override [`formfield()`](https://docs.djangoproject.com/en/5.0/ref/models/fields/#django.db.models.Field.formfield).
 
-The form field class can be specified via the `form_class` and `choices_form_class` arguments; the latter is used if the field has choices specified, the former otherwise. If these arguments are not provided, [`CharField`](../ref/forms/fields.md#django.forms.CharField) or [`TypedChoiceField`](../ref/forms/fields.md#django.forms.TypedChoiceField) will be used.
+The form field class can be specified via the `form_class` and `choices_form_class` arguments; the latter is used if the field has choices specified, the former otherwise. If these arguments are not provided, [`CharField`](https://docs.djangoproject.com/en/5.0/ref/forms/fields/#django.forms.CharField) or [`TypedChoiceField`](https://docs.djangoproject.com/en/5.0/ref/forms/fields/#django.forms.TypedChoiceField) will be used.
 
-All of the `kwargs` dictionary is passed directly to the form field’s `__init__()` method. Normally, all you need to do is set up a good default for the `form_class` (and maybe `choices_form_class`) argument and then delegate further handling to the parent class. This might require you to write a custom form field (and even a form widget). See the [forms documentation](../topics/forms/index.md) for information about this.
+All of the `kwargs` dictionary is passed directly to the form field’s `__init__()` method. Normally, all you need to do is set up a good default for the `form_class` (and maybe `choices_form_class`) argument and then delegate further handling to the parent class. This might require you to write a custom form field (and even a form widget). See the [forms documentation](https://docs.djangoproject.com/en/5.0/topics/forms/) for information about this.
 
-Continuing our ongoing example, we can write the [`formfield()`](../ref/models/fields.md#django.db.models.Field.formfield) method as:
+Continuing our ongoing example, we can write the [`formfield()`](https://docs.djangoproject.com/en/5.0/ref/models/fields/#django.db.models.Field.formfield) method as:
 
 ```python
 
