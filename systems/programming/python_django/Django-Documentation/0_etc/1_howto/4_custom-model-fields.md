@@ -725,9 +725,12 @@ Them:
     - > See the documentation of [`db_type()`](https://docs.djangoproject.com/en/5.0/ref/models/fields/#django.db.models.Field.db_type) for reasons why this might be useful.
     - Putting a descriptive string in as the type of the field for the serializer is a useful idea if you’re ever going to be using the serializer output in some other place, outside of Django.
 
-#### Converting field data for serialization - Mahmuda's version - WIP
+#### Converting field data for serialization - Mahmuda's version
 
-To customize how the values are serialized by a serializer, you can override [`value_to_string()`](../ref/models/fields.md#django.db.models.Field.value_to_string). Using [`value_from_object()`](../ref/models/fields.md#django.db.models.Field.value_from_object) is the best way to get the field’s value prior to serialization. For example, since `HandField` uses strings for its data storage anyway, we can reuse some existing conversion code:
+- To customize how the values are serialized by a serializer,
+  - you can override [`value_to_string()`](https://docs.djangoproject.com/en/5.0/ref/models/fields/#django.db.models.Field.value_to_string). 
+    - Using [`value_from_object()`](https://docs.djangoproject.com/en/5.0/ref/models/fields/#django.db.models.Field.value_from_object) is the best way to get the field’s value prior to serialization. 
+  - For example, since `HandField` uses strings for its data storage anyway, we can reuse some existing conversion code:
 
 ```python
 class HandField(models.Field):
