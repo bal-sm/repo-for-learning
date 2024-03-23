@@ -1,4 +1,4 @@
-# How to create custom model fields - Soon
+# How to create custom model fields - Mahmuda's version
 
 ## Introduction - Unmodded
 
