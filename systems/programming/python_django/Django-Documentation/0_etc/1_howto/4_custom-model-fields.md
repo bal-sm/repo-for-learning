@@ -714,6 +714,8 @@ class HandField(models.Field):
         return "CharField"
 ```
 
+No matter which database backend we are using, this will mean that [`migrate`](../ref/django-admin.md#django-admin-migrate) and other SQL commands create the right column type for storing a string.
+
 ...
 
 #### ...
