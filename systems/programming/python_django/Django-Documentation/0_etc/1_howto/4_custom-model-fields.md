@@ -765,9 +765,12 @@ Django provides a `File` class, which is used as a proxy to the file’s content
 
 Once a subclass of `File` is created, the new `FileField` subclass must be told to use it. To do so, assign the new `File` subclass to the special `attr_class` attribute of the `FileField` subclass.
 
-### A few suggestions
+### A few suggestions - Unmodded
 
-...
+In addition to the above details, there are a few guidelines which can greatly improve the efficiency and readability of the field’s code.
+
+1. The source for Django’s own `ImageField` (in [`django/db/models/fields/files.py`](https://github.com/django/django/blob/main/django/db/models/fields/files.py)) is a great example of how to subclass `FileField` to support a particular type of file, as it incorporates all of the techniques described above.
+2. Cache file attributes wherever possible. Since files may be stored in remote storage systems, retrieving them may cost extra time, or even money, that isn’t always necessary. Once a file is retrieved to obtain some data about its content, cache as much of that data as possible to reduce the number of times the file must be retrieved on subsequent calls for that information.
 
 ## Notes
 
