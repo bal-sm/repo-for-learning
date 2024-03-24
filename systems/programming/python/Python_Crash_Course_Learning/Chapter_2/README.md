@@ -53,20 +53,6 @@ album = f"{artist} and Her Dead Petz"
 print(f"omg his new album, {album}, is so good!")
 ```
 
-## `.rstrip()`
-
-To alter a whole string permanently:
-
-```python
-favorite_language = 'python '
-favorite_language = favorite_language.rstrip()
-favorite_language
-# Output: 'python'
-```
-
-Mine:
-> omG, kalo di Django ada clean method, wow very clean.
-
 ## Adding Whitespace to Strings with Tabs or Newlines
 
 In programming, whitespace refers to any nonprinting characters, such as spaces, tabs, and end-of-line symbols.
@@ -82,6 +68,20 @@ print("\tPython")
 ```python
 print("Languages:\nPython\nC\nToyLanguage")
 ```
+
+## `.rstrip()`
+
+To alter a whole string permanently:
+
+```python
+favorite_language = 'python '
+favorite_language = favorite_language.rstrip()
+favorite_language
+# Output: 'python'
+```
+
+Mine:
+> omG, kalo di Django ada clean method, wow very clean.
 
 ## Codes
 
