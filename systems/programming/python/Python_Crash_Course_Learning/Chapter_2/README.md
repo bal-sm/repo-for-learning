@@ -71,6 +71,18 @@ Mine:
 
 In programming, whitespace refers to any nonprinting characters, such as spaces, tabs, and end-of-line symbols.
 
+### 1
+
+```python
+print("\tPython")
+```
+
+### 2
+
+```python
+print("Languages:\nPython\nC\nToyLanguage")
+```
+
 ## Codes
 
 [`mengurangi_ketidaksetaraan.py`](mengurangi_ketidaksetaraan.py)
