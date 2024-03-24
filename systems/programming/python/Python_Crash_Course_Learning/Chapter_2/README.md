@@ -69,7 +69,9 @@ print("\tPython")
 print("Languages:\nPython\nC\nToyLanguage")
 ```
 
-## `.rstrip()`
+## Stripping Whitespace
+
+### With `.rstrip()`
 
 To alter a whole string permanently:
 
@@ -82,6 +84,18 @@ favorite_language
 
 Mine:
 > omG, kalo di Django ada clean method, wow very clean.
+
+### Other methods
+
+```python
+>>> favorite_language = ' python '
+>>> favorite_language.rstrip()
+' python'
+>>> favorite_language.lstrip()
+'python '
+>>> favorite_language.strip()
+'python'
+```
 
 ## Codes
 
