@@ -157,6 +157,14 @@ quote = f"{my_name} once said, \"Karena saya literally menciptakan listrik, some
 print(quote)
 ```
 
+### 2-8
+
+```python
+file_name = "python_notes.txt"
+
+clean_file_name = file_name.removesuffix(".txt")
+```
+
 ## Notes
 
 Mine, 2024-03-24, 8:46:48 PM:
