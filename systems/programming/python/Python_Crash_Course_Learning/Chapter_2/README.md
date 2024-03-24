@@ -32,6 +32,8 @@ Variable is a label for a value/a string/data, rather than a box for a value. Th
 
 ## f-strings
 
+### 1
+
 ```python
 first_name = "Katy"
 last_name = "Perry"
@@ -40,6 +42,15 @@ full_name = f"{first_name} {last_name}"
 
 # terus bisa gini
 print(f"Hello, {full_name.title()}!")
+```
+
+### 2
+
+```python
+artist = "Miley Cyrus"
+album = f"{artist} and Her Dead Petz"
+
+print(f"omg his new album, {album}, is so good!")
 ```
 
 ## `.rstrip()`
@@ -59,8 +70,6 @@ Mine:
 ## Codes
 
 [`mengurangi_ketidaksetaraan.py`](mengurangi_ketidaksetaraan.py)
-
-[`stringz.ipynb`](stringz.ipynb)
 
 ## Content(s)
 
