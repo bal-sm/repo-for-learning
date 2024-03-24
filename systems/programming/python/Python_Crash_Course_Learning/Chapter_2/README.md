@@ -110,3 +110,8 @@ Mine:
 
 Them:
 > When you see a URL in an address bar and the `https://` part isn’t shown, the browser is probably using a method like `removeprefix()` behind the scenes.
+
+## Notes
+
+Mine, 2024-03-24, 8:46:48 PM:
+> Pokoknya approach-nya langsung tulis aja kodenya kesini. Terus masukin some notes aja jika diperlukan.
