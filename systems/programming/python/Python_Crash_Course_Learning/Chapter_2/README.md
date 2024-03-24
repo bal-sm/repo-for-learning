@@ -113,11 +113,24 @@ Them:
 
 ## Avoiding Syntax Errors with Strings
 
+_Syntax error because `"`/`'`_
+
+The correct way to use `"` and `'`:
+
 ```python
 message = "One of Python's strengths is its diverse community."
 print(message)
 # Output: One of Python's strengths is its diverse community.
 ```
+
+However, if you use single quotes:
+
+```python
+message = 'One of Python's strengths is its diverse community.'
+print(message)
+```
+
+...
 
 ## Notes
 
