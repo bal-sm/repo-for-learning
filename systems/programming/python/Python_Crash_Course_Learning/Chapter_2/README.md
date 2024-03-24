@@ -96,3 +96,11 @@ Mine:
 >>> favorite_language.strip()
 'python'
 ```
+
+## Removing prefixes
+
+```python
+>>> nostarch_url = 'https://nostarch.com'
+>>> nostarch_url.removeprefix('https://')
+'nostarch.com'
+```
