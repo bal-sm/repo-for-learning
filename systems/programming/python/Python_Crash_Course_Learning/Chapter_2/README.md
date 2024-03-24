@@ -145,6 +145,18 @@ Them:
 Them, a note:
 > Your editor’s syntax highlighting feature should help you spot some syntax errors quickly as you write your programs. If you see Python code highlighted as if it’s English or English highlighted as if it’s Python code, you probably have a mismatched quotation mark somewhere in your file.
 
+## Try It Yourself
+
+### 2-5 + 2-6
+
+```python
+my_name = "Iqbal Syifa Mahmuda"
+
+quote = f"{my_name} once said, \"Karena saya literally menciptakan listrik, somehow I'm one of you.\""
+
+print(quote)
+```
+
 ## Notes
 
 Mine, 2024-03-24, 8:46:48 PM:
