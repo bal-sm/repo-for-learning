@@ -2,7 +2,7 @@
 
 ```python
 class SomeField:
-    def __init__(self, something, **args, **kwargs):
+    def __init__(self, something, *args, **kwargs):
         self.something = something
 
     def __repr__(self):
@@ -13,7 +13,7 @@ vs.
 
 ```python
 class SomeField:
-    def __init__(self, **args, **kwargs):
+    def __init__(self, *args, **kwargs):
         pass
 
     def __repr__(self):
