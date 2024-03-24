@@ -14,10 +14,10 @@ vs.
 ```python
 class SomeField:
     def __init__(self, *args, **kwargs):
-        pass
+        self.something = kwargs['something']
 
     def __repr__(self):
         return f"{self.__dict__}"
 ```
 
-> Dua-dua nya valid!
+> Dua-dua nya valid! Dan sama aja, tapi explicit lebih baik daripada implicit.
