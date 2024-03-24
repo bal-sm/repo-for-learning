@@ -111,6 +111,14 @@ Mine:
 Them:
 > When you see a URL in an address bar and the `https://` part isn’t shown, the browser is probably using a method like `removeprefix()` behind the scenes.
 
+## Avoiding Syntax Errors with Strings
+
+```python
+message = "One of Python's strengths is its diverse community."
+print(message)
+# Output: One of Python's strengths is its diverse community.
+```
+
 ## Notes
 
 Mine, 2024-03-24, 8:46:48 PM:
