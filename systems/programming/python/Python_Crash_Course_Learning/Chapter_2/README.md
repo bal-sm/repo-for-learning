@@ -163,6 +163,9 @@ print(quote)
 
 ### 2-8
 
+- Python has a removesuffix() method.
+  - Try it!
+
 ```python
 file_name = "python_notes.txt"
 
