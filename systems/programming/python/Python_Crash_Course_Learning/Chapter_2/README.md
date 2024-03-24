@@ -107,3 +107,6 @@ Mine:
 # If you want to keep the new value
 >>> simple_url = nostarch_url.removeprefix('https://')
 ```
+
+Them:
+> When you see a URL in an address bar and the `https://` part isn’t shown, the browser is probably using a method like `removeprefix()` behind the scenes.
