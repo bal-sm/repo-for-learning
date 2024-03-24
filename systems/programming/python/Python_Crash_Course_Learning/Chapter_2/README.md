@@ -149,6 +149,10 @@ Them, a note:
 
 ### 2-5 + 2-6
 
+1. Find a quote from a famous person
+2. Print the quote and the name of its author
+3. Represent the famous person’s name using a variable
+
 ```python
 my_name = "Iqbal Syifa Mahmuda"
 
