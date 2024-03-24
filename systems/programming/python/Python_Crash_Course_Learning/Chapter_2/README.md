@@ -67,6 +67,10 @@ favorite_language
 Mine:
 > omG, kalo di Django ada clean method, wow very clean.
 
+## Adding Whitespace to Strings with Tabs or Newlines
+
+In programming, whitespace refers to any nonprinting characters, such as spaces, tabs, and end-of-line symbols.
+
 ## Codes
 
 [`mengurangi_ketidaksetaraan.py`](mengurangi_ketidaksetaraan.py)
