@@ -96,7 +96,3 @@ Mine:
 >>> favorite_language.strip()
 'python'
 ```
-
-## Codes
-
-[`mengurangi_ketidaksetaraan.py`](mengurangi_ketidaksetaraan.py)
