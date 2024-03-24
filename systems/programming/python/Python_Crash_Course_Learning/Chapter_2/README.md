@@ -100,7 +100,3 @@ Mine:
 ## Codes
 
 [`mengurangi_ketidaksetaraan.py`](mengurangi_ketidaksetaraan.py)
-
-## Content(s)
-
-[`simple_messages.py`](./simple_messages.py)
