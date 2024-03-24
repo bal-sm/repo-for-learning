@@ -130,7 +130,20 @@ message = 'One of Python's strengths is its diverse community.' # ❌
 print(message)
 ```
 
-...
+You'll see the following output:
+
+```
+  File "apostrophe.py", line 1
+    message = 'One of Python's strengths is its diverse community.'
+                                                                ❶ ^
+SyntaxError: unterminated string literal (detected at line 1)
+```
+
+Them:
+> In the output you can see that the error occurs right after the final single quote ❶. ..
+
+Them, a note:
+> Your editor’s syntax highlighting feature should help you spot some syntax errors quickly as you write your programs. If you see Python code highlighted as if it’s English or English highlighted as if it’s Python code, you probably have a mismatched quotation mark somewhere in your file.
 
 ## Notes
 
