@@ -103,4 +103,7 @@ Mine:
 >>> nostarch_url = 'https://nostarch.com'
 >>> nostarch_url.removeprefix('https://')
 'nostarch.com'
+
+# If you want to keep the new value
+>>> simple_url = nostarch_url.removeprefix('https://')
 ```
