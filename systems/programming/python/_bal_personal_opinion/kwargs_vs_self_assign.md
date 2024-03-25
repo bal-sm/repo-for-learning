@@ -25,3 +25,6 @@ Mine:
 
 Mine:
 > Pokoknya harus di instantiate dulu ke `self` baru methodnya bisa pake.
+
+Mine:
+> Baca masalah `*` operator di [sini](../_tidbits/*_what-is-it-exactly.md).
