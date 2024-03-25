@@ -1,7 +1,7 @@
 # `**kwargs` vs assign to `self`
 
 ```python
-class SomeField:
+class SomeObject:
     def __init__(self, something, *args, **kwargs):
         self.something = something
 
@@ -12,7 +12,7 @@ class SomeField:
 vs.
 
 ```python
-class SomeField:
+class SomeObject:
     def __init__(self, *args, **kwargs):
         self.something = kwargs['something']
 
