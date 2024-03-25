@@ -20,4 +20,8 @@ class SomeField:
         return f"{self.__dict__}"
 ```
 
+Mine:
 > Dua-dua nya valid! Dan sama aja, tapi explicit lebih baik daripada implicit.
+
+Mine:
+> Pokoknya harus di instantiate dulu ke `self` baru methodnya bisa pake.
