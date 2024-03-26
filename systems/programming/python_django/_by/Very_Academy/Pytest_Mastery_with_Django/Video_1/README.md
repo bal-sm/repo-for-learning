@@ -65,6 +65,8 @@ Taken from -> <https://pytest-django.readthedocs.io/en/latest/tutorial.html>.
 
 ## Example(s)
 
+### 1
+
 ```python
 import pytest
 
@@ -74,6 +76,15 @@ def test_example():
 
 HINT:
 > Put it on a file named `test_example.py`. Then run `pytest`.
+
+### 2
+
+```python
+import pytest
+
+def test_example1():
+    assert 1 == 2 # IT WILL FAIL.
+```
 
 ## A note
 
