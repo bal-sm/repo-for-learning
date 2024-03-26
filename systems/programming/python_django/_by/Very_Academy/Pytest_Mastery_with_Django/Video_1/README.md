@@ -93,6 +93,8 @@ Mine:
 
 ## Some diagrams
 
+### 1
+
 ```mermaid
 graph TD;
     Django-->Assertion_Condition;
@@ -102,7 +104,16 @@ graph TD;
     False-->Assertion_Error;
 ```
 
-...
+### 2
+
+```mermaid
+graph TD;
+    Function:_Add_item_to_basket-->Assert_BasketQty_equals_to_1;
+    Assert_BasketQty_equals_to_1-->True;
+```
+
+Mine, maintenance and learning note:
+> It could be better.
 
 ## ...
 
