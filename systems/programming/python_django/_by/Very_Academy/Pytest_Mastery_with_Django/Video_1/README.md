@@ -83,7 +83,7 @@ HINT:
 import pytest
 
 def test_example1():
-    assert 1 == 2 # IT WILL FAIL.
+    assert 1 == 2 # IT WILL FAIL, -> `AssertionError`.
 ```
 
 ## A note
