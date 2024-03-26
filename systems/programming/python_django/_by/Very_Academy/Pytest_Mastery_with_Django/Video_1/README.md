@@ -91,6 +91,19 @@ def test_example1():
 Mine:
 > Don't forget to read/summarize from Python Crash Course book. Here's the [link](...), maintenance.
 
+## Some diagrams
+
+```mermaid
+graph TD;
+    Django-->Assertion_Condition;
+    Assertion_Condition-->True;
+    True-->Test_Successful
+    Assertion_Condition-->False;
+    False-->Assertion_Error;
+```
+
+...
+
 ## ...
 
 ...
