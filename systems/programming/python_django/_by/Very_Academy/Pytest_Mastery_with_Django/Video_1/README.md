@@ -75,6 +75,11 @@ def test_example():
 HINT:
 > Put it on a file named `test_example.py`. Then run `pytest`.
 
+## A note
+
+Mine:
+> Don't forget to read/summarize from Python Crash Course book. Here's the [link](...), maintenance.
+
 ## ...
 
 ...
