@@ -115,3 +115,16 @@ Which is why that comma is there, as a trailing comma is how you indicate a sing
 ### Penjelasan lebih lanjut dari PEP 3132
 
 ..., TBA, baca aja [di sini](https://peps.python.org/pep-3132/).
+
+## Passing argument as dictionary
+
+Tags:
+> django.
+
+```python
+field_name = 'someones_name'
+Foo.objects.get(**{field_name: 'Cpt. Hook'})
+```
+
+Mine:
+> Taken from -> <https://stackoverflow.com/a/13017912>.
