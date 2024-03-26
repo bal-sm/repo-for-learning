@@ -29,6 +29,40 @@
 
 _Skipped_.
 
+## Getting Started
+
+Taken from -> <https://pytest-django.readthedocs.io/en/latest/tutorial.html>.
+
+1. `pip install pytest-django`
+   - `pytest` will be automatically installed
+2. Point `pytest` to your Django settings
+
+   `pyproject.toml`:
+
+   ```toml
+   [tool.pytest.ini_options]
+   DJANGO_SETTINGS_MODULE = "yourproject.settings"
+   ```
+
+   Optionally also add:
+
+   ```toml
+   [tool.pytest.ini_options]
+   minversion = "8.0" # Mine, addition
+   python_files = [
+       "tests.py",
+       "test_*.py",
+       "*_tests.py",
+   ]
+   ```
+
+3. Run `pytest`
+
+   ```sh
+   python manage.py test # ❌
+   pytest # ✔️
+   ```
+
 ## ...
 
 ...
