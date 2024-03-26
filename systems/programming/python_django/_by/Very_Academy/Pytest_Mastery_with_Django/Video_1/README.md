@@ -63,6 +63,18 @@ Taken from -> <https://pytest-django.readthedocs.io/en/latest/tutorial.html>.
    pytest # ✔️
    ```
 
+## Example(s)
+
+```python
+import pytest
+
+def test_example():
+    assert 1 == 1
+```
+
+HINT:
+> Put it on a file named `test_example.py`. Then run `pytest`.
+
 ## ...
 
 ...
