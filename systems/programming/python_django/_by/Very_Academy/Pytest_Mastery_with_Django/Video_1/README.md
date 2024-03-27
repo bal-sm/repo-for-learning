@@ -115,6 +115,14 @@ graph TD;
 Mine, maintenance and learning note:
 > It could be better.
 
+## Back to the example 1
+
+```python
+def test_example()
+    print("some output") # It will be printed with `pytest -rP`.
+    assert 1 == 1
+```
+
 ## ...
 
 ...
