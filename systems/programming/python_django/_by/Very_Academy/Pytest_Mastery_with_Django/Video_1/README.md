@@ -126,6 +126,22 @@ def test_example()
 Mine, addition:
 > `pytest -rP`. Show extra test summary info as specified by chars: .. (P)assed with output, ....
 
+## Using markers
+
+### Using `skip`
+
+```python
+import pytest
+
+@pytest.mark.skip
+def test_example1():
+    assert 1 == 2 # ~~IT WILL FAIL, -> `AssertionError`.~~ It will be skipped
+```
+
+### ...
+
+...
+
 ## ...
 
 ...
