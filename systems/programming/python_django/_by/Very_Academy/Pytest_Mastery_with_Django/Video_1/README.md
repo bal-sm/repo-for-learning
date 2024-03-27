@@ -138,6 +138,16 @@ def test_example1():
     assert 1 == 2 # ~~IT WILL FAIL, -> `AssertionError`.~~ It will be skipped
 ```
 
+### Using `xfail`
+
+```python
+import pytest
+
+@pytest.mark.skip
+def test_example1():
+    assert 1 == 2 # Fail but tests successfully ran(xpassed).
+```
+
 ### ...
 
 ...
