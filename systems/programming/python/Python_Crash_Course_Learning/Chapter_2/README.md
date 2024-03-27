@@ -32,6 +32,8 @@ Variable is a label for a value/a string/data, rather than a box for a value. Th
 
 ## f-strings
 
+### 1
+
 ```python
 first_name = "Katy"
 last_name = "Perry"
@@ -42,7 +44,34 @@ full_name = f"{first_name} {last_name}"
 print(f"Hello, {full_name.title()}!")
 ```
 
-## `.rstrip()`
+### 2
+
+```python
+artist = "Miley Cyrus"
+album = f"{artist} and Her Dead Petz"
+
+print(f"omg his new album, {album}, is so good!")
+```
+
+## Adding Whitespace to Strings with Tabs or Newlines
+
+In programming, whitespace refers to any nonprinting characters, such as spaces, tabs, and end-of-line symbols.
+
+### 1
+
+```python
+print("\tPython")
+```
+
+### 2
+
+```python
+print("Languages:\nPython\nC\nToyLanguage")
+```
+
+## Stripping Whitespace
+
+### With `.rstrip()`
 
 To alter a whole string permanently:
 
@@ -56,12 +85,94 @@ favorite_language
 Mine:
 > omG, kalo di Django ada clean method, wow very clean.
 
-## Codes
+### Other methods
 
-[`mengurangi_ketidaksetaraan.py`](mengurangi_ketidaksetaraan.py)
+```python
+>>> favorite_language = ' python '
+>>> favorite_language.rstrip()
+' python'
+>>> favorite_language.lstrip()
+'python '
+>>> favorite_language.strip()
+'python'
+```
 
-[`stringz.ipynb`](stringz.ipynb)
+## Removing prefixes
 
-## Content(s)
+```python
+>>> nostarch_url = 'https://nostarch.com'
+>>> nostarch_url.removeprefix('https://')
+'nostarch.com'
 
-[`simple_messages.py`](./simple_messages.py)
+# If you want to keep the new value
+>>> simple_url = nostarch_url.removeprefix('https://')
+```
+
+Them:
+> When you see a URL in an address bar and the `https://` part isn’t shown, the browser is probably using a method like `removeprefix()` behind the scenes.
+
+## Avoiding Syntax Errors with Strings
+
+_Syntax error because `"`/`'`_
+
+The correct way to use `"` and `'`:
+
+```python
+message = "One of Python's strengths is its diverse community."
+print(message)
+# Output: One of Python's strengths is its diverse community.
+```
+
+However, if you use single quotes:
+
+```python
+message = 'One of Python's strengths is its diverse community.' # ❌
+print(message)
+```
+
+You'll see the following output:
+
+```
+  File "apostrophe.py", line 1
+    message = 'One of Python's strengths is its diverse community.'
+                                                                ❶ ^
+SyntaxError: unterminated string literal (detected at line 1)
+```
+
+Them:
+> In the output you can see that the error occurs right after the final single quote ❶. ..
+
+Them, a note:
+> Your editor’s syntax highlighting feature should help you spot some syntax errors quickly as you write your programs. If you see Python code highlighted as if it’s English or English highlighted as if it’s Python code, you probably have a mismatched quotation mark somewhere in your file.
+
+## Try It Yourself
+
+### 2-5 + 2-6
+
+1. Find a quote from a famous person
+2. Print the quote and the name of its author
+3. Represent the famous person’s name using a variable
+
+```python
+my_name = "Iqbal Syifa Mahmuda"
+
+quote = f"{my_name} once said, \"Karena saya literally menciptakan listrik, somehow I'm one of you.\""
+
+print(quote)
+```
+
+### 2-8
+
+- Python has a removesuffix() method.
+  - Try it!
+
+```python
+file_name = "python_notes.txt"
+
+clean_file_name = file_name.removesuffix(".txt")
+```
+
+## Notes
+
+Mine, 2024-03-24, 8:46:48 PM:
+> Pokoknya approach-nya langsung tulis aja kodenya kesini. Terus masukin some notes aja jika diperlukan.
