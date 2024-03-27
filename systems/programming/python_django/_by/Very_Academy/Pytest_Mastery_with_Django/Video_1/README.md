@@ -123,6 +123,9 @@ def test_example()
     assert 1 == 1
 ```
 
+Mine, addition:
+> `pytest -rP`. Show extra test summary info as specified by chars: .. (P)assed with output, ....
+
 ## ...
 
 ...
