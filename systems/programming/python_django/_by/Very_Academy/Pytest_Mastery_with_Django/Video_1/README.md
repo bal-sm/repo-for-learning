@@ -148,9 +148,28 @@ def test_example1():
     assert 1 == 2 # Fail but tests successfully ran(xpassed).
 ```
 
-### ...
+### Create custom markers
 
+```ini
+[pytest]
 ...
+
+markers =
+    slow: slow running tests
+```
+
+```python
+import pytest
+
+@pytest.mark.slow
+def test_complex_calculation():
+    ...
+    assert ...
+```
+
+Run test that are marked as "slow":
+
+`pytest -m "slow"`
 
 ## ...
 
