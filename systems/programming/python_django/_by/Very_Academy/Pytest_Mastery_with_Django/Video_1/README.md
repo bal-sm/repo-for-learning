@@ -170,7 +170,3 @@ def test_complex_calculation():
 Run test that are marked as "slow":
 
 `pytest -m "slow"`
-
-## ...
-
-...
