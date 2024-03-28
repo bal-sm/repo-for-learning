@@ -9,4 +9,10 @@
   - SubFactories
   - ForeignKey, reverse ForeignKey, ManyToMany
 
+## Install Factory Boy
+
+```sh
+pip install pytest-factoryboy
+```
+
 ...
