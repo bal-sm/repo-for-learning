@@ -145,7 +145,22 @@ def test_user_create1():
    assert count == 0
 ```
 
-#### ...
+#### With fixture example
+
+```python
+import pytest
+
+from django.contrib.auth.models import User
+
+@pytest.fixture()
+def a_new_user(db):
+    return User.objects.create_user("test-user")
+
+@pytest.mark.django_db
+def test_set_check_password(a_new_user):
+    a_new_user.set_password("new-password")
+    assert a_new_user.check_password("new-password") is True
+```
 
 ...
 
