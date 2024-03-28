@@ -41,6 +41,15 @@ def test_example1(fixture_1):
 
 ### Scoped fixture
 
+#### Jenis-jenis scope
+
+- `function`: Run once per test
+- `class`: Run once per class of tests
+- `module`: Run once per module
+- `session`: Run once per session
+
+#### Example
+
 ```python
 @pytest.fixture(scope="session")
 def fixture_1():
