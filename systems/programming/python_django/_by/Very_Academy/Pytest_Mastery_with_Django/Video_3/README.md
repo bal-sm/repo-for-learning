@@ -61,4 +61,15 @@ pip install Faker
        return user
    ```
 
+4. Use it on your test
+
+   `test_user.py`:
+
+   ```python
+   import pytest
+
+   def test_user(new_user1):
+       assert new_user1.is_staff is True
+   ```
+
 ...
