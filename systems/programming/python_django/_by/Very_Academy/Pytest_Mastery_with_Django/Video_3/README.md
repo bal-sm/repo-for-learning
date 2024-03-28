@@ -80,9 +80,11 @@ pip install Faker
 ```python
 def test_new_user(user_factory):
     user = user_factory.build()
+    count = User.objects.all().count()
     print(user.username)
+    print(count)
     assert True
-    # Output: 'John Doe'
+    # Output: 'John Doe' and '0'
     # OKAY ✔️
 ```
 
