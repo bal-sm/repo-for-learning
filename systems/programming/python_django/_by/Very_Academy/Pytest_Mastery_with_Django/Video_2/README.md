@@ -108,6 +108,20 @@ End Test Phase
 
 ### Django's
 
+#### Syntax
+
+```python
+@pytest.mark.django_db
+```
+
+vs.
+
+```python
+@pytest.fixture()
+def ...(db):
+    ...
+```
+
 #### Non-fixture example
 
 ```python
