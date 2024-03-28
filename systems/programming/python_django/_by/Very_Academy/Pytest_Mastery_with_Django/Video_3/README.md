@@ -73,3 +73,7 @@ pip install Faker
    ```
 
 ...
+
+## `create()` vs. `build()`
+
+...
