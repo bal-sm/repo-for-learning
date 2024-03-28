@@ -160,9 +160,11 @@ def a_new_user(db):
 def test_set_check_password(a_new_user):
     a_new_user.set_password("new-password")
     assert a_new_user.check_password("new-password") is True
-```
 
-...
+@pytest.mark.django_db
+def test_check_username(a_new_user):
+    assert a_new_user.username == "test-user"
+```
 
 #### Don't use `scope="session"`, `db` and inheritance together
 
