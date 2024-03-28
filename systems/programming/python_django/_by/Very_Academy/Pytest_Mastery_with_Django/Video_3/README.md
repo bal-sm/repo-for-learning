@@ -111,3 +111,61 @@ def test_new_user(user_factory):
     # Output: 'John Doe' and '1'
     # OKAY ✔️
 ```
+
+## Create 2 factories of some models
+
+1. Create the factories
+
+   `factories.py`:
+
+   ```python
+   import factory
+   from faker import Faker
+   fake = Faker()
+   
+   from shop.inventory import models
+   
+   
+   class CategoryFactory(factory.django.DjangoModelFactory):
+       class Meta:
+           model = models.Category
+   
+       name = 'django'
+   
+   
+   class ProductFactory(factory.django.DjangoModelFactory):
+       class Meta:
+           model = models.Product
+   
+       title = 'product_title'
+       category = factory.SubFactory(CategoryFactory)
+       description = fake.text()
+       slug = 'product_slug'
+       regular_price = '9.99'
+       discount_price = '4.99'
+   ```
+
+2. Register them
+
+   `conftest.py`:
+
+   ```python
+   import pytest
+   
+   from pytest_factoryboy import register
+   from tests.factories import ProductFactory, CategoryFactory
+   
+   register(ProductFactory)  
+   register(CategoryFactory)  
+   ```
+
+3. Then, create tests for them
+
+   ```python
+   import pytest
+   
+   def test_product(db, product_factory):
+       product = product_factory.create()
+       print(product.description)
+       assert True
+   ```
