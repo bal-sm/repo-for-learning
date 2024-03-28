@@ -21,6 +21,28 @@ Fixtures are used to feed data to the tests such as:
 - URLs to test, and
 - Input data.
 
+## How to create and utilize fixtures?
+
+### Normal fixture
+
+```python
+import pytest
+
+@pytest.fixture
+def fixture_1():
+   print('run-fixture-1')
+   return 1
+
+def test_example1(fixture_1):
+    print('run-example-1')
+    num = fixture_1
+    assert num == 1
+```
+
+### ...
+
+...
+
 ## ...
 
 ...
