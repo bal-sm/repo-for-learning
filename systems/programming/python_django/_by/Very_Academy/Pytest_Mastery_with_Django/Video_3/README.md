@@ -56,7 +56,7 @@ pip install Faker
 
    ```python
    @pytest.fixture
-   def new_user1(db, user_factory):
+   def new_admin_user(db, user_factory):
        user = user_factory.create()
        return user
    ```
@@ -68,8 +68,8 @@ pip install Faker
    ```python
    import pytest
 
-   def test_user(new_user1):
-       assert new_user1.is_staff is True
+   def test_user(new_admin_user):
+       assert new_admin_user.is_staff is True
    ```
 
 ...
