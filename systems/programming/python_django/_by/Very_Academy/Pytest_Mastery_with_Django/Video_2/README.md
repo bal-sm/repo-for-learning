@@ -14,6 +14,13 @@
   - etc.
 - Run before/after each test function to which the fixture is applied.
 
+## Why are fixtures important?
+
+Fixtures are used to feed data to the tests such as:
+- Database connections,
+- URLs to test, and
+- Input data.
+
 ## ...
 
 ...
