@@ -98,3 +98,16 @@ def test_new_user(user_factory):
     # Output: ERROOORRR, missing `django_db` mark or `db`
     # FAILED ❌
 ```
+
+vs.
+
+```python
+def test_new_user(user_factory):
+    user = user_factory.create()
+    count = User.objects.all().count()
+    print(user.username)
+    print(count)
+    assert True
+    # Output: 'John Doe' and '1'
+    # OKAY ✔️
+```
