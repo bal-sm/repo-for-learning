@@ -41,6 +41,12 @@ def test_example1(fixture_1):
 
 ### Scoped fixture
 
+#### Syntax
+
+```python
+@pytest.fixture(scope="_scope_")
+```
+
 #### Jenis-jenis scope
 
 - `function`: Run once per test
