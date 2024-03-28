@@ -80,6 +80,32 @@ Output:
 ~~`run-fixture-1`~~
 `run-example-2`
 
+### Another example
+
+To show when fixture starts and ends:
+
+```python
+import pytest
+
+@pytest.fixture
+def yield_fixture():
+   print('Start Test Phase')
+   yield 6
+   print('End Test Phase')
+
+def test_example(yield_fixture):
+   print('run-example-1')
+   assert yield_fixture == 6
+```
+
+Output:
+
+```sh
+Start Test Phase
+run-example-1
+End Test Phase
+```
+
 ### ...
 
 ...
