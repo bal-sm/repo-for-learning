@@ -72,8 +72,27 @@ pip install Faker
        assert new_admin_user.is_staff is True
    ```
 
-...
-
 ## `create()` vs. `build()`
 
-...
+- `create()` actually saves it to the database.
+- `build()` just build the necessary model instance.
+
+```python
+def test_new_user(user_factory):
+    user = user_factory.build()
+    print(user.username)
+    assert True
+    # Output: 'John Doe'
+    # OKAY ✔️
+```
+
+vs.
+
+```python
+def test_new_user(user_factory):
+    user = user_factory.create()
+    print(user.username)
+    assert True
+    # Output: ERROOORRR, missing `django_db` mark or `db`
+    # FAILED ❌
+```
