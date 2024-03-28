@@ -168,10 +168,21 @@ def test_check_username(a_new_user):
 
 #### Don't use `scope="session"`, `db` and inheritance together
 
-...
+```python
+@pytest.fixture(scope="session")
+    ...
+```
+
+Output:
+
+```
+=========================== short test summary info ============================
+ERROR tests/test_ex4.py::test_set_check_password - Failed: ScopeMismatch: You tried to access the function scoped fixture db w...
+ERROR tests/test_ex4.py::test_check_username - Failed: ScopeMismatch: You tried to access the function scoped fixture db w.
+```
 
 Mine:
-> Liat aja `Video_3` untuk penyelesaiannya.
+> Liat aja section selanjutnya dan `Video_3` untuk penyelesaiannya.
 
 #### ...
 
