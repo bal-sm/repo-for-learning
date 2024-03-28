@@ -184,6 +184,59 @@ ERROR tests/test_ex4.py::test_check_username - Failed: ScopeMismatch: You tried 
 Mine:
 > Liat aja section selanjutnya dan `Video_3` untuk penyelesaiannya.
 
+#### Use `conftest.py` and comprehensive tests
+
+`conftest.py`:
+
+```python
+@pytest.fixture
+def new_user_factory(db):
+    def create_app_user(
+        username: str,
+        password: str = None,
+        first_name: str = "firstname",
+        last_name: str = "lastname",
+        email: str = "test@test.com",
+        is_staff: str = False,
+        is_superuser: str = False,
+        is_active: str = True,
+    ):
+        user = User.objects.create_user(
+            username=username,
+            password=password,
+            first_name=first_name,
+            last_name=last_name,
+            email=email,
+            is_staff=is_staff,
+            is_superuser=is_superuser,
+            is_active=is_active,
+        )
+        return user
+    return create_app_user
+
+@pytest.fixture
+def new_normal_user(db, new_user_factory):
+    return new_user_factory("Test_user","password","MyName")
+
+@pytest.fixture
+def new_admin_user(db, new_user_factory):
+    return new_user_factory("Test_user","password", "MyName", is_staff="True")
+```
+
+`test_....py`:
+
+```python
+import pytest
+
+def test_first_name_normal_user(new_normal_user):
+    print(new_normal_user.first_name)
+    assert new_normal_user.first_name == "MyName"
+
+def test_is_staff_admin_user(new_admin_user):
+    print(new_admin_user.is_staff)
+    assert new_admin_user.is_staff
+```
+
 #### ...
 
 ...
