@@ -189,6 +189,10 @@ Mine:
 `conftest.py`:
 
 ```python
+import pytest
+
+from django.contrib.auth.models import User
+
 @pytest.fixture
 def new_user_factory(db):
     def create_app_user(
