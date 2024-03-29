@@ -176,6 +176,19 @@ clean_file_name = file_name.removesuffix(".txt")
 
 ## Numbers
 
+### Integers
+
+```python
+>>> 2 + 3 # addition
+5
+>>> 3 - 2 # subtraction
+1
+>>> 2 * 3 # multiplification
+6
+>>> 3 / 2 # division
+1.5
+```
+
 ...
 
 ## Notes
