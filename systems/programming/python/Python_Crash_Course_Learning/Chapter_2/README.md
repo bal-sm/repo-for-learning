@@ -281,6 +281,18 @@ When you print a number that was defined using underscores, Python prints only t
 Them:
 > Python ignores the underscores when storing these kinds of values. Even if you don’t group the digits in threes, the value will still be unaffected. To Python, 1000 is the same as 1_000, which is the same as 10_00. This feature works for both integers and floats.
 
+## Multiple Assignment
+
+```python
+>>> x, y, z = "something", 42, "something else"
+>>> z
+'something else'
+>>> y
+42
+>>> x
+'something'
+```
+
 ...
 
 ## Notes
