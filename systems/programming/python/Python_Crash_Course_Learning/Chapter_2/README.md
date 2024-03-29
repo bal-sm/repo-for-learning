@@ -271,6 +271,13 @@ You can group digits using underscores to make large numbers more readable:
 >>> universe_age = 14_000_000_000
 ```
 
+When you print a number that was defined using underscores, Python prints only the digits:
+
+```python
+>>> print(universe_age)
+14000000000
+```
+
 ...
 
 ## Notes
