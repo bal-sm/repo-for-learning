@@ -240,6 +240,15 @@ Them:
 Them:
 > This happens in all languages and is of little concern. Python tries to find a way to represent the result as precisely as possible, which is sometimes difficult given how computers have to represent numbers internally. Just ignore the extra decimal places for now; you’ll learn ways to deal with the extra places when you need to in the projects in Part II.
 
+### Integers and Floats
+
+Any two numbers -divided-> a float (always):
+
+```python
+>>> 4/2
+2.0
+```
+
 ...
 
 ## Notes
