@@ -174,6 +174,10 @@ file_name = "python_notes.txt"
 clean_file_name = file_name.removesuffix(".txt")
 ```
 
+## Numbers
+
+...
+
 ## Notes
 
 Mine, 2024-03-24, 8:46:48 PM:
