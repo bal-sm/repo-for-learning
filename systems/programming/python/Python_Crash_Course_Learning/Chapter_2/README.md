@@ -189,6 +189,17 @@ clean_file_name = file_name.removesuffix(".txt")
 1.5
 ```
 
+Exponential:
+
+```python
+>>> 3 ** 2 # 3^2
+9
+>>> 3 ** 3 # 3^3
+27
+>>> 10 ** 6 # 10^6
+1000000
+```
+
 ...
 
 ## Notes
