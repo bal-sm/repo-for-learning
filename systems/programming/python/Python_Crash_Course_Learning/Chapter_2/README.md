@@ -249,6 +249,20 @@ Any two numbers -divided-> a float (always):
 2.0
 ```
 
+If you mix an integer and a float in any other operation, you’ll get a float as well:
+
+```python
+>>> 1 + 2.0
+3.0
+>>> 2 * 3.0
+6.0
+>>> 3.0 ** 2
+9.0
+```
+
+Them:
+> Python defaults to a float in any operation that uses a float, even if the output is a whole number.
+
 ...
 
 ## Notes
