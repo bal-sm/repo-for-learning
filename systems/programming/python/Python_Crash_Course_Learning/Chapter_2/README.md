@@ -302,6 +302,16 @@ Them:
 MAX_CONNECTIONS = 5000
 ```
 
+## Try It Yourself 2
+
+### 2-10
+
+```python
+my_favorite_number = 1
+quote = f"My favorite number is {my_favorite_number}."
+print(quote)
+```
+
 ...
 
 ## Notes
