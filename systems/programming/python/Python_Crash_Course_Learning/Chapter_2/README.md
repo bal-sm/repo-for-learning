@@ -263,6 +263,14 @@ If you mix an integer and a float in any other operation, you’ll get a float a
 Them:
 > Python defaults to a float in any operation that uses a float, even if the output is a whole number.
 
+### Underscores in Numbers
+
+You can group digits using underscores to make large numbers more readable:
+
+```python
+>>> universe_age = 14_000_000_000
+```
+
 ...
 
 ## Notes
