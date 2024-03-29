@@ -2,7 +2,9 @@
 
 Variable is a label for a value/a string/data, rather than a box for a value. This is important to grasp the concept of variable even more.
 
-## _Name Changing_ Methods
+## Strings
+
+### _Name Changing_ Methods
 
 - `.title()`
   - Titling case a string
@@ -30,9 +32,9 @@ Variable is a label for a value/a string/data, rather than a box for a value. Th
     # Output: 'nostarch.com'
     ```
 
-## f-strings
+### f-strings
 
-### 1
+#### 1
 
 ```python
 first_name = "Katy"
@@ -44,7 +46,7 @@ full_name = f"{first_name} {last_name}"
 print(f"Hello, {full_name.title()}!")
 ```
 
-### 2
+#### 2
 
 ```python
 artist = "Miley Cyrus"
@@ -53,25 +55,25 @@ album = f"{artist} and Her Dead Petz"
 print(f"omg his new album, {album}, is so good!")
 ```
 
-## Adding Whitespace to Strings with Tabs or Newlines
+### Adding Whitespace to Strings with Tabs or Newlines
 
 In programming, whitespace refers to any nonprinting characters, such as spaces, tabs, and end-of-line symbols.
 
-### 1
+#### 1
 
 ```python
 print("\tPython")
 ```
 
-### 2
+#### 2
 
 ```python
 print("Languages:\nPython\nC\nToyLanguage")
 ```
 
-## Stripping Whitespace
+### Stripping Whitespace
 
-### With `.rstrip()`
+#### With `.rstrip()`
 
 To alter a whole string permanently:
 
@@ -85,7 +87,7 @@ favorite_language
 Mine:
 > omG, kalo di Django ada clean method, wow very clean.
 
-### Other methods
+#### Other methods
 
 ```python
 >>> favorite_language = ' python '
@@ -97,7 +99,7 @@ Mine:
 'python'
 ```
 
-## Removing prefixes
+### Removing prefixes
 
 ```python
 >>> nostarch_url = 'https://nostarch.com'
@@ -111,7 +113,7 @@ Mine:
 Them:
 > When you see a URL in an address bar and the `https://` part isn’t shown, the browser is probably using a method like `removeprefix()` behind the scenes.
 
-## Avoiding Syntax Errors with Strings
+### Avoiding Syntax Errors with Strings
 
 _Syntax error because `"`/`'`_
 
@@ -145,9 +147,9 @@ Them:
 Them, a note:
 > Your editor’s syntax highlighting feature should help you spot some syntax errors quickly as you write your programs. If you see Python code highlighted as if it’s English or English highlighted as if it’s Python code, you probably have a mismatched quotation mark somewhere in your file.
 
-## Try It Yourself
+### Try It Yourself
 
-### 2-5 + 2-6
+#### 2-5 + 2-6
 
 1. Find a quote from a famous person
 2. Print the quote and the name of its author
@@ -161,7 +163,7 @@ quote = f"{my_name} once said, \"Karena saya literally menciptakan listrik, some
 print(quote)
 ```
 
-### 2-8
+#### 2-8
 
 - Python has a removesuffix() method.
   - Try it!
