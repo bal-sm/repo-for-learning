@@ -312,6 +312,28 @@ quote = f"My favorite number is {my_favorite_number}."
 print(quote)
 ```
 
+## Comments
+
+### How Do You Write Comments
+
+Using hash mark (#):
+
+`comment.py`:
+
+```python
+# Say hello to everyone.
+print("Hello Python people!")
+```
+
+Output:
+
+```
+Hello Python people!
+```
+
+Them:
+> Python ignores the first line and executes the second line.
+
 ...
 
 ## Notes
