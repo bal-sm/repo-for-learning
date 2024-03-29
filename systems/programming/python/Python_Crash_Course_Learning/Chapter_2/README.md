@@ -176,3 +176,6 @@ clean_file_name = file_name.removesuffix(".txt")
 
 Mine, 2024-03-24, 8:46:48 PM:
 > Pokoknya approach-nya langsung tulis aja kodenya kesini. Terus masukin some notes aja jika diperlukan.
+
+Mine, 2024-03-29, 2:13 PM:
+> Sectioning nya freestyle daripada ngikutin bukunya.
