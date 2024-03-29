@@ -200,6 +200,15 @@ Exponential:
 1000000
 ```
 
+You can also use parentheses:
+
+```python
+>>> 2 + 3*4
+14
+>>> (2 + 3) * 4
+20
+```
+
 ...
 
 ## Notes
