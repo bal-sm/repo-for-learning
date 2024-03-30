@@ -4,4 +4,11 @@
 
 `lists = [..., ...]`
 
+`bicycles.py`:
+
+```python
+bicycles = ['trek', 'cannondale', 'redline', 'specialized']
+print(bicycles)
+```
+
 ...
