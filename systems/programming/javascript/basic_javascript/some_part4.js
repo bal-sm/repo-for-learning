@@ -119,7 +119,6 @@ function LoverAndFriendsLookup(val) {
         "chyntia": "cans",
         "silviaa": "cans",
         "silviac": "cans",
-        "fika unsil": "udah ada yang punya :(",
         "luvita": "cans",
         "ade": "bacot",
         "aulia2": "dini latifah",
