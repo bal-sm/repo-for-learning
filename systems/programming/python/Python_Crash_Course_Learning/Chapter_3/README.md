@@ -34,4 +34,8 @@ bicycles = ['trek', 'cannondale', 'redline', 'specialized']
 print(bicycles[0].title()) # Output: Trek
 ```
 
+### Index Positions Start at `0`, Not `1`
+
+It's just how index and lists operations are implemented at a lower level.
+
 ...
