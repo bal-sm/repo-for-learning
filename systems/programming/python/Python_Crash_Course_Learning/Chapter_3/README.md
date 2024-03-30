@@ -16,4 +16,9 @@ bicycles = ['trek', 'cannondale', 'redline', 'specialized']
 lists[index] = [..., ...]
 ```
 
+```python
+bicycles = ['trek', 'cannondale', 'redline', 'specialized']
+print(bicycles[0]) # Output: trek
+```
+
 ...
