@@ -38,4 +38,10 @@ print(bicycles[0].title()) # Output: Trek
 
 It's just how index and lists operations are implemented at a lower level.
 
+```python
+bicycles = ['trek', 'cannondale', 'redline', 'specialized']
+print(bicycles[1]) # Output: cannondale
+print(bicycles[3]) # Output: specialized
+```
+
 ...
