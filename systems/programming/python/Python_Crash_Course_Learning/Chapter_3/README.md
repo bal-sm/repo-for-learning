@@ -44,4 +44,14 @@ print(bicycles[1]) # Output: cannondale
 print(bicycles[3]) # Output: specialized
 ```
 
+---
+
+Them:
+> Python has a special syntax for accessing the last element in a list. If you ask for the item at index `-1`, Python always returns the last item in the list:
+
+```python
+bicycles = ['trek', 'cannondale', 'redline', 'specialized']
+print(bicycles[-1]) # Output: specialized
+```
+
 ...
