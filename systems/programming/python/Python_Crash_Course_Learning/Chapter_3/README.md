@@ -27,4 +27,11 @@ print(bicycles[0]) # Output: trek
 
 ---
 
+You can also use the string methods:
+
+```python
+bicycles = ['trek', 'cannondale', 'redline', 'specialized']
+print(bicycles[0].title()) # Output: Trek
+```
+
 ...
