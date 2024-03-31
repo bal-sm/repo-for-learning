@@ -130,4 +130,18 @@ motorcycles.append('ducati')
 print(motorcycles) # Output: ['honda', 'yamaha', 'suzuki', 'ducati']
 ```
 
+---
+
+Another example:
+
+```python
+motorcycles = []
+
+motorcycles.append('honda')
+motorcycles.append('yamaha')
+motorcycles.append('suzuki')
+
+print(motorcycles) # Output: ['honda', 'yamaha', 'suzuki']
+```
+
 ...
