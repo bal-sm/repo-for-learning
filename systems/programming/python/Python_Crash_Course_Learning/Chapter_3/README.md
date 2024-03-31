@@ -109,7 +109,7 @@ print(motorcycles) # Output: ['honda', 'ducati', 'suzuki']
 
 ## Adding Elements to a List
 
-### Appending Elements to the End of a List
+### `lists.append()` - Appending Elements to the End of a List
 
 ```python
 lists = [..., ...]
