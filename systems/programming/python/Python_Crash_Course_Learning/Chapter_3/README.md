@@ -149,6 +149,8 @@ Them:
 
 ### Inserting Elements into a List
 
+*`lists.insert()`*
+
 ```python
 lists = [..., ...]
 
