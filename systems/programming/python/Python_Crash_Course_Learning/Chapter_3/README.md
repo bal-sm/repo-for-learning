@@ -81,4 +81,18 @@ for friend in friends:
 # Output is sad.
 ```
 
+## Modifying, Adding, and Removing Elements
+
+### Modifying Elements in a List
+
+```python
+lists = [..., ..., ...]
+
+lists[index] = new_value
+
+lists[1] = "yolo"
+
+lists = [..., "yolo", ...]
+```
+
 ...
