@@ -70,4 +70,15 @@ print(message)
 # Output: My first bicycle was a Trek.
 ```
 
+## Try It Yourself
+
+```python
+friends = [None, None, None]
+
+for friend in friends:
+    print(f"{friend} will go to my party.")
+
+# Output is sad.
+```
+
 ...
