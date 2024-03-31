@@ -10,7 +10,7 @@
 bicycles = ['trek', 'cannondale', 'redline', 'specialized']
 ```
 
-### Accessing Elements in a List
+### `lists[index]` - Accessing Elements in a List
 
 ```python
 lists[index] = [..., ...]
