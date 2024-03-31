@@ -118,4 +118,16 @@ lists.append("new_value")
 print(lists) # Output: [..., ..., "new_value"]
 ```
 
+---
+
+For example:
+
+```python
+motorcycles = ['honda', 'yamaha', 'suzuki']
+print(motorcycles) # Output: ['honda', 'yamaha', 'suzuki']
+
+motorcycles.append('ducati')
+print(motorcycles) # Output: ['honda', 'yamaha', 'suzuki', 'ducati']
+```
+
 ...
