@@ -147,4 +147,15 @@ print(motorcycles) # Output: ['honda', 'yamaha', 'suzuki']
 Them:
 > Building lists this way is very common, because you often won’t know the data your users want to store in a program until after the program is running. To put your users in control, start by defining an empty list that will hold the users’ values. Then append each new value provided to the list you just created.
 
+### Inserting Elements into a List
+
+```python
+lists = [..., ...]
+
+lists.insert(index, "new_value")
+
+lists.insert(1, "new_value")
+print(lists) # Output: [..., "new_value", ...]
+```
+
 ...
