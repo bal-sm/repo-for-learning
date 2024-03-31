@@ -95,4 +95,16 @@ lists[1] = "yolo"
 lists = [..., "yolo", ...]
 ```
 
+---
+
+For example:
+
+```python
+motorcycles = ['honda', 'yamaha', 'suzuki']
+print(motorcycles) # Output: ['honda', 'yamaha', 'suzuki']
+
+motorcycles[1] = 'ducati'
+print(motorcycles) # Output: ['honda', 'ducati', 'suzuki']
+```
+
 ...
