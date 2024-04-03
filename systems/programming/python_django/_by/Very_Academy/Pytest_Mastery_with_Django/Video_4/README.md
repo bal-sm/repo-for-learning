@@ -6,6 +6,8 @@ A test function that implements parametrization -> checking multiple input leads
 
 ## For example, a case
 
+Suppose we have a function:
+
 - Email, Username, Password, Confirm Password
   1. Email's format is correct
   2. Email is unique
