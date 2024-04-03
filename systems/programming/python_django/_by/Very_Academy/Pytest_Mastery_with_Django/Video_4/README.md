@@ -1,3 +1,7 @@
 # Towards Parametrizing Fixtures and Test Functions
 
-..., soon.
+A test function that implements parametrization -> checking multiple input leads to the expected output.
+
+> sayangggg.
+
+...
