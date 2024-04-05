@@ -20,7 +20,7 @@ Is the approach of grouping tests in a class needed? Is it allowed to backport u
 
 ## Answer 1 by Ignacio Vergara Kausel
 
-As it's mentioned in `pytest` documentation, you can use it to execute unittest tests. As for grouping tests in a class, it's mostly a matter of taste and organization. – 
+As it's mentioned in `pytest` documentation, you can use it to execute unittest tests. As for grouping tests in a class, it's mostly a matter of taste and organization.
 
 ## Answer 2 by [Jasha](https://stackoverflow.com/a/62176555)
 
