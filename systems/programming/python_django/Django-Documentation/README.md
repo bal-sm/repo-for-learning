@@ -1,5 +1,14 @@
 # Django Documentantion
 
+## To-be-added
+
+- <https://docs.djangoproject.com/en/5.0/topics/db/models/>
+  - > learn this on some beach.
+- <https://docs.djangoproject.com/en/5.0/topics/db/transactions/>
+  - > ngerti bangettt.
+- <https://docs.djangoproject.com/en/5.0/ref/forms/validation/>
+  - > masih lagi di baca, nanti mau tentuin kalo worth it atau enggak.
+
 ## How these taken from the official docs
 
 - Kan ada dua ini,
