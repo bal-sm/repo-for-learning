@@ -169,4 +169,15 @@ motorcycles.insert(0, 'ducati')
 print(motorcycles) # Output: ['ducati', 'honda', 'yamaha', 'suzuki']
 ```
 
+## Removing Elements from a List
+
+### Removing an Item Using the `del` Statement
+
+```python
+lists = ["to be deleted", ..., ...]
+
+del lists[0]
+print(lists) # Output: [..., ...]
+```
+
 ...
