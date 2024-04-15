@@ -213,4 +213,14 @@ print(lists) # Output: ["start", "middle"]
 print(popped_item) # Output: end
 ```
 
+---
+
+```python
+motorcycles = ['honda', 'yamaha', 'suzuki']
+
+popped_motorcycle = motorcycles.pop()
+print(motorcycles) # Output: ['honda', 'yamaha']
+print(popped_motorcycle) # Output: suzuki
+```
+
 ...
