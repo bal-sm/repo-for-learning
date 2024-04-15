@@ -174,10 +174,10 @@ print(motorcycles) # Output: ['ducati', 'honda', 'yamaha', 'suzuki']
 ### Removing an Item Using the `del` Statement
 
 ```python
-lists = ["to be deleted", ..., ...]
+lists = ["to be deleted", "a", "b"]
 
 del lists[0]
-print(lists) # Output: [..., ...]
+print(lists) # Output: ["a", "b"]
 ```
 
 ...
