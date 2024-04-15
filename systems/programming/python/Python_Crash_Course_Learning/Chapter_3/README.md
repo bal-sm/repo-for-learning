@@ -189,4 +189,13 @@ del motorcycles[0]
 print(motorcycles) # Output: ['yamaha', 'suzuki']
 ```
 
+---
+
+```python
+motorcycles = ['honda', 'yamaha', 'suzuki']
+
+del motorcycles[1]
+print(motorcycles) # Output: ['honda', 'suzuki']
+```
+
 ...
