@@ -223,4 +223,14 @@ print(motorcycles) # Output: ['honda', 'yamaha']
 print(popped_motorcycle) # Output: suzuki
 ```
 
+---
+
+```python
+motorcycles = ['honda', 'yamaha', 'suzuki']
+
+last_owned = motorcycles.pop()
+print(f"The last motorcycle I owned was a {last_owned.title()}.")
+# Output: The last motorcycle I owned was a Suzuki.
+```
+
 ...
