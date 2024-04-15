@@ -180,4 +180,13 @@ del lists[0]
 print(lists) # Output: ["a", "b"]
 ```
 
+---
+
+```python
+motorcycles = ['honda', 'yamaha', 'suzuki']
+
+del motorcycles[0]
+print(motorcycles) # Output: ['yamaha', 'suzuki']
+```
+
 ...
