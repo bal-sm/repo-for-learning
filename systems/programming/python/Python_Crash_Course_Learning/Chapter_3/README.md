@@ -203,4 +203,14 @@ print(motorcycles) # Output: ['honda', 'suzuki']
 Mine:
 > In both examples, you can no longer access the value that was removed from the list after the `del` statement is used.
 
+### Removing an Item Using the `pop()` Method
+
+```python
+lists = ["start", "middle", "end"]
+
+popped_item = lists.pop()
+print(lists) # Output: ["start", "middle"]
+print(popped_item) # Output: end
+```
+
 ...
