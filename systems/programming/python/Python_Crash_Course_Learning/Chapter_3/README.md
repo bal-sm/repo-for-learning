@@ -233,4 +233,14 @@ print(f"The last motorcycle I owned was a {last_owned.title()}.")
 # Output: The last motorcycle I owned was a Suzuki.
 ```
 
+### Popping Items from Any Position in a List
+
+```python
+lists = ["pop_this", "a", "b"]
+first_item = lists.pop(0)
+
+print(lists) # Output: ["a", "b"]
+print(first_item) # Output: pop_this
+```
+
 ...
