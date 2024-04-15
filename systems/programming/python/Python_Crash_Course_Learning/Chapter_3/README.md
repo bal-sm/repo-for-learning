@@ -198,4 +198,9 @@ del motorcycles[1]
 print(motorcycles) # Output: ['honda', 'suzuki']
 ```
 
+---
+
+Mine:
+> In both examples, you can no longer access the value that was removed from the list after the `del` statement is used.
+
 ...
