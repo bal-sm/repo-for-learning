@@ -423,4 +423,7 @@ lists = ["a", "b", "c", "d"]
 print(len(lists)) # Output: 4
 ```
 
+Them:
+> You’ll find `len()` useful when you need to identify the number of aliens that still need to be shot down in a game, determine the amount of data you have to manage in a visualization, or figure out the number of registered users on a website, among other tasks.
+
 ...
