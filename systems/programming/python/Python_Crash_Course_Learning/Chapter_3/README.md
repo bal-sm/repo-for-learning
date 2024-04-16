@@ -416,4 +416,11 @@ Them, cenah, huh:
 Mine, learning note, meureun:
 > That's expensive ain't it? Mending simpen as a new variable we. We're talking about Python and its really slow performance here.
 
+### Finding the Length of a List
+
+```python
+lists = ["a", "b", "c", "d"]
+print(len(lists)) # Output: 4
+```
+
 ...
