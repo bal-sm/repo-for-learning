@@ -253,4 +253,72 @@ print(f"The first motorcycle I owned was a {first_owned.title()}.")
 # Output: The first motorcycle I owned was a Honda.
 ```
 
+---
+
+Them:
+> - If you’re unsure whether to use the `del` statement or the `pop()` method, here’s a simple way to decide:
+>   1. when you want to delete an item from a list and not use that item in any way,
+>      - use the `del` statement;
+>   2. if you want to use an item as you remove it,
+>      - use the `pop()` method.
+
+### Removing an Item by Value
+
+```python
+lists = ["a", "b", "c", "d"]
+
+lists.remove("c")
+print(lists) # Output: ["a", "b", "d"]
+```
+
+---
+
+```python
+motorcycles = ['honda', 'yamaha', 'suzuki', 'ducati']
+
+motorcycles.remove('ducati')
+print(motorcycles) # Output: ['honda', 'yamaha', 'suzuki']
+```
+
+---
+
+Working with a value that's being removed:
+
+```python
+motorcycles = ['honda', 'yamaha', 'suzuki', 'ducati']
+
+too_expensive = 'ducati'
+motorcycles.remove(too_expensive)
+print(motorcycles)
+print(f"\nA {too_expensive.title()} is too expensive for me.")
+```
+
+Output:
+
+```
+['honda', 'yamaha', 'suzuki']
+
+A Ducati is too expensive for me.
+```
+
+---
+
+Them:
+> The `remove()` method deletes only the first occurrence of the value you specify. If there’s a possibility the value appears more than once in the list, you’ll need to use a loop to make sure all occurrences of the value are removed. You’ll learn how to do this in Chapter 7.
+
+Mine:
+>
+> ```python
+> motorcycles = ["honda", "yamaha", "ducati", "suzuki", "ducati"]
+> 
+> while True:
+>     try:
+>         motorcycles.remove("ducati")
+>     except ValueError:
+>         break
+> 
+> print(motorcycles)
+> ```
+>
+
 ...
