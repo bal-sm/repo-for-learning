@@ -253,4 +253,13 @@ print(f"The first motorcycle I owned was a {first_owned.title()}.")
 # Output: The first motorcycle I owned was a Honda.
 ```
 
+---
+
+Them:
+> - If you’re unsure whether to use the `del` statement or the `pop()` method, here’s a simple way to decide:
+>   1. when you want to delete an item from a list and not use that item in any way,
+>      - use the `del` statement;
+>   2. if you want to use an item as you remove it,
+>      - use the `pop()` method.
+
 ...
