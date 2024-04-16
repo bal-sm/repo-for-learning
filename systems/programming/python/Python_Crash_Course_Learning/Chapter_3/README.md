@@ -437,4 +437,21 @@ _Skipped_
 
 _skipped most of the text_, pokoknya inget aja bakal ngeror kalo index out of range, `IndexError`.
 
+---
+
+```python
+motorcycles = ['honda', 'yamaha', 'suzuki']
+print(motorcycles[3])
+```
+
+Output:
+
+```
+Traceback (most recent call last):
+  File "motorcycles.py", line 2, in <module>
+    print(motorcycles[3])
+          ~~~~~~~~~~~^^^
+IndexError: list index out of range
+```
+
 ...
