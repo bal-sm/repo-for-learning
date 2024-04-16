@@ -325,4 +325,15 @@ Mine:
 
 _Skipped_
 
+## Organizing a List
+
+### Sorting a List Permanently with the `sort()` Method
+
+```python
+lists = ["c", "b", "a"]
+lists.sort()
+
+print(lists) # Output: ["a", "b", "c"]
+```
+
 ...
