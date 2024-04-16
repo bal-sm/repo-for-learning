@@ -345,4 +345,16 @@ cars.sort()
 print(cars) # ['audi', 'bmw', 'subaru', 'toyota']
 ```
 
+---
+
+Them:
+> You can also sort this list in reverse-alphabetical order by passing the argument `reverse=True` to the `sort()` method. The following example sorts the list of cars in reverse-alphabetical order:
+
+```python
+cars = ['bmw', 'audi', 'toyota', 'subaru']
+cars.sort(reverse=True)
+
+print(cars) # ['toyota', 'subaru', 'bmw', 'audi']
+```
+
 ...
