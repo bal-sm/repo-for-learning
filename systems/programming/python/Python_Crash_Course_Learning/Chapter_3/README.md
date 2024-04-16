@@ -461,4 +461,21 @@ motorcycles = ['honda', 'yamaha', 'suzuki']
 print(motorcycles[-1]) # suzuki
 ```
 
+---
+
+```python
+motorcycles = []
+print(motorcycles[-1])
+```
+
+Output:
+
+```
+Traceback (most recent call last):
+  File "motorcyles.py", line 3, in <module>
+    print(motorcycles[-1])
+          ~~~~~~~~~~~^^^^
+IndexError: list index out of range
+```
+
 ...
