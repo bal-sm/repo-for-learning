@@ -387,4 +387,13 @@ print(sorted(cars, reverse=True)) # ['toyota', 'subaru', 'bmw', 'audi']
 Them:
 > Sorting a list alphabetically is a bit more complicated when all the values are not in lowercase. There are several ways to interpret capital letters when determining a sort order, and specifying the exact order can be more complex than we want to deal with at this time. However, most approaches to sorting will build directly on what you learned in this section.
 
+### Printing a List in Reverse Order
+
+```python
+lists = ["a", "d", "b", "c"]
+lists.reverse()
+
+print(lists) # Output: ["c", "b", "d", "a"]
+```
+
 ...
