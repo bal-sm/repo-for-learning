@@ -396,4 +396,16 @@ lists.reverse()
 print(lists) # Output: ["c", "b", "d", "a"]
 ```
 
+---
+
+Them:
+> If we originally stored the list of cars in chronological order according to when we owned them, we could easily rearrange the list into reverse-chronological order:
+
+```python
+cars = ['bmw', 'audi', 'toyota', 'subaru']
+
+cars.reverse() # ['subaru', 'toyota', 'audi', 'bmw']
+print(cars)
+```
+
 ...
