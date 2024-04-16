@@ -478,4 +478,19 @@ Traceback (most recent call last):
 IndexError: list index out of range
 ```
 
+---
+
+*Mine*
+
+```python
+motorcycles = []
+
+try:
+    my_last_motorcycle = motorcycles[-1]
+except IndexError:
+    my_last_motorcycle = None
+
+print(my_last_motorcycle) # None
+```
+
 ...
