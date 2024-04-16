@@ -336,4 +336,13 @@ lists.sort()
 print(lists) # Output: ["a", "b", "c"]
 ```
 
+---
+
+```python
+cars = ['bmw', 'audi', 'toyota', 'subaru']
+cars.sort()
+
+print(cars) # ['audi', 'bmw', 'subaru', 'toyota']
+```
+
 ...
