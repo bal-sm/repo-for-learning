@@ -433,4 +433,8 @@ Them, a note:
 
 _Skipped_
 
+## Avoiding Index Errors When Working with Lists
+
+_skipped most of the text_, pokoknya inget aja bakal ngeror kalo index out of range, `IndexError`.
+
 ...
