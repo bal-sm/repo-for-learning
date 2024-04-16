@@ -329,6 +329,9 @@ _Skipped_
 
 ### Sorting a List Permanently with the `sort()` Method
 
+Mine:
+> **Permanently**.
+
 ```python
 lists = ["c", "b", "a"]
 lists.sort()
