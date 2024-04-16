@@ -262,4 +262,13 @@ Them:
 >   2. if you want to use an item as you remove it,
 >      - use the `pop()` method.
 
+### Removing an Item by Value
+
+```python
+lists = ["a", "b", "c", "d"]
+
+lists.remove("c")
+print(lists) # Output: ["a", "b", "d"]
+```
+
 ...
