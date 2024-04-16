@@ -169,4 +169,88 @@ motorcycles.insert(0, 'ducati')
 print(motorcycles) # Output: ['ducati', 'honda', 'yamaha', 'suzuki']
 ```
 
+## Removing Elements from a List
+
+### Removing an Item Using the `del` Statement
+
+```python
+lists = ["to be deleted", "a", "b"]
+
+del lists[0]
+print(lists) # Output: ["a", "b"]
+```
+
+---
+
+```python
+motorcycles = ['honda', 'yamaha', 'suzuki']
+
+del motorcycles[0]
+print(motorcycles) # Output: ['yamaha', 'suzuki']
+```
+
+---
+
+```python
+motorcycles = ['honda', 'yamaha', 'suzuki']
+
+del motorcycles[1]
+print(motorcycles) # Output: ['honda', 'suzuki']
+```
+
+---
+
+Mine:
+> In both examples, you can no longer access the value that was removed from the list after the `del` statement is used.
+
+### Removing an Item Using the `pop()` Method
+
+```python
+lists = ["start", "middle", "end"]
+
+popped_item = lists.pop()
+print(lists) # Output: ["start", "middle"]
+print(popped_item) # Output: end
+```
+
+---
+
+```python
+motorcycles = ['honda', 'yamaha', 'suzuki']
+
+popped_motorcycle = motorcycles.pop()
+print(motorcycles) # Output: ['honda', 'yamaha']
+print(popped_motorcycle) # Output: suzuki
+```
+
+---
+
+```python
+motorcycles = ['honda', 'yamaha', 'suzuki']
+
+last_owned = motorcycles.pop()
+print(f"The last motorcycle I owned was a {last_owned.title()}.")
+# Output: The last motorcycle I owned was a Suzuki.
+```
+
+### Popping Items from Any Position in a List
+
+```python
+lists = ["pop_this", "a", "b"]
+first_item = lists.pop(0)
+
+print(lists) # Output: ["a", "b"]
+print(first_item) # Output: pop_this
+```
+
+---
+
+```python
+motorcycles = ['honda', 'yamaha', 'suzuki']
+
+first_owned = motorcycles.pop(0)
+print(f"The first motorcycle I owned was a {first_owned.title()}.")
+# Output: The first motorcycle I owned was a Honda.
+```
+
 ...
