@@ -454,4 +454,11 @@ Traceback (most recent call last):
 IndexError: list index out of range
 ```
 
+---
+
+```python
+motorcycles = ['honda', 'yamaha', 'suzuki']
+print(motorcycles[-1]) # suzuki
+```
+
 ...
