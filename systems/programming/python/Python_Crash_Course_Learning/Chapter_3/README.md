@@ -271,4 +271,13 @@ lists.remove("c")
 print(lists) # Output: ["a", "b", "d"]
 ```
 
+---
+
+```python
+motorcycles = ['honda', 'yamaha', 'suzuki', 'ducati']
+
+motorcycles.remove('ducati')
+print(motorcycles) # Output: ['honda', 'yamaha', 'suzuki']
+```
+
 ...
