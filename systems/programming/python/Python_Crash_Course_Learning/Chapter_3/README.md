@@ -408,4 +408,12 @@ cars.reverse() # ['subaru', 'toyota', 'audi', 'bmw']
 print(cars)
 ```
 
+---
+
+Them, cenah, huh:
+> The `reverse()` method changes the order of a list permanently, but you can revert to the original order anytime by applying `reverse()` to the same list a second time.
+
+Mine, learning note, meureun:
+> That's expensive ain't it? Mending simpen as a new variable we. We're talking about Python and its really slow performance here.
+
 ...
