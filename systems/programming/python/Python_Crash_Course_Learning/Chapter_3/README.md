@@ -363,4 +363,22 @@ cars.sort(reverse=True)
 print(cars) # ['toyota', 'subaru', 'bmw', 'audi']
 ```
 
+### Sorting a List Temporarily with the `sorted()` Function
+
+Mine:
+> **Temporarily**.
+
+```python
+cars = ['bmw', 'audi', 'toyota', 'subaru']
+
+print("Here is the original list:")
+print(cars) # ['bmw', 'audi', 'toyota', 'subaru']
+
+print("\nHere is the sorted list:")
+print(sorted(cars)) # ['audi', 'bmw', 'subaru', 'toyota']
+
+print("\nHere is the original list again:")
+print(cars) # ['bmw', 'audi', 'toyota', 'subaru']
+```
+
 ...
