@@ -429,4 +429,8 @@ Them:
 Them, a note:
 > Python counts the items in a list starting with one, so you shouldn’t run into any off-by-one errors when determining the length of a list.
 
+## Try It Yourself 3
+
+_Skipped_
+
 ...
