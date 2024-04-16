@@ -379,6 +379,9 @@ print(sorted(cars)) # ['audi', 'bmw', 'subaru', 'toyota']
 
 print("\nHere is the original list again:")
 print(cars) # ['bmw', 'audi', 'toyota', 'subaru']
+
+print("\nHere is the reverse-sorted list:")
+print(sorted(cars, reverse=True)) # ['toyota', 'subaru', 'bmw', 'audi']
 ```
 
 ...
