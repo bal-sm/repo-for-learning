@@ -345,6 +345,9 @@ cars.sort()
 print(cars) # ['audi', 'bmw', 'subaru', 'toyota']
 ```
 
+Them:
+> The `sort()` method changes the order of the list permanently. The cars are now in alphabetical order, and we can never revert to the original order.
+
 ---
 
 Them:
