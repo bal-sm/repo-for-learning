@@ -297,7 +297,7 @@ Mine:
 > while True:
 >     try:
 >         motorcycles.remove("ducati")
->     except: # ...
+>     except ValueError:
 >         break
 > 
 > print(motorcycles)
