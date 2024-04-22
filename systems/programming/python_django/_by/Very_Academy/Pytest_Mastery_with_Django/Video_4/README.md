@@ -21,7 +21,7 @@ Mine, maintenance:
 > bikin bingung siah title-nya kayaknya.
 
 cenah kurleb:
-> some mandantory fields on `Product`, seperti `title` dan `discount_price` field, makanya test bahwa itu memang dan akan tetap selamanya begitu.
+> some mandantory fields on `Product`, seperti `title` dan `discount_price` field, makanya test bahwa itu memang dan akan tetap selamanya begitu, kalau tidak, maka tidak valid.
 
 ```python
 @pytest.mark.parametrize(...)
