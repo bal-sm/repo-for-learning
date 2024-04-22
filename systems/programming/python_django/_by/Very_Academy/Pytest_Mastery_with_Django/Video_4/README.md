@@ -15,9 +15,16 @@ Suppose we have a function:
   4. Username is unique
   5. Password == Confirm Password
 
-## Creating some tests
+## Creating some tests to check if mandatory fields are mandatory
+
+Mine, maintenance:
+> bikin bingung siah title-nya kayaknya.
 
 cenah kurleb:
 > some mandantory fields on `Product`, seperti `title` dan `discount_price` field, makanya test bahwa itu memang dan akan tetap selamanya begitu.
+
+```python
+@pytest.mark.parametrize(...)
+```
 
 ...
