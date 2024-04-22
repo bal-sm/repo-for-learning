@@ -15,4 +15,9 @@ Suppose we have a function:
   4. Username is unique
   5. Password == Confirm Password
 
+## Creating some tests
+
+cenah kurleb:
+> some mandantory fields on `Product`, seperti `title` field makanya test bahwa itu memang dan akan tetap selamanya begitu.
+
 ...
