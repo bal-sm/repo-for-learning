@@ -18,6 +18,6 @@ Suppose we have a function:
 ## Creating some tests
 
 cenah kurleb:
-> some mandantory fields on `Product`, seperti `title` field makanya test bahwa itu memang dan akan tetap selamanya begitu.
+> some mandantory fields on `Product`, seperti `title` field, makanya test bahwa itu memang dan akan tetap selamanya begitu.
 
 ...
