@@ -76,6 +76,9 @@ def test_product_instance(
         assert item == validity
 ```
 
+Mine, maintenance note:
+> Contohnya udah aku coba perbaiki tapi tetep kurang gitu, biarin lah.
+
 ## Creating some tests to check if form datas are valid
 
 ```python
