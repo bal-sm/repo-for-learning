@@ -81,6 +81,6 @@ def test_product_instance(
 ## Source(s)
 
 - [1]: [Towards Parametrizing Fixtures and Test Functions](https://www.youtube.com/watch?v=APhI43fyRHI&list=PLOLrQ9Pn6caw3ilqDR8_qezp76QuEOlHY&index=8)
-  - [1.1]: ...
+  - [1.1]: [`pytest-mastery-with-django` repo](https://github.com/bal-sm/pytest-mastery-with-django)
     - [1.1.1]: [`test_ex5.py`](https://github.com/bal-sm/pytest-mastery-with-django/blob/bal_fixes/Part-4%20Parametrizing/tests/test_ex5.py)
 - [2]: [`@pytest.mark.parametrize`: parametrizing test functions](https://docs.pytest.org/en/8.1.x/how-to/parametrize.html#pytest-mark-parametrize-parametrizing-test-functions)
