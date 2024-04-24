@@ -141,8 +141,6 @@ def test_create_account_view(client, user_name, email, password, password2, vali
 Mine, "maintenance":
 > masukin dong sayanggg, mlz.
 
-...
-
 ## Source(s)
 
 - [1]: [Towards Parametrizing Fixtures and Test Functions](https://www.youtube.com/watch?v=APhI43fyRHI&list=PLOLrQ9Pn6caw3ilqDR8_qezp76QuEOlHY&index=8)
