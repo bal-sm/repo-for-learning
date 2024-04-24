@@ -109,6 +109,38 @@ def test_create_account(user_name, email, password, password2, validity):
 # ...
 ```
 
+and
+
+```python
+# ...
+@pytest.mark.parametrize(
+    "user_name, email, password, password2, validity",
+    [
+        ("user1", "a@a.com", "12345a", "12345a", 200),
+        ("user1", "a@a.com", "12345a", "12345", 400),
+        ("user1", "", "12345a", "12345", 400),
+    ],
+)
+@pytest.mark.django_db
+def test_create_account_view(client, user_name, email, password, password2, validity):
+    response = client.post(
+        "/account/register/",
+        data={
+            "user_name": user_name,
+            "email": email,
+            "password": password,
+            "password2": password2,
+        },
+    )
+    assert response.status_code == validity
+    # 400: bad
+    # 200: nice
+# ...
+```
+
+Mine, "maintenance":
+> masukin dong sayanggg, mlz.
+
 ...
 
 ## Source(s)
