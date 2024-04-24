@@ -23,8 +23,16 @@ Mine, maintenance:
 cenah kurleb:
 > some mandantory fields on `Product`, seperti `title` dan `discount_price` field, makanya test bahwa itu memang dan akan tetap selamanya begitu, kalau tidak, maka tidak valid.
 
-```python
-@pytest.mark.parametrize(...)
-```
+Taken from the docs:
+>
+> ```python
+> # content of test_expectation.py
+> import pytest
+> 
+> 
+> @pytest.mark.parametrize("test_input,expected", [("3+5", 8), ("2+4", 6), ("6*9", 42)])
+> def test_eval(test_input, expected):
+>     assert eval(test_input) == expected
+> ```
 
 ...
