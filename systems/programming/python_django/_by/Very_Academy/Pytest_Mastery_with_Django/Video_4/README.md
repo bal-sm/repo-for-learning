@@ -76,6 +76,12 @@ def test_product_instance(
         assert item == validity
 ```
 
+## Creating some tests to check if form datas are valid
+
+```python
+# ...
+```
+
 ...
 
 ## Source(s)
