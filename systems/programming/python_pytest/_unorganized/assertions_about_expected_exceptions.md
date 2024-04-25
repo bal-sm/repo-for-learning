@@ -63,7 +63,8 @@ The [`pytest.raises()`](https://docs.pytest.org/en/8.1.x/reference/reference.htm
 Mine:
 >
 > ```python
-> class NotImplementedError(RuntimeError)
+> class NotImplementedError(RuntimeError):
+>     # ...
 > ```
 >
 > therefore, test di atas correct.
