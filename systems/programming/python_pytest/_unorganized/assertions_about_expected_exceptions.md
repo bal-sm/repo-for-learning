@@ -60,6 +60,14 @@ def test_foo_not_implemented():
 
 The [`pytest.raises()`](https://docs.pytest.org/en/8.1.x/reference/reference.html#pytest.raises) call will succeed, even though the function raises [`NotImplementedError`](https://docs.python.org/3/library/exceptions.html#NotImplementedError), because [`NotImplementedError`](https://docs.python.org/3/library/exceptions.html#NotImplementedError) is a subclass of [`RuntimeError`](https://docs.python.org/3/library/exceptions.html#RuntimeError); however the following `assert` statement will catch the problem.
 
+Mine:
+>
+> ```python
+> class NotImplementedError(RuntimeError)
+> ```
+>
+> therefore, test di atas correct.
+
 ## Source
 
 - [Assertions about expected exceptions](https://docs.pytest.org/en/8.1.x/how-to/assert.html#assertions-about-expected-exceptions)
