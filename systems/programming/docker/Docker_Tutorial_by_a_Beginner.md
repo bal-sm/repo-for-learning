@@ -1,7 +1,10 @@
-# Docker
+# Docker Tutorial ~~for~~ by a Beginner
 
-NOTICE:
-> This `README.md` file is very berantakan ih. Pisah-pisah plz.
+NOTICE, maintenance:
+> ~~This `README.md` file is very berantakan ih. Pisah-pisah plz.~~ Udah we gini aja dulu.
+
+NOTICE 2:
+> ~~Ini teh da emang dari dia tapi rangkuman sendiri, gimana ya-~~ Fixed. Thanks to KodeKloud.
 
 ## Why
 
