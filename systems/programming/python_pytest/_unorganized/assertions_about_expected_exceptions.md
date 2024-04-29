@@ -1,5 +1,8 @@
 # Assertions about expected exceptions - Mahmuda's version
 
+Mine:
+> of "How to write and report assertions in tests" [1].
+
 In order to write assertions about raised exceptions, you can use:
 
 ---
@@ -71,4 +74,5 @@ Mine:
 
 ## Source
 
-- [Assertions about expected exceptions](https://docs.pytest.org/en/8.1.x/how-to/assert.html#assertions-about-expected-exceptions)
+- [1]: [How to write and report assertions in tests](https://docs.pytest.org/en/8.1.x/how-to/assert.html)
+  - [1.1]: [Assertions about expected exceptions](https://docs.pytest.org/en/8.1.x/how-to/assert.html#assertions-about-expected-exceptions)
