@@ -51,7 +51,7 @@ Traceback (most recent call last):
 ImportError: libstdc++.so.6: cannot open shared object file: No such file or directory
 ```
 
-> mari kita lihat solusinya.
+> mari kita lihat solusinya. jalanin dulu ketang.
 
 ## Solution
 
