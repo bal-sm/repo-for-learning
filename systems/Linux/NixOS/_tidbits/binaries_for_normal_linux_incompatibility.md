@@ -55,13 +55,62 @@ ImportError: libstdc++.so.6: cannot open shared object file: No such file or dir
 
 ## Solution
 
-...
+`1.`
+
+```nix
+{
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [
+    pkgs.stdenv.cc.cc.lib # `libstdc++.so.6` for `pgadmin4`
+  ];
+}
+```
+
+`2.`
+
+```sh
+export LD_LIBRARY_PATH=$NIX_LD_LIBRARY_PATH
+```
+
+`3.`
+
+```sh
+pgadmin4
+```
+
+> It works!
+
+Output:
+
+```
+Starting pgAdmin 4. Please navigate to http://127.0.0.1:5050 in your browser.
+ * Serving Flask app 'pgadmin'
+ * Debug mode: off
+```
+
+---
+
+Mine:
+> tinggal bikin automation-nya, belum aku jalanin, hehe.
 
 ## ...
 
-...
+Mine, maintenance, to d_machine:
+> Bantuin sama ingetin ya sayanggg.
+
+..., to be continued.
 
 ## Source(s)
 
+### Best solution
+
 - [1]: [Sqlalchemy python fails to find libstdc++.so.6 in virtualenv](https://discourse.nixos.org/t/sqlalchemy-python-fails-to-find-libstdc-so-6-in-virtualenv/38153)
   - [1.1]: [NixOS 61: Using non-Nix Python Packages with Binaries on NixOS](https://github.com/mcdonc/.nixconfig/blob/e7885ad18b7980f221e59a21c91b8eb02795b541/videos/pydev/script.rst)
+  - [1.2]: [nix-ld repo](https://github.com/Mic92/nix-ld)
+
+### Other solutions
+
+- [2]: [How to solve libstdc++ not found in shell.nix](https://discourse.nixos.org/t/how-to-solve-libstdc-not-found-in-shell-nix/25458/13)
+- [3]: [Python ImportError: libstdc++.so.6: cannot open shared object file: No such file or directory](https://discourse.nixos.org/t/python-importerror-libstdc-so-6-cannot-open-shared-object-file-no-such-file-or-directory/36988/6)
+- [4]: [What package provides libstdc++.so.6?](https://discourse.nixos.org/t/what-package-provides-libstdc-so-6/18707/7)
+  - > bad solution.
