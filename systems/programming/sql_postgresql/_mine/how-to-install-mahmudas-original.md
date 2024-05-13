@@ -1,5 +1,7 @@
 # How to install (Mahmuda's original)
 
+## pgAdmin
+
 `1.`
 
 ```python
