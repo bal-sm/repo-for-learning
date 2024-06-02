@@ -6,7 +6,7 @@ Mine, maintenance:
 ## 1
 
 Mine:
-> Indie pisan file ieu, cuman atuh da a whim, pengen tau aja. Oh iya terus gini, [`soon`](...).
+> Indie pisan file ieu, cuman atuh da a whim, pengen tau aja. Oh iya terus gini, [Current opinion about `mercurial`](../current_opinion_about_mercurial.md).
 
 Cenah [1.1]:
 > To use `git`, you can grab the source code in “git” form by running the bootstrap script with the `vcs` parameter:
