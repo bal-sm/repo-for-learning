@@ -1,5 +1,8 @@
 # Kenapa Firefox source code bisa pakai `git` dan juga `mercurial`?
 
+Mine, maintenance:
+> Ini teh `_multi` file sama `git`.
+
 ## 1
 
 Mine:
