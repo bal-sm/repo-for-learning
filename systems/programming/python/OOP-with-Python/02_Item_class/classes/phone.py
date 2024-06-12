@@ -1,4 +1,4 @@
-from main import Item
+from .main import Item
 
 from decimal import Decimal
 from pprint import pprint
