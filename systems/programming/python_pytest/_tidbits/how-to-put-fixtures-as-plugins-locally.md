@@ -3,6 +3,46 @@
 Mine, maintenance:
 > Da ini teh rangkuman versi saya, harusnya di folder `_by` atau gimana?
 
+## Quick Summary
+
+Mine:
+> aja lah, singkat-singkat. da atuh ditinggalin lupa.
+
+1. Create a `conftest.py` file in the same directory as your test files.
+2. Define your `pytest_plugins`:
+
+   ```python
+   pytest_plugins = [
+       "app_one.tests.as_plugin",
+       "app_two.tests.as_plugin",
+       "app_three.tests.as_plugin",
+   ]
+   ```
+
+3. Create those `as_plugin.py` files..
+4. And put your fixtures in those files..
+5. And those fixtures are shared across the entire project.
+6. For example:
+
+   ```python
+   # app_one/tests/as_plugin.py
+   import pytest
+
+   @pytest.fixture
+   def my_first_fixture():
+       return "my_first_fixture_on_app_1"
+   ```
+
+   ```python
+   # app_two/tests/test_from_app_one.py
+
+   def test_the_return(my_first_fixture):
+       assert my_first_fixture="my_first_fixture_on_app_1"
+   ```
+
+Mine, maintenance:
+> Rapihin atau lanjutin atau gimanalah, sayanggg..
+
 ## ...
 
 ..., TBA.
