@@ -3,6 +3,9 @@
 [From here](https://surveys.jetbrains.com/s3/django-developers-survey-2023)
 
 Mine:
+> [the results](https://lp.jetbrains.com/django-developer-survey-2023/) are in. Wow 10 Mei 2024. This is new, kayak pernah baca.
+
+Mine:
 > Penting buat liat-liat lagi masalah dependencies, and deploy ASGI tea.
 
 ## Page 1
