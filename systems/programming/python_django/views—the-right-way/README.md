@@ -20,6 +20,13 @@ Them:
 >
 > And there are some other goodies along the way, like how to type-check all the URL parameters to your view functions.
 
+Them, dirangkum:
+> Each page is composed of two parts, which have two different audiences.
+> - First, the business — the what and how: a short, definitive guide to The Right Way.
+>   - > For beginners.
+> - Second, discussion — the why: a longer, in-depth explanation of why everyone else who tells you differently is wrong :-)
+>   - > Mengajari orang yang keras kepala, cenah.
+
 ...
 
 ## Source(s)
