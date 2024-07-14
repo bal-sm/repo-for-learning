@@ -27,6 +27,9 @@ Them, dirangkum:
 > - Second, discussion — the why: a longer, in-depth explanation of why everyone else who tells you differently is wrong :-)
 >   - > Mengajari orang yang keras kepala, cenah.
 
+Mine:
+> Dari dulu kek aku ngerangkum ini.
+
 ...
 
 ## Source(s)
