@@ -109,6 +109,15 @@ urlpatterns = [
 ]
 ```
 
+..., masukin nanti, TBA.
+
+Mine:
+> - Pokoknya udah we ya buat sekarang mending comot-comot aja dari rangkuman of complex things to a `context` terus tampilannya gimana ke user, terus kalo ngelakuin suatu interaction, berarti mengacu ke suatu end point, yang akhirnya nyuruh Django to do something complicated, on whatever it is (ORMs, cleaning forms, etc..). That's basically what a view is.
+>   - > Soalnya gening yah, aku teh kepikiran biar, the new canon-uncanon programming teh a thing, how those codes are corrent in every way possible, but how do you want people to see it,
+>     - > Who am I? I'm not even one of developers lollz.
+
+## ...
+
 ...
 
 ## Source(s)
