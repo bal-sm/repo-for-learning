@@ -17,6 +17,8 @@ Them:
 >   - HTTP principles
 >   - General OOP/multi-paradigm programming principles
 >   - General Python techniques
+>
+> And there are some other goodies along the way, like how to type-check all the URL parameters to your view functions.
 
 ...
 
