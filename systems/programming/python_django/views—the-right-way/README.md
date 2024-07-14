@@ -78,6 +78,20 @@ Them:
 > First, it’s vital to know what a view **is**. As the [Django docs state](https://docs.djangoproject.com/en/5.0/topics/http/views/):
 > > A view…is a Python function that takes a Web request and returns a Web response
 
+#### An example
+
+```python
+from django.http import HttpResponse
+
+def hello_world(request):
+    return HttpResponse('Hello world!')
+```
+
+Mine:
+> Jadi gini,
+>
+> User's browser -> "some Django's thing" -> [`HttpRequest`](https://docs.djangoproject.com/en/5.0/ref/request-response/#django.http.HttpRequest) -> `request` -> `urls.py` -> `hello_world` function -> `HttpResponse` -> "some Django's thing again" -> User's browser.
+
 ...
 
 ## Source(s)
