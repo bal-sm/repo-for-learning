@@ -12,6 +12,5 @@ Them, dirangkum:
 
 ## Source(s)
 
-> Thanks to Spookylukey
-
-[Source](https://spookylukey.github.io/django-views-the-right-way/).
+- [1]: [Django Views — The Right Way](https://spookylukey.github.io/django-views-the-right-way/).
+  - > Thanks to Spookylukey!
