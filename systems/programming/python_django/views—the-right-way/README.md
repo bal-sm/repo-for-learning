@@ -8,6 +8,16 @@ Mine:
 Them, dirangkum:
 > I’ve also added extra bits (in this guide) for common tasks and patterns in FBVs for which CBVs are often suggested as the solution.
 
+Them:
+> I have a few aims:
+> - I want to show how simple and easy views can be.
+> - I want you to be freed from learning _a whole stack of additional APIs_ that were only making your life harder (and teaching you bad patterns).
+>   - > this is very important.
+> - Instead of learning a bunch of Django specific APIs, I want to cover much more transferable knowledge:
+>   - HTTP principles
+>   - General OOP/multi-paradigm programming principles
+>   - General Python techniques
+
 ...
 
 ## Source(s)
