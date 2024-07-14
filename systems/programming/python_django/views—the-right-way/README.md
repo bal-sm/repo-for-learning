@@ -1,5 +1,8 @@
 # Django Views — The Right Way
 
+Mine:
+> udah we kodenya aja yang ditulis di sini, biar serasa "udah dibaca da ini teh".
+
 ...
 
 > Thanks to Spookylukey
