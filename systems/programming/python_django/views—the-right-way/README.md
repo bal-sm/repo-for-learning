@@ -74,6 +74,10 @@ Yang penting diingat:
 Mine:
 > rangkum gak yah?
 
+Them:
+> First, it’s vital to know what a view **is**. As the [Django docs state](https://docs.djangoproject.com/en/5.0/topics/http/views/):
+> > A view…is a Python function that takes a Web request and returns a Web response
+
 ...
 
 ## Source(s)
