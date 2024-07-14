@@ -97,6 +97,18 @@ Them:
 >
 > This request-response cycle is the heart of the Django web framework.
 
+`urls.py` to hook the view up to a URL:
+
+```python
+from django.urls import path
+
+from . import views
+
+urlpatterns = [
+    path('hello/', views.hello_world, name='hello_world'),
+]
+```
+
 ...
 
 ## Source(s)
