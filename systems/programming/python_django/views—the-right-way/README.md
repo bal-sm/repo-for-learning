@@ -117,6 +117,28 @@ urlpatterns = [
 
 ---
 
+Mine:
+> ykiyk, cuman masukkin aja deh.
+
+Them:
+> In many cases, we want a single view function to actually match a family of URLs which have some kind of parameter in them, and access that parameter in our view function. Django has built-in support for this. Suppose we want to match URLs like `/hello/XXX/` where `XXX` could be any string. Then our URLconf becomes:
+
+```python
+urlpatterns = [
+    path('hello/<str:my_arg>/', views.hello_world, name='hello_world'),
+]
+```
+
+Them:
+> and our view signature:
+
+```python
+def hello_world(request, my_arg):
+    # etc
+```
+
+---
+
 ..., masukin nanti, TBA.
 
 Mine:
