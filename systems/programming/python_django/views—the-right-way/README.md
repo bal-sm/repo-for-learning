@@ -100,6 +100,10 @@ Them:
 >
 > This request-response cycle is the heart of the Django web framework.
 
+Mine, learning note:
+> - [ ] Baca lebih lanjut [ieu](https://docs.djangoproject.com/en/5.0/ref/request-response/),
+>   - [ ] dan rangkum.
+
 ---
 
 Them:
