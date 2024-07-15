@@ -139,6 +139,24 @@ def hello_world(request, my_arg):
 
 ---
 
+_Skipped explanation_
+
+Mine:
+> pokoknya kita pastinya butuh a way buat bikin suatu struktur memberikan respon terhadap browsernya pengguna, makanya ykiyk.
+
+```python
+from django.http import HttpResponse
+from django.template import loader
+
+
+def hello_world(request, my_arg):
+    template = loader.get_template('hello_world.html')
+    context = {}
+    return HttpResponse(template.render(context, request))
+```
+
+---
+
 ..., masukin nanti, TBA.
 
 Mine:
