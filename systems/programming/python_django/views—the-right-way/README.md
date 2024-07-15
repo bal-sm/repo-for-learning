@@ -157,6 +157,21 @@ def hello_world(request, my_arg):
 
 ---
 
+_Skipped the explanation_
+
+Mine:
+> cuman _part of that code_ terus ditulis berulang-ulang, makanya ada shortcut-nya, yaitu pake `render()`, kayak gini:
+
+```python
+from django.shortcuts import render
+
+
+def hello_world(request, my_arg):
+    return render(request, 'hello_world.html', {})
+```
+
+---
+
 ..., masukin nanti, TBA.
 
 Mine:
