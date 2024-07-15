@@ -78,7 +78,10 @@ Them:
 > First, it’s vital to know what a view **is**. As the [Django docs state](https://docs.djangoproject.com/en/5.0/topics/http/views/):
 > > A view…is a Python function that takes a Web request and returns a Web response
 
-#### An example
+---
+
+Mine:
+> Maka, salah contoh "a view" adalah seperti ini:
 
 ```python
 from django.http import HttpResponse
@@ -97,7 +100,10 @@ Them:
 >
 > This request-response cycle is the heart of the Django web framework.
 
-`urls.py` to hook the view up to a URL:
+---
+
+Them:
+> `urls.py` to hook the view up to a URL:
 
 ```python
 from django.urls import path
@@ -108,6 +114,8 @@ urlpatterns = [
     path('hello/', views.hello_world, name='hello_world'),
 ]
 ```
+
+---
 
 ..., masukin nanti, TBA.
 
