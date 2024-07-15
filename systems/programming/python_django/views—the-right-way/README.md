@@ -172,6 +172,27 @@ def hello_world(request, my_arg):
 
 ---
 
+Them, penting gak penting ini:
+> This is a great pattern for writing views. Django has one more trick up its sleeve, however — [`TemplateResponse`](https://docs.djangoproject.com/en/5.0/ref/template-response/#templateresponse-objects).
+>
+> The issue with just using `render` is that you get a plain `HttpResponse` object back that has no memory that it ever came from a template. Sometimes, however, it is useful to have functions return a value that does remember what it’s “made of” — something that stores the template it is from, and the context. This can be really useful in testing, but also if we want to something outside of our view function (such as decorators or middleware) to check or even change what’s in the response before it finally gets ‘rendered’ and sent to the user.
+>
+> For now, you can just accept that `TemplateResponse` is a more useful return value than a plain `HttpResponse`. (If you are already using `render` everywhere, there is absolutely no need to go and change it though, and almost everything in this guide will work exactly the same with `render` instead of `TemplateResponse`).
+>
+> With that substitution, we’ve arrived at the pattern you’ll want to start with for views:
+
+Mine:
+> udah we pokoknya kalo aku mau pake good ol' `render()` aja, terus kalo misalnya aneh-aneh gitu, pake testing sama 'middleware' shit-nya segala, ubah aja langsung ke `TemplateResponse`. sudah terbiasa `render()` ey.
+
+```python
+from django.template.response import TemplateResponse
+
+def example_view(request, arg):
+    return TemplateResponse(request, 'example.html', {})
+```
+
+---
+
 ..., masukin nanti, TBA.
 
 Mine:
