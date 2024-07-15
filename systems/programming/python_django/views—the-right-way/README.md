@@ -141,8 +141,8 @@ def hello_world(request, my_arg):
 
 _Skipped explanation_
 
-Mine:
-> pokoknya kita pastinya butuh a way buat bikin suatu struktur memberikan respon terhadap browsernya pengguna, makanya ykiyk.
+Mine, udah we gini aja:
+> pokoknya kita pastinya gak mau pake hanya sekedar teks biasa doang sebagai respon ke browser pengguna, nah makanya memberi suatu HTML yang sangat terstruktur, which is bagusnya pake Django's template engine, which is ykiyk.
 
 ```python
 from django.http import HttpResponse
