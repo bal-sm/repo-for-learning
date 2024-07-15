@@ -213,6 +213,38 @@ Mine:
 >     - > Who am I? I'm not even one of developers lollz.
 >   - > terus sebenernya CBV tersebut doesn't actually include how to organize your CSS, and JS, etc. CMIIW. use `django-components` guys.
 
+### Discussion: keep the view viewable! - TL;DR version of mine
+
+Mine:
+> Pokoknya karena pake FBV, jadinya kita punya suatu pola:
+> - a function ✓
+> - that takes an argument called request ✓
+> - and returns some kind of response — a TemplateResponse ✓
+>
+> Dan akhirnya membuat suatu `view` itu sangatlah mudah dan simpel.
+
+Mine:
+> Coba kalo gini:
+
+```python
+from django.views.generic import TemplateView
+
+class ExampleView(TemplateView):
+    template_name = "example.html"
+```
+
+Mine:
+> Jadinya the simplicity of the patterns of making a view-nya tuh ilang:
+> - ~~a function~~, it's a class, obfuscated code.
+> - ~~that takes an argument called request~~, ilang.
+> - ~~and returns some kind of response — a TemplateResponse~~, gak ada.
+
+Them:
+> You might think “this is shorter than the FBV” is one of the advantages. It is, slightly, but as soon as you add the need for [context data](https://spookylukey.github.io/django-views-the-right-way/context-data.html) this advantage disappears, and we’ll find we have [more boilerplate](https://spookylukey.github.io/django-views-the-right-way/context-data.html#boilerplate), not less, with CBVs.
+
+Mine, meta to the author:
+> Biarin we ya materi aslinya diginiin aja wkwkw, namanya juga buat sendiri.
+
 ## ...
 
 ...
