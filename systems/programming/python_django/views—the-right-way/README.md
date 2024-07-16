@@ -245,6 +245,26 @@ Them:
 Mine, meta to the author:
 > Biarin we ya materi aslinya diginiin aja wkwkw, namanya juga buat sendiri.
 
+## How to do anything in a view - Original
+
+So, you have a template for writing a view function. There is something different you want to do. How should you go about it?
+
+The answer is:
+> Just do it.
+
+That probably isn’t very clear yet, so I’ll cover some common examples. What I want you to remember is:
+- You are in charge. It’s your view function. You make it do whatever you want it to do, without trying to fit into someone else’s pattern. Just do it.
+- It’s probably not hard and you can probably do it already.
+- Sometimes you might have to write a little bit of code to make it do what you want, rather than being able to find something already written. But you are a software developer, you write code. Take responsibility and just do it.
+- It doesn’t have to be perfect yet. In time you’ll find ways to make your code more concise if you find yourself writing the same things over and over. Don’t be afraid to make some mistakes along the way.
+
+Mine:
+> Bener banget.
+
+### Discussion: Starting points
+
+...
+
 ## ...
 
 ...
