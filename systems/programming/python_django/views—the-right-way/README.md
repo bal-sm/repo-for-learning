@@ -279,6 +279,20 @@ Some people will say we should use a CBV for the really simple cases, and then s
 Mine:
 > Camkan.
 
+## Adding data to a template
+
+To me:
+> Nice ih, rangkum.
+
+...
+
+## Common context data
+
+To me:
+> **HADE PISAN IH IEU**, **rang** **kum**.
+
+...
+
 ## ...
 
 ...
