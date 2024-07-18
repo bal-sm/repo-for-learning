@@ -291,6 +291,15 @@ To me:
 To me:
 > **HADE PISAN IH IEU**, **rang** **kum**.
 
+..., dipenggal dulu.
+
+Them:
+> But suppose none of these apply — we just have some common data that is used for a group of a pages. Perhaps we have an e-commerce site, and all the checkout pages have a common set of data that they need, without necessarily displaying it in the same way.
+
+Mine, maksudnya:
+> - template-nya berbeda.
+> - `context` values-nya sama.
+
 ...
 
 ## ...
