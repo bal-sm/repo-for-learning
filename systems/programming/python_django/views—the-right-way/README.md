@@ -300,7 +300,24 @@ Mine, maksudnya:
 > - template-nya berbeda.
 > - `context` values-nya sama.
 
-...
+..., TBA.
+
+### Discussion: Helpers vs mixins
+
+..., dipenggal dulu.
+
+The simple solution is the best!
+
+Mine:
+> YES IT IS.
+
+This example is part of a larger principle for the best way to write views, and any similar functions:
+> Building up behaviour by explicitly **composing** smaller, testable units of functionality (whether functions or classes) is far better than building up behaviour via **inheritance**.
+
+For more on this, see Brandon Rhodes’ treatment of [The Composition Over Inheritance Principle](https://python-patterns.guide/gang-of-four/composition-over-inheritance/), which also mentions mixins.
+
+Mine:
+> oh itu makanya `pytest` kan ya.
 
 ## ...
 
