@@ -66,7 +66,7 @@ Yang penting diingat:
 >   - the matched URL (with any captured parts),
 >   - your view function defined above,
 >   - and an optional name that needs to be unique across your project, e.g. `home` or `myapp_articles_list`, to enable [URL reversing](https://docs.djangoproject.com/en/stable/topics/http/urls/#reverse-resolution-of-urls).
->     - > `rfl`-keun ih ieu.
+>     - > - [ ] `rfl`-keun ih ieu.
 >     - > terus saya mah pake nama view-nya lagi aja.
 
 ### The Explanation
