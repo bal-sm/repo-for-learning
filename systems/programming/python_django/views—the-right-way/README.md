@@ -334,6 +334,22 @@ Mine:
 
 ...
 
+## Custom logic at the start — delegation
+
+...
+
+Them:
+> I’ve assumed the `SpecialOffer.get_products()` method exists and returns a `QuerySet`. If you have an appropriate `ManyToMany` relationships the implementation might be as simple as `return self.products.all()`, but it might be different.
+
+Mine, note for my own personal project:
+> tuh ih bikin dulu aja views-nya, terus baru bikin `Model`'s methods-nya
+
+...
+
+## ...
+
+...
+
 ## Source(s)
 
 - [1]: [Django Views — The Right Way](https://spookylukey.github.io/django-views-the-right-way/).
