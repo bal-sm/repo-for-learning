@@ -346,6 +346,18 @@ Mine, note for my own personal project:
 
 ...
 
+### Discussion: Copy-Paste Bad, Re-use Good?
+
+...
+
+Them:
+> Before you can abstract commonality, you actually need at least two examples, preferably three, and abstracting before then is premature. The commonalities may be very different from what you thought, and when you have enough information to make that decision you might decide that it’s not worth it. So avoiding all duplication at any cost is not the aim we should have.
+
+Mine:
+> Jadi reuse all the way! Camkan.
+
+...
+
 ## ...
 
 ...
