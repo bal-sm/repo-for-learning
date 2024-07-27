@@ -45,5 +45,7 @@
 		"files.insertFinalNewline": true,
 		"files.trimFinalNewlines": true,
 		"files.trimTrailingWhitespace": true,
+		"editor.fontFamily": "'SeriousShanns Nerd Font', 'JetBrainsMono Nerd Font', 'RobotoMono Nerd Font', 'Droid Sans Mono', 'monospace', monospace",
+		"editor.fontSize": 16, // default-nya: 14
 	}
 }
