@@ -47,5 +47,8 @@
 		"files.trimTrailingWhitespace": true,
 		"editor.fontFamily": "'SeriousShanns Nerd Font Propo', 'monospace', monospace",
 		"editor.fontSize": 16, // default-nya: 14
+		"workbench.colorTheme": "Default Dark+",
+		"workbench.preferredDarkColorTheme": "Default Dark+",
+		"workbench.preferredLightColorTheme": "Default Light+",
 	}
 }
