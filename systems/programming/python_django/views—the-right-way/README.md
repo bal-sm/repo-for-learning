@@ -66,7 +66,7 @@ Yang penting diingat:
 >   - the matched URL (with any captured parts),
 >   - your view function defined above,
 >   - and an optional name that needs to be unique across your project, e.g. `home` or `myapp_articles_list`, to enable [URL reversing](https://docs.djangoproject.com/en/stable/topics/http/urls/#reverse-resolution-of-urls).
->     - > `rfl`-keun ih ieu.
+>     - > - [ ] `rfl`-keun ih ieu.
 >     - > terus saya mah pake nama view-nya lagi aja.
 
 ### The Explanation
@@ -102,7 +102,7 @@ Them:
 
 Mine, learning note:
 > - [ ] Baca lebih lanjut [ieu](https://docs.djangoproject.com/en/5.0/ref/request-response/),
->   - [ ] dan rangkum.
+>   - [ ] dan `rfl`-keun.
 
 ---
 
@@ -279,7 +279,103 @@ Some people will say we should use a CBV for the really simple cases, and then s
 Mine:
 > Camkan.
 
+## Adding data to a template
+
+To me:
+> Nice ih, rangkum.
+
+...
+
+## Common context data
+
+To me:
+> **HADE PISAN IH IEU**, **rang** **kum**.
+
+..., dipenggal dulu.
+
+Them:
+> But suppose none of these apply — we just have some common data that is used for a group of a pages. Perhaps we have an e-commerce site, and all the checkout pages have a common set of data that they need, without necessarily displaying it in the same way.
+
+Mine, maksudnya:
+> - template-nya berbeda.
+> - `context` values-nya sama.
+
+..., TBA.
+
+### Discussion: Helpers vs mixins
+
+..., dipenggal dulu.
+
+The simple solution is the best!
+
+Mine:
+> YES IT IS.
+
+This example is part of a larger principle for the best way to write views, and any similar functions:
+> Building up behaviour by explicitly **composing** smaller, testable units of functionality (whether functions or classes) is far better than building up behaviour via **inheritance**.
+
+For more on this, see Brandon Rhodes’ treatment of [The Composition Over Inheritance Principle](https://python-patterns.guide/gang-of-four/composition-over-inheritance/), which also mentions mixins.
+
+Mine:
+> oh itu makanya `pytest` kan ya.
+
+## URL parameters in views
+
+Them:
+> As described in the [Django tutorial for views](https://docs.djangoproject.com/en/5.0/intro/tutorial03/) and the [request handling docs](https://docs.djangoproject.com/en/5.0/topics/http/urls/#how-django-processes-a-request), if you want to capture part of a URL to be used in a view function, you can do it by configuring your URLs.
+
+Mine:
+> - [x] `rfl`-keun, [request handling docs](https://docs.djangoproject.com/en/5.0/topics/http/urls/#how-django-processes-a-request), eta.
+>   - > oh udah ketang: <https://github.com/bal-sm/repo-for-learning/blob/261716df4a3cf328704160de62026f024ead5742/systems/programming/python_django/Django-Documentation/URL-dispatcher.md>.
+
+..., TBA.
+
 ## ...
+
+...
+
+## Custom logic at the start — delegation
+
+...
+
+Them:
+> I’ve assumed the `SpecialOffer.get_products()` method exists and returns a `QuerySet`. If you have an appropriate `ManyToMany` relationships the implementation might be as simple as `return self.products.all()`, but it might be different.
+
+Mine, note for my own personal project:
+> tuh ih bikin dulu aja views-nya, terus baru bikin `Model`'s methods-nya
+
+...
+
+### Discussion: Copy-Paste Bad, Re-use Good?
+
+...
+
+Them:
+> Before you can abstract commonality, you actually need at least two examples, preferably three, and abstracting before then is premature. The commonalities may be very different from what you thought, and when you have enough information to make that decision you might decide that it’s not worth it. So avoiding all duplication at any cost is not the aim we should have.
+
+Mine:
+> Jadi reuse all the way! Camkan.
+
+...
+
+## ...
+
+...
+
+## Thin views
+
+...
+
+### Example: push filtering to the model layer
+
+...
+
+#### Chainable custom `QuerySet` methods
+
+...
+
+Mine:
+> Camkan ieu ih!
 
 ...
 
