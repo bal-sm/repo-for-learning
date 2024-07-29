@@ -362,6 +362,23 @@ Mine:
 
 ...
 
+## Thin views
+
+...
+
+### Example: push filtering to the model layer
+
+...
+
+#### Chainable custom `QuerySet` methods
+
+...
+
+Mine:
+> Camkan ieu ih!
+
+...
+
 ## Source(s)
 
 - [1]: [Django Views — The Right Way](https://spookylukey.github.io/django-views-the-right-way/).
