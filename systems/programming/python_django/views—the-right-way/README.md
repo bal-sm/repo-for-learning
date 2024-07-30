@@ -370,6 +370,19 @@ Mine:
 
 ...
 
+```python
+user = request.user
+context = {
+    'basket_bookings': user.bookings.in_basket()
+}
+# etc.
+```
+
+Mine, learning note, for my own personal project:
+> Wow this is actually enlightening (sic) how to put any objects that associated with `user`!
+
+...
+
 #### Chainable custom `QuerySet` methods
 
 ...
