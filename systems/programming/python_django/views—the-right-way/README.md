@@ -395,7 +395,7 @@ Mine:
 ## My notes
 
 Mine:
-> Jadi pokoknya don't overcomplicate coding. I really stopped coding with Django when the views become too "fat". FUCK.
+> Jadi pokoknya don't overcomplicate coding. I really stopped coding with Django when the views become too "fat". FUCK. This. is. the. way.
 
 ## Source(s)
 
