@@ -381,6 +381,9 @@ context = {
 Mine, learning note, for my own personal project:
 > Wow this is actually enlightening (sic) how to put any objects that associated with `user`!
 
+Tuh makanya, cenah Luke:
+> If there is a user involved, I usually prefer code that looks like this. By getting into the habit of starting all user-related queries with `user`, whether I’m displaying a list or a retrieving a single item, it’s harder to forget to add access controls, so I will be less prone to [insecure direct object reference](https://portswigger.net/web-security/access-control/idor) security issues.
+
 ...
 
 #### Chainable custom `QuerySet` methods
