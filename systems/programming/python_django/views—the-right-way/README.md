@@ -392,6 +392,11 @@ Mine:
 
 ...
 
+## My notes
+
+Mine:
+> Jadi pokoknya don't overcomplicate coding. I really stopped coding with Django when the views become too "fat". FUCK.
+
 ## Source(s)
 
 - [1]: [Django Views — The Right Way](https://spookylukey.github.io/django-views-the-right-way/).
