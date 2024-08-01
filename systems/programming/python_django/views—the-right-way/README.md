@@ -245,7 +245,7 @@ Them:
 Mine, meta to the author:
 > Biarin we ya materi aslinya diginiin aja wkwkw, namanya juga buat sendiri.
 
-## How to do anything in a view - Original
+## How to do anything in a view - Original - Penting
 
 So, you have a template for writing a view function. There is something different you want to do. How should you go about it?
 
