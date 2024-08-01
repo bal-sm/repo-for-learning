@@ -337,6 +337,11 @@ def get_context_data(self, **kwargs):
     return context
 ```
 
+_Skipped lagi_
+
+Mine:
+> Pokoknya CBV ribet we, API nya goblok, pake `super()` segala, terus newbie pada bingung juga. Soalnya "bad starting point tea" cenah. Ya gitulah.
+
 ...
 
 ## Common context data
