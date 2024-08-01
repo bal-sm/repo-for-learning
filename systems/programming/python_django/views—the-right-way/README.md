@@ -303,6 +303,21 @@ def home(request):
 Mine:
 > Yes. Just do it.
 
+---
+
+_Another variation_
+
+```python
+def home(request):
+    today = date.today()
+    context = {
+        'today': today,
+    }
+    if today.weekday() == 0:
+        context['special_message'] = 'Happy Monday!'
+    return TemplateResponse(request, "home.html", context)
+```
+
 ...
 
 ## Common context data
