@@ -245,7 +245,7 @@ Them:
 Mine, meta to the author:
 > Biarin we ya materi aslinya diginiin aja wkwkw, namanya juga buat sendiri.
 
-## How to do anything in a view - Original
+## How to do anything in a view - Original - Penting
 
 So, you have a template for writing a view function. There is something different you want to do. How should you go about it?
 
@@ -261,30 +261,90 @@ That probably isn’t very clear yet, so I’ll cover some common examples. What
 Mine:
 > Bener banget.
 
-### Discussion: Starting points - Original
+### Discussion: Starting points
 
-One of the reasons for the pattern I'm recommending is that it makes a great starting point for doing anything. The body of the view — the function that takes a request and returns a response — is right there in front of you, just ready for you to write some logic. If a developer understands **what a view is**, and they have some idea of what they want this view to do, then they will likely have a good idea of what code they need to write. The code structure in front of them will not be an obstacle.
+Them, penting:
+> One of the reasons for the pattern I'm recommending is that it makes a great starting point for doing anything. The body of the view — the function that takes a request and returns a response — is right there in front of you, just ready for you to write some logic. If a developer understands **what a view is**, and they have some idea of what they want this view to do, then they will likely have a good idea of what code they need to write. The code structure in front of them will not be an obstacle.
 
-The same is not true of using CBVs as a starting point. As soon as you need any logic, you have to start adding configuration or defining methods, which brings you pain:
-
-- You've got to know which methods or attributes to define, which involves knowing a massive API.
-- You could easily get it wrong in a way which introduces serious bugs (such as [perhaps the worst security bug I've witnessed in Django itself](https://groups.google.com/d/msg/django-developers/HUZySAw43uE/RD4ifBLPBgAJ))
-- You've got to add the method, which is extra boilerplate.
-- You may need to switch the base class, and understand what that will do.
-
-We'll see more examples of this as we go through.
-
-Some people will say we should use a CBV for the really simple cases, and then switch to an FBV later as needed. But in reality that doesn't happen. Most developers are much more likely to stick with the existing structure of the code, because that is a safe option, and usually involves less work. Plus, once you have started down the CBV route, you quickly gain various mixins etc. and the principle of One Way To Do It and consistency means that plain functions will appear less attractive.
+Them, gak penting, CBV thing:
+> The same is not true of using CBVs as a starting point. As soon as you need any logic, you have to start adding configuration or defining methods, which brings you pain:
+>
+> - You've got to know which methods or attributes to define, which involves knowing a massive API.
+> - You could easily get it wrong in a way which introduces serious bugs (such as [perhaps the worst security bug I've witnessed in Django itself](https://groups.google.com/d/msg/django-developers/HUZySAw43uE/RD4ifBLPBgAJ))
+> - You've got to add the method, which is extra boilerplate.
+> - You may need to switch the base class, and understand what that will do.
+>
+> We'll see more examples of this as we go through.
+>
+> Some people will say we should use a CBV for the really simple cases, and then switch to an FBV later as needed. But in reality that doesn't happen. Most developers are much more likely to stick with the existing structure of the code, because that is a safe option, and usually involves less work. Plus, once you have started down the CBV route, you quickly gain various mixins etc. and the principle of One Way To Do It and consistency means that plain functions will appear less attractive.
 
 Mine:
-> Camkan.
+> ~~Camkan~~. Tuh. Gitu aja.
 
 ## Adding data to a template
 
 To me:
 > Nice ih, rangkum.
 
-...
+_Skipped_
+
+Them:
+> As we said, the answer to how do anything in a view is “Just do it”:
+
+```python
+from datetime import date
+
+def home(request):
+    return TemplateResponse(request, "home.html", {
+        'today': date.today(),   # This is the line you add
+    })
+```
+
+Mine:
+> Yes. Just do it.
+
+---
+
+_Another variation_
+
+```python
+def home(request):
+    today = date.today()
+    context = {
+        'today': today,
+    }
+    if today.weekday() == 0:
+        context['special_message'] = 'Happy Monday!'
+    return TemplateResponse(request, "home.html", context)
+```
+
+### Discussion: Embarrassingly simple?
+
+_Skipped explanation_
+
+```python
+context = {
+    'today': date.today(),
+}
+```
+
+vs.
+
+```python
+def get_context_data(self, **kwargs):
+    context = super().get_context_data(**kwargs)
+    context['today'] = date.today()
+    return context
+```
+
+_Skipped lagi_
+
+Mine:
+> Pokoknya CBV ribet we, API nya goblok, pake `super()` segala, terus newbie pada bingung juga. Soalnya "bad starting point tea" cenah. Ya gitulah.
+
+### Discussion: Boilerplate
+
+..., WIP.
 
 ## Common context data
 
@@ -370,14 +430,51 @@ Mine:
 
 ...
 
+```python
+user = request.user
+context = {
+    'basket_bookings': user.bookings.in_basket()
+}
+# etc.
+```
+
+Mine, learning note, for my own personal project:
+> Wow this is actually enlightening (sic) how to put any objects that associated with `user`!
+
+Tuh makanya, cenah Luke:
+> If there is a user involved, I usually prefer code that looks like this. By getting into the habit of starting all user-related queries with `user`, whether I’m displaying a list or a retrieving a single item, it’s harder to forget to add access controls, so I will be less prone to [insecure direct object reference](https://portswigger.net/web-security/access-control/idor) security issues.
+
+...
+
 #### Chainable custom `QuerySet` methods
 
 ...
 
+```python
+on_shelf_or_in_basket = Booking.objects.in_basket() | Booking.objects.on_shelf()
+```
+
+Mine, learning note:
+> Tuh ih, baru nyadar, memang kalo pake `filter` dalamnya pake `|`, cuman kan ini udah gak ada `filter`-nya.!
+
+Them:
+> The new `QuerySet` is constructed without executing a query. When you evaluate `on_shelf_or_in_basket`, you’ll execute a single DB query that will return both types of bookings. So we get efficient code that is also readable and doesn’t leak our schema inappropriately.
+
 Mine:
-> Camkan ieu ih!
+> Camkan ieu ih! Apalagi masalah custom `Manager` vs custom `QuerySet`-nya.
 
 ...
+
+## My notes
+
+Mine:
+> Jadi pokoknya don't overcomplicate coding. I really stopped coding with Django when the views become too "fat". FUCK. This. is. the. way.
+
+Mine:
+> Ayo dong cepet ngerangkumnya. Gimana ya? Yuk bisa yuk.
+
+Mine
+> Ini gak "Mahmuda's version". Soalnya gak sopan, terus gak nambahin apa-apa.
 
 ## Source(s)
 
