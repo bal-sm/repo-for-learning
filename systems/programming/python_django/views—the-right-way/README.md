@@ -318,6 +318,23 @@ def home(request):
     return TemplateResponse(request, "home.html", context)
 ```
 
+### Discussion: Embarrassingly simple?
+
+```python
+context = {
+    'today': date.today(),
+}
+```
+
+vs.
+
+```python
+def get_context_data(self, **kwargs):
+    context = super().get_context_data(**kwargs)
+    context['today'] = date.today()
+    return context
+```
+
 ...
 
 ## Common context data
