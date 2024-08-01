@@ -320,6 +320,8 @@ def home(request):
 
 ### Discussion: Embarrassingly simple?
 
+_Skipped explanation_
+
 ```python
 context = {
     'today': date.today(),
