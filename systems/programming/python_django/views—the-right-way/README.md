@@ -261,23 +261,25 @@ That probably isn’t very clear yet, so I’ll cover some common examples. What
 Mine:
 > Bener banget.
 
-### Discussion: Starting points - Original
+### Discussion: Starting points
 
-One of the reasons for the pattern I'm recommending is that it makes a great starting point for doing anything. The body of the view — the function that takes a request and returns a response — is right there in front of you, just ready for you to write some logic. If a developer understands **what a view is**, and they have some idea of what they want this view to do, then they will likely have a good idea of what code they need to write. The code structure in front of them will not be an obstacle.
+Them, penting:
+> One of the reasons for the pattern I'm recommending is that it makes a great starting point for doing anything. The body of the view — the function that takes a request and returns a response — is right there in front of you, just ready for you to write some logic. If a developer understands **what a view is**, and they have some idea of what they want this view to do, then they will likely have a good idea of what code they need to write. The code structure in front of them will not be an obstacle.
 
-The same is not true of using CBVs as a starting point. As soon as you need any logic, you have to start adding configuration or defining methods, which brings you pain:
-
-- You've got to know which methods or attributes to define, which involves knowing a massive API.
-- You could easily get it wrong in a way which introduces serious bugs (such as [perhaps the worst security bug I've witnessed in Django itself](https://groups.google.com/d/msg/django-developers/HUZySAw43uE/RD4ifBLPBgAJ))
-- You've got to add the method, which is extra boilerplate.
-- You may need to switch the base class, and understand what that will do.
-
-We'll see more examples of this as we go through.
-
-Some people will say we should use a CBV for the really simple cases, and then switch to an FBV later as needed. But in reality that doesn't happen. Most developers are much more likely to stick with the existing structure of the code, because that is a safe option, and usually involves less work. Plus, once you have started down the CBV route, you quickly gain various mixins etc. and the principle of One Way To Do It and consistency means that plain functions will appear less attractive.
+Them, gak penting, CBV thing:
+> The same is not true of using CBVs as a starting point. As soon as you need any logic, you have to start adding configuration or defining methods, which brings you pain:
+>
+> - You've got to know which methods or attributes to define, which involves knowing a massive API.
+> - You could easily get it wrong in a way which introduces serious bugs (such as [perhaps the worst security bug I've witnessed in Django itself](https://groups.google.com/d/msg/django-developers/HUZySAw43uE/RD4ifBLPBgAJ))
+> - You've got to add the method, which is extra boilerplate.
+> - You may need to switch the base class, and understand what that will do.
+>
+> We'll see more examples of this as we go through.
+>
+> Some people will say we should use a CBV for the really simple cases, and then switch to an FBV later as needed. But in reality that doesn't happen. Most developers are much more likely to stick with the existing structure of the code, because that is a safe option, and usually involves less work. Plus, once you have started down the CBV route, you quickly gain various mixins etc. and the principle of One Way To Do It and consistency means that plain functions will appear less attractive.
 
 Mine:
-> Camkan.
+> ~~Camkan~~. Tuh. Gitu aja.
 
 ## Adding data to a template
 
