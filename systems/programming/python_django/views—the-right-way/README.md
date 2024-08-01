@@ -413,7 +413,10 @@ Mine:
 > Jadi pokoknya don't overcomplicate coding. I really stopped coding with Django when the views become too "fat". FUCK. This. is. the. way.
 
 Mine:
-> Ayo dong cepet ngerangkumnya. Gimana ya?
+> Ayo dong cepet ngerangkumnya. Gimana ya? Yuk bisa yuk.
+
+Mine
+> Ini gak "Mahmuda's version". Soalnya gak sopan, terus gak nambahin apa-apa.
 
 ## Source(s)
 
