@@ -286,6 +286,23 @@ Mine:
 To me:
 > Nice ih, rangkum.
 
+_Skipped_
+
+Them:
+> As we said, the answer to how do anything in a view is “Just do it”:
+
+```python
+from datetime import date
+
+def home(request):
+    return TemplateResponse(request, "home.html", {
+        'today': date.today(),   # This is the line you add
+    })
+```
+
+Mine:
+> Yes. Just do it.
+
 ...
 
 ## Common context data
