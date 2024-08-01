@@ -390,8 +390,18 @@ Tuh makanya, cenah Luke:
 
 ...
 
+```python
+on_shelf_or_in_basket = Booking.objects.in_basket() | Booking.objects.on_shelf()
+```
+
+Mine, learning note:
+> Tuh ih, baru nyadar, memang kalo pake `filter` dalamnya pake `|`, cuman kan ini udah gak ada `filter`-nya.!
+
+Them:
+> The new `QuerySet` is constructed without executing a query. When you evaluate `on_shelf_or_in_basket`, you’ll execute a single DB query that will return both types of bookings. So we get efficient code that is also readable and doesn’t leak our schema inappropriately.
+
 Mine:
-> Camkan ieu ih!
+> Camkan ieu ih! Apalagi masalah custom `Manager` vs custom `QuerySet`-nya.
 
 ...
 
