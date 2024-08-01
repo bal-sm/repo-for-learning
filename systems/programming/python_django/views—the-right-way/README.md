@@ -410,6 +410,9 @@ Mine:
 Mine:
 > Jadi pokoknya don't overcomplicate coding. I really stopped coding with Django when the views become too "fat". FUCK. This. is. the. way.
 
+Mine:
+> Ayo dong cepet ngerangkumnya. Gimana ya?
+
 ## Source(s)
 
 - [1]: [Django Views — The Right Way](https://spookylukey.github.io/django-views-the-right-way/).
