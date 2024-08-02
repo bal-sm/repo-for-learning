@@ -558,6 +558,38 @@ def product_detail(request, slug):
     })
 ```
 
+### Discussion: Layering violations — shortcuts vs mixins - gini aja
+
+`get_object_or_404` is an example of a “shortcut” function. [Django’s docs for shortcut functions](https://docs.djangoproject.com/en/5.0/topics/http/shortcuts/) defines them like this:
+> The package `django.shortcuts` collects helper functions and classes that “span” multiple levels of MVC. In other words, these functions/classes introduce controlled coupling for convenience’s sake.
+
+And the [tutorial](https://docs.djangoproject.com/en/stable/intro/tutorial03/#a-shortcut-get-object-or-404) has a helpful comment about them:
+> **Philosophy**
+>
+> Why do we use a helper function `get_object_or_404()` instead of automatically catching the `ObjectDoesNotExist` exceptions at a higher level, or having the model API raise `Http404` instead of `ObjectDoesNotExist`?
+>
+> Because that would couple the model layer to the view layer. One of the foremost design goals of Django is to maintain loose coupling. Some controlled coupling is introduced in the `django.shortcuts` module.
+
+_Skipped_
+
+Mine:
+> Pokoknya gini:
+> only have local effects on your code
+> In a Django project, tell-tale signs of inappropriately coupled code would include things like passing the request object around everywhere, especially into the model layer, or code outside the view layer that returns HTTP responses objects or generates HTML.
+
+Them, biarin we, apa ya itu teh, aku newbie:
+> (Some people think that the kind of coupling in `get_object_or_404` is always unacceptable, but I think that’s due to different expectations regarding service layers.)
+
+_Skipped CBV things, wlek, panjang banget_
+
+Them, pokoknya gini:
+> So where did the design go wrong? (_design serba-serbi methods and class attributes secara implisit (kan yah?), gitu we dulu, maintenance and learning note_) Look back at the views provided by Django, and you’ll see it is simply carrying on the same pattern.
+>
+> This is a fundamental difference between a shortcut and a mixin. The shortcut is a convenient way to reduce some boilerplate with only local effects on your code, while mixins set up a pattern for your code which determines its structure — and not in a good way. The coupling becomes totally out of control.
+
+Them, menarik, aku harus dengar:
+> Brandon Rhodes has [an excellent discussion on mixins in his talk on Python anti-patterns](https://youtu.be/S0No2zSJmks?t=3095). He also specifically calls out Django CBV mixins (though he manages to avoid saying ‘Django’), and in my opinion his analysis is spot on.
+
 ## ...
 
 ...
