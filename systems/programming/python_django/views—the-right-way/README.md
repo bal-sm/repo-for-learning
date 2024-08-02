@@ -1,4 +1,4 @@
-# Django Views — The Right Way
+# Django Views — The Right Way — Lite
 
 Mine:
 > udah we kodenya aja yang ditulis di sini, biar serasa "udah dibaca da ini teh".
@@ -473,8 +473,8 @@ Mine:
 Mine:
 > Ayo dong cepet ngerangkumnya. Gimana ya? Yuk bisa yuk.
 
-Mine
-> Ini gak "Mahmuda's version". Soalnya gak sopan, terus gak nambahin apa-apa.
+Mine:
+> ~~Ini gak "Mahmuda's version". Soalnya gak sopan, terus gak nambahin apa-apa.~~ Lite version.
 
 ## Source(s)
 
