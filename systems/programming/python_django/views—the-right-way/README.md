@@ -369,9 +369,17 @@ _Dan skipped lagi_
 To me:
 > **HADE PISAN IH IEU**, **rang** **kum**.
 
-### First Half
+### First Half - Original - Penting
 
-...
+Suppose we have a bunch of views that end up all needing the same bits of context data. How should we handle that?
+
+There are a few different answers:
+
+1. Is the data going to be needed by pretty much every page in your site? The answer is [context processors](https://docs.djangoproject.com/en/5.0/ref/templates/api/#django.template.RequestContext).
+2. Is the data going to be needed in a large fraction of your site, but not everywhere and is expensive to evaluate? I’d recommend using [lazy evaluation in your context processor](https://stackoverflow.com/a/28146359/182604).
+3. Is the data needed for a “component” that exists really at the template level, perhaps in a base template or is included in several templates? For example, it might be data needed for common elements that appear in a header or footer on lots of pages.
+
+   In general this can be done most easily by using a [custom inclusion template tag](https://docs.djangoproject.com/en/5.0/howto/custom-template-tags/#inclusion-tags/) which can load its own data — that way you don’t have to worry about changing view functions every time you include this component.
 
 ### Second Half
 
