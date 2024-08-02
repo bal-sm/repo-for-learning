@@ -414,19 +414,37 @@ Them:
 Them, jadinya gitu:
 > This is a perfectly adequate technique that is very easy to use, easy to understand and flexible. You can add parameters to the function if necessary, such as the `user` object as above, and combine common sets of these helpers into bigger helpers, as per your requirements. And you can write tests for these helpers if they have any significant logic in them.
 
-### Discussion: Helpers vs mixins
+### Discussion: Helpers vs mixins - Lite
 
-..., dipenggal dulu.
+_Skipped_
 
-The simple solution is the best!
+```python
+class CheckoutPageMixin:
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        user = self.request.user
+        if not user.is_anonymous:
+            context["user_addresses"] = list(user.addresses.order_by("primary", "first_line"))
+        return context
+```
+
+_Skipped_
+
+Mine, pokoknya gini:
+> Wow bad code ieu.
+
+Them, jadinya gitu:
+> The simple solution is the best! (FBV for the winners.)
 
 Mine:
 > YES IT IS.
 
-This example is part of a larger principle for the best way to write views, and any similar functions:
-> Building up behaviour by explicitly **composing** smaller, testable units of functionality (whether functions or classes) is far better than building up behaviour via **inheritance**.
-
-For more on this, see Brandon Rhodes’ treatment of [The Composition Over Inheritance Principle](https://python-patterns.guide/gang-of-four/composition-over-inheritance/), which also mentions mixins.
+Them, interesting:
+> This example is part of a larger principle for the best way to write views, and any similar functions:
+> > Building up behaviour by explicitly **composing** smaller, testable units of functionality (whether functions or classes) is far better than building up behaviour via **inheritance**.
+>
+> For more on this, see Brandon Rhodes’ treatment of [The Composition Over Inheritance Principle](https://python-patterns.guide/gang-of-four/composition-over-inheritance/), which also mentions mixins.
 
 Mine:
 > oh itu makanya `pytest` kan ya.
