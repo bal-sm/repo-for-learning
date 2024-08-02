@@ -381,7 +381,7 @@ There are a few different answers:
 
    In general this can be done most easily by using a [custom inclusion template tag](https://docs.djangoproject.com/en/5.0/howto/custom-template-tags/#inclusion-tags) which can load its own data — that way you don’t have to worry about changing view functions every time you include this component.
 
-### Second Half
+### Second Half - Make it as `context` helper
 
 Them:
 > But suppose none of these apply — we just have some common data that is used for a group of a pages. Perhaps we have an e-commerce site, and all the checkout pages have a common set of data that they need, without necessarily displaying it in the same way.
@@ -390,7 +390,29 @@ Mine, maksudnya:
 > - template-nya berbeda.
 > - `context` values-nya sama.
 
-..., TBA.
+Them:
+> For this, we can use the simple technique below of *pulling* out the code that returns the common data into a function:
+
+```python
+def checkout_start(request):
+    context = {
+        # etc
+    } | checkout_pages_context_data(request.user)
+    return TemplateResponse(request, "shop/checkout/start.html", context)
+
+
+def checkout_pages_context_data(user):
+    context = {}
+    if not user.is_anonymous:
+        context["user_addresses"] = list(user.addresses.order_by("primary", "first_line"))
+    return context
+```
+
+Them:
+> Just add `| checkout_pages_context_data(request.user)` into every view that needs it.
+
+Them, jadinya gitu:
+> This is a perfectly adequate technique that is very easy to use, easy to understand and flexible. You can add parameters to the function if necessary, such as the `user` object as above, and combine common sets of these helpers into bigger helpers, as per your requirements. And you can write tests for these helpers if they have any significant logic in them.
 
 ### Discussion: Helpers vs mixins
 
