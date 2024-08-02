@@ -354,7 +354,15 @@ _Skipped lagi_
 Mine, TL;DR deui:
 > Pengilangan (sic) `request` (jadinya secara implisit aja) adalah suatu ide buruk. Mau gimana juga, udah we technical nya juga aku gak usah peduli.
 
-..., WIP.
+_Skipped some text dan kode-kode-nya_
+
+Mine, pokoknya gini:
+> In other words:
+> - The boilerplate you need for a basic CBV is bigger than for an FBV.
+> - It’s so big and tedious that people feel the need of snippets libraries.
+>   - > such as [this for emacs](https://github.com/pashinin/emacsd/blob/c8e50e6bb573641f3ffd454236215ea59e4eca13/snippets/python-mode/class) and [this for vim](https://github.com/honza/vim-snippets/blob/087d3e7c72912baeb6b1d7ba626e61d50092c848/UltiSnips/django.snippets#L357), and [this for Sublime Text](https://github.com/mvdwaeter/dotfiles/blob/60673ae395bf493fd5fa6addeceac662218e1703/osx/Sublime%20Text/get_context_data.sublime-snippet).
+
+_Dan skipped lagi_
 
 ## Common context data
 
