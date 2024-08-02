@@ -463,6 +463,27 @@ Them:
 >   - We want `/product/` to be the prefix for all these pages,
 >   - and the next part to be the “slug” for the product
 >     - — a URL-friendly version of the name (e.g `white-t-shirt` instead of “White T-Shirt”).
+>
+> We can do that as follows:
+
+```python
+# urls.py
+
+from django.urls import path
+
+from . import views
+
+urlpatterns = [
+    path('products/<slug:slug>/', views.product_detail, name='product_detail'),
+]
+```
+
+```python
+# views.py
+
+def product_detail(request, slug):
+    return TemplateResponse(request, 'shop/product_detail.html', {})
+```
 
 ..., WIP.
 
