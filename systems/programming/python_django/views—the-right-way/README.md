@@ -344,6 +344,16 @@ Mine:
 
 ### Discussion: Boilerplate
 
+_Skipped_
+
+Mine, TL;DR:
+> Pengurangan boilerplate untuk menambah nilai pemahaman kode, itu lebih berharga, daripada untuk mengurangi pengetikan kode.
+
+_Skipped lagi_
+
+Mine, TL;DR deui:
+> Pengilangan (sic) `request` (jadinya secara implisit aja) adalah suatu ide buruk. Mau gimana juga, udah we technical nya juga aku gak usah peduli.
+
 ..., WIP.
 
 ## Common context data
