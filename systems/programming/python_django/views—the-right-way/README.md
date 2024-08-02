@@ -515,6 +515,49 @@ _Skipped CBV things_
 Mine, pokoknya gini:
 > Generic code is impossible. Apalagi di CBV di Django sekarang, soalnya teu puguh. Gitu we.
 
+## Displaying a single database object - Lite
+
+_Skipped, ykiyk_
+
+```python
+product = Product.objects.get(slug='some-product-slug')
+```
+
+---
+
+cuman bisa jadi `Product.DoesNotExist`, makanya pake [`Http404` exception](https://docs.djangoproject.com/en/stable/topics/http/views/#django.http.Http404):
+
+```python
+try:
+    product = Product.objects.get(slug=slug)
+except Product.DoesNotExist:
+    raise Http404("Product not found.")
+```
+
+---
+
+tapi, bisa diringkas loh, pake [`get_object_or_404`](https://docs.djangoproject.com/en/5.0/topics/http/shortcuts/#get-object-or-404):
+
+```python
+# imports
+from django.shortcuts import get_object_or_404
+
+# in the view somewhere
+product = get_object_or_404(Product.objects.all(), slug=slug)
+```
+
+---
+
+Them:
+> If the only thing we are going to do with the product object is render it in a template, then the final, concise version of our view will look like this:
+
+```python
+def product_detail(request, slug):
+    return TemplateResponse(request, 'shop/product_detail.html', {
+        'product': get_object_or_404(Product.objects.all(), slug=slug),
+    })
+```
+
 ## ...
 
 ...
