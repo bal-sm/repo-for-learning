@@ -503,7 +503,17 @@ def product_detail(request, slug: str): # tuh `str`
 
 _Skipped lagi_
 
-..., WIP.
+### Discussion: Type-checked parameters - Lite
+
+Them:
+> Of course, if we add type hints, wouldn’t it be even cooler if we could automatically ensure that the URL configuration matched the view function, both in terms of names and types of arguments?
+>
+> [`django-urlconfchecks`](https://github.com/AliSayyah/django-urlconfchecks/) will do exactly that! (Based on code I wrote, but nicely packaged by Ali Sayyah).
+
+_Skipped CBV things_
+
+Mine, pokoknya gini:
+> Generic code is impossible. Apalagi di CBV di Django sekarang, soalnya teu puguh. Gitu we.
 
 ## ...
 
