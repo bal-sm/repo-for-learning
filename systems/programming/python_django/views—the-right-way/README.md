@@ -608,6 +608,13 @@ vs.
 'product': get_object_or_404(Product.objects.all(), slug=slug),
 ```
 
+### Discussion: Convention vs configuration - Super Lite
+
+Mine, TL;DR:
+> Jadinya, gini, mending kita tulis aja segala hal kodenya, line-by-line (Function Based Views + configuration), daripada harus tau secara implisit of how things work, tau-tau aja `template_name`-nya di-setting kayak gitu, (CBV + convention like Ruby on Rails).
+
+Baca lanjut aja [di sini](https://spookylukey.github.io/django-views-the-right-way/detail-view.html#discussion-convention-vs-configuration), banyak points yang aku langsung TL;DR-in aja.
+
 ...
 
 ## Custom logic at the start — delegation
