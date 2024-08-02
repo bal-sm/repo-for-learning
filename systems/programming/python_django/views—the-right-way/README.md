@@ -590,7 +590,7 @@ Them, pokoknya gini:
 Them, menarik, aku harus dengar:
 > Brandon Rhodes has [an excellent discussion on mixins in his talk on Python anti-patterns](https://youtu.be/S0No2zSJmks?t=3095). He also specifically calls out Django CBV mixins (though he manages to avoid saying ‘Django’), and in my opinion his analysis is spot on.
 
-## Discussion: Comparison to `DetailView` - Lite - gini aja
+### Discussion: Comparison to `DetailView` - Lite - gini aja
 
 ```python
 class ProductDetailView(DetailView):
