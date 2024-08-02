@@ -485,6 +485,8 @@ def product_detail(request, slug):
     return TemplateResponse(request, 'shop/product_detail.html', {})
 ```
 
+_Skipped, ykiyk, baca aja [di sini](https://docs.djangoproject.com/en/5.0/topics/http/urls/#path-converters)_
+
 ..., WIP.
 
 ## ...
