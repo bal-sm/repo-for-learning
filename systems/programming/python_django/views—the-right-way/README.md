@@ -487,6 +487,22 @@ def product_detail(request, slug):
 
 _Skipped, ykiyk, baca aja [di sini](https://docs.djangoproject.com/en/5.0/topics/http/urls/#path-converters)_
 
+### Discussion: Generic code and function signatures - Lite - Modified
+
+_Skipped_
+
+Mine:
+> Pokoknya based on code sebelumnya:
+
+```python
+# views.py
+
+def product_detail(request, slug: str): # tuh `str`
+    return TemplateResponse(request, 'shop/product_detail.html', {})
+```
+
+_Skipped lagi_
+
 ..., WIP.
 
 ## ...
