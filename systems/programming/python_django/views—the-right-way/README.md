@@ -449,7 +449,7 @@ Them, interesting:
 Mine:
 > oh itu makanya `pytest` kan ya.
 
-## URL parameters in views
+## URL parameters in views - Lite
 
 Them:
 > As described in the [Django tutorial for views](https://docs.djangoproject.com/en/5.0/intro/tutorial03/) and the [request handling docs](https://docs.djangoproject.com/en/5.0/topics/http/urls/#how-django-processes-a-request), if you want to capture part of a URL to be used in a view function, you can do it by configuring your URLs.
@@ -458,7 +458,13 @@ Mine:
 > - [x] `rfl`-keun, [request handling docs](https://docs.djangoproject.com/en/5.0/topics/http/urls/#how-django-processes-a-request), eta.
 >   - > oh udah ketang: <https://github.com/bal-sm/repo-for-learning/blob/261716df4a3cf328704160de62026f024ead5742/systems/programming/python_django/Django-Documentation/URL-dispatcher.md>.
 
-..., TBA.
+Them:
+> - Let’s say we have an e-commerce site where we want to display products on individual pages.
+>   - We want `/product/` to be the prefix for all these pages,
+>   - and the next part to be the “slug” for the product
+>     - — a URL-friendly version of the name (e.g `white-t-shirt` instead of “White T-Shirt”).
+
+..., WIP.
 
 ## ...
 
