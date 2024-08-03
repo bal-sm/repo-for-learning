@@ -929,7 +929,7 @@ Them, cenah:
 
 ### Discussion: Function based generic views - Lite
 
-...
+..., TBA.
 
 ### Discussion: Going further with generics - Lite
 
