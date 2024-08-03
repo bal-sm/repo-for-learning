@@ -761,7 +761,7 @@ Why FBV better (sic) lagi:
   - > di-skip
   - > cuman baca [ini](https://youtu.be/S0No2zSJmks?t=3116), sama ini, [The Composition Over Inheritance Principle](https://python-patterns.guide/gang-of-four/composition-over-inheritance/#dodge-mixins). soon. TODO. sayanggg.
 
-## Custom logic at the start — delegation
+## Custom logic at the start — delegation - Mahmuda's version
 
 The next few pages address the problem of needing to re-use some logic from one view in another view.
 
@@ -927,7 +927,7 @@ Mine:
 > Ayo dong cepet ngerangkumnya. Gimana ya? Yuk bisa yuk.
 
 Mine:
-> ~~Ini gak "Mahmuda's version". Soalnya gak sopan, terus gak nambahin apa-apa.~~ Lite version.
+> ~~Ini gak "Mahmuda's version". Soalnya gak sopan, terus gak nambahin apa-apa.~~ Lite version, jeung Mahmuda's version.
 
 ## Source(s)
 
