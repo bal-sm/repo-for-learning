@@ -859,6 +859,13 @@ Mine, note for my own personal project:
   - look at our old `product_list` view and
   - apply [parameterisation](https://www.toptal.com/python/python-parameterized-design-patterns).
 
+- The extra parameters we need to pass are:
+  - the product list `QuerySet`;
+  - the name of the template to use; and
+  - any extra context data.
+  - With those in place we can easily pull out a `display_product_list` function, and
+    - call it from our two entry-point view functions:
+
 ...
 
 ### Discussion: Copy-Paste Bad, Re-use Good?
