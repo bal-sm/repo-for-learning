@@ -927,6 +927,10 @@ Mine, deui, learning note:
 Them, cenah:
 > That’s it! See below for some more discussion about how this delegation pattern might evolve. Otherwise, onto [Custom logic in the middle — dependency injection](https://spookylukey.github.io/django-views-the-right-way/dependency-injection.html).
 
+### Discussion: Function based generic views - Lite
+
+...
+
 ...
 
 ### Discussion: Copy-Paste Bad, Re-use Good?
