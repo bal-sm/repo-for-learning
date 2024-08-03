@@ -636,7 +636,7 @@ Mine, masalah CBV-nya, TL;DR:
 Mine, just a note:
 > Yang "otoh"-nya aku skip, soalnya gak pake kode sebagai contoh.
 
-### Discussion: Generic code and variable names
+### Discussion: Generic code and variable names - Lite
 
 _Skipped CBV things_
 
