@@ -615,17 +615,151 @@ Mine, TL;DR:
 
 Baca lanjut aja [di sini](https://spookylukey.github.io/django-views-the-right-way/detail-view.html#discussion-convention-vs-configuration), banyak points yang aku langsung skip aja.
 
-### Discussion: Static vs dynamic
+### Discussion: Static vs dynamic - Lite
 
-...
+_Skipped CBV thing_
 
-### Discussion: Generic code and variable names
+Mine, jadi gini:
+> `get_object_or_404(Product.objects.all(), …)`
+>
+> vs.
+>
+> `get_object_or_404(Product, …)`
+>
+> yang pertama dong.
+>
+> soalnya diubah (misal) jadi `Product.objects.visible()` itu gampang.
 
-...
+Mine, masalah CBV-nya, TL;DR:
+> bikin ribet soalnya dari "a simple attribute", (static, `queryset = Product.objects.all()`), kalau harus get from `request`, jadi "an "implied" (wlek) method", (dynamic, `def get_queryset(): blablabla`), terus belum lagi kalau pake ditambahin methods yang pake waktu, jadinya ngaco soalnya "executed at module import time".
 
-## Displaying a list of objects
+Mine, just a note:
+> Yang "otoh"-nya aku skip, soalnya gak pake kode sebagai contoh.
 
-...
+### Discussion: Generic code and variable names - Lite
+
+_Skipped CBV things_
+
+Them, pokoknya gini:
+> The issue here is again the problem of generic code. For the view code, it’s an unusually tricky problem — you are inheriting from generic code that doesn’t know a better name than object. However, **your** code is not generic, and could have chosen a much better name, but your code isn’t “in charge”.
+
+Them, terus gini:
+> This is a problem that is specific to **class based** generic code. If you write [function based generic code](https://spookylukey.github.io/django-views-the-right-way/delegation.html#function-based-generic-views), the problem doesn’t exist, because you don’t inherit local variable names.
+
+Mine:
+> barina ge gak penting, eta "function based generic code" teh. baca aja nanti di [sini](#custom-logic-at-the-start--delegation).
+
+Them, penting lagi:
+> We can think of this in terms of the “framework vs library” debate. Frameworks impose a structure on your code, a mould that you have to fit into, where your function gets called by the framework. In contrast, libraries leave you in control, you choose to call the library functions in the structure you see fit. Both have their place, but if we accept the constraints of a framework we should be sure that it is worth it.
+
+Mine:
+> makanya gening dari kode jadi real object yang kepegang, wow.
+
+## Displaying a list of objects - Lite
+
+_Skipped explanation_
+
+Mine:
+> gini aja:
+
+```python
+def product_list(request):
+    return TemplateResponse(request, 'shop/product_list.html', {
+        'products': Product.objects.all(),
+    })
+```
+
+---
+
+_Skipped lagi_
+
+Mine:
+> Kalau dipisah-pisah memakai paging, [`Paginator`](https://docs.djangoproject.com/en/5.0/topics/pagination/#using-paginator-in-a-view-function), jadinya gini:
+
+```python
+from django.core.paginator import Paginator
+
+def product_list(request):
+    products = Product.objects.all()
+    paginator = Paginator(products, 5)  # Show 5 products per page.
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return TemplateResponse(request, 'shop/product_list.html', {
+        'page_obj': page_obj,
+    })
+```
+
+Mine:
+> Baca, [`Paginator.get_page`](https://docs.djangoproject.com/en/stable/ref/paginator/#django.core.paginator.Paginator.get_page) yang akhirnya me-`return` [`Page`](https://docs.djangoproject.com/en/5.0/ref/paginator/#page-class).
+
+Them:
+> Your real view might have additional needs, like filtering and ordering. These can be handled by responding to query string parameters and modifying your `products` `QuerySet` above.
+
+---
+
+_Skipped explanation_
+
+Mine:
+> bisa dijadiin utility / helper kayak gini:
+
+```python
+def paged_object_list_context(request, products, paginate_by=10):
+    paginator = Paginator(products, paginate_by)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return { 'page_obj': page_obj }
+```
+
+Mine, just a note and a TODO:
+> gini aja kan ya? udah. disuruh sama bestie. coba cobain.
+
+---
+
+Them, penting:
+> There is a bit of boilerplate here for doing pagination. If you have a standardised convention of using page as your query string parameter for paging, you could pull some of this boilerplate out into a utility like `paged_object_list_context` (left as an exercise for you) to produce something a bit shorter:
+
+```python
+def product_list(request):
+    products = Product.objects.all()
+    context = {
+       # ...
+    } | paged_object_list_context(request, products, paginate_by=5)
+    return TemplateResponse(request, 'shop/product_list.html', context)
+```
+
+### Discussion: Discovering re-usable units of code - Lite and personalized
+
+Why FBV better (sic) lagi:
+- Membuat kita mahir dalam menulis kode sendiri
+  - daripada memakai CBV, yang (sic, indo tapi) memaksa kita untuk menyesuaikan pengetikan kode sesuai struktur CBV tersebut
+- `paged_object_list_context` ✔️✔️✔️
+  - lebih panjang sedikit dari `ListView`
+  - cuman bikin kita punya kontrol penuh terhadap `view` function kita
+  - lebih readable
+  - extremely easy to debug
+  - extremely easy for further customization
+  - > You also have a utility that is separately testable
+    - > with a well-defined interface
+      - > that means its very unlikely to interact badly with the different contexts you might use it in.
+- [`ListView`](https://docs.djangoproject.com/en/stable/topics/pagination/#paginating-a-listview) is bad!
+  - > di-skip aja, baca aja di-[sini](https://spookylukey.github.io/django-views-the-right-way/list-view.html#discussion-discovering-re-usable-units-of-code).
+- `Paginator` ✔️✔️✔️
+  - > which is a great example of the kind of re-usable functionality that you should be looking for in your own projects.
+  - > It has a single responsibility — it handles pagination.
+  - > It has a clearly defined interface that can be documented and understood, and separately tested, and used outside of a web context.
+- Contoh lanjut-nya buat inspirasi:
+  - `ExcelFormatter`
+  - `OdsFormatter`
+    - > simple abstractions over creating spreadsheets
+    - > that share an interface so that the user can choose between `XLS` or `ODS` files
+  - > small HTTP-level utilities that do redirections or closing of popups
+    - > wow siah eta, popups cenah.
+  - > small glue utilities that
+    - > encapsulate some small convention or decision
+      - > that needs to be applied in several places.
+- Again, `Mixins` wlek
+  - > di-skip
+  - > cuman baca [ini](https://youtu.be/S0No2zSJmks?t=3116), sama ini, [The Composition Over Inheritance Principle](https://python-patterns.guide/gang-of-four/composition-over-inheritance/#dodge-mixins). soon. TODO. sayanggg.
 
 ## Custom logic at the start — delegation
 
@@ -713,3 +847,4 @@ Mine:
 
 - [1]: [Django Views — The Right Way](https://spookylukey.github.io/django-views-the-right-way/).
   - > Thanks to Spookylukey!
+  - > This version -> <https://github.com/spookylukey/django-views-the-right-way/tree/8fd970483ccf0c0edc7252c548c19c35b74c5a57>.
