@@ -30,7 +30,7 @@ Them, dirangkum:
 Mine:
 > Dari dulu kek aku ngerangkum ini.
 
-## The Right Way
+## The Right Way - Lite
 
 ### The Pattern
 
