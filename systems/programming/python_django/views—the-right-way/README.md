@@ -615,7 +615,7 @@ Mine, TL;DR:
 
 Baca lanjut aja [di sini](https://spookylukey.github.io/django-views-the-right-way/detail-view.html#discussion-convention-vs-configuration), banyak points yang aku langsung skip aja.
 
-### Discussion: Static vs dynamic
+### Discussion: Static vs dynamic - Lite
 
 _Skipped CBV thing_
 
