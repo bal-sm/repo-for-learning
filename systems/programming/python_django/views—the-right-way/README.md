@@ -745,3 +745,4 @@ Mine:
 
 - [1]: [Django Views — The Right Way](https://spookylukey.github.io/django-views-the-right-way/).
   - > Thanks to Spookylukey!
+  - > This version -> <https://github.com/spookylukey/django-views-the-right-way/tree/8fd970483ccf0c0edc7252c548c19c35b74c5a57>.
