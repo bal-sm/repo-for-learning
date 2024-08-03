@@ -838,7 +838,16 @@ Mine, note for my own personal project:
       - (which I’ll represent using the function `apply_product_filtering()` below).
   - How should we do that?
 
-One way would be to do what we did in [Common context data](#common-context-data---lite) — move part of the existing `product_list` view into a function that takes some parameters and returns the data to be added to the context. However, sometimes that interface won’t work. For instance, if the view decides that in some cases it will return a completely different kind of response — perhaps a redirection, for example — then the common logic won’t fit into that mould.
+- One way would be to do what we did in [Common context data](#common-context-data---lite):
+  - move part of the existing `product_list` view
+    - into a function that:
+      - takes some parameters and
+      - returns the data to be added to the `context`.
+  - However, sometimes that interface **won’t** work.
+    - For instance, if the view decides that
+      - in some cases it will return _a completely different kind of response_:
+        - (perhaps a redirection, for example)
+        - then the common logic won’t fit into that mould.
 
 ...
 
