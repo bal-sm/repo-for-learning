@@ -631,7 +631,7 @@ Mine, jadi gini:
 > soalnya diubah (misal) jadi `Product.objects.visible()` itu gampang.
 
 Mine, masalah CBV-nya, TL;DR:
-> bikin ribet soalnya dari "a simple attribute", kalau harus get from `request`, jadi "an "implied" (wlek) method", terus belum lagi kalau pake ditambahin methods yang pake waktu, jadinya ngaco soalnya "executed at module import time".
+> bikin ribet soalnya dari "a simple attribute", (static, `queryset = Product.objects.all()`), kalau harus get from `request`, jadi "an "implied" (wlek) method", (dynamic, `def get_queryset(): blablabla`), terus belum lagi kalau pake ditambahin methods yang pake waktu, jadinya ngaco soalnya "executed at module import time".
 
 Mine, just a note:
 > Yang "otoh"-nya aku skip, soalnya gak pake kode sebagai contoh.
