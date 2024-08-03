@@ -866,6 +866,35 @@ Mine, note for my own personal project:
   - With those in place we can easily pull out a `display_product_list` function, and
     - call it from our two entry-point view functions:
 
+```python
+def product_list(request):
+    return display_product_list(
+        request,
+        queryset=Product.objects.all(),
+        template_name='shop/product_list.html',
+    )
+
+
+def special_offer_detail(request, slug):
+    special_offer = get_object_or_404(SpecialOffer.objects.all(), slug=slug)
+    return display_product_list(
+        request,
+        context={
+            'special_offer': special_offer,
+        },
+        queryset=special_offer.get_products(),
+        template_name='shop/special_offer_detail.html',
+    )
+
+
+def display_product_list(request, *, context=None, queryset, template_name):
+    if context is None:
+        context = {}
+    queryset = apply_product_filtering(request, queryset)
+    context |= paged_object_list_context(request, queryset, paginate_by=5)
+    return TemplateResponse(request, template_name, context)
+```
+
 ...
 
 ### Discussion: Copy-Paste Bad, Re-use Good?
