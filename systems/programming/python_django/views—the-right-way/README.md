@@ -828,6 +828,16 @@ Them:
 Mine, note for my own personal project:
 > tuh ih bikin dulu aja views-nya, terus baru bikin `Model`'s methods-nya
 
+- But now we want to change this view
+  - to re-use the logic in our normal `product_list` view, whether it is:
+    - filtering/
+    - sorting/
+    - paging or
+    - anything else;
+    - it has built up by now
+      - (which I’ll represent using the function `apply_product_filtering()` below).
+  - How should we do that?
+
 ...
 
 ### Discussion: Copy-Paste Bad, Re-use Good?
