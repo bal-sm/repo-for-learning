@@ -669,6 +669,26 @@ def product_list(request):
     })
 ```
 
+---
+
+_Skipped lagi_
+
+Mine:
+> Kalau dipisah-pisah memakai paging, [`Paginator`](https://docs.djangoproject.com/en/stable/topics/pagination/#using-paginator-in-a-view-function), jadinya gini:
+
+```python
+from django.core.paginator import Paginator
+
+def product_list(request):
+    products = Product.objects.all()
+    paginator = Paginator(products, 5)  # Show 5 products per page.
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return TemplateResponse(request, 'shop/product_list.html', {
+        'page_obj': page_obj,
+    })
+```
+
 ...
 
 ## Custom logic at the start — delegation
