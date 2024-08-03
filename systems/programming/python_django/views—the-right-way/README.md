@@ -261,7 +261,7 @@ That probably isn’t very clear yet, so I’ll cover some common examples. What
 Mine:
 > Bener banget.
 
-### Discussion: Starting points
+### Discussion: Starting points - Lite
 
 Them, penting:
 > One of the reasons for the pattern I'm recommending is that it makes a great starting point for doing anything. The body of the view — the function that takes a request and returns a response — is right there in front of you, just ready for you to write some logic. If a developer understands **what a view is**, and they have some idea of what they want this view to do, then they will likely have a good idea of what code they need to write. The code structure in front of them will not be an obstacle.
