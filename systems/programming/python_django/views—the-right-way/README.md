@@ -3,7 +3,7 @@
 Mine:
 > udah we kodenya aja yang ditulis di sini, biar serasa "udah dibaca da ini teh".
 
-## Intro
+## Intro - Lite
 
 Them, dirangkum:
 > I’ve also added extra bits (in this guide) for common tasks and patterns in FBVs for which CBVs are often suggested as the solution.
@@ -30,9 +30,9 @@ Them, dirangkum:
 Mine:
 > Dari dulu kek aku ngerangkum ini.
 
-## The Right Way
+## The Right Way - Lite
 
-### The Pattern
+### The Pattern - Lite
 
 `views.py`:
 
@@ -69,7 +69,7 @@ Yang penting diingat:
 >     - > - [ ] `rfl`-keun ih ieu.
 >     - > terus saya mah pake nama view-nya lagi aja.
 
-### The Explanation
+### The Explanation - Lite
 
 Mine:
 > rangkum gak yah?
@@ -261,7 +261,7 @@ That probably isn’t very clear yet, so I’ll cover some common examples. What
 Mine:
 > Bener banget.
 
-### Discussion: Starting points
+### Discussion: Starting points - Lite
 
 Them, penting:
 > One of the reasons for the pattern I'm recommending is that it makes a great starting point for doing anything. The body of the view — the function that takes a request and returns a response — is right there in front of you, just ready for you to write some logic. If a developer understands **what a view is**, and they have some idea of what they want this view to do, then they will likely have a good idea of what code they need to write. The code structure in front of them will not be an obstacle.
@@ -281,7 +281,7 @@ Them, gak penting, CBV thing:
 Mine:
 > ~~Camkan~~. Tuh. Gitu aja.
 
-## Adding data to a template
+## Adding data to a template - Lite
 
 To me:
 > Nice ih, rangkum.
@@ -318,7 +318,7 @@ def home(request):
     return TemplateResponse(request, "home.html", context)
 ```
 
-### Discussion: Embarrassingly simple?
+### Discussion: Embarrassingly simple? - Lite
 
 _Skipped explanation_
 
@@ -342,7 +342,7 @@ _Skipped lagi_
 Mine:
 > Pokoknya CBV ribet we, API nya goblok, pake `super()` segala, terus newbie pada bingung juga. Soalnya "bad starting point tea" cenah. Ya gitulah.
 
-### Discussion: Boilerplate
+### Discussion: Boilerplate - Lite
 
 _Skipped_
 
@@ -364,10 +364,10 @@ Mine, pokoknya gini:
 
 _Dan skipped lagi_
 
-## Common context data
+## Common context data - Lite
 
 To me:
-> **HADE PISAN IH IEU**, **rang** **kum**.
+> ~~**HADE PISAN IH IEU**, **rang** **kum**.~~ Udah.
 
 ### First Half - Original - Penting
 
@@ -381,7 +381,7 @@ There are a few different answers:
 
    In general this can be done most easily by using a [custom inclusion template tag](https://docs.djangoproject.com/en/5.0/howto/custom-template-tags/#inclusion-tags) which can load its own data — that way you don’t have to worry about changing view functions every time you include this component.
 
-### Second Half - Make it as `context` helper
+### Second Half - Make it as `context` helper - Lite
 
 Them:
 > But suppose none of these apply — we just have some common data that is used for a group of a pages. Perhaps we have an e-commerce site, and all the checkout pages have a common set of data that they need, without necessarily displaying it in the same way.
@@ -761,9 +761,66 @@ Why FBV better (sic) lagi:
   - > di-skip
   - > cuman baca [ini](https://youtu.be/S0No2zSJmks?t=3116), sama ini, [The Composition Over Inheritance Principle](https://python-patterns.guide/gang-of-four/composition-over-inheritance/#dodge-mixins). soon. TODO. sayanggg.
 
-## Custom logic at the start — delegation
+## Custom logic at the start — delegation - Mahmuda's version
 
-...
+The next few pages address the problem of needing to re-use some logic from one view in another view.
+
+- We’ve thought about
+  - how we can use utility functions and classes,
+  - but sometimes these don’t cut it
+    - sometimes the majority of the body of the view needs to be re-used.
+  - How can we do that with FBVs?
+
+- Continuing our [example](#displaying-a-list-of-objects---lite) of a list of products,
+  - let’s add a variation:
+  - As well as the main product list page,
+    - we’ve also got a “special offers” page —
+    - or rather, a set of them, because we have a `SpecialOffer` model that allows us to have many different ones.
+      - > maksudnya, "a set of them" teh "sekumpulan penawaran".
+  - Each of these pages:
+    - needs to display some details about the special offer,
+    - and then the list of products associated with that offer.
+  - Our feature requirements say this product list should have
+    - **all** the features of the normal product list:
+      - filtering,
+      - sorting,
+      - etc.
+    - so we want to re-use the logic as much as possible.
+  - > ini (gaya ngerangkum gini) teh bagus gak ya, huft, meta `rfl`.
+
+- So our view will need to do two things:
+  - it will show a single object,
+  - and also shows a list.
+  - The answer of how to do two things with FBVs is: ***do two things***.
+    - No special tricks needed for that. Let’s start with a simple version of our view:
+
+```python
+# urls.py
+
+from . import views
+
+urlpatterns = [
+    path('special-offers/<slug:slug>/', views.special_offer_detail, name='special_offer_detail'),
+]
+```
+
+```python
+# views.py
+
+def special_offer_detail(request, slug):
+    special_offer = get_object_or_404(SpecialOffer.objects.all(), slug=slug)
+    return TemplateResponse(request, 'shop/special_offer_detail.html', {
+        'special_offer': special_offer,
+        'products': special_offer.get_products(),
+    })
+```
+
+Mine:
+> - it will show a single object -> `special_offer` tea.
+> - and also shows a list -> `products` tea.
+
+Mine:
+> Oh iya ngerti aing, kan kalo `product_list`, langsung aja semua `Product`, kalo `special_offer_`**`detail`**, itu asalnya klik dulu suatu `SpecialOffer` object, di suatu view mana gitu loh bebas, baru ke `special_offer_detail` itu.
 
 Them:
 > I’ve assumed the `SpecialOffer.get_products()` method exists and returns a `QuerySet`. If you have an appropriate `ManyToMany` relationships the implementation might be as simple as `return self.products.all()`, but it might be different.
@@ -771,7 +828,112 @@ Them:
 Mine, note for my own personal project:
 > tuh ih bikin dulu aja views-nya, terus baru bikin `Model`'s methods-nya
 
-...
+- But now we want to change this view
+  - to re-use the logic in our normal `product_list` view, whether it is:
+    - filtering/
+    - sorting/
+    - paging or
+    - anything else;
+    - it has built up by now
+      - (which I’ll represent using the function `apply_product_filtering()` below).
+  - How should we do that?
+
+- One way would be to do what we did in [Common context data](#common-context-data---lite):
+  - move part of the existing `product_list` view
+    - into a function that:
+      - takes some parameters and
+      - returns the data to be added to the `context`.
+  - However, sometimes that interface **won’t** work.
+    - For instance, if the view decides that
+      - in some cases it will return _a completely different kind of response_:
+        - (perhaps a redirection, for example)
+        - then the common logic won’t fit into that mould.
+
+---
+
+- Instead we’ll use what I’m going to call **delegation**:
+  - our entry-point view will delegate
+    - the rest of the work -to-> another function.
+
+- To create this function,
+  - look at our old `product_list` view and
+  - apply [parameterisation](https://www.toptal.com/python/python-parameterized-design-patterns).
+
+- The extra parameters we need to pass are:
+  - the product list `QuerySet`;
+  - the name of the template to use; and
+  - any extra context data.
+  - With those in place we can easily pull out a `display_product_list` function, and
+    - call it from our two entry-point view functions:
+
+```python
+def product_list(request):
+    return display_product_list(
+        request,
+        queryset=Product.objects.all(),
+        template_name='shop/product_list.html',
+    )
+
+
+def special_offer_detail(request, slug):
+    special_offer = get_object_or_404(SpecialOffer.objects.all(), slug=slug)
+    return display_product_list(
+        request,
+        context={
+            'special_offer': special_offer,
+        },
+        queryset=special_offer.get_products(),
+        template_name='shop/special_offer_detail.html',
+    )
+
+
+def display_product_list(request, *, context=None, queryset, template_name):
+    if context is None:
+        context = {}
+    queryset = apply_product_filtering(request, queryset)
+    context |= paged_object_list_context(request, queryset, paginate_by=5)
+    return TemplateResponse(request, template_name, context)
+```
+
+Them, a note:
+> For those unfamiliar with the signature on `display_product_list`:
+> - the arguments after * are [keyword only arguments](https://lukeplant.me.uk/blog/posts/keyword-only-arguments-in-python/).
+>   - > - [ ] `rfl`-keun ieu.
+> - `queryset` and `template_name` lack defaults (because we don’t have any good defaults) which forces calling code to supply the arguments.
+> - for `context` we do have a sensible default, but also need to avoid the [mutable default arguments gotcha](https://docs.python-guide.org/writing/gotchas/#mutable-default-arguments), so we use `None` in the signature and change to `{}` later.
+>   - > - [ ] alah siah ieu, ada kan yah?
+
+Them:
+> At the template level, we’ll probably do a similar refactoring, using [`include`](https://docs.djangoproject.com/en/5.0/ref/templates/builtins/#include) to factor out duplication.
+
+---
+
+Mine:
+> Addition yang bawah ini, soalnya ngegantung eta, `apply_product_filtering`, gak dijelasin.
+
+```python
+def apply_product_filtering(request, queryset):
+    query = request.GET.get('q', '').strip()
+    if query:
+        queryset = queryset.filter(name__icontains=query)
+    return queryset
+```
+
+Mine, deui, learning note:
+> ih gimana sih itu teh?
+
+---
+
+Them, cenah:
+> That’s it! See below for some more discussion about how this delegation pattern might evolve. Otherwise, onto [Custom logic in the middle — dependency injection](https://spookylukey.github.io/django-views-the-right-way/dependency-injection.html).
+
+### Discussion: Function based generic views - Lite
+
+..., TBA.
+
+### Discussion: Going further with generics - Lite
+
+..., TBA.
 
 ### Discussion: Copy-Paste Bad, Re-use Good?
 
@@ -794,6 +956,14 @@ Mine:
 ...
 
 ### Example: push filtering to the model layer
+
+...
+
+Them:
+> our code is less readable — we are going to have to work out what those filtering conditions actually refer to. We could add a comment against each one, as in the code above. But I always try to interpret comments like that as “code smells”. They are hints telling me that my code isn’t clear by itself.
+
+Mine:
+> Aku jadi setuju bestie, that's one of the why (sic, kan gaul) comments are bad, "code smells". `rfl`. the notes. one of my personal project.
 
 ...
 
@@ -841,7 +1011,7 @@ Mine:
 > Ayo dong cepet ngerangkumnya. Gimana ya? Yuk bisa yuk.
 
 Mine:
-> ~~Ini gak "Mahmuda's version". Soalnya gak sopan, terus gak nambahin apa-apa.~~ Lite version.
+> ~~Ini gak "Mahmuda's version". Soalnya gak sopan, terus gak nambahin apa-apa.~~ Lite version, jeung Mahmuda's version.
 
 ## Source(s)
 
