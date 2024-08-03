@@ -855,6 +855,10 @@ Mine, note for my own personal project:
   - our entry-point view will delegate
     - the rest of the work -to-> another function.
 
+- To create this function,
+  - look at our old `product_list` view and
+  - apply [parameterisation](https://www.toptal.com/python/python-parameterized-design-patterns).
+
 ...
 
 ### Discussion: Copy-Paste Bad, Re-use Good?
