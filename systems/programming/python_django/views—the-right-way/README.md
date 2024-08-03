@@ -895,6 +895,14 @@ def display_product_list(request, *, context=None, queryset, template_name):
     return TemplateResponse(request, template_name, context)
 ```
 
+Them, a note:
+> For those unfamiliar with the signature on `display_product_list`:
+> - the arguments after * are [keyword only arguments](https://lukeplant.me.uk/blog/posts/keyword-only-arguments-in-python/).
+>   - > - [ ] `rfl`-keun ieu.
+> - `queryset` and `template_name` lack defaults (because we don’t have any good defaults) which forces calling code to supply the arguments.
+> - for `context` we do have a sensible default, but also need to avoid the [mutable default arguments gotcha](https://docs.python-guide.org/writing/gotchas/#mutable-default-arguments), so we use `None` in the signature and change to `{}` later.
+>   - > - [ ] alah siah ieu, ada kan yah?
+
 ...
 
 ### Discussion: Copy-Paste Bad, Re-use Good?
