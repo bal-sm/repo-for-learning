@@ -780,7 +780,10 @@ The next few pages address the problem of needing to re-use some logic from one 
     - needs to display some details about the special offer,
     - and then the list of products associated with that offer.
   - Our feature requirements say this product list should have
-    - **all** the features of the normal product list (filtering, sorting etc.),
+    - **all** the features of the normal product list:
+      - filtering,
+      - sorting,
+      - etc.
     - so we want to re-use the logic as much as possible.
   - > ini (gaya ngerangkum gini) teh bagus gak ya, huft, meta `rfl`.
 
