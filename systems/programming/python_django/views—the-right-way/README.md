@@ -849,6 +849,12 @@ Mine, note for my own personal project:
         - (perhaps a redirection, for example)
         - then the common logic won’t fit into that mould.
 
+---
+
+- Instead we’ll use what I’m going to call **delegation**:
+  - our entry-point view will delegate
+    - the rest of the work -to-> another function.
+
 ...
 
 ### Discussion: Copy-Paste Bad, Re-use Good?
