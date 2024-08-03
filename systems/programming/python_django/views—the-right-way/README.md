@@ -715,10 +715,8 @@ Mine, just a note and a TODO:
 
 ---
 
-_Skipped explanation_
-
-Mine:
-> terus gini:
+Them, penting:
+> There is a bit of boilerplate here for doing pagination. If you have a standardised convention of using page as your query string parameter for paging, you could pull some of this boilerplate out into a utility like `paged_object_list_context` (left as an exercise for you) to produce something a bit shorter:
 
 ```python
 def product_list(request):
