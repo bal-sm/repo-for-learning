@@ -674,7 +674,7 @@ def product_list(request):
 _Skipped lagi_
 
 Mine:
-> Kalau dipisah-pisah memakai paging, [`Paginator`](https://docs.djangoproject.com/en/stable/topics/pagination/#using-paginator-in-a-view-function), jadinya gini:
+> Kalau dipisah-pisah memakai paging, [`Paginator`](https://docs.djangoproject.com/en/5.0/topics/pagination/#using-paginator-in-a-view-function), jadinya gini:
 
 ```python
 from django.core.paginator import Paginator
