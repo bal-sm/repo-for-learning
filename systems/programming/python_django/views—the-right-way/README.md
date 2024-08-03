@@ -364,10 +364,10 @@ Mine, pokoknya gini:
 
 _Dan skipped lagi_
 
-## Common context data
+## Common context data - Lite
 
 To me:
-> **HADE PISAN IH IEU**, **rang** **kum**.
+> ~~**HADE PISAN IH IEU**, **rang** **kum**.~~ Udah.
 
 ### First Half - Original - Penting
 
@@ -381,7 +381,7 @@ There are a few different answers:
 
    In general this can be done most easily by using a [custom inclusion template tag](https://docs.djangoproject.com/en/5.0/howto/custom-template-tags/#inclusion-tags) which can load its own data — that way you don’t have to worry about changing view functions every time you include this component.
 
-### Second Half - Make it as `context` helper
+### Second Half - Make it as `context` helper - Lite
 
 Them:
 > But suppose none of these apply — we just have some common data that is used for a group of a pages. Perhaps we have an e-commerce site, and all the checkout pages have a common set of data that they need, without necessarily displaying it in the same way.
