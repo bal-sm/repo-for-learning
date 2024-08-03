@@ -763,6 +763,14 @@ Why FBV better (sic) lagi:
 
 ## Custom logic at the start — delegation
 
+The next few pages address the problem of needing to re-use some logic from one view in another view.
+
+- We’ve thought about
+  - how we can use utility functions and classes,
+  - but sometimes these don’t cut it
+    - sometimes the majority of the body of the view needs to be re-used.
+  - How can we do that with FBVs?
+
 ...
 
 Them:
