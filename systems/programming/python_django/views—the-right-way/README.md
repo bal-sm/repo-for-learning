@@ -727,7 +727,39 @@ def product_list(request):
     return TemplateResponse(request, 'shop/product_list.html', context)
 ```
 
-...
+### Discussion: Discovering re-usable units of code - Lite and personalized
+
+Why FBV better (sic) lagi:
+- Membuat kita mahir dalam menulis kode sendiri
+  - daripada memakai CBV, yang (sic, indo tapi) memaksa kita untuk menyesuaikan pengetikan kode sesuai struktur CBV tersebut
+- `paged_object_list_context` ✔️✔️✔️
+  - lebih panjang sedikit dari `ListView`
+  - cuman bikin kita punya kontrol penuh terhadap `view` function kita
+  - lebih readable
+  - extremely easy to debug
+  - extremely easy for further customization
+  - > You also have a utility that is separately testable
+    - > with a well-defined interface
+      - > that means its very unlikely to interact badly with the different contexts you might use it in.
+- [`ListView`](https://docs.djangoproject.com/en/stable/topics/pagination/#paginating-a-listview) is bad!
+  - > di-skip aja, baca aja di-[sini](https://spookylukey.github.io/django-views-the-right-way/list-view.html#discussion-discovering-re-usable-units-of-code).
+- `Paginator` ✔️✔️✔️
+  - > which is a great example of the kind of re-usable functionality that you should be looking for in your own projects.
+  - > It has a single responsibility — it handles pagination.
+  - > It has a clearly defined interface that can be documented and understood, and separately tested, and used outside of a web context.
+- Contoh lanjut-nya buat inspirasi:
+  - `ExcelFormatter`
+  - `OdsFormatter`
+    - > simple abstractions over creating spreadsheets
+    - > that share an interface so that the user can choose between `XLS` or `ODS` files
+  - > small HTTP-level utilities that do redirections or closing of popups
+    - > wow siah eta, popups cenah.
+  - > small glue utilities that
+    - > encapsulate some small convention or decision
+      - > that needs to be applied in several places.
+- Again, `Mixins` wlek
+  - > di-skip
+  - > cuman baca [ini](https://youtu.be/S0No2zSJmks?t=3116), sama ini, [The Composition Over Inheritance Principle](https://python-patterns.guide/gang-of-four/composition-over-inheritance/#dodge-mixins). soon. TODO. sayanggg.
 
 ## Custom logic at the start — delegation
 
