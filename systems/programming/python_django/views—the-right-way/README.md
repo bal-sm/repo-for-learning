@@ -771,6 +771,19 @@ The next few pages address the problem of needing to re-use some logic from one 
     - sometimes the majority of the body of the view needs to be re-used.
   - How can we do that with FBVs?
 
+- Continuing our [example](#displaying-a-list-of-objects---lite) of a list of products,
+  - let’s add a variation:
+  - As well as the main product list page,
+    - we’ve also got a “special offers” page —
+    - or rather, a set of them, because we have a `SpecialOffer` model that allows us to have many different ones.
+  - Each of these pages:
+    - needs to display some details about the special offer,
+    - and then the list of products associated with that offer.
+  - Our feature requirements say this product list should have
+    - **all** the features of the normal product list (filtering, sorting etc.),
+    - so we want to re-use the logic as much as possible.
+  - > ini (gaya ngerangkum gini) teh bagus gak ya, huft, `rfl`.
+
 ...
 
 Them:
