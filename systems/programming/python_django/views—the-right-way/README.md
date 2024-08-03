@@ -797,6 +797,14 @@ Mine:
 
 ...
 
+Them:
+> our code is less readable — we are going to have to work out what those filtering conditions actually refer to. We could add a comment against each one, as in the code above. But I always try to interpret comments like that as “code smells”. They are hints telling me that my code isn’t clear by itself.
+
+Mine:
+> Aku jadi setuju bestie, that's one of the why (sic, kan gaul) comments are bad, "code smells". `rfl`. the notes. one of my personal project.
+
+...
+
 ```python
 user = request.user
 context = {
