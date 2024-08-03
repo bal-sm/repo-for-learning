@@ -281,7 +281,7 @@ Them, gak penting, CBV thing:
 Mine:
 > ~~Camkan~~. Tuh. Gitu aja.
 
-## Adding data to a template
+## Adding data to a template - Lite
 
 To me:
 > Nice ih, rangkum.
@@ -318,7 +318,7 @@ def home(request):
     return TemplateResponse(request, "home.html", context)
 ```
 
-### Discussion: Embarrassingly simple?
+### Discussion: Embarrassingly simple? - Lite
 
 _Skipped explanation_
 
@@ -342,7 +342,7 @@ _Skipped lagi_
 Mine:
 > Pokoknya CBV ribet we, API nya goblok, pake `super()` segala, terus newbie pada bingung juga. Soalnya "bad starting point tea" cenah. Ya gitulah.
 
-### Discussion: Boilerplate
+### Discussion: Boilerplate - Lite
 
 _Skipped_
 
