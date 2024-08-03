@@ -69,7 +69,7 @@ Yang penting diingat:
 >     - > - [ ] `rfl`-keun ih ieu.
 >     - > terus saya mah pake nama view-nya lagi aja.
 
-### The Explanation
+### The Explanation - Lite
 
 Mine:
 > rangkum gak yah?
