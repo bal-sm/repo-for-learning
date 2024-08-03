@@ -776,6 +776,7 @@ The next few pages address the problem of needing to re-use some logic from one 
   - As well as the main product list page,
     - we’ve also got a “special offers” page —
     - or rather, a set of them, because we have a `SpecialOffer` model that allows us to have many different ones.
+      - > maksudnya, "a set of them" teh "sekumpulan penawaran".
   - Each of these pages:
     - needs to display some details about the special offer,
     - and then the list of products associated with that offer.
