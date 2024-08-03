@@ -655,7 +655,19 @@ Them, penting lagi:
 Mine:
 > makanya gening dari kode jadi real object yang kepegang, wow.
 
-## Displaying a list of objects
+## Displaying a list of objects - Lite
+
+_Skipped explanation_
+
+Mine:
+> gini aja:
+
+```python
+def product_list(request):
+    return TemplateResponse(request, 'shop/product_list.html', {
+        'products': Product.objects.all(),
+    })
+```
 
 ...
 
