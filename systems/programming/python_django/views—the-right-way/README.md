@@ -689,6 +689,9 @@ def product_list(request):
     })
 ```
 
+Mine:
+> Baca, [`Paginator.get_page`](https://docs.djangoproject.com/en/stable/ref/paginator/#django.core.paginator.Paginator.get_page) yang akhirnya me-`return` [`Page`](https://docs.djangoproject.com/en/5.0/ref/paginator/#page-class).
+
 ...
 
 ## Custom logic at the start — delegation
