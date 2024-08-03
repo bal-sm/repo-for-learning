@@ -713,6 +713,22 @@ def paged_object_list_context(request, products, paginate_by=10):
 Mine, just a note and a TODO:
 > gini aja kan ya? udah. disuruh sama bestie. coba cobain.
 
+---
+
+_Skipped explanation_
+
+Mine:
+> terus gini:
+
+```python
+def product_list(request):
+    products = Product.objects.all()
+    context = {
+       # ...
+    } | paged_object_list_context(request, products, paginate_by=5)
+    return TemplateResponse(request, 'shop/product_list.html', context)
+```
+
 ...
 
 ## Custom logic at the start — delegation
