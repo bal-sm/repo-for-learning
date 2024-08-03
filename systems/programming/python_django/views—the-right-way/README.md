@@ -617,6 +617,19 @@ Baca lanjut aja [di sini](https://spookylukey.github.io/django-views-the-right-w
 
 ### Discussion: Static vs dynamic
 
+_Skipped CBV thing_
+
+Mine, jadi gini:
+> `get_object_or_404(Product.objects.all(), …)`
+>
+> vs.
+>
+> `get_object_or_404(Product, …)`
+>
+> yang pertama dong.
+>
+> soalnya diubah (misal) jadi `Product.objects.visible()` itu gampang.
+
 ...
 
 ### Discussion: Generic code and variable names
