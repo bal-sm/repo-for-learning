@@ -903,6 +903,11 @@ Them, a note:
 > - for `context` we do have a sensible default, but also need to avoid the [mutable default arguments gotcha](https://docs.python-guide.org/writing/gotchas/#mutable-default-arguments), so we use `None` in the signature and change to `{}` later.
 >   - > - [ ] alah siah ieu, ada kan yah?
 
+Them:
+> At the template level, we’ll probably do a similar refactoring, using [`include`](https://docs.djangoproject.com/en/5.0/ref/templates/builtins/#include) to factor out duplication.
+
+---
+
 Mine:
 > Addition yang bawah ini, soalnya ngegantung eta, `apply_product_filtering`, gak dijelasin.
 
