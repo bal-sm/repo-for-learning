@@ -794,6 +794,27 @@ The next few pages address the problem of needing to re-use some logic from one 
   - The answer of how to do two things with FBVs is: ***do two things***.
     - No special tricks needed for that. Let’s start with a simple version of our view:
 
+```python
+# urls.py
+
+from . import views
+
+urlpatterns = [
+    path('special-offers/<slug:slug>/', views.special_offer_detail, name='special_offer_detail'),
+]
+```
+
+```python
+# views.py
+
+def special_offer_detail(request, slug):
+    special_offer = get_object_or_404(SpecialOffer.objects.all(), slug=slug)
+    return TemplateResponse(request, 'shop/special_offer_detail.html', {
+        'special_offer': special_offer,
+        'products': special_offer.get_products(),
+    })
+```
+
 ...
 
 Them:
