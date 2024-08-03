@@ -32,7 +32,7 @@ Mine:
 
 ## The Right Way - Lite
 
-### The Pattern
+### The Pattern - Lite
 
 `views.py`:
 
