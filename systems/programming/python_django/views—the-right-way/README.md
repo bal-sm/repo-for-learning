@@ -695,6 +695,24 @@ Mine:
 Them:
 > Your real view might have additional needs, like filtering and ordering. These can be handled by responding to query string parameters and modifying your `products` `QuerySet` above.
 
+---
+
+_Skipped explanation_
+
+Mine:
+> bisa dijadiin utility / helper kayak gini:
+
+```python
+def paged_object_list_context(request, products, paginate_by=10):
+    paginator = Paginator(products, paginate_by)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return { 'page_obj': page_obj }
+```
+
+Mine, just a note and a TODO:
+> gini aja kan ya? udah. disuruh sama bestie. coba cobain.
+
 ...
 
 ## Custom logic at the start — delegation
