@@ -815,7 +815,9 @@ def special_offer_detail(request, slug):
     })
 ```
 
-...
+Mine:
+> - it will show a single object -> `special_offer` tea.
+> - and also shows a list -> `products` tea.
 
 Mine:
 > Oh iya ngerti aing, kan kalo `product_list`, langsung aja semua `Product`, kalo `special_offer_`**`detail`**, itu asalnya klik dulu suatu `SpecialOffer` object, di suatu view mana gitu loh bebas, baru ke `special_offer_detail` itu.
