@@ -922,6 +922,11 @@ def apply_product_filtering(request, queryset):
 Mine, deui, learning note:
 > ih gimana sih itu teh?
 
+---
+
+Them, cenah:
+> That’s it! See below for some more discussion about how this delegation pattern might evolve. Otherwise, onto [Custom logic in the middle — dependency injection](https://spookylukey.github.io/django-views-the-right-way/dependency-injection.html).
+
 ...
 
 ### Discussion: Copy-Paste Bad, Re-use Good?
