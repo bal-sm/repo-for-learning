@@ -788,6 +788,12 @@ The next few pages address the problem of needing to re-use some logic from one 
     - so we want to re-use the logic as much as possible.
   - > ini (gaya ngerangkum gini) teh bagus gak ya, huft, meta `rfl`.
 
+- So our view will need to do two things:
+  - it will show a single object,
+  - and also shows a list.
+  - The answer of how to do two things with FBVs is: ***do two things***.
+    - No special tricks needed for that. Let’s start with a simple version of our view:
+
 ...
 
 Them:
