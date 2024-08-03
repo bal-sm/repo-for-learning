@@ -922,6 +922,9 @@ def apply_product_filtering(request, queryset):
 Mine, deui, learning note:
 > ih gimana sih itu teh?
 
+Mine, TODO, ih:
+> template-nya masukin dong ih, atau referensi ke sana.
+
 ---
 
 Them, cenah:
