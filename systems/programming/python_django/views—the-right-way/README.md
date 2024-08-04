@@ -1408,11 +1408,18 @@ Mine, my thoughts after baca ini, cool:
       ]
       ```
 
-...
+Them, next part:
+> That’s it! On to [Forms](https://spookylukey.github.io/django-views-the-right-way/forms.html).
 
-### Discussion ...
+### Not added yet child sections
 
-..., TBA, meureun.
+- Discussion: CBV configuration in `urls.py`
+- Discussion: FBV configuration in `urls.py`
+  - > why ini teh?
+  - Additional keyword parameters
+  - Mass-produced views — “view factories”
+
+TBA, meureun.
 
 Mine:
 > not really a concern, kata aku mah.
