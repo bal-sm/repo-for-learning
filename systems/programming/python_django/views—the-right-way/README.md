@@ -1211,7 +1211,7 @@ Lanjut [202408041752.3] tea:
 searcher(filters, page=page)
 ```
 
-Lanjut:
+Lanjut [202408041752.3]:
 >
 > 4. But that doesn’t match the signature of `special_product_search`, which has an extra parameter.
 >    - > How can we get that parameter passed?
@@ -1221,6 +1221,16 @@ Lanjut:
   - but this is clunky — we’ll have to pass these parameters that it doesn’t care about,
     - just so that it can pass them on to somewhere else.
     - Plus it is unnecessary.
+
+Mine, maintenance:
+> masukin geura code butut nya kayak gimana
+
+Lanjut [202408041752.3]:
+>
+> 5. Instead, what we do is make `special_offer_detail` provide an adaptor function, `special_product_search_adaptor`
+>    - that matches the signature that `display_product_list` expects for `searcher`.
+>    - Inside the adaptor function, we’ll call the `special_product_search` function the way it needs to be called.
+>    - While we’re at it, we can do our additional requirements too.
 
 ...
 
