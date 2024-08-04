@@ -1377,6 +1377,22 @@ Mine, my thoughts after baca ini, cool:
         return HttpResponseRedirect('/other/url/', status=307)
     ```
 
+- In addition, Django provides some shortcuts:
+  - [`redirect`](https://docs.djangoproject.com/en/5.0/topics/http/shortcuts/#redirect)
+    - a utility that
+      - returns an HTTP response object and
+      - has built-in logic for redirecting to named views,
+      - and other things.
+  - [`RedirectView`](https://docs.djangoproject.com/en/stable/ref/class-based-views/base/#redirectview)
+    - — a class that provides an entire view that does redirection, and
+    - has a few neat features like:
+      - being able to look up view by name,
+      - including arguments from a path, and also
+      - copy the query string.
+    - > I (They) **recommend** using this if the only thing that your view does is a redirect.
+      - > Otherwise just use `HttpResponse` objects directly.
+    - > me: pake ini sajalah.
+
 ...
 
 ### Discussion ...
