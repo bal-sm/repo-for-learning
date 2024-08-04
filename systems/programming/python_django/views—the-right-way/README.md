@@ -1174,6 +1174,32 @@ Them, diringkas:
 >        1. It no longer takes a `queryset` parameter, but a `searcher` parameter.
 >        2. It has to be adapted to use this `searcher` parameter instead of manipulating a passed in `QuerySet`.
 
+```python
+from somewhere import product_search # * [99.1]
+
+def product_list(request):
+    return display_product_list(
+        request,
+        searcher=product_search, # * [99.1]
+        template_name='shop/product_list.html',
+    )
+
+def display_product_list(request, *, context=None, searcher, template_name): # * tuh `searcher`, [99.1]
+    if context is None:
+        context = {}
+    filters = collect_filtering_parameters(request)
+    try:
+        page = int(request.GET['page'])
+    except (KeyError, ValueError):
+        page = 1
+    context['products'] = searcher(filters, page=page) # * [99.1]
+    return TemplateResponse(request, template_name, context)
+```
+
+- [99.1]: “first class functions”
+  - > To explain a little: here we passed the `product_search` function into `display_product_list` as the parameter `searcher`. This feature is called “first class functions” — just like you can pass around any other data as a parameter, you can pass around functions too. That is the heart of the technique here, allowing us to insert our custom logic into the middle of the common logic.
+  - > meta `rfl`, gimana ya ini teh, bagus gak? the notes. learning note.
+
 ...
 
 ## ...
