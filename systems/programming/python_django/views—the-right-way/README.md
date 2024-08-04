@@ -1290,6 +1290,16 @@ Them, next part:
     - > me: I need to push this thing to my "alam bawah sadar ngoding".
   - > If you have more than one entry point that you need to bundle together, a class can be helpful.
     - > me: Tuh da deui, `class`-ing is a second thought.
+- “dependency injection”
+  - > A slightly more general concept is “dependency injection”. If you have some code that needs to do something,
+    - i.e.
+      - it has a dependency on some other code,
+      - instead of depending directly,
+      - the dependency gets injected from the outside.
+    - If our dependency is a just a single function call,
+      - we can simply accept a function as a parameter.
+    - If our dependency is a set of related function calls,
+      - we might want an object with methods as the parameter.
 - ...
 
 ### Discussion: DI vs inheritance - ...
