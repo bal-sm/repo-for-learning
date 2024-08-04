@@ -930,13 +930,18 @@ Mine, TODO, ih:
 Them, cenah:
 > That’s it! See below for some more discussion about how this delegation pattern might evolve. Otherwise, onto [Custom logic in the middle — dependency injection](https://spookylukey.github.io/django-views-the-right-way/dependency-injection.html).
 
-### Discussion: Function based generic views - Lite
+### Discussion: Function based generic views - Mahmuda's version
 
 - What happens if you keep going with this parameterisation pattern?
   - Let’s say you have not one model,
     - but lots of models
   - where you want to display a list,
     - with the same kind of filtering/sorting/paging logic applied?
+
+- You might end up with
+  - an `object_list` function and
+  - a bunch of parameters, instead of `product_list`.
+  - _In other words_, you’ll end up with your own function based generic views, [just like the ones that used to exist in Django](https://django.readthedocs.io/en/1.4.X/topics/generic-views.html#generic-views-of-objects).
 
 ..., TBA.
 
