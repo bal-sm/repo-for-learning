@@ -1152,6 +1152,11 @@ def special_product_search(filters, special_offer, *, page=1):
         - the special offer and
         - the products that were displayed.
 
+---
+
+Mine, learning note:
+> ini pusing banget ih ngerangkum soalnya panjang terus spesifik, terus custom code juga ternyata dalem -> <https://github.com/spookylukey/django-views-the-right-way/blob/master/code/the_right_way/dependency_injection>
+
 ...
 
 ## ...
