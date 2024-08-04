@@ -1368,6 +1368,14 @@ Mine, my thoughts after baca ini, cool:
     - the browser will immediately make another request, to the specified URL.
 - The [different 3XX codes have different meanings](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#3xx_Redirection) — make sure you use the right one.
   - > `rfl`-in.
+- That is 95% of what you need to know at the HTTP level.
+  - In Django, the most common functionality has been wrapped up for you in [`HttpResponseRedirect`](https://docs.djangoproject.com/en/5.0/ref/request-response/#django.http.HttpResponseRedirect).
+  - So this view, for example, does an unconditional, temporary redirect:
+
+    ```python
+    def my_view(request):
+        return HttpResponseRedirect('/other/url/', status=307)
+    ```
 
 ...
 
