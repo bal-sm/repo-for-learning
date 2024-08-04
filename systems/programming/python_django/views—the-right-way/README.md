@@ -1297,7 +1297,8 @@ Them, next part:
 ...
 
 Mine, cool:
-> Makanya gening 3D real touchable structure made from the biggest upgrade of programming tea.
+> - Makanya gening 3D real touchable structure made from the biggest upgrade of programming tea.
+>   - Same code over and over won't be excruciating ever again.
 
 ...
 
