@@ -1366,6 +1366,8 @@ Mine, my thoughts after baca ini, cool:
   - a `Location` header that tells a browser which URL to go to.
   - If your view returns a response like this,
     - the browser will immediately make another request, to the specified URL.
+- The [different 3XX codes have different meanings](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#3xx_Redirection) — make sure you use the right one.
+  - > `rfl`-in.
 
 ...
 
