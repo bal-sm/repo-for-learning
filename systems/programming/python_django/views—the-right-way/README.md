@@ -1241,7 +1241,7 @@ def special_offer_detail(request, slug):
     special_offer = get_object_or_404(SpecialOffer.objects.all(), slug=slug)
 
     def special_product_search_adaptor(filters, page=1): # * [.1]
-        products = special_product_search(filters, special_offer, page=page)
+        products = special_product_search(filters, special_offer, page=page) # * tuh `special_offer`-nya, [.3]
         log_special_offer_product_view(request.user, special_offer, products)
         return products
 
