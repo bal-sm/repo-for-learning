@@ -1396,12 +1396,15 @@ Mine, my thoughts after baca ini, cool:
 
 ```python
 urls = [
-    path('old-path/<int:pk>/', RedirectView.as_view(
-        pattern_name='my_view',
-        permanent=True,
-        query_string=True,
-    )),
-    path('new-path/<int:pk>/', views.my_view, name='my_view'),
+    path(
+        "old-path/<int:pk>/",
+        RedirectView.as_view(
+            pattern_name="my_view",
+            permanent=True,
+            query_string=True,
+        ),
+    ),
+    path("new-path/<int:pk>/", views.my_view, name="my_view"),
 ]
 ```
 
