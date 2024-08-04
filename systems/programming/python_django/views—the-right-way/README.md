@@ -1164,7 +1164,7 @@ Mine, learning note:
 Them, common programming situations:
 > _How can we execute some custom logic in the middle of some common logic?_
 
-Them, diringkas:
+- [202408041752.3], Them, diringkas:
 > - Pake [parameterisation](https://www.toptal.com/python/python-parameterized-design-patterns)
 >   - > cenah, we need a parameter that will capture “what we need to do in the middle”.
 > - Jadi gini:
@@ -1175,16 +1175,16 @@ Them, diringkas:
 >        2. It has to be adapted to use this `searcher` parameter instead of manipulating a passed in `QuerySet`.
 
 ```python
-from somewhere import product_search # * [99.1]
+from somewhere import product_search # * [202408041752.1]
 
 def product_list(request):
     return display_product_list(
         request,
-        searcher=product_search, # * [99.1]
+        searcher=product_search, # * [202408041752.1]
         template_name='shop/product_list.html',
     )
 
-def display_product_list(request, *, context=None, searcher, template_name): # * tuh `searcher`, [99.1]
+def display_product_list(request, *, context=None, searcher, template_name): # * tuh `searcher`, [202408041752.1]
     if context is None:
         context = {}
     filters = collect_filtering_parameters(request)
@@ -1192,14 +1192,24 @@ def display_product_list(request, *, context=None, searcher, template_name): # *
         page = int(request.GET['page'])
     except (KeyError, ValueError):
         page = 1
-    context['products'] = searcher(filters, page=page) # * [99.1], [99.2]
+    context['products'] = searcher(filters, page=page) # * [202408041752.1], [202408041752.2]
     return TemplateResponse(request, template_name, context)
 ```
 
-- [99.1]: “first class functions”
+- [202408041752.1]: “first class functions”
   - > To explain a little: here we passed the `product_search` function into `display_product_list` as the parameter `searcher`. This feature is called “first class functions” — just like you can pass around any other data as a parameter, you can pass around functions too. That is the heart of the technique here, allowing us to insert our custom logic into the middle of the common logic.
   - > meta `rfl`, gimana ya ini teh, bagus gak? the notes. learning note.
-  - [99.2]: tah ini di mana “dependency injection”-nya teh.
+  - [202408041752.2]: tah ini di mana “dependency injection”-nya teh.
+
+Lanjut [202408041752.3] tea:
+> - Jadi gini:
+>   ...
+>   3. But what about the `special_offer_detail` view?
+>      - If we pass `searcher=special_product_search`, inside `display_product_list` we’ll have a problem. Our passed in function gets called like this:
+
+```python
+searcher(filters, page=page)
+```
 
 ...
 
