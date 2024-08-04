@@ -1266,6 +1266,15 @@ There are some important things to note about this:
   - > These objects “stay with it” when the adaptor function gets passed to `display_product_list`, so they are able to use them despite not having been passed them as a normal arguments.
   - > Functions that behave in this way are called “closures” — they capture variables from their enclosing scope.
 
+Them, skip aja kalo udah ngeuh:
+> - This powerful technique has lots of great advantages.
+>   1. For one, `display_product_list` never needs to be concerned with all of this.
+>      - We don’t have to modify its signature,
+>      - nor the signature of the `searcher` parameter it expects.
+>   2. Also, this works really well with static analysis,
+>      - like the linters that are built-in to many IDEs
+>        - which can point out undefined names and so on.
+
 ...
 
 ## ...
