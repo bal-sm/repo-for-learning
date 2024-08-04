@@ -1232,6 +1232,29 @@ Lanjut [202408041752.3]:
 >    - Inside the adaptor function, we’ll call the `special_product_search` function the way it needs to be called.
 >    - While we’re at it, we can do our additional requirements too.
 
+```python
+from somewhere import special_product_search
+
+from somewhere import log_special_offer_product_view # * misalan.
+
+def special_offer_detail(request, slug):
+    special_offer = get_object_or_404(SpecialOffer.objects.all(), slug=slug)
+
+    def special_product_search_adaptor(filters, page=1):
+        products = special_product_search(filters, special_offer, page=page)
+        log_special_offer_product_view(request.user, special_offer, products)
+        return products
+
+    return display_product_list(
+        request,
+        context={
+            'special_offer': special_offer,
+        },
+        searcher=special_product_search_adaptor,
+        template_name='products/special_offer_detail.html',
+    )
+```
+
 ...
 
 ## ...
