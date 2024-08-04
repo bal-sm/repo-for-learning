@@ -1358,6 +1358,17 @@ Mine, my thoughts after baca ini, cool:
 > - Makanya gening 3D real touchable structure made from the biggest upgrade of programming tea.
 >   - Same code (declaration, definition) over and over won't be excruciating ever again.
 
+## Redirects - Mahmuda's version
+
+...
+
+### Discussion ...
+
+..., TBA, meureun.
+
+Mine:
+> not really a concern, kata aku mah.
+
 ## ...
 
 ...
