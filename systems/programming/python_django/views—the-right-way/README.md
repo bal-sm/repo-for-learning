@@ -1302,6 +1302,9 @@ Them, next part:
     - If our dependency is a set of related function calls,
       - we might want an object with methods as the parameter.
         - > `searcher=search.for_special_product`, gitu we lah.
+- “dependency injection frameworks/containers”
+  - > (Often you will hear the term “dependency injection” being used for things that go one step further, and inject dependencies **automatically** in some way. I call these “dependency injection frameworks/containers”. Outside of [pytest’s fixtures](https://docs.pytest.org/en/latest/fixture.html) I have not yet found a need or desire for these in Python.)
+    - > `def test_something(fixture_something)`, tau-tau `fixture_something` udah dimasukin aja.
 - ...
 
 ### Discussion: DI vs inheritance - ...
