@@ -1019,15 +1019,15 @@ I’ve had good experiences with both, and here are my ideas about why they have
       - the Django admin has behaviour defined in other things like `Form` and `ListFilter` that are referenced from your `ModelAdmin`;
       - DRF has separate classes for serializers, permissions and filtering that are referenced from your `ViewSet`.
 
-### Discussion: Copy-Paste Bad, Re-use Good?
+### Discussion: Copy-Paste Bad, Re-use Good? - dahlah
 
-...
+_Skipped, baca aja [langsung](https://spookylukey.github.io/django-views-the-right-way/delegation.html#discussion-copy-paste-bad-re-use-good), penting.
 
-Them:
+Them, cuman ini:
 > Before you can abstract commonality, you actually need at least two examples, preferably three, and abstracting before then is premature. The commonalities may be very different from what you thought, and when you have enough information to make that decision you might decide that it’s not worth it. So avoiding all duplication at any cost is not the aim we should have.
 
 Mine:
-> Jadi reuse all the way! Camkan.
+> Jadi reuse aja terus kode teh! Sebelum, harus, di, refactor, biar, samaan yang dipakenya. Camkan.
 
 ...
 
