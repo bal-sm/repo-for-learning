@@ -943,6 +943,22 @@ Them, cenah:
   - a bunch of parameters, instead of `product_list`.
   - _In other words_, you’ll end up with your own function based generic views, [just like the ones that used to exist in Django](https://django.readthedocs.io/en/1.4.X/topics/generic-views.html#generic-views-of-objects).
 
+Grabbed from the docs:
+
+```python
+from django.conf.urls import patterns, url, include
+from django.views.generic import list_detail
+from books.models import Publisher
+
+publisher_info = {
+    "queryset" : Publisher.objects.all(),
+}
+
+urlpatterns = patterns('',
+    (r'^publishers/$', list_detail.object_list, publisher_info)
+)
+```
+
 Them, opinion onion:
 > Isn’t that a step backwards? I’d argue no. With the benefit of hindsight, I’d argue that the move from these function based generic views to class based generic views was actually the backwards step.
 
@@ -955,7 +971,22 @@ But that is in the past. Looking forward, the generic views you might develop wi
 Them, opinion:
 > In other words, they will be both specific (to your project) and generic (across your project) in all the right ways. They won’t suffer from Django’s limitations in trying to be all things to all men.
 
-..., TBA.
+- As FBVs they will probably be better for you than your own custom CBVs:
+  - They will have a well defined interface,
+    - which is *visible* right there in the function signature,
+      - which is great for *usability*.
+  - The generic code will be properly separated from the specific.
+    - For example, inside your `object_list` function,
+      - local variable names will be very generic,
+      - but these won’t bleed out into functions that might call `object_list`,
+        - > `list_detail.object_list`
+      - because you don’t inherit local variable names (in contrast to classes where you do inherit instance variable names).
+  - At some point you might find you have _too many parameters_ to a function.
+    - But this is a good thing.
+    - ~~For your class-based equivalent, the number of extension points would be the same, but hidden from you in the form of lots of mixins each with their own attributes and methods~~.
+      - > who cares?
+    - With the function, your problem is more visible, and can prompt you to factor things out.
+      - For example, if you have several parameters related to filtering a list, perhaps you actually need to invent a `Filterer` class?
 
 ### Discussion: Going further with generics - Lite
 
