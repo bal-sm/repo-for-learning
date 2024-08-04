@@ -1298,8 +1298,10 @@ Them, next part:
       - the dependency gets injected from the outside.
     - If our dependency is a just a single function call,
       - we can simply accept a function as a parameter.
+        - > `searcher=special_product_search_adaptor` tea.
     - If our dependency is a set of related function calls,
       - we might want an object with methods as the parameter.
+        - > `searcher=search.for_special_product`, gitu we lah.
 - ...
 
 ### Discussion: DI vs inheritance - ...
