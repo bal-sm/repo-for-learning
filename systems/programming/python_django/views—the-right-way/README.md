@@ -952,6 +952,9 @@ But that is in the past. Looking forward, the generic views you might develop wi
 - Importantly, they will have none of the functionality you don’t need. ✔️
 - You will be able to change them _whenever you want_, _however you want_. ✔️
 
+Them, opinion:
+> In other words, they will be both specific (to your project) and generic (across your project) in all the right ways. They won’t suffer from Django’s limitations in trying to be all things to all men.
+
 ..., TBA.
 
 ### Discussion: Going further with generics - Lite
