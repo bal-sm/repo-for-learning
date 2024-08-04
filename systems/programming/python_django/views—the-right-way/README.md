@@ -1131,6 +1131,16 @@ class Filter:
 PAGE_SIZE = 5
 ```
 
+---
+
+Mine:
+> nah terus ada buat special offers:
+
+```python
+def special_product_search(filters, special_offer, *, page=1):
+    return _search(filters, special_offer.get_products(), page=page)
+```
+
 ...
 
 ## ...
