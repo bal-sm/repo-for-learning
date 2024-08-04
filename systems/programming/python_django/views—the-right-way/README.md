@@ -1309,7 +1309,7 @@ Them, next part:
 Them, cenah:
 > So, we can call this pattern “first class functions”, or “callbacks”, “strategy pattern” or “dependency injection”. But dependency injection is clearly the coolest sounding, so I used that in the title.
 
-### Discussion: DI vs inheritance - ...
+### Discussion: Dependency Injection vs inheritance - ...
 
 ...
 
@@ -1317,7 +1317,7 @@ Mine, cool:
 > - Makanya gening 3D real touchable structure made from the biggest upgrade of programming tea.
 >   - Same code (declaration, definition) over and over won't be excruciating ever again.
 
-...
+..., TBA.
 
 ## ...
 
