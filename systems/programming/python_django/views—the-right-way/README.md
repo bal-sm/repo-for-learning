@@ -1159,6 +1159,21 @@ Mine, learning note:
 >
 > a bunch of slideshows ya di sana mah.
 
+---
+
+Them, common programming situations:
+> _How can we execute some custom logic in the middle of some common logic?_
+
+Them, diringkas:
+> - Pake [parameterisation](https://www.toptal.com/python/python-parameterized-design-patterns)
+>   - > cenah, we need a parameter that will capture “what we need to do in the middle”.
+> - Jadi gini:
+>   1. factoring `product_list` view
+>   2. the `display_product_list` function it delegates to.
+>      - cuman gini:
+>        1. It no longer takes a `queryset` parameter, but a `searcher` parameter.
+>        2. It has to be adapted to use this `searcher` parameter instead of manipulating a passed in `QuerySet`.
+
 ...
 
 ## ...
