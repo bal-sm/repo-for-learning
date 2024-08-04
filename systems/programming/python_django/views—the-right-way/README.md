@@ -922,30 +922,402 @@ def apply_product_filtering(request, queryset):
 Mine, deui, learning note:
 > ih gimana sih itu teh?
 
+Mine, TODO, ih:
+> template-nya masukin dong ih, atau referensi ke sana.
+
 ---
 
 Them, cenah:
 > That’s it! See below for some more discussion about how this delegation pattern might evolve. Otherwise, onto [Custom logic in the middle — dependency injection](https://spookylukey.github.io/django-views-the-right-way/dependency-injection.html).
 
-### Discussion: Function based generic views - Lite
+### Discussion: Function based generic views - Mahmuda's version
 
-..., TBA.
+- What happens if you keep going with this parameterisation pattern?
+  - Let’s say you have not one model,
+    - but lots of models
+  - where you want to display a list,
+    - with the same kind of filtering/sorting/paging logic applied?
 
-### Discussion: Going further with generics - Lite
+- You might end up with
+  - an `object_list` function and
+  - a bunch of parameters, instead of `product_list`.
+  - _In other words_, you’ll end up with your own function based generic views, [just like the ones that used to exist in Django](https://django.readthedocs.io/en/1.4.X/topics/generic-views.html#generic-views-of-objects).
 
-..., TBA.
+Grabbed from the docs:
 
-### Discussion: Copy-Paste Bad, Re-use Good?
+```python
+from django.conf.urls import patterns, url, include
+from django.views.generic import list_detail
+from books.models import Publisher
 
-...
+publisher_info = {
+    "queryset" : Publisher.objects.all(),
+}
 
-Them:
+urlpatterns = patterns('',
+    (r'^publishers/$', list_detail.object_list, publisher_info)
+)
+```
+
+Them, opinion onion:
+> Isn’t that a step backwards? I’d argue no. With the benefit of hindsight, I’d argue that the move from these function based generic views to class based generic views was actually the backwards step.
+
+But that is in the past. Looking forward, the generic views you might develop will be better than both Django’s old generic FBVs and the newer generic CBVs in several ways:
+
+- They will have all the functionality you need built-in. ✔️
+- Importantly, they will have none of the functionality you don’t need. ✔️
+- You will be able to change them _whenever you want_, _however you want_. ✔️
+
+Them, opinion:
+> In other words, they will be both specific (to your project) and generic (across your project) in all the right ways. They won’t suffer from Django’s limitations in trying to be all things to all men.
+
+- As FBVs they will probably be better for you than your own custom CBVs:
+  - They will have a well defined interface,
+    - which is *visible* right there in the function signature,
+      - which is great for *usability*.
+  - The generic code will be properly separated from the specific.
+    - For example, inside your `object_list` function,
+      - local variable names will be very generic,
+      - but these won’t bleed out into functions that might call `object_list`,
+        - > `list_detail.object_list`
+      - because you don’t inherit local variable names (in contrast to classes where you do inherit instance variable names).
+  - At some point you might find you have _too many parameters_ to a function.
+    - But this is a good thing.
+    - ~~For your class-based equivalent, the number of extension points would be the same, but hidden from you in the form of lots of mixins each with their own attributes and methods~~.
+      - > who cares?
+    - With the function, your problem is more visible, and can prompt you to factor things out.
+      - For example, if you have several parameters related to filtering a list, perhaps you actually need to invent a `Filterer` class?
+
+### Discussion: Going further with generics - Mahmuda's version
+
+If you have a large number of views that are very repetitive, you may continue this pattern even further. Examples of projects that have done this are:
+
+- [The Django admin](https://docs.djangoproject.com/en/5.0/ref/contrib/admin/)
+- [Django Rest Framework](https://www.django-rest-framework.org/)
+
+Both of these have their own forms of “Class Based Views”, but actually provide higher level functionality in terms of **sets of views** rather than just individual views.
+
+I’ve had good experiences with both, and here are my ideas about why they have succeeded:
+
+- They both provide a fairly narrow set of views.
+  - Both are essentially CRUD based, and
+  - this means that the views are quite constrained in what they do.
+- This is in contrast to a classic web app
+  - where a single view can do a very wide range of things, and
+  - could easily combine multiple different things.
+- Due to this constraint,
+  - they can provide *abstractions* that are **higher level** than a single view
+    - (for example, the `ModelAdmin` and the `ViewSet` classes).
+      - > wow.
+  - You can get a very large amount of functionality out of these classes “for free”
+    — with just a small amount of declarative customisation.
+      - So when you need to go further and write some code, you are still way ahead of where you would have been without them.
+- They provide a lot of their functionality
+  - in terms of **composing** behaviour defined in other objects and classes,
+    - rather than by **inheriting** from mixins.
+    - For example,
+      - the Django admin has behaviour defined in other things like `Form` and `ListFilter` that are referenced from your `ModelAdmin`;
+      - DRF has separate classes for serializers, permissions and filtering that are referenced from your `ViewSet`.
+
+### Discussion: Copy-Paste Bad, Re-use Good? - dahlah
+
+_Skipped, baca aja [langsung](https://spookylukey.github.io/django-views-the-right-way/delegation.html#discussion-copy-paste-bad-re-use-good), penting.
+
+Them, cuman ini:
 > Before you can abstract commonality, you actually need at least two examples, preferably three, and abstracting before then is premature. The commonalities may be very different from what you thought, and when you have enough information to make that decision you might decide that it’s not worth it. So avoiding all duplication at any cost is not the aim we should have.
 
 Mine:
-> Jadi reuse all the way! Camkan.
+> Jadi reuse aja terus kode teh! Sebelum, harus, di, refactor, biar, samaan yang dipakenya. Camkan.
+
+### Discussion: Multiple mixins? - Lite
+
+```python
+from django.views.generic import ListView
+from django.views.generic.detail import SingleObjectMixin
+
+from shop.models import SpecialOffer
+
+
+class SpecialOfferDetail(SingleObjectMixin, ListView):
+    paginate_by = 2
+    template_name = "shop/special_offer_detail.html"
+
+    def get(self, request, *args, **kwargs):
+        self.object = self.get_object(queryset=SpecialOffer.objects.all())
+        return super().get(request, *args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['special_offer'] = self.object
+        return context
+
+    def get_queryset(self):
+        return self.object.products.all()
+```
+
+vs.
+
+```python
+from django.core.paginator import Paginator
+from django.shortcuts import get_object_or_404
+from django.template.response import TemplateResponse
+
+from shop.models import SpecialOffer
+
+
+def special_offer_detail(request, slug):
+    special_offer = get_object_or_404(SpecialOffer.objects.all(), slug=slug)
+    paginator = Paginator(special_offer.products.all(), 2)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return TemplateResponse(request, 'shop/special_offer_detail.html', {
+        'special_offer': special_offer,
+        'page_obj': page_obj,
+    })
+```
+
+_Skipped many things, baca [langsung](https://spookylukey.github.io/django-views-the-right-way/delegation.html#discussion-multiple-mixins)_
+
+## Custom logic in the middle — dependency injection - Mahmuda's version but cuman
+
+Them:
+> What happens if we have code that is largely common, but want to do something different “in the middle”?
+
+Them, skip:
+> We are getting into more advanced territory now, so this page is heavier than the ones that have come before, but the techniques here are also very powerful and widely applicable.
+
+Them:
+> Continuing [our example of two different views both featuring lists of products](https://spookylukey.github.io/django-views-the-right-way/delegation.html), let’s add a new requirement, imitating the kind of complexity you will likely encounter in real projects.
+
+- Instead of using Django’s `QuerySet`s as the basis for our list of products,
+  - we have to use a different API.
+  - Maybe it is:
+    - a third party HTTP-based service, or
+    - our own service,
+    - but our entry point is a function that doesn’t take a `QuerySet` as an input.
+  - Perhaps like this:
+
+```python
+def product_search(filters, *, page=1):
+    return _search(filters, Product.objects.all(), page=page)
+```
+
+with:
+
+```python
+def _search(filters, products, *, page=1):
+    if Filter.NAME in filters:
+        products = products.filter(name__icontains=filters[Filter.NAME])
+    if Filter.COLOR in filters:
+        products = products.filter(colors__name__icontains=filters[Filter.COLOR])
+
+    # paging
+    start = (page - 1) * PAGE_SIZE
+    products = list(products.order_by('name')[start:start + PAGE_SIZE])
+    return products
+```
+
+Mine, cuman:
+> cuman ini tetep `QuerySet`, tapi digimanain gitu loh. udah we ya, kode-kode-nya aja.
+
+and
+
+```python
+class Filter:
+    NAME = 'name'
+    COLOR = 'color'
+
+
+PAGE_SIZE = 5
+```
+
+---
+
+Mine:
+> nah terus ada buat special offers:
+
+```python
+def special_product_search(filters, special_offer, *, page=1):
+    return _search(filters, special_offer.get_products(), page=page)
+```
+
+---
+
+- In addition, we have a further requirement:
+  - for our special offer page,
+    - after retrieving the list of products that will be displayed,
+    - we need to do
+      - some database logging to
+        - record the user,
+        - the special offer and
+        - the products that were displayed.
+
+---
+
+Mine, learning note:
+> ini pusing banget ih ngerangkum soalnya panjang terus spesifik, terus custom code juga ternyata dalem -> <https://github.com/spookylukey/django-views-the-right-way/blob/master/code/the_right_way/dependency_injection>
+>
+> a bunch of slideshows ya di sana mah.
+
+---
+
+Them, common programming situations:
+> _How can we execute some custom logic in the middle of some common logic?_
+
+- [202408041752.3], Them, diringkas:
+> - Pake [parameterisation](https://www.toptal.com/python/python-parameterized-design-patterns)
+>   - > cenah, we need a parameter that will capture “what we need to do in the middle”.
+> - Jadi gini:
+>   1. factoring `product_list` view
+>   2. the `display_product_list` function it delegates to.
+>      - cuman gini:
+>        1. It no longer takes a `queryset` parameter, but a `searcher` parameter.
+>        2. It has to be adapted to use this `searcher` parameter instead of manipulating a passed in `QuerySet`.
+
+```python
+from somewhere import product_search # * [202408041752.1]
+
+def product_list(request):
+    return display_product_list(
+        request,
+        searcher=product_search, # * [202408041752.1]
+        template_name='shop/product_list.html',
+    )
+
+def display_product_list(request, *, context=None, searcher, template_name): # * tuh `searcher`, [202408041752.1]
+    if context is None:
+        context = {}
+    filters = collect_filtering_parameters(request)
+    try:
+        page = int(request.GET['page'])
+    except (KeyError, ValueError):
+        page = 1
+    context['products'] = searcher(filters, page=page) # * [202408041752.1], [202408041752.2]
+    return TemplateResponse(request, template_name, context)
+```
+
+- [202408041752.1]: “first class functions”
+  - > To explain a little: here we passed the `product_search` function into `display_product_list` as the parameter `searcher`. This feature is called “first class functions” — just like you can pass around any other data as a parameter, you can pass around functions too. That is the heart of the technique here, allowing us to insert our custom logic into the middle of the common logic.
+  - > meta `rfl`, gimana ya ini teh, bagus gak? the notes. learning note.
+  - [202408041752.2]: tah ini di mana “dependency injection”-nya teh.
+
+Lanjut [202408041752.3] tea:
+> - Jadi gini:
+>   ...
+>   3. But what about the `special_offer_detail` view?
+>      - > If we pass `searcher=special_product_search`, inside `display_product_list` we’ll have a problem. Our passed in function gets called like this:
+
+```python
+searcher(filters, page=page)
+```
+
+Lanjut [202408041752.3]:
+>
+> 4. But that doesn’t match the signature of `special_product_search`, which has an extra parameter.
+>    - > How can we get that parameter passed?
+>    - Jawaban: `special_product_search_adaptor`
+
+- You might be tempted to make `display_product_list` accept the additional parameters needed,
+  - but this is clunky — we’ll have to pass these parameters that it doesn’t care about,
+    - just so that it can pass them on to somewhere else.
+    - Plus it is unnecessary.
+
+Mine, maintenance:
+> masukin geura code butut nya kayak gimana
+
+Lanjut [202408041752.3]:
+>
+> 5. Instead, what we do is make `special_offer_detail` provide an adaptor function, `special_product_search_adaptor`
+>    - that matches the signature that `display_product_list` expects for `searcher`.
+>    - Inside the adaptor function, we’ll call the `special_product_search` function the way it needs to be called.
+>    - While we’re at it, we can do our additional requirements too.
+
+```python
+from somewhere import special_product_search
+
+from somewhere import log_special_offer_product_view # * misalan.
+
+def special_offer_detail(request, slug):
+    special_offer = get_object_or_404(SpecialOffer.objects.all(), slug=slug)
+
+    def special_product_search_adaptor(filters, page=1): # * [.1]
+        products = special_product_search(filters, special_offer, page=page) # * tuh `special_offer`-nya, [.3]
+        log_special_offer_product_view(request.user, special_offer, products)
+        return products
+
+    return display_product_list(
+        request,
+        context={
+            'special_offer': special_offer,
+        },
+        searcher=special_product_search_adaptor,
+        template_name='products/special_offer_detail.html',
+    )
+```
+
+There are some important things to note about this:
+- [.1]: We defined our adaptor function `special_product_search_adaptor` inside the body of the main view.
+  - > This is important for the functionality that follows. (There are other ways to do it but this is the simplest.)
+- [.2]: We made its signature match the one expected by `display_product_list`.
+  - > TODO, refer di sana (newer rangkuming engine), ke correct code, pusing ih.
+- [.3]: Our adaptor function has access to
+  - the `special_offer` object from the enclosing scope, and also
+  - `request`.
+  - > These objects “stay with it” when the adaptor function gets passed to `display_product_list`, so they are able to use them despite not having been passed them as a normal arguments.
+  - > Functions that behave in this way are called “closures” — they capture variables from their enclosing scope.
+
+Them, skip aja kalo udah ngeuh:
+> - This powerful technique has lots of great advantages.
+>   1. For one, `display_product_list` never needs to be concerned with all of this.
+>      - We don’t have to modify its signature,
+>      - nor the signature of the `searcher` parameter it expects.
+>   2. Also, this works really well with static analysis,
+>      - like the linters that are built-in to many IDEs
+>        - which can point out undefined names and so on.
+
+Them, cenah, baca lanjut:
+> Closures are a concept that some find intimidating, but they are extremely useful in a wide variety of programming situations. If you found the above confusing, have a look at this [Python closures primer](https://www.programiz.com/python-programming/closure) and then come back to the more complex example here.
+
+Them, next part:
+> In our theme of re-using logic, I want to cover [Preconditions](https://spookylukey.github.io/django-views-the-right-way/preconditions.html), but before that we’re going to go back to some basics, the first of which is [Redirects](https://spookylukey.github.io/django-views-the-right-way/redirects.html) and then [Forms](https://spookylukey.github.io/django-views-the-right-way/forms.html).
+
+### Note: terminology - Mahmuda's version
+
+- The How
+  - > In OO languages, the standard solution to this problem is the “strategy pattern”. That involves creating an object which can encapsulate the action you need to take.
+- “first class objects“
+  - > In Python, functions are “first class objects“ i.e. objects that you can pass around just like every other type of value. So we can just use “functions” where we need “the strategy pattern”, particularly if our strategy has only one part to it.
+    - > me: I need to push this thing to my "alam bawah sadar ngoding".
+  - > If you have more than one entry point that you need to bundle together, a class can be helpful.
+    - > me: Tuh da deui, `class`-ing is a second thought.
+- “dependency injection”
+  - > A slightly more general concept is “dependency injection”. If you have some code that needs to do something,
+    - i.e.
+      - it has a dependency on some other code,
+      - instead of depending directly,
+      - the dependency gets injected from the outside.
+    - If our dependency is a just a single function call,
+      - we can simply accept a function as a parameter.
+        - > `searcher=special_product_search_adaptor` tea.
+    - If our dependency is a set of related function calls,
+      - we might want an object with methods as the parameter.
+        - > `searcher=search.for_special_product`, gitu we lah.
+- “dependency injection frameworks/containers”
+  - > (Often you will hear the term “dependency injection” being used for things that go one step further, and inject dependencies **automatically** in some way. I call these “dependency injection frameworks/containers”. Outside of [pytest’s fixtures](https://docs.pytest.org/en/latest/fixture.html) I have not yet found a need or desire for these in Python.)
+    - > `def test_something(fixture_something)`, tau-tau `fixture_something` udah dimasukin aja.
+
+Them, cenah:
+> So, we can call this pattern “first class functions”, or “callbacks”, “strategy pattern” or “dependency injection”. But dependency injection is clearly the coolest sounding, so I used that in the title.
+
+### Discussion: Dependency Injection vs inheritance - ...
 
 ...
+
+Mine, cool:
+> - Makanya gening 3D real touchable structure made from the biggest upgrade of programming tea.
+>   - Same code (declaration, definition) over and over won't be excruciating ever again.
+
+..., TBA.
 
 ## ...
 
