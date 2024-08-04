@@ -1309,15 +1309,120 @@ Them, next part:
 Them, cenah:
 > So, we can call this pattern “first class functions”, or “callbacks”, “strategy pattern” or “dependency injection”. But dependency injection is clearly the coolest sounding, so I used that in the title.
 
-### Discussion: Dependency Injection vs inheritance - ...
+### Discussion: Dependency Injection vs inheritance - TBA
 
-...
+```python
+class ProductSearchBase(TemplateView):
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        filters = collect_filtering_parameters(self.request)
+        try:
+            page = int(self.request.GET['page'])
+        except (KeyError, ValueError):
+            page = 1
+        context['products'] = self.product_search(filters, page=page)
+        return context
 
-Mine, cool:
+    def product_search(self, filters, page=1):
+        raise NotImplementedError()
+```
+
+then,
+
+```python
+class SpecialOfferDetail(ProductSearchBase):
+    template_name = 'shop/special_offer_detail.html'
+
+    def get(self, request, *args, **kwargs):
+        special_offer = get_object_or_404(SpecialOffer.objects.all(), slug=kwargs['slug'])
+        self.special_offer = special_offer
+        return super().get(request, **kwargs)
+
+    def product_search(self, filters, page=1):
+        products = special_product_search(filters, self.special_offer, page=page)
+        log_special_offer_product_view(self.request.user, self.special_offer, products)
+        return products
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['special_offer'] = self.special_offer
+        return context
+```
+
+Me:
+> What. The. Fuck.
+
+..., TBA.
+
+Mine, my thoughts after baca ini, cool:
 > - Makanya gening 3D real touchable structure made from the biggest upgrade of programming tea.
 >   - Same code (declaration, definition) over and over won't be excruciating ever again.
 
-..., TBA.
+## Redirects - Mahmuda's version
+
+- To implement redirects in Django, you need to know how they work in HTTP.
+- In HTTP, a redirect is an HTTP response
+  - with a status code in the 300-399 range, and
+  - a `Location` header that tells a browser which URL to go to.
+  - If your view returns a response like this,
+    - the browser will immediately make another request, to the specified URL.
+- The [different 3XX codes have different meanings](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#3xx_Redirection) — make sure you use the right one.
+  - > `rfl`-in.
+- That is 95% of what you need to know at the HTTP level.
+  - In Django, the most common functionality has been wrapped up for you in [`HttpResponseRedirect`](https://docs.djangoproject.com/en/5.0/ref/request-response/#django.http.HttpResponseRedirect).
+  - So this view, for example, does an unconditional, temporary redirect:
+
+    ```python
+    def my_view(request):
+        return HttpResponseRedirect('/other/url/', status=307)
+    ```
+
+- In addition, Django provides some shortcuts:
+  - [`redirect`](https://docs.djangoproject.com/en/5.0/topics/http/shortcuts/#redirect)
+    - a utility that
+      - returns an HTTP response object and
+      - has built-in logic for redirecting to named views,
+      - and other things.
+  - [`RedirectView`](https://docs.djangoproject.com/en/stable/ref/class-based-views/base/#redirectview)
+    - — a class that provides an entire view that does redirection, and
+    - has a few neat features like:
+      - being able to look up view by name,
+      - including arguments from a path, and also
+      - copy the query string.
+    - > I (They) **recommend** using this if the only thing that your view does is a redirect.
+      - > Otherwise just use `HttpResponse` objects directly.
+    - > me: pake ini sajalah.
+    - For example, if you have an old URL at `/old-path/<number>/` and want to permanently redirect it to `/new-path/<number>/`, you can use do it from `urls.py` like this:
+
+      ```python
+      urls = [
+          path(
+              "old-path/<int:pk>/",
+              RedirectView.as_view(
+                  pattern_name="my_view",
+                  permanent=True,
+                  query_string=True,
+              ),
+          ),
+          path("new-path/<int:pk>/", views.my_view, name="my_view"),
+      ]
+      ```
+
+Them, next part:
+> That’s it! On to [Forms](https://spookylukey.github.io/django-views-the-right-way/forms.html).
+
+### Not added yet child sections
+
+- Discussion: CBV configuration in `urls.py`
+- Discussion: FBV configuration in `urls.py`
+  - > why ini teh?
+  - Additional keyword parameters
+  - Mass-produced views — “view factories”
+
+TBA, meureun.
+
+Mine:
+> not really a concern, kata aku mah.
 
 ## ...
 
