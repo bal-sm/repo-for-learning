@@ -1141,6 +1141,17 @@ def special_product_search(filters, special_offer, *, page=1):
     return _search(filters, special_offer.get_products(), page=page)
 ```
 
+---
+
+- In addition, we have a further requirement:
+  - for our special offer page,
+    - after retrieving the list of products that will be displayed,
+    - we need to do
+      - some database logging to
+        - record the user,
+        - the special offer and
+        - the products that were displayed.
+
 ...
 
 ## ...
