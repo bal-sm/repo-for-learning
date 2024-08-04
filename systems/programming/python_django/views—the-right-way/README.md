@@ -946,6 +946,12 @@ Them, cenah:
 Them, opinion onion:
 > Isn’t that a step backwards? I’d argue no. With the benefit of hindsight, I’d argue that the move from these function based generic views to class based generic views was actually the backwards step.
 
+But that is in the past. Looking forward, the generic views you might develop will be better than both Django’s old generic FBVs and the newer generic CBVs in several ways:
+
+- They will have all the functionality you need built-in. ✔️
+- Importantly, they will have none of the functionality you don’t need. ✔️
+- You will be able to change them _whenever you want_, _however you want_. ✔️
+
 ..., TBA.
 
 ### Discussion: Going further with generics - Lite
