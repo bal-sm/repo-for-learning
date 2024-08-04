@@ -1192,13 +1192,14 @@ def display_product_list(request, *, context=None, searcher, template_name): # *
         page = int(request.GET['page'])
     except (KeyError, ValueError):
         page = 1
-    context['products'] = searcher(filters, page=page) # * [99.1]
+    context['products'] = searcher(filters, page=page) # * [99.1], [99.2]
     return TemplateResponse(request, template_name, context)
 ```
 
 - [99.1]: “first class functions”
   - > To explain a little: here we passed the `product_search` function into `display_product_list` as the parameter `searcher`. This feature is called “first class functions” — just like you can pass around any other data as a parameter, you can pass around functions too. That is the heart of the technique here, allowing us to insert our custom logic into the middle of the common logic.
   - > meta `rfl`, gimana ya ini teh, bagus gak? the notes. learning note.
+  - [99.2]: tah ini di mana “dependency injection”-nya teh.
 
 ...
 
