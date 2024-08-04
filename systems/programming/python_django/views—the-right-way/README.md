@@ -988,9 +988,36 @@ Them, opinion:
     - With the function, your problem is more visible, and can prompt you to factor things out.
       - For example, if you have several parameters related to filtering a list, perhaps you actually need to invent a `Filterer` class?
 
-### Discussion: Going further with generics - Lite
+### Discussion: Going further with generics - Mahmuda's version
 
-..., TBA.
+If you have a large number of views that are very repetitive, you may continue this pattern even further. Examples of projects that have done this are:
+
+- [The Django admin](https://docs.djangoproject.com/en/5.0/ref/contrib/admin/)
+- [Django Rest Framework](https://www.django-rest-framework.org/)
+
+Both of these have their own forms of “Class Based Views”, but actually provide higher level functionality in terms of **sets of views** rather than just individual views.
+
+I’ve had good experiences with both, and here are my ideas about why they have succeeded:
+
+- They both provide a fairly narrow set of views.
+  - Both are essentially CRUD based, and
+  - this means that the views are quite constrained in what they do.
+- This is in contrast to a classic web app
+  - where a single view can do a very wide range of things, and
+  - could easily combine multiple different things.
+- Due to this constraint,
+  - they can provide *abstractions* that are **higher level** than a single view
+    - (for example, the `ModelAdmin` and the `ViewSet` classes).
+      - > wow.
+  - You can get a very large amount of functionality out of these classes “for free”
+    — with just a small amount of declarative customisation.
+      - So when you need to go further and write some code, you are still way ahead of where you would have been without them.
+- They provide a lot of their functionality
+  - in terms of **composing** behaviour defined in other objects and classes,
+    - rather than by **inheriting** from mixins.
+    - For example,
+      - the Django admin has behaviour defined in other things like `Form` and `ListFilter` that are referenced from your `ModelAdmin`;
+      - DRF has separate classes for serializers, permissions and filtering that are referenced from your `ViewSet`.
 
 ### Discussion: Copy-Paste Bad, Re-use Good?
 
