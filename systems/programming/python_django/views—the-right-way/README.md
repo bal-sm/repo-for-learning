@@ -1275,6 +1275,9 @@ Them, skip aja kalo udah ngeuh:
 >      - like the linters that are built-in to many IDEs
 >        - which can point out undefined names and so on.
 
+Them, cenah, baca lanjut:
+> Closures are a concept that some find intimidating, but they are extremely useful in a wide variety of programming situations. If you found the above confusing, have a look at this [Python closures primer](https://www.programiz.com/python-programming/closure) and then come back to the more complex example here.
+
 ...
 
 ## ...
