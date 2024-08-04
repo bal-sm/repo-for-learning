@@ -1281,6 +1281,17 @@ Them, cenah, baca lanjut:
 Them, next part:
 > In our theme of re-using logic, I want to cover [Preconditions](https://spookylukey.github.io/django-views-the-right-way/preconditions.html), but before that we’re going to go back to some basics, the first of which is [Redirects](https://spookylukey.github.io/django-views-the-right-way/redirects.html) and then [Forms](https://spookylukey.github.io/django-views-the-right-way/forms.html).
 
+### Note: terminology - Mahmuda's version
+
+- The How
+  - > In OO languages, the standard solution to this problem is the “strategy pattern”. That involves creating an object which can encapsulate the action you need to take.
+- “first class objects“
+  - > In Python, functions are “first class objects“ i.e. objects that you can pass around just like every other type of value. So we can just use “functions” where we need “the strategy pattern”, particularly if our strategy has only one part to it.
+    - > me: I need to push this thing to my "alam bawah sadar ngoding".
+  - > If you have more than one entry point that you need to bundle together, a class can be helpful.
+    - > me: Tuh da deui, `class`-ing is a second thought.
+- ...
+
 ...
 
 ## ...
