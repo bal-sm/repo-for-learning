@@ -1078,7 +1078,7 @@ def special_offer_detail(request, slug):
 
 _Skipped many things, baca [langsung](https://spookylukey.github.io/django-views-the-right-way/delegation.html#discussion-multiple-mixins)_
 
-## Custom logic in the middle — dependency injection - Mahmuda's version
+## Custom logic in the middle — dependency injection - Mahmuda's version but cuman
 
 Them:
 > What happens if we have code that is largely common, but want to do something different “in the middle”?
@@ -1116,6 +1116,9 @@ def _search(filters, products, *, page=1):
     products = list(products.order_by('name')[start:start + PAGE_SIZE])
     return products
 ```
+
+Mine, cuman:
+> cuman ini tetep `QuerySet`, tapi digimanain gitu loh. udah we ya, kode-kode-nya aja.
 
 and
 
