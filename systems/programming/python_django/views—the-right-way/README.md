@@ -1205,11 +1205,22 @@ Lanjut [202408041752.3] tea:
 > - Jadi gini:
 >   ...
 >   3. But what about the `special_offer_detail` view?
->      - If we pass `searcher=special_product_search`, inside `display_product_list` we’ll have a problem. Our passed in function gets called like this:
+>      - > If we pass `searcher=special_product_search`, inside `display_product_list` we’ll have a problem. Our passed in function gets called like this:
 
 ```python
 searcher(filters, page=page)
 ```
+
+Lanjut:
+>
+> 4. But that doesn’t match the signature of `special_product_search`, which has an extra parameter.
+>    - > How can we get that parameter passed?
+>    - Jawaban: `special_product_search_adaptor`
+
+- You might be tempted to make `display_product_list` accept the additional parameters needed,
+  - but this is clunky — we’ll have to pass these parameters that it doesn’t care about,
+    - just so that it can pass them on to somewhere else.
+    - Plus it is unnecessary.
 
 ...
 
