@@ -943,6 +943,9 @@ Them, cenah:
   - a bunch of parameters, instead of `product_list`.
   - _In other words_, you’ll end up with your own function based generic views, [just like the ones that used to exist in Django](https://django.readthedocs.io/en/1.4.X/topics/generic-views.html#generic-views-of-objects).
 
+Them, opinion onion:
+> Isn’t that a step backwards? I’d argue no. With the benefit of hindsight, I’d argue that the move from these function based generic views to class based generic views was actually the backwards step.
+
 ..., TBA.
 
 ### Discussion: Going further with generics - Lite
