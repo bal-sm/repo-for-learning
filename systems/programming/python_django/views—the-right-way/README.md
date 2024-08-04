@@ -1240,7 +1240,7 @@ from somewhere import log_special_offer_product_view # * misalan.
 def special_offer_detail(request, slug):
     special_offer = get_object_or_404(SpecialOffer.objects.all(), slug=slug)
 
-    def special_product_search_adaptor(filters, page=1):
+    def special_product_search_adaptor(filters, page=1): # * [.1]
         products = special_product_search(filters, special_offer, page=page)
         log_special_offer_product_view(request.user, special_offer, products)
         return products
@@ -1254,6 +1254,17 @@ def special_offer_detail(request, slug):
         template_name='products/special_offer_detail.html',
     )
 ```
+
+There are some important things to note about this:
+- [.1]: We defined our adaptor function `special_product_search_adaptor` inside the body of the main view.
+  - > This is important for the functionality that follows. (There are other ways to do it but this is the simplest.)
+- [.2]: We made its signature match the one expected by `display_product_list`.
+  - > TODO, refer di sana (newer rangkuming engine), ke correct code, pusing ih.
+- [.3]: Our adaptor function has access to
+  - the `special_offer` object from the enclosing scope, and also
+  - `request`.
+  - > These objects “stay with it” when the adaptor function gets passed to `display_product_list`, so they are able to use them despite not having been passed them as a normal arguments.
+  - > Functions that behave in this way are called “closures” — they capture variables from their enclosing scope.
 
 ...
 
