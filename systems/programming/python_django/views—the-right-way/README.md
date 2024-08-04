@@ -1394,19 +1394,19 @@ Mine, my thoughts after baca ini, cool:
     - > me: pake ini sajalah.
     - For example, if you have an old URL at `/old-path/<number>/` and want to permanently redirect it to `/new-path/<number>/`, you can use do it from `urls.py` like this:
 
-```python
-urls = [
-    path(
-        "old-path/<int:pk>/",
-        RedirectView.as_view(
-            pattern_name="my_view",
-            permanent=True,
-            query_string=True,
-        ),
-    ),
-    path("new-path/<int:pk>/", views.my_view, name="my_view"),
-]
-```
+      ```python
+      urls = [
+          path(
+              "old-path/<int:pk>/",
+              RedirectView.as_view(
+                  pattern_name="my_view",
+                  permanent=True,
+                  query_string=True,
+              ),
+          ),
+          path("new-path/<int:pk>/", views.my_view, name="my_view"),
+      ]
+      ```
 
 ...
 
