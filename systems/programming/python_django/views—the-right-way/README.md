@@ -1278,6 +1278,9 @@ Them, skip aja kalo udah ngeuh:
 Them, cenah, baca lanjut:
 > Closures are a concept that some find intimidating, but they are extremely useful in a wide variety of programming situations. If you found the above confusing, have a look at this [Python closures primer](https://www.programiz.com/python-programming/closure) and then come back to the more complex example here.
 
+Them, next part:
+> In our theme of re-using logic, I want to cover [Preconditions](https://spookylukey.github.io/django-views-the-right-way/preconditions.html), but before that we’re going to go back to some basics, the first of which is [Redirects](https://spookylukey.github.io/django-views-the-right-way/redirects.html) and then [Forms](https://spookylukey.github.io/django-views-the-right-way/forms.html).
+
 ...
 
 ## ...
