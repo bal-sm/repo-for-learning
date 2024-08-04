@@ -1078,6 +1078,56 @@ def special_offer_detail(request, slug):
 
 _Skipped many things, baca [langsung](https://spookylukey.github.io/django-views-the-right-way/delegation.html#discussion-multiple-mixins)_
 
+## Custom logic in the middle — dependency injection - Mahmuda's version
+
+Them:
+> What happens if we have code that is largely common, but want to do something different “in the middle”?
+
+Them, skip:
+> We are getting into more advanced territory now, so this page is heavier than the ones that have come before, but the techniques here are also very powerful and widely applicable.
+
+Them:
+> Continuing [our example of two different views both featuring lists of products](https://spookylukey.github.io/django-views-the-right-way/delegation.html), let’s add a new requirement, imitating the kind of complexity you will likely encounter in real projects.
+
+- Instead of using Django’s `QuerySet`s as the basis for our list of products,
+  - we have to use a different API.
+  - Maybe it is:
+    - a third party HTTP-based service, or
+    - our own service,
+    - but our entry point is a function that doesn’t take a `QuerySet` as an input.
+  - Perhaps like this:
+
+```python
+def product_search(filters, *, page=1):
+    return _search(filters, Product.objects.all(), page=page)
+```
+
+with:
+
+```python
+def _search(filters, products, *, page=1):
+    if Filter.NAME in filters:
+        products = products.filter(name__icontains=filters[Filter.NAME])
+    if Filter.COLOR in filters:
+        products = products.filter(colors__name__icontains=filters[Filter.COLOR])
+
+    # paging
+    start = (page - 1) * PAGE_SIZE
+    products = list(products.order_by('name')[start:start + PAGE_SIZE])
+    return products
+```
+
+and
+
+```python
+class Filter:
+    NAME = 'name'
+    COLOR = 'color'
+
+
+PAGE_SIZE = 5
+```
+
 ...
 
 ## ...
