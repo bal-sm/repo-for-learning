@@ -1360,6 +1360,13 @@ Mine, my thoughts after baca ini, cool:
 
 ## Redirects - Mahmuda's version
 
+- To implement redirects in Django, you need to know how they work in HTTP.
+- In HTTP, a redirect is an HTTP response
+  - with a status code in the 300-399 range, and
+  - a `Location` header that tells a browser which URL to go to.
+  - If your view returns a response like this,
+    - the browser will immediately make another request, to the specified URL.
+
 ...
 
 ### Discussion ...
