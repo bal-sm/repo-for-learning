@@ -932,6 +932,12 @@ Them, cenah:
 
 ### Discussion: Function based generic views - Lite
 
+- What happens if you keep going with this parameterisation pattern?
+  - Let’s say you have not one model,
+    - but lots of models
+  - where you want to display a list,
+    - with the same kind of filtering/sorting/paging logic applied?
+
 ..., TBA.
 
 ### Discussion: Going further with generics - Lite
