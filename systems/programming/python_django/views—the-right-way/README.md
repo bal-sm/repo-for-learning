@@ -1305,7 +1305,9 @@ Them, next part:
 - “dependency injection frameworks/containers”
   - > (Often you will hear the term “dependency injection” being used for things that go one step further, and inject dependencies **automatically** in some way. I call these “dependency injection frameworks/containers”. Outside of [pytest’s fixtures](https://docs.pytest.org/en/latest/fixture.html) I have not yet found a need or desire for these in Python.)
     - > `def test_something(fixture_something)`, tau-tau `fixture_something` udah dimasukin aja.
-- ...
+
+Them, cenah:
+> So, we can call this pattern “first class functions”, or “callbacks”, “strategy pattern” or “dependency injection”. But dependency injection is clearly the coolest sounding, so I used that in the title.
 
 ### Discussion: DI vs inheritance - ...
 
