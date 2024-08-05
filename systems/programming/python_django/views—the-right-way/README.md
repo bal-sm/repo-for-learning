@@ -1444,6 +1444,13 @@ Mine:
     - Normally, this would be very tedious compared to using `Form`,
       - but in some cases it will be better.
       - For example, if you have a page with dynamically generated controls (e.g. lots of buttons or input boxes) it can be easiest to build them up and process them without using `Form`.
+- If you need:
+  - multiple buttons on the same form,
+    - that do different things,
+  - THEN, you need to understand how this works at the HTML level.:
+    1. The button that is pressed becomes a “successful” control,
+    2. which means the `request.POST` (or `request.GET`) dictionary
+       - will get an entry with that control’s `name` attribute.
 - ...
 
 ## ...
