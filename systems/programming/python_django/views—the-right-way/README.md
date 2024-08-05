@@ -1451,7 +1451,30 @@ Mine:
     1. The button that is pressed becomes a “successful” control,
     2. which means the `request.POST` (or `request.GET`) dictionary
        - will get an entry with that control’s `name` attribute.
-- ...
+  - So it looks like this:
+    - Template:
+
+      ```html
+      <form action="" method="POST">
+          {% csrf_token %}
+          {{ form }}
+          <input type="submit" name="save" value="Save">
+          <input type="submit" name="preview" value="Preview">
+      </form>
+      ```
+
+    - View:
+
+      ```python
+      def my_view(request):
+          if request.method == 'POST':
+              if 'preview' in request.POST:
+                  # Do preview thing...
+      ```
+
+    - > You may have to do something similar for multiple forms on one page.
+
+...
 
 ## ...
 
