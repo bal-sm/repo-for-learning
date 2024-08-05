@@ -1429,6 +1429,8 @@ Mine:
 - The fundamental pattern for a view that handles a form
   - is covered fully in the [Django form docs](https://docs.djangoproject.com/en/stable/topics/forms/#the-view),
   - > so I don’t have much to add, except a few notes:
+- You don’t need to use `FormView`, and I recommend you don’t.
+  - > me: tulis-tulis aja cara kerja `Form` class ke `view` function-nya.
 - ...
 
 ## ...
