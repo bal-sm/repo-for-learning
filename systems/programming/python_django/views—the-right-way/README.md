@@ -1426,7 +1426,9 @@ Mine:
 
 ## Forms - Mahmuda's version
 
-- The fundamental pattern for a view that handles a form is covered fully in the [Django form docs](https://docs.djangoproject.com/en/stable/topics/forms/#the-view), so I don’t have much to add, except a few notes:
+- The fundamental pattern for a view that handles a form
+  - is covered fully in the [Django form docs](https://docs.djangoproject.com/en/stable/topics/forms/#the-view),
+  - > so I don’t have much to add, except a few notes:
 - ...
 
 ## ...
