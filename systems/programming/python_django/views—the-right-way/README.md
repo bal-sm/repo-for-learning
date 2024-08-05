@@ -1,4 +1,4 @@
-# Django Views — The Right Way — Lite
+# Django Views — The Right Way — Lite & Mahmuda's version
 
 Mine:
 > udah we kodenya aja yang ditulis di sini, biar serasa "udah dibaca da ini teh".
