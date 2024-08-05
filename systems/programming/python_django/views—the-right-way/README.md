@@ -1479,6 +1479,17 @@ Them:
 
 ### Discussion: Complex form cases - Mahmuda's version
 
+- Why not `FormView`?
+  - > skip: Of all the CBVs, it is perhaps the most tempting, due to the control flow boilerplate that it eliminates. But overall, I still feel it is not worth it.
+    - > alias: butut.
+  - > skip part bawah ini:
+  1. First, it requires you to know and use a second API (`get_form_class`, `form_valid`, `get_initial` etc.). All of these are more awkward to use than just using `Form` directly.
+  2. It also makes some relatively common things much harder to do, and provides a very bad starting point for most customisations.
+     - For example,
+       - if you find you have a page that has two forms on it (perhaps alternative flows that the user can choose between), `FormView` will cause you lots of pain.
+       - Or if you have form handling as well as something else (such as a list of items), you will be in confusion if you are trying to use `FormView`, even more so if you’ve forgotten how to use the `Form` API directly.
+       - Another example that comes up quite frequently, and described above, is when you need multiple different submit buttons which take different actions. This is an easy thing in HTML/HTTP, and easy if you are using `Form` directly and in charge of the control flow yourself, but horrible if you are trying to fit it into `FormView`.
+
 ...
 
 ## ...
