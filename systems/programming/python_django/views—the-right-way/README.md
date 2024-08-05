@@ -1474,6 +1474,11 @@ Mine:
 
     - > You may have to do something similar for multiple forms on one page.
 
+Them:
+> That’s it! Next up: [Preconditions](https://spookylukey.github.io/django-views-the-right-way/preconditions.html).
+
+### Discussion: Complex form cases - Mahmuda's version
+
 ...
 
 ## ...
