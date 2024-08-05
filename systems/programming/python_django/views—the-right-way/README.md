@@ -1431,6 +1431,18 @@ Mine:
   - > so I don’t have much to add, except a few notes:
 - You don’t need to use `FormView`, and I recommend you don’t.
   - > me: tulis-tulis aja cara kerja `Form` class ke `view` function-nya.
+- You don’t actually need `Form` either.
+  - It’s an API that provides a very helpful set of behaviours (validation etc.),
+    - but it’s entirely possible to build forms in Django without it.
+      - > me: tapi ngapain, kan ya.
+      - You need to know how forms work at the [HTML level](https://developer.mozilla.org/en-US/docs/Learn/Forms), and
+      - you need to process:
+        - [request.GET](https://docs.djangoproject.com/en/5.0/ref/request-response/#django.http.HttpRequest.GET) or
+        - [request.POST](https://docs.djangoproject.com/en/5.0/ref/request-response/#django.http.HttpRequest.POST)
+        - yourself to get the submitted data and do something with it.
+      - Normally, this would be very tedious compared to using `Form`,
+        - but in some cases it will be better.
+        - For example, if you have a page with dynamically generated controls (e.g. lots of buttons or input boxes) it can be easiest to build them up and process them without using `Form`.
 - ...
 
 ## ...
