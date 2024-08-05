@@ -1,4 +1,4 @@
-# Django Views — The Right Way — Lite
+# Django Views — The Right Way — Lite & Mahmuda's version
 
 Mine:
 > udah we kodenya aja yang ditulis di sini, biar serasa "udah dibaca da ini teh".
@@ -1424,7 +1424,89 @@ TBA, meureun.
 Mine:
 > not really a concern, kata aku mah.
 
-## ...
+## Forms - Mahmuda's version
+
+- The fundamental pattern for a view that handles a form
+  - is covered fully in the [Django form docs](https://docs.djangoproject.com/en/stable/topics/forms/#the-view),
+  - > so I don’t have much to add, except a few notes:
+- You don’t need to use `FormView`, and I recommend you don’t.
+  - > me: tulis-tulis aja cara kerja `Form` class ke `view` function-nya.
+- You can use `Form`
+  - It’s an API that provides a very helpful set of behaviours (validation etc.),
+- But you don’t actually need it (`Form`).
+  - > me: tapi ngapain gak dipake, kan ya.
+  - It’s entirely possible to build forms in Django without it:
+    - You need to know how forms work at the [HTML level](https://developer.mozilla.org/en-US/docs/Learn/Forms), and
+    - you need to process:
+      - [request.GET](https://docs.djangoproject.com/en/5.0/ref/request-response/#django.http.HttpRequest.GET) or
+      - [request.POST](https://docs.djangoproject.com/en/5.0/ref/request-response/#django.http.HttpRequest.POST)
+      - yourself to get the submitted data and do something with it.
+    - Normally, this would be very tedious compared to using `Form`,
+      - but in some cases it will be better.
+      - For example, if you have a page with dynamically generated controls (e.g. lots of buttons or input boxes) it can be easiest to build them up and process them without using `Form`.
+- If you need:
+  - multiple buttons on the same form,
+    - that do different things,
+  - THEN, you need to understand how this works at the HTML level.:
+    1. The button that is pressed becomes a “successful” control,
+    2. which means the `request.POST` (or `request.GET`) dictionary
+       - will get an entry with that control’s `name` attribute.
+  - So it looks like this:
+    - Template:
+
+      ```html
+      <form action="" method="POST">
+          {% csrf_token %}
+          {{ form }}
+          <input type="submit" name="save" value="Save">
+          <input type="submit" name="preview" value="Preview">
+      </form>
+      ```
+
+    - View:
+
+      ```python
+      def my_view(request):
+          if request.method == 'POST':
+              if 'preview' in request.POST:
+                  # Do preview thing...
+      ```
+
+    - > You may have to do something similar for multiple forms on one page.
+
+Them:
+> That’s it! Next up: [Preconditions](https://spookylukey.github.io/django-views-the-right-way/preconditions.html).
+
+### Discussion: Complex form cases - Mahmuda's version
+
+- Why not `FormView`?
+  - > skip: Of all the CBVs, it is perhaps the most tempting, due to the control flow boilerplate that it eliminates. But overall, I still feel it is not worth it.
+    - > alias: butut.
+  - > skip part bawah ini:
+  1. First, it requires you to know and use a second API (`get_form_class`, `form_valid`, `get_initial` etc.). All of these are more awkward to use than just using `Form` directly.
+  2. It also makes some relatively common things much harder to do, and provides a very bad starting point for most customisations.
+     - For example,
+       1. if you find you have a page that has two forms on it (perhaps alternative flows that the user can choose between), `FormView` will cause you lots of pain.
+       2. Or if you have form handling as well as something else (such as a list of items), you will be in confusion if you are trying to use `FormView`, even more so if you’ve forgotten how to use the `Form` API directly.
+       3. Another example that comes up quite frequently, and described above, is when you need multiple different submit buttons which take different actions. This is an easy thing in HTML/HTTP, and easy if you are using `Form` directly and in charge of the control flow yourself, but horrible if you are trying to fit it into `FormView`.
+  3. Finally, the way that `FormView` obscures the flow control can be disastrous:
+
+     > In 2016 some Django core developers took on the task of refactoring a function based form view (the password reset views) to use `FormView` view. In the process, the checking of the “magic link” token was accidentally moved to a branch such that all security was effectively disabled — a trivial curl command enabled you to reset anyone’s password to anything you liked.
+
+     Them, if you care:
+     > Such a mistake would have been painfully obvious in the FBV, but in the CBV version, despite being authored by one core developer and reviewed by another, it went unnoticed and was committed to the master branch. It was [thankfully noticed](https://groups.google.com/d/msg/django-developers/HUZySAw43uE/RD4ifBLPBgAJ) before the next release, but it highlights just how badly the use of mixins for flow control obscures your code and makes reasoning about it a nightmare.
+
+## Preconditions - Mahmuda's version
+
+Mine:
+> ih siah penting banget ini.
+
+...
+
+## Applying policies - Mahmuda's version
+
+Mine:
+> penting juga ini. "Preconditions" part 2.
 
 ...
 
