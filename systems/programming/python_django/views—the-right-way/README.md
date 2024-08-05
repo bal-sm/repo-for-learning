@@ -1496,6 +1496,13 @@ Them:
      Them, if you care:
      > Such a mistake would have been painfully obvious in the FBV, but in the CBV version, despite being authored by one core developer and reviewed by another, it went unnoticed and was committed to the master branch. It was [thankfully noticed](https://groups.google.com/d/msg/django-developers/HUZySAw43uE/RD4ifBLPBgAJ) before the next release, but it highlights just how badly the use of mixins for flow control obscures your code and makes reasoning about it a nightmare.
 
+## Preconditions - Mahmuda's version
+
+Mine:
+> ih siah penting banget ini.
+
+...
+
 ## ...
 
 ...
