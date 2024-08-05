@@ -1506,7 +1506,7 @@ Mine:
 ## Applying policies - Mahmuda's version
 
 Mine:
-> penting juga ini.
+> penting juga ini. "Preconditions" part 2.
 
 ...
 
