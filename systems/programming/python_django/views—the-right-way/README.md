@@ -1732,8 +1732,8 @@ Mine:
 
 ```python
 def decorator_2(view_func):
-    print("In decorator_1")
     print("In decorator_2")
+    print("In decorator_1")
 
     def wrapper_2(request, *args, **kwargs):
         print("In decorator_2 wrapper, pre-processing")
@@ -1749,6 +1749,26 @@ def decorator_2(view_func):
 
     return wrapper_2
 ```
+
+Mine:
+> Jadi ackshually si Python Interpreter-nya bacanya yang `decorator_2` dulu, makanya `print("In decorator_2")`.
+>
+> Terus gini ringkas proses-nya:
+>
+> 1. `decorator_2` applied, to `my_view`
+> 2. `print("In decorator_2")`
+>    - > soalnya program-nya terjalankan gening, ngerti gak pembaca?
+> 3. `decorator_1` applied to `my_view`
+> 4. `print("In decorator_1")`
+> 5. terus nunggu ditampilin `view`-nya
+> 6. berjam-jam kemudian baru ada visitor
+> 7. menurut URLconf, mengarah ke `my_view`
+> 8. `print(In decorator_1 wrapper, pre-processing)`
+> 9. `print(In decorator_2 wrapper, pre-processing)`
+> 10. `print(In my_view)`
+> 11. `print(In decorator_2 wrapper, post-processing)`
+> 12. `print(In decorator_1 wrapper, post-processing)`
+> 13. terus bener-bener udah te-`return` hasil akhir dari `my_view`-nya.
 
 ...
 
