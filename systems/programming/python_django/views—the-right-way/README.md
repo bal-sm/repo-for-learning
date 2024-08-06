@@ -1730,6 +1730,26 @@ Them, note cenah:
 Mine:
 > [Do It Yourself](https://spookylukey.github.io/django-views-the-right-way/preconditions.html#exercise).
 
+```python
+def decorator_2(view_func):
+    print("In decorator_1")
+    print("In decorator_2")
+
+    def wrapper_2(request, *args, **kwargs):
+        print("In decorator_2 wrapper, pre-processing")
+
+        def wrapper_1(request, *args, **kwargs):
+            print("In decorator_1 wrapper, pre-processing")
+            response = view_func(request, *args, **kwargs)
+            print("In decorator_1 wrapper, post-processing")
+            return response
+
+        print("In decorator_2 wrapper, post-processing")
+        return wrapper_1
+
+    return wrapper_2
+```
+
 ...
 
 ## Applying policies - Mahmuda's version
