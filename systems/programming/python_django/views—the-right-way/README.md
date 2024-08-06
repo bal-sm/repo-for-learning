@@ -1515,6 +1515,11 @@ Mine:
 
 Python “decorators” are a perfect match for these kind of things.
 
+Them, recommending, cenah:
+> - If you haven’t used decorators at all before, I’d recommend this [Primer on Python Decorators](https://realpython.com/primer-on-python-decorators/).
+>   - If you just want to apply an existing decorator to a view, that’s very easy, but a good understanding of what is going on is necessary if you want to be able to implement them.
+>   - Plus, you’ll get a huge amount of benefit in other ways from this very general Python technique.
+
 ...
 
 ## Applying policies - Mahmuda's version
