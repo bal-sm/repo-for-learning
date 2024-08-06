@@ -1584,7 +1584,20 @@ Them, recommending, cenah:
        return wrapper
    ```
 
-   - The `@functools.wraps(view_func)` line may not be strictly necessary. But it makes our wrapper function view behave more nicely — for example, it copies the name and docstring of the original view over, along with other attributes. These make debugging nicer, and sometimes it can be important for functionality too (for instance, if you are wrapping something that has been wrapped in `csrf_exempt`) — so you should always add it.
+   - The `@functools.wraps(view_func)` line
+     - may not be strictly necessary.
+     - But it makes our wrapper function view behave more nicely
+       - — for example,
+         - it copies:
+           - the name and
+           - docstring
+           - of the original view over,
+           - along with other attributes.
+       - These make:
+         - debugging nicer, and
+         - sometimes it can be important for functionality too
+           - (for instance, if you are wrapping something that has been wrapped in `csrf_exempt`)
+             - — so you should always add it.
 
    - > pertanyaan: kenapa view_func-nya gak dibawa sama arguments-nya
      - > jawaban: soalnya dibawanya secara kesatuan dari `view_func`
