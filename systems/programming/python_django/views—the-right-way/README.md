@@ -1791,9 +1791,10 @@ Mine:
 >    - > soalnya program-nya terjalankan gening, ngerti gak pembaca?
 > 3. `decorator_1` applied to `my_view`
 > 4. `print("In decorator_1")`
-> 5. terus nunggu ditampilin `view`-nya
-> 6. berjam-jam kemudian baru ada visitor
-> 7. menurut URLconf, mengarah ke `my_view`
+> 5. ~~terus nunggu ditampilin `view`-nya~~
+> 6. ~~berjam-jam kemudian baru ada visitor~~
+> 7. ~~menurut URLconf, mengarah ke `my_view`~~
+>    - > enggak ketang, salah, hehe.
 > 8. `print(In decorator_1 wrapper, pre-processing)`
 > 9. `print(In decorator_2 wrapper, pre-processing)`
 > 10. `print(In my_view)`
