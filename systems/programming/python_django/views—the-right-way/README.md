@@ -1513,6 +1513,8 @@ Mine:
         - but other options are possible, such as displaying a message
           - (perhaps using the [messages framework](https://docs.djangoproject.com/en/5.0/ref/contrib/messages/)).
 
+Python “decorators” are a perfect match for these kind of things.
+
 ...
 
 ## Applying policies - Mahmuda's version
