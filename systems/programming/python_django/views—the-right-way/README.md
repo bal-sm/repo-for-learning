@@ -1636,6 +1636,15 @@ Them, recommending, cenah:
        - and future proof,
    - so we put those in there from the start.
 
+### Adding multiple decorators - Mahmuda's version
+
+- Our decorator as above has an issue
+  - — if an anonymous user accesses it,
+  - `request.user` will be an `AnonymousUser` instance,
+  - and won’t have an `is_premium` attribute,
+    - > `request.user = {...: ..., `~~`is_premium`~~`: None}`
+    - which will result in a 500 error.
+
 ...
 
 ## Applying policies - Mahmuda's version
