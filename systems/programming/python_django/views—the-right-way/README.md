@@ -1703,6 +1703,10 @@ my_premium_page = \
   - while `login_required` is the **outermost** decorator,
     - > terluar.
     - and it is the last to be applied.
+- **BUT!**
+  - The decorators themselves
+    - (the functions premium_required and login_required)
+    - are distinct from the wrappers they return!
 
 ...
 
