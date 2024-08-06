@@ -1787,8 +1787,8 @@ def decorator_2(view_func):
             # * Ingat bahwa ada `view_func`, maka ditaro / bisa dianggap jalannya di-sini.
 
             # def my_view(request, *args, **kwargs):
-            #     print("In my_view")
-            #     return "I am a response"
+            #     print("In my_view") # * jalan dan ditampilkan.
+            #     return "I am a response" # * jalan cuman di belakang aja.
 
             response = view_func(request, *args, **kwargs)
             print("In decorator_1 wrapper, post-processing")
