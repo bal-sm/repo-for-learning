@@ -1501,6 +1501,18 @@ Them:
 Mine:
 > ih siah penting banget ini.
 
+- When writing views,
+  - a common situation is that you have some checks
+    - that need to be done:
+      - at the *beginning* of a view
+      - *before* the main logic, and
+      - several views _might share_ the same checks.
+    - If the check fails
+      - you might want to redirect the user
+        - to a different page,
+        - but other options are possible, such as displaying a message
+          - (perhaps using the [messages framework](https://docs.djangoproject.com/en/5.0/ref/contrib/messages/)).
+
 ...
 
 ## Applying policies - Mahmuda's version
