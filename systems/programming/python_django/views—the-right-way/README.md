@@ -1772,7 +1772,12 @@ Kalau gini:
 
 Gimana?
 
-...
+Them, gini cenah:
+> Hints:
+> - Replace the `@` syntax with the long-hand version
+> - Simplify using no decorators, then one decorator, then two decorators
+
+Jawabannya:
 
 ```python
 def decorator_2(view_func):
