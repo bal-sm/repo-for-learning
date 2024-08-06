@@ -1588,8 +1588,7 @@ Them, recommending, cenah:
 
    - > pertanyaan: kenapa view_func-nya gak dibawa sama arguments-nya
      - > jawaban: soalnya dibawanya secara kesatuan dari `view_func`
-     - > note: `return wrapper` tuh `return view_func` keneh.
-     - > note 2: jadinya kalau
+     - > note: jadinya kalau
 
        1. Begini:
 
@@ -1602,7 +1601,8 @@ Them, recommending, cenah:
        2. Berarti interface-nya udah cocok sama:
           1. `wrapper` yang di-_defined_ _on_ `def wrapper(request, *args, **kwargs): ...`.
           2. terus _declared_ _on_ `return wrapper`.
-
+             - > note: jadi bisa dikatakan `return wrapper` tuh masih `return view_func`.
+               - > me: liat aja lagi kode-nya.
        3. Makanya `view`-nya saat dimasukin ke URLconf, maka otomatis dipenuhi, `request` dan 'arguments lainnya.
 
        - > just a note, terus teh di `@` / decorator land, sebenernya `@something` sama `@something()`, sama aja.
