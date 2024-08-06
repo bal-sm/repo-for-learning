@@ -1759,6 +1759,18 @@ def decorator_2(view_func):
     return wrapper
 ```
 
+Kalau gini:
+
+```python
+>>> @decorator_1
+... @decorator_2
+... def my_view(request):
+...     print("In my_view")
+...     return "I am a response"
+```
+
+Gimana?
+
 ...
 
 ```python
