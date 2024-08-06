@@ -1520,6 +1520,13 @@ Them, recommending, cenah:
 >   - If you just want to apply an existing decorator to a view, that’s very easy, but a good understanding of what is going on is necessary if you want to be able to implement them.
 >   - Plus, you’ll get a huge amount of benefit in other ways from this very general Python technique.
 
+1. First let’s look at our starting point.
+   - We have a page that should only be accessible to ‘premium’ users.
+   - If, somehow, a non-premium user:
+     1. gets the link to the page,
+     2. they should be redirected to their account page,
+     3. and also shown a message.
+
 ...
 
 ## Applying policies - Mahmuda's version
