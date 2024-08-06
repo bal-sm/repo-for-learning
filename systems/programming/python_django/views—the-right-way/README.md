@@ -1536,6 +1536,16 @@ Them, recommending, cenah:
          return TemplateResponse(request, 'premium_page.html', {})
      ```
 
+2. Now, we want to re-use those first 3 lines of logic.
+   - The neatest way is to put them in a decorator,
+   - which we will use like this:
+
+     ```python
+     @premium_required
+     def my_premium_page(request):
+         return TemplateResponse(request, 'premium_page.html', {})
+     ```
+
 ...
 
 ## Applying policies - Mahmuda's version
