@@ -1725,6 +1725,11 @@ Them, penting:
 Them, kela:
 > However, you might also want to do post-processing in your view wrappers. If you do that, remember the onion metaphor — post-processing from the innermost wrapper will run before post-processing from the outermost wrapper.
 
+#### Exercise - Yang sudah kulakukan
+
+Mine:
+> [Do It Yourself](https://spookylukey.github.io/django-views-the-right-way/preconditions.html#exercise).
+
 ...
 
 ## Applying policies - Mahmuda's version
