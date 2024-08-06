@@ -1501,6 +1501,332 @@ Them:
 Mine:
 > ih siah penting banget ini.
 
+- When writing views,
+  - a common situation is that you have some checks
+    - that need to be done:
+      - at the *beginning* of a view
+      - *before* the main logic, and
+      - several views _might share_ the same checks.
+    - If the check fails
+      - you might want to redirect the user
+        - to a different page,
+        - but other options are possible, such as displaying a message
+          - (perhaps using the [messages framework](https://docs.djangoproject.com/en/5.0/ref/contrib/messages/)).
+
+Python “decorators” are a perfect match for these kind of things.
+
+Them, recommending, cenah:
+> - If you haven’t used decorators at all before, I’d recommend this [Primer on Python Decorators](https://realpython.com/primer-on-python-decorators/).
+>   - If you just want to apply an existing decorator to a view, that’s very easy, but a good understanding of what is going on is necessary if you want to be able to implement them.
+>   - Plus, you’ll get a huge amount of benefit in other ways from this very general Python technique.
+
+1. First let’s look at our starting point.
+   - We have a page that should only be accessible to ‘premium’ users.
+   - If, somehow, a non-premium user:
+     1. gets the link to the page,
+     2. they should be redirected to their account page,
+     3. and also shown a message.
+   - It might look like this:
+
+     ```python
+     def my_premium_page(request):
+         if not request.user.is_premium:
+             messages.info(request, "You need a premium account to access that page.")
+             return HttpResponseRedirect(reverse('account'))
+         return TemplateResponse(request, 'premium_page.html', {})
+     ```
+
+2. Now, we want to re-use those first 3 lines of logic.
+   - The neatest way is to put them in a decorator,
+   - which we will use like this:
+
+     ```python
+     @premium_required
+     def my_premium_page(request):
+         return TemplateResponse(request, 'premium_page.html', {})
+     ```
+
+3. To understand how to implement a decorator,
+   - it’s often useful to remember what decorator syntax is doing.
+   - The long-hand way of defining `my_premium_page`, equivalent to the above, is like this:
+
+     ```python
+     def my_premium_page(request):
+         return TemplateResponse(request, 'premium_page.html', {})
+
+     my_premium_page = premium_required(my_premium_page)
+     ```
+
+   - In other words, `premium_required` is
+     - a function that takes a view function as input,
+     - and returns a new, replacement view function as output.
+       - The view function
+         - it returns will wrap {the original view function}.
+         - In our case, it will also add some additional checks and logic, and
+         - in some cases
+           - (where the user is not a premium user),
+           - it will decide to bypass the original view function and return its own response.
+
+4. So the implementation of `premium_required` will look like this:
+
+   ```python
+   import functools
+
+   def premium_required(view_func):
+
+       @functools.wraps(view_func)
+       def wrapper(request, *args, **kwargs):
+           if not request.user.is_premium:
+               messages.info(request, "You need a premium account to access that page.")
+               return HttpResponseRedirect(reverse('account'))
+           return view_func(request, *args, **kwargs)
+
+       return wrapper
+   ```
+
+   - The `@functools.wraps(view_func)` line
+     - may not be strictly necessary.
+     - But it makes our wrapper function view behave more nicely
+       - — for example,
+         - it copies:
+           - the name and
+           - docstring
+           - of the original view over,
+           - along with other attributes.
+       - These make:
+         - debugging nicer, and
+         - sometimes it can be important for functionality too
+           - (for instance, if you are wrapping something that has been wrapped in `csrf_exempt`)
+             - — so you should always add it.
+
+   - > pertanyaan: kenapa view_func-nya gak dibawa sama arguments-nya
+     - > jawaban: soalnya dibawanya secara kesatuan dari `view_func`
+     - > note: jadinya kalau
+
+       1. Begini:
+
+          ```python
+          @premium_required
+          def my_premium_page(request):
+            ...
+          ```
+
+       2. Berarti interface-nya udah cocok sama:
+          1. `wrapper` yang di-_defined_ _on_ `def wrapper(request, *args, **kwargs): ...`.
+          2. terus _declared_ _on_ `return wrapper`.
+             - > note: jadi bisa dikatakan `return wrapper` tuh masih `return view_func`.
+               - > me: liat aja lagi kode-nya.
+       3. Makanya `view`-nya saat dimasukin ke URLconf, maka otomatis dipenuhi, `request` dan 'arguments lainnya.
+
+       - > just a note, terus teh di `@` / decorator land, sebenernya `@something` sama `@something()`, sama aja.
+       - > tag: decorator (shit).
+
+5. So far,
+   - the views we’re using it on
+     - only take a single `request`,
+     - > `def my_premium_page(request): ...`
+   - so making our wrapper:
+     - take
+       - `*args`
+       - and `**kwargs`
+     - might not seem necessary.
+   - But we want this decorator:
+     - to be
+       - generic
+       - and future proof,
+   - so we put those in there from the start.
+
+### Adding multiple decorators - Mahmuda's version
+
+- Our decorator as above has an issue
+  - — if an anonymous user accesses it,
+  - `request.user` will be an `AnonymousUser` instance,
+  - and won’t have an `is_premium` attribute,
+    - > `request.user = {...: ..., `~~`is_premium`~~`: None}`
+    - which will result in a 500 error.
+
+- A nice way to tackle this
+  - is to use the Django-provided
+    - `login_required` decorator,
+  - which will
+    - redirect to the login page
+      - for anonymous users.
+  - We simply need to apply both decorators.
+  - The correct order is as follows:
+
+    ```python
+    from django.contrib.auth.decorators import login_required
+
+    @login_required
+    @premium_required
+    def my_premium_page(request):
+        return TemplateResponse(request, 'premium_page.html', {})
+    ```
+
+    - The checks that `login_required`
+      - does ensure that:
+        - by the time
+          - we get into the `premium_required` view wrapper,
+        - we are guaranteed to have a logged in user.
+
+#### Ordering multiple decorators - Mahmuda's version
+
+- When dealing with multiple decorators, as above,
+  - ordering can be very important,
+  - and it’s easy to get confused about
+    - what order everything is happening.
+
+- The best analogy I know of
+  - is to think of it as an *onion*:
+    - In the centre,
+      - you have the actual view function,
+    - and each decorator adds a layer.
+    - > `decorator(decorator(view_func))` tea.
+  - Let’s write it out the long hand way as a visualisation:
+
+```python
+def my_premium_page(request):
+    return TemplateResponse(request, 'premium_page.html', {})
+
+my_premium_page = \
+    login_required(
+        premium_required(
+            my_premium_page
+        )
+    )
+```
+
+- So,
+  - `premium_required` is the **innermost** decorator.
+    - > terdalam.
+    - It is the **first* to be applied* to `my_premium_page`,
+  - while `login_required` is the **outermost** decorator,
+    - > terluar.
+    - and it is the last to be applied.
+- **BUT!**
+  - The decorators themselves
+    - (the functions `premium_required` and `login_required`)
+    - are distinct from the wrappers they return!
+- So,
+  - the preconditions that the `login_required` wrapper
+    - adds are run **first**
+      - (because it is the outermost),
+  - and the preconditions that the `premium_required` wrapper
+    - adds are run **last**
+      - (because it is the innermost).
+
+Them, penting:
+> - The result
+>   - is actually very intuitive
+>   - — the preconditions added by each decorator
+>     - are run in the order
+>       - that the decorators appear in your source code.
+
+Them, note cenah:
+> However, you might also want to do post-processing in your view wrappers. If you do that, remember the onion metaphor — post-processing from the innermost wrapper will run before post-processing from the outermost wrapper.
+
+#### Exercise - Yang sudah kulakukan
+
+Mine:
+> [Do It Yourself](https://spookylukey.github.io/django-views-the-right-way/preconditions.html#exercise).
+
+_Skipped their explanation_
+
+Misal:
+
+```python
+def decorator_1(view_func):
+    print("In decorator_1")
+
+    def wrapper(request, *args, **kwargs):
+        print("In decorator_1 wrapper, pre-processing")
+        response = view_func(request, *args, **kwargs)
+        print("In decorator_1 wrapper, post-processing")
+        return response
+
+    return wrapper
+
+
+def decorator_2(view_func):
+    print("In decorator_2")
+
+    def wrapper(request, *args, **kwargs):
+        print("In decorator_2 wrapper, pre-processing")
+        response = view_func(request, *args, **kwargs)
+        print("In decorator_2 wrapper, post-processing")
+        return response
+
+    return wrapper
+```
+
+Kalau gini:
+
+```python
+>>> @decorator_1
+... @decorator_2
+... def my_view(request):
+...     print("In my_view")
+...     return "I am a response"
+>>> response = my_view(None)
+```
+
+Gimana?
+
+Them, gini cenah:
+> Hints:
+> - Replace the `@` syntax with the long-hand version
+> - Simplify using no decorators, then one decorator, then two decorators
+
+Jawabannya:
+
+```python
+def decorator_2(view_func):
+    print("In decorator_2")
+    print("In decorator_1")
+
+    def wrapper_2(request, *args, **kwargs):
+        print("In decorator_2 wrapper, pre-processing")
+
+        def wrapper_1(request, *args, **kwargs):
+            print("In decorator_1 wrapper, pre-processing")
+
+            # * Ingat bahwa ada `view_func`, maka ditaro / bisa dianggap jalannya di-sini.
+
+            # def my_view(request, *args, **kwargs):
+            #     print("In my_view") # * jalan dan ditampilkan.
+            #     return "I am a response" # * jalan cuman di belakang aja.
+
+            response = view_func(request, *args, **kwargs)
+            print("In decorator_1 wrapper, post-processing")
+            return response
+
+        print("In decorator_2 wrapper, post-processing")
+        return wrapper_1
+
+    return wrapper_2
+```
+
+Mine:
+> Jadi ackshually si Python Interpreter-nya bacanya yang `decorator_2` dulu, makanya `print("In decorator_2")`.
+>
+> Terus gini ringkas proses-nya:
+>
+> 1. `decorator_2` applied, to `my_view`
+> 2. `print("In decorator_2")`
+>    - > soalnya program-nya terjalankan gening, ngerti gak pembaca?
+> 3. `decorator_1` applied to `my_view`
+> 4. `print("In decorator_1")`
+> 5. ~~terus nunggu ditampilin `view`-nya~~
+> 6. ~~berjam-jam kemudian baru ada visitor~~
+> 7. ~~menurut URLconf, mengarah ke `my_view`~~
+>    - > enggak ketang, salah, hehe.
+> 8. `print(In decorator_1 wrapper, pre-processing)`
+> 9. `print(In decorator_2 wrapper, pre-processing)`
+> 10. `print(In my_view)`
+> 11. `print(In decorator_2 wrapper, post-processing)`
+> 12. `print(In decorator_1 wrapper, post-processing)`
+> 13. terus bener-bener udah te-`return` hasil akhir dari `my_view`-nya.
+
 ...
 
 ## Applying policies - Mahmuda's version
