@@ -1645,6 +1645,30 @@ Them, recommending, cenah:
     - > `request.user = {...: ..., `~~`is_premium`~~`: None}`
     - which will result in a 500 error.
 
+- A nice way to tackle this
+  - is to use the Django-provided
+    - `login_required` decorator,
+  - which will
+    - redirect to the login page
+      - for anonymous users.
+  - We simply need to apply both decorators.
+  - The correct order is as follows:
+
+    ```python
+    from django.contrib.auth.decorators import login_required
+
+    @login_required
+    @premium_required
+    def my_premium_page(request):
+        return TemplateResponse(request, 'premium_page.html', {})
+    ```
+
+    - The checks that `login_required`
+      - does ensure that:
+        - by the time
+          - we get into the `premium_required` view wrapper,
+        - we are guaranteed to have a logged in user.
+
 ...
 
 ## Applying policies - Mahmuda's version
