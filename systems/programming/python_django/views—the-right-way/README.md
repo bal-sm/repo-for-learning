@@ -1597,11 +1597,15 @@ Them, recommending, cenah:
        >   ...
        > ```
        >
-       > berarti cocok interface-nya sama:
+       > berarti interface-nya udah cocok sama:
        >
-       > `return wrapper` yang `wrapper`-nya di-_defined_ on `def
+       > `wrapper` yang di-_defined_ _on_ `def wrapper(request, *args, **kwargs): ...`.
+       >
+       > terus _declared_ _on_ `return wrapper`.
        >
        > terus teh di `@` / decorator land, sebenernya `@something` sama `@something()`, sama aja.
+       >
+       > tag: decorator (shit).
 
 ...
 
