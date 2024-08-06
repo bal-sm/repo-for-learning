@@ -1767,6 +1767,7 @@ Kalau gini:
 ... def my_view(request):
 ...     print("In my_view")
 ...     return "I am a response"
+>>> response = my_view(None)
 ```
 
 Gimana?
