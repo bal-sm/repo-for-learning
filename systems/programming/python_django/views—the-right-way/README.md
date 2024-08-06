@@ -1680,7 +1680,7 @@ Them, recommending, cenah:
   - is to think of it as an *onion*:
     - In the centre,
       - you have the actual view function,
-      - and each decorator adds a layer.
+    - and each decorator adds a layer.
   - Let’s write it out the long hand way as a visualisation:
 
 ...
