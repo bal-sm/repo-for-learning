@@ -1684,6 +1684,18 @@ Them, recommending, cenah:
     - > `decorator(decorator(view_func))` tea.
   - Let’s write it out the long hand way as a visualisation:
 
+```python
+def my_premium_page(request):
+    return TemplateResponse(request, 'premium_page.html', {})
+
+my_premium_page = \
+    login_required(
+        premium_required(
+            my_premium_page
+        )
+    )
+```
+
 ...
 
 ## Applying policies - Mahmuda's version
