@@ -1715,6 +1715,13 @@ my_premium_page = \
     - adds are run **last**
       - (because it is the innermost).
 
+Them, penting:
+> - The result
+>   - is actually very intuitive
+>   - — the preconditions added by each decorator
+>     - are run in the order
+>       - that the decorators appear in your source code.
+
 ...
 
 ## Applying policies - Mahmuda's version
