@@ -1567,6 +1567,25 @@ Them, recommending, cenah:
            - (where the user is not a premium user),
            - it will decide to bypass the original view function and return its own response.
 
+4. So the implementation of `premium_required` will look like this:
+
+   ```python
+   import functools
+
+   def premium_required(view_func):
+
+       @functools.wraps(view_func)
+       def wrapper(request, *args, **kwargs):
+           if not request.user.is_premium:
+               messages.info(request, "You need a premium account to access that page.")
+               return HttpResponseRedirect(reverse('account'))
+           return view_func(request, *args, **kwargs)
+
+       return wrapper
+   ```
+
+   - ...
+
 ...
 
 ## Applying policies - Mahmuda's version
