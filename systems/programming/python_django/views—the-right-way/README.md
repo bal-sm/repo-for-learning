@@ -1681,6 +1681,7 @@ Them, recommending, cenah:
     - In the centre,
       - you have the actual view function,
     - and each decorator adds a layer.
+    - > `decorator(decorator(view_func))` tea.
   - Let’s write it out the long hand way as a visualisation:
 
 ...
