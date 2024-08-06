@@ -1707,6 +1707,13 @@ my_premium_page = \
   - The decorators themselves
     - (the functions `premium_required` and `login_required`)
     - are distinct from the wrappers they return!
+- So,
+  - the preconditions that the `login_required` wrapper
+    - adds are run **first**
+      - (because it is the outermost),
+  - and the preconditions that the `premium_required` wrapper
+    - adds are run **last**
+      - (because it is the innermost).
 
 ...
 
