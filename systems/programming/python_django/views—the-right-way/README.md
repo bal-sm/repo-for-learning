@@ -1546,6 +1546,17 @@ Them, recommending, cenah:
          return TemplateResponse(request, 'premium_page.html', {})
      ```
 
+3. To understand how to implement a decorator,
+   - it’s often useful to remember what decorator syntax is doing.
+   - The long-hand way of defining `my_premium_page`, equivalent to the above, is like this:
+
+     ```python
+     def my_premium_page(request):
+         return TemplateResponse(request, 'premium_page.html', {})
+
+     my_premium_page = premium_required(my_premium_page)
+     ```
+
 ...
 
 ## Applying policies - Mahmuda's version
