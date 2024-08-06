@@ -1557,6 +1557,16 @@ Them, recommending, cenah:
      my_premium_page = premium_required(my_premium_page)
      ```
 
+   - In other words, `premium_required` is
+     - a function that takes a view function as input,
+     - and returns a new, replacement view function as output.
+       - The view function
+         - it returns will wrap {the original view function}.
+         - In our case, it will also add some additional checks and logic, and
+         - in some cases
+           - (where the user is not a premium user),
+           - it will decide to bypass the original view function and return its own response.
+
 ...
 
 ## Applying policies - Mahmuda's version
