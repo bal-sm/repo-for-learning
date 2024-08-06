@@ -1621,6 +1621,18 @@ Them, recommending, cenah:
        - > just a note, terus teh di `@` / decorator land, sebenernya `@something` sama `@something()`, sama aja.
        - > tag: decorator (shit).
 
+5. So far,
+   - the views we’re using it on only take a single `request`,
+     - > `def my_premium_page(request): ...`
+   - so making our wrapper:
+     - take `*args`
+     - and `**kwargs`
+     - might not seem necessary.
+   - But we want this decorator:
+     - to be generic
+     - and future proof,
+   - so we put those in there from the start.
+
 ...
 
 ## Applying policies - Mahmuda's version
