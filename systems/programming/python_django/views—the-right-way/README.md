@@ -1705,7 +1705,7 @@ my_premium_page = \
     - and it is the last to be applied.
 - **BUT!**
   - The decorators themselves
-    - (the functions premium_required and login_required)
+    - (the functions `premium_required` and `login_required`)
     - are distinct from the wrappers they return!
 
 ...
