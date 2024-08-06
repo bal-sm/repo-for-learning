@@ -1590,22 +1590,21 @@ Them, recommending, cenah:
      - > jawaban: soalnya dibawanya secara kesatuan dari `view_func`
      - > note: `return wrapper` tuh `return view_func` keneh.
      - > note 2: jadinya kalau
-       >
-       > ```python
-       > @premium_required
-       > def my_premium_page(request):
-       >   ...
-       > ```
-       >
-       > berarti interface-nya udah cocok sama:
-       >
-       > `wrapper` yang di-_defined_ _on_ `def wrapper(request, *args, **kwargs): ...`.
-       >
-       > terus _declared_ _on_ `return wrapper`.
-       >
-       > terus teh di `@` / decorator land, sebenernya `@something` sama `@something()`, sama aja.
-       >
-       > tag: decorator (shit).
+
+       1. Begini:
+
+          ```python
+          @premium_required
+          def my_premium_page(request):
+            ...
+          ```
+
+       2. Berarti interface-nya udah cocok sama:
+          1. `wrapper` yang di-_defined_ _on_ `def wrapper(request, *args, **kwargs): ...`.
+          2. terus _declared_ _on_ `return wrapper`.
+
+       - > just a note, terus teh di `@` / decorator land, sebenernya `@something` sama `@something()`, sama aja.
+       - > tag: decorator (shit).
 
 ...
 
