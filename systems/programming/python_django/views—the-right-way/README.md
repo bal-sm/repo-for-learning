@@ -1722,7 +1722,7 @@ Them, penting:
 >     - are run in the order
 >       - that the decorators appear in your source code.
 
-Them, kela:
+Them, note cenah:
 > However, you might also want to do post-processing in your view wrappers. If you do that, remember the onion metaphor — post-processing from the innermost wrapper will run before post-processing from the outermost wrapper.
 
 #### Exercise - Yang sudah kulakukan
