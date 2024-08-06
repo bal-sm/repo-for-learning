@@ -1589,6 +1589,19 @@ Them, recommending, cenah:
    - > pertanyaan: kenapa view_func-nya gak dibawa sama arguments-nya
      - > jawaban: soalnya dibawanya secara kesatuan dari `view_func`
      - > note: `return wrapper` tuh `return view_func` keneh.
+     - > note 2: jadinya kalau
+       >
+       > ```python
+       > @premium_required
+       > def my_premium_page(request):
+       >   ...
+       > ```
+       >
+       > berarti cocok interface-nya sama:
+       >
+       > `return wrapper` yang `wrapper`-nya di-_defined_ on `def
+       >
+       > terus teh di `@` / decorator land, sebenernya `@something` sama `@something()`, sama aja.
 
 ...
 
