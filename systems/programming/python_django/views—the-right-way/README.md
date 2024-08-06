@@ -1603,6 +1603,8 @@ Them, recommending, cenah:
           1. `wrapper` yang di-_defined_ _on_ `def wrapper(request, *args, **kwargs): ...`.
           2. terus _declared_ _on_ `return wrapper`.
 
+       3. Makanya `view`-nya saat dimasukin ke URLconf, maka otomatis dipenuhi, `request` dan 'arguments lainnya.
+
        - > just a note, terus teh di `@` / decorator land, sebenernya `@something` sama `@something()`, sama aja.
        - > tag: decorator (shit).
 
