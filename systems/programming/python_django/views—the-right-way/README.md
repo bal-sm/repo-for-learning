@@ -1526,6 +1526,15 @@ Them, recommending, cenah:
      1. gets the link to the page,
      2. they should be redirected to their account page,
      3. and also shown a message.
+   - It might look like this:
+
+     ```python
+     def my_premium_page(request):
+         if not request.user.is_premium:
+             messages.info(request, "You need a premium account to access that page.")
+             return HttpResponseRedirect(reverse('account'))
+         return TemplateResponse(request, 'premium_page.html', {})
+     ```
 
 ...
 
