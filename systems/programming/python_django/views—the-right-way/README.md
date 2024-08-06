@@ -1696,6 +1696,13 @@ my_premium_page = \
     )
 ```
 
+- So,
+  - `premium_required` is the **innermost** decorator.
+    - > terdalam.
+    - It is the **first* to be applied* to `my_premium_page`,
+  - while `login_required` is the **outermost** decorator,
+    - and it is the last to be applied.
+
 ...
 
 ## Applying policies - Mahmuda's version
