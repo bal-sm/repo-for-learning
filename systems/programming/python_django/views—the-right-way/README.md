@@ -1669,6 +1669,20 @@ Them, recommending, cenah:
           - we get into the `premium_required` view wrapper,
         - we are guaranteed to have a logged in user.
 
+#### Ordering multiple decorators - Mahmuda's version
+
+- When dealing with multiple decorators, as above,
+  - ordering can be very important,
+  - and it’s easy to get confused about
+    - what order everything is happening.
+
+- The best analogy I know of
+  - is to think of it as an *onion*:
+    - In the centre,
+      - you have the actual view function,
+      - and each decorator adds a layer.
+  - Let’s write it out the long hand way as a visualisation:
+
 ...
 
 ## Applying policies - Mahmuda's version
