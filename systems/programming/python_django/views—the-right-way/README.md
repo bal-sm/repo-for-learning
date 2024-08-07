@@ -1919,10 +1919,15 @@ def blog(request): ...
 Them:
 > You could also see this Stackoverflow post with [general code for composing any number of decorators](https://stackoverflow.com/questions/5409450/can-i-combine-two-decorators-into-a-single-one-in-python).
 
-...
+This is the blueprint:
 
 ```python
-# ...
+def composed(*decs):
+    def deco(f):
+        for dec in reversed(decs):
+            f = dec(f)
+        return f
+    return deco
 ```
 
 ...
