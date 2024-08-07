@@ -2045,6 +2045,27 @@ Mine:
     - — without touching the code,
   - you can apply a single blanket policy to it.
   - It has some disadvantages, though, especially when it’s your own code:
+    - it works at the URL level,
+      - `urls.py`
+      - which might be slightly different than what you want.
+    - it leaves your own view functions “not obviously right”:
+      - Views that you expect
+        - to be decorated
+          - with a `login_required`
+            - are now bare,
+            - and you have to remember
+              - that security is applied at a different point.
+      - What’s worse is
+        - that you might have some parts of your code base:
+          - where you don’t (or can’t) use this pattern,
+          - and some where you do.
+        - So you have to switch between multiple mindsets.
+          - If you come across a view without a decorator,
+            - is that a security issue or not?
+          - You could end up training your subconscious to ignore the real issues,
+            - which is quite bad.
+    - it doesn’t have an obvious,
+      - easy mechanism for making exceptions.
 
 ...
 
