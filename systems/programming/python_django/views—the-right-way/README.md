@@ -1888,6 +1888,21 @@ def require_GET_or_POST_and_login(func):
     return require_http_methods(["GET", "POST"])(login_required(func))
 ```
 
+atau gitu:
+
+```python
+def require(methods=("GET", "POST"), login=True):
+    def decorator(func):
+        wrapped = func
+        if methods is not None:
+            wrapped = require_http_methods(methods)(func)
+        if login:
+            wrapped = login_required(func)
+        return wrapped
+
+    return decorator
+```
+
 ...
 
 ## Applying policies - Mahmuda's version
