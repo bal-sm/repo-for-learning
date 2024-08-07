@@ -1868,6 +1868,19 @@ def home(request): ...
 
 ---
 
+Mahmuda and Adam:
+> Misal kalo pake `require_http_methods` which is a general version of `require_GET` that takes an argument for the methods.
+
+```python
+from django.views.decorators.http import require_http_methods
+from django.contrib.auth.decorators import login_required
+
+
+@require_http_methods(["GET", "POST"])
+@login_required
+def contact(request): ...
+```
+
 ...
 
 ## Applying policies - Mahmuda's version
