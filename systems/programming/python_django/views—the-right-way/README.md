@@ -2019,6 +2019,7 @@ Mine:
     - we might want
       - “every view in a module —
       - apart from one or two”
+        - > kecuali, maksudnya.
     - or
       - “every view by default,
       - unless we’ve specifically excluded it”
