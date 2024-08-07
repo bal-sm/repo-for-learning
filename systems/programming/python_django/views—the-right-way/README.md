@@ -1838,12 +1838,19 @@ Mine:
 Mine:
 > masukin aja ya kesini bestie.
 
-Misal:
+Misal sering banget nulis gini:
 
 ```python
 @require_GET
 @login_required
 def home(request): ...
+```
+
+Tulis dulu at `decorators.py`:
+
+```python
+def require_GET_and_login(func):
+    return require_GET(login_required(func))
 ```
 
 ...
