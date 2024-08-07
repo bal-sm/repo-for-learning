@@ -2031,6 +2031,15 @@ Mine:
         - should be opt-in”
           - (instead of the default like it is in Django)
 
+### Solution 1: `django-decorator-include`
+
+- [`django-decorator-include`](https://github.com/twidi/django-decorator-include)
+  - is a neat little package
+    - that solves exactly this problem.
+  - It does what you’d expect
+    - — it works just like [`include`](https://docs.djangoproject.com/en/stable/ref/urls/#include),
+      - but applies decorators to all the URLs included.
+
 ...
 
 ## Thin views
