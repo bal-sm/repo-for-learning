@@ -1950,6 +1950,16 @@ def some(f):
 Mine:
 > Thanks to Jochen Ritzel.
 
+### Built-in decorators - Mahmuda's version
+
+- Also, don’t miss out on
+  - the decorators
+  - and “decorator factories”
+  - that come with Django and cover many of the common cases, such as:
+    - `login_required` (already used),
+    - [`user_passes_test`](https://docs.djangoproject.com/en/5.0/topics/auth/default/#django.contrib.auth.decorators.user_passes_test)
+    - and [`permission_required`](https://docs.djangoproject.com/en/5.0/topics/auth/default/#the-permission-required-decorator).
+
 ...
 
 ## Applying policies - Mahmuda's version
