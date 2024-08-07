@@ -1997,6 +1997,13 @@ Mine:
 Mine:
 > penting juga ini. "Preconditions" part 2.
 
+- Sometimes you may need a certain policy,
+  - such as a security policy,
+    - to be applied to a group of views.
+  - The policy might correspond to decorator
+    - like `login_required`, for example,
+  - and it might be an entire module or app that needs the policy applying.
+
 ...
 
 ## Thin views
