@@ -1938,6 +1938,15 @@ def some(f):
     pass
 ```
 
+Itu teh sama dengan ini:
+
+```python
+@dec1
+@dec2
+def some(f):
+    pass
+```
+
 ...
 
 ## Applying policies - Mahmuda's version
