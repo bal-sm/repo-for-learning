@@ -2004,6 +2004,14 @@ Mine:
     - like `login_required`, for example,
   - and it might be an entire module or app that needs the policy applying.
 
+- What’s the best way
+  - to handle that using FBVs
+    - to ensure that we don’t forget?
+  - We could also call this problem:
+    - “comprehensive preconditions” —
+      - our earlier [Preconditions](#preconditions---mahmudas-version) patterns are great,
+  - but what if we just forget to apply them to a view?
+
 ...
 
 ## Thin views
