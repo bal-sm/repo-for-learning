@@ -1916,7 +1916,14 @@ def blog(request): ...
 
 #### Combining multiple decorators - A bit more general
 
+Them:
+> You could also see this Stackoverflow post with [general code for composing any number of decorators](https://stackoverflow.com/questions/5409450/can-i-combine-two-decorators-into-a-single-one-in-python).
+
 ...
+
+```python
+# ...
+```
 
 ...
 
