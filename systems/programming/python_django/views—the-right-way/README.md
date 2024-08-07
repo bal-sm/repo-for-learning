@@ -1967,6 +1967,26 @@ Mine:
   - which work by
     - overriding the `dispatch()` method.
 
+- Now,
+  - suppose we were to go the CBV route,
+  - and
+    - have a `PremiumRequired` mixin
+    - instead of `@premium_required`.
+  - Let’s also add another similar check
+    - — `GoodReputationRequired`
+    - which does some kind of reputation check
+      - (perhaps this is a social site with moderation in place).
+    - To require a user to have both,
+      - is it enough to just add both mixins?
+      - Similarly, could I produce a new mixin like this?
+
+        ```python
+        class PremiumAndGoodReputationRequired(PremiumRequired, GoodReputationRequired):
+            pass
+        ```
+
+      - The answer is: **it depends**.
+
 ...
 
 ## Applying policies - Mahmuda's version
