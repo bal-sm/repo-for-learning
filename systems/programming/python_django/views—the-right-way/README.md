@@ -2035,6 +2035,9 @@ Mine:
 
 ## Thin views
 
+Mine, of the title:
+> Thin views, fat model, fat controller (decorators, bae we ah).
+
 ...
 
 ### Example: push filtering to the model layer
