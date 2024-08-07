@@ -1960,6 +1960,13 @@ Mine:
     - [`user_passes_test`](https://docs.djangoproject.com/en/5.0/topics/auth/default/#django.contrib.auth.decorators.user_passes_test)
     - and [`permission_required`](https://docs.djangoproject.com/en/5.0/topics/auth/default/#the-permission-required-decorator).
 
+### Discussion: Mixins do not compose - Mahmuda's version - skip aja tapi
+
+- Django also provides mixins for applying preconditions,
+  - like `LoginRequired` etc.,
+  - which work by
+    - overriding the `dispatch()` method.
+
 ...
 
 ## Applying policies - Mahmuda's version
