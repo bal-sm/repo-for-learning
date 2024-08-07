@@ -2012,6 +2012,24 @@ Mine:
       - our earlier [Preconditions](#preconditions---mahmudas-version) patterns are great,
   - but what if we just forget to apply them to a view?
 
+- To make it a bit harder,
+  - we may have some *variations* on this theme,
+    - or alternative ways of expressing it:
+  - For example:
+    - we might want
+      - “every view in a module —
+      - apart from one or two”
+    - or
+      - “every view by default,
+      - unless we’ve specifically excluded it”
+    - or
+      - “every view
+        - should have one of N allowed policies applied”
+    - or
+      - “anonymous access
+        - should be opt-in”
+          - (instead of the default like it is in Django)
+
 ...
 
 ## Thin views
