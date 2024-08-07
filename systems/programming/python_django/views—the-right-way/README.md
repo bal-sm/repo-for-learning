@@ -1881,6 +1881,13 @@ from django.contrib.auth.decorators import login_required
 def contact(request): ...
 ```
 
+Jadi gini aja:
+
+```python
+def require_GET_or_POST_and_login(func):
+    return require_http_methods(["GET", "POST"])(login_required(func))
+```
+
 ...
 
 ## Applying policies - Mahmuda's version
