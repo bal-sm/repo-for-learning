@@ -1827,16 +1827,252 @@ Mine:
 > 12. `print(In decorator_1 wrapper, post-processing)`
 > 13. terus bener-bener udah te-`return` hasil akhir dari `my_view`-nya.
 
-...
+#### Combining multiple decorators - Mahmuda's and Adam's version
+
+- If you have multiple decorators
+  - that need to be applied in a certain order,
+  - or where you often have them together,
+  - you should probably be thinking about building a single decorator that combines them
+    - — for which I can do no better than point you to Adam Johnson’s post [How to Combine Two Python Decorators](https://adamj.eu/tech/2020/04/01/how-to-combine-two-python-decorators/)!
+
+Mine:
+> masukin aja ya kesini bestie.
+
+---
+
+Misal sering banget nulis gini:
+
+```python
+from django.contrib.auth.decorators import login_required
+from django.views.decorators.http import require_GET
+
+
+@require_GET
+@login_required
+def home(request): ...
+```
+
+Tulis dulu at `decorators.py`:
+
+```python
+def require_GET_and_login(func):
+    return require_GET(login_required(func))
+```
+
+Terus ganti deh:
+
+```python
+@require_GET_and_login
+def home(request): ...
+```
+
+---
+
+Mahmuda and Adam:
+> Misal kalo pake `require_http_methods` which is a general version of `require_GET` that takes an argument for the methods.
+
+```python
+from django.views.decorators.http import require_http_methods
+from django.contrib.auth.decorators import login_required
+
+
+@require_http_methods(["GET", "POST"])
+@login_required
+def contact(request): ...
+```
+
+Jadi gini aja:
+
+```python
+def require_GET_or_POST_and_login(func):
+    return require_http_methods(["GET", "POST"])(login_required(func))
+```
+
+atau gitu:
+
+```python
+def require(methods=("GET", "POST"), login=True):
+    def decorator(func):
+        #wrapped = func
+        if methods is not None:
+            func = require_http_methods(methods)(func) # ~~wrapped~~
+        if login:
+            func = login_required(func)
+        return func
+
+    return decorator
+```
+
+kalo gitu, maka:
+
+```python
+@require(methods=["GET"], login=True)
+def index(request): ...
+
+
+@require(methods=["GET", "POST"], login=False)
+def blog(request): ...
+```
+
+#### Combining multiple decorators - A bit more general
+
+Them:
+> You could also see this Stackoverflow post with [general code for composing any number of decorators](https://stackoverflow.com/questions/5409450/can-i-combine-two-decorators-into-a-single-one-in-python).
+
+This is the blueprint:
+
+```python
+def composed(*decs):
+    def deco(f):
+        for dec in reversed(decs):
+            f = dec(f)
+        return f
+    return deco
+```
+
+Then:
+
+```python
+@composed(dec1, dec2)
+def some(f):
+    pass
+```
+
+Itu teh sama dengan ini:
+
+```python
+@dec1
+@dec2
+def some(f):
+    pass
+```
+
+Mine:
+> Thanks to Jochen Ritzel.
+
+### Built-in decorators - Mahmuda's version
+
+- Also, don’t miss out on
+  - the decorators
+  - and “decorator factories”
+  - that come with Django and cover many of the common cases, such as:
+    - `login_required` (already used),
+    - [`user_passes_test`](https://docs.djangoproject.com/en/5.0/topics/auth/default/#django.contrib.auth.decorators.user_passes_test)
+    - and [`permission_required`](https://docs.djangoproject.com/en/5.0/topics/auth/default/#the-permission-required-decorator).
+
+### Discussion: Mixins do not compose - Mahmuda's version - skip aja tapi
+
+- Django also provides mixins for applying preconditions,
+  - like `LoginRequired` etc.,
+  - which work by
+    - overriding the `dispatch()` method.
+
+- Now,
+  - suppose we were to go the CBV route,
+  - and
+    - have a `PremiumRequired` mixin
+    - instead of `@premium_required`.
+  - Let’s also add another similar check
+    - — `GoodReputationRequired`
+    - which does some kind of reputation check
+      - (perhaps this is a social site with moderation in place).
+    - To require a user to have both,
+      - is it enough to just add both mixins?
+      - Similarly, could I produce a new mixin like this?
+
+        ```python
+        class PremiumAndGoodReputationRequired(PremiumRequired, GoodReputationRequired):
+            pass
+        ```
+
+      - The answer is: **it depends**.
+
+..., TBA, atau skip dulu.
+
+Mine:
+> Pokoknya jalan kerja CBV mixins (terutama digabung gitu, which is tujuan dibikin mixin, weird) tuh pasti aja gak sesuai perkiraan kita.
 
 ## Applying policies - Mahmuda's version
 
 Mine:
 > penting juga ini. "Preconditions" part 2.
 
+- Sometimes you may need a certain policy,
+  - such as a security policy,
+    - to be applied to a group of views.
+  - The policy might correspond to decorator
+    - like `login_required`, for example,
+  - and it might be an entire module or app that needs the policy applying.
+
+- What’s the best way
+  - to handle that using FBVs
+    - to ensure that we don’t forget?
+  - We could also call this problem:
+    - “comprehensive preconditions” —
+      - our earlier [Preconditions](#preconditions---mahmudas-version) patterns are great,
+  - but what if we just forget to apply them to a view?
+
+- To make it a bit harder,
+  - we may have some *variations* on this theme,
+    - or alternative ways of expressing it:
+  - For example:
+    - we might want
+      - “every view in a module —
+      - apart from one or two”
+        - > kecuali, maksudnya.
+    - or
+      - “every view by default,
+      - unless we’ve specifically excluded it”
+    - or
+      - “every view
+        - should have one of N allowed policies applied”
+    - or
+      - “anonymous access
+        - should be opt-in”
+          - (instead of the default like it is in Django)
+
+### Solution 1: `django-decorator-include` - Mahmuda's version
+
+- [`django-decorator-include`](https://github.com/twidi/django-decorator-include)
+  - is a neat little package
+    - that solves exactly this problem.
+  - It does what you’d expect
+    - — it works just like [`include`](https://docs.djangoproject.com/en/stable/ref/urls/#include),
+      - but applies decorators to all the URLs included.
+
+- This pattern is particularly good
+  - when you are including a 3rd party app
+    - — without touching the code,
+  - you can apply a single blanket policy to it.
+  - It has some disadvantages, though, especially when it’s your own code:
+    - it works at the URL level,
+      - `urls.py`
+      - which might be slightly different than what you want.
+    - it leaves your own view functions “not obviously right”:
+      - Views that you expect
+        - to be decorated
+          - with a `login_required`
+            - are now bare,
+            - and you have to remember
+              - that security is applied at a different point.
+      - What’s worse is
+        - that you might have some parts of your code base:
+          - where you don’t (or can’t) use this pattern,
+          - and some where you do.
+        - So you have to switch between multiple mindsets.
+          - If you come across a view without a decorator,
+            - is that a security issue or not?
+          - You could end up training your subconscious to ignore the real issues,
+            - which is quite bad.
+    - it doesn’t have an obvious,
+      - easy mechanism for making exceptions.
+
 ...
 
 ## Thin views
+
+Mine, of the title:
+> Thin views, fat model, fat controller (decorators, bae we ah).
 
 ...
 
