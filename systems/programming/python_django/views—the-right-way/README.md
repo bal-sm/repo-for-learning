@@ -2031,7 +2031,7 @@ Mine:
         - should be opt-in”
           - (instead of the default like it is in Django)
 
-### Solution 1: `django-decorator-include`
+### Solution 1: `django-decorator-include` - Mahmuda's version
 
 - [`django-decorator-include`](https://github.com/twidi/django-decorator-include)
   - is a neat little package
@@ -2039,6 +2039,12 @@ Mine:
   - It does what you’d expect
     - — it works just like [`include`](https://docs.djangoproject.com/en/stable/ref/urls/#include),
       - but applies decorators to all the URLs included.
+
+- This pattern is particularly good
+  - when you are including a 3rd party app
+    - — without touching the code,
+  - you can apply a single blanket policy to it.
+  - It has some disadvantages, though, especially when it’s your own code:
 
 ...
 
