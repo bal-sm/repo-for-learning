@@ -1838,6 +1838,8 @@ Mine:
 Mine:
 > masukin aja ya kesini bestie.
 
+---
+
 Misal sering banget nulis gini:
 
 ```python
@@ -1863,6 +1865,8 @@ Terus ganti deh:
 @require_GET_and_login
 def home(request): ...
 ```
+
+---
 
 ...
 
