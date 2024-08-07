@@ -1947,6 +1947,9 @@ def some(f):
     pass
 ```
 
+Mine:
+> Thanks to Jochen Ritzel.
+
 ...
 
 ## Applying policies - Mahmuda's version
