@@ -1893,12 +1893,12 @@ atau gitu:
 ```python
 def require(methods=("GET", "POST"), login=True):
     def decorator(func):
-        wrapped = func
+        #wrapped = func
         if methods is not None:
-            wrapped = require_http_methods(methods)(func)
+            func = require_http_methods(methods)(func) # ~~wrapped~~
         if login:
-            wrapped = login_required(func)
-        return wrapped
+            func = login_required(func)
+        return func
 
     return decorator
 ```
