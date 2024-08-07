@@ -1827,6 +1827,14 @@ Mine:
 > 12. `print(In decorator_1 wrapper, post-processing)`
 > 13. terus bener-bener udah te-`return` hasil akhir dari `my_view`-nya.
 
+#### Combining multiple decorators - Mahmuda's version
+
+- If you have multiple decorators
+  - that need to be applied in a certain order,
+  - or where you often have them together,
+  - you should probably be thinking about building a single decorator that combines them
+    - — for which I can do no better than point you to Adam Johnson’s post [How to Combine Two Python Decorators](https://adamj.eu/tech/2020/04/01/how-to-combine-two-python-decorators/)!
+
 ...
 
 ## Applying policies - Mahmuda's version
