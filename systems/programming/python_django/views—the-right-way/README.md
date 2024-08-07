@@ -1903,6 +1903,17 @@ def require(methods=("GET", "POST"), login=True):
     return decorator
 ```
 
+kalo gitu, maka:
+
+```python
+@require(methods=["GET"], login=True)
+def index(request): ...
+
+
+@require(methods=["GET", "POST"], login=False)
+def blog(request): ...
+```
+
 ...
 
 ## Applying policies - Mahmuda's version
