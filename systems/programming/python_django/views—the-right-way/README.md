@@ -1987,7 +1987,10 @@ Mine:
 
       - The answer is: **it depends**.
 
-...
+..., TBA, atau skip dulu.
+
+Mine:
+> Pokoknya jalan kerja CBV mixins (terutama digabung gitu, which is tujuan dibikin mixin, weird) tuh pasti aja gak sesuai perkiraan kita.
 
 ## Applying policies - Mahmuda's version
 
