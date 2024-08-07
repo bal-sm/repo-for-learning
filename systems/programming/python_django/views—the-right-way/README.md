@@ -1930,6 +1930,14 @@ def composed(*decs):
     return deco
 ```
 
+Then:
+
+```python
+@composed(dec1, dec2)
+def some(f):
+    pass
+```
+
 ...
 
 ## Applying policies - Mahmuda's version
