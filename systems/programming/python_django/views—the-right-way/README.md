@@ -1857,6 +1857,13 @@ def require_GET_and_login(func):
     return require_GET(login_required(func))
 ```
 
+Terus ganti deh:
+
+```python
+@require_GET_and_login
+def home(request): ...
+```
+
 ...
 
 ## Applying policies - Mahmuda's version
