@@ -2218,7 +2218,9 @@ Them, important:
 Them, next part:
 > Next up: [Thin views](https://spookylukey.github.io/django-views-the-right-way/thin-views.html).
 
-...
+### Discussion: secure by default - Mahmuda's version
+
+..., TBA.
 
 ## Thin views
 
