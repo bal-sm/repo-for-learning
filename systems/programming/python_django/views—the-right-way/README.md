@@ -2140,6 +2140,9 @@ def premium_required(view_func):
          - > `view_func` gets executed.
        - so we **won’t** be able to ignore it or find out too late.
 
+Mine:
+> masukin contoh, meureun.
+
 Them, important:
 > (By the way, when implementing things like this, you should double check that it really does fail in the way you expect it to fail…)
 
