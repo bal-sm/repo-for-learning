@@ -2179,6 +2179,14 @@ Them, important:
 
 ### Solution 3: introspection - Mahmuda's version
 
+- The remaining issue with the previous solution
+  - is that it is tied to the URL-space
+    - > `urls.py` / 'URLconf'
+    - — our checks run only
+      - when we use `decorator_include`
+        - to add some URLs into an application.
+      - That **might not** always be what we want.
+
 ...
 
 ## Thin views
