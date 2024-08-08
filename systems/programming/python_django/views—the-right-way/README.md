@@ -2100,6 +2100,7 @@ Them, note:
       - that indicates that the security policy _has been applied_.
   - I’ve defined it using a constant
     - with _a leading underscore_ (`_`)
+      - > **`_`**`SECURITY_POLICY_APPLIED`
     - here to indicate that you are not supposed to import this constant, but instead use it via one of several decorators that apply the policy. Using our “premium required” example from before, one of those decorators might look like this:
 
 ...
