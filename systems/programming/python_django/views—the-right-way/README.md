@@ -2218,7 +2218,7 @@ Them, important:
 Them, next part:
 > Next up: [Thin views](https://spookylukey.github.io/django-views-the-right-way/thin-views.html).
 
-### Discussion: secure by default - Mahmuda's version
+### Discussion: secure by default - Mahmuda's version - Lite
 
 - In the patterns suggested, I’m thinking about a simplified version of [Rusty’s API Design Manifesto](http://sweng.the-davies.net/Home/rustys-api-design-manifesto):
   - Good: the wrong thing looks long
@@ -2226,6 +2226,11 @@ Them, next part:
   - Best: the wrong thing is impossible
 
 ‘Best’ is not always possible or easy to achieve, but we should be aiming for it.
+
+_Skipped_
+
+Them, important:
+> Personally I think that using FBVs and having the decorator at the top of each view function is even clearer, rather than having the check buried in a base class. Also, as noted before, you can easily get security problems with CBVs due to how inheritance works.
 
 ..., TBA.
 
