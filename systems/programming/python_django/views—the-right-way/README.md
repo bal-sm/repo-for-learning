@@ -2107,6 +2107,24 @@ Them, note:
             - > `@premium_required` -> `_SECURITY_POLICY_APPLIED = True`
             - Using our “premium required” example from before, one of those decorators might look like this:
 
+```python
+import functools
+from django.contrib import messages
+from django.http import HttpResponseRedirect
+
+
+def premium_required(view_func):
+    @functools.wraps(view_func)
+    def wrapper(request, *args, **kwargs):
+        if not (request.user.is_authenticated and request.user.is_premium):
+            messages.info(request, "You need to be logged in to a premium account to access that page.")
+            return HttpResponseRedirect('/')
+        return view_func(request, *args, **kwargs)
+
+    setattr(wrapper, _SECURITY_POLICY_APPLIED, True)
+    return wrapper
+```
+
 ...
 
 ## Thin views
