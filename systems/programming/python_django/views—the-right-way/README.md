@@ -2096,6 +2096,7 @@ Them, note:
 - Our decorator
   - simply _checks_
     - _for the existence_ of an attribute on the view function
+      - > `_SECURITY_POLICY_APPLIED`
       - that indicates that the security policy _has been applied_.
   - I’ve defined it using a constant
     - with _a leading underscore_ (`_`)
