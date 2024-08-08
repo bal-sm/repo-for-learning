@@ -2227,7 +2227,7 @@ Them, next part:
 
 ‘Best’ is not always possible or easy to achieve, but we should be aiming for it.
 
-_Skipped_
+_Skipped the CBV thing_
 
 Them, important:
 > Personally I think that using FBVs and having the decorator at the top of each view function is even clearer, rather than having the check buried in a base class. Also, as noted [before](https://spookylukey.github.io/django-views-the-right-way/preconditions.html#mixins-do-not-compose), you can easily get security problems with CBVs due to how inheritance works.
