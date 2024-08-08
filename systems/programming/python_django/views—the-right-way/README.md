@@ -2107,6 +2107,9 @@ Them, note:
             - > `@premium_required` -> `_SECURITY_POLICY_APPLIED = True`
             - Using our “premium required” example from before, one of those decorators might look like this:
 
+2. > Idem we.
+     > nulis gini teh, gimana, kan soalnya ori-nya paragraf atas tea.
+
 ```python
 import functools
 from django.contrib import messages
