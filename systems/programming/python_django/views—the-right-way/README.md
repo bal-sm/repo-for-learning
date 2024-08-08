@@ -2220,6 +2220,11 @@ Them, next part:
 
 ### Discussion: secure by default - Mahmuda's version
 
+- In the patterns suggested, I’m thinking about a simplified version of [Rusty’s API Design Manifesto](http://sweng.the-davies.net/Home/rustys-api-design-manifesto):
+  - Good: the wrong thing looks long
+  - Better: the wrong thing is harder than the right thing
+  - Best: the wrong thing is impossible
+
 ..., TBA.
 
 ## Thin views
