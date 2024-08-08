@@ -2090,6 +2090,9 @@ def check_security_policy_applied(view_func):
     return view_func
 ```
 
+Them, note:
+> (See the full code example — decorators and URLs)
+
 ...
 
 ## Thin views
