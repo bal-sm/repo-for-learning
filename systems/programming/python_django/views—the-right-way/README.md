@@ -2177,6 +2177,8 @@ Them, important:
    - by going back to `check_security_policy_applied`
    - and making the error message list the possible or preferred fixes.
 
+### Solution 3: introspection - Mahmuda's version
+
 ...
 
 ## Thin views
