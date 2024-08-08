@@ -2128,6 +2128,18 @@ def premium_required(view_func):
     return wrapper
 ```
 
+3. We can now use `decorator_include`
+   - with `check_security_policy_applied` as the decorator.
+   - If:
+     - all our views are decorated in `@premium_required`,
+       - everything will be fine.
+     - Otherwise we will get an exception
+       - — at *import* time,
+         - > Django boot up.
+       - not at run time,
+         - > `view_func` gets executed.
+       - so we **won’t** be able to ignore it or find out too late.
+
 ...
 
 ## Thin views
