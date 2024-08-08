@@ -2091,7 +2091,15 @@ def check_security_policy_applied(view_func):
 ```
 
 Them, note:
-> (See the full code example — decorators and URLs)
+> (See the full code example — [decorators](https://github.com/spookylukey/django-views-the-right-way/tree/master/code/the_right_way/policies/decorators.py) and [URLs](https://github.com/spookylukey/django-views-the-right-way/blob/master/code/the_right_way/policies/urls.py#L18))
+
+- Our decorator
+  - simply _checks_
+    - _for the existence_ of an attribute on the view function
+      - that indicates that the security policy _has been applied_.
+  - I’ve defined it using a constant
+    - with _a leading underscore_ (`_`)
+    - here to indicate that you are not supposed to import this constant, but instead use it via one of several decorators that apply the policy. Using our “premium required” example from before, one of those decorators might look like this:
 
 ...
 
