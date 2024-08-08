@@ -2079,6 +2079,17 @@ Mine:
            - has already been applied (at import time),
            - and do nothing at run time.
 
+The checking decorator might look something like this:
+
+```python
+_SECURITY_POLICY_APPLIED = "_SECURITY_POLICY_APPLIED"
+
+def check_security_policy_applied(view_func):
+    if not getattr(view_func, _SECURITY_POLICY_APPLIED, False):
+        raise AssertionError(f"{view_func.__module__}.{view_func.__name__} needs to have a security policy applied")
+    return view_func
+```
+
 ...
 
 ## Thin views
