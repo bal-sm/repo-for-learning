@@ -2146,6 +2146,11 @@ Mine:
 Them, important:
 > (By the way, when implementing things like this, you should double check that it really does fail in the way you expect it to fail…)
 
+4. This mechanism is quite flexible,
+   - and can be used to allow exceptions
+     - to the general policy.
+   - For example, we could add an `anonymous_allowed` decorator:
+
 ...
 
 ## Thin views
