@@ -2218,7 +2218,7 @@ Them, important:
 Them, next part:
 > Next up: [Thin views](https://spookylukey.github.io/django-views-the-right-way/thin-views.html).
 
-### Discussion: secure by default - Mahmuda's version - Lite
+### Discussion: secure by default - Mahmuda's version - FBV only - Can be improved
 
 - In the patterns suggested, I’m thinking about a simplified version of [Rusty’s API Design Manifesto](http://sweng.the-davies.net/Home/rustys-api-design-manifesto):
   - Good: the wrong thing looks long
@@ -2232,7 +2232,14 @@ _Skipped the CBV thing_
 Them, important:
 > Personally I think that using FBVs and having the decorator at the top of each view function is even clearer, rather than having the check buried in a base class. Also, as noted [before](https://spookylukey.github.io/django-views-the-right-way/preconditions.html#mixins-do-not-compose), you can easily get security problems with CBVs due to how inheritance works.
 
-..., TBA.
+Them, FBV things, rada penting:
+> Another important property for reasoning about code correctness is “locality”. That’s why I don’t like solution 1 above — when reading `views.py`, I’m having to remember whether `urls.py` is adding some additional behaviour, and the right thing actually looks wrong.
+>
+> After making the right thing easy and the wrong thing look wrong, being able to use some form of introspection for additional guarantees that we are doing it right is great, and an area where Python really shines.
+>
+> Sometimes, we might have an explicit list of exceptions to a policy. Here are some tips for managing that effectively:
+> - if you gather exceptions to a rule into a list in one place, each exception should have a comment justifying its presence. This establishes a strong precedence that makes it hard to just add more exceptions — without a justification, they look wrong.
+> - you can go further, and make things like your “anonymous allowed” decorator have a mandatory `rationale` argument in which the developer must provide a non-empty string reason for its existence. Of course, they could always write `"Just because"`, but they will at least be conscious that they are doing something bad.
 
 ## Thin views
 
