@@ -2203,6 +2203,18 @@ Them, important:
           - is a good option for reporting this kind of error,
         - or you could use `raise AssertionError` as before to be more aggressive.
 
+- When implementing this,
+  - if you wish to apply this policy
+    - to something
+      - like “all views within an app”,
+      - the hardest part is working out
+        - what you mean by “within an app”.
+  - A view function
+    - could be defined
+      - outside the conventional `views.py` module,
+      - or imported from an entirely different app.
+  - Be sure that your introspection accounts for these cases and does what you need!
+
 ...
 
 ## Thin views
