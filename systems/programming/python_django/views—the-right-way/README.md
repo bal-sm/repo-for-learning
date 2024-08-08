@@ -2079,7 +2079,7 @@ Mine:
             - has already been applied (at import time),
             - and do nothing at run time.
 
-The checking decorator might look something like this:
+1. The checking decorator might look something like this:
 
 ```python
 _SECURITY_POLICY_APPLIED = "_SECURITY_POLICY_APPLIED"
