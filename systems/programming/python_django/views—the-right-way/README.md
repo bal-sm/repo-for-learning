@@ -2173,6 +2173,10 @@ Them, important:
            - (for view functions)
            - to “**private** by default”, or whatever else we want.
 
+5. We can make this solution more friendly:
+   - by going back to `check_security_policy_applied`
+   - and making the error message list the possible or preferred fixes.
+
 ...
 
 ## Thin views
