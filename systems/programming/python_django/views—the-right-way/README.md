@@ -2187,6 +2187,15 @@ Them, important:
         - to add some URLs into an application.
       - That **might not** always be what we want.
 
+- Instead of that,
+  - we might want
+    - to apply policies
+      - to “all view functions everywhere”,
+    - or something else more custom.
+  - In this case, one solution is to do introspection of the URLconf after having loaded it.
+
+The details will depend on what exactly you want to do, but there is [an example in the code folder](https://github.com/spookylukey/django-views-the-right-way/blob/master/code/the_right_way/policies/introspection.py). The [Django system checks framework](https://docs.djangoproject.com/en/5.0/topics/checks/) is a good option for reporting this kind of error, or you could use `raise AssertionError` as before to be more aggressive.
+
 ...
 
 ## Thin views
