@@ -2215,6 +2215,9 @@ Them, important:
       - or imported from an entirely different app.
   - Be sure that your introspection accounts for these cases and does what you need!
 
+Them, next part:
+> Next up: [Thin views](https://spookylukey.github.io/django-views-the-right-way/thin-views.html).
+
 ...
 
 ## Thin views
