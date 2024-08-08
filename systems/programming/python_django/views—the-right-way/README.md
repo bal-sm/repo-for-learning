@@ -2225,6 +2225,8 @@ Them, next part:
   - Better: the wrong thing is harder than the right thing
   - Best: the wrong thing is impossible
 
+‘Best’ is not always possible or easy to achieve, but we should be aiming for it.
+
 ..., TBA.
 
 ## Thin views
