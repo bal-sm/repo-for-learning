@@ -2069,15 +2069,15 @@ Mine:
 
 ### Solution 2: `django-decorator-include` + checking - Mahmuda's version
 
-- So,
-  - a modified version of the above technique
-    - is to still use `decorator_include` as above,
-    - **but**
-      0. instead of adding security preconditions in the decorator,
-      1. we make the decorator simply check
-         - that a different, required decorator
-           - has already been applied (at import time),
-           - and do nothing at run time.
+0. So,
+   - a modified version of the above technique
+     - is to still use `decorator_include` as above,
+     - **but**
+       0. instead of adding security preconditions in the decorator,
+       1. we make the decorator simply check
+          - that a different, required decorator
+            - has already been applied (at import time),
+            - and do nothing at run time.
 
 The checking decorator might look something like this:
 
