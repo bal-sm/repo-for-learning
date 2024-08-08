@@ -2069,17 +2069,17 @@ Mine:
 
 ### Solution 2: `django-decorator-include` + checking - Mahmuda's version
 
-- So,
-  - a modified version of the above technique
-    - is to still use `decorator_include` as above,
-    - **but**
-      0. instead of adding security preconditions in the decorator,
-      1. we make the decorator simply check
-         - that a different, required decorator
-           - has already been applied (at import time),
-           - and do nothing at run time.
+0. So,
+   - a modified version of the above technique
+     - is to still use `decorator_include` as above,
+     - **but**
+       0. instead of adding security preconditions in the decorator,
+       1. we make the decorator simply check
+          - that a different, required decorator
+            - has already been applied (at import time),
+            - and do nothing at run time.
 
-The checking decorator might look something like this:
+1. The checking decorator might look something like this:
 
 ```python
 _SECURITY_POLICY_APPLIED = "_SECURITY_POLICY_APPLIED"
@@ -2090,7 +2090,156 @@ def check_security_policy_applied(view_func):
     return view_func
 ```
 
-...
+Them, note:
+> (See the full code example — [decorators](https://github.com/spookylukey/django-views-the-right-way/tree/master/code/the_right_way/policies/decorators.py) and [URLs](https://github.com/spookylukey/django-views-the-right-way/blob/master/code/the_right_way/policies/urls.py#L18))
+
+- Our decorator
+  - simply _checks_
+    - _for the existence_ of an attribute on the view function
+      - > `_SECURITY_POLICY_APPLIED`
+      - that indicates that the security policy _has been applied_.
+  - I’ve defined it using a constant
+    - with _a leading underscore_ (`_`)
+      - > **`_`**`SECURITY_POLICY_APPLIED`
+      - here to indicate
+        - that you are **not** supposed to import this constant,
+          - but instead _use it via_ one of several decorators that apply the policy.
+            - > `@premium_required` -> `_SECURITY_POLICY_APPLIED = True`
+            - Using our “premium required” example from before, one of those decorators might look like this:
+
+2. > Idem we.
+     > nulis gini teh, gimana, kan soalnya ori-nya paragraf atas tea.
+
+```python
+import functools
+from django.contrib import messages
+from django.http import HttpResponseRedirect
+
+
+def premium_required(view_func):
+    @functools.wraps(view_func)
+    def wrapper(request, *args, **kwargs):
+        if not (request.user.is_authenticated and request.user.is_premium):
+            messages.info(request, "You need to be logged in to a premium account to access that page.")
+            return HttpResponseRedirect('/')
+        return view_func(request, *args, **kwargs)
+
+    setattr(wrapper, _SECURITY_POLICY_APPLIED, True)
+    return wrapper
+```
+
+3. We can now use `decorator_include`
+   - with `check_security_policy_applied` as the decorator.
+   - If:
+     - all our views are decorated in `@premium_required`,
+       - everything will be fine.
+     - Otherwise we will get an exception
+       - — at *import* time,
+         - > Django boot up.
+       - not at run time,
+         - > `view_func` gets executed.
+       - so we **won’t** be able to ignore it or find out too late.
+
+Mine:
+> masukin contoh, meureun.
+
+Them, important:
+> (By the way, when implementing things like this, you should double check that it really does fail in the way you expect it to fail…)
+
+4. This mechanism is quite flexible,
+   - and can be used to allow exceptions
+     - to the general policy.
+   - For example, we could add an `anonymous_allowed` decorator:
+
+     ```python
+     def anonymous_allowed(view_func):
+         @functools.wraps(view_func)
+         def wrapper(request, *args, **kwargs):
+             return view_func(request, *args, **kwargs)
+
+         setattr(wrapper, _SECURITY_POLICY_APPLIED, True)
+         return wrapper
+     ```
+
+     - The wrapper
+       - added by this decorator
+         - actually does **nothing**
+         - but forward to the original view function.
+       - It only exists
+         - to allow us
+           - to set the `_SECURITY_POLICY_APPLIED` attribute.
+       - But with this in place,:
+         - we can successfully move from Django’s “**open** to everyone by default” policy
+           - (for view functions)
+           - to “**private** by default”, or whatever else we want.
+
+5. We can make this solution more friendly:
+   - by going back to `check_security_policy_applied`
+   - and making the error message list the possible or preferred fixes.
+
+### Solution 3: introspection - Mahmuda's version
+
+- The remaining issue with the previous solution
+  - is that it is tied to the URL-space
+    - > `urls.py` / 'URLconf'
+    - — our checks run only
+      - when we use `decorator_include`
+        - to add some URLs into an application.
+      - That **might not** always be what we want.
+
+- Instead of that,
+  - we might want
+    - to apply policies
+      - to “all view functions everywhere”,
+    - or something else more custom.
+  - In this case,
+    - one solution is
+      - to do introspection of the URLconf
+        - after having loaded it.
+    - The details will depend on
+      - what exactly you want to do,
+        - but there is [an example in the code folder](https://github.com/spookylukey/django-views-the-right-way/blob/master/code/the_right_way/policies/introspection.py).
+        - The [Django system checks framework](https://docs.djangoproject.com/en/5.0/topics/checks/)
+          - is a good option for reporting this kind of error,
+        - or you could use `raise AssertionError` as before to be more aggressive.
+
+- When implementing this,
+  - if you wish to apply this policy
+    - to something
+      - like “all views within an app”,
+      - the hardest part is working out
+        - what you mean by “within an app”.
+  - A view function
+    - could be defined
+      - outside the conventional `views.py` module,
+      - or imported from an entirely different app.
+  - Be sure that your introspection accounts for these cases and does what you need!
+
+Them, next part:
+> Next up: [Thin views](https://spookylukey.github.io/django-views-the-right-way/thin-views.html).
+
+### Discussion: secure by default - Mahmuda's version - FBV only - Can be improved
+
+- In the patterns suggested, I’m thinking about a simplified version of [Rusty’s API Design Manifesto](http://sweng.the-davies.net/Home/rustys-api-design-manifesto):
+  - Good: the wrong thing looks long
+  - Better: the wrong thing is harder than the right thing
+  - Best: the wrong thing is impossible
+
+‘Best’ is not always possible or easy to achieve, but we should be aiming for it.
+
+_Skipped the CBV thing_
+
+Them, important:
+> Personally I think that using FBVs and having the decorator at the top of each view function is even clearer, rather than having the check buried in a base class. Also, as noted [before](https://spookylukey.github.io/django-views-the-right-way/preconditions.html#mixins-do-not-compose), you can easily get security problems with CBVs due to how inheritance works.
+
+Them, FBV things, rada penting:
+> Another important property for reasoning about code correctness is “locality”. That’s why I don’t like solution 1 above — when reading `views.py`, I’m having to remember whether `urls.py` is adding some additional behaviour, and the right thing actually looks wrong.
+>
+> After making the right thing easy and the wrong thing look wrong, being able to use some form of introspection for additional guarantees that we are doing it right is great, and an area where Python really shines.
+>
+> Sometimes, we might have an explicit list of exceptions to a policy. Here are some tips for managing that effectively:
+> - if you gather exceptions to a rule into a list in one place, each exception should have a comment justifying its presence. This establishes a strong precedence that makes it hard to just add more exceptions — without a justification, they look wrong.
+> - you can go further, and make things like your “anonymous allowed” decorator have a mandatory `rationale` argument in which the developer must provide a non-empty string reason for its existence. Of course, they could always write `"Just because"`, but they will at least be conscious that they are doing something bad.
 
 ## Thin views
 
