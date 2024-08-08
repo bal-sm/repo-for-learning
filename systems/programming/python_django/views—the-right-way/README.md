@@ -2151,15 +2151,27 @@ Them, important:
      - to the general policy.
    - For example, we could add an `anonymous_allowed` decorator:
 
-```python
-def anonymous_allowed(view_func):
-    @functools.wraps(view_func)
-    def wrapper(request, *args, **kwargs):
-        return view_func(request, *args, **kwargs)
+     ```python
+     def anonymous_allowed(view_func):
+         @functools.wraps(view_func)
+         def wrapper(request, *args, **kwargs):
+             return view_func(request, *args, **kwargs)
 
-    setattr(wrapper, _SECURITY_POLICY_APPLIED, True)
-    return wrapper
-```
+         setattr(wrapper, _SECURITY_POLICY_APPLIED, True)
+         return wrapper
+     ```
+
+     - The wrapper
+       - added by this decorator
+         - actually does **nothing**
+         - but forward to the original view function.
+       - It only exists
+         - to allow us
+           - to set the `_SECURITY_POLICY_APPLIED` attribute.
+       - But with this in place,:
+         - we can successfully move from Django’s “**open** to everyone by default” policy
+           - (for view functions)
+           - to “**private** by default”, or whatever else we want.
 
 ...
 
