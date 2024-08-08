@@ -2151,6 +2151,16 @@ Them, important:
      - to the general policy.
    - For example, we could add an `anonymous_allowed` decorator:
 
+```python
+def anonymous_allowed(view_func):
+    @functools.wraps(view_func)
+    def wrapper(request, *args, **kwargs):
+        return view_func(request, *args, **kwargs)
+
+    setattr(wrapper, _SECURITY_POLICY_APPLIED, True)
+    return wrapper
+```
+
 ...
 
 ## Thin views
