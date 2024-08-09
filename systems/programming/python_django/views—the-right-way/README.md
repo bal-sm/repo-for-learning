@@ -2550,6 +2550,27 @@ Mine:
   - If you are going for the “fat model” arrangement,
     - **as above**, often this gets *put* into a `models.py` file.
 
+But you should note:
+- You can split a `models.py` file
+  - into any number of modules.
+  - > `models/hotels.py`, `models/motels.py`..
+  - No need to create massive `models.py` files!
+- Model layer code
+  - _doesn’t have to_ refer to “database models”.
+  - We are really talking about “domain models” here,
+    - which can often be backed directly
+      - by a Django database model,
+      - but it could be other classes or functions.
+- You don’t have
+  - to put all logic
+    - relating to a Django `Model`
+      - into methods of that class.
+  - You should “listen to the code”,
+    - > pahami bahwa kode-nya bisa gimana. wonder.
+    - and also listen to the business level requirements,
+    - and discover the concepts and divisions
+    - *that* make sense for your project.
+
 ...
 
 ## My notes
