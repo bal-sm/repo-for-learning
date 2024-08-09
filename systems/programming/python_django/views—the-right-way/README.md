@@ -2249,6 +2249,12 @@ Mine, of the title:
 - This section, the last in my guide, is about
   - > what **not** to put in a view.
 
+- My basic philosophy is that views should:
+  - **deal** with *incoming* HTTP requests
+  - **create** *outgoing* HTTP requests
+  - refer to enough *logic* from elsewhere **to glue** these together.
+    - > to glue logics.
+
 ...
 
 ### Example: push filtering to the model layer
