@@ -2241,10 +2241,12 @@ Them, FBV things, rada penting:
 > - if you gather exceptions to a rule into a list in one place, each exception should have a comment justifying its presence. This establishes a strong precedence that makes it hard to just add more exceptions — without a justification, they look wrong.
 > - you can go further, and make things like your “anonymous allowed” decorator have a mandatory `rationale` argument in which the developer must provide a non-empty string reason for its existence. Of course, they could always write `"Just because"`, but they will at least be conscious that they are doing something bad.
 
-## Thin views
+## Thin views - Mahmuda's version
 
 Mine, of the title:
 > Thin views, fat model, fat controller (decorators, bae we ah).
+
+This section, the last in my guide, is about what **not** to put in a view.
 
 ...
 
