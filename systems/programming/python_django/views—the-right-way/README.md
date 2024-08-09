@@ -2363,7 +2363,18 @@ booking.put_on_shelf()
       - in the view layer
         - where it belongs.
 
-### Example: push filtering to the model layer
+### Example: push filtering to the model layer - Mahmuda's version
+
+- Continuing the example above,
+  - when we display
+    - a list of bookings to the user,
+  - we might want
+    - to do different types of filtering.
+    - For example, we might want to display:
+      - “in the basket” bookings,
+      - “on the shelf” bookings (as above),
+      - or “confirmed for this year“ bookings.
+      - Confirmed bookings are controlled with another boolean flag, at least for the moment.
 
 ...
 
