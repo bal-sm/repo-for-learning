@@ -2255,6 +2255,15 @@ Mine, of the title:
   - refer to enough *logic* from elsewhere **to glue** these together.
     - > to glue logics.
 
+- And try not to do much else.
+  - The result will be
+    - that your views:
+      - tend to be pretty simple
+      - and not have much logic in them.
+    - This is often called
+      - “fat models, skinny views/controllers”,
+      - although here I’m focusing on just the view.
+
 ...
 
 ### Example: push filtering to the model layer
