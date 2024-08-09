@@ -2395,14 +2395,23 @@ Booking.objects.filter(confirmed=True, start_date__year=date.today().year)
   - this it putting too much information
     - about the schema directly in the view.
   - This has some bad effects:
-
-...
-
-Them:
-> our code is less readable — we are going to have to work out what those filtering conditions actually refer to. We could add a comment against each one, as in the code above. But I always try to interpret comments like that as “code smells”. They are hints telling me that my code isn’t clear by itself.
-
-Mine:
-> Aku jadi setuju bestie, that's one of the why (sic, kan gaul) comments are bad, "code smells". `rfl`. the notes. one of my personal project.
+    - we’ll have to duplicate that logic
+      - if we want it in more than one place.
+    - if we change the schema
+      - we’ll have to change all these places.
+    - our code is less readable
+      - — we are going
+        - to have to work out
+          - what those filtering conditions
+            - actually refer to.
+      - We could add a comment against each one,
+        - > as in the code above.
+        - But I always try to interpret comments
+          - like that as “code smells”.
+          - They are hints
+            - telling me
+              - that my code isn’t clear by itself.
+        - > Aku jadi setuju bestie, that's one of the why (sic, kan gaul) comments are bad, "code smells". `rfl`. the notes. one of my personal project.
 
 ...
 
