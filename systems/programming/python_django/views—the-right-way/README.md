@@ -2461,7 +2461,25 @@ Tuh makanya, cenah Luke, `rfl`-in:
 
 The question now is, how do we create an interface like that?
 
-#### Chainable custom `QuerySet` methods
+#### Chainable custom `QuerySet` methods - Mahmuda's version
+
+- The answer is
+  - we define
+    - `in_basket()`,
+    - `on_shelf()`,
+    - `confirmed()`,
+    - `for_year()`,
+    - etc.
+    - as custom `QuerySet` methods.
+  - By making them `QuerySet` methods,
+    - rather than just `Manager` methods,
+      - > me: **don't** make it as `Manager` methods
+      - we can make them chainable as above,
+        - so that we can:
+          - use `for_year()`
+          - after `confirmed()`,
+          - > `Booking.objects.for_year().confirmed()`
+          - for example, or after other methods.
 
 ...
 
