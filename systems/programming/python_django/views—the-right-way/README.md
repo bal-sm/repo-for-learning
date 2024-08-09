@@ -2543,6 +2543,13 @@ Them, important:
 Mine:
 > Camkan ieu ih! Apalagi masalah custom `Manager` vs custom `QuerySet`-nya.
 
+#### Where to put this code - Mahmuda's version
+
+- If not in the view,
+  - where does this code actually live?
+  - If you are going for the “fat model” arrangement,
+    - **as above**, often this gets *put* into a `models.py` file.
+
 ...
 
 ## My notes
