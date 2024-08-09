@@ -2429,7 +2429,12 @@ Booking.objects.on_shelf()
 Booking.objects.confirmed().for_year(date.today().year)
 ```
 
-...
+- We also
+  - want to be able
+    - to use the same functionality
+      - from a user object,
+        - > `request.user`
+        - for example:
 
 ```python
 user = request.user
