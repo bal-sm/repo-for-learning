@@ -2281,6 +2281,8 @@ Mine, of the title:
               - your view function
               - or view layer utilities.
 
+We’ll have a look at a few examples to illustrate this.
+
 ...
 
 ### Example: push filtering to the model layer
