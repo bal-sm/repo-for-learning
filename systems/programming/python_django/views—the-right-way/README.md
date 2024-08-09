@@ -2292,6 +2292,8 @@ We’ll have a look at a few examples to illustrate this.
       - you can choose to “Book now”,
       - or “Put on shelf”.
 
+The view code looks something like this (simplified):
+
 ...
 
 ### Example: push filtering to the model layer
