@@ -2481,6 +2481,12 @@ The question now is, how do we create an interface like that?
           - > `Booking.objects.for_year().confirmed()`
           - for example, or after other methods.
 
+- The [Django docs for `QuerySet`s and `Manager`s](https://docs.djangoproject.com/en/stable/topics/db/managers/)
+  - will show you how to do it,
+  - but due to the `Manager`/`QuerySet` split,
+    - > it can get a bit overwhelming.
+  - So here is the basic pattern:
+
 ...
 
 ```python
