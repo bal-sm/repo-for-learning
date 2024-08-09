@@ -2487,6 +2487,25 @@ The question now is, how do we create an interface like that?
     - > it can get a bit overwhelming.
   - So here is the basic pattern:
 
+```python
+class BookingQuerySet(models.QuerySet):
+    # Custom, chainable methods added here, which will
+    # do lower level 'filter', 'order_by' etc.
+    def in_basket(self):
+        return self.filter(shelved=False, confirmed=False)
+
+    def for_year(self, year):
+        return self.filter(start_date__year=year)
+
+    # etc.
+
+
+class Booking(models.Model):
+    # fields etc
+
+    objects = BookingQuerySet.as_manager()
+```
+
 ...
 
 ```python
