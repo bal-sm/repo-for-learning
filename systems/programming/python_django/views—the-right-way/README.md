@@ -2283,6 +2283,15 @@ Mine, of the title:
 
 We’ll have a look at a few examples to illustrate this.
 
+### Example: push actions to the model layer - Mahmuda's version
+
+- > This example comes from code I wrote
+  - > (always a fruitful place to look for examples of how not to do it…),
+  - for a booking system.
+    - After adding place details to your basket,:
+      - you can choose to “Book now”,
+      - or “Put on shelf”.
+
 ...
 
 ### Example: push filtering to the model layer
