@@ -2506,6 +2506,12 @@ class Booking(models.Model):
     objects = BookingQuerySet.as_manager()
 ```
 
+- If you additionally
+  - want a custom `Manager` class
+    - with other methods
+      - that are not part of the `QuerySet` interface,
+  - you can use [`Manager.from_queryset`](https://docs.djangoproject.com/en/stable/topics/db/managers/#from-queryset).
+
 ...
 
 ```python
