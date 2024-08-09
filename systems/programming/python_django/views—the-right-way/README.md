@@ -2413,6 +2413,14 @@ Booking.objects.filter(confirmed=True, start_date__year=date.today().year)
               - that my code isn’t clear by itself.
         - > Aku jadi setuju bestie, that's one of the why (sic, kan gaul) comments are bad, "code smells". `rfl`. the notes. one of my personal project.
 
+Them, `rfl`-keun:
+> - I agree with Jamie Matthews
+>   - that [using filter directly in view code is a usually an anti-pattern](https://www.dabapps.com/blog/higher-level-query-api-django-orm/).
+>   - So,
+>     - let’s listen to those hints,
+>       - and change our code
+>         - so we *no* *longer* *need* the comments:
+
 ...
 
 ```python
