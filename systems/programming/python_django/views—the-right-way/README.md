@@ -2391,6 +2391,11 @@ Booking.objects.filter(shelved=True, confirmed=False)
 Booking.objects.filter(confirmed=True, start_date__year=date.today().year)
 ```
 
+- But, as before,
+  - this it putting too much information
+    - about the schema directly in the view.
+  - This has some bad effects:
+
 ...
 
 Them:
