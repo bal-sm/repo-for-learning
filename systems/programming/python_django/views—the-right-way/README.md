@@ -2253,7 +2253,7 @@ Mine, of the title:
   - **deal** with *incoming* HTTP requests
   - **create** *outgoing* HTTP requests
   - refer to enough *logic* from elsewhere **to glue** these together.
-    - > to glue logics.
+    - > to glue (model and controller) logics.
 
 - And try not to do much else.
   - The result will be
