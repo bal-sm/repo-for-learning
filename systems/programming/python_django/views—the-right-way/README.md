@@ -2246,7 +2246,8 @@ Them, FBV things, rada penting:
 Mine, of the title:
 > Thin views, fat model, fat controller (decorators, bae we ah).
 
-This section, the last in my guide, is about what **not** to put in a view.
+- This section, the last in my guide, is about
+  - > what **not** to put in a view.
 
 ...
 
