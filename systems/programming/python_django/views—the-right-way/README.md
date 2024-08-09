@@ -2421,6 +2421,14 @@ Them, `rfl`-keun:
 >       - and change our code
 >         - so we *no* *longer* *need* the comments:
 
+```python
+Booking.objects.in_basket()
+
+Booking.objects.on_shelf()
+
+Booking.objects.confirmed().for_year(date.today().year)
+```
+
 ...
 
 ```python
