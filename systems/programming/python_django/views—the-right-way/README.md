@@ -2264,6 +2264,23 @@ Mine, of the title:
       - “fat models, skinny views/controllers”,
       - although here I’m focusing on just the view.
 
+- Another way to look at
+  - it is to imagine that your code:
+    - as well as powering a website,
+    - is also going to be used in another way.
+      - This could include being part of:
+        - a desktop GUI,
+        - command line app,
+        - or scheduled tasks that
+          - run without any interactive user.
+        - Then, divide up the logic:
+          - that would be common to both the web site
+          - and the other types of application.
+          - Logic that is **common** should **not** be
+            - part of:
+              - your view function
+              - or view layer utilities.
+
 ...
 
 ### Example: push filtering to the model layer
