@@ -2512,7 +2512,14 @@ class Booking(models.Model):
       - that are not part of the `QuerySet` interface,
   - you can use [`Manager.from_queryset`](https://docs.djangoproject.com/en/stable/topics/db/managers/#from-queryset).
 
-...
+- To make the most of this pattern,
+  - you should be aware of [all the cool things that `QuerySet` can do](https://docs.djangoproject.com/en/stable/ref/models/querysets).
+  - For example,
+    - this code will construct a `QuerySet`
+      - that has everything
+        - that is either:
+          - on the shelf or
+          - in the basket:
 
 ```python
 on_shelf_or_in_basket = Booking.objects.in_basket() | Booking.objects.on_shelf()
