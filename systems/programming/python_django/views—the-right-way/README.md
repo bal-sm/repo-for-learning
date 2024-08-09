@@ -2329,6 +2329,19 @@ def view_booking(request, pk):
         - and to avoid complicating the view
           - with details it doesn’t really care about.
 
+So, instead of having:
+
+```python
+booking.shelved = True
+booking.save()
+```
+
+we should write:
+
+```python
+booking.put_on_shelf()
+```
+
 ...
 
 ### Example: push filtering to the model layer
