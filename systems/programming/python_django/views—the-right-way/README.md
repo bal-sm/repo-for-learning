@@ -2376,6 +2376,21 @@ booking.put_on_shelf()
       - or “confirmed for this year“ bookings.
       - Confirmed bookings are controlled with another boolean flag, at least for the moment.
 
+- We could do this filtering
+  - in our view functions
+  - something like as follows:
+
+```python
+# In the basket
+Booking.objects.filter(shelved=False, confirmed=False)
+
+# On the shelf
+Booking.objects.filter(shelved=True, confirmed=False)
+
+# Confirmed for this year
+Booking.objects.filter(confirmed=True, start_date__year=date.today().year)
+```
+
 ...
 
 Them:
