@@ -2571,6 +2571,13 @@ But you should note:
     - and discover the concepts and divisions
     - *that* make sense for your project.
 
+#### The end
+
+That’s the end of the guide! (Apart from discussion sections below, as always). I hope it has been helpful. If there are some common things I haven’t covered, ~~~feel free to [open an issue on GitHub](https://github.com/spookylukey/django-views-the-right-way)~~.
+
+Mine:
+> Salah guys, kalo dari sini, gimana ya?
+
 ...
 
 ## My notes
