@@ -2307,6 +2307,28 @@ def view_booking(request, pk):
     # the rest...
 ```
 
+- The issue with this code
+  - is that the view
+    - has too much knowledge
+      - about what “putting on the shelf” means.
+  - It may be in the future that:
+    - we don’t use a boolean `shelved` property,
+    - but perhaps some multi-value flag,
+    - or something else entirely.
+  - **With** a different schema:
+    - > makanya karena kita butuh "or something else entirely" gening
+    - there might be some other objects
+      - that need to be saved,
+    - or some other things
+      - that need to be done.
+  - We want this logic
+    - to be in one place,
+      - so that it will always be used correctly:
+        - if some other part of our code
+          - needs to do the same thing,
+        - and to avoid complicating the view
+          - with details it doesn’t really care about.
+
 ...
 
 ### Example: push filtering to the model layer
