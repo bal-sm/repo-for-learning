@@ -2294,6 +2294,19 @@ We’ll have a look at a few examples to illustrate this.
 
 The view code looks something like this (simplified):
 
+```python
+def view_booking(request, pk):
+    booking = request.user.bookings.get(id=pk)
+
+    if request.method == 'POST':
+        if 'shelve' in request.POST:  # pressed the 'Put on shelf' button
+            booking.shelved = True
+            booking.save()
+            messages.info(request, 'Booking moved to shelf')
+
+   # the rest...
+```
+
 ...
 
 ### Example: push filtering to the model layer
