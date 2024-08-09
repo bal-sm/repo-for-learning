@@ -2363,8 +2363,6 @@ booking.put_on_shelf()
       - in the view layer
         - where it belongs.
 
-...
-
 ### Example: push filtering to the model layer
 
 ...
