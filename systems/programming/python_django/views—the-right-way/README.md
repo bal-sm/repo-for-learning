@@ -2346,6 +2346,13 @@ booking.put_on_shelf()
   - to handle the `shelved` attribute
   - or whatever else needs to be done.
 
+- This is a very simple example,
+  - > and it might not look much different.
+  - *But* if you get into the habit
+    - of moving this kind of logic
+      - **out** of the view layer,
+        - it will help a lot.
+
 ...
 
 ### Example: push filtering to the model layer
