@@ -2459,7 +2459,7 @@ Tuh makanya, cenah Luke, `rfl`-in:
 >         - so I will be less prone
 >           - to [insecure direct object reference](https://portswigger.net/web-security/access-control/idor) security issues.
 
-...
+The question now is, how do we create an interface like that?
 
 #### Chainable custom `QuerySet` methods
 
