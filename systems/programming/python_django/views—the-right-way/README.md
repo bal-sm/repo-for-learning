@@ -2342,6 +2342,10 @@ we should write:
 booking.put_on_shelf()
 ```
 
+- It then becomes the responsibility of the `Booking.put_on_shelf()` method:
+  - to handle the `shelved` attribute
+  - or whatever else needs to be done.
+
 ...
 
 ### Example: push filtering to the model layer
