@@ -2353,6 +2353,16 @@ booking.put_on_shelf()
       - **out** of the view layer,
         - it will help a lot.
 
+- Note that we did **not** move
+  - __the `messages.info()`__ call
+    - into the model layer.
+  - It is concerned
+    - with *putting* a message
+      - into a web page,
+    - and so stays
+      - in the view layer
+        - where it belongs.
+
 ...
 
 ### Example: push filtering to the model layer
