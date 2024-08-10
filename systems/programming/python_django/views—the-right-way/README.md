@@ -2584,6 +2584,7 @@ Mine:
   - and creates an interface
     - for accessing the data in the database
       - that doesn’t expose ORM methods at all.
+        - > `SpecialOffer.get_products`.
   - In such an arrangement you would also normally separate your “domain model” classes from your Django `Model`.
   - > hah.
 
