@@ -2591,6 +2591,19 @@ Mine:
       - from your Django `Model`.
   - > hah. kayak gitu. `tRPC` thing tea, meureun ya, `DRF`.
 
+- > James Bennett
+  - > has an excellent post [Against service layers in Django](https://www.b-list.org/weblog/2020/mar/16/no-service/)
+    - > that summarises everything that
+      - > I would want to say on the topic,
+        - > so I’m not going to repeat that.
+  - The long and short is
+    - — using custom `Model` methods
+    - and custom `QuerySet` methods
+    - as your “service layer”,
+      - as above, is an approach
+        - that will work really well
+          - for a lot of projects. ✔️
+
 ...
 
 ## My notes
