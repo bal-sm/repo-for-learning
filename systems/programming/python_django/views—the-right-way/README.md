@@ -2578,6 +2578,15 @@ That’s the end of the guide! (Apart from discussion sections below, as always)
 Mine:
 > Salah guys, kalo dari sini, gimana ya?
 
+### Discussion: service layer? - Mahmuda's version
+
+- A service layer goes further than the above,
+  - and creates an interface
+    - for accessing the data in the database
+      - that doesn’t expose ORM methods at all.
+  - In such an arrangement you would also normally separate your “domain model” classes from your Django `Model`.
+  - > hah.
+
 ...
 
 ## My notes
