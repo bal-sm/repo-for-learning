@@ -2604,6 +2604,28 @@ Mine:
         - that will work really well
           - for a lot of projects. ✔️
 
+- If you believe
+  - that a service layer is **essential**
+    - — for example,
+      - using a repository pattern that doesn’t use `QuerySet`s —
+    - then you will *probably* __not agree__
+      - with some of the patterns I’ve suggested.
+        - For example,
+          - the [`get_object_or_404` shortcut](https://spookylukey.github.io/django-views-the-right-way/detail-view.html#shortcuts-vs-mixins)
+            - might strike you as a weird or terrible idea.
+  - However,
+    - if you are sold on
+      - **using** the `QuerySet` API
+        - (with custom methods)
+          - > `Product.objects.confirmed_for_the_year()`
+          - > and `SpecialOffer.get_products()`.
+        - as your interface,
+          - then this is just a useful shortcut
+            - > `get_object_or_404` tea.
+            - that adapts the `QuerySet` API for a common case in HTTP applications.
+    - > aku setuju-nya pake `QuerySet` dong.
+      - > no problemo jadinya.
+
 ...
 
 ## My notes
