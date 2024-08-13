@@ -251,6 +251,8 @@ Other modifiers you can use for triggers are:
   - can be used for things like keyboard shortcuts.
   - **Note** that this CSS selector is not re-evaluated if the page changes.
 
+---
+
 - You can use these attributes
   - to implement many common UX patterns,
   - such as [Active Search](@/examples/active-search.md):
@@ -264,5 +266,13 @@ Other modifiers you can use for triggers are:
 >
 <div id="search-results"></div>
 ```
+
+- This input will
+  - issue a request 500 milliseconds
+  - after a key up event
+  - if the input has been changed
+  - and inserts the results
+    - into the `div`
+      - with the id `search-results`.
 
 ...
