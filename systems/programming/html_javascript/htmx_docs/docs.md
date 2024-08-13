@@ -489,4 +489,9 @@ Mine:
       - and had the same effect.
       - > okay, terus kenapa gak gitu? mending yang mana, dahlah.
 
+- You can also add the [`disabled` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/disabled)
+  - to elements for the duration
+    - of a request
+      - by using the [hx-disabled-elt](@/attributes/hx-disabled-elt.md) attribute.
+
 ...
