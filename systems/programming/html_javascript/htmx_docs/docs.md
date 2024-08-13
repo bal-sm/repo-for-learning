@@ -514,4 +514,9 @@ Mine:
 <div id="search-results"></div>
 ```
 
+- You can see that the results from the search
+  - are going to be loaded
+    - into `div#search-results`,
+    - rather than into the `input` tag.
+
 ...
