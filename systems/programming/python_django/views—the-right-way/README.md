@@ -2669,7 +2669,15 @@ Mine:
     - but sometimes I feel it isn’t worth it.
       - > udah we jangan, berarti.
 
-...
+- It is not the end of the world if you fail to 100% insulate your schema from the rest of the app.
+  - You can get benefits from doing it partially,
+    - and if you have some integration tests
+      - > `test_methods.py` on `pytest`
+      - that exercise the queries
+        - > test `Booking.objects.active_only`
+        - constructed by your view code,
+    - you will have a mechanism for finding those places where your schema has leaked out.
+      - > in other words, integrity of the schema failing (sic).
 
 ## My notes
 
