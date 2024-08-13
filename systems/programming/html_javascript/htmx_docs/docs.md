@@ -199,4 +199,11 @@ This tells the browser:
       - by the "natural" event
         - of an element:
 
+- `input`, `textarea` & `select`
+  - are triggered on the `change` event
+- `form`
+  - is triggered on the `submit` event
+- everything else
+  - is triggered by the `click` event
+
 ...
