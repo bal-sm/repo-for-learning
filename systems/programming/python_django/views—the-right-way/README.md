@@ -647,7 +647,7 @@ Them, terus gini:
 > This is a problem that is specific to **class based** generic code. If you write [function based generic code](https://spookylukey.github.io/django-views-the-right-way/delegation.html#function-based-generic-views), the problem doesn’t exist, because you don’t inherit local variable names.
 
 Mine:
-> barina ge gak penting, eta "function based generic code" teh. baca aja nanti di [sini](#custom-logic-at-the-start--delegation).
+> barina ge gak penting, eta "function based generic code" teh. baca aja nanti di [sini](#custom-logic-at-the-start--delegation---mahmudas-version).
 
 Them, penting lagi:
 > We can think of this in terms of the “framework vs library” debate. Frameworks impose a structure on your code, a mould that you have to fit into, where your function gets called by the framework. In contrast, libraries leave you in control, you choose to call the library functions in the structure you see fit. Both have their place, but if we accept the constraints of a framework we should be sure that it is worth it.
@@ -2626,7 +2626,58 @@ Mine:
     - > aku setuju-nya pake `QuerySet` dong.
       - > no problemo jadinya.
 
-...
+### Discussion: pragmatism and purity - Mahmuda's version
+
+- When trying to hide schema details
+  - from your view layer,
+    - > `Booking.objects.get(active=kumaha)` on `view_func`
+  - there are some obstacles.
+
+- For example, for performance,
+  - appropriate use of
+    - [`select_related`](https://docs.djangoproject.com/en/stable/ref/models/querysets/#django.db.models.query.QuerySet.select_related)
+    - and [`prefetch_related`](https://docs.djangoproject.com/en/stable/ref/models/querysets/#django.db.models.query.QuerySet.prefetch_related)
+    - is very important.
+  - To know exactly
+    - what to include in them
+      - > `this_field` or `that_field`
+      - requires knowing what
+        - the view
+        - and template code
+        - is going to do,
+    - so it __has to be__ a view layer decision.
+      - > `QuerySet.select_related("some_field")` on `view_func`.
+  - At the same time,
+    - it requires knowing details
+      - about the kind of foreign keys
+        - you have
+          - at the schema level.
+    - So it’s difficult
+      - to see how we can properly
+        - isolate the layers from each other.
+
+- __My answer__
+  - is to take a pragmatic approach,
+    - and usually just put
+      - the `select_related` calls into the view.
+  - Sometimes
+    - I might make a `QuerySet` method like `with_foo`,
+      - meaning “fetch Foo objects efficiently along with the main thing”,
+      - adding whatever `select_related` or `prefetch_related` logic is needed there,
+        - > `with_foo = select_related("foo")`
+        - > `Booking.objects.active_only.with_foo`
+    - but sometimes I feel it isn’t worth it.
+      - > udah we jangan, berarti.
+
+- It is not the end of the world if you fail to 100% insulate your schema from the rest of the app.
+  - You can get benefits from doing it partially,
+    - and if you have some integration tests
+      - > `test_methods.py` on `pytest`
+      - that exercise the queries
+        - > test `Booking.objects.active_only`
+        - constructed by your view code,
+    - you will have a mechanism for finding those places where your schema has leaked out.
+      - > in other words, integrity of the schema failing (sic).
 
 ## My notes
 
