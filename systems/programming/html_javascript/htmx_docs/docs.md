@@ -148,4 +148,12 @@ While the CDN approach is extremely simple, you may want to consider [not using 
 Mine:
 > pake ini aja deh aku.
 
+## AJAX - Mahmuda's version
+
+- The **core** of `htmx`
+  - is a set of attributes
+    - that allow you
+      - to issue AJAX requests
+        - directly from HTML:
+
 ...
