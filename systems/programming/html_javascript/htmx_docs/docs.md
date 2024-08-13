@@ -437,4 +437,12 @@ Mine:
 </button>
 ```
 
+- Here we have a button.
+  - When it is clicked the `htmx-request` class
+    - will be added to it,
+    - which will reveal the spinner gif element.
+      - (I like [SVG spinners](http://samherbert.net/svg-loaders/) these days.)
+
+---
+
 ...
