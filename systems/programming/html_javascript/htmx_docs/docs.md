@@ -269,8 +269,11 @@ Other modifiers you can use for triggers are:
 
 - This input will
   - issue a request 500 milliseconds
+    - > `500ms`
   - after a key up event
+    - > `keyup`
   - if the input has been changed
+    - > `changed`
   - and inserts the results
     - into the `div`
       - with the id `search-results`.
