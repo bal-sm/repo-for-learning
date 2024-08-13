@@ -316,4 +316,30 @@ Other modifiers you can use for triggers are:
       - then against the global scope.
   - The(n) `this` symbol will be set to the current element.
 
+#### Special Events - Mahmuda's version
+
+- `htmx`
+  - provides a few special events
+    - for use in [hx-trigger](@/attributes/hx-trigger.md):
+
+- `load`
+  - fires once
+    - when the element is first loaded
+- `revealed`
+  - fires once
+    - when an element
+      - first scrolls into the viewport
+- `intersect`
+  - fires once
+    - when an element
+      - first intersects the viewport.
+  - This supports two additional options:
+    - `root:<selector>`
+      - a CSS selector of the root element for intersection
+    - `threshold:<float>`
+      - a floating point number between 0.0 and 1.0, indicating what amount of intersection to fire the event on
+
+Them, note:
+> You can also use custom events to trigger requests if you have an advanced use case.
+
 ...
