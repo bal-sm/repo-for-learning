@@ -481,4 +481,12 @@ Mine:
 </div>
 ```
 
+- Here we call out the indicator
+  - explicitly by `id`.
+  - Note that
+    - we could have placed the class
+      - on the parent `div` as well
+      - and had the same effect.
+      - > okay, terus kenapa gak gitu? mending yang mana, dahlah.
+
 ...
