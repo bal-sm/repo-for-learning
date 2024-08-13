@@ -359,4 +359,12 @@ Them, note:
       - to `/news`
     - and load the response into the div
 
+---
+
+- If you want to stop polling
+  - from a server response
+  - you can respond
+    - with the HTTP response code [`286`](https://en.wikipedia.org/wiki/86_(term))
+      - and the element will cancel the polling.
+
 ...
