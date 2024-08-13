@@ -504,4 +504,14 @@ Mine:
       - which takes a CSS selector.
   - Looking back at our Live Search example:
 
+```html
+<input type="text" name="q"
+    hx-get="/trigger_delay"
+    hx-trigger="keyup delay:500ms changed"
+    hx-target="#search-results"
+    placeholder="Search..."
+>
+<div id="search-results"></div>
+```
+
 ...
