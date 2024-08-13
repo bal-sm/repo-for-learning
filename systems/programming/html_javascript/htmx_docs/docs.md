@@ -83,6 +83,23 @@ This tells `htmx`:
     - within the [original web programming model](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm),
     - using [Hypertext As The Engine Of Application State](https://en.wikipedia.org/wiki/HATEOAS)
     - without even needing to really understand that concept.
-  - > wow, baca, learning note.
+    - > wow, baca, learning note.
+
+---
+
+- It's worth mentioning that,
+  - if you prefer,
+    - you can use the [`data-`](https://html.spec.whatwg.org/multipage/dom.html#attr-data-*) prefix
+  - when using htmx:
+
+```html
+<a data-hx-post="/click">Click Me!</a>
+```
+
+Them:
+> Finally, [Version 1](https://v1.htmx.org) of htmx is still supported and supports IE11.
+
+Mine:
+> who cares.
 
 ...
