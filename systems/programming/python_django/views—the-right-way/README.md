@@ -2578,6 +2578,54 @@ That’s the end of the guide! (Apart from discussion sections below, as always)
 Mine:
 > Salah guys, kalo dari sini, gimana ya?
 
+### Discussion: service layer? - Mahmuda's version
+
+- A service layer goes further than the above,
+  - and creates an interface
+    - for accessing the data in the database
+      - that doesn’t expose ORM methods at all.
+        - > `SpecialOffer.get_products`.
+  - In such an arrangement
+    - you would also normally
+      - separate your “domain model” classes
+      - from your Django `Model`.
+  - > hah. kayak gitu. `tRPC` thing tea, meureun ya, `DRF`.
+
+- > James Bennett
+  - > has an excellent post [Against service layers in Django](https://www.b-list.org/weblog/2020/mar/16/no-service/)
+    - > that summarises everything that
+      - > I would want to say on the topic,
+        - > so I’m not going to repeat that.
+  - The long and short is
+    - — using custom `Model` methods
+    - and custom `QuerySet` methods
+    - as your “service layer”,
+      - as above, is an approach
+        - that will work really well
+          - for a lot of projects. ✔️
+
+- If you believe
+  - that a service layer is **essential**
+    - — for example,
+      - using a repository pattern that doesn’t use `QuerySet`s —
+    - then you will *probably* __not agree__
+      - with some of the patterns I’ve suggested.
+        - For example,
+          - the [`get_object_or_404` shortcut](https://spookylukey.github.io/django-views-the-right-way/detail-view.html#shortcuts-vs-mixins)
+            - might strike you as a weird or terrible idea.
+  - However,
+    - if you are sold on
+      - **using** the `QuerySet` API
+        - (with custom methods)
+          - > `Product.objects.confirmed_for_the_year()`
+          - > and `SpecialOffer.get_products()`.
+        - as your interface,
+          - then this is just a useful shortcut
+            - > `get_object_or_404` tea.
+            - that adapts the `QuerySet` API for a common case in HTTP applications.
+    - > aku setuju-nya pake `QuerySet` dong.
+      - > no problemo jadinya.
+
 ...
 
 ## My notes
