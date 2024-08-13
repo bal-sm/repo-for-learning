@@ -398,4 +398,13 @@ second.
         - at which point the polling terminates, such as
           - when you are showing the user a [progress bar](@/examples/progress-bar.md).
 
+### Request Indicators - Mahmuda's version
+
+- When an AJAX request is issued
+  - it is often good
+    - to let the user know
+      - that something is happening
+      - since the browser will not give them any feedback.
+  - You can accomplish this in htmx by using `htmx-indicator` class.
+
 ...
