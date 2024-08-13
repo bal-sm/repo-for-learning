@@ -127,4 +127,22 @@ Mine:
 Mine:
 > bagus banget yah plugin system-nya juga kayaknya.
 
+_skipped, cara lainnya, udah we ah_
+
+### Via A CDN (e.g. `unpkg.com`)
+
+The fastest way to get going with htmx is to load it via a CDN. You can simply add this to your head tag and get going:
+
+```html
+<script src="https://unpkg.com/htmx.org@2.0.2" integrity="sha384-Y7hw+L/jvKeWIRRkqWYfPcvVxHzVzn5REgzbawhxAuQGwX1XWe70vji+VSeHOThJ" crossorigin="anonymous"></script>
+```
+
+An unminified version is also available for debugging as well:
+
+```html
+<script src="https://unpkg.com/htmx.org@2.02/dist/htmx.js" integrity="sha384-yZq+5izaUBKcRgFbxgkRYwpHhHHCpp5nseXp0MEQ1A4MTWVMnqkmcuFez8x5qfxr" crossorigin="anonymous"></script>
+```
+
+While the CDN approach is extremely simple, you may want to consider [not using CDNs in production](https://blog.wesleyac.com/posts/why-not-javascript-cdn).
+
 ...
