@@ -349,4 +349,8 @@ Them, note:
   - rather than wait for an event,
   - you can use the `every` syntax with the [`hx-trigger`](@/attributes/hx-trigger.md) attribute:
 
+```html
+<div hx-get="/news" hx-trigger="every 2s"></div>
+```
+
 ...
