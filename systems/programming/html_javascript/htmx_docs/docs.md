@@ -342,4 +342,11 @@ Other modifiers you can use for triggers are:
 Them, note:
 > You can also use custom events to trigger requests if you have an advanced use case.
 
+#### Polling - Mahmuda's version
+
+- If you want an element
+  - to poll the given URL
+  - rather than wait for an event,
+  - you can use the `every` syntax with the [`hx-trigger`](@/attributes/hx-trigger.md) attribute:
+
 ...
