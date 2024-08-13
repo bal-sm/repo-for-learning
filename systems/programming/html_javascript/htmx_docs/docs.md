@@ -21,4 +21,11 @@ Mine:
 <a href="/blog">Blog</a>
 ```
 
+This anchor tag tells a browser:
+
+> - When a user clicks on this link,
+>   - issue an HTTP GET request to `/blog`
+>   - and load the response content
+>     - **into** the browser window".
+
 ...
