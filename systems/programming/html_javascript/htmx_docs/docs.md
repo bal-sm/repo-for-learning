@@ -148,4 +148,293 @@ While the CDN approach is extremely simple, you may want to consider [not using 
 Mine:
 > pake ini aja deh aku.
 
+## AJAX - Mahmuda's version
+
+- The **core** of `htmx`
+  - is a set of attributes
+    - that allow you
+      - to issue AJAX requests
+        - directly from HTML:
+
+- [`hx-get`](@/attributes/hx-get.md)
+  - Issues a `GET` request to the given URL
+- [`hx-post`](@/attributes/hx-post.md)
+  - Issues a `POST` request to the given URL
+- [hx-put](@/attributes/hx-put.md)
+  - Issues a `PUT` request to the given URL
+- [hx-patch](@/attributes/hx-patch.md)
+  - Issues a `PATCH` request to the given URL
+- [hx-delete](@/attributes/hx-delete.md)
+  - Issues a `DELETE` request to the given URL
+
+---
+
+- Each of these attributes
+  - takes a URL
+    - to issue an AJAX request to.
+  - The element will
+    - issue a request
+      - of the specified type
+        - to the given URL
+          - when the element is [triggered](#triggers):
+
+```html
+<button hx-put="/messages">
+    Put To Messages
+</button>
+```
+
+This tells the browser:
+
+> - When a user clicks on this button,
+>   - issue a PUT request
+>     - to the URL `/messages`
+>       - and load the response into the button
+
+### Triggering Requests - Mahmuda's version {#triggers}
+
+- By default,
+  - AJAX requests
+    - are triggered
+      - by the "natural" event
+        - of an element:
+
+- `input`, `textarea` & `select`
+  - are triggered on the `change` event
+- `form`
+  - is triggered on the `submit` event
+- everything else
+  - is triggered by the `click` event
+
+- If you
+  - want different behavior
+    - you can use the [hx-trigger](@/attributes/hx-trigger.md) attribute
+      - to specify which event will cause the request.
+
+- Here is a `div`
+  - that posts to `/mouse_entered`
+    - when a mouse enters it:
+
+```html
+<div hx-post="/mouse_entered" hx-trigger="mouseenter">
+    [Here Mouse, Mouse!]
+</div>
+```
+
+#### Trigger Modifiers - Mahmuda's version
+
+- A trigger can also
+  - have a few additional modifiers
+    - that change its behavior.
+  - For example,
+    - if you want a request
+      - to only happen once,
+    - you can use the `once` modifier for the trigger:
+
+```html
+<div hx-post="/mouse_entered" hx-trigger="mouseenter once">
+    [Here Mouse, Mouse!]
+</div>
+```
+
+Other modifiers you can use for triggers are:
+
+- `changed`
+  - only issue a request if the value of the element has changed
+- `delay:<time interval>`
+  - wait the given amount of time (e.g. `1s`) before issuing the request.
+    - If the event triggers again, the countdown is reset.
+- `throttle:<time interval>`
+  - wait the given amount of time (e.g. `1s`) before issuing the request.
+  - Unlike `delay` if a new event occurs before the time limit is hit the event will be discarded, so the request will trigger at the end of the time period.
+- `from:<CSS Selector>` - listen for the event on a different element.  This
+  - can be used for things like keyboard shortcuts.
+  - **Note** that this CSS selector is not re-evaluated if the page changes.
+
+---
+
+- You can use these attributes
+  - to implement many common UX patterns,
+  - such as [Active Search](@/examples/active-search.md):
+
+```html
+<input type="text" name="q"
+    hx-get="/trigger_delay"
+    hx-trigger="keyup changed delay:500ms"
+    hx-target="#search-results"
+    placeholder="Search..."
+>
+<div id="search-results"></div>
+```
+
+- This input will
+  - issue a request 500 milliseconds
+    - > `500ms`
+  - after a key up event
+    - > `keyup`
+  - if the input has been changed
+    - > `changed`
+  - and inserts the results
+    - into the `div`
+      - with the id `search-results`.
+
+- Multiple triggers
+  - can be specified
+    - in the [`hx-trigger`](@/attributes/hx-trigger.md) attribute,
+    - separated by commas.
+    - > kumaha ieu teh?, learning note.
+
+#### Trigger Filters - Mahmuda's version
+
+- You may also
+  - apply trigger filters
+    - by using square brackets
+      - after the event name,
+        - > `hx-trigger="click[ctrlKey]"`
+        - enclosing a javascript expression
+          - that will be evaluated.
+  - If the expression
+    - evaluates to `true`
+      - the event will trigger,
+      - otherwise it will not.
+
+---
+
+- Here is an example
+  - that triggers only
+    - on a Control-Click of the element
+
+```html
+<div hx-get="/clicked" hx-trigger="click[ctrlKey]">
+    Control Click Me
+</div>
+```
+
+- Properties like `ctrlKey`
+  - will be resolved
+    - against the triggering event first,
+      - then against the global scope.
+  - The(n) `this` symbol will be set to the current element.
+
+#### Special Events - Mahmuda's version
+
+- `htmx`
+  - provides a few special events
+    - for use in [hx-trigger](@/attributes/hx-trigger.md):
+
+- `load`
+  - fires once
+    - when the element is first loaded
+- `revealed`
+  - fires once
+    - when an element
+      - first scrolls into the viewport
+- `intersect`
+  - fires once
+    - when an element
+      - first intersects the viewport.
+  - This supports two additional options:
+    - `root:<selector>`
+      - a CSS selector of the root element for intersection
+    - `threshold:<float>`
+      - a floating point number between 0.0 and 1.0, indicating what amount of intersection to fire the event on
+
+Them, note:
+> You can also use custom events to trigger requests if you have an advanced use case.
+
+#### Polling - Mahmuda's version
+
+- If you want an element
+  - to poll the given URL
+  - rather than wait for an event,
+  - you can use the `every` syntax with the [`hx-trigger`](@/attributes/hx-trigger.md) attribute:
+
+```html
+<div hx-get="/news" hx-trigger="every 2s"></div>
+```
+
+- This tells htmx
+  - Every 2 seconds,
+    - issue a `GET`
+      - to `/news`
+    - and load the response into the div
+
+---
+
+- If you want to stop polling
+  - from a server response
+  - you can respond
+    - with the HTTP response code [`286`](https://en.wikipedia.org/wiki/86_(term))
+      - and the element will cancel the polling.
+
+#### Load Polling {#load_polling} - Mahmuda's version
+
+- Another technique
+  - that can be used to achieve polling
+    - in htmx
+      - is "load polling",
+        - where an element specifies
+          - a `load` trigger along with a delay,
+          - and replaces itself with the response:
+
+```html
+<div hx-get="/messages"
+    hx-trigger="load delay:1s"
+    hx-swap="outerHTML"
+>
+</div>
+```
+
+- If the `/messages` end point
+  - keeps returning a div
+    - set up this way,
+  - it will keep "polling" back to the URL every
+second.
+
+- Load polling
+  - can be useful in situations
+    - where a poll
+      - has an end point
+        - at which point the polling terminates, such as
+          - when you are showing the user a [progress bar](@/examples/progress-bar.md).
+
+### Request Indicators - Mahmuda's version
+
+- When an AJAX request is issued
+  - it is often good
+    - to let the user know
+      - that something is happening
+      - since the browser will not give them any feedback.
+  - You can accomplish this in htmx by using `htmx-indicator` class.
+    - > `class="htmx-indicator"`.
+
+- The `htmx-indicator` class
+  - is defined
+    - so that the opacity of any element
+      - with this class is `0` by default,
+        - making it invisible
+        - but present in the DOM.
+
+- When `htmx` issues a request,
+  - it will put a `htmx-request` class
+    - onto an element
+      - (either the requesting element or another element, if specified).
+  - The `htmx-request` class will
+    - cause a child element
+      - with the `htmx-indicator` class on it
+        - to transition to an opacity of 1,
+          - showing the indicator.
+
+---
+
+Mine:
+> ~~cuman di-kode-nya mah gak diapa-apain loh, opacity-nya, sebenernya.~~ eh gimana sih? oh iya maksudnya otomatis gitu loh. `htmx-request`, on a parent -> a child `htmx-indicator`, an `img` -> `img.opacity = 0` -> transition to `img.opacity = 1`. gitu aja we dulu.
+
+```html
+<button hx-get="/click">
+    Click Me!
+    <img class="htmx-indicator" src="/spinner.gif">
+</button>
+```
+
 ...
