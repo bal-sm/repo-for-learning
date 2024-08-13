@@ -428,7 +428,7 @@ second.
 ---
 
 Mine:
-> cuman di-kode-nya mah gak diapa-apain loh, opacity-nya, sebenernya.
+> ~~cuman di-kode-nya mah gak diapa-apain loh, opacity-nya, sebenernya.~~ eh gimana sih?
 
 ```html
 <button hx-get="/click">
