@@ -647,7 +647,7 @@ Them, terus gini:
 > This is a problem that is specific to **class based** generic code. If you write [function based generic code](https://spookylukey.github.io/django-views-the-right-way/delegation.html#function-based-generic-views), the problem doesn’t exist, because you don’t inherit local variable names.
 
 Mine:
-> barina ge gak penting, eta "function based generic code" teh. baca aja nanti di [sini](#custom-logic-at-the-start--delegation).
+> barina ge gak penting, eta "function based generic code" teh. baca aja nanti di [sini](#custom-logic-at-the-start--delegation---mahmudas-version).
 
 Them, penting lagi:
 > We can think of this in terms of the “framework vs library” debate. Frameworks impose a structure on your code, a mould that you have to fit into, where your function gets called by the framework. In contrast, libraries leave you in control, you choose to call the library functions in the structure you see fit. Both have their place, but if we accept the constraints of a framework we should be sure that it is worth it.
