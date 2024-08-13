@@ -26,7 +26,7 @@ This anchor tag tells a browser:
 > - When a user clicks on this link,
 >   - issue an HTTP GET request to `/blog`
 >   - and load the response content
->     - **into** the browser window".
+>     - **into** the browser window.
 
 ---
 
@@ -41,5 +41,14 @@ With that in mind, consider the following bit of HTML:
     Click Me!
 </button>
 ```
+
+This tells `htmx`:
+
+> - When a user clicks on this button,
+>   - issue an HTTP POST request
+>     - to `/clicked`
+>   - and use the content from the response
+>     - to replace the element
+>       - with the id `parent-div` in the DOM
 
 ...
