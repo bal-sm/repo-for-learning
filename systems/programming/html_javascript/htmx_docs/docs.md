@@ -310,4 +310,10 @@ Other modifiers you can use for triggers are:
 </div>
 ```
 
+- Properties like `ctrlKey`
+  - will be resolved
+    - against the triggering event first,
+      - then against the global scope.
+  - The(n) `this` symbol will be set to the current element.
+
 ...
