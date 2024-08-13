@@ -14,4 +14,11 @@ Mine:
       - **directly** from HTML,
       - *rather* than using JavaScript.
 
+- To understand `htmx`,
+  - first lets take a look at an anchor tag:
+
+```html
+<a href="/blog">Blog</a>
+```
+
 ...
