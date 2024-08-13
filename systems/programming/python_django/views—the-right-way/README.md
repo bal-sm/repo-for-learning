@@ -2626,6 +2626,13 @@ Mine:
     - > aku setuju-nya pake `QuerySet` dong.
       - > no problemo jadinya.
 
+### Discussion: pragmatism and purity - Mahmuda's version
+
+- When trying to hide schema details
+  - from your view layer,
+    - > `Booking.objects.get(active=kumaha)` on `view_func`
+  - there are some obstacles.
+
 ...
 
 ## My notes
