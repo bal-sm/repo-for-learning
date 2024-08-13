@@ -465,4 +465,20 @@ Mine:
 }
 ```
 
+---
+
+- If you want the `htmx-request` class
+  - added to a different element,
+    - you can use the [hx-indicator](@/attributes/hx-indicator.md) attribute
+      - with a CSS selector to do so:
+
+```html
+<div>
+    <button hx-get="/click" hx-indicator="#indicator">
+        Click Me!
+    </button>
+    <img id="indicator" class="htmx-indicator" src="/spinner.gif"/>
+</div>
+```
+
 ...
