@@ -425,4 +425,16 @@ second.
         - to transition to an opacity of 1,
           - showing the indicator.
 
+---
+
+Mine:
+> cuman di-kode-nya mah gak diapa-apain loh, opacity-nya, sebenernya.
+
+```html
+<button hx-get="/click">
+    Click Me!
+    <img class="htmx-indicator" src="/spinner.gif">
+</button>
+```
+
 ...
