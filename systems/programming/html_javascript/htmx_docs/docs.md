@@ -406,5 +406,13 @@ second.
       - that something is happening
       - since the browser will not give them any feedback.
   - You can accomplish this in htmx by using `htmx-indicator` class.
+    - > `class="htmx-indicator"`.
+
+- The `htmx-indicator` class
+  - is defined
+    - so that the opacity of any element
+      - with this class is `0` by default,
+        - making it invisible
+        - but present in the DOM.
 
 ...
