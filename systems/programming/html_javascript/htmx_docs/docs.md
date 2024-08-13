@@ -445,4 +445,24 @@ Mine:
 
 ---
 
+- While the `htmx-indicator` class
+  - uses opacity
+    - to hide
+    - and show the progress indicator,
+  - if you would
+    - prefer another mechanism
+      - you can create your own CSS transition like so:
+
+```css
+.htmx-indicator{
+    display:none;
+}
+.htmx-request .htmx-indicator{
+    display:inline;
+}
+.htmx-request.htmx-indicator{
+    display:inline;
+}
+```
+
 ...
