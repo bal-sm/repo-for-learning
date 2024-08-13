@@ -367,4 +367,22 @@ Them, note:
     - with the HTTP response code [`286`](https://en.wikipedia.org/wiki/86_(term))
       - and the element will cancel the polling.
 
+#### Load Polling {#load_polling} - Mahmuda's version
+
+- Another technique
+  - that can be used to achieve polling
+    - in htmx
+      - is "load polling",
+        - where an element specifies
+          - a `load` trigger along with a delay,
+          - and replaces itself with the response:
+
+```html
+<div hx-get="/messages"
+    hx-trigger="load delay:1s"
+    hx-swap="outerHTML"
+>
+</div>
+```
+
 ...
