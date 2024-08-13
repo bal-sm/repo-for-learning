@@ -156,4 +156,15 @@ Mine:
       - to issue AJAX requests
         - directly from HTML:
 
+- [`hx-get`](@/attributes/hx-get.md)
+  - Issues a `GET` request to the given URL
+- [`hx-post`](@/attributes/hx-post.md)
+  - Issues a `POST` request to the given URL
+- [hx-put](@/attributes/hx-put.md)
+  - Issues a `PUT` request to the given URL
+- [hx-patch](@/attributes/hx-patch.md)
+  - Issues a `PATCH` request to the given URL
+- [hx-delete](@/attributes/hx-delete.md)
+  - Issues a `DELETE` request to the given URL
+
 ...
