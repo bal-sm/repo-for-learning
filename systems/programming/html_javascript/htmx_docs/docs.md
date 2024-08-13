@@ -184,4 +184,11 @@ Mine:
 </button>
 ```
 
+This tells the browser:
+
+> - When a user clicks on this button,
+>   - issue a PUT request
+>     - to the URL `/messages`
+>       - and load the response into the button
+
 ...
