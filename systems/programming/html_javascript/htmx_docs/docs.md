@@ -102,4 +102,14 @@ Them:
 Mine:
 > who cares.
 
+## 1.x to 2.x Migration Guide
+
+Them:
+> If you are migrating to htmx 2.x from [htmx 1.x](https://v1.> htmx.org), please see the [htmx 1.x migration guide](@/migration-guide-htmx-1.md).
+>
+> If you are migrating to htmx from intercooler.js, please see the [intercooler migration guide](@/migration-guide-intercooler.md).
+
+Mine:
+> Okay! Enggak tp.
+
 ...
