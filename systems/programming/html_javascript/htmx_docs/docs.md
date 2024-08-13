@@ -221,4 +221,14 @@ This tells the browser:
 </div>
 ```
 
+#### Trigger Modifiers - Mahmuda's version
+
+- A trigger can also
+  - have a few additional modifiers
+    - that change its behavior.
+  - For example,
+    - if you want a request
+      - to only happen once,
+    - you can use the `once` modifier for the trigger:
+
 ...
