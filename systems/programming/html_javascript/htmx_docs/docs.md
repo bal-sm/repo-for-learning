@@ -112,4 +112,19 @@ Them:
 Mine:
 > Okay! Enggak tp.
 
+## Installing - Mahmuda's version
+
+- Htmx is
+  - a dependency-free,
+  - browser-oriented javascript library.
+  - This means that
+    - using it is
+      - as simple
+        - as adding a `<script>` tag
+    - to your document head.
+  - There is no need for a build system to use it.
+
+Mine:
+> bagus banget yah plugin system-nya juga kayaknya.
+
 ...
