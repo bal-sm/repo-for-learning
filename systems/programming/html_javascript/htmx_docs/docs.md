@@ -298,4 +298,16 @@ Other modifiers you can use for triggers are:
       - the event will trigger,
       - otherwise it will not.
 
+---
+
+- Here is an example
+  - that triggers only
+    - on a Control-Click of the element
+
+```html
+<div hx-get="/clicked" hx-trigger="click[ctrlKey]">
+    Control Click Me
+</div>
+```
+
 ...
