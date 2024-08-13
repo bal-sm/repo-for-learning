@@ -167,4 +167,21 @@ Mine:
 - [hx-delete](@/attributes/hx-delete.md)
   - Issues a `DELETE` request to the given URL
 
+---
+
+- Each of these attributes
+  - takes a URL
+    - to issue an AJAX request to.
+  - The element will
+    - issue a request
+      - of the specified type
+        - to the given URL
+          - when the element is [triggered](#triggers):
+
+```html
+<button hx-put="/messages">
+    Put To Messages
+</button>
+```
+
 ...
