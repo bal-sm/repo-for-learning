@@ -353,4 +353,10 @@ Them, note:
 <div hx-get="/news" hx-trigger="every 2s"></div>
 ```
 
+- This tells htmx
+  - Every 2 seconds,
+    - issue a `GET`
+      - to `/news`
+    - and load the response into the div
+
 ...
