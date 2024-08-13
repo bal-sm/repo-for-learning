@@ -2633,6 +2633,29 @@ Mine:
     - > `Booking.objects.get(active=kumaha)` on `view_func`
   - there are some obstacles.
 
+- For example, for performance,
+  - appropriate use of
+    - [`select_related`](https://docs.djangoproject.com/en/stable/ref/models/querysets/#django.db.models.query.QuerySet.select_related)
+    - and [`prefetch_related`](https://docs.djangoproject.com/en/stable/ref/models/querysets/#django.db.models.query.QuerySet.prefetch_related)
+    - is very important.
+  - To know exactly
+    - what to include in them
+      - > `this_field` or `that_field`
+      - requires knowing what
+        - the view
+        - and template code
+        - is going to do,
+    - so it __has to be__ a view layer decision.
+      - > `QuerySet.select_related("some_field")` on `view_func`.
+  - At the same time,
+    - it requires knowing details
+      - about the kind of foreign keys
+        - you have
+          - at the schema level.
+    - So it’s difficult
+      - to see how we can properly
+        - isolate the layers from each other.
+
 ...
 
 ## My notes
