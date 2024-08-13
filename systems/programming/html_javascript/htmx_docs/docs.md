@@ -284,4 +284,18 @@ Other modifiers you can use for triggers are:
     - separated by commas.
     - > kumaha ieu teh?, learning note.
 
+#### Trigger Filters - Mahmuda's version
+
+- You may also
+  - apply trigger filters
+    - by using square brackets
+      - after the event name,
+        - > `hx-trigger="click[ctrlKey]"`
+        - enclosing a javascript expression
+          - that will be evaluated.
+  - If the expression
+    - evaluates to `true`
+      - the event will trigger,
+      - otherwise it will not.
+
 ...
