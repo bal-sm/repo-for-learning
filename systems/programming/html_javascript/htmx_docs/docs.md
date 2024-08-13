@@ -191,7 +191,7 @@ This tells the browser:
 >     - to the URL `/messages`
 >       - and load the response into the button
 
-### Triggering Requests {#triggers}
+### Triggering Requests - Mahmuda's version {#triggers}
 
 - By default,
   - AJAX requests
