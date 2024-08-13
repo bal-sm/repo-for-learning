@@ -278,4 +278,10 @@ Other modifiers you can use for triggers are:
     - into the `div`
       - with the id `search-results`.
 
+- Multiple triggers
+  - can be specified
+    - in the [`hx-trigger`](@/attributes/hx-trigger.md) attribute,
+    - separated by commas.
+    - > kumaha ieu teh?, learning note.
+
 ...
