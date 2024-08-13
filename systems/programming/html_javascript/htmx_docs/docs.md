@@ -385,4 +385,17 @@ Them, note:
 </div>
 ```
 
+- If the `/messages` end point
+  - keeps returning a div
+    - set up this way,
+  - it will keep "polling" back to the URL every
+second.
+
+- Load polling
+  - can be useful in situations
+    - where a poll
+      - has an end point
+        - at which point the polling terminates, such as
+          - when you are showing the user a [progress bar](@/examples/progress-bar.md).
+
 ...
