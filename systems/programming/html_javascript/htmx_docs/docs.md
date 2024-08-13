@@ -206,4 +206,19 @@ This tells the browser:
 - everything else
   - is triggered by the `click` event
 
+- If you
+  - want different behavior
+    - you can use the [hx-trigger](@/attributes/hx-trigger.md) attribute
+      - to specify which event will cause the request.
+
+- Here is a `div`
+  - that posts to `/mouse_entered`
+    - when a mouse enters it:
+
+```html
+<div hx-post="/mouse_entered" hx-trigger="mouseenter">
+    [Here Mouse, Mouse!]
+</div>
+```
+
 ...
