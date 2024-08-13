@@ -231,4 +231,10 @@ This tells the browser:
       - to only happen once,
     - you can use the `once` modifier for the trigger:
 
+```html
+<div hx-post="/mouse_entered" hx-trigger="mouseenter once">
+    [Here Mouse, Mouse!]
+</div>
+```
+
 ...
