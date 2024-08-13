@@ -415,4 +415,14 @@ second.
         - making it invisible
         - but present in the DOM.
 
+- When `htmx` issues a request,
+  - it will put a `htmx-request` class
+    - onto an element
+      - (either the requesting element or another element, if specified).
+  - The `htmx-request` class will
+    - cause a child element
+      - with the `htmx-indicator` class on it
+        - to transition to an opacity of 1,
+          - showing the indicator.
+
 ...
