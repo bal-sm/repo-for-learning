@@ -251,4 +251,18 @@ Other modifiers you can use for triggers are:
   - can be used for things like keyboard shortcuts.
   - **Note** that this CSS selector is not re-evaluated if the page changes.
 
+- You can use these attributes
+  - to implement many common UX patterns,
+  - such as [Active Search](@/examples/active-search.md):
+
+```html
+<input type="text" name="q"
+    hx-get="/trigger_delay"
+    hx-trigger="keyup changed delay:500ms"
+    hx-target="#search-results"
+    placeholder="Search..."
+>
+<div id="search-results"></div>
+```
+
 ...
