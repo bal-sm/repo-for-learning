@@ -2656,6 +2656,19 @@ Mine:
       - to see how we can properly
         - isolate the layers from each other.
 
+- __My answer__
+  - is to take a pragmatic approach,
+    - and usually just put
+      - the `select_related` calls into the view.
+  - Sometimes
+    - I might make a `QuerySet` method like `with_foo`,
+      - meaning “fetch Foo objects efficiently along with the main thing”,
+      - adding whatever `select_related` or `prefetch_related` logic is needed there,
+        - > `with_foo = select_related("foo")`
+        - > `Booking.objects.active_only.with_foo`
+    - but sometimes I feel it isn’t worth it.
+      - > udah we jangan, berarti.
+
 ...
 
 ## My notes
