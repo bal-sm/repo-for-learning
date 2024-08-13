@@ -28,4 +28,18 @@ This anchor tag tells a browser:
 >   - and load the response content
 >     - **into** the browser window".
 
+---
+
+With that in mind, consider the following bit of HTML:
+
+```html
+<button hx-post="/clicked"
+    hx-trigger="click"
+    hx-target="#parent-div"
+    hx-swap="outerHTML"
+>
+    Click Me!
+</button>
+```
+
 ...
