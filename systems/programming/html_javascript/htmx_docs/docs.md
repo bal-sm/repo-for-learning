@@ -145,4 +145,7 @@ An unminified version is also available for debugging as well:
 
 While the CDN approach is extremely simple, you may want to consider [not using CDNs in production](https://blog.wesleyac.com/posts/why-not-javascript-cdn).
 
+Mine:
+> pake ini aja deh aku.
+
 ...
