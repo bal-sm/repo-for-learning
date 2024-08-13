@@ -494,4 +494,14 @@ Mine:
     - of a request
       - by using the [hx-disabled-elt](@/attributes/hx-disabled-elt.md) attribute.
 
+### Targets - Mahmuda's version
+
+- If you want the response
+  - to be loaded
+    - into a different element
+    - other than the one that made the request,
+    - you can use the [hx-target](@/attributes/hx-target.md) attribute,
+      - which takes a CSS selector.
+  - Looking back at our Live Search example:
+
 ...
