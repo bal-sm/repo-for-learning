@@ -191,4 +191,12 @@ This tells the browser:
 >     - to the URL `/messages`
 >       - and load the response into the button
 
+### Triggering Requests {#triggers}
+
+- By default,
+  - AJAX requests
+    - are triggered
+      - by the "natural" event
+        - of an element:
+
 ...
