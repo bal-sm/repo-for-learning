@@ -686,4 +686,38 @@ You can experiment with this new API using the following approaches:
     <button hx-post="/like" hx-swap="outerHTML ignoreTitle:true">Like</button>
 ```
 
+The modifiers available on `hx-swap` are:
+
+- `transition`
+  - `true` or `false`,
+    - whether to use the view transition API for this swap
+- `swap`
+  - The swap delay to use
+    - (e.g. `100ms`)
+    - between
+      - when old content is cleared
+      - and the new content is inserted
+- `settle`
+  - The settle delay to use
+    - (e.g. `100ms`)
+    - between
+      - when new content is inserted
+      - and when it is settled
+- `ignoreTitle`
+  - If set to `true`,
+    - any title found in the new content
+      - will be ignored
+      - and not update the document title
+- `scroll`
+  - `top` or `bottom`,
+    - will scroll the target element
+      - to its top
+      - or bottom
+- `show`
+  - `top` or `bottom`,
+    - will scroll the target element's
+      - top
+      - or bottom
+      - into view
+
 ...
