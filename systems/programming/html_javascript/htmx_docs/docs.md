@@ -1009,4 +1009,27 @@ Mine:
 > - masih gak ngerti. I wish ada kayak step-by-step debug info.
 >   - cuman kayaknya kalo aku serius Client Side Scripting + Alpine.js, bakal berguna banget ini..
 
+#### File Upload - Mahmuda's version
+
+- If you wish to upload files via an htmx request,
+  - you can set the [hx-encoding](@/attributes/hx-encoding.md) attribute
+    - to `multipart/form-data`.
+  - This will use a `FormData` object to submit the request,
+    - which will properly include the file in the request.
+
+- Note that depending on your server-side technology,
+  - you may have to handle requests
+    - with this type of body content
+      - very differently.
+
+- Note that htmx fires a `htmx:xhr:progress` event periodically
+  - based on the standard `progress` event during upload,
+    - which you can hook into to show the progress of the upload.
+
+- See the [examples section](@/examples/_index.md)
+  - for more advanced form patterns,
+  - including
+    - [progress bars](@/examples/file-upload.md)
+    - and [error handling](@/examples/file-upload-input.md).
+
 ...
