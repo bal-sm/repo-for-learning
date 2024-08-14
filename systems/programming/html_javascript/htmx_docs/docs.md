@@ -1406,4 +1406,16 @@ Mine:
 >   - vs.
 >     - 'Alpine' + 'htmx'
 
+## Requests + Responses - Mahmuda's version
+
+- 'Htmx' expects responses
+  - to the AJAX requests
+    - it makes to be HTML,
+      - typically HTML fragments
+      - (although a full HTML document, matched with a [hx-select](@/attributes/hx-select.md) tag can be useful too).
+  - 'Htmx' will then swap the returned HTML
+    - into the document
+      - at the target specified
+      - and with the swap strategy specified.
+
 ...
