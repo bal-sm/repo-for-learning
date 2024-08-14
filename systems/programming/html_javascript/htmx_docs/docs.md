@@ -1132,4 +1132,23 @@ This `hx-confirm` attribute will now apply to all htmx-powered elements within i
 
 ---
 
+- Sometimes you wish to undo this inheritance.
+  - Consider if we had a cancel button to this group,
+    - but didn't want it to be confirmed.
+  - We could add an `unset` directive on it like so:
+
+```html
+<div hx-confirm="Are you sure?">
+    <button hx-delete="/account">
+        Delete My Account
+    </button>
+    <button hx-put="/account">
+        Update My Account
+    </button>
+    <button hx-confirm="unset" hx-get="/">
+        Cancel
+    </button>
+</div>
+```
+
 ...
