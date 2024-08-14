@@ -1178,4 +1178,12 @@ This `hx-confirm` attribute will now apply to all htmx-powered elements within i
         - into AJAX requests that,
           - by default, target the body of the page.
 
+Here is an example:
+
+```html
+<div hx-boost="true">
+    <a href="/blog">Blog</a>
+</div>
+```
+
 ...
