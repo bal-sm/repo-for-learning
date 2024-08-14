@@ -785,4 +785,7 @@ See the [hx-swap](@/attributes/hx-swap.md) documentation for more details on the
 </form>
 ```
 
+- This resolves the synchronization
+  - between the two elements in a declarative way.
+
 ...
