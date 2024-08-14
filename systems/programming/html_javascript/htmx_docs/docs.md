@@ -1032,4 +1032,16 @@ Mine:
     - [progress bars](@/examples/file-upload.md)
     - and [error handling](@/examples/file-upload-input.md).
 
+#### Extra Values - Mahmuda's version
+
+- You can include extra values in a request
+  - using
+    - the [hx-vals](@/attributes/hx-vals.md)
+      - (name-expression pairs in JSON format)
+    - and [hx-vars](@/attributes/hx-vars.md) attributes
+      - (comma-separated name-expression pairs that are dynamically computed).
+
+Mine, learning note:
+> gimana ini teh? terus kode-nya? lanjutin ya.
+
 ...
