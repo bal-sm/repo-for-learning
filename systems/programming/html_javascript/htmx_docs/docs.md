@@ -1006,6 +1006,7 @@ Mine:
   - you can use the [htmx:configRequest](@/events.md#htmx:configRequest) event.
 
 Mine:
-> masih gak ngerti. I wish ada kayak step-by-step debug info.
+> - masih gak ngerti. I wish ada kayak step-by-step debug info.
+>   - cuman kayaknya kalo aku serius Client Side Scripting + Alpine.js, bakal berguna banget ini..
 
 ...
