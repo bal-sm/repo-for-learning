@@ -897,4 +897,18 @@ You can see the [Animation Examples](@/examples/animations.md) for more details 
     - A little crazy, but this is what allows CSS transitions to work
       - without any javascript by the developer.
 
+### Out of Band Swaps - Mahmuda's version
+
+- If you want to swap content
+  - from a response directly
+    - into the DOM
+      - by using the `id` attribute
+        - you can use the [`hx-swap-oob]`(@/attributes/hx-swap-oob.md) attribute
+          - in the *response* html:
+
+```html
+<div id="message" hx-swap-oob="true">Swap me directly!</div>
+Additional Content
+```
+
 ...
