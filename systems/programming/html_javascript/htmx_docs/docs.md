@@ -1265,4 +1265,9 @@ Other patterns can be adapted similarly to achieve the progressive enhancement n
     - will make your htmx application more accessible
       - to a wide array of users.
 
+- 'htmx'-based applications are very similar
+  - to normal,
+  - non-AJAX driven web applications
+  - because htmx is HTML-oriented.
+
 ...
