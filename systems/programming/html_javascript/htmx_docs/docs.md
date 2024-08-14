@@ -759,4 +759,11 @@ See the [hx-swap](@/attributes/hx-swap.md) documentation for more details on the
 </form>
 ```
 
+- Without using `hx-sync`,
+  - filling out the input
+  - and immediately submitting the form
+    - triggers two parallel requests to
+      - `/validate`
+      - and `/store`.
+
 ...
