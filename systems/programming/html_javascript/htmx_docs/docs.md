@@ -1169,4 +1169,13 @@ This `hx-confirm` attribute will now apply to all htmx-powered elements within i
     - and allow you to specify inheritance explicitly
       - with the [`hx-inherit`](@/attributes/hx-inherit.md) attribute.
 
+## Boosting - Mahmuda's version
+
+- 'Htmx' supports "boosting" regular HTML anchors and forms
+  - with the [hx-boost](@/attributes/hx-boost.md) attribute.
+    - This attribute will convert
+      - all anchor tags and forms
+        - into AJAX requests that,
+          - by default, target the body of the page.
+
 ...
