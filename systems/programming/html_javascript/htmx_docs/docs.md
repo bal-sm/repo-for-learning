@@ -606,4 +606,23 @@ Mine:
     - and [Response Headers](#response-headers) will still be processed)
     - > hah.
 
+#### Morph Swaps - Mahmuda's version
+
+- In addition to the standard swap mechanisms above,
+  - `htmx` also supports _morphing_ swaps,
+    - via extensions.
+- Morphing swaps
+  - attempt to _merge_ new content
+    - into the existing DOM,
+    - rather than simply replacing it.
+  - They often do a better job
+    - preserving things like
+      - focus,
+      - video state,
+      - etc.
+    - by mutating existing nodes
+      - in-place
+        - during the swap operation,
+          - at the cost of more CPU.
+
 ...
