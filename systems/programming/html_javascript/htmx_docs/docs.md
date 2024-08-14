@@ -1362,9 +1362,30 @@ Mine:
     - when restoring history
       - if the page is not in the history cache.
 
-_skipped aja deh, dulu, ~~bentar-~~ kecuali ini_
+### Specifying History Snapshot Element - Mahmuda's voice note version
+
+- By default, htmx will use the `body` to take
+  - and restore the history snapshot from.
+  - This is usually the right thing,
+    - but if you want to use a narrower element
+      - for snapshotting
+        - you can use the [hx-history-elt](@/attributes/hx-history-elt.md) attribute
+          - to specify a different one.
+
+Careful: this element will need to be on all pages or restoring from history won't work reliably.
+
+Mine:
+> I don't see any real benefit from using this for my own personal project.
+
+### Undoing DOM Mutations By 3rd Party Libraries - skipped
+
+Mine:
+> baca we geura, really? harus gitu? bye third party libraries yang kurang senonoh sama 'htmx' gitu.
 
 ### Disabling History Snapshots - Mahmuda's version
+
+Mine:
+> _kecuali ini_
 
 - History snapshotting can be disabled
   - for a URL
@@ -1381,7 +1402,7 @@ _skipped aja deh, dulu, ~~bentar-~~ kecuali ini_
         - instead of the local history cache.
 
 Mine:
-> - 'Alpine' + 'htmx' + Alpine-morph'
+> - 'Alpine' + 'htmx' + 'Alpine-morph'
 >   - vs.
 >     - 'Alpine' + 'htmx'
 
