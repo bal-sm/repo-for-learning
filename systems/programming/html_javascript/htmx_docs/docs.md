@@ -637,4 +637,38 @@ The following extensions are available for morph-style swaps:
     - plays well with alpine.js
     - > do I need this?
 
+#### View Transitions - Mahmuda's version
+
+- The new, experimental [View Transitions API](https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API)
+  - gives developers a way
+    - to create an animated transition
+      - between different DOM states.
+  - It is still in active development
+    - and is not available in all browsers,
+    - but htmx provides
+      - a way to work
+        - with this new API
+          - that falls back
+            - to the non-transition mechanism
+              - if the API is not available in a given browser.
+
+You can experiment with this new API using the following approaches:
+
+- Set the `htmx.config.globalViewTransitions` config variable
+  - to `true` to use transitions for all swaps
+- Use the `transition:true` option
+  - in the `hx-swap` attribute
+- If an element swap
+  - is going to be transitioned
+    - due to either of the above configurations,
+      - you may catch the `htmx:beforeTransition` event
+      - and call `preventDefault()` on it to cancel the transition.
+
+- View Transitions can be configured
+  - using CSS,
+    - as outlined in [the Chrome documentation for the feature](https://developer.chrome.com/docs/web-platform/view-transitions/#simple-customization).
+
+- You can see a view transition example
+  - on the [Animation Examples](/examples/animations#view-transitions) page.
+
 ...
