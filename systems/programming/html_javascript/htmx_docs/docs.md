@@ -671,4 +671,19 @@ You can experiment with this new API using the following approaches:
 - You can see a view transition example
   - on the [Animation Examples](/examples/animations#view-transitions) page.
 
+#### Swap Options - Mahmuda's version
+
+- The [hx-swap](@/attributes/hx-swap.md) attribute
+  - supports many options
+    - for tuning the swapping behavior of htmx.
+  - For example, by default
+    - htmx will swap
+      - in the title of a title tag
+        - found anywhere in the new content.
+    - You can turn this behavior off by setting the `ignoreTitle` modifier to true:
+
+```html
+    <button hx-post="/like" hx-swap="outerHTML ignoreTitle:true">Like</button>
+```
+
 ...
