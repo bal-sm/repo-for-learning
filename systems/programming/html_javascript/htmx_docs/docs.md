@@ -1282,6 +1282,13 @@ Other patterns can be adapted similarly to achieve the progressive enhancement n
 
 ## Web Sockets & SSE - Lite Mod
 
+- Web Sockets and Server Sent Events (SSE)
+  - are supported via extensions.
+    - Please see:
+      - the [SSE extension](https://github.com/bigskysoftware/htmx-extensions/blob/main/src/sse/README.md)
+      - and [WebSocket extension](https://github.com/bigskysoftware/htmx-extensions/blob/main/src/ws/README.md)
+      - pages to learn more.
+
 [mdn](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API):
 > - The **WebSocket API** is an advanced technology
 >   - that makes it possible
@@ -1305,5 +1312,8 @@ Other patterns can be adapted similarly to achieve the progressive enhancement n
 >     - These incoming messages can be treated
 >       - as Events + data
 >         - inside the web page.
+
+Mine:
+> Aku inget ada course yang ngajarin bikin chat pake AJAX request yang talk pake interval terus-menerus. wtf.
 
 ...
