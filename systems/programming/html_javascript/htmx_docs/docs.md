@@ -1200,6 +1200,7 @@ Here is an example:
       - they simply don't use ajax requests.
   - This is known as [Progressive Enhancement](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement),
     - and it allows a wider audience to use your site's functionality.
+  - > me: who needs this, skip?
 
 - Other 'htmx' patterns can be adapted to achieve progressive enhancement as well,
   - but they will require more thought.
