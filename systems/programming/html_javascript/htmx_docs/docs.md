@@ -1268,6 +1268,16 @@ Other patterns can be adapted similarly to achieve the progressive enhancement n
 - 'htmx'-based applications are very similar
   - to normal,
   - non-AJAX driven web applications
-  - because htmx is HTML-oriented.
+  - because 'htmx' is HTML-oriented.
+
+- As such, the normal HTML accessibility recommendations apply.
+  - For example:
+
+- Use semantic HTML as much as possible
+  - (i.e. the right tags for the right things)
+- Ensure focus state is clearly visible
+- Associate text labels with all form fields
+- Maximize the readability of your application
+  - with appropriate fonts, contrast, etc.
 
 ...
