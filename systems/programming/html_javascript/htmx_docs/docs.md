@@ -941,4 +941,23 @@ To avoid this issue you can use a `template` tag to encapsulate these elements:
 </template>
 ```
 
+#### Selecting Content To Swap - Mahmuda's version
+
+- If you want to select a subset of the response HTML
+  - to swap into the target,
+    - you can use the [`hx-select`](@/attributes/hx-select.md) attribute,
+      - which takes a CSS selector
+        - and selects the matching elements
+          - from the response.
+
+- You can also pick out pieces of content
+  - for an out-of-band swap
+    - by using the [`hx-select-oob`](@/attributes/hx-select-oob.md) attribute,
+      - which takes a list of element IDs
+        - > `id=something`
+        - to pick out and swap.
+
+Mine:
+> gimana tuh contohnya, learning note
+
 ...
