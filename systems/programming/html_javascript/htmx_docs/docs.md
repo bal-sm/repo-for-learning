@@ -1213,4 +1213,19 @@ Here is an example:
     - This is done for simplicity’s sake,
       - to keep the example as brief as possible.
 
+---
+
+However, you could wrap the htmx-enhanced input in a form element:
+
+```html
+<form action="/search" method="POST">
+    <input class="form-control" type="search"
+        name="search" placeholder="Begin typing to search users..."
+        hx-post="/search"
+        hx-trigger="keyup changed delay:500ms, search"
+        hx-target="#search-results"
+        hx-indicator=".htmx-indicator">
+</form>
+```
+
 ...
