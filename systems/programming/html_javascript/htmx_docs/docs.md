@@ -720,4 +720,12 @@ The modifiers available on `hx-swap` are:
       - or bottom
       - into view
 
+- All swap modifiers appear
+  - after the swap style is specified,
+    - > `outerHTML`
+  - and are colon-separated.
+    - > `:`, what kela.
+
+See the [hx-swap](@/attributes/hx-swap.md) documentation for more details on these options.
+
 ...
