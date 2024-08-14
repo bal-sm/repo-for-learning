@@ -550,4 +550,16 @@ Mine:
       - that matches the given CSS selector.
   - (e.g `find tr` would target the first child descendant row to the element)
 
+---
+
+- In addition,
+  - a CSS selector may be wrapped in `<` and `/>` characters,
+    - mimicking the [query literal](https://hyperscript.org/expressions/query-reference/) syntax of hyperscript.
+
+- Relative targets
+  - like this can be useful
+    - for creating flexible user interfaces
+      - without peppering your DOM
+        - with lots of `id` attributes.
+
 ...
