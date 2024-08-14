@@ -987,4 +987,9 @@ Mine:
     - is used as the parameter name
       - in the request that `htmx` sends.
 
+- Additionally, if the element causes a non-`GET` request,
+  - the values of all the inputs
+    - of the nearest enclosing form
+      - will be included.
+
 ...
