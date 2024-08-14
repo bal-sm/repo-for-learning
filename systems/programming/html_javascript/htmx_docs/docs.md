@@ -1157,4 +1157,16 @@ This `hx-confirm` attribute will now apply to all htmx-powered elements within i
 
 ---
 
+- Inheritance can be disabled
+  - on a per-element
+  - and per-attribute basis
+  - using the [`hx-disinherit`](@/attributes/hx-disinherit.md) attribute.
+
+- If you wish to disable attribute inheritance entirely,
+  - you can set the `htmx.config.disableInheritance` configuration variable
+    - to `true`.
+  - This will disable inheritance as a default,
+    - and allow you to specify inheritance explicitly
+      - with the [`hx-inherit`](@/attributes/hx-inherit.md) attribute.
+
 ...
