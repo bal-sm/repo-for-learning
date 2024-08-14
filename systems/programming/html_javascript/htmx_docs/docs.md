@@ -857,4 +857,20 @@ Note two things:
 Mine:
 > berarti pake `hx-swap` terus `outerHTML` attribute-nya (sic, wrong term). ye kan?
 
+---
+
+- When `htmx` swaps in this new content,
+  - it will do so in such a way
+    - that the CSS transition
+      - will apply to the new content,
+        - giving you a nice, smooth transition to the new state.
+
+- So, in summary,
+  - all you need to do
+    - to use CSS transitions
+      - for an element
+        - is keep its `id` stable across requests!
+
+You can see the [Animation Examples](@/examples/animations.md) for more details and live demonstrations.
+
 ...
