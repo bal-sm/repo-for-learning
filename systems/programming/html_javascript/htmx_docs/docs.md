@@ -743,4 +743,20 @@ See the [hx-swap](@/attributes/hx-swap.md) documentation for more details on the
 - htmx offers a [`hx-sync`](@/attributes/hx-sync.md) attribute
   - to help you accomplish this.
 
+---
+
+- Consider a race condition between
+  - a form submission
+  - and an individual input's validation request
+  - in this HTML:
+
+```html
+<form hx-post="/store">
+    <input id="title" name="title" type="text"
+        hx-post="/validate"
+        hx-trigger="change">
+    <button type="submit">Submit</button>
+</form>
+```
+
 ...
