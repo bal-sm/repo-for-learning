@@ -1044,4 +1044,23 @@ Mine:
 Mine, learning note:
 > gimana ini teh? terus kode-nya? lanjutin ya.
 
+### Confirming Requests - Mahmuda's version
+
+- Often you will want to confirm an action
+  - before issuing a request.
+  - htmx supports the [`hx-confirm`](@/attributes/hx-confirm.md) attribute,
+    - which allows you to confirm an action
+      - using a simple javascript dialog:
+
+```html
+<button hx-delete="/account" hx-confirm="Are you sure you wish to delete your account?">
+    Delete My Account
+</button>
+```
+
+- Using events you can implement more sophisticated confirmation dialogs.
+  - The [confirm example](@/examples/confirm.md)
+    - shows how to use [sweetalert2](https://sweetalert2.github.io/) library
+      - for confirmation of htmx actions.
+
 ...
