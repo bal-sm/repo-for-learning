@@ -1186,4 +1186,9 @@ Here is an example:
 </div>
 ```
 
+- The anchor tag in this div
+  - will issue an AJAX `GET` request
+    - to `/blog`
+    - and swap the response into the `body` tag.
+
 ...
