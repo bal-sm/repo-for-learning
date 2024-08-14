@@ -1362,6 +1362,27 @@ Mine:
     - when restoring history
       - if the page is not in the history cache.
 
-_skipped aja deh, dulu, bentar-_
+_skipped aja deh, dulu, ~~bentar-~~ kecuali ini_
+
+### Disabling History Snapshots - Mahmuda's version
+
+- History snapshotting can be disabled
+  - for a URL
+  - by setting the [hx-history](@/attributes/hx-history.md) attribute
+    - to `false`
+  - on any element in the current document,
+    - or any html fragment loaded into the current document by htmx.
+  - This can be used to prevent sensitive data
+    - entering the `localStorage` cache,
+      - which can be important for shared-use / public computers.
+  - History navigation will work as expected,
+    - but on restoration the URL
+      - will be requested from the server
+        - instead of the local history cache.
+
+Mine:
+> - 'Alpine' + 'htmx' + Alpine-morph'
+>   - vs.
+>     - 'Alpine' + 'htmx'
 
 ...
