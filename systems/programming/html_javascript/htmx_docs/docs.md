@@ -1096,4 +1096,22 @@ document.body.addEventListener('htmx:confirm', function(evt) {
 });
 ```
 
+## Attribute Inheritance - Mahmuda's version
+
+- Most attributes in htmx are inherited:
+  - they apply to the element they are on
+    - as well as any children elements.
+  - This allows you to "hoist" attributes up the DOM
+    - to avoid code duplication.
+  - Consider the following htmx:
+
+```html
+<button hx-delete="/account" hx-confirm="Are you sure?">
+    Delete My Account
+</button>
+<button hx-put="/account" hx-confirm="Are you sure?">
+    Update My Account
+</button>
+```
+
 ...
