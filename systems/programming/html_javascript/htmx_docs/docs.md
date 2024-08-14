@@ -1239,4 +1239,14 @@ However, you could wrap the htmx-enhanced input in a form element:
     - that mirrored the `action` attribute,
     - or perhaps use `hx-boost` on it.
 
+---
+
+- You would need to check
+  - on the server side
+  - for the `HX-Request` header
+    - to differentiate between
+      - an htmx-driven
+      - and a regular request,
+      - to determine exactly what to render to the client.
+
 ...
