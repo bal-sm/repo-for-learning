@@ -1114,4 +1114,18 @@ document.body.addEventListener('htmx:confirm', function(evt) {
 </button>
 ```
 
+- Here we have a duplicate `hx-confirm` attribute.
+  - We can hoist this attribute to a parent element:
+
+```html
+<div hx-confirm="Are you sure?">
+    <button hx-delete="/account">
+        Delete My Account
+    </button>
+    <button hx-put="/account">
+        Update My Account
+    </button>
+</div>
+```
+
 ...
