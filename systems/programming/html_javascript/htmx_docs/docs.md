@@ -1321,4 +1321,10 @@ Mine:
 - 'Htmx' provides a simple mechanism
   - for interacting with the [browser history API](https://developer.mozilla.org/en-US/docs/Web/API/History_API):
 
+- If you want a given element
+  - to push its request URL
+    - into the browser navigation bar
+    - and add the current state of the page to the browser's history,
+  - include the [hx-push-url](@/attributes/hx-push-url.md) attribute:
+
 ...
