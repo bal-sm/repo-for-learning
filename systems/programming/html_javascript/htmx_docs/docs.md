@@ -831,4 +831,16 @@ See the [hx-swap](@/attributes/hx-swap.md) documentation for more details on the
 <div id="div1" class="red">New Content</div>
 ```
 
+Note two things:
+
+- The div
+  - has the *same* `id`
+    - in the original
+    - and in the new content
+- The `red` class
+  - has been added
+    - to the new content
+
+---
+
 ...
