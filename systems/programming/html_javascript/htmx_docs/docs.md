@@ -788,4 +788,26 @@ See the [hx-swap](@/attributes/hx-swap.md) documentation for more details on the
 - This resolves the synchronization
   - between the two elements in a declarative way.
 
+---
+
+- htmx also supports a programmatic way
+  - to cancel requests:
+    - you can send the `htmx:abort` event
+      - to an element
+        - to cancel any in-flight requests:
+
+```html
+<button id="request-button" hx-post="/example">
+    Issue Request
+</button>
+<button onclick="htmx.trigger('#request-button', 'htmx:abort')">
+    Cancel Request
+</button>
+```
+
+---
+
+- More examples and details can be found on the [`hx-sync` attribute page.](@/attributes/hx-sync.md)
+  - > me: wajib baca lanjut nih, learning note.
+
 ...
