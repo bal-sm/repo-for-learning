@@ -1352,4 +1352,14 @@ Mine:
     - is set to true,
       - it will issue a hard browser refresh.
 
+- **NOTE:** If you push a URL into the history,
+  - you **must** be able to navigate to that URL
+    - and get a full page back!
+  - A user could copy and paste the URL
+    - into an email,
+    - or new tab.
+  - Additionally, 'htmx' will need the entire page
+    - when restoring history
+      - if the page is not in the history cache.
+
 ...
