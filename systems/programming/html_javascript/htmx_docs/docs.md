@@ -723,8 +723,8 @@ The modifiers available on `hx-swap` are:
 - All swap modifiers appear
   - after the swap style is specified,
     - > `outerHTML`
-  - and are colon-separated.
-    - > `:`, what kela.
+  - ~~and are colon-separated~~.
+    - > `:`, what kela. maksudnya `option:value` meureun ya..
 
 See the [hx-swap](@/attributes/hx-swap.md) documentation for more details on these options.
 
