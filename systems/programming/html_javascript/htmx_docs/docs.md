@@ -1327,4 +1327,8 @@ Mine:
     - and add the current state of the page to the browser's history,
   - include the [hx-push-url](@/attributes/hx-push-url.md) attribute:
 
+```html
+<a hx-get="/blog" hx-push-url="true">Blog</a>
+```
+
 ...
