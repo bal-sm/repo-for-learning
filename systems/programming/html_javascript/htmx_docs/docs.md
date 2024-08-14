@@ -912,6 +912,6 @@ Additional Content
 ```
 
 Mine:
-> pake something `hx-post` meureun ya.
+> pake something `hx-post` and `hx-swap` ~~meureun ya~~, ya.
 
 ...
