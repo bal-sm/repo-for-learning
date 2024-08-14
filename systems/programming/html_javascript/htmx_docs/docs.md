@@ -728,4 +728,16 @@ The modifiers available on `hx-swap` are:
 
 See the [hx-swap](@/attributes/hx-swap.md) documentation for more details on these options.
 
+### Synchronization - Mahmuda's version
+
+- Often you want to coordinate the requests
+  - between two elements.
+  - For example,
+    - you may want a request
+      - from one element
+        - to supersede
+          - the request of another element,
+      - or to wait until
+        - the other element's request has finished.
+
 ...
