@@ -740,4 +740,7 @@ See the [hx-swap](@/attributes/hx-swap.md) documentation for more details on the
       - or to wait until
         - the other element's request has finished.
 
+- htmx offers a [`hx-sync`](@/attributes/hx-sync.md) attribute
+  - to help you accomplish this.
+
 ...
