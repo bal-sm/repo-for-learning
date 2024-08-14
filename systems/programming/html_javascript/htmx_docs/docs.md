@@ -854,4 +854,7 @@ Note two things:
 }
 ```
 
+Mine:
+> berarti pake `hx-swap` terus `outerHTML` attribute-nya (sic, wrong term). ye kan?
+
 ...
