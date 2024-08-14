@@ -1339,4 +1339,17 @@ Mine:
   - and pushes a new location
     - onto the history stack.
 
+- When a user hits the back button,
+  - 'htmx' will retrieve the old content
+    - from storage
+  - and swap it back into the target,
+    - simulating "going back" to the previous state.
+  - If the location is not found in the cache, '
+    - htmx' will make an 'ajax' request to the given URL,
+      - with the header `HX-History-Restore-Request` set to true,
+    - and expects back the HTML needed for the entire page.
+  - Alternatively, if the `htmx.config.refreshOnHistoryMiss` config variable
+    - is set to true,
+      - it will issue a hard browser refresh.
+
 ...
