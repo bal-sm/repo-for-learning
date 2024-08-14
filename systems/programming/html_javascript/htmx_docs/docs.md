@@ -915,4 +915,12 @@ Mine:
 > - pake something `hx-post` and `hx-swap` ~~meureun ya~~, ya.
 > - jadi kalo ada swapping ke original DOM yang `id`-nya sama-sama `message` maka langsung aja ganti juga element itu.
 
+- In this response,
+  - `div#message` would be
+    - swapped directly into the matching DOM element,
+  - while the additional content would be
+    - swapped into the target in the normal manner.
+
+You can use this technique to "piggy-back" updates on other requests.
+
 ...
