@@ -1316,4 +1316,9 @@ Other patterns can be adapted similarly to achieve the progressive enhancement n
 Mine:
 > Aku inget ada course yang ngajarin bikin chat pake AJAX request yang talk pake interval terus-menerus. wtf.
 
+## History Support - Mahmuda's version
+
+- 'Htmx' provides a simple mechanism
+  - for interacting with the [browser history API](https://developer.mozilla.org/en-US/docs/Web/API/History_API):
+
 ...
