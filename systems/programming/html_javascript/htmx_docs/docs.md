@@ -1151,4 +1151,10 @@ This `hx-confirm` attribute will now apply to all htmx-powered elements within i
 </div>
 ```
 
+- The top two buttons
+  - would then show a confirm dialog,
+- but the bottom cancel button would not.
+
+---
+
 ...
