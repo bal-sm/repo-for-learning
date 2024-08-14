@@ -1191,4 +1191,14 @@ Here is an example:
     - to `/blog`
     - and swap the response into the `body` tag.
 
+### Progressive Enhancement - Mahmuda's version
+
+- A feature of `hx-boost`
+  - is that it degrades gracefully
+    - if javascript is not enabled:
+      - the links and forms continue to work,
+      - they simply don't use ajax requests.
+  - This is known as [Progressive Enhancement](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement),
+    - and it allows a wider audience to use your site's functionality.
+
 ...
