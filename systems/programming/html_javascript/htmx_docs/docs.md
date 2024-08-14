@@ -1331,4 +1331,12 @@ Mine:
 <a hx-get="/blog" hx-push-url="true">Blog</a>
 ```
 
+- When a user clicks on this link,
+  - 'htmx' will snapshot the current DOM
+    - and store it
+      - before it makes a request to `/blog`.
+- It then does the swap
+  - and pushes a new location
+    - onto the history stack.
+
 ...
