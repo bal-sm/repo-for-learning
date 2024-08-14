@@ -1228,4 +1228,15 @@ However, you could wrap the htmx-enhanced input in a form element:
 </form>
 ```
 
+- With this in place,
+  - javascript-enabled clients
+    - would still get the nice active-search UX,
+  - but non-javascript enabled clients
+    - would be able to hit the enter key and still search.
+    - Even better, you could add a "Search" button as well.
+- You would then need to update the form
+  - with an `hx-post`
+    - that mirrored the `action` attribute,
+    - or perhaps use `hx-boost` on it.
+
 ...
