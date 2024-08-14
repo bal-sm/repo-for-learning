@@ -912,6 +912,7 @@ Additional Content
 ```
 
 Mine:
-> pake something `hx-post` and `hx-swap` ~~meureun ya~~, ya.
+> - pake something `hx-post` and `hx-swap` ~~meureun ya~~, ya.
+> - jadi kalo ada swapping ke original DOM yang `id`-nya sama-sama `message` maka langsung aja ganti juga element itu.
 
 ...
