@@ -923,4 +923,22 @@ Mine:
 
 You can use this technique to "piggy-back" updates on other requests.
 
+#### Troublesome Tables - Mahmuda's version
+
+- Table elements can be problematic
+  - when combined with out of band swaps,
+    - because, by the HTML spec,
+    - many can't stand on their own in the DOM
+      - e.g.
+        - `<tr>`
+        - or `<td>`
+
+To avoid this issue you can use a `template` tag to encapsulate these elements:
+
+```html
+<template>
+    <tr id="message" hx-swap-oob="true"><td>Joe</td><td>Smith</td></tr>
+</template>
+```
+
 ...
