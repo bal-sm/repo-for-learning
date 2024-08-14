@@ -1128,4 +1128,8 @@ document.body.addEventListener('htmx:confirm', function(evt) {
 </div>
 ```
 
+This `hx-confirm` attribute will now apply to all htmx-powered elements within it.
+
+---
+
 ...
