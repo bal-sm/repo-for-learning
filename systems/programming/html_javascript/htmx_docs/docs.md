@@ -1257,4 +1257,12 @@ Other patterns can be adapted similarly to achieve the progressive enhancement n
     - the developer,
     - with respect to your projects goals and audience.
 
+---
+
+- [Accessibility](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/What_is_accessibility) is a concept
+  - closely related to progressive enhancement.
+  - Using progressive enhancement techniques such as `hx-boost`
+    - will make your htmx application more accessible
+      - to a wide array of users.
+
 ...
