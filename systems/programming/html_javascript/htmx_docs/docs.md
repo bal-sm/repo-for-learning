@@ -960,4 +960,16 @@ To avoid this issue you can use a `template` tag to encapsulate these elements:
 Mine:
 > gimana tuh contohnya, learning note
 
+#### Preserving Content During A Swap - Mahmuda's version
+
+- If there is content
+  - that you wish to be preserved
+    - across swaps
+      - (e.g. a video player that you wish to remain playing even if a swap occurs)
+  - you can use the [hx-preserve](@/attributes/hx-preserve.md) attribute
+    - on the elements you wish to be preserved.
+
+Mine:
+> gimana tuh contohnya (2), learning note.
+
 ...
