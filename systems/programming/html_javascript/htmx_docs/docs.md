@@ -766,4 +766,23 @@ See the [hx-swap](@/attributes/hx-swap.md) documentation for more details on the
       - `/validate`
       - and `/store`.
 
+---
+
+- Using `hx-sync="closest form:abort"` on the input
+  - will watch for requests
+    - on the form
+  - and abort the input's request
+    - if a form request is present or starts
+    - while the input request is in flight:
+
+```html
+<form hx-post="/store">
+    <input id="title" name="title" type="text"
+        hx-post="/validate"
+        hx-trigger="change"
+        hx-sync="closest form:abort">
+    <button type="submit">Submit</button>
+</form>
+```
+
 ...
