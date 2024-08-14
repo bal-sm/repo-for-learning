@@ -810,4 +810,14 @@ See the [hx-swap](@/attributes/hx-swap.md) documentation for more details on the
 - More examples and details can be found on the [`hx-sync` attribute page.](@/attributes/hx-sync.md)
   - > me: wajib baca lanjut nih, learning note.
 
+### CSS Transitions - Mahmuda's version
+
+- `htmx` makes it easy to use [CSS Transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions)
+  - without javascript.
+  - Consider this HTML content:
+
+```html
+<div id="div1">Original Content</div>
+```
+
 ...
