@@ -903,7 +903,7 @@ You can see the [Animation Examples](@/examples/animations.md) for more details 
   - from a response directly
     - into the DOM
       - by using the `id` attribute
-        - you can use the [`hx-swap-oob]`(@/attributes/hx-swap-oob.md) attribute
+        - you can use the [`hx-swap-oob`](@/attributes/hx-swap-oob.md) attribute
           - in the *response* html:
 
 ```html
