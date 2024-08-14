@@ -1385,7 +1385,7 @@ Mine:
 ### Disabling History Snapshots - Mahmuda's version
 
 Mine:
-> _kecuali ini_
+> _yang ini tidak di-skip_
 
 - History snapshotting can be disabled
   - for a URL
