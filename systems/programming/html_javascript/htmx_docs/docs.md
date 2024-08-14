@@ -1249,4 +1249,12 @@ However, you could wrap the htmx-enhanced input in a form element:
       - and a regular request,
       - to determine exactly what to render to the client.
 
+Other patterns can be adapted similarly to achieve the progressive enhancement needs of your application.
+
+- As you can see, this requires more thought and more work.
+  - It also rules some functionality entirely out of bounds.
+  - These tradeoffs must be made by you,
+    - the developer,
+    - with respect to your projects goals and audience.
+
 ...
