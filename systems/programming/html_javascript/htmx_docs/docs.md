@@ -625,4 +625,15 @@ Mine:
         - during the swap operation,
           - at the cost of more CPU.
 
+The following extensions are available for morph-style swaps:
+
+- [Idiomorph](https://github.com/bigskysoftware/idiomorph#htmx)
+  - A morphing algorithm created by the `htmx` developers.
+- [Morphdom Swap](https://github.com/bigskysoftware/htmx-extensions/blob/main/src/morphdom-swap/README.md)
+  - Based on the [morphdom](https://github.com/patrick-steele-idem/morphdom),
+    - the original DOM morphing library.
+- [Alpine-morph](https://github.com/bigskysoftware/htmx-extensions/blob/main/src/alpine-morph/README.md)
+  - Based on the [alpine morph](https://alpinejs.dev/plugins/morph) plugin,
+    - plays well with alpine.js
+
 ...
