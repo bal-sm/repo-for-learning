@@ -985,6 +985,6 @@ Mine:
   - the `name` attribute
     - of the input
     - is used as the parameter name
-      - in the request that htmx sends.
+      - in the request that `htmx` sends.
 
 ...
