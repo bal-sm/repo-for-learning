@@ -972,4 +972,13 @@ Mine:
 Mine:
 > gimana tuh contohnya (2), learning note.
 
+### Parameters - Mahmuda's version
+
+- By default,
+  - an element that causes a request
+    - will include its value
+      - if it has one.
+  - If the element is a form
+    - it will include the values of all inputs within it.
+
 ...
