@@ -1204,4 +1204,12 @@ Here is an example:
 - Other 'htmx' patterns can be adapted to achieve progressive enhancement as well,
   - but they will require more thought.
 
+- Consider the [active search](@/examples/active-search.md) example.
+  - As it is written,
+    - it will not degrade gracefully:
+      - someone who does not have javascript enabled
+        - will not be able to use this feature.
+    - This is done for simplicity’s sake,
+      - to keep the example as brief as possible.
+
 ...
