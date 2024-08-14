@@ -574,4 +574,36 @@ Mine:
     - by using the [hx-swap](@/attributes/hx-swap.md) attribute
       - with any of the following values:
 
+- `innerHTML`
+  - the default,
+    - puts the content
+      - inside the target element
+- `outerHTML`
+  - replaces the entire target element
+    - with the returned content
+- `afterbegin`
+  - prepends the content
+    - before the first child
+      - inside the target
+- `beforebegin`
+  - prepends the content
+    - before the target
+      - in the target's parent element
+- `beforeend`
+  - appends the content
+    - after the last child
+      - inside the target
+- `afterend`
+  - appends the content
+    - after the target
+      - in the target's parent element
+- `delete`
+  - deletes the target element
+    - regardless of the response
+- `none`
+  - does not append content
+    - from response ([Out of Band Swaps](#oob_swaps)
+    - and [Response Headers](#response-headers) will still be processed)
+    - > hah.
+
 ...
