@@ -981,4 +981,10 @@ Mine:
   - If the element is a form
     - it will include the values of all inputs within it.
 
+- As with HTML forms,
+  - the `name` attribute
+    - of the input
+    - is used as the parameter name
+      - in the request that htmx sends.
+
 ...
