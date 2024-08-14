@@ -562,4 +562,16 @@ Mine:
       - without peppering your DOM
         - with lots of `id` attributes.
 
+### Swapping - Mahmuda's version
+
+- `htmx` offers a few different ways
+  - to swap the HTML
+    - returned into the DOM.
+  - By default, the content
+    - replaces the `innerHTML`
+      - of the target element.
+  - You can modify this
+    - by using the [hx-swap](@/attributes/hx-swap.md) attribute
+      - with any of the following values:
+
 ...
