@@ -820,4 +820,15 @@ See the [hx-swap](@/attributes/hx-swap.md) documentation for more details on the
 <div id="div1">Original Content</div>
 ```
 
+---
+
+- Imagine this content
+  - is replaced by `htmx`
+    - via an `ajax` request
+      - with this new content:
+
+```html
+<div id="div1" class="red">New Content</div>
+```
+
 ...
