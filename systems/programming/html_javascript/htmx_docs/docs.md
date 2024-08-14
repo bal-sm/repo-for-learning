@@ -1005,4 +1005,7 @@ Mine:
 - Finally, if you want to programmatically modify the parameters,
   - you can use the [htmx:configRequest](@/events.md#htmx:configRequest) event.
 
+Mine:
+> masih gak ngerti. I wish ada kayak step-by-step debug info.
+
 ...
