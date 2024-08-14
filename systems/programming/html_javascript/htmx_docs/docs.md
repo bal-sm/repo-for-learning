@@ -873,4 +873,28 @@ Mine:
 
 You can see the [Animation Examples](@/examples/animations.md) for more details and live demonstrations.
 
+#### Details - Mahmuda's version
+
+- To understand how CSS transitions
+  - actually work in `htmx`,
+    - you must understand
+      - the underlying
+        - `swap`
+        - & `settle` model
+        - that htmx uses.
+
+- When new content is received from a server,
+  - before the content is swapped in,
+  - the existing content of the page is examined
+    - for elements that match by the `id` attribute.
+  - If a match is found for an element in the new content,
+    - the attributes of the old content are copied
+      - onto the new element before the swap occurs.
+    - The new content is then swapped in,
+      - but with the *old* attribute values.
+    - Finally, the new attribute values are swapped in,
+      - after a "settle" delay (20ms by default).
+    - A little crazy, but this is what allows CSS transitions to work
+      - without any javascript by the developer.
+
 ...
