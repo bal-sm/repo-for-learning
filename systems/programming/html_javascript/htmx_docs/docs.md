@@ -1063,4 +1063,37 @@ Mine, learning note:
     - shows how to use [sweetalert2](https://sweetalert2.github.io/) library
       - for confirmation of htmx actions.
 
+#### Confirming Requests Using Events - Mahmuda's version
+
+- Another option to do confirmation
+  - with is via the [`htmx:confirm` event](@/events.md#htmx:confirm) event.
+    - This event is fired on *every* trigger
+      - for a request
+        - (not just on elements that have a `hx-confirm` attribute)
+        - and can be used to implement asynchronous confirmation of the request.
+
+- Here is an example using
+  - [sweet alert](https://sweetalert.js.org/guides/)
+    - on any element
+      - with a `confirm-with-sweet-alert='true'` attribute on it:
+
+```javascript
+document.body.addEventListener('htmx:confirm', function(evt) {
+  if (evt.target.matches("[confirm-with-sweet-alert='true']")) {
+    evt.preventDefault();
+    swal({
+      title: "Are you sure?",
+      text: "Are you sure you are sure?",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((confirmed) => {
+      if (confirmed) {
+        evt.detail.issueRequest();
+      }
+    });
+  }
+});
+```
+
 ...
