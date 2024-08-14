@@ -843,4 +843,15 @@ Note two things:
 
 ---
 
+- Given this situation,
+  - we can write a CSS transition
+    - from the old state to the new state:
+
+```css
+.red {
+    color: red;
+    transition: all ease-in 1s ;
+}
+```
+
 ...
