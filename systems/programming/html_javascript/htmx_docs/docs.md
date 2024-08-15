@@ -1409,6 +1409,7 @@ Mine:
 ## Requests + Responses - Mahmuda's version
 
 - 'Htmx' expects responses
+  - > from `hx-post` & `hx-get`.
   - to the AJAX requests
     - it makes to be HTML,
       - typically HTML fragments
