@@ -134,4 +134,9 @@ Mine:
 > I wouldn't surprise kalo misalnya karena free.
 
 Mine:
+> - Udah we pokoknya dia pake Bootstrap + htmx + no client sided scripting (??) + django-components + django
+>   - they really use Bootstrap for such customized UI.. weird.
+>     - bener gak sih?
+
+Mine:
 > sayanggg.
