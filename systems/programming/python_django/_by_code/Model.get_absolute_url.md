@@ -37,3 +37,8 @@ def some_redirect_view(request):
 
 Mine:
 > inget beda yah, `redirect` sama `reverse` tuh, makanya: [`redirect`](./redirect.md) and [`reverse`](./reverse.md).
+
+## Source(s)
+
+- [1]: [`get_absolute_url` ref from Django's Docs](https://docs.djangoproject.com/en/5.1/ref/models/instances/#get-absolute-url)
+- [2]: [This answer from this question](https://stackoverflow.com/questions/56332747/how-do-i-get-the-url-for-a-model)
