@@ -52,6 +52,62 @@ Bringing component-based design to Django templates.
     - and prefixed by `c-`
     - `<c-my-component />`
 
+## Walkthrough, from [2]
+
+### Your first component
+
+```html
+<!-- cotton/button.html -->
+<a href="/" class="...">{{ slot }}</a>
+```
+
+```html
+<!-- in view -->
+<c-button>Contact</c-button>
+```
+
+```html
+<!-- html output -->
+<a href="/" class="...">Contact</a>
+```
+
+- Everything provided
+  - between the opening and closing tag
+    - is provided to the component as `{{ slot }}`.
+    - It can contain
+      - any content,
+      - HTML or
+      - Django template expression.
+  - > terus teh bisa gini, `type={{ type }}`, gening, terus emang digituin cara kerja-nya. it's divine.
+    - > ini teh misalnya, reimplement Django's `Form`, soalnya honestly terlalu kaku templating system-nya, teu puguh.
+
+### Add attributes
+
+```html
+<!-- cotton/button.html -->
+<a href="{{ url }}" class="...">
+    {{ slot }}
+</a>
+```
+
+```html
+<!-- in view -->
+<c-button url="/contact">Contact</c-button>
+```
+
+- > terus ini bisa
+  - > pake `href="{{ url 'some_url_name' arg_1 arg_2 }}"`
+  - > jangan lupa `href="{{ my_object.get_absolute_url }}"`
+
+```html
+<!-- html output -->
+<a href="/contact" class="...">
+    Contact
+</a>
+```
+
+...
+
 ## ...
 
 ...
