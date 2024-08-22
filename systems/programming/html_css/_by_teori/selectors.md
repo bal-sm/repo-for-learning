@@ -66,6 +66,8 @@ p {
     - followed by the `id` of the element.
       - > **`#`**`some-id`
 
+Example:
+
 ```css
 #para1 {
   text-align: center;
