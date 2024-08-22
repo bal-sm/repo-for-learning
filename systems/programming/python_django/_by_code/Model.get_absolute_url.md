@@ -36,4 +36,4 @@ def some_redirect_view(request):
 ```
 
 Mine:
-> inget beda yah, `redirect` sama `reverse` tuh, makanya:
+> inget beda yah, `redirect` sama `reverse` tuh, makanya: [`redirect`](./redirect.md) and [`reverse`](./reverse.md).
