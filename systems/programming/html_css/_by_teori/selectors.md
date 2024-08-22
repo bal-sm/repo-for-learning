@@ -47,6 +47,25 @@ p {
 }
 ```
 
+## `id` selector
+
+- The `id` selector
+  - uses the `id` attribute
+    - of an HTML element
+    - to select a specific element.
+  - > **`#`**`some-id`
+
+- The `id` of an element
+  - is **unique** within a page,
+  - so the `id` selector
+    - is used to select one unique element!
+  - > a `p` tag with `id=para1` and another `p` / any other type of element (`h1`) with `id=para1` are not **valid**.
+  - > another `rfl` topic bisa, maintenance and learning note.
+
+- To select an element with a specific `id`,
+  - write a hash (`#`) character,
+    - followed by the `id` of the element.
+
 ...
 
 ## Source(s)
