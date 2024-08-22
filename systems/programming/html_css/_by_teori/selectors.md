@@ -231,6 +231,11 @@ h1, h2, p {
 Mine:
 > gimana yah ini teh bisa ditambahin lagi meureun ya.
 
+## ...
+
+Mine:
+> ..., TBA, udah we ah, wing it aja, pokoknya kalo butuh lagi, baca aja dokumen ini, lagi pula, easy.
+
 ## Source(s)
 
 - [1]: [CSS Selectors](https://www.w3schools.com/css/css_selectors.asp)
