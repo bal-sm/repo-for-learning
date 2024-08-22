@@ -10,7 +10,7 @@ We can divide CSS selectors into five categories:
 
 - Simple selectors
   - (select elements based on
-    - `name`,
+    - 'name',
       - > `p` tag, kela, meureun ya.
     - `id`,
       - > `id=para1`
@@ -29,6 +29,23 @@ We can divide CSS selectors into five categories:
 - [Attribute selectors](https://www.w3schools.com/css/css_attribute_selectors.asp)
   - (select elements based on an attribute or attribute value)
   - > `rfl`-keun. di dieu aja meureun ya.
+
+## Element selector
+
+Mine:
+> 'name' tea gening, kan yah. iya bener.
+
+Them:
+> The element selector selects HTML elements based on the element 'name'.
+
+Example:
+
+```css
+p {
+  text-align: center; /* all `<p>` elements on the page will be center-aligned */
+  color: red; /* with a red text color */
+}
+```
 
 ...
 
