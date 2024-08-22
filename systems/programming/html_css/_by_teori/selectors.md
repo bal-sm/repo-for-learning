@@ -183,6 +183,27 @@ h1, h2, p {
 }
 ```
 
+## All CSS simple selectors
+
+- `#id`
+  - Example: `#firstname`
+  - Selects the element with `id="firstname"`
+- `.class`
+  - Example: `.intro`
+  - Selects all elements with `class="intro"`
+- `element.class`
+  - Example: `p.intro`
+  - Selects only `<p>` elements with `class="intro"`
+- `*`
+  - Example: `*`
+  - Selects all elements
+- `element`
+  - Example: `p`
+  - Selects all `<p>` elements
+- `element,element,..`
+  - Example: `div`, `p`
+  - Selects all `<div>` elements and all `<p>` elements
+
 ...
 
 ## Source(s)
