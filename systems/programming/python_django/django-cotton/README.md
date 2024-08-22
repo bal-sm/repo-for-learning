@@ -6,6 +6,23 @@ Bringing component-based design to Django templates.
 
 - Docs site + demos: [1] tea.
 
+## Why Cotton? from [2]
+
+- Cotton aims to overcome [certain limitations](#limitations-in-django-that-cotton-overcomes-from-2)
+  - that exist in the django template system
+    - > `{% include %}`
+    - that hold us back when we want to apply modern practises
+      - > `{{ name }}` to `{% include %}`, how, gitu we lah.
+      - to compose UIs in a modular and reusable way.
+
+## ...
+
+...
+
+## Limitations in Django that Cotton overcomes, from [2]
+
+..., TBA.
+
 ## ...
 
 ...
