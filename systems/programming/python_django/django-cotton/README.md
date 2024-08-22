@@ -37,6 +37,21 @@ Bringing component-based design to Django templates.
   - > `hx` attributes are compatible with this.
   - Create smart components, reducing repetition and enhancing maintainability.
 
+## Usage Basics, from [2]
+
+- Component Placement
+  - Components should be placed
+    - in the `templates/cotton` folder
+    - (or define a [custom folder](https://django-cotton.com/docs/configuration)).
+- Naming Conventions
+  - Component filenames
+    - use `snake`**`_`**`case`
+    - `my_component.html`
+  - Components are called
+    - using `kebab`**`-`**`case`
+    - and prefixed by `c-`
+    - `<c-my-component />`
+
 ## ...
 
 ...
