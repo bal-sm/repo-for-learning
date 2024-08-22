@@ -118,6 +118,14 @@ p.center {
 }
 ```
 
+### side lesson, more than one class
+
+`center` and `large`:
+
+```html
+<p class="center large">This paragraph refers to two classes.</p>
+```
+
 ...
 
 ## Source(s)
