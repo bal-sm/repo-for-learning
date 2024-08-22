@@ -71,6 +71,16 @@ Bringing component-based design to Django templates.
 <a href="/" class="...">Contact</a>
 ```
 
+- Everything provided
+  - between the opening and closing tag
+    - is provided to the component as `{{ slot }}`.
+    - It can contain
+      - any content,
+      - HTML or
+      - Django template expression.
+  - > terus teh bisa gini, `type={{ type }}`, gening, terus emang digituin cara kerja-nya. it's divine.
+    - > ini teh misalnya, reimplement Django's `Form`, soalnya honestly terlalu kaku templating system-nya, teu puguh.
+
 ...
 
 ## ...
