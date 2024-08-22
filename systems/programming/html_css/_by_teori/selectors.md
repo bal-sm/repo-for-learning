@@ -131,6 +131,24 @@ p.center {
 Them, a ote:
 > A `class` name cannot start with a number!
 
+### `*` (universal) selector
+
+- The universal selector (`*`)
+  - selects all HTML elements on the page.
+
+Example:
+
+- The CSS rule below
+  - will affect every HTML element
+    - on the page:
+
+```css
+* {
+  text-align: center;
+  color: blue;
+}
+```
+
 ...
 
 ## Source(s)
