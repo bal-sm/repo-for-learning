@@ -3,6 +3,9 @@
 Mine, learning note:
 > dipake, walaupun aku pake Tailwind, tapi aku membutuhkannya untuk 'select' on `htmx` 'script's.
 
+- A CSS selector selects the HTML element(s) you want to style.
+  - > and, for interactivity, guys.
+
 ...
 
 ## Source(s)
