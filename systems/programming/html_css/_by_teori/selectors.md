@@ -100,6 +100,24 @@ Example:
 }
 ```
 
+### per element, `class` selector
+
+- You can also specify that
+  - only specific HTML elements
+    - should be affected by a `class`.
+
+- In this example only `<p>` elements
+  - with `class="center"` will be
+    - red and
+    - center-aligned:
+
+```css
+p.center {
+  text-align: center;
+  color: red;
+}
+```
+
 ...
 
 ## Source(s)
