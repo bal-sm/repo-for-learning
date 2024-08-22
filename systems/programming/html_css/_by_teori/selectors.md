@@ -77,6 +77,27 @@ p {
   - > ~~`id=1-par`~~
     - > me: kayak declaring a variable in Python.
 
+## `class` selector
+
+- The `class` selector
+  - selects HTML elements
+    - with a specific `class` attribute.
+      - > `class=center`
+
+- To select elements with a specific `class`,
+  - write a period (`.`) character,
+    - followed by the `class` name.
+      - > **`.`**`center`
+
+Example:
+
+```css
+.center {
+  text-align: center;
+  color: red;
+}
+```
+
 ...
 
 ## Source(s)
