@@ -27,6 +27,11 @@ Bringing component-based design to Django templates.
 
 ...
 
+## Notes
+
+Mine:
+> Masih ada perbedaan antara docs di dua source tersebut, makanya diginiin aja dulu, [1] and [2].
+
 ## Source(s)
 
 - [1]: [Django Cotton Official Documentation](https://django-cotton.com/)
