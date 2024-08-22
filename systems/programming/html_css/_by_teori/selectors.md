@@ -204,7 +204,32 @@ h1, h2, p {
   - Example: `div`, `p`
   - Selects all `<div>` elements and all `<p>` elements
 
-...
+## ...
+
+..., TBA atau gak usah, bebas.
+
+## All CSS combinator selectors
+
+- `element element`
+  - `div p`
+  - Selects all `<p>` elements
+    - inside `<div>` elements
+- `element>element`
+  - `div > p`
+  - Selects all `<p>` elements
+    - where the parent is a `<div>` element
+  - > bedanya apa ya sama yang di atas? learning note.
+- `element+element`
+  - `div + p`
+  - Selects the first `<p>` element
+    - that are placed immediately after `<div>` elements
+- `element1~element2`
+  - `p ~ ul`
+  - Selects every `<ul>` element
+    - that are preceded by a `<p>` element
+
+Mine:
+> gimana yah ini teh bisa ditambahin lagi meureun ya.
 
 ## Source(s)
 
