@@ -126,6 +126,11 @@ p.center {
 <p class="center large">This paragraph refers to two classes.</p>
 ```
 
+### a note
+
+Them, a ote:
+> A `class` name cannot start with a number!
+
 ...
 
 ## Source(s)
