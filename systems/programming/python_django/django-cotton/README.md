@@ -15,6 +15,28 @@ Bringing component-based design to Django templates.
       - > `{{ name }}` to `{% include %}`, how, gitu we lah.
       - to compose UIs in a modular and reusable way.
 
+## Key Features from [2]
+
+- Modern UI Composition
+  - > `{{ name }}` to a `c-card` html's element.
+  - Efficiently compose and reuse UI components.
+- Interoperable with Django
+  - > you can use `{% tag %}` and `{{ form|crispy }}`.
+  - Cotton only enhances django's existing template system (no Jinja needed).
+- HTML-like Syntax
+  - > > liat aja hasil component element-nya.
+  - Better code editor support and productivity as component tags are similar to html tags.
+  - > bisa pake 'prettier' jadinya sebenernya cuman udah we ah.
+- Minimal Overhead
+  - > it's actually not that different with using Django's tags tea, jadi engine-nya juga light.
+  - Compiles to native Django components with dynamic caching.
+- Encapsulates UI
+  - > separation concern tea.
+  - Keep layout, design and interaction in one file (especially when paired with Tailwind and Alpine.js)
+- Compliments HTMX
+  - > `hx` attributes are compatible with this.
+  - Create smart components, reducing repetition and enhancing maintainability.
+
 ## ...
 
 ...
