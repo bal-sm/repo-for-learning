@@ -149,6 +149,40 @@ Example:
 }
 ```
 
+## Grouping selector
+
+- The grouping selector
+  - selects all the HTML elements
+    - with the same style definitions.
+
+Misalnya, before:
+
+```css
+h1 {
+  text-align: center;
+  color: red;
+}
+
+h2 {
+  text-align: center;
+  color: red;
+}
+
+p {
+  text-align: center;
+  color: red;
+}
+```
+
+After:
+
+```css
+h1, h2, p {
+  text-align: center;
+  color: red;
+}
+```
+
 ...
 
 ## Source(s)
