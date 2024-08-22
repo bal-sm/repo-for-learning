@@ -52,6 +52,27 @@ Bringing component-based design to Django templates.
     - and prefixed by `c-`
     - `<c-my-component />`
 
+## Walkthrough, from [2]
+
+### Your first component
+
+```html
+<!-- cotton/button.html -->
+<a href="/" class="...">{{ slot }}</a>
+```
+
+```html
+<!-- in view -->
+<c-button>Contact</c-button>
+```
+
+```html
+<!-- html output -->
+<a href="/" class="...">Contact</a>
+```
+
+...
+
 ## ...
 
 ...
