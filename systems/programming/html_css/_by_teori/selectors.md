@@ -53,7 +53,6 @@ p {
   - uses the `id` attribute
     - of an HTML element
     - to select a specific element.
-  - > **`#`**`some-id`
 
 - The `id` of an element
   - is **unique** within a page,
@@ -65,6 +64,18 @@ p {
 - To select an element with a specific `id`,
   - write a hash (`#`) character,
     - followed by the `id` of the element.
+      - > **`#`**`some-id`
+
+```css
+#para1 {
+  text-align: center;
+  color: red;
+}
+```
+
+- > Note: An `id` name cannot start with a number!
+  - > ~~`id=1-par`~~
+    - > me: kayak declaring a variable in Python.
 
 ...
 
