@@ -468,3 +468,4 @@ Mine:
 
 - [1]: [Django Cotton Official Documentation](https://django-cotton.com/)
 - [2]: [`django-cotton`'s `README.md`](https://github.com/wrabit/django-cotton/blob/123191cb225c8c1b8b1aee64319fa72c440a416d/README.md)
+  - > version `0.9.30`.
