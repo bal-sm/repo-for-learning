@@ -12,7 +12,8 @@ Bringing component-based design to Django templates.
   - that exist in the django template system
     - > `{% include %}`
     - that hold us back when we want to apply modern practises
-      - > `{{ name }}` to `{% include %}`, how, gitu we lah.
+      - > `{{ name }}` to `{% include %}`, ~~how, gitu we lah~~.
+        - > eh sebenernya bisa gini, `{% include option.template_name with widget=option %}{% endfor %}`, oops, salah paham. hehe. tapi tetep aja ribet jadinya.
       - to compose UIs in a modular and reusable way.
 
 ## Key Features from [2]
