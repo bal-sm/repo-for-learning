@@ -267,6 +267,36 @@ Mine, simplified aja:
 </select>
 ```
 
+### Increase Re-usability with `{{ attrs }}`
+
+- `{{ attrs }}` is a special variable
+  - that contains
+    - all the attributes passed to the component
+      - in an `key="value"` format.
+  - This is useful
+    - when you want to pass all attributes
+      - to a child element
+      - without having to explicitly define them
+        - in the component template.
+  - For example, you have inputs that can have any number of attributes defined:
+
+```html
+<!-- cotton/input.html -->
+<input type="text" class="..." {{ attrs }} />
+```
+
+```html
+<!-- example usage -->
+<c-input placeholder="Enter your name" />
+<c-input name="country" id="country" value="Japan" required />
+```
+
+```html
+<!-- html output -->
+<input type="text" class="..." placeholder="Enter your name" />
+<input type="text" class="..." name="country" id="country" value="Japan" required />
+```
+
 ...
 
 ## ...
