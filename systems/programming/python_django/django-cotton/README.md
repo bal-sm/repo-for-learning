@@ -445,12 +445,6 @@ Input will have all attributes provided apart from the `icon`:
 Mine:
 > wow. valentine's day on the books. gitu kan ya?
 
-...
-
-## ...
-
-...
-
 ## Limitations in Django that Cotton overcomes, from [2]
 
 ..., TBA.
