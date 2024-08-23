@@ -106,6 +106,60 @@ Bringing component-based design to Django templates.
 </a>
 ```
 
+### Named slots
+
+- Named slots
+  - are a powerful concept.
+  - They allow us to provide HTML
+    - to appear in one or more areas
+      - in the component.
+  - Here we allow the button to optionally display an `svg` icon:
+
+```html
+<!-- cotton/button.html -->
+<a href="{{ url }}" class="...">
+    {{ slot }}
+
+    {% if icon %}
+        {{ icon }}
+    {% endif %}
+</a>
+```
+
+```html
+<!-- in view -->
+<c-button url="/contact">
+    Contact
+    <c-slot name="icon">
+        <svg>...</svg>
+    </c-slot>
+</c-button>
+```
+
+Named slots can also contain any django native template logic:
+
+```html
+<!-- in view -->
+<c-button url="/contact">
+    <c-slot name="icon">
+      {% if mode == 'edit' %}
+          <svg id="pencil">...</svg>
+      {% else %}
+          <svg id="disk">...</svg>
+      {% endif %}
+    </c-slot>
+</c-button>
+```
+
+Mine:
+> `mode`-nya berarti gini aja ya:
+
+```python
+context = {
+    "mode": "edit",
+}
+```
+
 ...
 
 ## ...
