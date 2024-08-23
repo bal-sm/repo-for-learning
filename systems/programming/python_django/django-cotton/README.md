@@ -255,8 +255,8 @@ Mine:
 <c-select name="q1" :options="['yes', 'no', 'maybe']" />
 ```
 
-Mine:
-> atau, kasih objects dari `Form` buat-
+Mine, simplified aja:
+> atau, kasih objects dari Django's `Form` aja.. Pokoknya liat, part [ini](https://docs.djangoproject.com/en/5.1/ref/forms/widgets/#select), that's all I need looking for (sic), ubek-ubek guys.
 
 ```html
 <!-- source code output -->
