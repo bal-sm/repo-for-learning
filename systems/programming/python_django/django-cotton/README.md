@@ -297,6 +297,26 @@ Mine, simplified aja:
 <input type="text" class="..." name="country" id="country" value="Japan" required />
 ```
 
+### In-component Variables with `<c-vars>`
+
+- Django templates
+  - adhere quite strictly to the 'MVC' model
+  - and does not permit a lot of data manipulation
+    - in views.
+  - Fair enough,
+    - **but** what if we want
+      - to handle data
+        - for the purpose of UI state only?
+    - Having presentation related variables
+      - defined in the *back*
+        - > `views.py`
+        - is overkill
+      - and can quickly lead
+        - to higher maintenance cost
+        - and loses encapsulation of the component.
+  - Cotton allows you define in-component variables
+    - for the following reasons:
+
 ...
 
 ## ...
