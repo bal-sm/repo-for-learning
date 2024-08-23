@@ -524,6 +524,82 @@ Mine:
 Them, a note, interesting:
 > <a href="https://medium.com/@willabbott/introducing-django-cotton-revolutionizing-ui-composition-in-django-ea7fe06156b0" target="_blank">[Source article]</a>
 
+## Native Django template tags vs Cotton
+
+- In addition,
+  - Cotton enables you
+    - to navigate around some of the limitations
+      - with Django's
+        - native tags,
+        - and template language:
+
+### HTML in attributes
+
+❌ **Django native:**
+
+```html
+{% my_component header="<h1>Header</h1>" %}
+```
+
+✅ **Cotton:**
+
+```html
+<c-my-component>
+    <c-slot name="header">
+        <h1>Header</h1>
+    </c-slot>
+</c-my-component>
+```
+
+### Template expressions in attributes
+
+❌ **Django native:**
+
+```html
+{% my_component model="todos.{{ index }}.name" extra="{% get_extra %}" %}
+```
+
+✅ **Cotton:**
+
+```html
+<c-my-component model="todos.{{ index }}.name" extra="{% get_extra %} />
+```
+
+### Pass simple python types
+
+❌ **Django native:**
+
+```html
+{% my_component default_options="['yes', 'no', 'maybe']" %}
+{% my_component config="{'open': True}" %}
+```
+
+✅ **Cotton:**
+
+```html
+<c-my-component :default_options="['yes', 'no', 'maybe']" />
+<c-my-component :config="{'open': True}" />
+```
+
+### Multi-line definitions
+
+❌ **Django native:**
+
+```html
+{% my_component
+    arg=1 %}
+```
+
+✅ **Cotton:**
+
+```html
+<c-my-component
+    class="blue"
+    x-data="{
+        something: 1
+    }" />
+```
+
 ## ...
 
 ...
