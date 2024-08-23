@@ -308,6 +308,7 @@ Mine, simplified aja:
       - to handle data
         - for the purpose of UI state only?
     - Having presentation related variables
+      - > me: unable to specify default variable (I just want some buttons colored red, but everything else blue) without some complicated code in `views.py` which contains the component in the template.
       - defined in the *back*
         - > `views.py`
         - is overkill
