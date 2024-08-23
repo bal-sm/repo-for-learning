@@ -318,6 +318,52 @@ Mine, simplified aja:
   - Cotton allows you define in-component variables
     - for the following reasons:
 
+#### 1. Using `<c-vars>` for default attributes
+
+- In this example
+  - we have a button component
+    - with a default `theme`
+    - but it can be overridden.
+
+```html
+<!-- cotton/button.html -->
+<c-vars theme="bg-purple-500" />
+
+<a href="..." class="{{ theme }}">
+    {{ slot }}
+</a>
+```
+
+---
+
+```html
+<!-- in view -->
+<c-button>I'm a purple button</c-button>
+```
+
+```html
+<!-- html output -->
+<a href="..." class="bg-purple-500">
+    I'm a purple button
+</a>
+```
+
+---
+
+Now we have a default theme for our button, but it is overridable:
+
+```html
+<!-- in view -->
+<c-button theme="bg-green-500">But I'm green</c-button>
+```
+
+```html
+<!-- html output -->
+<a href="..." class="bg-green-500">
+    But I'm green
+</a>
+```
+
 ...
 
 ## ...
