@@ -600,6 +600,22 @@ Them, a note, interesting:
     }" />
 ```
 
+## Caching
+
+- Cotton is optimal
+  - when used with Django's `cached.Loader`.
+  - If you use <a href="https://django-cotton.com/docs/quickstart">automatic configuration</a>
+    - then the cached loader
+      - will be automatically applied.
+    - This feature has room for improvement, some desirables are:
+
+- Integration with a cache backend
+  - to survive runtime restarts / deployments.
+- Cache warming
+
+- For full docs and demos,
+  - checkout <a href="https://django-cotton.com" target="_blank">django-cotton.com</a>
+
 ## ...
 
 ...
