@@ -447,7 +447,82 @@ Mine:
 
 ## Limitations in Django that Cotton overcomes, from [2]
 
-..., TBA.
+- Whilst
+  - you _can_ build frontends
+    - with Django’s native tags,
+  - there are
+    - a few things
+      - that hold us back
+        - when we want to apply modern practices:
+
+### `{% block %}` and `{% extends %}`
+
+- This system strongly couples
+  - child
+  - and parent templates;
+  - making it hard
+    - to create a truly re-usable component
+      - that can be used in places
+        - without it having a related base template.
+
+Mine:
+> oh my fuckin' god. terus teh menciptakan kebiasaan untuk terus "refactor your base templates and ofc your child templates".
+
+### What about `{% include %}` ?
+
+- Modern libraries allow components
+  - to be highly configurable,
+    - whether
+      - it’s by attributes,
+      - passing variables,
+      - passing HTML with
+        - default
+        - and named slots.
+  - `{% include %}` tags,
+    - whilst they have the ability
+      - to pass simple variables
+        - 'with context_on_template=context_variable'
+      - and text,
+        - 'with some_string="begini"'
+    - they will not allow you
+      - to easily send HTML blocks
+        - with template expressions;
+        - let alone other niceties
+          - such as
+            - boolean attributes,
+            - named slots
+            - etc.
+
+Mine:
+> sometimes makes me feel wrong lagi pake `{% include %}` daripada pake 'extends' and 'block' tea.
+
+### What's with `{% with %}`?
+
+- Whilst `{% with %}` tags
+  - allow us
+    - to provide
+      - variables
+      - and strings
+      - it quickly:
+        - busies up your code
+        - and has the same limitations
+          - about passing more complex types.
+
+### Custom `{% templatetags %}`
+
+- Cotton does essentially
+  - compile down to 'templatetags'
+  - but there is some extra work
+    - it performs above it
+      - to help with scoping,
+      - and auto-managing keys;
+      - which will be difficult
+        - to manage manually
+          - in complex nested structures.
+            - > me: ari ieu kumaha ya udah we.
+
+Them, a note, interesting:
+> <a href="https://medium.com/@willabbott/introducing-django-cotton-revolutionizing-ui-composition-in-django-ea7fe06156b0" target="_blank">[Source article]</a>
 
 ## ...
 
