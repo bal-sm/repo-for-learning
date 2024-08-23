@@ -410,6 +410,41 @@ Input will have all attributes provided apart from the `icon`:
 <input type="password" id="password" />
 ```
 
+### An example with `htmx` from [2]
+
+- Cotton helps carve out re-usable components,
+  - here we show
+    - how to make a re-usable form,
+      - reducing code repetition
+      - and improving maintainability:
+
+```html
+<!-- cotton/form.html -->
+<div id="result" class="..."></div>
+
+<form {{ attrs }} hx-target="#result" hx-swap="outerHTML">
+    {{ slot }}
+    <button type="submit">Submit</button>
+</form>
+```
+
+```html
+<!-- in view -->
+<c-form hx-post="/contact">
+    <input type="text" name="name" placeholder="Name" />
+    <input type="text" name="email" placeholder="Email" />
+    <input type="checkbox" name="signup" />
+</c-form>
+
+<c-form hx-post="/buy">
+    <input type="text" name="type" />
+    <input type="text" name="quantity" />
+</c-form>
+```
+
+Mine:
+> wow. valentine's day on the books. gitu kan ya?
+
 ...
 
 ## ...
