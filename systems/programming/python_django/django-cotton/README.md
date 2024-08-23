@@ -160,6 +160,29 @@ context = {
 }
 ```
 
+### Pass template variable as an attribute
+
+- To pass a template variable:
+  - you prepend the attribute name
+    - with a colon `:`.
+      - > `:user="user"`
+  - Consider a bio card component:
+
+```html
+<!-- in view -->
+<c-bio-card :user="user" />
+```
+
+That has a component definition like:
+
+```html
+<!-- cotton/bio_card.html -->
+<div class="...">
+  <img src="{{ user.avatar }}" alt="...">
+  {{ user.username }} {{ user.country_code }}
+</div>
+```
+
 ...
 
 ## ...
