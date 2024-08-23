@@ -467,4 +467,4 @@ Mine:
 ## Source(s)
 
 - [1]: [Django Cotton Official Documentation](https://django-cotton.com/)
-- [2]: [`django-cotton`'s `README.md`](https://github.com/wrabit/django-cotton/blob/77feb610dd1cb7a4ad176300545ca3892cd926f2/README.md)
+- [2]: [`django-cotton`'s `README.md`](https://github.com/wrabit/django-cotton/blob/123191cb225c8c1b8b1aee64319fa72c440a416d/README.md)
