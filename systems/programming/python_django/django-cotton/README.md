@@ -183,6 +183,20 @@ That has a component definition like:
 </div>
 ```
 
+### Template expressions inside attributes
+
+You can use template expression statements inside attributes.
+
+```html
+<c-weather icon="fa-{{ icon }}"
+           unit="{{ unit|default:'c' }}"
+           condition="very {% get_intensity %}"
+/>
+```
+
+Mine:
+> wow, valentine's day on the books.
+
 ...
 
 ## ...
