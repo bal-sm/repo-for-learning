@@ -197,6 +197,32 @@ You can use template expression statements inside attributes.
 Mine:
 > wow, valentine's day on the books.
 
+### Boolean attributes
+
+- Boolean attributes reduce boilerplate
+  - when we just want to indicate
+    - a certain attribute should be
+      - `True`
+      - or not (`False`).
+
+```html
+<!-- in view -->
+<c-button url="/contact" external>Contact</c-button>
+```
+
+- By passing just the attribute name
+  - without a value,
+  - it will automatically be provided to the component
+    - as `True`
+      - > just like Python.
+
+```html
+<!-- cotton/button.html -->
+<a href="{{ url }}" {% if external %} target="_blank" {% endif %} class="...">
+    {{ slot }}
+</a>
+```
+
 ...
 
 ## ...
