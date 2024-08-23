@@ -223,6 +223,49 @@ Mine:
 </a>
 ```
 
+### Passing Python data types
+
+- Using the `:`
+  - to prefix an attribute
+    - tells Cotton we're passing a dynamic type down.
+  - We already know we can use this
+    - to send a variable,
+    - **but** you can also send basic python types, namely:
+
+- Integers and Floats
+- `None`, `True` and `False`
+- Lists
+- Dictionaries
+
+- This benefits a number of use-cases,
+  - for example if you have a select component
+    - that you want to provide the possible options from the parent:
+
+```html
+<!-- cotton/select.html -->
+<select {{ attrs }}>
+    {% for option in options %}
+        <option value="{{ option }}">{{ option }}</option>
+    {% endfor %}
+</select>
+```
+
+```html
+<c-select name="q1" :options="['yes', 'no', 'maybe']" />
+```
+
+Mine:
+> atau, kasih objects dari `Form` buat-
+
+```html
+<!-- source code output -->
+<select name="q1">
+    <option value="yes">yes</option>
+    <option value="no">no</option>
+    <option value="maybe">maybe</option>
+</select>
+```
+
 ...
 
 ## ...
