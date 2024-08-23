@@ -364,6 +364,52 @@ Now we have a default theme for our button, but it is overridable:
 </a>
 ```
 
+#### 2. Using `<c-vars>` to govern `{{ attrs }}`
+
+- Using `{{ attrs }}`
+  - to pass all attributes
+    - from parent scope
+      - onto an element in the component,
+  - you'll sometimes want
+    - to provide additional properties
+      - to the component
+      - which are not intended to be an attributes.
+  - In this case
+    - you can declare them in `<c-vars />`
+      - and it will prevent it from being in `{{ attrs }}`
+
+---
+
+- Take this example
+  - where we want to provide any number of attributes
+    - to an input
+      - > to `{{ attrs }}`
+    - but also an `icon` setting
+      - which is not intened
+        - to be an attribute on `<input>`:
+
+```html
+<!-- cotton/input.html -->
+<c-vars icon />
+
+<img src="icons/{{ icon }}.png" />
+
+<input {{ attrs }} />
+```
+
+```html
+<!-- in view -->
+<c-input type="password" id="password" icon="padlock" />
+```
+
+Input will have all attributes provided apart from the `icon`:
+
+```html
+<img src="icons/padlock.png" />
+
+<input type="password" id="password" />
+```
+
 ...
 
 ## ...
