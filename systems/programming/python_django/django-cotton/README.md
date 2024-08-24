@@ -291,6 +291,15 @@ Cotton uses the following naming conventions:
   - using `kebab-case`:
     - `<c-my-component />`
 
+#### Subfolders
+
+- Components in subfolders
+  - can be defined
+    - using dot notation
+  - A component in
+    - `sidebar/menu/link.html`
+    - would be included as `<c-sidebar.menu.link />`
+
 ...
 
 ## Walkthrough, from [2]
