@@ -300,7 +300,13 @@ Cotton uses the following naming conventions:
     - `sidebar/menu/link.html`
     - would be included as `<c-sidebar.menu.link />`
 
-...
+#### Tag Style
+
+- Components can either:
+  - be self-closing
+    - `<c-my-component />`
+  - or have a closing tag
+    - `<c-my-component></c-my-component>`
 
 ## Walkthrough, from [2]
 
