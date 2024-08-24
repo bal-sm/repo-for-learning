@@ -176,6 +176,20 @@ Item Title
     - and prefixed by `c-`
     - `<c-my-component />`
 
+## Quickstart, from [1]
+
+### Install `cotton`
+
+Run the following command:
+
+```sh
+pip install django-cotton
+```
+
+Then update your `settings.py`:
+
+...
+
 ## Walkthrough, from [2]
 
 ### Your first component
