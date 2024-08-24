@@ -233,6 +233,26 @@ TEMPLATES = [
 ]
 ```
 
+### Create a component
+
+- Create a new directory
+  - in your templates directory
+    - called `cotton`.
+  - Inside this directory
+    - create a new file
+      - called `card.html`
+        - with the following content:
+
+`templates/cotton/card.html`:
+
+```html
+<div class="bg-white shadow rounded border p-4">
+    <h2>{{ title }}</h2>
+    <p>{{ slot }}</p>
+    <button href="{% url url %}">Read more</button>
+</div>
+```
+
 ...
 
 ## Walkthrough, from [2]
