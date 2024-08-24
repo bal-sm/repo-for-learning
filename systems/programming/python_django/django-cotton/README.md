@@ -63,7 +63,38 @@ Item Title
 </div>
 ```
 
-...
+### After: Decoupled, Clean & Re-usable
+
+#### `view.html`
+
+```html
+<c-product img_url="icon.png"
+    title="Item Title"
+    price="$10">
+    Description of the product
+</c-product>
+```
+
+#### `product.html`
+
+```html
+<div id="container">
+    <div id="header">
+        <img src="{{ img_url }}" />
+        <h1>{{ title }}</h1>
+    </div>
+
+    <div id="content">
+        {{ slot }}
+
+        {% if price %}
+            <div id="price">
+                {{ price }}
+            </div>
+        {% endif %}
+    </div>
+</div>
+```
 
 ## Why Cotton? from [2]
 
