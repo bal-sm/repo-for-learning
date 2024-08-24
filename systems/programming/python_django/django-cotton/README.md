@@ -274,6 +274,12 @@ def dashboard_view(request):
 </c-card>
 ```
 
+### Usage
+
+#### Basics
+
+- Cotton components should be placed in the `templates/cotton` folder
+
 ...
 
 ## Walkthrough, from [2]
