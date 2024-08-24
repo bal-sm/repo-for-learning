@@ -6,6 +6,65 @@ Bringing component-based design to Django templates.
 
 - Docs site + demos: [1] tea.
 
+## Intro from [1]
+
+Goodbye `{% extends %}` `{% block %}` `{% include %}` `{% custom_tag %}`
+
+Hello `<c-component />`
+
+Bringing component-based design to django templates
+
+### Before: Strongly Coupled, Verbose
+
+#### `view.html`
+
+```html
+{% extends "product_layout.html" %}
+
+{% block img_url %}
+icon.png
+{% endblock %}
+
+{% block header %}
+Item Title
+{% endblock %}
+
+{% block content %}
+    Description of the product
+
+    {% block price %}
+    $10
+    {% endblock %}
+{% endblock %}
+```
+
+#### `product_layout.html`
+
+```html
+<div id="container">
+    <div id="header">
+        <img src="{% block img_url %}{% endblock %}" />
+        <h1>
+            {% block title %}
+            {% endblock %}
+        </h1>
+    </div>
+
+    <div id="content">
+        {% block content %}
+
+            <div id="price">
+                {% block price %}
+                {% endblock %}
+            </div>
+
+        {% endblock %}
+    </div>
+</div>
+```
+
+...
+
 ## Why Cotton? from [2]
 
 - Cotton aims to overcome [certain limitations](#limitations-in-django-that-cotton-overcomes-from-2)
