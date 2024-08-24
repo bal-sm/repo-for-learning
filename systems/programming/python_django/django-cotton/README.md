@@ -197,6 +197,42 @@ _Skipped aja, be technical, guys._
 Mine:
 > screw the bolts, merek Em. make it a thing. a real and really exist in physical dimension, program thing.
 
+- If your project requires
+  - any non-default loaders
+  - or you do not wish Cotton
+    - to manage your settings,
+  - you should instead
+    - provide `django_cotton.apps.SimpleAppConfig`
+      - in your `INSTALLED_APPS`:
+
+`settings.py`:
+
+```python
+INSTALLED_APPS = [
+    'django_cotton.apps.SimpleAppConfig',
+]
+
+TEMPLATES = [
+    {
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        ...
+        "OPTIONS": {
+            "loaders": [(
+                "django.template.loaders.cached.Loader",
+                [
+                    "django_cotton.cotton_loader.Loader",
+                    "django.template.loaders.filesystem.Loader",
+                    "django.template.loaders.app_directories.Loader",
+                ],
+            )],
+            "builtins": [
+                "django_cotton.templatetags.cotton"
+            ],
+        }
+    }
+]
+```
+
 ...
 
 ## Walkthrough, from [2]
