@@ -280,6 +280,17 @@ def dashboard_view(request):
 
 - Cotton components should be placed in the `templates/cotton` folder
 
+#### Naming
+
+Cotton uses the following naming conventions:
+
+- Component file names
+  - are in `snake_case`:
+    - `my_component.html`
+- but are called
+  - using `kebab-case`:
+    - `<c-my-component />`
+
 ...
 
 ## Walkthrough, from [2]
