@@ -308,9 +308,9 @@ Cotton uses the following naming conventions:
   - or have a closing tag
     - `<c-my-component></c-my-component>`
 
-## Walkthrough, from [2]
+## Walkthrough
 
-### Your first component
+### Your first component, from [2]
 
 ```html
 <!-- cotton/button.html -->
@@ -337,7 +337,7 @@ Cotton uses the following naming conventions:
   - > terus teh bisa gini, `type={{ type }}`, gening, terus emang digituin cara kerja-nya. it's divine.
     - > ini teh misalnya, reimplement Django's `Form`, soalnya honestly terlalu kaku templating system-nya, teu puguh.
 
-### Add attributes
+### Add attributes, from [2]
 
 ```html
 <!-- cotton/button.html -->
@@ -362,7 +362,7 @@ Cotton uses the following naming conventions:
 </a>
 ```
 
-### Named slots
+### Named slots, from [2]
 
 - Named slots
   - are a powerful concept.
@@ -416,7 +416,7 @@ context = {
 }
 ```
 
-### Pass template variable as an attribute
+### Pass template variable as an attribute, from [2]
 
 - To pass a template variable:
   - you prepend the attribute name
@@ -439,7 +439,7 @@ That has a component definition like:
 </div>
 ```
 
-### Template expressions inside attributes
+### Template expressions inside attributes, from [2]
 
 You can use template expression statements inside attributes.
 
@@ -453,7 +453,7 @@ You can use template expression statements inside attributes.
 Mine:
 > wow, valentine's day on the books.
 
-### Boolean attributes
+### Boolean attributes, from [2]
 
 - Boolean attributes reduce boilerplate
   - when we just want to indicate
@@ -479,7 +479,7 @@ Mine:
 </a>
 ```
 
-### Passing Python data types
+### Passing Python data types, from [2]
 
 - Using the `:`
   - to prefix an attribute
@@ -522,7 +522,7 @@ Mine, simplified aja:
 </select>
 ```
 
-### Increase Re-usability with `{{ attrs }}`
+### Increase Re-usability with `{{ attrs }}`, from [2]
 
 - `{{ attrs }}` is a special variable
   - that contains
@@ -552,7 +552,7 @@ Mine, simplified aja:
 <input type="text" class="..." name="country" id="country" value="Japan" required />
 ```
 
-### In-component Variables with `<c-vars>`
+### In-component Variables with `<c-vars>`, from [2]
 
 - Django templates
   - adhere quite strictly to the 'MVC' model
@@ -573,7 +573,7 @@ Mine, simplified aja:
   - Cotton allows you define in-component variables
     - for the following reasons:
 
-#### 1. Using `<c-vars>` for default attributes
+#### 1. Using `<c-vars>` for default attributes, from [2]
 
 - In this example
   - we have a button component
@@ -619,7 +619,7 @@ Now we have a default theme for our button, but it is overridable:
 </a>
 ```
 
-#### 2. Using `<c-vars>` to govern `{{ attrs }}`
+#### 2. Using `<c-vars>` to govern `{{ attrs }}`, from [2]
 
 - Using `{{ attrs }}`
   - to pass all attributes
