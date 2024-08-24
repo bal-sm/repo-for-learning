@@ -253,6 +253,27 @@ TEMPLATES = [
 </div>
 ```
 
+### Include a component
+
+#### `views.py`
+
+```python
+def dashboard_view(request):
+    return render(request, "dashboard.html")
+```
+
+#### `templates/dashboard.html`
+
+```html
+<c-card title="Trees" url="trees">
+    We have the best trees
+</c-card>
+
+<c-card title="Spades" url="spades">
+    The best spades in the land
+</c-card>
+```
+
 ...
 
 ## Walkthrough, from [2]
