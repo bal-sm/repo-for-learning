@@ -128,6 +128,39 @@ Item Title
   - > `hx` attributes are compatible with this.
   - Create smart components, reducing repetition and enhancing maintainability.
 
+## Why cotton?, from [1]
+
+- Rapid UI composition
+  - Efficiently compose and reuse UI components.
+  - Adopting a modular design system
+    - streamlines workflow and boosts productivity.
+- Harmonious with Tailwind CSS
+  - Tailwind's utility-first approach
+    - compliments component based design
+      - isolating style in re-usable components,
+        - enhancing maintainability
+- Interoperable with Django Templates
+  - Cotton enhances Django templates
+    - without replacing them,
+    - allowing progressive enhancement
+      - while maintaining
+        - full use of existing template features.
+- Enhanced Productivity
+  - Cotton's HTML tag-like syntax
+    - allows code editors
+      - > `vscode`.
+      - to recognize its components as
+        - HTML elements, enabling features like:
+          - syntax highlighting
+          - and automatic tag completion.
+- Minimal Overhead
+  - Cotton compiles
+    - to native django components
+    - and the compilation step is
+      - automatically cached
+      - and dynamically managed.
+        - > by its `Loader`, `django_cotton.cotton_loader.Loader`.
+
 ## Usage Basics, from [2]
 
 - Component Placement
