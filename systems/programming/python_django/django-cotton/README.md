@@ -188,6 +188,15 @@ pip install django-cotton
 
 Then update your `settings.py`:
 
+#### Automatic configuration
+
+_Skipped aja, be technical, guys._
+
+#### Customised configuration
+
+Mine:
+> screw the bolts, merek Em. make it a thing. a real and really exist in physical dimension, program thing.
+
 ...
 
 ## Walkthrough, from [2]
