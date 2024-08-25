@@ -540,7 +540,7 @@ To pass data by reference, prepend the attribute with a ` : `.
     - to pass blocks of HTML
       - > customized. misalnya: `<input>` to `c-form`.
     - or dynamic content.
-      - > weather thing. di bawah.
+      - > ~~weather thing. di bawah.~~ mungkin lebih `htmx` attributes / 'Alpine.js' thing kali ya.
     - In these cases,
       - we can reach to _named slots_.
 
