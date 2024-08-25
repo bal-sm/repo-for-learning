@@ -6,6 +6,96 @@ Bringing component-based design to Django templates.
 
 - Docs site + demos: [1] tea.
 
+## Intro from [1]
+
+Goodbye `{% extends %}` `{% block %}` `{% include %}` `{% custom_tag %}`
+
+Hello `<c-component />`
+
+Bringing component-based design to django templates
+
+### Before: Strongly Coupled, Verbose
+
+#### `view.html`
+
+```html
+{% extends "product_layout.html" %}
+
+{% block img_url %}
+icon.png
+{% endblock %}
+
+{% block header %}
+Item Title
+{% endblock %}
+
+{% block content %}
+    Description of the product
+
+    {% block price %}
+    $10
+    {% endblock %}
+{% endblock %}
+```
+
+#### `product_layout.html`
+
+```html
+<div id="container">
+    <div id="header">
+        <img src="{% block img_url %}{% endblock %}" />
+        <h1>
+            {% block title %}
+            {% endblock %}
+        </h1>
+    </div>
+
+    <div id="content">
+        {% block content %}
+
+            <div id="price">
+                {% block price %}
+                {% endblock %}
+            </div>
+
+        {% endblock %}
+    </div>
+</div>
+```
+
+### After: Decoupled, Clean & Re-usable
+
+#### `view.html`
+
+```html
+<c-product img_url="icon.png"
+    title="Item Title"
+    price="$10">
+    Description of the product
+</c-product>
+```
+
+#### `product.html`
+
+```html
+<div id="container">
+    <div id="header">
+        <img src="{{ img_url }}" />
+        <h1>{{ title }}</h1>
+    </div>
+
+    <div id="content">
+        {{ slot }}
+
+        {% if price %}
+            <div id="price">
+                {{ price }}
+            </div>
+        {% endif %}
+    </div>
+</div>
+```
+
 ## Why Cotton? from [2]
 
 - Cotton aims to overcome [certain limitations](#limitations-in-django-that-cotton-overcomes-from-2)
@@ -38,6 +128,39 @@ Bringing component-based design to Django templates.
   - > `hx` attributes are compatible with this.
   - Create smart components, reducing repetition and enhancing maintainability.
 
+## Why cotton?, from [1]
+
+- Rapid UI composition
+  - Efficiently compose and reuse UI components.
+  - Adopting a modular design system
+    - streamlines workflow and boosts productivity.
+- Harmonious with Tailwind CSS
+  - Tailwind's utility-first approach
+    - compliments component based design
+      - isolating style in re-usable components,
+        - enhancing maintainability
+- Interoperable with Django Templates
+  - Cotton enhances Django templates
+    - without replacing them,
+    - allowing progressive enhancement
+      - while maintaining
+        - full use of existing template features.
+- Enhanced Productivity
+  - Cotton's HTML tag-like syntax
+    - allows code editors
+      - > `vscode`.
+      - to recognize its components as
+        - HTML elements, enabling features like:
+          - syntax highlighting
+          - and automatic tag completion.
+- Minimal Overhead
+  - Cotton compiles
+    - to native django components
+    - and the compilation step is
+      - automatically cached
+      - and dynamically managed.
+        - > by its `Loader`, `django_cotton.cotton_loader.Loader`.
+
 ## Usage Basics, from [2]
 
 - Component Placement
@@ -53,9 +176,141 @@ Bringing component-based design to Django templates.
     - and prefixed by `c-`
     - `<c-my-component />`
 
-## Walkthrough, from [2]
+## Quickstart, from [1]
 
-### Your first component
+### Install `cotton`
+
+Run the following command:
+
+```sh
+pip install django-cotton
+```
+
+Then update your `settings.py`:
+
+#### Automatic configuration
+
+_Skipped aja, be technical, guys._
+
+#### Customised configuration
+
+Mine:
+> screw the bolts, merek Em. make it a thing. a real and really exist in physical dimension, program thing.
+
+- If your project requires
+  - any non-default loaders
+  - or you do not wish Cotton
+    - to manage your settings,
+  - you should instead
+    - provide `django_cotton.apps.SimpleAppConfig`
+      - in your `INSTALLED_APPS`:
+
+`settings.py`:
+
+```python
+INSTALLED_APPS = [
+    'django_cotton.apps.SimpleAppConfig',
+]
+
+TEMPLATES = [
+    {
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        ...
+        "OPTIONS": {
+            "loaders": [(
+                "django.template.loaders.cached.Loader",
+                [
+                    "django_cotton.cotton_loader.Loader",
+                    "django.template.loaders.filesystem.Loader",
+                    "django.template.loaders.app_directories.Loader",
+                ],
+            )],
+            "builtins": [
+                "django_cotton.templatetags.cotton"
+            ],
+        }
+    }
+]
+```
+
+### Create a component
+
+- Create a new directory
+  - in your templates directory
+    - called `cotton`.
+  - Inside this directory
+    - create a new file
+      - called `card.html`
+        - with the following content:
+
+`templates/cotton/card.html`:
+
+```html
+<div class="bg-white shadow rounded border p-4">
+    <h2>{{ title }}</h2>
+    <p>{{ slot }}</p>
+    <button href="{% url url %}">Read more</button>
+</div>
+```
+
+### Include a component
+
+#### `views.py`
+
+```python
+def dashboard_view(request):
+    return render(request, "dashboard.html")
+```
+
+#### `templates/dashboard.html`
+
+```html
+<c-card title="Trees" url="trees">
+    We have the best trees
+</c-card>
+
+<c-card title="Spades" url="spades">
+    The best spades in the land
+</c-card>
+```
+
+### Usage
+
+#### Basics
+
+- Cotton components should be placed in the `templates/cotton` folder
+
+#### Naming
+
+Cotton uses the following naming conventions:
+
+- Component file names
+  - are in `snake_case`:
+    - `my_component.html`
+- but are called
+  - using `kebab-case`:
+    - `<c-my-component />`
+
+#### Subfolders
+
+- Components in subfolders
+  - can be defined
+    - using dot notation
+  - A component in
+    - `sidebar/menu/link.html`
+    - would be included as `<c-sidebar.menu.link />`
+
+#### Tag Style
+
+- Components can either:
+  - be self-closing
+    - `<c-my-component />`
+  - or have a closing tag
+    - `<c-my-component></c-my-component>`
+
+## Walkthrough
+
+### Your first component, from [2]
 
 ```html
 <!-- cotton/button.html -->
@@ -82,7 +337,23 @@ Bringing component-based design to Django templates.
   - > terus teh bisa gini, `type={{ type }}`, gening, terus emang digituin cara kerja-nya. it's divine.
     - > ini teh misalnya, reimplement Django's `Form`, soalnya honestly terlalu kaku templating system-nya, teu puguh.
 
-### Add attributes
+### Components Intro, from [1], dupe makanya
+
+- Components are
+  - reusable pieces
+    - of view template.
+      - > me: `html`s, you know it.
+  - They can contain
+    - native Django template syntax
+      - and can be used
+        - inside standard Django templates.
+
+Mine, just a reminder for myself:
+> I NEED TO FUCKING DO IT. ieu heula. IDK. IH.
+
+...
+
+### Add attributes, from [2]
 
 ```html
 <!-- cotton/button.html -->
@@ -107,7 +378,7 @@ Bringing component-based design to Django templates.
 </a>
 ```
 
-### Named slots
+### Named slots, from [2]
 
 - Named slots
   - are a powerful concept.
@@ -161,7 +432,7 @@ context = {
 }
 ```
 
-### Pass template variable as an attribute
+### Pass template variable as an attribute, from [2]
 
 - To pass a template variable:
   - you prepend the attribute name
@@ -184,7 +455,7 @@ That has a component definition like:
 </div>
 ```
 
-### Template expressions inside attributes
+### Template expressions inside attributes, from [2]
 
 You can use template expression statements inside attributes.
 
@@ -198,7 +469,7 @@ You can use template expression statements inside attributes.
 Mine:
 > wow, valentine's day on the books.
 
-### Boolean attributes
+### Boolean attributes, from [2]
 
 - Boolean attributes reduce boilerplate
   - when we just want to indicate
@@ -224,7 +495,7 @@ Mine:
 </a>
 ```
 
-### Passing Python data types
+### Passing Python data types, from [2]
 
 - Using the `:`
   - to prefix an attribute
@@ -267,7 +538,7 @@ Mine, simplified aja:
 </select>
 ```
 
-### Increase Re-usability with `{{ attrs }}`
+### Increase Re-usability with `{{ attrs }}`, from [2]
 
 - `{{ attrs }}` is a special variable
   - that contains
@@ -297,7 +568,7 @@ Mine, simplified aja:
 <input type="text" class="..." name="country" id="country" value="Japan" required />
 ```
 
-### In-component Variables with `<c-vars>`
+### In-component Variables with `<c-vars>`, from [2]
 
 - Django templates
   - adhere quite strictly to the 'MVC' model
@@ -318,7 +589,7 @@ Mine, simplified aja:
   - Cotton allows you define in-component variables
     - for the following reasons:
 
-#### 1. Using `<c-vars>` for default attributes
+#### 1. Using `<c-vars>` for default attributes, from [2]
 
 - In this example
   - we have a button component
@@ -364,7 +635,7 @@ Now we have a default theme for our button, but it is overridable:
 </a>
 ```
 
-#### 2. Using `<c-vars>` to govern `{{ attrs }}`
+#### 2. Using `<c-vars>` to govern `{{ attrs }}`, from [2]
 
 - Using `{{ attrs }}`
   - to pass all attributes
