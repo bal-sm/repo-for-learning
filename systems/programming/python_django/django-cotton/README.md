@@ -533,6 +533,19 @@ To pass data by reference, prepend the attribute with a ` : `.
 <p>It's {{ today.temperature }}<sup>{{ today.unit }}</sup> and the condition is {{ today.condition }}.</p>
 ```
 
+### Named slots, from [1]
+
+- There are occasions
+  - when you will need
+    - to pass blocks of HTML
+      - > customized. misalnya: `<input>` to `c-form`.
+    - or dynamic content.
+      - > weather thing. di bawah.
+    - In these cases,
+      - we can reach to _named slots_.
+
+...
+
 ### Template expressions inside attributes, from [2]
 
 You can use template expression statements inside attributes.
