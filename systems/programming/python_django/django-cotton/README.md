@@ -544,6 +544,13 @@ To pass data by reference, prepend the attribute with a ` : `.
     - In these cases,
       - we can reach to _named slots_.
 
+- Named slots
+  - are *defined*
+    - **with** the `<c-slot name="...">...</c-slot>` tag.
+  - The content
+    - is passed to the component
+      - like a standard template variable.
+
 ...
 
 ### Template expressions inside attributes, from [2]
