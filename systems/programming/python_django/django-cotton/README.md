@@ -489,6 +489,8 @@ context = {
   - you prepend the attribute name
     - with a colon `:`.
       - > `:user="user"`
+        - > or should I write like this:
+          - > `:user-object-to-component="user_object_from_context"`
   - Consider a bio card component:
 
 ```html
