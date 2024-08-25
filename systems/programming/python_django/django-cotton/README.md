@@ -506,6 +506,28 @@ That has a component definition like:
 </div>
 ```
 
+### Passing template variables by reference, from [1]
+
+- Sometimes you'll want to pass a variable
+  - from the parent's `context`
+    - 'as is'
+      - for the child component
+        - to perform what it wants.
+
+To pass data by reference, prepend the attribute with a ` : `.
+
+#### `view.html`
+
+```html
+<c-weather :today="today"></c-weather>
+```
+
+#### `cotton/weather.html`
+
+```html
+<p>It's {{ today.temperature }}<sup>{{ today.unit }}</sup> and the condition is {{ today.condition }}.</p>
+```
+
 ### Template expressions inside attributes, from [2]
 
 You can use template expression statements inside attributes.
