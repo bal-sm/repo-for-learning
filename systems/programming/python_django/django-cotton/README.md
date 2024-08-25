@@ -550,6 +550,7 @@ To pass data by reference, prepend the attribute with a ` : `.
   - The content
     - is passed to the component
       - like a standard template variable.
+  - > my opinion: `name` as a `c-slot` attributes? weird. We thought that it could go wrong, karena custom 'html' thing. Padahal mah tapi enggak, soalnya the `name` of `c-slot` tea, moal ever send to the browser.. Server thing only.
 
 ...
 
