@@ -355,8 +355,6 @@ Mine, just a reminder for myself:
             - > `<p>Some content</p>`
             - > me: asa rancu kalimat-nya.
 
-...
-
 ### Your first component, from [2]
 
 ```html
