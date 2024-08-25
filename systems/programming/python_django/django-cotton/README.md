@@ -324,6 +324,16 @@ Cotton uses the following naming conventions:
 Mine, just a reminder for myself:
 > I NEED TO FUCKING DO IT. ieu heula. IDK. IH.
 
+#### A minimal example
+
+##### `cotton/my_component.html`
+
+```html
+{{ slot }}
+```
+
+...
+
 ### Your first component, from [2]
 
 ```html
