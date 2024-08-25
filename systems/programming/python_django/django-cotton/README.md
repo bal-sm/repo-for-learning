@@ -310,6 +310,20 @@ Cotton uses the following naming conventions:
 
 ## Walkthrough
 
+### Components Intro, from [1], dupe makanya
+
+- Components are
+  - reusable pieces
+    - of view template.
+      - > me: `html`s, you know it.
+  - They can contain
+    - native Django template syntax
+      - and can be used
+        - inside standard Django templates.
+
+Mine, just a reminder for myself:
+> I NEED TO FUCKING DO IT. ieu heula. IDK. IH.
+
 ### Your first component, from [2]
 
 ```html
@@ -336,22 +350,6 @@ Cotton uses the following naming conventions:
       - Django template expression.
   - > terus teh bisa gini, `type={{ type }}`, gening, terus emang digituin cara kerja-nya. it's divine.
     - > ini teh misalnya, reimplement Django's `Form`, soalnya honestly terlalu kaku templating system-nya, teu puguh.
-
-### Components Intro, from [1], dupe makanya
-
-- Components are
-  - reusable pieces
-    - of view template.
-      - > me: `html`s, you know it.
-  - They can contain
-    - native Django template syntax
-      - and can be used
-        - inside standard Django templates.
-
-Mine, just a reminder for myself:
-> I NEED TO FUCKING DO IT. ieu heula. IDK. IH.
-
-...
 
 ### Add attributes, from [2]
 
