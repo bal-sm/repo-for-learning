@@ -495,7 +495,7 @@ context = {
 
 ```html
 <!-- in view -->
-<c-bio-card :user="user" />
+<c-bio-card :user-object-to-component="user_object_from_context" />
 ```
 
 That has a component definition like:
@@ -503,10 +503,13 @@ That has a component definition like:
 ```html
 <!-- cotton/bio_card.html -->
 <div class="...">
-  <img src="{{ user.avatar }}" alt="...">
-  {{ user.username }} {{ user.country_code }}
+  <img src="{{ user-object-to-component.avatar }}" alt="...">
+  {{ user-object-to-component.username }} {{ user-object-to-component.country_code }}
 </div>
 ```
+
+Mine, learning, maintenance:
+> cobain dulu, kalo salah, ubah dong.
 
 ### Passing template variables by reference, from [1]
 
