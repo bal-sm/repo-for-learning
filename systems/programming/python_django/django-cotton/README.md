@@ -332,6 +332,29 @@ Mine, just a reminder for myself:
 {{ slot }}
 ```
 
+##### `my_view.html`
+
+```html
+<c-my-component>
+    <p>Some content</p>
+</c-my-component>
+```
+
+##### Penjelasan
+
+- The `{{ slot }}` variable
+  - will contain
+    - all of the content provided
+      - between
+        - the opening,
+          - > `<c-my-component>`
+        - and closing tag;
+          - > `</c-my-component>`
+        - of the current component
+          - as defined in the parent.
+            - > `<p>Some content</p>`
+            - > me: asa rancu kalimat-nya.
+
 ...
 
 ### Your first component, from [2]
