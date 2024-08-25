@@ -407,6 +407,28 @@ Mine, just a reminder for myself:
 </a>
 ```
 
+### Attributes, from [1]
+
+- Components
+  - are highly configurable.
+  - One way to control
+    - the content,
+    - and behaviour;
+    - of a component is
+      - through attributes.
+
+#### `cotton/weather.html`
+
+```html
+<p>It's {{ temperature }}<sup>{{ unit }}</sup> and the condition is {{ condition }}.</p>
+```
+
+#### `my_view.html`
+
+```html
+<c-weather temperature="23" unit="c" condition="windy"></c-weather>
+```
+
 ### Named slots, from [2]
 
 - Named slots
