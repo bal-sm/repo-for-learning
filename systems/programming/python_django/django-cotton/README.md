@@ -509,7 +509,7 @@ That has a component definition like:
 ```
 
 Mine, learning, maintenance:
-> cobain dulu, kalo salah, ubah dong.
+> cobain dulu, kalo salah, ubah dong. terus emang bisa pake `-`?
 
 ### Passing template variables by reference, from [1]
 
