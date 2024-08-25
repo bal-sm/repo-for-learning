@@ -552,6 +552,17 @@ To pass data by reference, prepend the attribute with a ` : `.
       - like a standard template variable.
   - > my opinion: `name` as a `c-slot` attributes? weird. We thought that it could go wrong, karena custom 'html' thing. Padahal mah tapi enggak, soalnya the `name` of `c-slot` tea, moal ever send to the browser.. Server thing only.
 
+- They allow you to define
+  - mixed markup,
+  - 'HTML',
+  - and Django native tags;
+  - and the rendered block
+    - will be provided
+      - as a template variable
+        - > regular `{{ custom_variable }}`
+        - to the child component.
+          - > rancu.
+
 ...
 
 ### Template expressions inside attributes, from [2]
