@@ -575,7 +575,27 @@ To pass data by reference, prepend the attribute with a ` : `.
       - `<c-thing some="thing" />`
     - you will notice the fluidity of this approach.
 
-...
+#### `cotton/weather_card.html`
+
+```html
+<div class="flex ...">
+    <h2>{{ day }}:</h2> {{ icon }} {{ label }}
+</div>
+```
+
+#### `view.html`
+
+```html
+<c-weather-card day="Tuesday">
+    <c-slot name="icon">
+        <svg>...</svg>
+    </c-slot>
+
+    <c-slot name="label">
+        <h2 class="text-yellow-500">Sunny</h2>
+    </c-slot>
+</c-weather-card>
+```
 
 ### Template expressions inside attributes, from [2]
 
