@@ -569,6 +569,12 @@ To pass data by reference, prepend the attribute with a ` : `.
       - html-like tags
       - and patterns.
 
+- After writing
+  - a couple of components
+    - like this,
+      - `<c-thing some="thing" />`
+    - you will notice the fluidity of this approach.
+
 ...
 
 ### Template expressions inside attributes, from [2]
