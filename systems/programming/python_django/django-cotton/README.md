@@ -563,6 +563,12 @@ To pass data by reference, prepend the attribute with a ` : `.
         - to the child component.
           - > rancu.
 
+- Adopting the nested HTML approach here
+  - keeps readability and integrates well
+    - with how editors already treat
+      - html-like tags
+      - and patterns.
+
 ...
 
 ### Template expressions inside attributes, from [2]
