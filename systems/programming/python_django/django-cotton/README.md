@@ -310,6 +310,51 @@ Cotton uses the following naming conventions:
 
 ## Walkthrough
 
+### Components Intro, from [1], dupe makanya
+
+- Components are
+  - reusable pieces
+    - of view template.
+      - > me: `html`s, you know it.
+  - They can contain
+    - native Django template syntax
+      - and can be used
+        - inside standard Django templates.
+
+Mine, just a reminder for myself:
+> I NEED TO FUCKING DO IT. ieu heula. IDK. IH.
+
+#### A minimal example
+
+##### `cotton/my_component.html`
+
+```html
+{{ slot }}
+```
+
+##### `my_view.html`
+
+```html
+<c-my-component>
+    <p>Some content</p>
+</c-my-component>
+```
+
+##### Penjelasan
+
+- The `{{ slot }}` variable
+  - will contain
+    - all of the content provided
+      - between
+        - the opening,
+          - > `<c-my-component>`
+        - and closing tag;
+          - > `</c-my-component>`
+        - of the current component
+          - as defined in the parent.
+            - > `<p>Some content</p>`
+            - > me: asa rancu kalimat-nya.
+
 ### Your first component, from [2]
 
 ```html
@@ -337,22 +382,6 @@ Cotton uses the following naming conventions:
   - > terus teh bisa gini, `type={{ type }}`, gening, terus emang digituin cara kerja-nya. it's divine.
     - > ini teh misalnya, reimplement Django's `Form`, soalnya honestly terlalu kaku templating system-nya, teu puguh.
 
-### Components Intro, from [1], dupe makanya
-
-- Components are
-  - reusable pieces
-    - of view template.
-      - > me: `html`s, you know it.
-  - They can contain
-    - native Django template syntax
-      - and can be used
-        - inside standard Django templates.
-
-Mine, just a reminder for myself:
-> I NEED TO FUCKING DO IT. ieu heula. IDK. IH.
-
-...
-
 ### Add attributes, from [2]
 
 ```html
@@ -376,6 +405,28 @@ Mine, just a reminder for myself:
 <a href="/contact" class="...">
     Contact
 </a>
+```
+
+### Attributes, from [1]
+
+- Components
+  - are highly configurable.
+  - One way to control
+    - the content,
+    - and behaviour;
+    - of a component is
+      - through attributes.
+
+#### `cotton/weather.html`
+
+```html
+<p>It's {{ temperature }}<sup>{{ unit }}</sup> and the condition is {{ condition }}.</p>
+```
+
+#### `my_view.html`
+
+```html
+<c-weather temperature="23" unit="c" condition="windy"></c-weather>
 ```
 
 ### Named slots, from [2]
@@ -438,11 +489,13 @@ context = {
   - you prepend the attribute name
     - with a colon `:`.
       - > `:user="user"`
+        - > or should I write like this:
+          - > `:user-object-to-component="user_object_from_context"`
   - Consider a bio card component:
 
 ```html
 <!-- in view -->
-<c-bio-card :user="user" />
+<c-bio-card :user-object-to-component="user_object_from_context" />
 ```
 
 That has a component definition like:
@@ -450,10 +503,67 @@ That has a component definition like:
 ```html
 <!-- cotton/bio_card.html -->
 <div class="...">
-  <img src="{{ user.avatar }}" alt="...">
-  {{ user.username }} {{ user.country_code }}
+  <img src="{{ user-object-to-component.avatar }}" alt="...">
+  {{ user-object-to-component.username }} {{ user-object-to-component.country_code }}
 </div>
 ```
+
+Mine, learning, maintenance:
+> cobain dulu, kalo salah, ubah dong. terus emang bisa pake `-`?
+
+### Passing template variables by reference, from [1]
+
+- Sometimes you'll want to pass a variable
+  - from the parent's `context`
+    - 'as is'
+      - for the child component
+        - to perform what it wants.
+
+To pass data by reference, prepend the attribute with a ` : `.
+
+#### `view.html`
+
+```html
+<c-weather :today="today"></c-weather>
+```
+
+#### `cotton/weather.html`
+
+```html
+<p>It's {{ today.temperature }}<sup>{{ today.unit }}</sup> and the condition is {{ today.condition }}.</p>
+```
+
+### Named slots, from [1]
+
+- There are occasions
+  - when you will need
+    - to pass blocks of HTML
+      - > customized. misalnya: `<input>` to `c-form`.
+    - or dynamic content.
+      - > ~~weather thing. di bawah.~~ mungkin lebih `htmx` attributes / 'Alpine.js' thing kali ya.
+    - In these cases,
+      - we can reach to _named slots_.
+
+- Named slots
+  - are *defined*
+    - **with** the `<c-slot name="...">...</c-slot>` tag.
+  - The content
+    - is passed to the component
+      - like a standard template variable.
+  - > my opinion: `name` as a `c-slot` attributes? weird. We thought that it could go wrong, karena custom 'html' thing. Padahal mah tapi enggak, soalnya the `name` of `c-slot` tea, moal ever send to the browser.. Server thing only.
+
+- They allow you to define
+  - mixed markup,
+  - 'HTML',
+  - and Django native tags;
+  - and the rendered block
+    - will be provided
+      - as a template variable
+        - > regular `{{ custom_variable }}`
+        - to the child component.
+          - > rancu.
+
+...
 
 ### Template expressions inside attributes, from [2]
 
