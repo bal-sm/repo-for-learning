@@ -483,56 +483,6 @@ context = {
 }
 ```
 
-### Pass template variable as an attribute, from [2]
-
-- To pass a template variable:
-  - you prepend the attribute name
-    - with a colon `:`.
-      - > `:user="user"`
-        - > or should I write like this:
-          - > `:user-object-to-component="user_object_from_context"`
-  - Consider a bio card component:
-
-```html
-<!-- in view -->
-<c-bio-card :user-object-to-component="user_object_from_context" />
-```
-
-That has a component definition like:
-
-```html
-<!-- cotton/bio_card.html -->
-<div class="...">
-  <img src="{{ user-object-to-component.avatar }}" alt="...">
-  {{ user-object-to-component.username }} {{ user-object-to-component.country_code }}
-</div>
-```
-
-Mine, learning, maintenance:
-> cobain dulu, kalo salah, ubah dong. terus emang bisa pake `-`?
-
-### Passing template variables by reference, from [1]
-
-- Sometimes you'll want to pass a variable
-  - from the parent's `context`
-    - 'as is'
-      - for the child component
-        - to perform what it wants.
-
-To pass data by reference, prepend the attribute with a ` : `.
-
-#### `view.html`
-
-```html
-<c-weather :today="today"></c-weather>
-```
-
-#### `cotton/weather.html`
-
-```html
-<p>It's {{ today.temperature }}<sup>{{ today.unit }}</sup> and the condition is {{ today.condition }}.</p>
-```
-
 ### Named slots, from [1]
 
 - There are occasions
@@ -595,6 +545,56 @@ To pass data by reference, prepend the attribute with a ` : `.
         <h2 class="text-yellow-500">Sunny</h2>
     </c-slot>
 </c-weather-card>
+```
+
+### Pass template variable as an attribute, from [2]
+
+- To pass a template variable:
+  - you prepend the attribute name
+    - with a colon `:`.
+      - > `:user="user"`
+        - > or should I write like this:
+          - > `:user-object-to-component="user_object_from_context"`
+  - Consider a bio card component:
+
+```html
+<!-- in view -->
+<c-bio-card :user-object-to-component="user_object_from_context" />
+```
+
+That has a component definition like:
+
+```html
+<!-- cotton/bio_card.html -->
+<div class="...">
+  <img src="{{ user-object-to-component.avatar }}" alt="...">
+  {{ user-object-to-component.username }} {{ user-object-to-component.country_code }}
+</div>
+```
+
+Mine, learning, maintenance:
+> cobain dulu, kalo salah, ubah dong. terus emang bisa pake `-`?
+
+### Passing template variables by reference, from [1]
+
+- Sometimes you'll want to pass a variable
+  - from the parent's `context`
+    - 'as is'
+      - for the child component
+        - to perform what it wants.
+
+To pass data by reference, prepend the attribute with a ` : `.
+
+#### `view.html`
+
+```html
+<c-weather :today="today"></c-weather>
+```
+
+#### `cotton/weather.html`
+
+```html
+<p>It's {{ today.temperature }}<sup>{{ today.unit }}</sup> and the condition is {{ today.condition }}.</p>
 ```
 
 ### Template expressions inside attributes, from [2]
