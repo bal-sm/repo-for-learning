@@ -611,6 +611,23 @@ You can use template expression statements inside attributes.
 Mine:
 > wow, valentine's day on the books.
 
+### Using template expressions in attributes, from [1]
+
+- Cotton allows you
+  - to include
+    - template variables,
+      - > `{{ thing }}`
+    - and expressions;
+      - > `{% get_intensity %}` and `{{ thing|default:'nothing' }}`
+    - inside attributes.
+
+```html
+<c-weather temperature="{{ temperature|floatformat:0 }}"
+           unit="{{ unit|default:'c' }}"
+           condition="very {% get_intensity %}"
+/>
+```
+
 ### Boolean attributes, from [2]
 
 - Boolean attributes reduce boilerplate
