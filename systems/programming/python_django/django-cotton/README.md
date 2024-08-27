@@ -643,10 +643,25 @@ Mine:
   - to a component.
   - Cotton supports providing the attribute name
     - without a value
-      - > ~~`:`~~`required`~~`="True"`~~
-      - which will provide a boolean `True` to the component.
+      - > ~~`:`~~`required`~~`="True"`~~ (only)
+      - which will provide a boolean `True`
+        - to the component.
 
-...
+#### `cotton/input.html`
+
+```html
+<input type="text" {{ attrs }} />
+
+{% if required is True %}
+    <span class="text-red-500">*</span>
+{% endif %}
+```
+
+#### `form_view.html`
+
+```html
+<c-input name="telephone" required />
+```
 
 ### Passing Python data types, from [2]
 
