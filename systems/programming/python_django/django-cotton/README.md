@@ -720,7 +720,18 @@ Mine, simplified aja:
   - This is particularly powerful
     - when you are building [form inputs](https://django-cotton.com/docs/form-fields).
 
-...
+#### `cotton/input.html`
+
+```html
+<input type="text" class="border ..." {{ attrs }} />
+```
+
+#### `form_view.html`
+
+```html
+<c-input name="first_name" placeholder="First name" />
+<c-input name="last_name" placeholder="Last name" value="Smith" readonly  />
+```
 
 ### In-component Variables with `<c-vars>`, from [2]
 
