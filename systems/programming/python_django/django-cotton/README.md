@@ -1269,6 +1269,33 @@ Them, a note, interesting:
 </c-layouts.base>
 ```
 
+### Using the layouts
+
+`login.html`:
+
+```html
+<c-layouts.guest>
+    <div id="loginForm">
+        <input name="email" type="email" placeholder="Email">
+        ...
+    </div>
+</c-layouts.guest>
+```
+
+`dashboard.html`:
+
+```html
+<c-layouts.app>
+    <c-slot name="sidebar">
+        <a href="/dashboard">Dashboard</a>
+        ...
+    </c-slot>
+    <div id="dashboard">
+        ...
+    </div>
+</c-layouts.app>
+```
+
 ## Caching
 
 - Cotton is optimal
