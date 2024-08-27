@@ -308,7 +308,10 @@ Cotton uses the following naming conventions:
   - or have a closing tag
     - `<c-my-component></c-my-component>`
 
-## Walkthrough
+## Components
+
+Mine:
+> Components walkthrough.
 
 ### Components Intro, from [1], dupe makanya
 
