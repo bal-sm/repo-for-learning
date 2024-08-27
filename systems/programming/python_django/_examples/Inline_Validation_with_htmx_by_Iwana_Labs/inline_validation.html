@@ -1,0 +1,14 @@
+<!-- from `template/inline_validation.html` -->
+
+{# djlint:off #}
+{% include "_base.html" %}
+{% block content %}
+    {% component "component_tabs" %}
+        {% fill "component_code" %}
+            {% component "form_inline_validation" %}{% endcomponent %}
+        {% endfill %}
+    {% endcomponent %}
+{% endblock content %}
+{# djlint:on #}
+
+<!-- * ya udah we yah, masih bingung tapi `component` vs. `fill` teh gimana. -->

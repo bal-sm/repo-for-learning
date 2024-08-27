@@ -27,6 +27,8 @@
 			"no-inline-html": false,
 			"blanks-around-lists": false,
 			// Rationale: Aside from aesthetic reasons, some parsers, including kramdown, will not parse lists that don't have blank lines before and after them.
+			"emphasis-style": false,
+			"no-duplicate-heading": false
 		},
 		"git.autofetch": false,
 		// taken from my user settings.json
@@ -43,5 +45,10 @@
 		"files.insertFinalNewline": true,
 		"files.trimFinalNewlines": true,
 		"files.trimTrailingWhitespace": true,
+		"editor.fontFamily": "'SeriousShanns Nerd Font Propo', 'monospace', monospace",
+		"editor.fontSize": 16, // default-nya: 14
+		"workbench.colorTheme": "Default Dark+",
+		"workbench.preferredDarkColorTheme": "Default Dark+",
+		"workbench.preferredLightColorTheme": "Default Light+",
 	}
 }
