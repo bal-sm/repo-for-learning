@@ -710,6 +710,18 @@ Mine, simplified aja:
 <input type="text" class="..." name="country" id="country" value="Japan" required />
 ```
 
+### Pass all attributes with `{{ attrs }}`, from [1]
+
+- It's sometimes useful
+  - to be able to reflect all attributes
+    - provided in the parent
+      - down to an HTML element
+        - in the component.
+  - This is particularly powerful
+    - when you are building [form inputs](https://django-cotton.com/docs/form-fields).
+
+...
+
 ### In-component Variables with `<c-vars>`, from [2]
 
 - Django templates
