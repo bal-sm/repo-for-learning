@@ -928,7 +928,7 @@ Input will have all attributes provided apart from the `icon`:
 <input type="password" id="password" />
 ```
 
-#### Vars are excluded from `{{ attrs }}`
+#### Vars are excluded from `{{ attrs }}`, from [1]
 
 - Keys defined in `<c-vars />`
   - will not be included in `{{ attrs }}`.
