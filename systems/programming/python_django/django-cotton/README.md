@@ -1372,6 +1372,14 @@ _skipped aja dulu._
 Mine:
 > mending 'htmx'-ize aja daripada pake ini.
 
+## Configuration
+
+The following configuration can be provided in your `settings.py`:
+
+- `COTTON_DIR`
+  - `str` (default: 'cotton')
+  - Change the default path in your templates directory where cotton components can be placed, for example "components".
+
 ## ...
 
 ...
