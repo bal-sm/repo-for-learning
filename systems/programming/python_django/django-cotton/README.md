@@ -1219,6 +1219,25 @@ Them, a note, interesting:
     }" />
 ```
 
+## Layouts, from [1]
+
+- Cottons makes building layouts a piece of cake.
+  - Let's start with composing a base layout
+    - that contains the base of our view:
+
+`cotton/layouts/base.html`:
+
+```html
+<html>
+    <head>
+        ...
+    </head>
+    <body>
+        {{ slot }}
+    </body>
+</html>
+```
+
 ## Caching
 
 - Cotton is optimal
