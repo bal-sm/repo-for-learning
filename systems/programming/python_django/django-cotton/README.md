@@ -1380,10 +1380,6 @@ The following configuration can be provided in your `settings.py`:
   - `str` (default: 'cotton')
   - Change the default path in your templates directory where cotton components can be placed, for example "components".
 
-## ...
-
-...
-
 ## Notes
 
 Mine:
