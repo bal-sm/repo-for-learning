@@ -1356,6 +1356,22 @@ Them, a note, interesting:
 - For full docs and demos,
   - checkout <a href="https://django-cotton.com" target="_blank">django-cotton.com</a>
 
+## Examples
+
+### Form Inputs, from [1]
+
+_not on this file._
+
+Mine:
+> bikin aja di-file lain, soalnya mau ditambahin sama "my own experience".
+
+### Re-usable tabs with alpine.js, from [1]
+
+_skipped aja dulu._
+
+Mine:
+> mending 'htmx'-ize aja daripada pake ini.
+
 ## ...
 
 ...
