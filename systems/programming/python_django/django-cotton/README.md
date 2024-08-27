@@ -723,6 +723,33 @@ Mine, simplified aja:
 </select>
 ```
 
+### Pass basic python data types, from [1]
+
+_skipped soalnya [sama kayak atas](#passing-python-data-types-from-2)_
+
+Tambahan:
+
+- This approach can also be utilised
+  - by in-component vars
+    - in the `c-vars` tag:
+
+`cotton/search.html`:
+
+```html
+<c-vars :config="{'category': 'fruit', 'limit': 10}" />
+
+<div>
+    Current category: {{ config.category }}
+    Current limit: {{ config.limit }}
+    ...
+</div>
+```
+
+- This example shows we can use `c-vars`
+  - to provide a default
+    - to an optional dictionary variable `config`
+      - from the parent.
+
 ### Increase Re-usability with `{{ attrs }}`, from [2]
 
 - `{{ attrs }}` is a special variable
