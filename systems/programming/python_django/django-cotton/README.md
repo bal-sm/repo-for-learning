@@ -308,7 +308,10 @@ Cotton uses the following naming conventions:
   - or have a closing tag
     - `<c-my-component></c-my-component>`
 
-## Walkthrough
+## Components
+
+Mine:
+> Components walkthrough.
 
 ### Components Intro, from [1], dupe makanya
 
@@ -483,6 +486,70 @@ context = {
 }
 ```
 
+### Named slots, from [1]
+
+- There are occasions
+  - when you will need
+    - to pass blocks of HTML
+      - > customized. misalnya: `<input>` to `c-form`.
+    - or dynamic content.
+      - > ~~weather thing. di bawah.~~ mungkin lebih `htmx` attributes / 'Alpine.js' thing kali ya.
+    - In these cases,
+      - we can reach to _named slots_.
+
+- Named slots
+  - are *defined*
+    - **with** the `<c-slot name="...">...</c-slot>` tag.
+  - The content
+    - is passed to the component
+      - like a standard template variable.
+  - > my opinion: `name` as a `c-slot` attributes? weird. We thought that it could go wrong, karena custom 'html' thing. Padahal mah tapi enggak, soalnya the `name` of `c-slot` tea, moal ever send to the browser.. Server thing only.
+
+- They allow you to define
+  - mixed markup,
+  - 'HTML',
+  - and Django native tags;
+  - and the rendered block
+    - will be provided
+      - as a template variable
+        - > regular `{{ custom_variable }}`
+        - to the child component.
+          - > rancu.
+
+- Adopting the nested HTML approach here
+  - keeps readability and integrates well
+    - with how editors already treat
+      - html-like tags
+      - and patterns.
+
+- After writing
+  - a couple of components
+    - like this,
+      - `<c-thing some="thing" />`
+    - you will notice the fluidity of this approach.
+
+#### `cotton/weather_card.html`
+
+```html
+<div class="flex ...">
+    <h2>{{ day }}:</h2> {{ icon }} {{ label }}
+</div>
+```
+
+#### `view.html`
+
+```html
+<c-weather-card day="Tuesday">
+    <c-slot name="icon">
+        <svg>...</svg>
+    </c-slot>
+
+    <c-slot name="label">
+        <h2 class="text-yellow-500">Sunny</h2>
+    </c-slot>
+</c-weather-card>
+```
+
 ### Pass template variable as an attribute, from [2]
 
 - To pass a template variable:
@@ -533,38 +600,6 @@ To pass data by reference, prepend the attribute with a ` : `.
 <p>It's {{ today.temperature }}<sup>{{ today.unit }}</sup> and the condition is {{ today.condition }}.</p>
 ```
 
-### Named slots, from [1]
-
-- There are occasions
-  - when you will need
-    - to pass blocks of HTML
-      - > customized. misalnya: `<input>` to `c-form`.
-    - or dynamic content.
-      - > ~~weather thing. di bawah.~~ mungkin lebih `htmx` attributes / 'Alpine.js' thing kali ya.
-    - In these cases,
-      - we can reach to _named slots_.
-
-- Named slots
-  - are *defined*
-    - **with** the `<c-slot name="...">...</c-slot>` tag.
-  - The content
-    - is passed to the component
-      - like a standard template variable.
-  - > my opinion: `name` as a `c-slot` attributes? weird. We thought that it could go wrong, karena custom 'html' thing. Padahal mah tapi enggak, soalnya the `name` of `c-slot` tea, moal ever send to the browser.. Server thing only.
-
-- They allow you to define
-  - mixed markup,
-  - 'HTML',
-  - and Django native tags;
-  - and the rendered block
-    - will be provided
-      - as a template variable
-        - > regular `{{ custom_variable }}`
-        - to the child component.
-          - > rancu.
-
-...
-
 ### Template expressions inside attributes, from [2]
 
 You can use template expression statements inside attributes.
@@ -578,6 +613,23 @@ You can use template expression statements inside attributes.
 
 Mine:
 > wow, valentine's day on the books.
+
+### Using template expressions in attributes, from [1]
+
+- Cotton allows you
+  - to include
+    - template variables,
+      - > `{{ thing }}`
+    - and expressions;
+      - > `{% get_intensity %}` and `{{ thing|default:'nothing' }}`
+    - inside attributes.
+
+```html
+<c-weather temperature="{{ temperature|floatformat:0 }}"
+           unit="{{ unit|default:'c' }}"
+           condition="very {% get_intensity %}"
+/>
+```
 
 ### Boolean attributes, from [2]
 
@@ -603,6 +655,32 @@ Mine:
 <a href="{{ url }}" {% if external %} target="_blank" {% endif %} class="...">
     {{ slot }}
 </a>
+```
+
+### Boolean attributes, from [1]
+
+- Sometimes you just want to pass a simple boolean
+  - to a component.
+  - Cotton supports providing the attribute name
+    - without a value
+      - > ~~`:`~~`required`~~`="True"`~~ (only)
+      - which will provide a boolean `True`
+        - to the component.
+
+#### `cotton/input.html`
+
+```html
+<input type="text" {{ attrs }} />
+
+{% if required is True %}
+    <span class="text-red-500">*</span>
+{% endif %}
+```
+
+#### `form_view.html`
+
+```html
+<c-input name="telephone" required />
 ```
 
 ### Passing Python data types, from [2]
@@ -648,6 +726,33 @@ Mine, simplified aja:
 </select>
 ```
 
+### Pass basic python data types, from [1]
+
+_skipped soalnya [sama kayak atas](#passing-python-data-types-from-2)_
+
+Tambahan:
+
+- This approach can also be utilised
+  - by in-component vars
+    - in the `c-vars` tag:
+
+`cotton/search.html`:
+
+```html
+<c-vars :config="{'category': 'fruit', 'limit': 10}" />
+
+<div>
+    Current category: {{ config.category }}
+    Current limit: {{ config.limit }}
+    ...
+</div>
+```
+
+- This example shows we can use `c-vars`
+  - to provide a default
+    - to an optional dictionary variable `config`
+      - from the parent.
+
 ### Increase Re-usability with `{{ attrs }}`, from [2]
 
 - `{{ attrs }}` is a special variable
@@ -678,7 +783,32 @@ Mine, simplified aja:
 <input type="text" class="..." name="country" id="country" value="Japan" required />
 ```
 
-### In-component Variables with `<c-vars>`, from [2]
+### Pass all attributes with `{{ attrs }}`, from [1]
+
+- It's sometimes useful
+  - to be able to reflect all attributes
+    - provided in the parent
+      - down to an HTML element
+        - in the component.
+  - This is particularly powerful
+    - when you are building [form inputs](https://django-cotton.com/docs/form-fields).
+
+#### `cotton/input.html`
+
+```html
+<input type="text" class="border ..." {{ attrs }} />
+```
+
+#### `form_view.html`
+
+```html
+<c-input name="first_name" placeholder="First name" />
+<c-input name="last_name" placeholder="Last name" value="Smith" readonly  />
+```
+
+### In-component Variables with `<c-vars>`
+
+#### Intro from [2]
 
 - Django templates
   - adhere quite strictly to the 'MVC' model
@@ -698,6 +828,16 @@ Mine, simplified aja:
         - and loses encapsulation of the component.
   - Cotton allows you define in-component variables
     - for the following reasons:
+
+#### Vars, Intro from [1]
+
+- Vars are defined
+  - using a `<c-vars />` tag
+    - at the top of a component file.
+  - It can contain numerous `key="value"` pairs.
+  - It can also be a single key without a default value.
+    - Specifying an attribute as a 'var'
+      - will remove the item from `{{ attrs }}`.
 
 #### 1. Using `<c-vars>` for default attributes, from [2]
 
@@ -743,6 +883,33 @@ Now we have a default theme for our button, but it is overridable:
 <a href="..." class="bg-green-500">
     But I'm green
 </a>
+```
+
+#### `<c-vars />` gives attributes default values, from [1]
+
+- You may design a component
+  - that will often have
+    - a default behaviour
+    - and rarely needs overriding.
+  - In this case,
+    - you may opt to give a default value
+      - to your component.
+
+##### `cotton/alert.html`
+
+```html
+<c-vars type="success" />
+
+<div class="{% if type == 'success' %} .. {% elif type == 'danger' %} .. {% endif %}">
+    {{ slot }}
+</div>
+```
+
+##### `form_view.html`
+
+```html
+<c-alert>All good!</c-alert>
+<c-alert type="danger">Oh no!</c-alert>
 ```
 
 #### 2. Using `<c-vars>` to govern `{{ attrs }}`, from [2]
@@ -791,6 +958,39 @@ Input will have all attributes provided apart from the `icon`:
 <input type="password" id="password" />
 ```
 
+#### Vars are excluded from `{{ attrs }}`, from [1]
+
+- Keys defined in `<c-vars />`
+  - will not be included in `{{ attrs }}`.
+  - This is useful
+    - when some of the properties
+      - you pass down to a component
+        - are for configuration purposes **only**
+        - and not intended as attributes.
+
+##### `cotton/input_group.html`
+
+```html
+<c-vars label errors />
+
+<label>{{ label }}</label>
+
+<input type="text" class="border ..." {{ attrs }} />
+
+{% if errors %}
+    {% for error in errors %}
+        {{ error }}
+    {% endfor %}
+{% endif %}
+```
+
+##### `form_view.html`
+
+```html
+<c-input-group label="First name" placeholder="First name" :errors="errors.first_name" />
+<c-input-group label="Last name" placeholder="Last name" :errors="errors.last_name" />
+```
+
 ### An example with `htmx` from [2]
 
 - Cotton helps carve out re-usable components,
@@ -825,6 +1025,88 @@ Input will have all attributes provided apart from the `icon`:
 
 Mine:
 > wow. valentine's day on the books. gitu kan ya?
+
+### Dynamic Components, from [1]
+
+- There can be times
+  - where components need to be included dynamically.
+    - For these cases we can reach
+      - for a special `<c-component>` tag
+        - with an `is` attribute:
+
+`cotton/icon_list.html`:
+
+```html
+{% for icon in icons %}
+    <c-component is="icons.{{ icon }}" />
+{% endfor %}
+```
+
+Mine:
+> which is nantinya kalo `icons.hatchet` berarti `icons/hatchet.html`. **meureun**.
+
+- The `is` attribute
+  - is similar
+    - to other attributes
+      - so we have a number of possibilities
+        - to define it:
+
+`cotton/icon_list.html`:
+
+```html
+<!-- as variable -->
+<c-component :is="icon_name" />
+
+<!-- as an expression -->
+<c-component is="icon_{{ icon_name }}" />
+```
+
+Mine:
+> jadi ini teh include other 'component's? masih kurang penjelasannya.
+
+### Component-ize Icons & SVG Graphics, from [1]
+
+- Cotton's component-ized approach
+  - provides another compelling use-case.
+  - Sure, there are `svg` icon packages for Django already,
+    - but what if you need to use a custom icon in your project?
+
+`plane.svg`:
+
+```html
+<svg viewBox="0 0 512 512">
+  <g fill="none" stroke="#000" stroke-width="30" stroke-linejoin="round">
+    <path d="M143.533 256 79.267 384.533v-192.8L497 127.467z"/>
+    <path d="M143.533 256 79.267 384.533l119.352-73.448zM15 127.467h482L79.267 191.733z"/>
+    <path d="M143.533 256 497 127.467l-241 241z"/>
+  </g>
+</svg>
+```
+
+#### Let's "cotton-ize"
+
+`cotton/icons/plane.html`:
+
+```html
+<c-vars stroke_width="30" />
+
+<svg {{ attrs }} viewBox="0 0 512 512">
+  <g fill="none" stroke="currentColor" stroke-width="{{ stroke_width }}" stroke-linejoin="round">
+    <path d="M143.533 256 79.267 384.533v-192.8L497 127.467z"/>
+    <path d="M143.533 256 79.267 384.533l119.352-73.448zM15 127.467h482L79.267 191.733z"/>
+    <path d="M143.533 256 497 127.467l-241 241z"/>
+  </g>
+</svg>
+```
+
+`view.html`:
+
+```html
+<c-icons.plane class="size-20 text-red-500" />
+<c-icons.plane class="size-20 text-teal-500" />
+<c-icons.plane class="size-20 text-gray-500 animate-bounce" />
+<c-icons.plane class="size-24 text-purple-500" stroke_width="10" />
+```
 
 ## Limitations in Django that Cotton overcomes, from [2]
 
@@ -981,6 +1263,83 @@ Them, a note, interesting:
     }" />
 ```
 
+## Layouts, from [1]
+
+- Cottons makes building layouts a piece of cake.
+  - Let's start with composing a base layout
+    - that contains the base of our view:
+
+`cotton/layouts/base.html`:
+
+```html
+<html>
+    <head>
+        ...
+    </head>
+    <body>
+        {{ slot }}
+    </body>
+</html>
+```
+
+### Create layout variants
+
+- Imagine that we're creating a web app
+  - with an authenticated area,
+    - so we'll need areas
+      - for guests
+      - and users.
+  - Let's create these, extending from the base component.
+
+`cotton/layouts/guest.html`:
+
+```html
+<c-layouts.base>
+    {{ slot }}
+</c-layouts.base>
+```
+
+`cotton/layouts/app.html`:
+
+```html
+<c-layouts.base>
+    <div class="sidebar">
+        {{ sidebar }}
+    </div>
+
+    <div class="main">
+        {{ slot }}
+    </div>
+</c-layouts.base>
+```
+
+### Using the layouts
+
+`login.html`:
+
+```html
+<c-layouts.guest>
+    <div id="loginForm">
+        <input name="email" type="email" placeholder="Email">
+        ...
+    </div>
+</c-layouts.guest>
+```
+
+`dashboard.html`:
+
+```html
+<c-layouts.app>
+    <c-slot name="sidebar">
+        <a href="/dashboard">Dashboard</a>
+        ...
+    </c-slot>
+    <div id="dashboard">
+        ...
+    </div>
+</c-layouts.app>
+```
+
 ## Caching
 
 - Cotton is optimal
@@ -997,9 +1356,29 @@ Them, a note, interesting:
 - For full docs and demos,
   - checkout <a href="https://django-cotton.com" target="_blank">django-cotton.com</a>
 
-## ...
+## Examples
 
-...
+### Form Inputs, from [1]
+
+_not on this file._
+
+Mine:
+> bikin aja di-file lain, soalnya mau ditambahin sama "my own experience".
+
+### Re-usable tabs with alpine.js, from [1]
+
+_skipped aja dulu._
+
+Mine:
+> mending 'htmx'-ize aja daripada pake ini.
+
+## Configuration
+
+The following configuration can be provided in your `settings.py`:
+
+- `COTTON_DIR`
+  - `str` (default: 'cotton')
+  - Change the default path in your templates directory where cotton components can be placed, for example "components".
 
 ## Notes
 
