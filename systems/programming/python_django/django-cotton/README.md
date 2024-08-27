@@ -882,6 +882,39 @@ Now we have a default theme for our button, but it is overridable:
 </a>
 ```
 
+#### Vars are excluded from `{{ attrs }}`
+
+- Keys defined in `<c-vars />`
+  - will not be included in `{{ attrs }}`.
+  - This is useful
+    - when some of the properties
+      - you pass down to a component
+        - are for configuration purposes **only**
+        - and not intended as attributes.
+
+##### `cotton/input_group.html`
+
+```html
+<c-vars label errors />
+
+<label>{{ label }}</label>
+
+<input type="text" class="border ..." {{ attrs }} />
+
+{% if errors %}
+    {% for error in errors %}
+        {{ error }}
+    {% endfor %}
+{% endif %}
+```
+
+##### `form_view.html`
+
+```html
+<c-input-group label="First name" placeholder="First name" :errors="errors.first_name" />
+<c-input-group label="Last name" placeholder="Last name" :errors="errors.last_name" />
+```
+
 #### 2. Using `<c-vars>` to govern `{{ attrs }}`, from [2]
 
 - Using `{{ attrs }}`
