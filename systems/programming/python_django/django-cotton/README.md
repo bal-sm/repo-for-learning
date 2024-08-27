@@ -882,6 +882,33 @@ Now we have a default theme for our button, but it is overridable:
 </a>
 ```
 
+#### `<c-vars />` gives attributes default values, from [1]
+
+- You may design a component
+  - that will often have
+    - a default behaviour
+    - and rarely needs overriding.
+  - In this case,
+    - you may opt to give a default value
+      - to your component.
+
+##### `cotton/alert.html`
+
+```html
+<c-vars type="success" />
+
+<div class="{% if type == 'success' %} .. {% elif type == 'danger' %} .. {% endif %}">
+    {{ slot }}
+</div>
+```
+
+##### `form_view.html`
+
+```html
+<c-alert>All good!</c-alert>
+<c-alert type="danger">Oh no!</c-alert>
+```
+
 #### 2. Using `<c-vars>` to govern `{{ attrs }}`, from [2]
 
 - Using `{{ attrs }}`
