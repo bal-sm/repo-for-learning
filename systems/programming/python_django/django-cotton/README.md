@@ -803,7 +803,9 @@ Tambahan:
 <c-input name="last_name" placeholder="Last name" value="Smith" readonly  />
 ```
 
-### In-component Variables with `<c-vars>`, from [2]
+### In-component Variables with `<c-vars>`
+
+#### Intro from [2]
 
 - Django templates
   - adhere quite strictly to the 'MVC' model
@@ -823,6 +825,16 @@ Tambahan:
         - and loses encapsulation of the component.
   - Cotton allows you define in-component variables
     - for the following reasons:
+
+#### Vars, Intro from [1]
+
+- Vars are defined
+  - using a `<c-vars />` tag
+    - at the top of a component file.
+  - It can contain numerous `key="value"` pairs.
+  - It can also be a single key without a default value.
+    - Specifying an attribute as a 'var'
+      - will remove the item from `{{ attrs }}`.
 
 #### 1. Using `<c-vars>` for default attributes, from [2]
 
