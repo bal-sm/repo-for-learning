@@ -637,6 +637,17 @@ Mine:
 </a>
 ```
 
+### Boolean attributes, from [1]
+
+- Sometimes you just want to pass a simple boolean
+  - to a component.
+  - Cotton supports providing the attribute name
+    - without a value
+      - > ~~`:`~~`required`~~`="True"`~~
+      - which will provide a boolean `True` to the component.
+
+...
+
 ### Passing Python data types, from [2]
 
 - Using the `:`
