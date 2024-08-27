@@ -1238,6 +1238,37 @@ Them, a note, interesting:
 </html>
 ```
 
+### Create layout variants
+
+- Imagine that we're creating a web app
+  - with an authenticated area,
+    - so we'll need areas
+      - for guests
+      - and users.
+  - Let's create these, extending from the base component.
+
+`cotton/layouts/guest.html`:
+
+```html
+<c-layouts.base>
+    {{ slot }}
+</c-layouts.base>
+```
+
+`cotton/layouts/app.html`:
+
+```html
+<c-layouts.base>
+    <div class="sidebar">
+        {{ sidebar }}
+    </div>
+
+    <div class="main">
+        {{ slot }}
+    </div>
+</c-layouts.base>
+```
+
 ## Caching
 
 - Cotton is optimal
