@@ -1042,6 +1042,9 @@ Mine:
 {% endfor %}
 ```
 
+Mine:
+> which is nantinya kalo `icons.hatchet` berarti `icons/hatchet.html`. **meureun**.
+
 - The `is` attribute
   - is similar
     - to other attributes
