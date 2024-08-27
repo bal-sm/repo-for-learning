@@ -1026,6 +1026,41 @@ Input will have all attributes provided apart from the `icon`:
 Mine:
 > wow. valentine's day on the books. gitu kan ya?
 
+### Dynamic Components, from [1]
+
+- There can be times
+  - where components need to be included dynamically.
+    - For these cases we can reach
+      - for a special `<c-component>` tag
+        - with an `is` attribute:
+
+`cotton/icon_list.html`:
+
+```html
+{% for icon in icons %}
+    <c-component is="icons.{{ icon }}" />
+{% endfor %}
+```
+
+- The `is` attribute
+  - is similar
+    - to other attributes
+      - so we have a number of possibilities
+        - to define it:
+
+`cotton/icon_list.html`:
+
+```html
+<!-- as variable -->
+<c-component :is="icon_name" />
+
+<!-- as an expression -->
+<c-component is="icon_{{ icon_name }}" />
+```
+
+Mine:
+> jadi ini teh include other 'component's? masih kurang penjelasannya.
+
 ## Limitations in Django that Cotton overcomes, from [2]
 
 - Whilst
