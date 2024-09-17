@@ -79,7 +79,7 @@ Mine:
   - dan semua utang.
 - Mari kita tinjau organisasi yang mengatur profesi akuntansi.
 
-### 1. Badan Pembuat Peraturan
+### Badan Pembuat Peraturan
 
 - Financial Accounting Standards Board (FASB),
   - merumuskan standar-standar akuntansi.
@@ -91,5 +91,7 @@ Mine:
   - adalah profesional berlisensi yang bekerja untuk perusahaan tertentu.
 - Peraturan yang berlaku bagi informasi akuntan publik disebut prinsip-prinsip akuntansi yang diterima umum
   - (_generally accepted accounting principles = GAAP_)
+
+### Etika dalam Akuntansi dan Bisnis
 
 ...
