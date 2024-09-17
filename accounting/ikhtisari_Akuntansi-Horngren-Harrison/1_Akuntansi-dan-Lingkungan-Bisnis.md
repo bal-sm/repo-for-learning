@@ -79,4 +79,12 @@ Mine:
   - dan semua utang.
 - Mari kita tinjau organisasi yang mengatur profesi akuntansi.
 
+### 1. Badan Pembuat Peraturan
+
+- Financial Accounting Standards Board (FASB),
+  - merumuskan standar-standar akuntansi.
+- Akuntan Publik bersertifikasi (_certified public accountants = CPA_), adalah akuntan profesional yang memiliki lisensi untuk melayani masyarakat umum.
+- Akuntan manajemen bersertifikasi (_certified management accountants = CMA_), adalah profesional berlisensi yang bekerja untuk perusahaan tertentu.
+- Peraturan yang berlaku bagi informasi akuntan publik disebut prinsip-prinsip akuntansi yang diterima umum (_generally accepted accounting principles = GAAP_)
+
 ...
