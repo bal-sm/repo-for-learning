@@ -33,4 +33,22 @@ Mine:
 - Laporan keuangan (_financial statements_) melaporkan tentang suatu bisnis dalam istilah (bahasa) moneter.
   - dan merupakan produk utama dari akuntansi.
 
+### Pengambil Keputusan: Pemakai Informasi Akuntansi
+
+- Para pengambil keputusan memerlukan informasi.
+
+- Individu
+  - > yk.
+- Bisnis
+  - Para pemilik bisnis menggunakan informasi akuntansi
+    - untuk menetapkan tujuan.
+- Investor
+  - Untuk memutuskan layak atau tidaknya investasi yang akan dilakukannya.
+    - > meramalkan jumlah laba, misalnya.
+- Kreditor
+  - Sebelum meminjamkan uang kepada Haig Sherman,
+    - pihak bank mengevaluasi kemampuan Sherman untuk melunasi pinjaman itu.
+- Otoritas Pajak
+  - > fyi, somebody else. (future, aamiin.)
+  - Pemerintah lokal, negara bagian, dan federal memungut pajak.
 ...
