@@ -110,4 +110,10 @@ Mine:
   - > "... memiliki kewajiban ... layani, profesi mereka, masyarakat, dan diri mereka sendiri ... mempertahankan standar perilaku etis yang tertinggi."
 - "Praktik yang etis merupakan pelaksanaan bisnis yang baik."
 
+## Jenis Organisasi Bisnis
+
+### Perusahaan Perseorangan
+
+Perusahaan perseorangan (_proprietorship_) dimiliki oleh satu orang, yang disebut proprietor, yang sering kali mengelola jalannya bisnis.
+
 ...
