@@ -30,5 +30,7 @@ Mine:
 
 - Akuntansi merupakan "bahasa bisnis."
 - Konsep laba muncul dari akuntansi.
+- Laporan keuangan (_financial statements_) melaporkan tentang suatu bisnis dalam istilah (bahasa) moneter.
+  - dan merupakan produk utama dari akuntansi.
 
 ...
