@@ -51,4 +51,14 @@ Mine:
 - Otoritas Pajak
   - > fyi, somebody else. (future, aamiin.)
   - Pemerintah lokal, negara bagian, dan federal memungut pajak.
+
+### AKuntansi Keuangan dan Akuntansi Manajemen
+
+- AKuntansi Keuangan
+  - (_financial accounting_)
+  - menyediakan informasi bagi orang-orang di luar perusahaan.
+- Akuntansi Manajemen
+  - (_management accounting_)
+  - terfokus pada informasi yang diperlukan untuk pengambilan keputusan internal oleh manajer perusahaan.
+
 ...
