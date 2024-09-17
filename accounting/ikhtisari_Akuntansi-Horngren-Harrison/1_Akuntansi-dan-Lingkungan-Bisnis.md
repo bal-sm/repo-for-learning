@@ -9,7 +9,12 @@
 ## Intro
 
 - Haig Sherman menjalankan bisnis jasa pemotongan rumput.
+  - Sherman Lawn Service
 - Julie DeFilippo memulai bisnis catering.
+  - DeFilippo Catering
+
+- Disebut perusahaan perseorangan
+  - (_proprietorship_)
 
 Mine:
 > Wow, orang-orang hebat.
