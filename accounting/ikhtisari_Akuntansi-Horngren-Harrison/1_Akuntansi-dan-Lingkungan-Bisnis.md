@@ -29,5 +29,6 @@ Mine:
     - kepada para pengambil keputusan.
 
 - Akuntansi merupakan "bahasa bisnis."
+- Konsep laba muncul dari akuntansi.
 
 ...
