@@ -3,6 +3,5 @@
 Mine:
 > IDK where to buy on official site. SORRY.
 
-## Last position
-
-...
+Mine:
+> Untuk para penulis buku ini, Horngren dan Harrison, dkk. Saya hanya mengikhtisarkan yang telah saya pelajari. Mohon dimengerti.
