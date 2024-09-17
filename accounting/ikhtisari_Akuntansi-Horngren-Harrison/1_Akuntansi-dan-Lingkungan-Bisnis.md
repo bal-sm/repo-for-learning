@@ -114,6 +114,8 @@ Mine:
 
 ### Perusahaan Perseorangan
 
-Perusahaan perseorangan (_proprietorship_) dimiliki oleh satu orang, yang disebut proprietor, yang sering kali mengelola jalannya bisnis.
+- Perusahaan perseorangan (_proprietorship_) dimiliki oleh satu orang,
+  - yang disebut proprietor,
+  - yang sering kali mengelola jalannya bisnis.
 
 ...
