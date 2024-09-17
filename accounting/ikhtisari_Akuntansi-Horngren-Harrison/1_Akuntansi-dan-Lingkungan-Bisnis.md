@@ -19,4 +19,15 @@
 Mine:
 > Wow, orang-orang hebat.
 
+## Akuntansi: Bahasa Bisnis
+
+- Akuntansi (_accounting_) adalah sistem informasi yang
+  - > more like, _concept_
+  - mengukur aktivitas bisnis
+  - memroses data menjadi laporan
+  - dan mengomunikasikan hasilnya
+    - kepada para pengambil keputusan.
+
+- Akuntansi merupakan "bahasa bisnis."
+
 ...
