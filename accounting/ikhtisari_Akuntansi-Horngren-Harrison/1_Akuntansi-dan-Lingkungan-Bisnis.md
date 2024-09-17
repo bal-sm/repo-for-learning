@@ -94,4 +94,11 @@ Mine:
 
 ### Etika dalam Akuntansi dan Bisnis
 
+- Untuk menyediakan informasi yang dapat diandalkan,
+  - SEC mengharuskan laporan keuangan perusahaan bersangkutan diaudit oleh akuntan independen.
+- Audit adalah suatu pemeriksaan keuangan.
+  - Kemudian akuntan independen tersebut menyatakan apakah laporan keuangan telah menyajikan gambaran yang sebenarnya tentang situasi yang dihadapi perusahaan.
+- **Sarbanes-Oxley Act**
+  - memalsukan laporan keuangan merupakan tindakan kriminal.
+
 ...
