@@ -61,4 +61,22 @@ Mine:
   - (_management accounting_)
   - terfokus pada informasi yang diperlukan untuk pengambilan keputusan internal oleh manajer perusahaan.
 
+## Profesi Akuntansi
+
+- $75.000.
+- Banyak kantor akuntan publik diorganisasikan sebagai persekutuan, dan para partner merupakan pemilik perusahaan.
+- Di kantor akuntan swasta,
+  - posisi puncak untuk seorang akuntan adalah _chief financial officer (CFO)_
+  - dan seorang CFO memilki penghasilan yang sama seperti partner di kantor akuntan publik.
+
+- Akuntan mencapai puncak organisasi sama seringnya seperti orang lain.
+  - Mengapa? Karena akuntan harus menangani semua semua hal yang ada di perusahaan dalam rangka mempertangggungjawabkan semua aktivitasnya.
+- Semua hal yang mempengaruhi bisnis:
+  - semua laba,
+  - semua beban,
+  - semua kas,
+  - semua persediaan,
+  - dan semua utang.
+- Mari kita tinjau organisasi yang mengatur profesi akuntansi.
+
 ...
