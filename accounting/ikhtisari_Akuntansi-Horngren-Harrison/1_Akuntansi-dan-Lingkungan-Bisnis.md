@@ -108,5 +108,6 @@ Mine:
   - > "... memegang teguh kedisiplinan menurut hukum dan peraturan..."
 - Paragraf pembuka dari Standards of Ethical Conduct of the Institute of Management Accountants (IMA) menyatakan:
   - > "... memiliki kewajiban ... layani, profesi mereka, masyarakat, dan diri mereka sendiri ... mempertahankan standar perilaku etis yang tertinggi."
+- "Praktik yang etis merupakan pelaksanaan bisnis yang baik."
 
 ...
