@@ -101,4 +101,12 @@ Mine:
 - **Sarbanes-Oxley Act**
   - memalsukan laporan keuangan merupakan tindakan kriminal.
 
+### Standar Perilaku Profesional
+
+- Kode Perilaku Profesional bagi Akuntan yang dikeluarkan AICPA menyediakan pedoman kepada para akuntan publik dalam melakukan pekerjaannya.
+- Mukadimah dari Code menyatakan:
+  - > "... memegang teguh kedisiplinan menurut hukum dan peraturan..."
+- Paragraf pembuka dari Standards of Ethical Conduct of the Institute of Management Accountants (IMA) menyatakan:
+  - > "... memiliki kewajiban ... layani, profesi mereka, masyarakat, dan diri mereka sendiri ... mempertahankan standar perilaku etis yang tertinggi."
+
 ...
