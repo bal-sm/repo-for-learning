@@ -81,6 +81,7 @@ This tells `htmx`:
     - **not** *`JSON`*.
   - This keeps you firmly
     - within the [original web programming model](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm),
+      - > `rfl`.
     - using [Hypertext As The Engine Of Application State](https://en.wikipedia.org/wiki/HATEOAS)
     - without even needing to really understand that concept.
     - > wow, baca, learning note.
