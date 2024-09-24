@@ -1,7 +1,7 @@
 # `htmx` Documentation - Mahmuda's version
 
 Mine:
-> 1 file-in aja we, `htmx/www/content/docs.md` -> `docs.md` di sini.
+> ~~1 file-in aja we, `htmx/www/content/docs.md` -> `docs.md` di sini.~~ jangan ketang.
 
 Mine:
 > terus jangan lupa `rfl` singleton ini, <https://github.com/bal-sm/bal_simple_finance_app_with_django_and_htmx>.
