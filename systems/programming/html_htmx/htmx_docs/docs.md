@@ -606,7 +606,7 @@ Mine:
   - does not append content
     - from response ([Out of Band Swaps](#oob_swaps)
     - and [Response Headers](#response-headers) will still be processed)
-    - > hah.
+- > ~~hah.~~ it's easy just do it yourself.
 
 #### Morph Swaps - Mahmuda's version
 
