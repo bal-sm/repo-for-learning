@@ -242,7 +242,7 @@ htmx.config.wsReconnectDelay = function (retryCount) {
   1. when a message has been completely processed
     - by `htmx`
   2. and all changes have been settled,
-  3. ssimilar to `htmx:afterOnLoad`.
+  3. similar to `htmx:afterOnLoad`.
 
 - Cancelling this event has no effect.
 
