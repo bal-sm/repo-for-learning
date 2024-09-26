@@ -102,4 +102,17 @@ WebSockets extension support two configuration options:
 </div>
 ```
 
+### Sending Messages to a `WebSocket` - Mahmuda's version
+
+- In the example above,
+  - the form uses the `ws-send` attribute
+    - to indicate that when it is submitted,
+      - the form values should be **serialized as JSON**
+      - and send to the nearest enclosing `WebSocket`, in this case the `/chatroom` endpoint.
+
+- The serialized values will include
+  - a field, `HEADERS`,
+    - that includes the headers normally
+      - submitted with an `htmx` request.
+
 ...
