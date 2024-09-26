@@ -115,4 +115,38 @@ WebSockets extension support two configuration options:
     - that includes the headers normally
       - submitted with an `htmx` request.
 
+### Automatic Reconnection - Mahmuda's version
+
+- If the WebSocket is closed unexpectedly,
+  - due to
+    - `Abnormal Closure`,
+    - `Service Restart`
+    - or `Try Again Later`,
+  - this extension will attempt to reconnect
+    - until the connection is reestablished.
+
+- By default, the extension uses a full-jitter [exponential-backoff algorithm](https://en.wikipedia.org/wiki/Exponential_backoff)
+  - that chooses a randomized retry delay
+    - that grows exponentially over time.
+  - You can use a different algorithm by writing it
+    - into `htmx.config.wsReconnectDelay`.
+  - This function takes a single parameter,
+    - the number of retries,
+    - and returns the time (in milliseconds)
+      - to wait before trying again.
+
+```javascript
+// example reconnect delay that you shouldn't use because
+// it's not as good as the algorithm that's already in place
+htmx.config.wsReconnectDelay = function (retryCount) {
+    return retryCount * 1000 // return value in milliseconds
+}
+```
+
+- The extension also implements
+  - a simple queuing mechanism
+    - that keeps messages in memory
+      - when the socket is not in `OPEN` state
+      - and sends them once the connection is restored.
+
 ...
