@@ -54,7 +54,7 @@ Mine, learning note:
 </div>
 ```
 
-### Configuration
+### Configuration - Mahmuda's version
 
 WebSockets extension support two configuration options:
 
