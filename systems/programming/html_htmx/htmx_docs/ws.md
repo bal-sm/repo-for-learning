@@ -385,4 +385,15 @@ htmx.config.wsReconnectDelay = function (retryCount) {
       - on running
       - and using the test server.
 
-...
+### Migrating from Previous Versions - gak penting
+
+- Previous versions of 'htmx' used a built-in tag `hx-ws`
+  - to implement `WebSockets`.
+  - This code has been migrated into an extension instead.
+  - Here are the steps you need to take to migrate to this version:
+
+| Old Attribute           | New Attribute        | Comments                                                                                                                         |
+|-------------------------|----------------------|----------------------------------------------------------------------------------------------------------------------------------|
+| `hx-ws=""`              | `hx-ext="ws"`        | Use the `hx-ext="ws"` attribute to install the WebSockets extension into any HTML element.                                       |
+| `hx-ws="connect:<url>"` | `ws-connect="<url>"` | Add a new attribute `ws-connect` to the tag that defines the extension to specify the URL of the WebSockets server you're using. |
+| `hx-ws="send"`          | `ws-send=""`         | Add a new attribute `ws-send` to mark any child forms that should send data to your WebSocket server                             |
