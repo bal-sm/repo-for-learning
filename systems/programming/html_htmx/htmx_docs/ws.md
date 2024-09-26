@@ -333,4 +333,43 @@ htmx.config.wsReconnectDelay = function (retryCount) {
 - `detail.socketWrapper`
   - the wrapper around socket object
 
+#### Socket wrapper
+
+- You may notice that all events
+  - expose `detail.socketWrapper` property.
+  - This wrapper holds:
+    - the socket object itself
+    - and the message queue.
+  - It also encapsulates reconnection algorithm.
+    - It exposes a few members:
+
+- `send(message, fromElt)`
+  - sends a message safely.
+  - If the socket is not open,
+    - the message will be persisted in the queue instead
+    - and sent when the socket is ready.
+- `sendImmediately(message, fromElt)`
+  - attempts to send a message regardless of socket state,
+    - bypassing the queue.
+    - May fail
+- `queue`
+  - an array of messages,
+    - awaiting in the queue.
+
+- This wrapper
+  - can be used in your event handlers to
+    - monitor
+    - and manipulate the queue
+      - (e.g., you can reset the queue when reconnecting),
+    - and to send additional messages
+      - (e.g., if you want to send data in batches).
+  - The `fromElt` parameter
+    - is optional
+    - and, when specified,
+      - will trigger corresponding websocket events
+        - from specified element, namely:
+          - `htmx:wsBeforeSend`
+          - and `htmx:wsAfterSend` events
+          - when sending your messages.
+
 ...
