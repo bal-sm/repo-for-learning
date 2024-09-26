@@ -54,4 +54,19 @@ Mine, learning note:
 </div>
 ```
 
+### Configuration
+
+WebSockets extension support two configuration options:
+
+- `createWebSocket`
+  - a factory function
+    - that can be used
+      - to create a custom `WebSocket` instances.
+  - Must be a function,
+    - returning `WebSocket` object
+- `wsBinaryType`
+  - a string value,
+    - that defines socket's [`binaryType`](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/binaryType) property.
+  - Default value is `blob`
+
 ...
