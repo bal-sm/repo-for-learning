@@ -40,4 +40,18 @@ Mine, learning note:
 <script src="https://unpkg.com/htmx-ext-ws@2.0.1/ws.js"></script>
 ```
 
+## Usage
+
+```html
+<div hx-ext="ws" ws-connect="/chatroom">
+    <div id="notifications"></div>
+    <div id="chat_room">
+        ...
+    </div>
+    <form id="form" ws-send>
+        <input name="chat_message">
+    </form>
+</div>
+```
+
 ...
