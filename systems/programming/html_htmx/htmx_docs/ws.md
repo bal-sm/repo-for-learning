@@ -256,4 +256,43 @@ htmx.config.wsReconnectDelay = function (retryCount) {
 - `detail.socketWrapper`
   - the wrapper around socket object
 
+#### Event - `htmx:wsConfigSend`
+
+- This event is triggered
+  - when preparing to send a message
+    - from `ws-send` element.
+- Similarly to [`htmx:configRequest`](https://htmx.org/events#htmx:configRequest),
+  - it allows you to modify the message before sending.
+
+- If the event is cancelled,
+  1. no further processing will occur
+  2. and no messages will be sent.
+
+##### Details
+
+- `detail.parameters`
+  - the parameters that will be submitted in the request
+- `detail.unfilteredParameters`
+  - the parameters that were found before filtering by [`hx-select`](https://htmx.org/reference/hx-select.md)
+- `detail.headers`
+  - the request headers.
+  - Will be attached to the body in `HEADERS` property,
+    - if not falsy
+- `detail.errors`
+  - validation errors.
+  - Will prevent sending and trigger [`htmx:validation:halted`](https://htmx.org/events#htmx:validation:halted) event
+    - if not empty
+- `detail.triggeringEvent`
+  - the event that triggered sending
+- `detail.messageBody`
+  - raw message body that will be sent to the socket.
+  - Undefined,
+    - can be set to value of any type, supported by `WebSockets`.
+  - If set, will override default `JSON` serialization.
+    - Useful, if you want to use some other format, like `XML` or 'MessagePack'
+- `detail.elt`
+  - the element that dispatched the sending (the one with `ws-send` attribute)
+- `detail.socketWrapper`
+  - the wrapper around socket object
+
 ...
