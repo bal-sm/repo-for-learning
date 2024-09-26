@@ -170,7 +170,9 @@ htmx.config.wsReconnectDelay = function (retryCount) {
 
 #### Event - `htmx:wsOpen`
 
-This event is triggered when a connection to a WebSocket endpoint has been established.
+- This event is triggered
+  - when a connection to a `WebSocket` endpoint
+    - has been established.
 
 ##### Details
 
