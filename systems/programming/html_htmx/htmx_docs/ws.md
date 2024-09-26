@@ -31,7 +31,7 @@ Use the following attributes to configure how WebSockets behave:
       - for the element (either the natural event
       - or the event specified by [`hx-trigger`])
 
-Mine:
-> It's not properly summarized.
+Mine, learning note:
+> This part not properly summarized.
 
 ...
