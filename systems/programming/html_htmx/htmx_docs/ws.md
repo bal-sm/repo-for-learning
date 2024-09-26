@@ -201,4 +201,19 @@ htmx.config.wsReconnectDelay = function (retryCount) {
 - `detail.socketWrapper`
   - the wrapper around socket object
 
+#### Event - `htmx:wsError`
+
+- This event is triggered
+  - when `onerror` event
+    - on a socket is raised.
+
+##### Details
+
+- `detail.elt`
+  - the element that holds the socket (the one with `ws-connect` attribute)
+- `detail.error`
+  - the error object
+- `detail.socketWrapper`
+  - the wrapper around socket object
+
 ...
