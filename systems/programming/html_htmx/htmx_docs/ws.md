@@ -34,4 +34,10 @@ Use the following attributes to configure how WebSockets behave:
 Mine, learning note:
 > This part not properly summarized.
 
+## Install
+
+```html
+<script src="https://unpkg.com/htmx-ext-ws@2.0.1/ws.js"></script>
+```
+
 ...
