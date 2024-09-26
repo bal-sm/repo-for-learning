@@ -372,4 +372,17 @@ htmx.config.wsReconnectDelay = function (retryCount) {
           - and `htmx:wsAfterSend` events
           - when sending your messages.
 
+### Testing with the Demo Server
+
+- 'Htmx' includes a demo `WebSockets` server
+  - written in `Node.js`
+    - > fuck.
+    - that will help you to see `WebSockets` in action,
+    - and begin bootstrapping your own `WebSockets` code.
+  - It is located in the `/test/ws-sse` folder
+    - of the 'htmx' distribution.
+    - Look at `/test/ws-sse/README.md` for instructions
+      - on running
+      - and using the test server.
+
 ...
