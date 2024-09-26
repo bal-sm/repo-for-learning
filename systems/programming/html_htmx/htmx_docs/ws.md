@@ -82,7 +82,7 @@ WebSockets extension support two configuration options:
   - to change the swapping method
     - (e.g.,
       - append content at the end of an element,
-      - or delegate swapping,
+      - or delegate swapping;
       - to an extension),
   - you need to specify that in the message body,
     - sent by the server.
