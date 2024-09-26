@@ -180,4 +180,19 @@ htmx.config.wsReconnectDelay = function (retryCount) {
 - `detail.event` - the original event from the socket
 - `detail.socketWrapper` - the wrapper around socket object
 
+#### Event - `htmx:wsClose`
+
+- This event is triggered
+  - when a connection to a `WebSocket` endpoint
+    - has been closed normally.
+  - You can check if the event was caused
+    - by an error
+      - by inspecting `detail.event` property.
+
+##### Details
+
+- `detail.elt` - the element that holds the socket (the one with `ws-connect` attribute)
+- `detail.event` - the original event from the socket
+- `detail.socketWrapper` - the wrapper around socket object
+
 ...
