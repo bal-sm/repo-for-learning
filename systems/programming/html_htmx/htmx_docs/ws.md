@@ -149,4 +149,12 @@ htmx.config.wsReconnectDelay = function (retryCount) {
       - when the socket is not in `OPEN` state
       - and sends them once the connection is restored.
 
+### Events
+
+- WebSockets extensions exposes
+  - a set of events
+    - that allow you
+      - to observe
+      - and customize its behavior.
+
 ...
