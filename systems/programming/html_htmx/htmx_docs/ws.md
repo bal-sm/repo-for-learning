@@ -316,4 +316,21 @@ htmx.config.wsReconnectDelay = function (retryCount) {
 - `detail.socketWrapper`
   - the wrapper around socket object
 
+#### Event - `htmx:wsAfterSend`
+
+- This event is triggered just
+  - after sending a message.
+  - This includes messages from the queue.
+
+- Cancelling the event has no effect.
+
+##### Details
+
+- `detail.elt`
+  - the element that dispatched the request (the one with `ws-connect` attribute)
+- `detail.message`
+  - the raw message content
+- `detail.socketWrapper`
+  - the wrapper around socket object
+
 ...
