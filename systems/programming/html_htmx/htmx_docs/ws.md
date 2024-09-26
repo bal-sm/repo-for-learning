@@ -333,7 +333,7 @@ htmx.config.wsReconnectDelay = function (retryCount) {
 - `detail.socketWrapper`
   - the wrapper around socket object
 
-#### Socket wrapper
+#### Socket wrapper - Mahmuda's version
 
 - You may notice that all events
   - expose `detail.socketWrapper` property.
