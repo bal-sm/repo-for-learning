@@ -372,7 +372,7 @@ htmx.config.wsReconnectDelay = function (retryCount) {
           - and `htmx:wsAfterSend` events
           - when sending your messages.
 
-### Testing with the Demo Server
+### Testing with the Demo Server - Emma's version
 
 - 'Htmx' includes a demo `WebSockets` server
   - written in `Node.js`
