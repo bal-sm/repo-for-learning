@@ -176,9 +176,12 @@ htmx.config.wsReconnectDelay = function (retryCount) {
 
 ##### Details
 
-- `detail.elt` - the element that holds the socket (the one with `ws-connect` attribute)
-- `detail.event` - the original event from the socket
-- `detail.socketWrapper` - the wrapper around socket object
+- `detail.elt`
+  - the element that holds the socket (the one with `ws-connect` attribute)
+- `detail.event`
+  - the original event from the socket
+- `detail.socketWrapper`
+  - the wrapper around socket object
 
 #### Event - `htmx:wsClose`
 
