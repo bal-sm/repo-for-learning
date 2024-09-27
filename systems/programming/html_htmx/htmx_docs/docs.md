@@ -1737,4 +1737,8 @@ Mine:
 - If you are interested in adding your own extension to htmx,
   - please [see the extension docs](https://github.com/bigskysoftware/htmx-extensions/tree/main?tab=readme-ov-file#defining-an-extension)
 
+## Events & Logging
+
+_Skipped_
+
 ...
