@@ -1720,4 +1720,21 @@ Mine:
 - Please see the [Animation Guide](@/examples/animations.md)
   - for more details on the options available.
 
+## Extensions - Mahmuda's version
+
+- Htmx has an extension mechanism
+  - that allows you to customize the libraries' behavior.
+  - Extensions [are defined in 'javascript'](https://github.com/bigskysoftware/htmx-extensions/tree/main?tab=readme-ov-file#defining-an-extension)
+    - and then used via the [`hx-ext`](@/attributes/hx-ext.md) attribute:
+
+```html
+<div hx-ext="debug">
+    <button hx-post="/example">This button used the debug extension</button>
+    <button hx-post="/example" hx-ext="ignore:debug">This button does not</button>
+</div>
+```
+
+- If you are interested in adding your own extension to htmx,
+  - please [see the extension docs](https://github.com/bigskysoftware/htmx-extensions/tree/main?tab=readme-ov-file#defining-an-extension)
+
 ...
