@@ -1421,4 +1421,521 @@ Mine:
       - at the target specified
       - and with the swap strategy specified.
 
+---
+
+- Sometimes you might want to do nothing in the swap,
+  - but still perhaps trigger a client side event ([see below](#response-headers)).
+    - > JavaScript thing?
+
+- For this situation, by default,
+  - you can return a `204 - No Content` response code,
+  - and 'htmx' will ignore the content of the response.
+  - > bait and switch thing. I actually want to restart the client DOM (not sic).
+
+- In the event of an error response from the server
+  - (e.g. a `404` or a `501`),
+  - 'htmx' will trigger the [`htmx:responseError`](@/events.md#htmx:responseError) event,
+    - which you can handle.
+
+- In the event of a connection error,
+  - the [`htmx:sendError`](@/events.md#htmx:sendError) event
+    - will be triggered.
+
+### Configuring Response Handling - Mahmuda's version
+
+- You can configure the above behavior of htmx by:
+  - mutating
+  - or replacing the a`htmx.config.responseHandling` array.
+  - This object is a collection of `JavaScript` objects
+    - defined like so:
+
+```js
+    responseHandling: [
+        {code:"204", swap: false},   // 204 - No Content by default does nothing, but is not an error
+        {code:"[23]..", swap: true}, // 200 & 300 responses are non-errors and are swapped
+        {code:"[45]..", swap: false, error:true}, // 400 & 500 responses are not swapped and are errors
+        {code:"...", swap: false}    // catch all for any other response code
+    ]
+```
+
+- When `htmx` receives a response
+  - it will iterate in order
+    - over the `htmx.config.responseHandling` array
+  - and test if the `code` property
+    - of a given object,
+    - when treated as a Regular Expression (`Regex`),
+      - matches the current response.
+        - > hah. learning note ieu.
+  - If an entry does match the current response code,
+    - it will be used to determine
+      - if and
+      - how;
+      - the response will be processed.
+
+- The fields available
+  - for response handling configuration
+    - on entries in this array are:
+
+- `code`
+  - a 'String' representing a regular expression
+    - that will be tested against response codes.
+- `swap`
+  - `true`
+    - if the response should be **swapped** into the DOM,
+  - `false` otherwise
+- `error`
+  - `true`
+    - if htmx should treat this response as an **error**
+- `ignoreTitle`
+  - `true`
+    - if htmx should **ignore title** tags in the response
+- `select`
+  - A CSS selector to use to **select content** from the response
+- `target`
+  - A CSS selector specifying an **alternative target** for the response
+- `swapOverride`
+  - An *alternative* **swap** **mechanism** for the response
+
+#### Configuring Response Handling Examples - Mahmuda's version
+
+- As an example of how to use this configuration,
+  - consider a situation
+    - when a server-side framework responds
+      - with a [`422 - Unprocessable Entity`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/422) response
+        - when validation errors occur.
+    - By default, htmx will ignore the response, since it matches the Regular Expression `[45]..`.
+
+- Using the [meta config](#configuration-options) mechanism
+  - for configuring response handling,
+  - we could add the following config:
+
+```html
+<!--
+  * 204 No Content by default does nothing, but is not an error
+  * 2xx, 3xx and 422 responses are non-errors and are swapped
+  * 4xx & 5xx responses are not swapped and are errors
+  * all other responses are swapped using "..." as a catch-all
+-->
+<meta
+	name="htmx-config"
+	content='{
+        "responseHandling":[
+            {"code":"204", "swap": false},
+            {"code":"[23]..", "swap": true},
+            {"code":"422", "swap": true},
+            {"code":"[45]..", "swap": false, "error":true},
+            {"code":"...", "swap": true}
+        ]
+    }'
+/>
+```
+
+Mine:
+> suka deh ih architecture of putting things-nya unified pisan. buatan aing.
+
+- If you wanted to swap everything,
+  - regardless of HTTP response code,
+  - you could use this configuration:
+
+```html
+<meta name="htmx-config" content='{code:".*", swap: true}, // all responses are swapped'>
+```
+
+- Finally, it is worth considering using the [Response Targets](https://github.com/bigskysoftware/htmx-extensions/blob/main/src/response-targets/README.md)
+extension,
+  - which allows you
+    - to configure the behavior of response codes
+      - declaratively via attributes.
+
+### CORS
+
+- When using `htmx` in a cross origin context,
+  - remember to configure your web server
+    - to set `Access-Control` headers in order for `htmx` headers to be visible
+      - on the client side.
+
+- [`Access-Control-Allow-Headers` (for request headers)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers)
+- [`Access-Control-Expose-Headers` (for response headers)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Expose-Headers)
+
+[See all the request and response headers that `htmx` implements.](@/reference.md#request_headers)
+
+Mine:
+> Jangan. Gak usah, kalo bukan search engine thing. I want Google for myself.
+
+### Request Headers - Mahmuda's version
+
+`htmx` includes a number of useful headers in requests:
+
+- `HX-Boosted`
+  - indicates that the request is _via an **element**_ using [`hx-boost`](@/attributes/hx-boost.md)
+- `HX-Current-URL`
+  - _the current **URL**_ of the browser
+- `HX-History-Restore-Request`
+  - "true" if the request is for history restoration after a miss in the local history cache
+- `HX-Prompt`
+  - _the user **response**_ to an [hx-prompt](@/attributes/hx-prompt.md)
+- `HX-Request`
+  - always "true"
+- `HX-Target`
+  - the `id` of the target element if it exists
+- `HX-Trigger-Name`
+  - the `name` of the triggered element if it exists
+- `HX-Trigger`
+  - the `id` of the triggered element if it exists
+
+### Response Headers - Mahmuda's version
+
+`htmx` supports some `htmx`-specific response headers:
+
+- [`HX-Location`](@/headers/hx-location.md)
+  - *allows* you to do a client-side **redirect**
+    - that does not do a full page reload
+- [`HX-Push-Url`](@/headers/hx-push-url.md)
+  - *pushes* a new **url** into the history stack
+- `HX-Redirect`
+  - can be used to do a *client-side* **redirect**
+    - _to a new location_
+      - (full page reload)
+- `HX-Refresh`
+  - if set to "true" the client-side
+    - will do a *full* **refresh** of the page
+- [`HX-Replace-Url`](@/headers/hx-replace-url.md)
+  - *replaces* the current **URL** in the location bar
+- `HX-Reswap`
+  - *allows* you to *specify* how the **response**
+    - will be **swapped**.
+  - See [hx-swap](@/attributes/hx-swap.md) for possible values
+- `HX-Retarget`
+  - a CSS selector that *updates* the target of the **content update**
+    - to a different *element* on the page
+- `HX-Reselect`
+  - a CSS selector that allows you to *choose*
+    - which part of the *response* is used
+      - to be swapped in.
+  - Overrides an existing [`hx-select`](@/attributes/hx-select.md)
+    - on the triggering element
+- [`HX-Trigger`](@/headers/hx-trigger.md)
+  - allows you to *trigger* *client-side* *events*
+- [`HX-Trigger-After-Settle`](@/headers/hx-trigger.md)
+  - allows you to trigger client-side events _after the **settle** step_
+- [`HX-Trigger-After-Swap`](@/headers/hx-trigger.md)
+  - allows you to trigger client-side events _after the **swap** step_
+
+For more on the `HX-Trigger` headers, see [`HX-Trigger` Response Headers](@/headers/hx-trigger.md).
+
+- Submitting a form via htmx has the benefit
+  - of no longer needing the [Post/Redirect/Get Pattern](https://en.wikipedia.org/wiki/Post/Redirect/Get).
+  - After successfully processing a `POST` request on the server,
+    - you don't need to return a [HTTP 302 (Redirect)](https://en.wikipedia.org/wiki/HTTP_302).
+  - You can directly return the new HTML fragment.
+
+### Request Order of Operations - Mahmuda's version
+
+The order of operations in a 'htmx' request are:
+
+- The element is triggered and begins a request
+  1. _Values are **gathered**_ for the request
+  2. The `htmx-request` class is **applied** to the appropriate elements
+  3. The request is then **issued** *asynchronously* via `AJAX`
+     1. Upon getting a response the target element is **marked** with the `htmx-swapping` class
+     2. An optional **swap** *delay* is **applied** (see the [hx-swap](@/attributes/hx-swap.md) attribute)
+     3. The *actual* *content* **swap** is done
+        1. the `htmx-swapping` class is **removed** from the target
+        2. the `htmx-added` class is **added** to each new piece of content
+        3. the `htmx-settling` class is **applied** to the target
+        4. A *settle* **delay** is done (default: 20ms)
+        5. The `DOM` is **settled**
+        6. the `htmx-settling` class is **removed** _from the target_
+        7. the `htmx-added` class is **removed** _from each new piece of content_
+
+- You can use
+  - the `htmx-swapping`
+  - and `htmx-settling` classes;
+  - to create [CSS transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions) between pages.
+
+## Validation - Mahmuda's version
+
+- 'Htmx' integrates with the [HTML5 Validation API](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation)
+  - and will not issue a request for a 'form'
+    - if a validatable input is invalid.
+  - This is true for both `AJAX` requests
+    - as well as `WebSocket` sends.
+
+- 'Htmx' fires events around validation
+  - that can be used to hook in:
+    - custom validation,
+    - and error handling:
+
+- `htmx:validation:validate`
+  - called before an element's `checkValidity()` method
+    - is called.
+  - May be used to add in custom validation logic
+- `htmx:validation:failed`
+  - called when `checkValidity()` returns **`false`**,
+    - indicating an invalid input
+- `htmx:validation:halted`
+  - called when a request is not issued
+    - due to validation errors.
+  - Specific errors may be found
+    - in the `event.detail.errors` object
+
+- Non-form elements do not validate
+  - before they make requests by default,
+  - but you can enable validation by setting
+    - the [`hx-validate`](@/attributes/hx-validate.md) attribute to **`true`**.
+
+Mine, learning note:
+> What if Django's form?
+
+### Validation Example - Mahmuda's version
+
+- Here is an example of
+  - an input that uses the [`hx-on`](/attributes/hx-on) attribute
+    - to catch the `htmx:validation:validate` event
+    - and require that the input
+      - have the value `foo`:
+
+```html
+<form id="example-form" hx-post="/test">
+    <input name="example"
+           onkeyup="this.setCustomValidity('') // reset the validation on keyup"
+           hx-on:htmx:validation:validate="if(this.value != 'foo') {
+                    this.setCustomValidity('Please enter the value foo') // set the validation error
+                    htmx.find('#example-form').reportValidity()          // report the issue
+                }">
+</form>
+```
+
+- Note that all client side validations must be re-done on the server side,
+  - as they can always be bypassed.
+
+Mine:
+> udah we gini aja, jangan ribet masalah harus ngirim ke Django's views terus, meureun. In the end, it's JavaScript land, it sucks.
+
+## Animations - Gini aja
+
+- 'Htmx' allows you to use [CSS transitions](#css_transitions)
+  - in many situations using only 'HTML' and 'CSS'.
+
+- Please see the [Animation Guide](@/examples/animations.md)
+  - for more details on the options available.
+
+## Extensions - Mahmuda's version
+
+- Htmx has an extension mechanism
+  - that allows you to customize the libraries' behavior.
+  - Extensions [are defined in 'javascript'](https://github.com/bigskysoftware/htmx-extensions/tree/main?tab=readme-ov-file#defining-an-extension)
+    - and then used via the [`hx-ext`](@/attributes/hx-ext.md) attribute:
+
+```html
+<div hx-ext="debug">
+    <button hx-post="/example">This button used the debug extension</button>
+    <button hx-post="/example" hx-ext="ignore:debug">This button does not</button>
+</div>
+```
+
+- If you are interested in adding your own extension to htmx,
+  - please [see the extension docs](https://github.com/bigskysoftware/htmx-extensions/tree/main?tab=readme-ov-file#defining-an-extension)
+
+## Events & Logging
+
+_Skipped_
+
+## Debugging
+
+_Skipped_
+
+## Scripting - Mahmuda's version
+
+_Skipped, bentar ketang_
+
+Them, quote, jadi mine:
+> - [AlpineJS](https://alpinejs.dev/)
+>   - Alpine.js provides a rich set of tools
+>     - for creating sophisticated front end scripts, including:
+>       - reactive programming support,
+>         - while still remaining extremely lightweight.
+> - Alpine encourages the "inline scripting" approach
+>   - that we feel pairs well with htmx.
+
+Mine:
+> Wow, another wholesome day on the books, valentine's day, I cannot wait to have diner with my husband, I really appreciate that he brings a new housemate, even though the bills are not paid, and the girl is unemployed. Caitlin Weilly. Caitlin Reilly, I said it like that 'cause another video, on the books.
+>
+> And that's what I call, real `JavaScript` framework.
+
+But, them:
+> - We have an entire chapter entitled ["Client-Side Scripting"](https://hypermedia.systems/client-side-scripting/)
+>   - in [our book](https://hypermedia.systems)
+>   - that looks at how scripting can be integrated
+>     - into your htmx-based application
+
+### Examples - Lite
+
+#### 1
+
+```html
+<button onclick="alert('You clicked me!')">
+    Click Me!
+</button>
+```
+
+#### 2
+
+```html
+<button hx-on:click="alert('You clicked me!')">
+    Click Me!
+</button>
+```
+
+#### 3
+
+```html
+<button hx-post="/example"
+        hx-on:htmx:config-request="event.detail.parameters.example = 'Hello Scripting!'">
+    Post Me!
+</button>
+```
+
+#### 4
+
+```html
+<form class="sortable" hx-post="/items" hx-trigger="end">
+    <div class="htmx-indicator">Updating...</div>
+    <div><input type='hidden' name='item' value='1'/>Item 1</div>
+    <div><input type='hidden' name='item' value='2'/>Item 2</div>
+    <div><input type='hidden' name='item' value='2'/>Item 3</div>
+</form>
+```
+
+#### 5
+
+```javascript
+$(document).ready(function() {
+    var sortables = document.body.querySelectorAll(".sortable");
+    for (var i = 0; i < sortables.length; i++) {
+        var sortable = sortables[i];
+        new Sortable(sortable, {
+            animation: 150,
+            ghostClass: 'blue-background-class'
+        });
+    }
+});
+```
+
+#### 6
+
+```js
+htmx.onLoad(function(content) {
+    var sortables = content.querySelectorAll(".sortable");
+    for (var i = 0; i < sortables.length; i++) {
+        var sortable = sortables[i];
+        new Sortable(sortable, {
+            animation: 150,
+            ghostClass: 'blue-background-class'
+        });
+    }
+})
+```
+
+#### 7
+
+```js
+let myDiv = document.getElementById('my-div')
+fetch('http://example.com/movies.json')
+    .then(response => response.text())
+    .then(data => { myDiv.innerHTML = data; htmx.process(myDiv); } );
+```
+
+#### 8
+
+```html
+<div x-data="{show_new: false}"
+    x-init="$watch('show_new', value => {
+        if (show_new) {
+            htmx.process(document.querySelector('#new_content'))
+        }
+    })">
+    <button @click = "show_new = !show_new">Toggle New Content</button>
+    <template x-if="show_new">
+        <div id="new_content">
+            <a hx-get="/server/newstuff" href="#">New Clickable</a>
+        </div>
+    </template>
+</div>
+```
+
+### Web Components
+
+- Please see the [Web Components Examples](@/examples/web-components.md) page
+  - for examples on how to integrate 'htmx'
+    - with web components.
+
+## Caching
+
+_Skipped, kapan-kapan_
+
+## Security
+
+_Skipped, tapi **harus**_
+
+## Configuring htmx - Original
+
+Htmx has some configuration options that can be accessed either programmatically or declaratively.  They are
+listed below:
+
+<div class="info-table">
+
+| Config Variable                       | Info                                                                                                                                                                                                                                                                                                                                              |
+|---------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `htmx.config.historyEnabled`          | defaults to `true`, really only useful for testing                                                                                                                                                                                                                                                                                                |
+| `htmx.config.historyCacheSize`        | defaults to 10                                                                                                                                                                                                                                                                                                                                    |
+| `htmx.config.refreshOnHistoryMiss`    | defaults to `false`, if set to `true` htmx will issue a full page refresh on history misses rather than use an AJAX request                                                                                                                                                                                                                       |
+| `htmx.config.defaultSwapStyle`        | defaults to `innerHTML`                                                                                                                                                                                                                                                                                                                           |
+| `htmx.config.defaultSwapDelay`        | defaults to 0                                                                                                                                                                                                                                                                                                                                     |
+| `htmx.config.defaultSettleDelay`      | defaults to 20                                                                                                                                                                                                                                                                                                                                    |
+| `htmx.config.includeIndicatorStyles`  | defaults to `true` (determines if the indicator styles are loaded)                                                                                                                                                                                                                                                                                |
+| `htmx.config.indicatorClass`          | defaults to `htmx-indicator`                                                                                                                                                                                                                                                                                                                      |
+| `htmx.config.requestClass`            | defaults to `htmx-request`                                                                                                                                                                                                                                                                                                                        |
+| `htmx.config.addedClass`              | defaults to `htmx-added`                                                                                                                                                                                                                                                                                                                          |
+| `htmx.config.settlingClass`           | defaults to `htmx-settling`                                                                                                                                                                                                                                                                                                                       |
+| `htmx.config.swappingClass`           | defaults to `htmx-swapping`                                                                                                                                                                                                                                                                                                                       |
+| `htmx.config.allowEval`               | defaults to `true`, can be used to disable htmx's use of eval for certain features (e.g. trigger filters)                                                                                                                                                                                                                                         |
+| `htmx.config.allowScriptTags`         | defaults to `true`, determines if htmx will process script tags found in new content                                                                                                                                                                                                                                                              |
+| `htmx.config.inlineScriptNonce`       | defaults to `''`, meaning that no nonce will be added to inline scripts                                                                                                                                                                                                                                                                           |
+| `htmx.config.attributesToSettle`      | defaults to `["class", "style", "width", "height"]`, the attributes to settle during the settling phase                                                                                                                                                                                                                                           |
+| `htmx.config.inlineStyleNonce`        | defaults to `''`, meaning that no nonce will be added to inline styles                                                                                                                                                                                                                                                                            |
+| `htmx.config.useTemplateFragments`    | defaults to `false`, HTML template tags for parsing content from the server (not IE11 compatible!)                                                                                                                                                                                                                                                |
+| `htmx.config.wsReconnectDelay`        | defaults to `full-jitter`                                                                                                                                                                                                                                                                                                                         |
+| `htmx.config.wsBinaryType`            | defaults to `blob`, the [type of binary data](https://developer.mozilla.org/docs/Web/API/WebSocket/binaryType) being received over the WebSocket connection                                                                                                                                                                                       |
+| `htmx.config.disableSelector`         | defaults to `[hx-disable], [data-hx-disable]`, htmx will not process elements with this attribute on it or a parent                                                                                                                                                                                                                               |
+| `htmx.config.withCredentials`         | defaults to `false`, allow cross-site Access-Control requests using credentials such as cookies, authorization headers or TLS client certificates                                                                                                                                                                                                 |
+| `htmx.config.timeout`                 | defaults to 0, the number of milliseconds a request can take before automatically being terminated                                                                                                                                                                                                                                                |
+| `htmx.config.scrollBehavior`          | defaults to 'smooth', the behavior for a boosted link on page transitions. The allowed values are `auto` and `smooth`. Smooth will smoothscroll to the top of the page while auto will behave like a vanilla link.                                                                                                                                |
+| `htmx.config.defaultFocusScroll`      | if the focused element should be scrolled into view, defaults to false and can be overridden using the [focus-scroll](@/attributes/hx-swap.md#focus-scroll) swap modifier.                                                                                                                                                                        |
+| `htmx.config.getCacheBusterParam`     | defaults to false, if set to true htmx will append the target element to the `GET` request in the format `org.htmx.cache-buster=targetElementId`                                                                                                                                                                                                  |
+| `htmx.config.globalViewTransitions`   | if set to `true`, htmx will use the [View Transition](https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API) API when swapping in new content.                                                                                                                                                                                    |
+| `htmx.config.methodsThatUseUrlParams` | defaults to `["get"]`, htmx will format requests with these methods by encoding their parameters in the URL, not the request body                                                                                                                                                                                                                 |
+| `htmx.config.selfRequestsOnly`        | defaults to `true`, whether to only allow AJAX requests to the same domain as the current document                                                                                                                                                                                                                                     |
+| `htmx.config.ignoreTitle`             | defaults to `false`, if set to `true` htmx will not update the title of the document when a `title` tag is found in new content                                                                                                                                                                                                                   |
+| `htmx.config.disableInheritance`      | disables attribute inheritance in htmx, which can then be overridden by the [`hx-inherit`](@/attributes/hx-inherit.md) attribute                                                                                                                                                                                                                  |
+| `htmx.config.scrollIntoViewOnBoost`   | defaults to `true`, whether or not the target of a boosted element is scrolled into the viewport. If `hx-target` is omitted on a boosted element, the target defaults to `body`, causing the page to scroll to the top.                                                                                                                           |
+| `htmx.config.triggerSpecsCache`       | defaults to `null`, the cache to store evaluated trigger specifications into, improving parsing performance at the cost of more memory usage. You may define a simple object to use a never-clearing cache, or implement your own system using a [proxy object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Proxy) |
+| `htmx.config.allowNestedOobSwaps`     | defaults to `true`, whether to process OOB swaps on elements that are nested within the main response element. See [Nested OOB Swaps](@/attributes/hx-swap-oob.md#nested-oob-swaps).                                                                                                                                                              |
+
+</div>
+
+You can set them directly in javascript, or you can use a `meta` tag:
+
+```html
+<meta name="htmx-config" content='{"defaultSwapStyle":"outerHTML"}'>
+```
+
+## Conclusion
+
+And that's it!
+
+- Have fun with htmx!
+  - You can accomplish [quite a bit](@/examples/_index.md)
+    - without writing a lot of code!
+
 ...
