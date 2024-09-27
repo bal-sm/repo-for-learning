@@ -1712,4 +1712,12 @@ Mine, learning note:
 Mine:
 > udah we gini aja, jangan ribet masalah harus ngirim ke Django's views terus, meureun. In the end, it's JavaScript land, it sucks.
 
+## Animations - Gini aja
+
+- 'Htmx' allows you to use [CSS transitions](#css_transitions)
+  - in many situations using only 'HTML' and 'CSS'.
+
+- Please see the [Animation Guide](@/examples/animations.md)
+  - for more details on the options available.
+
 ...
