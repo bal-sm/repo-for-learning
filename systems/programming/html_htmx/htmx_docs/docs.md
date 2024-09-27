@@ -1629,4 +1629,28 @@ For more on the `HX-Trigger` headers, see [`HX-Trigger` Response Headers](@/head
     - you don't need to return a [HTTP 302 (Redirect)](https://en.wikipedia.org/wiki/HTTP_302).
   - You can directly return the new HTML fragment.
 
+### Request Order of Operations - Mahmuda's version
+
+The order of operations in a 'htmx' request are:
+
+- The element is triggered and begins a request
+  1. _Values are **gathered**_ for the request
+  2. The `htmx-request` class is **applied** to the appropriate elements
+  3. The request is then **issued** *asynchronously* via `AJAX`
+     1. Upon getting a response the target element is **marked** with the `htmx-swapping` class
+     2. An optional **swap** *delay* is **applied** (see the [hx-swap](@/attributes/hx-swap.md) attribute)
+     3. The *actual* *content* **swap** is done
+        1. the `htmx-swapping` class is **removed** from the target
+        2. the `htmx-added` class is **added** to each new piece of content
+        3. the `htmx-settling` class is **applied** to the target
+        4. A *settle* **delay** is done (default: 20ms)
+        5. The `DOM` is **settled**
+        6. the `htmx-settling` class is **removed** _from the target_
+        7. the `htmx-added` class is **removed** _from each new piece of content_
+
+- You can use
+  - the `htmx-swapping`
+  - and `htmx-settling` classes;
+  - to create [CSS transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions) between pages.
+
 ...
