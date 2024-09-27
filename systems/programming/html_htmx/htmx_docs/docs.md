@@ -1496,4 +1496,41 @@ Mine:
 - `swapOverride`
   - An *alternative* **swap** **mechanism** for the response
 
+#### Configuring Response Handling Examples
+
+- As an example of how to use this configuration,
+  - consider a situation
+    - when a server-side framework responds
+      - with a [`422 - Unprocessable Entity`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/422) response
+        - when validation errors occur.
+    - By default, htmx will ignore the response, since it matches the Regular Expression `[45]..`.
+
+- Using the [meta config](#configuration-options) mechanism
+  - for configuring response handling,
+  - we could add the following config:
+
+```html
+<!--
+  * 204 No Content by default does nothing, but is not an error
+  * 2xx, 3xx and 422 responses are non-errors and are swapped
+  * 4xx & 5xx responses are not swapped and are errors
+  * all other responses are swapped using "..." as a catch-all
+-->
+<meta
+	name="htmx-config"
+	content='{
+        "responseHandling":[
+            {"code":"204", "swap": false},
+            {"code":"[23]..", "swap": true},
+            {"code":"422", "swap": true},
+            {"code":"[45]..", "swap": false, "error":true},
+            {"code":"...", "swap": true}
+        ]
+    }'
+/>
+```
+
+Mine:
+> suka deh ih architecture of putting things-nya unified pisan. buatan aing.
+
 ...
