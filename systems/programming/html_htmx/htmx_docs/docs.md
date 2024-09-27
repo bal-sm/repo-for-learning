@@ -1567,13 +1567,13 @@ Mine:
 `htmx` includes a number of useful headers in requests:
 
 - `HX-Boosted`
-  - indicates that the request is via an element using [hx-boost](@/attributes/hx-boost.md)
+  - indicates that the request is _via an **element**_ using [`hx-boost`](@/attributes/hx-boost.md)
 - `HX-Current-URL`
-  - the current URL of the browser
+  - _the current **URL**_ of the browser
 - `HX-History-Restore-Request`
   - "true" if the request is for history restoration after a miss in the local history cache
 - `HX-Prompt`
-  - the user response to an [hx-prompt](@/attributes/hx-prompt.md)
+  - _the user **response**_ to an [hx-prompt](@/attributes/hx-prompt.md)
 - `HX-Request`
   - always "true"
 - `HX-Target`
