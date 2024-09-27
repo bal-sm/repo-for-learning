@@ -1421,4 +1421,10 @@ Mine:
       - at the target specified
       - and with the swap strategy specified.
 
+---
+
+- Sometimes you might want to do nothing in the swap,
+  - but still perhaps trigger a client side event ([see below](#response-headers)).
+    - > JavaScript thing?
+
 ...
