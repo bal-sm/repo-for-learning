@@ -1930,4 +1930,12 @@ You can set them directly in javascript, or you can use a `meta` tag:
 <meta name="htmx-config" content='{"defaultSwapStyle":"outerHTML"}'>
 ```
 
+## Conclusion
+
+And that's it!
+
+- Have fun with htmx!
+  - You can accomplish [quite a bit](@/examples/_index.md)
+    - without writing a lot of code!
+
 ...
