@@ -1533,4 +1533,18 @@ Mine:
 Mine:
 > suka deh ih architecture of putting things-nya unified pisan. buatan aing.
 
+- If you wanted to swap everything,
+  - regardless of HTTP response code,
+  - you could use this configuration:
+
+```html
+<meta name="htmx-config" content='{code:".*", swap: true}, // all responses are swapped'>
+```
+
+- Finally, it is worth considering using the [Response Targets](https://github.com/bigskysoftware/htmx-extensions/blob/main/src/response-targets/README.md)
+extension,
+  - which allows you
+    - to configure the behavior of response codes
+      - declaratively via attributes.
+
 ...
