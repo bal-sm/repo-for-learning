@@ -1745,4 +1745,14 @@ _Skipped_
 
 _Skipped_
 
+## Scripting
+
+_Skipped, bentar ketang_
+
+But, them:
+> - We have an entire chapter entitled ["Client-Side Scripting"](https://hypermedia.systems/client-side-scripting/)
+>   - in [our book](https://hypermedia.systems)
+>   - that looks at how scripting can be integrated
+>     - into your htmx-based application
+
 ...
