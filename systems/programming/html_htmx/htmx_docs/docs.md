@@ -1749,6 +1749,20 @@ _Skipped_
 
 _Skipped, bentar ketang_
 
+Them, quote, jadi mine:
+> - [AlpineJS](https://alpinejs.dev/)
+>   - Alpine.js provides a rich set of tools
+>     - for creating sophisticated front end scripts, including:
+>       - reactive programming support,
+>         - while still remaining extremely lightweight.
+> - Alpine encourages the "inline scripting" approach
+>   - that we feel pairs well with htmx.
+
+Mine:
+> Wow, another wholesome day on the books, valentine's day, I cannot wait to have diner with my husband, I really appreciate that he brings a new housemate, even though the bills are not paid, and the girl is unemployed. Caitlin Weilly. Caitlin Reilly, I said it like that 'cause another video, on the books.
+>
+> And that's what I call, real `JavaScript` framework.
+
 But, them:
 > - We have an entire chapter entitled ["Client-Side Scripting"](https://hypermedia.systems/client-side-scripting/)
 >   - in [our book](https://hypermedia.systems)
