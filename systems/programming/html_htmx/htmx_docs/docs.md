@@ -1583,4 +1583,49 @@ Mine:
 - `HX-Trigger`
   - the `id` of the triggered element if it exists
 
+### Response Headers - Mahmuda's version
+
+`htmx` supports some `htmx`-specific response headers:
+
+- [`HX-Location`](@/headers/hx-location.md)
+  - allows you to do a client-side redirect
+    - that does not do a full page reload
+- [`HX-Push-Url`](@/headers/hx-push-url.md)
+  - pushes a new url into the history stack
+- `HX-Redirect`
+  - can be used to do a client-side redirect
+    - to a new location
+- `HX-Refresh`
+  - if set to "true" the client-side
+    - will do a full refresh of the page
+- [`HX-Replace-Url`](@/headers/hx-replace-url.md)
+  - replaces the current URL in the location bar
+- `HX-Reswap`
+  - allows you to specify how the response
+    - will be swapped.
+  - See [hx-swap](@/attributes/hx-swap.md) for possible values
+- `HX-Retarget`
+  - a CSS selector that updates the target of the content update
+    - to a different element on the page
+- `HX-Reselect`
+  - a CSS selector that allows you to choose
+    - which part of the response is used
+      - to be swapped in.
+  - Overrides an existing [`hx-select`](@/attributes/hx-select.md)
+    - on the triggering element
+- [`HX-Trigger`](@/headers/hx-trigger.md)
+  - allows you to trigger client-side events
+- [`HX-Trigger-After-Settle`](@/headers/hx-trigger.md)
+  - allows you to trigger client-side events after the settle step
+- [`HX-Trigger-After-Swap`](@/headers/hx-trigger.md)
+  - allows you to trigger client-side events after the swap step
+
+For more on the `HX-Trigger` headers, see [`HX-Trigger` Response Headers](@/headers/hx-trigger.md).
+
+- Submitting a form via htmx has the benefit
+  - of no longer needing the [Post/Redirect/Get Pattern](https://en.wikipedia.org/wiki/Post/Redirect/Get).
+  - After successfully processing a `POST` request on the server,
+    - you don't need to return a [HTTP 302 (Redirect)](https://en.wikipedia.org/wiki/HTTP_302).
+  - You can directly return the new HTML fragment.
+
 ...
