@@ -35,7 +35,7 @@ Mine, learning note:
 > This part not properly summarized.
 
 Mine:
-> `django-channels` thing, wow wow wow wow wow wow, Elizabeth Olsen is my wife. Papa's girlfriend. Cucunya Papa milik Babeh.
+> `django-channels` thing, wow wow wow wow wow wow, Elizabeth Olsen is my wife. Papa's girlfriend. Cucunya Papa milik babeh.
 
 ## Install - Babeh Ibrahim as.'s version
 
