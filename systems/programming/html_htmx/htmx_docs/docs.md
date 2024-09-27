@@ -1588,37 +1588,38 @@ Mine:
 `htmx` supports some `htmx`-specific response headers:
 
 - [`HX-Location`](@/headers/hx-location.md)
-  - allows you to do a client-side redirect
+  - *allows* you to do a client-side **redirect**
     - that does not do a full page reload
 - [`HX-Push-Url`](@/headers/hx-push-url.md)
-  - pushes a new url into the history stack
+  - *pushes* a new **url** into the history stack
 - `HX-Redirect`
-  - can be used to do a client-side redirect
-    - to a new location
+  - can be used to do a *client-side* **redirect**
+    - _to a new location_
+      - (full page reload)
 - `HX-Refresh`
   - if set to "true" the client-side
-    - will do a full refresh of the page
+    - will do a *full* **refresh** of the page
 - [`HX-Replace-Url`](@/headers/hx-replace-url.md)
-  - replaces the current URL in the location bar
+  - *replaces* the current **URL** in the location bar
 - `HX-Reswap`
-  - allows you to specify how the response
-    - will be swapped.
+  - *allows* you to *specify* how the **response**
+    - will be **swapped**.
   - See [hx-swap](@/attributes/hx-swap.md) for possible values
 - `HX-Retarget`
-  - a CSS selector that updates the target of the content update
-    - to a different element on the page
+  - a CSS selector that *updates* the target of the **content update**
+    - to a different *element* on the page
 - `HX-Reselect`
-  - a CSS selector that allows you to choose
-    - which part of the response is used
+  - a CSS selector that allows you to *choose*
+    - which part of the *response* is used
       - to be swapped in.
   - Overrides an existing [`hx-select`](@/attributes/hx-select.md)
     - on the triggering element
 - [`HX-Trigger`](@/headers/hx-trigger.md)
-  - allows you to trigger client-side events
+  - allows you to *trigger* *client-side* *events*
 - [`HX-Trigger-After-Settle`](@/headers/hx-trigger.md)
-  - allows you to trigger client-side events after the settle step
+  - allows you to trigger client-side events _after the **settle** step_
 - [`HX-Trigger-After-Swap`](@/headers/hx-trigger.md)
-  - allows you to trigger client-side events after the swap step
+  - allows you to trigger client-side events _after the **swap** step_
 
 For more on the `HX-Trigger` headers, see [`HX-Trigger` Response Headers](@/headers/hx-trigger.md).
 
