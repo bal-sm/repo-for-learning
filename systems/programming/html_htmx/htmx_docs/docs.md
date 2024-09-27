@@ -1745,7 +1745,7 @@ _Skipped_
 
 _Skipped_
 
-## Scripting
+## Scripting - Mahmuda's version
 
 _Skipped, bentar ketang_
 
@@ -1768,5 +1768,100 @@ But, them:
 >   - in [our book](https://hypermedia.systems)
 >   - that looks at how scripting can be integrated
 >     - into your htmx-based application
+
+### Examples - Lite
+
+#### 1
+
+```html
+<button onclick="alert('You clicked me!')">
+    Click Me!
+</button>
+```
+
+#### 2
+
+```html
+<button hx-on:click="alert('You clicked me!')">
+    Click Me!
+</button>
+```
+
+#### 3
+
+```html
+<button hx-post="/example"
+        hx-on:htmx:config-request="event.detail.parameters.example = 'Hello Scripting!'">
+    Post Me!
+</button>
+```
+
+#### 4
+
+```html
+<form class="sortable" hx-post="/items" hx-trigger="end">
+    <div class="htmx-indicator">Updating...</div>
+    <div><input type='hidden' name='item' value='1'/>Item 1</div>
+    <div><input type='hidden' name='item' value='2'/>Item 2</div>
+    <div><input type='hidden' name='item' value='2'/>Item 3</div>
+</form>
+```
+
+#### 5
+
+```javascript
+$(document).ready(function() {
+    var sortables = document.body.querySelectorAll(".sortable");
+    for (var i = 0; i < sortables.length; i++) {
+        var sortable = sortables[i];
+        new Sortable(sortable, {
+            animation: 150,
+            ghostClass: 'blue-background-class'
+        });
+    }
+});
+```
+
+#### 6
+
+```js
+htmx.onLoad(function(content) {
+    var sortables = content.querySelectorAll(".sortable");
+    for (var i = 0; i < sortables.length; i++) {
+        var sortable = sortables[i];
+        new Sortable(sortable, {
+            animation: 150,
+            ghostClass: 'blue-background-class'
+        });
+    }
+})
+```
+
+#### 7
+
+```js
+let myDiv = document.getElementById('my-div')
+fetch('http://example.com/movies.json')
+    .then(response => response.text())
+    .then(data => { myDiv.innerHTML = data; htmx.process(myDiv); } );
+```
+
+#### 8
+
+```html
+<div x-data="{show_new: false}"
+    x-init="$watch('show_new', value => {
+        if (show_new) {
+            htmx.process(document.querySelector('#new_content'))
+        }
+    })">
+    <button @click = "show_new = !show_new">Toggle New Content</button>
+    <template x-if="show_new">
+        <div id="new_content">
+            <a hx-get="/server/newstuff" href="#">New Clickable</a>
+        </div>
+    </template>
+</div>
+```
 
 ...
