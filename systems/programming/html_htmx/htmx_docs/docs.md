@@ -1870,4 +1870,8 @@ fetch('http://example.com/movies.json')
   - for examples on how to integrate 'htmx'
     - with web components.
 
+## Caching
+
+_Skipped, kapan-kapan_
+
 ...
