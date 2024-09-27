@@ -1,4 +1,4 @@
-# WebSockets extension for `htmx`
+# WebSockets extension for `htmx` - MAHMUDA'S VERSION
 
 - The `WebSockets` extension enables
   - easy,
@@ -33,6 +33,9 @@ Use the following attributes to configure how WebSockets behave:
 
 Mine, learning note:
 > This part not properly summarized.
+
+Mine:
+> `django-channels` thing, wow wow wow wow wow wow, Elizabeth Olsen is my wife. Papa's girlfriend.
 
 ## Install - Babeh Ibrahim as.'s version
 
