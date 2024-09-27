@@ -1388,5 +1388,7 @@ Mine:
 ## Source(s)
 
 - [1]: [Django Cotton Official Documentation](https://django-cotton.com/)
+  - > aku kan tagih ini new part-nya apa aja deh.
 - [2]: [`django-cotton`'s `README.md`](https://github.com/wrabit/django-cotton/blob/123191cb225c8c1b8b1aee64319fa72c440a416d/README.md)
   - > version `0.9.30`.
+    - > ih siah, belum ya yang "Dynamic Components" part of that new `README.md`
