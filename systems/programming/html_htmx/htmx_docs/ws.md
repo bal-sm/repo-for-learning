@@ -40,7 +40,7 @@ Mine, learning note:
 <script src="https://unpkg.com/htmx-ext-ws@2.0.1/ws.js"></script>
 ```
 
-## Usage
+## Usage - This is Mahmuda's version
 
 ```html
 <div hx-ext="ws" ws-connect="/chatroom">
