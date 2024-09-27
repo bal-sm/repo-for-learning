@@ -1874,4 +1874,8 @@ fetch('http://example.com/movies.json')
 
 _Skipped, kapan-kapan_
 
+## Security
+
+_Skipped, tapi **harus**_
+
 ...
