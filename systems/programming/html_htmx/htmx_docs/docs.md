@@ -1864,4 +1864,10 @@ fetch('http://example.com/movies.json')
 </div>
 ```
 
+### Web Components
+
+- Please see the [Web Components Examples](@/examples/web-components.md) page
+  - for examples on how to integrate 'htmx'
+    - with web components.
+
 ...
