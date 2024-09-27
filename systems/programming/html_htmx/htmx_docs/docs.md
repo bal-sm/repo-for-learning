@@ -1441,7 +1441,7 @@ Mine:
   - the [`htmx:sendError`](@/events.md#htmx:sendError) event
     - will be triggered.
 
-### Configuring Response Handling
+### Configuring Response Handling - Mahmuda's version
 
 - You can configure the above behavior of htmx by:
   - mutating
