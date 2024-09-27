@@ -1653,4 +1653,38 @@ The order of operations in a 'htmx' request are:
   - and `htmx-settling` classes;
   - to create [CSS transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions) between pages.
 
+## Validation - Mahmuda's version
+
+- 'Htmx' integrates with the [HTML5 Validation API](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation)
+  - and will not issue a request for a 'form'
+    - if a validatable input is invalid.
+  - This is true for both `AJAX` requests
+    - as well as `WebSocket` sends.
+
+- 'Htmx' fires events around validation
+  - that can be used to hook in:
+    - custom validation,
+    - and error handling:
+
+- `htmx:validation:validate`
+  - called before an element's `checkValidity()` method
+    - is called.
+  - May be used to add in custom validation logic
+- `htmx:validation:failed`
+  - called when `checkValidity()` returns **`false`**,
+    - indicating an invalid input
+- `htmx:validation:halted`
+  - called when a request is not issued
+    - due to validation errors.
+  - Specific errors may be found
+    - in the `event.detail.errors` object
+
+- Non-form elements do not validate
+  - before they make requests by default,
+  - but you can enable validation by setting
+    - the [`hx-validate`](@/attributes/hx-validate.md) attribute to **`true`**.
+
+Mine, learning note:
+> What if Django's form?
+
 ...
