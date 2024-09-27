@@ -1441,4 +1441,59 @@ Mine:
   - the [`htmx:sendError`](@/events.md#htmx:sendError) event
     - will be triggered.
 
+### Configuring Response Handling
+
+- You can configure the above behavior of htmx by:
+  - mutating
+  - or replacing the a`htmx.config.responseHandling` array.
+  - This object is a collection of `JavaScript` objects
+    - defined like so:
+
+```js
+    responseHandling: [
+        {code:"204", swap: false},   // 204 - No Content by default does nothing, but is not an error
+        {code:"[23]..", swap: true}, // 200 & 300 responses are non-errors and are swapped
+        {code:"[45]..", swap: false, error:true}, // 400 & 500 responses are not swapped and are errors
+        {code:"...", swap: false}    // catch all for any other response code
+    ]
+```
+
+- When `htmx` receives a response
+  - it will iterate in order
+    - over the `htmx.config.responseHandling` array
+  - and test if the `code` property
+    - of a given object,
+    - when treated as a Regular Expression (`Regex`),
+      - matches the current response.
+        - > hah. learning note ieu.
+  - If an entry does match the current response code,
+    - it will be used to determine
+      - if and
+      - how;
+      - the response will be processed.
+
+- The fields available
+  - for response handling configuration
+    - on entries in this array are:
+
+- `code`
+  - a 'String' representing a regular expression
+    - that will be tested against response codes.
+- `swap`
+  - `true`
+    - if the response should be **swapped** into the DOM,
+  - `false` otherwise
+- `error`
+  - `true`
+    - if htmx should treat this response as an **error**
+- `ignoreTitle`
+  - `true`
+    - if htmx should **ignore title** tags in the response
+- `select`
+  - A CSS selector to use to **select content** from the response
+- `target`
+  - A CSS selector specifying an **alternative target** for the response
+- `swapOverride`
+  - An *alternative* **swap** **mechanism** for the response
+
 ...
