@@ -1547,4 +1547,19 @@ extension,
     - to configure the behavior of response codes
       - declaratively via attributes.
 
+### CORS
+
+- When using `htmx` in a cross origin context,
+  - remember to configure your web server
+    - to set `Access-Control` headers in order for `htmx` headers to be visible
+      - on the client side.
+
+- [`Access-Control-Allow-Headers` (for request headers)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers)
+- [`Access-Control-Expose-Headers` (for response headers)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Expose-Headers)
+
+[See all the request and response headers that `htmx` implements.](@/reference.md#request_headers)
+
+Mine:
+> Jangan. Gak usah, kalo bukan search engine thing. I want Google for myself.
+
 ...
