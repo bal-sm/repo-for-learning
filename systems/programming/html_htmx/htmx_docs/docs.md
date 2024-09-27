@@ -1427,4 +1427,18 @@ Mine:
   - but still perhaps trigger a client side event ([see below](#response-headers)).
     - > JavaScript thing?
 
+- For this situation, by default,
+  - you can return a `204 - No Content` response code,
+  - and 'htmx' will ignore the content of the response.
+  - > bait and switch thing. I actually want to restart the client DOM (not sic).
+
+- In the event of an error response from the server
+  - (e.g. a `404` or a `501`),
+  - 'htmx' will trigger the [`htmx:responseError`](@/events.md#htmx:responseError) event,
+    - which you can handle.
+
+- In the event of a connection error,
+  - the [`htmx:sendError`](@/events.md#htmx:sendError) event
+    - will be triggered.
+
 ...
