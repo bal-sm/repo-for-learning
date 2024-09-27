@@ -1,7 +1,7 @@
 # `htmx` Documentation - Mahmuda's version
 
 Mine:
-> 1 file-in aja we, `htmx/www/content/docs.md` -> `docs.md` di sini.
+> ~~1 file-in aja we, `htmx/www/content/docs.md` -> `docs.md` di sini.~~ jangan ketang.
 
 Mine:
 > terus jangan lupa `rfl` singleton ini, <https://github.com/bal-sm/bal_simple_finance_app_with_django_and_htmx>.
@@ -81,9 +81,11 @@ This tells `htmx`:
     - **not** *`JSON`*.
   - This keeps you firmly
     - within the [original web programming model](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm),
+      - > `rfl`.
     - using [Hypertext As The Engine Of Application State](https://en.wikipedia.org/wiki/HATEOAS)
+      - > `rfl`.
     - without even needing to really understand that concept.
-    - > wow, baca, learning note.
+    - > wow, baca, learning note. (2✖️)
 
 ---
 
@@ -604,7 +606,7 @@ Mine:
   - does not append content
     - from response ([Out of Band Swaps](#oob_swaps)
     - and [Response Headers](#response-headers) will still be processed)
-    - > hah.
+- > ~~hah.~~ it's easy just do it yourself.
 
 #### Morph Swaps - Mahmuda's version
 
