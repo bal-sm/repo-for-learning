@@ -1687,4 +1687,29 @@ The order of operations in a 'htmx' request are:
 Mine, learning note:
 > What if Django's form?
 
+### Validation Example - Mahmuda's version
+
+- Here is an example of
+  - an input that uses the [`hx-on`](/attributes/hx-on) attribute
+    - to catch the `htmx:validation:validate` event
+    - and require that the input
+      - have the value `foo`:
+
+```html
+<form id="example-form" hx-post="/test">
+    <input name="example"
+           onkeyup="this.setCustomValidity('') // reset the validation on keyup"
+           hx-on:htmx:validation:validate="if(this.value != 'foo') {
+                    this.setCustomValidity('Please enter the value foo') // set the validation error
+                    htmx.find('#example-form').reportValidity()          // report the issue
+                }">
+</form>
+```
+
+- Note that all client side validations must be re-done on the server side,
+  - as they can always be bypassed.
+
+Mine:
+> udah we gini aja, jangan ribet masalah harus ngirim ke Django's views terus, meureun. In the end, it's JavaScript land, it sucks.
+
 ...
