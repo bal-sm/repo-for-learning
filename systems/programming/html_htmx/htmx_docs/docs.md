@@ -1496,7 +1496,7 @@ Mine:
 - `swapOverride`
   - An *alternative* **swap** **mechanism** for the response
 
-#### Configuring Response Handling Examples
+#### Configuring Response Handling Examples - Mahmuda's version
 
 - As an example of how to use this configuration,
   - consider a situation
