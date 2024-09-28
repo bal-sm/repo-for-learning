@@ -1,5 +1,5 @@
 +++
-title = "hx-on"
+title = "hx-on - Mahmuda's version"
 +++
 
 - The `hx-on*`
@@ -17,5 +17,17 @@ title = "hx-on"
     - even when dealing with non-standard DOM events.
   - For example, these attributes allow you
     - to handle [htmx events]`(/reference#events)`.
+
+- With `hx-on` attributes,
+  - you specify the event name
+    - > `click`
+      - if you want to respond to a `click` event,
+    - as part of the attribute name, after a colon.
+      - > `hx-on:click`
+  - So, for example:
+
+```html
+<div hx-on:click="alert('Clicked!')">Click</div>
+```
 
 ...
