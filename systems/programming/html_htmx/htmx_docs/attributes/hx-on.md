@@ -36,6 +36,8 @@ title = "hx-on - Mahmuda's version"
     - in addition to the standard DOM events.
       - > `hx-on:click`
 
+---
+
 - One **gotcha** to note is that DOM attributes
   - do not preserve case.
   - This means, unfortunately, an attribute
@@ -52,5 +54,7 @@ title = "hx-on - Mahmuda's version"
     - > `hx-on::`
     - for htmx events,
     - and omit the "htmx" part:
+
+---
 
 ...
