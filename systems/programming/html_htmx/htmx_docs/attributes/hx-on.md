@@ -97,4 +97,8 @@ _[`JSX`](https://react.dev/learn/writing-markup-with-jsx) thing, no colon (`:`),
 Mine:
 > I'm not skippingggg.
 
+---
+
+_Deprecated things, ya deprecated aja_
+
 ...
