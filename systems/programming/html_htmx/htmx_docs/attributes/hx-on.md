@@ -68,4 +68,17 @@ title = "hx-on - Mahmuda's version"
 
 ---
 
+- If you wish to handle *multiple* different *events*,
+  - you can simply *add* *multiple* **attributes** to an element:
+
+```html
+<button hx-get="/info"
+        hx-on::before-request="alert('Making a request!')"
+        hx-on::after-request="alert('Done making a request!')">
+    Get Info!
+</button>
+```
+
+---
+
 ...
