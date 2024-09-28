@@ -81,4 +81,20 @@ title = "hx-on - Mahmuda's version"
 
 ---
 
+_[`JSX`](https://react.dev/learn/writing-markup-with-jsx) thing, no colon (`:`), so dashes (`-`)_
+
+```html
+<!-- These two are equivalent -->
+<button hx-get="/info" hx-on-htmx-before-request="alert('Making a request!')">
+    Get Info!
+</button>
+
+<button hx-get="/info" hx-on--before-request="alert('Making a request!')">
+    Get Info!
+</button>
+```
+
+Mine:
+> I'm not skippingggg.
+
 ...
