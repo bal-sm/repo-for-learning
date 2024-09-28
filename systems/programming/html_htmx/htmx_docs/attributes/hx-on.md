@@ -30,4 +30,10 @@ title = "hx-on - Mahmuda's version"
 <div hx-on:click="alert('Clicked!')">Click</div>
 ```
 
+- Note that this syntax can be used to capture all 'htmx' events,
+  - > `hx-on:htmx:bla-bla`
+  - as well as most other custom events,
+    - in addition to the standard DOM events.
+      - > `hx-on:click`
+
 ...
