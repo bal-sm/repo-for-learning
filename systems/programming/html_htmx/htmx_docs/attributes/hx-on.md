@@ -36,4 +36,14 @@ title = "hx-on - Mahmuda's version"
     - in addition to the standard DOM events.
       - > `hx-on:click`
 
+- One **gotcha** to note is that DOM attributes
+  - do not preserve case.
+  - This means, unfortunately, an attribute
+    - like ~~`hx-on:htmx:`_`beforeRequest`_~~ **will not work**,
+      - because the DOM lowercases the attribute names.
+  - Fortunately, htmx supports both:
+    - camel case event names
+    - and also [kebab-case event names](@/docs.md#events),
+      - so you can use `hx-on:htmx:`**`before-request`** instead.
+
 ...
