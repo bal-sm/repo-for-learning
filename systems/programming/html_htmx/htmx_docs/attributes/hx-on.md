@@ -52,8 +52,19 @@ title = "hx-on - Mahmuda's version"
   - a little easier,
   - you can use the shorthand double-colon
     - > `hx-on::`
-    - for htmx events,
+    - for 'htmx' events,
     - and omit the "htmx" part:
+
+```html
+<!-- These two are equivalent -->
+<button hx-get="/info" hx-on:htmx:before-request="alert('Making a request!')">
+    Get Info!
+</button>
+
+<button hx-get="/info" hx-on::before-request="alert('Making a request!')">
+    Get Info!
+</button>
+```
 
 ---
 
