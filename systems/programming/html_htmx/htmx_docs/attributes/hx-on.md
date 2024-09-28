@@ -101,4 +101,18 @@ Mine:
 
 _Deprecated things, ya deprecated aja_
 
+### Symbols
+
+- Like `onevent`,
+  - two symbols are made available
+    - to event handler scripts:
+
+- `this`
+  - The **element** on
+    - > `this` is `form` element.
+    - which the `hx-on` attribute
+      - is defined
+- `event`
+  - The event that triggered the handler
+
 ...
