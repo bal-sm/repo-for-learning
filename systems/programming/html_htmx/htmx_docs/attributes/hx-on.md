@@ -46,4 +46,11 @@ title = "hx-on - Mahmuda's version"
     - and also [kebab-case event names](@/docs.md#events),
       - so you can use `hx-on:htmx:`**`before-request`** instead.
 
+- In order to make writing 'htmx'-based event handlers
+  - a little easier,
+  - you can use the shorthand double-colon
+    - > `hx-on::`
+    - for htmx events,
+    - and omit the "htmx" part:
+
 ...
