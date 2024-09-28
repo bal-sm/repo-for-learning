@@ -130,4 +130,6 @@ _Deprecated things, ya deprecated aja_
     - The two forms can be mixed in the same document, however.
       - > what?
 
-...
+## Source(s)
+
+- [1]: [`hx-on.md`](https://github.com/bigskysoftware/htmx/blob/cd176d61d7ebaf91368ab4428e995d933275cda9/www/content/attributes/hx-on.md)
