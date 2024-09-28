@@ -99,7 +99,7 @@ Mine:
 
 ---
 
-_Deprecated things, ya deprecated aja_
+_Deprecated things, ya deprecated aja, which is `hx-on` tanpa embel-embel da ngapain._
 
 ### Symbols
 
