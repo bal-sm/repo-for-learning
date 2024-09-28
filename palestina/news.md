@@ -8,3 +8,11 @@
 
 Not fun `git`:
 > Where do you put your "not guilty until proven"? Bestie.
+
+### ~~he might say something stupid~~ he is stupid
+
+Yoga:
+> Apa ya itu teh?
+
+Mahmuda:
+> Gelut jeung aing, Inggrisna, buru.
