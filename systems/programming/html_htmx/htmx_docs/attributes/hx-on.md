@@ -115,4 +115,19 @@ _Deprecated things, ya deprecated aja_
 - `event`
   - The event that triggered the handler
 
+### Notes
+
+- `hx-on` is *not* inherited,
+  - however due to [event bubbling](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#event_bubbling_and_capture),
+    - > skippppp, meureun nya ieu teh. `rfl`. si Emma pilihnya 'JavaScript', what a fucking loser. Cenah I choose you, 'JavaScript', what a fucking bad starter. I would rather stay at home.
+  - `hx-on` attributes on parent elements
+    - will typically be triggered by events on child elements
+- `hx-on:*` and `hx-on` cannot be used together
+  - on the same element;
+  - if `hx-on:*` is present,
+    - the value of an `hx-on` attribute
+      - on the same element will be **ignored**.
+    - The two forms can be mixed in the same document, however.
+      - > what?
+
 ...
