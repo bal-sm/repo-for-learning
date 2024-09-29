@@ -197,4 +197,30 @@ There are some additional non-standard events that 'htmx' supports:
       - a floating point number between 0.0 and 1.0,
       - indicating what amount of intersection to fire the event on
 
+### Triggering via the `HX-Trigger` header - Mahmuda's version
+
+- If you're trying to fire an event from
+  - `HX-Trigger` response header,
+  - you will likely want to use the `from:body` modifier.
+    - E.g. if you send a header like this
+      - > `HX-Trigger: my-custom-event`
+      - with a response,
+      - an element would likely need to look like this:
+
+```html
+  <div hx-get="/example" hx-trigger="my-custom-event from:body">
+    Triggered by HX-Trigger header...
+  </div>
+```
+
+in order to fire.
+
+- This is because the header
+  - will likely trigger the event
+    - in a different DOM hierarchy
+    - than the element
+      - that you wish to be triggered.
+  - For a similar reason,
+    - you will often listen for hot keys from the body.
+
 ...
