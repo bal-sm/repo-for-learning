@@ -10,9 +10,9 @@ title = "`hx-trigger` - Mahmuda's version"
   - (e.g.
     - `click`
     - or `my-custom-event`)
-    - followed
-      - by an event filter
-      - and a set of event modifiers
+  - followed
+    - by an event filter
+    - and a set of event modifiers
 - A polling definition
   - of the form `every <timing declaration>`
 - A comma-separated list of such events
