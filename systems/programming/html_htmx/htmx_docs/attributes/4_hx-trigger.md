@@ -172,7 +172,7 @@ And can also be combined using the *standard* **javascript** *syntax*:
   - will be appended to the `div`
     - with the `id` `search-results`.
 
-### Non-standard Events
+### Non-standard Events - Mahmuda's version
 
 There are some additional non-standard events that 'htmx' supports:
 
