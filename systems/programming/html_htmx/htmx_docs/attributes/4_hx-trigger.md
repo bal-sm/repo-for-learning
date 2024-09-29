@@ -17,4 +17,14 @@ title = "`hx-trigger` - Mahmuda's version"
   - of the form `every <timing declaration>`
 - A comma-separated list of such events
 
+### Standard Events
+
+- A standard event,
+  - such as `click` can be specified
+    - as the trigger like so:
+
+```html
+<div hx-get="/clicked" hx-trigger="click">Click Me</div>
+```
+
 ...
