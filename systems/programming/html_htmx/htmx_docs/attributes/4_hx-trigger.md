@@ -249,4 +249,19 @@ in order to fire.
 </div>
 ```
 
+### Multiple Triggers - Mahmuda's version
+
+- Multiple triggers can be provided, separated by commas.
+  - Each trigger gets its own options.
+
+```html
+  <div hx-get="/news" hx-trigger="load, click delay:1s"></div>
+```
+
+- This example will load `/news` immediately
+  - on page load,
+  - and then again with
+    - a delay of one second
+    - after each click.
+
 ...
