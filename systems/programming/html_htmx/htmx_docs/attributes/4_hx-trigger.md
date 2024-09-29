@@ -264,4 +264,10 @@ in order to fire.
     - a delay of one second
     - after each click.
 
+### Via JavaScript
+
+- The AJAX request can be triggered
+  - via JavaScript [`htmx.trigger()`](@/api.md#trigger), too.
+  - > what?
+
 ...
