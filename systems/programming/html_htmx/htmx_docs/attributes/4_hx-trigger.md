@@ -17,7 +17,7 @@ title = "`hx-trigger` - Mahmuda's version"
   - of the form `every <timing declaration>`
 - A comma-separated list of such events
 
-### Standard Events
+## Standard Events
 
 - A standard event,
   - such as `click` can be specified
@@ -27,7 +27,7 @@ title = "`hx-trigger` - Mahmuda's version"
 <div hx-get="/clicked" hx-trigger="click">Click Me</div>
 ```
 
-#### Standard Event Filters - Mahmuda's version
+### Standard Event Filters - Mahmuda's version
 
 - Events can be filtered
   - by enclosing a boolean javascript expression
@@ -63,7 +63,7 @@ And can also be combined using the *standard* **javascript** *syntax*:
     - first look for a property named `foo` on the event,
     - then look for a global symbol with the name `foo`
 
-#### Standard Event Modifiers - Mahmuda's version
+### Standard Event Modifiers - Mahmuda's version
 
 - Standard events can also have modifiers
   - that change how they behave.
@@ -172,7 +172,7 @@ And can also be combined using the *standard* **javascript** *syntax*:
   - will be appended to the `div`
     - with the `id` `search-results`.
 
-### Non-standard Events - Mahmuda's version
+## Non-standard Events - Mahmuda's version
 
 There are some additional non-standard events that 'htmx' supports:
 
@@ -197,7 +197,7 @@ There are some additional non-standard events that 'htmx' supports:
       - a floating point number between 0.0 and 1.0,
       - indicating what amount of intersection to fire the event on
 
-### Triggering via the `HX-Trigger` header - Mahmuda's version
+## Triggering via the `HX-Trigger` header - Mahmuda's version
 
 - If you're trying to fire an event from
   - `HX-Trigger` response header,
@@ -223,7 +223,7 @@ in order to fire.
   - For a similar reason,
     - you will often listen for hot keys from the body.
 
-### Polling - Mahmuda's version
+## Polling - Mahmuda's version
 
 - By using the syntax
   - `every <timing declaration>`
@@ -249,7 +249,7 @@ in order to fire.
 </div>
 ```
 
-### Multiple Triggers - Mahmuda's version
+## Multiple Triggers - Mahmuda's version
 
 - Multiple triggers can be provided, separated by commas.
   - Each trigger gets its own options.
@@ -264,7 +264,7 @@ in order to fire.
     - a delay of one second
     - after each click.
 
-### Via JavaScript
+## Via JavaScript
 
 - The AJAX request can be triggered
   - via JavaScript [`htmx.trigger()`](@/api.md#trigger), too.
