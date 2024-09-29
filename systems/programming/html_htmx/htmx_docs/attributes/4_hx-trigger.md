@@ -223,4 +223,30 @@ in order to fire.
   - For a similar reason,
     - you will often listen for hot keys from the body.
 
+### Polling - Mahmuda's version
+
+- By using the syntax
+  - `every <timing declaration>`
+    - you can have an element poll periodically:
+
+```html
+<div hx-get="/latest_updates" hx-trigger="every 1s">
+  Nothing Yet!
+</div>
+```
+
+- This example will issue a `GET`
+  - to the `/latest_updates` URL
+    - every second
+  - and swap the results into the `innerHTML` of this `div`.
+
+- If you want to add a filter to polling,
+  - it should be added *after* the poll declaration:
+
+```html
+<div hx-get="/latest_updates" hx-trigger="every 1s [someConditional]">
+  Nothing Yet!
+</div>
+```
+
 ...
