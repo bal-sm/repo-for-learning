@@ -172,4 +172,29 @@ And can also be combined using the *standard* **javascript** *syntax*:
   - will be appended to the `div`
     - with the `id` `search-results`.
 
+### Non-standard Events
+
+There are some additional non-standard events that 'htmx' supports:
+
+- `load`
+  - triggered on load
+    - (useful for lazy-loading something)
+- `revealed`
+  - triggered when an element
+    - is scrolled into the viewport
+    - (also useful for lazy-loading).
+  - If you are using `overflow` in css
+    - like `overflow-y: scroll`
+    - you should use `intersect once` instead of `revealed`.
+      - > below.
+- `intersect`
+  - fires once when an element
+    - first intersects the viewport.
+  - This supports two additional options:
+    - `root:<selector>`
+      - a CSS selector of the root element for intersection
+    - `threshold:<float>`
+      - a floating point number between 0.0 and 1.0,
+      - indicating what amount of intersection to fire the event on
+
 ...
