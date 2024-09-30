@@ -121,4 +121,95 @@ So in this code:
   - You can turn off this behavior
     - by setting the `ignoreTitle` option to 'true'.
 
+#### Scrolling: `scroll` & `show`
+
+- You can also change the scrolling behavior
+  - of the target element
+    - by using the `scroll` and `show` modifiers,
+      - > `scroll:...`
+      - both of which take the values `top` and `bottom`:
+        - > `scroll:bottom`:
+
+---
+
+```html
+  <!-- this fixed-height div will scroll to the bottom of the div after content is appended -->
+  <div style="height:200px; overflow: scroll"
+       hx-get="/example"
+       hx-swap="beforeend scroll:bottom">
+     Get Some HTML & Append It & Scroll To Bottom
+  </div>
+```
+
+- `style="...; overflow: scroll"`
+- `hx-swap="beforeend scroll:bottom"`
+
+---
+
+```html
+  <!-- this will get some content and add it to #another-div, then ensure that the top of #another-div is visible in the
+       viewport -->
+  <div hx-get="/example"
+       hx-swap="innerHTML show:top"
+       hx-target="#another-div">
+    Get Some Content
+  </div>
+```
+
+- `hx-swap="innerHTML show:top"` of `hx-target="#another-div"`.
+
+---
+
+- If you wish to target a different element
+  - for scrolling
+  - or showing,
+  - you may place a CSS selector
+    - after the `scroll:`
+    - or `show:`,
+    - followed by
+      - `:top`
+      - or `:bottom`:
+
+```html
+  <!-- this will get some content and swap it into the current div, then ensure that the top of #another-div is visible in the
+       viewport -->
+  <div hx-get="/example"
+       hx-swap="innerHTML show:#another-div:top">
+    Get Some Content
+  </div>
+```
+
+---
+
+- You may also use
+  - `window:top`
+  - and `window:bottom`
+  - to scroll to
+    - the top
+    - and bottom;
+    - of the current window.
+
+```html
+  <!-- this will get some content and swap it into the current div, then ensure that the viewport is scrolled to the
+       very top -->
+  <div hx-get="/example"
+       hx-swap="innerHTML show:window:top">
+    Get Some Content
+  </div>
+```
+
+---
+
+- For boosted links and forms
+  - the default behaviour is `show:top`.
+  - You can disable it globally with [htmx.config.scrollIntoViewOnBoost](@/api.md#config)
+    - or you can use `hx-swap="show:none"`
+      - on an element basis.
+
+```html
+<form action="/example" hx-swap="show:none">
+  ...
+</form>
+```
+
 ...
