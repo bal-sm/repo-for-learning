@@ -7,4 +7,16 @@ Mine, intermezzo:
   - allows you to synchronize AJAX requests
     - between multiple elements.
 
+- The `hx-sync` attribute
+  - consists of a CSS selector
+    - > `#something`
+    - to indicate the element
+      - to synchronize on,
+        - > `hx-sync="closest form:abort"`
+        - followed optionally by a colon
+          - > `form:abort`
+        - and then by an optional syncing strategy.
+          - > `abort`
+          - The available strategies are:
+
 ...
