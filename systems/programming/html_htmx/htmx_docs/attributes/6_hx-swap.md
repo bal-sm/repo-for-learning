@@ -33,7 +33,7 @@ The possible values of this attribute are:
       - of the target element
 * `afterend`
   - Insert the response
-    - after the target element
+    - after the target elemen
 * `delete`
   - Deletes the target element
     - regardless of the response
@@ -97,5 +97,28 @@ So in this code:
   - can be used
     - to synchronize 'htmx'
       - with the timing of CSS **transition** *effects*.
+
+#### Title: `ignoreTitle`
+
+- By default, 'htmx' will update the title of the page
+  - if it finds a `<title>` tag
+    - in the response content.
+      - > just a regular (and used Django):
+
+        ```htmx+django
+        <head>
+            <!-- ... -->
+            <title>
+                {% block title %}Hello there{% endblock title %}
+            </title>
+            <!-- ... -->
+        </head>
+        <body>
+            <!-- ... -->
+        </body>
+        ```
+
+  - You can turn off this behavior
+    - by setting the `ignoreTitle` option to 'true'.
 
 ...
