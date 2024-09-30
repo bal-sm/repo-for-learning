@@ -212,4 +212,35 @@ So in this code:
 </form>
 ```
 
+#### Focus scroll
+
+- 'htmx' preserves focus between requests for 'inputs'
+  - that have a defined `id` attribute.
+    - > `id="name"`
+  - By default htmx prevents auto-scrolling
+    - to focused 'inputs' between requests
+      - which can be unwanted behavior
+        - on longer requests
+          - when the user has already scrolled away.
+          - To enable focus scroll you can use `focus-scroll:true`.
+
+```html
+  <input id="name" hx-get="/validation"
+       hx-swap="outerHTML focus-scroll:true"/>
+```
+
+- Alternatively, if you want the page
+  - to automatically scroll
+    - to the focused element after each request
+      - you can change the htmx global configuration value
+      - > `htmx.config.defaultFocusScroll`
+        - to true.
+      - Then disable it for specific requests
+        - > using `focus-scroll:false`.
+
+```html
+  <input id="name" hx-get="/validation"
+       hx-swap="outerHTML focus-scroll:false"/>
+```
+
 ...
