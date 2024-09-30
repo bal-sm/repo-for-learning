@@ -55,4 +55,11 @@ So in this code:
 - The `div` will issue a request to `/example`
   - and append the returned content after the `div`.
 
+### Modifiers - Mahmuda's version
+
+- The `hx-swap` attributes
+  - supports modifiers
+    - for changing the behavior of the swap.
+      - They are outlined below.
+
 ...
