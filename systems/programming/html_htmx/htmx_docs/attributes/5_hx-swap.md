@@ -257,5 +257,5 @@ So in this code:
 - The default settle delay is `20ms`
 
 ## Source(s)
-
+d
 - [1]: [`hx-swap.md`](https://github.com/bigskysoftware/htmx/blob/d1fc7895f65b9235a2f5daa63060a94b6d2252c4/www/content/attributes/hx-swap.md)
