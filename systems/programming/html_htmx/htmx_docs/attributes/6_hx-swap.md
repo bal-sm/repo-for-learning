@@ -71,4 +71,31 @@ So in this code:
     - by setting the `htmx.config.globalViewTransitions` config
       - setting to `true`.
 
+#### Timing: `swap` & `settle`
+
+- You can modify the amount of time
+  - that 'htmx' will wait after receiving a response to swap the content
+    - by including a `swap` modifier:
+
+```html
+  <!-- this will wait 1s before doing the swap after it is received -->
+  <div hx-get="/example" hx-swap="innerHTML swap:1s">Get Some HTML & Append It</div>
+```
+
+---
+
+- Similarly, you can modify the time between the swap
+  - and the settle logic
+    - by including a `settle` modifier:
+
+```html
+  <!-- this will wait 1s before doing the swap after it is received -->
+  <div hx-get="/example" hx-swap="innerHTML settle:1s">Get Some HTML & Append It</div>
+```
+
+- These attributes
+  - can be used
+    - to synchronize 'htmx'
+      - with the timing of CSS **transition** *effects*.
+
 ...
