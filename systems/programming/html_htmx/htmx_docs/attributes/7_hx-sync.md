@@ -137,4 +137,31 @@ Mine, intermezzo:
 
 ---
 
-...
+- When implementing active search functionality
+  1. the `hx-trigger` attribute's `delay` modifier
+     - can be used to debounce the user's input
+     - and avoid making multiple requests
+     - while the user types.
+  2. However, once a request is made,
+     - if the user begins typing again
+     - a new request will begin
+       - even if the previous one
+         - has not finished processing.
+     - This example will
+       - cancel:
+         - any in-flight requests
+         - and use only the last request.
+     - In cases where the search input
+       - is contained within the target,
+       - then using `hx-sync` like this
+         - also helps reduce the chances
+         - that the input will be replaced
+           - while the user is still typing.
+
+```html
+<input type="search"
+    hx-get="/search"
+    hx-trigger="keyup changed delay:500ms, search"
+    hx-target="#search-results"
+    hx-sync="this:replace">
+```
