@@ -1938,4 +1938,6 @@ And that's it!
   - You can accomplish [quite a bit](@/examples/_index.md)
     - without writing a lot of code!
 
-...
+## Source(s)
+
+- [1]: [`htmx`'s Documentation](https://github.com/bigskysoftware/htmx/blob/eeaad206e89eff30db112a66dafb13ac75a0948a/www/content/docs.md)
