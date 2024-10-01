@@ -19,4 +19,20 @@ Mine, intermezzo:
           - > `abort`
           - The available strategies are:
 
+- `drop`
+  - drop (ignore) this request
+    - if an existing request is in flight (the default)
+- `abort`
+  - drop (ignore) this request
+    - if an existing request is in flight,
+    - and, if that is not the case,
+      - *abort* this request if another request occurs
+      - while it is still in flight
+- `replace`
+  - abort the current request,
+    - if any, and replace it with this request
+- `queue`
+  - place this request in the request queue
+    - associated with the given element
+
 ...
