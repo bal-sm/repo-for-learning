@@ -49,4 +49,36 @@ Mine, intermezzo:
   - queue all requests that show up
     - while a request is in flight
 
+## Notes
+
+- `hx-sync` is
+  - inherited
+  - and can be placed on a parent element
+
+- This example resolves a race condition
+  - between
+    - a form's submit request
+    - and an individual input's validation request.
+  - Normally, without using `hx-sync`,
+    - filling out the input
+    - and immediately submitting the form triggers
+      - two parallel requests to
+        - `/validate`
+        - and `/store`.
+  - Using `hx-sync="closest form:abort"` on the input will
+    - watch for requests on the form
+    - and abort the input's request
+      - if a form request is *present*
+      - or **starts** while the input request _is in flight_.
+
+```html
+<form hx-post="/store">
+    <input id="title" name="title" type="text"
+        hx-post="/validate"
+        hx-trigger="change"
+        hx-sync="closest form:abort">
+    <button type="submit">Submit</button>
+</form>
+```
+
 ...
