@@ -81,4 +81,29 @@ Mine, intermezzo:
 </form>
 ```
 
+---
+
+- If you'd rather
+  - prioritize:
+    - the validation request
+    - over the submit request;
+    - you can use the `drop` strategy.
+  - This example will
+    - prioritize
+      - the validation request
+      - over the submit request;
+      - **so** that if a validation request is in flight,
+        - the form cannot be submitted.
+
+```html
+<form hx-post="/store">
+    <input id="title" name="title" type="text"
+        hx-post="/validate"
+        hx-trigger="change"
+        hx-sync="closest form:drop"
+    >
+    <button type="submit">Submit</button>
+</form>
+```
+
 ...
