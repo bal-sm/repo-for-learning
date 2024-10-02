@@ -95,4 +95,30 @@ The value of the `hx-swap-oob` can be:
   - If not, the element with an ID
     - matching the new content will be swapped.
 
+### Troublesome Tables
+
+- Note that you can use a `template` tag
+  - to encapsulate types of elements that,
+    - by the HTML spec, can't stand on their own in the
+DOM
+      - (`<tr>`, `<td>`, `<th>`, `<thead>`, `<tbody>`, `<tfoot>`, `<colgroup>`, `<caption>` & `<col>`).
+
+- Here is an example with an out of band swap
+  - of a table row
+    - being encapsulated in this way:
+
+```html
+<div>
+    ...
+</div>
+<template>
+    <tr id="row" hx-swap-oob="true">
+        ...
+    </tr>
+</template>
+```
+
+- Note that these template tags
+  - will be removed from the final content of the page.
+
 ...
