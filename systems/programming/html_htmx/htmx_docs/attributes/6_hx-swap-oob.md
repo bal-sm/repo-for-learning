@@ -65,4 +65,34 @@ _Mahmuda's version_
 
 ---
 
+---
+
+The value of the `hx-swap-oob` can be:
+
+- `true`
+- any valid [`hx-swap`](@/attributes/hx-swap.md) value
+- any valid [`hx-swap`](@/attributes/hx-swap.md) value,
+  - followed by a colon,
+    - > **`show:`**
+    - followed by a CSS selector
+      - > `show:`**`window:top`**
+
+- If the value
+  - is:
+    - `true` or
+    - `outerHTML`
+    - (which are equivalent)
+  - the element will be swapped inline.
+
+- If a swap value is given,
+  - that swap strategy will be used.
+    - > `hx-swap-oob="textContent"`
+
+- If a selector is given,
+  - > `#some-id`
+  - all elements matched by that selector
+    - will be swapped.
+  - If not, the element with an ID
+    - matching the new content will be swapped.
+
 ...
