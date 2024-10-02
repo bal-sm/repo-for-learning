@@ -21,4 +21,14 @@ Consider the following response HTML:
 </div>
 ```
 
+- The first `div` will be swapped
+  - into the target the usual manner.
+  - The second `div`,
+    - however, will be swapped in
+      - as a replacement for the element
+        - with the id `alerts`,
+        - and will not end up in the target.
+
+---
+
 ...
