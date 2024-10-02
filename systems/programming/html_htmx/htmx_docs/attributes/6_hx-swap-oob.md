@@ -141,4 +141,6 @@ DOM
         - will be ignored
         - and 'oob-swap-related' attributes stripped.
 
-...
+## Notes
+
+- `hx-swap-oob` is not inherited
