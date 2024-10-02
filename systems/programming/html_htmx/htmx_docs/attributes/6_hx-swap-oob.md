@@ -31,4 +31,38 @@ Consider the following response HTML:
 
 ---
 
+_Mahmuda's version_
+
+1. The original `html`:
+
+```html
+<div id="..." other-than-that="...">
+    ...
+</div>
+<div id="alerts" hx-swap-oob="true">
+    Saved!
+</div>
+```
+
+2. The response:
+
+```html
+<div id="alerts">
+    Bookmarked!
+</div>
+```
+
+3. The DOM's aftermath of `html`:
+
+```html
+<div id="..." other-than-that="...">
+    ...
+</div>
+<div id="alerts">
+    Bookmarked!
+</div>
+```
+
+---
+
 ...
