@@ -111,4 +111,17 @@ Mine:
 </button>
 ```
 
+## Demo
+
+- This simulates
+  - what a spinner might
+    - look like in that situation:
+
+```html
+<button class="btn" classes="toggle htmx-request:3s">
+    Post It!
+   <img  class="htmx-indicator" src="/img/bars.svg"/>
+</button>
+```
+
 ...
