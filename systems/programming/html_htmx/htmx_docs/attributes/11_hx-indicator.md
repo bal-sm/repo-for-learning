@@ -89,4 +89,26 @@ Mine:
     }
 ```
 
+---
+
+- Note that the target of the `hx-indicator` selector
+  - need not be the exact element
+    - that you want to show:
+      - > it can be any element in the parent hierarchy of the indicator.
+
+- Finally, note that the `htmx-request` class
+  - by default is added to the element
+    - causing the request,
+    - so you can place an indicator
+      - inside of that element
+      - and not need to explicitly
+        - call it out with the `hx-indicator` attribute:
+
+```html
+<button hx-post="/example">
+    Post It!
+   <img  class="htmx-indicator" src="/img/bars.svg"/>
+</button>
+```
+
 ...
