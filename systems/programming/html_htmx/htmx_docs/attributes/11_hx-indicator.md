@@ -27,6 +27,8 @@ title = "`hx-indicator` - Mahmuda's version"
         - that matches the given CSS selector
           - > another example: (e.g. `closest tr`);
 
+---
+
 - Here is an example with a spinner adjacent to the button:
 
 ```html
@@ -62,5 +64,29 @@ title = "`hx-indicator` - Mahmuda's version"
 
 Mine:
 > Jawab pertanyaan di atas.
+
+---
+
+- If you would
+  - prefer a different effect
+    - for showing the spinner
+  - you could define and use your own indicator CSS.
+  - Here is an example that
+    - uses:
+      - `display`
+      - rather than opacity
+        - (Note that we use `my-indicator` instead of `htmx-indicator`):
+
+```css
+    .my-indicator{
+        display:none;
+    }
+    .htmx-request .my-indicator{
+        display:inline;
+    }
+    .htmx-request.my-indicator{
+        display:inline;
+    }
+```
 
 ...
