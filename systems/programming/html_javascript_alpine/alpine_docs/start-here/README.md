@@ -128,4 +128,21 @@ Mine:
 
 [Read more about `x-text`](https://alpinejs.dev/directives/text)
 
+## Building a dropdown - Mahmuda's version
+
+- Now that we've seen some basic functionality,
+  - let's keep going and look at an important directive in Alpine:
+    - > `x-show`,
+    - by building a contrived "dropdown" component.
+
+Insert the following code into the `<body>` tag:
+
+```html
+<div x-data="{ open: false }">
+    <button @click="open = ! open">Toggle</button>
+
+    <div x-show="open" @click.outside="open = false">Contents...</div>
+</div>
+```
+
 ...
