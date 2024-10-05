@@ -1,4 +1,4 @@
-# Start Here
+# Start Here - Mahmuda's version
 
 Create a blank HTML file somewhere on your computer with a name like: `i-love-alpine.html`
 
@@ -24,7 +24,7 @@ Open your file in a web browser, if you see `I ❤️ Alpine`, you're ready to r
     - you should be more than equipped
       - to start building stuff on your own. Let's goooooo.
 
-## Building a counter
+## Building a counter - Mahmuda's version
 
 - Let's start with a simple "counter" component
   - to demonstrate the basics of
@@ -46,7 +46,7 @@ Now, you can see with 3 bits of Alpine sprinkled into this HTML, we've created a
 
 Let's walk through what's happening briefly:
 
-### Declaring data
+### Declaring data - Mahmuda's version
 
 ```html
 <div x-data="{ count: 0 }">
