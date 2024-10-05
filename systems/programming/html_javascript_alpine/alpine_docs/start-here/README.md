@@ -69,4 +69,38 @@ Let's walk through what's happening briefly:
 
 Let's look at `x-on` and see how it can access and modify the `count` property from above:
 
+### Listening for events - Mahmuda's version
+
+```html
+<button x-on:click="count++">Increment</button>
+```
+
+- `x-on` is a directive
+  - you can use to listen
+    - for any event on an element.
+  - We're listening for a `click` event in this case,
+    - so ours looks like:
+      - > `x-on:click`.
+
+- You can listen for other events as you'd imagine.
+  - For example, listening for a `mouseenter` event
+    - would look like this:
+      - > `x-on:mouseenter`.
+
+- When a `click` event happens,
+  - Alpine will call the associated JavaScript expression,
+    - > `count++`
+    - in our case.
+  - As you can see,
+    - we have direct access to data
+      - declared in the `x-data` expression.
+
+`x-on` vs. `@`:
+> You will often see `@` instead of `x-on:`. This is a shorter, friendlier syntax that many prefer. From now on, this documentation will likely use `@` instead of `x-on:`.
+
+Mine:
+> I still use `x-on` anyway.
+
+[Read more about `x-on`](https://alpinejs.dev/directives/on)
+
 ...
