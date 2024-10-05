@@ -24,4 +24,22 @@ Open your file in a web browser, if you see `I ❤️ Alpine`, you're ready to r
     - you should be more than equipped
       - to start building stuff on your own. Let's goooooo.
 
+## Building a counter
+
+- Let's start with a simple "counter" component
+  - to demonstrate the basics of
+    - state
+    - and event listening in Alpine,
+    - two core features.
+
+Insert the following into the `<body>` tag:
+
+```html
+<div x-data="{ count: 0 }">
+    <button x-on:click="count++">Increment</button>
+
+    <span x-text="count"></span>
+</div>
+```
+
 ...
