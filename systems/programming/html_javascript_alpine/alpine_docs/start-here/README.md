@@ -63,4 +63,10 @@ Let's walk through what's happening briefly:
   - In addition, when one of these properties changes,
     - everything that relies on it will change as well.
 
+---
+
+[Read more about `x-data`](https://alpinejs.dev/directives/data)
+
+Let's look at `x-on` and see how it can access and modify the `count` property from above:
+
 ...
