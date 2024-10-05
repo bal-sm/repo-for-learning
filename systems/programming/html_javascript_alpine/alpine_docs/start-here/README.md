@@ -42,4 +42,8 @@ Insert the following into the `<body>` tag:
 </div>
 ```
 
+Now, you can see with 3 bits of Alpine sprinkled into this HTML, we've created an interactive "counter" component.
+
+Let's walk through what's happening briefly:
+
 ...
