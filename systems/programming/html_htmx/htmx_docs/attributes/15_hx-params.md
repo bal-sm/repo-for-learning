@@ -30,3 +30,6 @@ The possible values of this attribute are:
 - `hx-params`
   - is inherited
   - and can be placed on a parent element
+
+Mine, learning note:
+> weird thing, maybe needed if `hx-include` + `hx-params`.
