@@ -126,4 +126,6 @@ Mine:
           - and the text content of the `span`
             - will now always be 2 times the value of `count`.
 
+[Read more about `x-text`](https://alpinejs.dev/directives/text)
+
 ...
