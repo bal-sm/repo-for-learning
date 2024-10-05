@@ -46,4 +46,21 @@ Now, you can see with 3 bits of Alpine sprinkled into this HTML, we've created a
 
 Let's walk through what's happening briefly:
 
+### Declaring data
+
+```html
+<div x-data="{ count: 0 }">
+```
+
+- Everything in Alpine starts with an `x-data` directive.
+  - Inside of `x-data`, in plain 'JavaScript',
+    - you declare an object of data
+      - that 'Alpine' will track.
+
+- Every property inside this object
+  - will be made available to other directives
+    - inside this HTML element.
+  - In addition, when one of these properties changes,
+    - everything that relies on it will change as well.
+
 ...
