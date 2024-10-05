@@ -15,4 +15,13 @@ Using a text editor, fill the file with these contents:
 </html>
 ```
 
+Open your file in a web browser, if you see `I ❤️ Alpine`, you're ready to rumble!
+
+- Now that you're all set up to play around,
+  - let's look at three practical examples
+    - as a foundation for teaching you the basics of Alpine.
+  - By the end of this exercise,
+    - you should be more than equipped
+      - to start building stuff on your own. Let's goooooo.
+
 ...
