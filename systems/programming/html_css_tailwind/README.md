@@ -214,4 +214,17 @@ Stacked modifiers:
 
 _Really, skipped, serious, panjang pisan_
 
+### Responsive Design - Mahmuda's version
+
+Cara pakai:
+> `md:w-32` atau/dan `lg:w-48`.
+
+| Breakpoint prefix | Minimum width | CSS |
+| --- | --- | --- |
+| `sm` | 640px | `@media (min-width: 640px) { ... }` |
+| `md` | 768px | `@media (min-width: 768px) { ... }` |
+| `lg` | 1024px | `@media (min-width: 1024px) { ... }` |
+| `xl` | 1280px | `@media (min-width: 1280px) { ... }` |
+| `2xl` | 1536px | `@media (min-width: 1536px) { ... }` |
+
 ...
