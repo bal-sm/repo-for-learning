@@ -103,30 +103,58 @@ After Tailwind:
 In the example above, we've used:
 
 - Tailwind's
-  - [flexbox](/docs/display#flex)
-  - and [padding](/docs/padding) utilities
-  - > (`flex`,
-    - > biar flex ke kanan ke kiri secara block-level, learning note.
-  - > `shrink-0`, and
-    - > Them: use `shrink-0` to prevent a flex item from shrinking.
-  - > `p-6`);
-    - > Padding = Creates space within an element.
-  - to control the overall card layout
+  - ➡️
+    - [flexbox](/docs/display#flex)
+    - and [padding](/docs/padding) utilities
+  - (which are) (sic)
+    - > (`flex`,
+      - > biar flex ke kanan ke kiri secara block-level, learning note.
+    - > `shrink-0`, and
+      - > Them: use `shrink-0` to prevent a flex item from shrinking.
+    - > `p-6`);
+      - > Padding = Creates space within an element.
+    - to control the overall card layout
 - The
-  - [max-width](/docs/max-width)
-  - and [margin](/docs/margin) utilities
-  - > (`max-w-sm` and
-    - > lebar.
-  - > `mx-auto`);
-    - > Margin = Creates space around an element.
+  - ➡️
+    - [max-width](/docs/max-width)
+    - and [margin](/docs/margin) utilities
+  - (which are)
+    - > (`max-w-sm` and
+      - > lebar.
+    - > `mx-auto`);
+      - > Margin = Creates space around an element.
   - to constrain the card width and center it horizontally
 - The
-  - [background color](/docs/background-color),
-  - [border radius](/docs/border-radius),
-  - and [box-shadow](/docs/box-shadow) utilities
-  - (`bg-white`, `rounded-xl`, and `shadow-lg`) to style the card's appearance
-- The [size](/docs/size) utilities (`size-12`) to set the width and height of the logo image
-- The [space-between](/docs/space) utilities (`space-x-4`) to handle the spacing between the logo and the text
-- The [font size](/docs/font-size), [text color](/docs/text-color), and [font-weight](/docs/font-weight) utilities (`text-xl`, `text-black`, `font-medium`, etc.) to style the card text
+  - ➡️
+    - [background color](/docs/background-color),
+    - [border radius](/docs/border-radius),
+    - and [box-shadow](/docs/box-shadow) utilities
+  - (which are)
+    - > (`bg-white`,
+      - > background white
+    - > `rounded-xl`,
+      - > rounder corner
+    - > and `shadow-lg`);
+      - > shadow large
+    - to style the card's appearance
+- The [size](/docs/size) utilities
+  - > (`size-12`);
+    - > `width: 3rem; /* 48px */`
+    - > `height: 3rem; /* 48px */`
+  - to set the width and height of the logo image.
+- The [space-between](/docs/space) utilities
+  - > (`space-x-4`)
+    - > `margin-left: 1rem; /* 16px */`
+  - to handle the spacing between the logo and the text
+- The
+  - ➡️
+    - [font size](/docs/font-size),
+    - [text color](/docs/text-color),
+    - and [font-weight](/docs/font-weight) utilities
+  - (which are)
+    - > (`text-xl`,
+    - > `text-black`,
+    - > `font-medium`, etc.)
+    - to style the card text
 
 ...
