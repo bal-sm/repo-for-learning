@@ -34,7 +34,7 @@ _Skipped_
 
 ## Core Concepts
 
-### Utility-First Fundamentals
+### Utility-First Fundamentals - Lite
 
 Them, headline:
 > Building complex components from a constrained set of primitive utilities.
@@ -160,5 +160,14 @@ In the example above, we've used:
     - > `font-medium`, etc.);
       - > ketebalan-nya medium.
     - to style the card text
+
+_Skipped text_ (It's just for my lame `rfl`, guys. Per usual)
+
+Mine:
+> I agree, Tailwind bagus pisan.
+
+---
+
+Jangan lupa tapi pake `vscode`, terus sort-
 
 ...
