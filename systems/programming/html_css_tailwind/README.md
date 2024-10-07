@@ -1,9 +1,11 @@
 # Tailwind CSS
 
-## Installation
+## Getting Started
+
+### Installation
 
 _Skipped_
 
-## Editor Setup
+### Editor Setup
 
 _Skipped_
