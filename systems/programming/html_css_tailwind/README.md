@@ -242,3 +242,7 @@ _Skipped_
 
 Mine:
 > Use `vscode`, don't use `@apply`, done.
+
+### Adding Custom Styles
+
+_Skipped, it's TailwindCSS.._
