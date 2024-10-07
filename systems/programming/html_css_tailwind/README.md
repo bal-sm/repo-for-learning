@@ -168,4 +168,14 @@ Mine:
 
 _Skipped again many sections of [this](#utility-first-fundamentals---lite).
 
+### Handling Hover, Focus, and Other States - Lite
+
+Wow:
+
+```html
+<button class="bg-sky-500 hover:bg-sky-700 ...">
+  Save changes
+</button>
+```
+
 ...
