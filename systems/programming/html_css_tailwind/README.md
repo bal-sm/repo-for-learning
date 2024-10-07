@@ -24,4 +24,8 @@ _Skipped_
 Mine:
 > I use `django-tailwind`.
 
+### Browser Support
+
+_Skipped_
+
 ...
