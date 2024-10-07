@@ -123,6 +123,7 @@ In the example above, we've used:
       - > lebar.
     - > `mx-auto`);
       - > Margin = Creates space around an element.
+      - > `margin-left: auto;` and `margin-right: auto;`
   - to constrain the card width and center it horizontally
 - The
   - ➡️
@@ -153,6 +154,7 @@ In the example above, we've used:
     - and [font-weight](/docs/font-weight) utilities
   - (which are)
     - > (`text-xl`,
+      - >
     - > `text-black`,
     - > `font-medium`, etc.)
     - to style the card text
