@@ -204,4 +204,12 @@ _Skipped bla-bla-bla, it's a frontend development, ever changing, and exciting_
 Mine:
 > Pokoknya di sini buat kalau mau beda saat hover dan klik, dll-nya.
 
+---
+
+Stacked modifiers:
+
+<button class="dark:md:hover:bg-fuchsia-600 ...">
+  Save changes
+</button>
+
 ...
