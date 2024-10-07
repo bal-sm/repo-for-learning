@@ -154,9 +154,11 @@ In the example above, we've used:
     - and [font-weight](/docs/font-weight) utilities
   - (which are)
     - > (`text-xl`,
-      - >
+      - > biar gede, teks-nya.
     - > `text-black`,
-    - > `font-medium`, etc.)
+      - > biar hitam warna teks-nya.
+    - > `font-medium`, etc.);
+      - > ketebalan-nya medium.
     - to style the card text
 
 ...
