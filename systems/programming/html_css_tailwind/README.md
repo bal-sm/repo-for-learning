@@ -178,4 +178,25 @@ Wow:
 </button>
 ```
 
+- Tailwind includes modifiers for just about everything you'll ever need, including:
+
+- [Pseudo-classes](#pseudo-classes), like
+  - > `:hover`,
+  - > `:focus`,
+  - > `:first-child`,
+  - > and `:required`
+- [Pseudo-elements](#pseudo-elements), like
+  - > `::before`,
+  - > `::after`,
+  - > `::placeholder`,
+  - > and `::selection`
+- [Media and feature queries](#media-and-feature-queries), like
+  - responsive breakpoints,
+  - dark mode,
+  - and `prefers-reduced-motion`
+- [Attribute selectors](#attribute-selectors), like
+  - `[dir="rtl"]`
+  - and `[open]`
+  - > what?
+
 ...
