@@ -166,8 +166,6 @@ _Skipped text_ (It's just for my lame `rfl`, guys. Per usual)
 Mine:
 > I agree, Tailwind bagus pisan.
 
----
-
-Jangan lupa tapi pake `vscode`, terus sort-
+_Skipped again many sections of [this](#utility-first-fundamentals---lite).
 
 ...
