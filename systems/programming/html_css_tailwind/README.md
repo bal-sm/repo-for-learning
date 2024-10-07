@@ -230,4 +230,8 @@ Cara pakai:
 Mine:
 > needs revisit. apalagi <https://tailwindcss.com/docs/responsive-design#targeting-a-breakpoint-range>.
 
+### Dark mode
+
+_Skipped_
+
 ...
