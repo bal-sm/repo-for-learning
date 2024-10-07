@@ -199,4 +199,9 @@ Wow:
   - and `[open]`
   - > what?
 
+_Skipped bla-bla-bla, it's a frontend development, ever changing, and exciting_
+
+Mine:
+> Pokoknya di sini buat kalau mau beda saat hover dan klik, dll-nya.
+
 ...
