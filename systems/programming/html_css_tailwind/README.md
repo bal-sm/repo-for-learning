@@ -227,4 +227,7 @@ Cara pakai:
 | `xl` | 1280px | `@media (min-width: 1280px) { ... }` |
 | `2xl` | 1536px | `@media (min-width: 1536px) { ... }` |
 
+Mine:
+> needs revisit. apalagi <https://tailwindcss.com/docs/responsive-design#targeting-a-breakpoint-range>.
+
 ...
