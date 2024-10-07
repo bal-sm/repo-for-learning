@@ -28,4 +28,8 @@ Mine:
 
 _Skipped_
 
+### Upgrade Guide
+
+_Skipped_
+
 ...
