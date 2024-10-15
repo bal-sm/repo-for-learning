@@ -137,4 +137,9 @@ Mine:
     - dapat (menjadi pemegang saham dengan)
       - membeli 50, 100, 5.000 atau berapapun saham perusahaan tersebut.
 
+### Persekutuan dengan Kewajiban Terbatas (LLP) dan Perusahaan dengan Kewajiban Terbatas (LLC)
+
+- Seorang partner tidak dapat menciptakan kewajiban yang besar bagi partner lainnya.
+- > Boring...
+
 ...
