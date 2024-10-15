@@ -126,4 +126,15 @@ Mine:
 - Daru sudut pandang akuntansi, persekutuan merupakan organisasi yang terpisah,
   - berbeda dari para partner.
 
+### Korporasi
+
+- Korporasi (_corporation_) adalah perusahaan yang dimiliki oleh para pemegang saham (_stackholders, atau shareholders_)
+- Kewajiban terbatas para pemegang saham atas utang perusahaan ini
+  - merupakan salah satu alasan mengapa korporasi begitu populer
+  - Orang dapat melakukan investasi dengan risiko pribadi yang terbatas.
+- Faktor lain bagi kemajuan korporasi adalah pembagian kepemilikan ke dalam saham individual.
+  - Seorang investor yang tidak memiliki hubungan pribadi dengan Coca-Cola
+    - dapat (menjadi pemegang saham dengan)
+      - membeli 50, 100, 5.000 atau berapapun saham perusahaan tersebut.
+
 ...
