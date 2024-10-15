@@ -118,4 +118,12 @@ Mine:
   - yang disebut proprietor,
   - yang sering kali mengelola jalannya bisnis.
 
+### Persekutuan
+
+- Persekutuan (_partnership_) menggabungkan
+  - dua atau lebih individu
+    - sebagai pemilik bersama.
+- Daru sudut pandang akuntansi, persekutuan merupakan organisasi yang terpisah,
+  - berbeda dari para partner.
+
 ...
