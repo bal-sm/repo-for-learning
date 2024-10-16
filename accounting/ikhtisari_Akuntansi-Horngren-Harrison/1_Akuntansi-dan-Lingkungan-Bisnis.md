@@ -166,4 +166,15 @@ GAAP berisi kerangka kerja konseptual:
 - Jadi, konsep entitas harus diterapkan pada setiap unit ekonomi yang perlu dievaluasi secara terpisah.
   - > Alias keren.
 
+### Prinsip Reliabilitas (Objektivitas)
+
+- Informasi akuntansi didasarkan pada data yang paling **dapat diandalkan** *dari* yang tersedia
+- Data yang andal adalah data yang dapat diverifikasi,
+  - artinya, _data itu dapat dikonfirmasikan_ oleh setiap pengamat yang independen.
+
+- Misalkan,
+  - menurut estimasi Anda, bangunannya bernilai $50.000.
+  - menurut penilai real estat, bangunannya bernilai $40.000.
+    - maka, ambil yang ini. Bangunan itu sebesar $40.000.
+
 ...
