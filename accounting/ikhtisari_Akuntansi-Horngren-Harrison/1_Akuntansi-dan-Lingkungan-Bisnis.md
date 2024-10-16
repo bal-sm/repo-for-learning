@@ -162,5 +162,6 @@ GAAP berisi kerangka kerja konseptual:
   - Sehingga jika penjualan Lexus menurun, Toyota dapat langsung mencari penyebabnya.
   - Akan tetapi, jika angka penjualan dari semua divisi perusahaan digabungkan, manajemen tidak dapat mengetahui bahwa penjualan Lexus telah menurun.
 - Jadi, konsep entitas harus diterapkan pada setiap unit ekonomi yang perlu dievaluasi secara terpisah.
+  - > Alias keren.
 
 ...
