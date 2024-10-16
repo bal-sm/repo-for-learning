@@ -156,5 +156,11 @@ GAAP berisi kerangka kerja konseptual:
 - Haig Sherman
   - mengambil dana sebesar $500 dari pinjaman bank untuk usahanya Sherman Lawn Service.
   - Berarti $500 bukan dimiliki oleh Haig Sherman, tetapi dimiliki oleh Sherman Lawn Service.
+- Toyota
+  - memiliki beberapa divisi.
+    - Dan setiap divisi tersebut merupakan entitas tunggal (terpisah).
+  - Sehingga jika penjualan Lexus menurun, Toyota dapat langsung mencari penyebabnya.
+  - Akan tetapi, jika angka penjualan dari semua divisi perusahaan digabungkan, manajemen tidak dapat mengetahui bahwa penjualan Lexus telah menurun.
+- Jadi, konsep entitas harus diterapkan pada setiap unit ekonomi yang perlu dievaluasi secara terpisah.
 
 ...
