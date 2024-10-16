@@ -142,4 +142,12 @@ Mine:
 - Seorang partner tidak dapat menciptakan kewajiban yang besar bagi partner lainnya.
 - > Boring...
 
+## Konsep dan Prinsip Akuntansi
+
+- Peraturan yang mengatur akuntansi dikenal sebagai GAAP,
+  - yaitu singkatan dari _generally accepted accounting principles_ atau prinsip-prinsip akuntansi yang diterima umum.
+
+GAAP berisi kerangka kerja konseptual:
+> *Tujuan utama* pelaporan keuangan adalah menyediakan **informasi yang bermanfaat* untuk membuat keputusan investasi atau pemberian pinjaman.
+
 ...
