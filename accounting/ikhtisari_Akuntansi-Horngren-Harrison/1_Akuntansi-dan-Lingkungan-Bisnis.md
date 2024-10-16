@@ -150,4 +150,11 @@ Mine:
 GAAP berisi kerangka kerja konseptual:
 > *Tujuan utama* pelaporan keuangan adalah menyediakan **informasi yang bermanfaat* untuk membuat keputusan investasi atau pemberian pinjaman.
 
+### Konsep Entitas
+
+- Entitas akuntansi adalah organisasi yang berdiri sendiri sebagai unit ekononomi yang terpisah.
+- Haig Sherman
+  - mengambil dana sebesar $500 dari pinjaman bank untuk usahanya Sherman Lawn Service.
+  - Berarti $500 bukan dimiliki oleh Haig Sherman, tetapi dimiliki oleh Sherman Lawn Service.
+
 ...
