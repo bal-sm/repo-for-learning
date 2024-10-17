@@ -59,14 +59,10 @@ Mine(1):
     - the loan is clearly a **liability** _for you_.
     - From _the perspective of your bank_, however, the loan is an **asset**.
 
-Ignore this:
-> - Similarly, the balance in your savings or checking account is,
->   - of course, an asset (to you).
->   - For the bank, however, the balance is a liability.
->     - It’s money that they owe you, as you’re allowed to demand full or partial payment of it at any time.
-
-Mine:
-> Whatever is savings or checking account means.
+- Similarly, the balance in your savings or checking account is,
+  - of course, an asset (to you).
+  - For the bank, however, the balance is a liability.
+    - It’s money that they owe you, as you’re allowed to demand full or partial payment of it at any time.
 
 ### CHAPTER TWO: The Balance Sheet
 
