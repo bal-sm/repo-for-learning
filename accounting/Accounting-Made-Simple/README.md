@@ -490,6 +490,19 @@ Quick Ratio = (Current Assets - Inventory) / Current Liabilities
         - if sales are slow
           - (that is, if inventories are not converted to cash)?
 
+#### Profitability Ratios
+
+- While a company’s net income
+  - is certainly _a valuable piece of information_,
+  - it doesn’t *tell* _the whole story_
+    - in terms of _how profitable a company really is_.
+  - For example, Google’s net income is
+    - going to absolutely dwarf the net income
+      - of your favorite local Italian restaurant.
+    - But the two businesses are of such different sizes
+      - that the comparison is rather meaningless, right?
+        - That’s why we use the two following ratios:
+
 ...
 
 ## Maintenance notes
