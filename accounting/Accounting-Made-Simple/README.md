@@ -490,6 +490,10 @@ Quick Ratio = (Current Assets - Inventory) / Current Liabilities
         - if sales are slow
           - (that is, if inventories are not converted to cash)?
 
+_Skipped example, except_:
+> - Jika, Current Ratio-nya = 1, meaning, The company shouldn’t have any trouble handling its financial obligations over the next 12 months.
+> - dan jika, Quick Ratio-nya = 0,5., meaning, indicates that the company will need to maintain at least some level of sales in order to satisfy its liabilities.
+
 #### Profitability Ratios
 
 - While a company’s net income
