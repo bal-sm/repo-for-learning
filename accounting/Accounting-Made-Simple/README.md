@@ -451,7 +451,12 @@ Common items that would fall in this category include:
 |                                         |         ________ |
 | Net increase in cash:                   |  <u>$190,000</u> |
 
-### CHAPTER 6
+### CHAPTER SIX: Financial Ratios
+
+- A logical next step after "how to read financial statements"
+  - would be to take a look at the different conclusions you can draw from a company’s financials.
+  - For the most part, this work is done
+    - by calculating and comparing several different ratios.
 
 ...
 
