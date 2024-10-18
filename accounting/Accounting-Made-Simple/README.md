@@ -475,6 +475,18 @@ Current Ratio = Current Assets / Current Liabilities
     - using its current assets
       - (cash and assets likely to be *converted* to **cash** _within a year or less_).
 
+##### Quick Ratio
+
+Quick Ratio = (Current Assets - Inventory) / Current Liabilities
+
+- The difference between
+  - quick ratio
+  - and current ratio;
+  - is:
+    - that the calculation of quick ratio excludes inventory balances.
+    - This is done in order to provide a worst-case-scenario assessment:
+    - How well will the company be able to fulfill its current liabilities if sales are slow (that is, if inventories are not converted to cash)?
+
 ...
 
 ## Maintenance notes
