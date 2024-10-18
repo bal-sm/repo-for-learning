@@ -503,6 +503,10 @@ Quick Ratio = (Current Assets - Inventory) / Current Liabilities
       - that the comparison is rather meaningless, right?
         - That’s why we use the two following ratios:
 
+Return on Assets = Net Income / Total Assets
+
+Return on Equity = Net Income / Shareholders' Equity
+
 ...
 
 ## Maintenance notes
