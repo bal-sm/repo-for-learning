@@ -451,12 +451,29 @@ Common items that would fall in this category include:
 |                                         |         ________ |
 | Net increase in cash:                   |  <u>$190,000</u> |
 
-### CHAPTER SIX: Financial Ratios
+### CHAPTER SIX: Financial Ratios - WIP
 
 - A logical next step after "how to read financial statements"
   - would be to take a look at the different conclusions you can draw from a company’s financials.
   - For the most part, this work is done
     - by calculating and comparing several different ratios.
+
+#### Liquidity Ratios
+
+- Liquidity ratios are used to determine
+  - how easily a company will be able to meet its **short-term** financial obligations.
+- Generally speaking, with liquidity ratios, __higher is better__.
+
+##### Current Ratio
+
+Current Ratio = Current Assets / Current Liabilities
+
+- A company’s current ratio
+  - provides an assessment of the company’s ability to pay off
+    - its current liabilities
+      - (liabilities due _within a year or less_)
+    - using its current assets
+      - (cash and assets likely to be *converted* to **cash** _within a year or less_).
 
 ...
 
