@@ -494,6 +494,9 @@ Quick Ratio = (Current Assets - Inventory) / Current Liabilities
 Note 1:
 > Hapus Part One, Two, etc as headings.
 
+Mine:
+> Buy the book to see more examples!
+
 ## Learning in Progress
 
 Query?:
