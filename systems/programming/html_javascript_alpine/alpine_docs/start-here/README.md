@@ -145,4 +145,13 @@ Insert the following code into the `<body>` tag:
 </div>
 ```
 
+- If you load this component,
+  - you should see that the "Contents..."
+    - are hidden by default.
+  - You can toggle showing them on the page
+    - by clicking the "Toggle" button.
+
+Them, skip:
+> The `x-data` and `x-on` directives should be familiar to you from the previous example, so we'll skip those explanations.
+
 ...
