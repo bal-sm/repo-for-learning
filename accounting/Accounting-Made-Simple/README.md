@@ -2,42 +2,6 @@
 
 > From _Accounting Made Simple: Accounting Explained in 100 Pages or Less (Financial Topics in 100 Pages or Less) by Mike Piper_. [Buy here](https://www.amazon.com/Accounting-Made-Simple-Explained-Pages-ebook/dp/B004JHYTDE).
 
-## Table of Contents
-
-- [Accounting Made Simple](#accounting-made-simple)
-  - [Table of Contents](#table-of-contents)
-  - [Part One: Financial Statements](#part-one-financial-statements)
-    - [CHAPTER ONE: The Accounting Equation](#chapter-one-the-accounting-equation)
-      - [My Asset is Your Liability](#my-asset-is-your-liability)
-    - [CHAPTER TWO: The Balance Sheet](#chapter-two-the-balance-sheet)
-      - [Assets](#assets)
-      - [Liabilities](#liabilities)
-      - [Owners’ Equity](#owners-equity)
-      - [Current vs. Long-Term](#current-vs-long-term)
-      - [Multiple-Period Balance Sheets](#multiple-period-balance-sheets)
-    - [CHAPTER THREE: The Income Statement](#chapter-three-the-income-statement)
-      - [Gross Profit and Cost of Goods Sold](#gross-profit-and-cost-of-goods-sold)
-      - [Operating Income vs. Net Income](#operating-income-vs-net-income)
-    - [CHAPTER FOUR: The Statement of Retained Earnings](#chapter-four-the-statement-of-retained-earnings)
-      - [Example of _The Statement of Retained Earnings_](#example-of-the-statement-of-retained-earnings)
-      - [Bridge Between Financial Statements](#bridge-between-financial-statements)
-        - [Step "1": The Processed Income Statement](#step-1-the-processed-income-statement)
-        - [Step "2": The Making of Statement of Retained Earnings](#step-2-the-making-of-statement-of-retained-earnings)
-        - [Step "3": The Aftermath, Balance Sheet](#step-3-the-aftermath-balance-sheet)
-        - [Notes](#notes)
-    - [CHAPTER FIVE: The Cash Flow Statement](#chapter-five-the-cash-flow-statement)
-      - [Cash Flow Statement vs. Income Statement](#cash-flow-statement-vs-income-statement)
-        - [The 1st major difference](#the-1st-major-difference)
-        - [The 2nd major difference](#the-2nd-major-difference)
-      - [Categories of Cash Flow](#categories-of-cash-flow)
-        - [Cash Flow from Operating Activities](#cash-flow-from-operating-activities)
-        - [Cash Flow from Investing Activities](#cash-flow-from-investing-activities)
-        - [Cash Flow from Financing Activities](#cash-flow-from-financing-activities)
-      - [An example of Cash Flow Statements](#an-example-of-cash-flow-statements)
-  - [Learning in Progress](#learning-in-progress)
-
-> Recreated for aesthetic and uniformity purposes.
-
 ## Part One: Financial Statements
 
 ### CHAPTER ONE: The Accounting Equation
@@ -59,14 +23,10 @@ Mine(1):
     - the loan is clearly a **liability** _for you_.
     - From _the perspective of your bank_, however, the loan is an **asset**.
 
-Ignore this:
-> - Similarly, the balance in your savings or checking account is,
->   - of course, an asset (to you).
->   - For the bank, however, the balance is a liability.
->     - It’s money that they owe you, as you’re allowed to demand full or partial payment of it at any time.
-
-Mine:
-> Whatever is savings or checking account means.
+- Similarly, the balance in your savings or checking account is,
+  - of course, an asset (to you).
+  - For the bank, however, the balance is a liability.
+    - It’s money that they owe you, as you’re allowed to demand full or partial payment of it at any time.
 
 ### CHAPTER TWO: The Balance Sheet
 
