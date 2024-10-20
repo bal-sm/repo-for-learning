@@ -155,3 +155,8 @@ Them, skip:
 > The `x-data` and `x-on` directives should be familiar to you from the previous example, so we'll skip those explanations.
 
 ...
+
+## Source(s)
+
+- [1]: [`start-here.md`](https://github.com/bal-sm/alpine/blob/main/packages/docs/src/en/start-here.md)
+- [2]: [Start Here](https://alpinejs.dev/start-here)
