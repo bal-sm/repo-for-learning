@@ -315,7 +315,7 @@ Them:
 Them:
 > [→ Read more about `x-model`](/directives/model)
 
-### Computed properties using getters - Mahmuda's version - WIP
+### Computed properties using getters - Mahmuda's version
 
 - The next bit I'd like to draw your attention to
   - is the
@@ -389,7 +389,11 @@ return this.items.filter(
       - `this.[property]`
       - instead of simply `[property]`.
 
-Because Alpine is a "reactive" framework. Any time the value of `this.search` changes, parts of the template that use `filteredItems` will automatically be updated.
+- Because Alpine is a "reactive" framework.
+  - Any time the value of `this.search` changes,
+    - parts of the template that use `filteredItems`
+      - will automatically be updated.
+  - > wow.
 
 ...
 
