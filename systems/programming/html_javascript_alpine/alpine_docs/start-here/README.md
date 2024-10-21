@@ -315,6 +315,63 @@ Them:
 Them:
 > [→ Read more about `x-model`](/directives/model)
 
+### Computed properties using getters - Mahmuda's version - WIP
+
+- The next bit I'd like to draw your attention to
+  - is the
+    - `items` and
+    - `filteredItems` properties;
+    - from the `x-data` directive.
+
+```js
+{
+    ...
+    items: ['foo', 'bar', 'baz'],
+
+    get filteredItems() {
+        return this.items.filter(
+            i => i.startsWith(this.search)
+        )
+    }
+}
+```
+
+- The `items` property should be self-explanatory.
+  - Here we are setting the value of `items`
+    - to a JavaScript array of 3 different items
+      - (`foo`,
+      - `bar`,
+      - and `baz`).
+
+- The interesting part of this snippet is the `filteredItems` property.
+
+- Denoted by the `get` prefix for this property,
+  - > `get filteredItems()`
+  - `filteredItems` is a "getter" property in this object.
+  - This means we can access `filteredItems`
+    - as if it was a normal property in our data object,
+    - but when we do, JavaScript will evaluate the provided function under the hood and return the result.
+
+It's completely acceptable to forgo the `get` and just make this a method that you can call from the template, but some prefer the nicer syntax of the getter.
+
+[→ Read more about JavaScript getters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get)
+
+Now let's look inside the `filteredItems` getter and make sure we understand what's going on there:
+
+```js
+return this.items.filter(
+    i => i.startsWith(this.search)
+)
+```
+
+This is all plain JavaScript. We are first getting the array of items (foo, bar, and baz) and filtering them using the provided callback: `i => i.startsWith(this.search)`.
+
+By passing in this callback to `filter`, we are telling JavaScript to only return the items that start with the string: `this.search`, which like we saw with `x-model` will always reflect the value of the input.
+
+You may notice that up until now, we haven't had to use `this.` to reference properties. However, because we are working directly inside the `x-data` object, we must reference any properties using `this.[property]` instead of simply `[property]`.
+
+Because Alpine is a "reactive" framework. Any time the value of `this.search` changes, parts of the template that use `filteredItems` will automatically be updated.
+
 ...
 
 ## Source(s)
