@@ -358,15 +358,17 @@ Them:
 Them:
 > [→ Read more about JavaScript getters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get)
 
-#### The code
+#### The look at `filteredItems()`
 
 - Now let's look inside the `filteredItems` getter
   - and make sure we understand what's going on there:
 
 ```js
-return this.items.filter(
-    i => i.startsWith(this.search)
-)
+    get filteredItems() {
+        return this.items.filter(
+            i => i.startsWith(this.search)
+        )
+    }
 ```
 
 - This is all plain JavaScript:
