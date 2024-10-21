@@ -293,6 +293,28 @@ Them:
         - about how to avoid this problem altogether,
           - but for now, we'll keep all of this JavaScript directly in the HTML.
 
+### Binding to inputs - Mahmuda's version
+
+```html
+<input x-model="search" placeholder="Search...">
+```
+
+- You'll notice a new directive we haven't seen yet:
+  - > `x-model`.
+
+- `x-model` is used to ***"bind"*** the value of an input element with a data property:
+  - > "search" from `x-data="{ search: '', ... }"` in our case.
+  - > me: harus digaris-bawahi `bind` nya.
+
+- This means that anytime the value of the input changes,
+  - the value of "search" will change to reflect that.
+
+- `x-model` is capable of much more
+  - than this simple example.
+
+Them:
+> [→ Read more about `x-model`](/directives/model)
+
 ...
 
 ## Source(s)
