@@ -199,6 +199,86 @@ Them, important:
 
 [→ Read more about `x-on` modifiers](/directives/on#modifiers)
 
+## Building a search input - Mahmuda's version
+
+- Let's now build a more complex component
+  - and introduce a handful of
+    - other directives
+      - > more `x`-es.
+    - and patterns.
+
+Insert the following code into the `<body>` tag:
+
+```html
+<div
+    x-data="{
+        search: '',
+
+        items: ['foo', 'bar', 'baz'],
+
+        get filteredItems() {
+            return this.items.filter(
+                i => i.startsWith(this.search)
+            )
+        }
+    }"
+>
+    <input x-model="search" placeholder="Search...">
+
+    <ul>
+        <template x-for="item in filteredItems" :key="item">
+            <li x-text="item"></li>
+        </template>
+    </ul>
+</div>
+```
+
+```what-is-this
+<!-- START_VERBATIM -->
+<div class="demo">
+    <div
+        x-data="{
+            search: '',
+
+            items: ['foo', 'bar', 'baz'],
+
+            get filteredItems() {
+                return this.items.filter(
+                    i => i.startsWith(this.search)
+                )
+            }
+        }"
+    >
+        <input x-model="search" placeholder="Search...">
+
+        <ul class="pl-6 pt-2">
+            <template x-for="item in filteredItems" :key="item">
+                <li x-text="item"></li>
+            </template>
+        </ul>
+    </div>
+</div>
+<!-- END_VERBATIM -->
+```
+
+Mine:
+> apa ya.
+
+- By default,
+  - all of the `items`:
+    - (`foo`,
+    - `bar`,
+    - and `baz`);
+    - will be shown on the page,
+  - but you can filter them
+    - by typing into the text input.
+  - As you type, the list of items
+    - will change
+      - to reflect what you're searching for.
+
+Them:
+> Now there's quite a bit happening here, so let's go through this snippet piece by piece.
+
 ...
 
 ## Source(s)
