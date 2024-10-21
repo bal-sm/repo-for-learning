@@ -358,7 +358,10 @@ Them:
 Them:
 > [→ Read more about JavaScript getters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get)
 
-Now let's look inside the `filteredItems` getter and make sure we understand what's going on there:
+#### The code
+
+- Now let's look inside the `filteredItems` getter
+  - and make sure we understand what's going on there:
 
 ```js
 return this.items.filter(
@@ -366,9 +369,16 @@ return this.items.filter(
 )
 ```
 
-This is all plain JavaScript. We are first getting the array of items (foo, bar, and baz) and filtering them using the provided callback: `i => i.startsWith(this.search)`.
-
-By passing in this callback to `filter`, we are telling JavaScript to only return the items that start with the string: `this.search`, which like we saw with `x-model` will always reflect the value of the input.
+- This is all plain JavaScript:
+  1. We are first getting the array of items ('foo', 'bar', and 'baz')
+     a. and filtering them using the provided callback: `i => i.startsWith(this.search)`.
+  2. By passing in this callback to `filter`,
+     - we are telling JavaScript to only return the items
+       - that start with the string:
+         - > `this.search`,
+         - which like we saw with:
+           - > `x-model`
+           - (which) will always reflect the value of the input.
 
 You may notice that up until now, we haven't had to use `this.` to reference properties. However, because we are working directly inside the `x-data` object, we must reference any properties using `this.[property]` instead of simply `[property]`.
 
