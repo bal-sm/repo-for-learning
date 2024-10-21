@@ -345,13 +345,12 @@ Them:
 
 - The interesting part of this snippet
   - is the `filteredItems` property.
-
-- Denoted by the `get` prefix for this property,
-  - > `get filteredItems()`
-  - `filteredItems` is a "getter" property in this object.
-  - This means we can access `filteredItems`
-    - as if it was a normal property in our data object,
-    - but when we do, JavaScript will evaluate the provided function under the hood and return the result.
+  - Denoted by the `get` prefix for this property,
+    - > `get filteredItems()`
+    - `filteredItems` is a "getter" property in this object.
+    - This means we can access `filteredItems`
+      - as if it was a normal property in our data object,
+        - but when we do, JavaScript will evaluate the provided function under the hood and return the result.
 
 It's completely acceptable to forgo the `get` and just make this a method that you can call from the template, but some prefer the nicer syntax of the getter.
 
