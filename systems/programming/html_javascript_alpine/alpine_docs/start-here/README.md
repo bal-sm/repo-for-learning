@@ -279,15 +279,15 @@ Mine:
 Them:
 > Now there's quite a bit happening here, so let's go through this snippet piece by piece.
 
-### Multi line formatting - Mahmuda's version
+### Multi line formatting - Iqbal's version
 
 - The first thing I'd like to point out
   - is that `x-data` now
     - has a lot more going on in it
       - > than before.
   - To make it easier to write and read,
-    - we've split it up into multiple lines in our HTML.
-      - > me: wow.
+    - _we've split it up into multiple_ lines in our HTML.
+      - > me: wow. kela ketang.
     - This is completely optional
       - and we'll talk more in a bit
         - about how to avoid this problem altogether,
