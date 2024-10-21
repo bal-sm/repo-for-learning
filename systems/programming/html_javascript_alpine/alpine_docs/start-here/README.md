@@ -343,7 +343,8 @@ Them:
       - `bar`,
       - and `baz`).
 
-- The interesting part of this snippet is the `filteredItems` property.
+- The interesting part of this snippet
+  - is the `filteredItems` property.
 
 - Denoted by the `get` prefix for this property,
   - > `get filteredItems()`
