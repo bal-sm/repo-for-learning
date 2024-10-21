@@ -397,6 +397,47 @@ Them:
       - will automatically be updated.
   - > wow.
 
+### Looping elements - Mahmuda's version
+
+- Now that we understand the data part of our component,
+  - let's understand what's happening in the template
+    - that allows us to loop through `filteredItems` on the page.
+
+```html
+<ul>
+    <template x-for="item in filteredItems">
+        <li x-text="item"></li>
+    </template>
+</ul>
+```
+
+- The first thing to notice here is the `x-for` directive.
+  - `x-for` expressions take the following form:
+    - > `[item] in [items]`
+    - where [items] is any array of data,
+    - and [item] is the name of the variable
+      - that will be assigned to an iteration inside the loop.
+        - > just like in Python. what's the matter?
+
+- Also notice
+  - that `x-for` is:
+    - declared on a `<template>` element
+    - and not directly on the `<li>`.
+  - This is a requirement of using `x-for`.
+    - It allows Alpine to leverage the existing behavior of `<template>` tags
+      - in the browser to its advantage.
+
+- Now any element inside the `<template>` tag
+  - will be repeated for every item
+    - inside `filteredItems`
+    - and all expressions evaluated
+      - inside the loop will have direct access
+        - to the iteration variable
+        - > _(`item` in this case)_.
+
+Them:
+> [→ Read more about `x-for`](/directives/for)
+
 ...
 
 ## Source(s)
