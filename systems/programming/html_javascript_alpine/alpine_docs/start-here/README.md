@@ -352,9 +352,11 @@ Them:
       - as if it was a normal property in our data object,
         - but when we do, JavaScript will evaluate the provided function under the hood and return the result.
 
-It's completely acceptable to forgo the `get` and just make this a method that you can call from the template, but some prefer the nicer syntax of the getter.
+Them:
+> It's completely acceptable to forgot the `get` and just make this a method that you can call from the template, but some prefer the nicer syntax of the getter.
 
-[→ Read more about JavaScript getters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get)
+Them:
+> [→ Read more about JavaScript getters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get)
 
 Now let's look inside the `filteredItems` getter and make sure we understand what's going on there:
 
