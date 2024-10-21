@@ -154,6 +154,35 @@ Insert the following code into the `<body>` tag:
 Them, skip:
 > The `x-data` and `x-on` directives should be familiar to you from the previous example, so we'll skip those explanations.
 
+### Listening for a click outside - Mahmuda's version
+
+```html
+<div ... @click.outside="open = false">Contents...</div>
+```
+
+- You'll notice something new in this example: `.outside`.
+  - Many directives in Alpine accept "modifiers"
+    - that are chained
+      - onto the end of the directive
+      - and are separated by periods.
+
+Them, important:
+> - In this case, `.outside` tells Alpine
+>   - to instead of
+>     - listening for a click
+>       - INSIDE the `<div>`,
+>   - > plz just:
+>     - to listen for the click only
+>       - if it happens OUTSIDE the `<div>`.
+
+- This is a convenience helper built into Alpine
+  - because this is a common need
+  - and implementing it by hand is
+    - annoying
+    - and complex.
+
+[→ Read more about `x-on` modifiers](/directives/on#modifiers)
+
 ...
 
 ## Source(s)
