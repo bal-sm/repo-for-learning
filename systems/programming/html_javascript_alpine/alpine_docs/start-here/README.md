@@ -438,7 +438,26 @@ Them:
 Them:
 > [→ Read more about `x-for`](/directives/for)
 
-...
+## Recap
+
+Them:
+> If you've made it this far, you've been exposed to the following directives in Alpine:
+>
+> * `x-data`
+> * `x-on`
+> * `x-text`
+> * `x-show`
+> * `x-model`
+> * `x-for`
+>
+> That's a great start, however, there are many more directives to sink your teeth into. The best way to absorb Alpine is to read through this documentation. No need to comb over every word, but if you at least glance through every page you will be MUCH more effective when using Alpine.
+
+Happy Coding!
+
+## Notes
+
+Mine:
+> I really enjoy it.
 
 ## Source(s)
 
