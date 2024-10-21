@@ -380,7 +380,14 @@ return this.items.filter(
            - > `x-model`
            - (which) will always reflect the value of the input.
 
-You may notice that up until now, we haven't had to use `this.` to reference properties. However, because we are working directly inside the `x-data` object, we must reference any properties using `this.[property]` instead of simply `[property]`.
+- You may notice that up until now,
+  - we haven't had to use:
+    - > `this.`
+    - to reference properties.
+  - However, because we are working directly inside the `x-data` object,
+    - we must reference any properties using:
+      - `this.[property]`
+      - instead of simply `[property]`.
 
 Because Alpine is a "reactive" framework. Any time the value of `this.search` changes, parts of the template that use `filteredItems` will automatically be updated.
 
