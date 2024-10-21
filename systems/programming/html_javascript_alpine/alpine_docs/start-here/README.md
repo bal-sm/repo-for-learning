@@ -154,6 +154,22 @@ Insert the following code into the `<body>` tag:
 Them, skip:
 > The `x-data` and `x-on` directives should be familiar to you from the previous example, so we'll skip those explanations.
 
+### Toggling elements - Mahmuda's version
+
+```html
+<div x-show="open" ...>Contents...</div>
+```
+
+- `x-show` is an extremely powerful directive
+  - in Alpine that can be used
+    - to show and
+    - hide a block of HTML on a page;
+    - based on the result of a JavaScript expression,
+      - > in our case: `open`.
+
+Them:
+> [→ Read more about `x-show`](/directives/show)
+
 ### Listening for a click outside - Mahmuda's version
 
 ```html
